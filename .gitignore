@@ -1,0 +1,24 @@
+# Visual Studio / .NET Core
+bin/
+obj/
+*.user
+*.pdb
+*.suo
+*.userosscache
+*.sln.docstates
+
+# ONI Modding backups
+*.po.bak
+*.mo
+archived_versions/
+
+# Redundant or temp folders
+Local/
+scratch/
+scripts/
+
+# OS/IDEs
+.vs/
+.vscode/
+.DS_Store
+Thumbs.db
