@@ -28,7 +28,8 @@ A comprehensive repair of the popular Vietnamese translation mod.
 
 These mods are built upon the incredible work of the original authors in the ONI community.
 
-*   **Original Author**: Pholith (and previous contributors).
+*   **Customizable Speed**: Original by **Pholith**.
+*   **TiengViet (Vietnamese Translation)**: Original by **Chuot Chanel - Nguyễn Thái Bảo**.
 *   **Modernization & Maintenance**: [nguyenhoclaptrinh](https://github.com/nguyenhoclaptrinh).
 
 ---
