@@ -4,11 +4,10 @@ A collection of maintained and modernized mods for Oxygen Not Included. Focused 
 
 ## Mods Included
 
-### Customizable Speed
-Modernized fork of the classic speed control mod.
-* **Tech**: Updated to SDK-style project format (`.csproj`).
-* **Dependency**: Linked against **PLib 4.19.0**.
-* **Fixes**: Corrected `POptions` registration and modernized Harmony patching for the July 2024 game engine update.
+### Peter Han's Mods
+A comprehensive collection of high-quality QoL mods.
+* **Included**: Fast Save, AI Improvements, Pliers, Bulk Settings, Efficient Fetch, and 30+ others.
+* **Compatibility**: Fully updated for current build.
 
 ### TiengViet (Vietnamese Translation)
 Comprehensive technical repair of the 2024 translation series.
@@ -21,14 +20,8 @@ Comprehensive technical repair of the 2024 translation series.
 2. Place folders in: `%USERPROFILE%\Documents\Klei\OxygenNotIncluded\mods\Local\`
 3. Restart game and enable in Mod menu.
 
-## Development / Building
-To build `CustomizableSpeed.dll`:
-1. Ensure you have the .NET SDK installed.
-2. Run `dotnet build -c Release` in the mod directory.
-3. Output will be generated in the root of the mod folder.
-
 ## Credits
-* **Customizable Speed**: Original by [Pholith](https://github.com/Pholith/ONI-Mods).
+* **Peter Han's Mods**: Original by [Peter Han](https://github.com/peterhaneve/ONIMods).
 * **TiengViet**: Original by [Chuot Chanel (Nguyễn Thái Bảo)](https://steamcommunity.com/workshop/browse/?appid=457140&searchtext=TiengViet).
 * **Maintained by**: [nguyenhoclaptrinh](https://github.com/nguyenhoclaptrinh).
 
