@@ -22,3 +22,6 @@ scripts/
 .vscode/
 .DS_Store
 Thumbs.db
+
+# Agent related
+.agents/
