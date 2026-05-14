@@ -1,0 +1,3 @@
+<Project>
+  <!-- This file prevents the parent Directory.Build.props from being used, avoiding missing reference errors -->
+</Project>

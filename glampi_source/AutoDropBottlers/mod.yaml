@@ -1,5 +1,2 @@
-supportedContent: ALL
-minimumSupportedBuild: 670000
-version: 1.0.0
 title: Auto Drop Bottlers
 description: Automatically drops canisters and bottles from Fillers when they are full.

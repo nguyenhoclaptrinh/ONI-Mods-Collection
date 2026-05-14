@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <PropertyGroup>
+    <GameLibsFolder>d:\Documents\Klei\OxygenNotIncluded\mods\Local\peterhan_source\Lib</GameLibsFolder>
+    <ModFolder>d:\Documents\Klei\OxygenNotIncluded\mods\Local</ModFolder>
+    <AssemblyPublicized>$(GameLibsFolder)\Assembly-CSharp_public.dll</AssemblyPublicized>
+    <AssemblyFirstpassPublicized>$(GameLibsFolder)\Assembly-CSharp-firstpass_public.dll</AssemblyFirstpassPublicized>
+  </PropertyGroup>
+</Project>

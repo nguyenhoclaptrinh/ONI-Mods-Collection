@@ -10,7 +10,12 @@ namespace AutoDropBottlers
         public override void OnLoad(Harmony harmony)
         {
             base.OnLoad(harmony);
-            // Harmony will automatically find and apply all [HarmonyPatch] classes in this assembly
+            
+            // Add strings for the UI
+            Strings.Add("STRINGS.UI.UISIDESCREENS.AUTODROP.TITLE", "Auto Drop Bottles");
+            Strings.Add("STRINGS.UI.UISIDESCREENS.AUTODROP.TOOLTIP", "If enabled, bottles will automatically drop when the bottler reaches maximum capacity or is emptied manually.");
+            
+            Debug.Log("[AutoDropBottlers] Loaded and strings registered.");
         }
     }
 
@@ -21,7 +26,8 @@ namespace AutoDropBottlers
         [Serialize]
         public bool autoDropEnabled = true; // Set to true by default as per common request
 
-        public string CheckboxTitleKey => "AUTODROP_TITLE";
+        public string CheckboxTitleKey => "STRINGS.UI.UISIDESCREENS.AUTODROP.TITLE";
+        public string CheckboxToolTipKey => "STRINGS.UI.UISIDESCREENS.AUTODROP.TOOLTIP";
         public string CheckboxLabel => "Auto Drop Bottles";
         public string CheckboxTooltip => "If enabled, bottles will automatically drop when the bottler reaches maximum capacity or is emptied manually.";
 
@@ -36,23 +42,16 @@ namespace AutoDropBottlers
         }
     }
 
-    // Add the control to Gas Bottler
-    [HarmonyPatch(typeof(GasBottlerConfig), "DoPostConfigureComplete")]
-    public class GasBottlerConfig_DoPostConfigureComplete_Patch
+    // Add the control to all Bottler instances (Gas and Liquid)
+    [HarmonyPatch(typeof(Bottler), "OnPrefabInit")]
+    public class Bottler_OnPrefabInit_Patch
     {
-        public static void Postfix(GameObject go)
+        public static void Postfix(Bottler __instance)
         {
-            go.AddOrGet<AutoDropControl>();
-        }
-    }
-
-    // Add the control to Liquid Bottler
-    [HarmonyPatch(typeof(LiquidBottlerConfig), "DoPostConfigureComplete")]
-    public class LiquidBottlerConfig_DoPostConfigureComplete_Patch
-    {
-        public static void Postfix(GameObject go)
-        {
-            go.AddOrGet<AutoDropControl>();
+            if (__instance != null)
+            {
+                __instance.gameObject.AddOrGet<AutoDropControl>();
+            }
         }
     }
 
@@ -62,16 +61,22 @@ namespace AutoDropBottlers
     {
         public static void Postfix(Bottler __instance)
         {
-            // Get our custom control from the building
-            AutoDropControl control = __instance.GetComponent<AutoDropControl>();
+            if (__instance == null) return;
 
-            // If auto drop is enabled and we have items
-            if (control != null && control.autoDropEnabled && __instance.storage != null && __instance.storage.items.Count > 0)
+            AutoDropControl control = __instance.GetComponent<AutoDropControl>();
+            bool enabled = control != null && control.autoDropEnabled;
+            
+            int itemCount = (__instance.storage != null) ? __instance.storage.items.Count : -1;
+            float totalMass = (__instance.storage != null) ? __instance.storage.GetMassAvailable(GameTags.Any) : 0f;
+
+            // Log details for debugging
+            if (enabled && __instance.storage != null && (itemCount > 0 || totalMass > 0f))
             {
+                Debug.Log($"[AutoDropBottlers] Auto-dropping: Items={itemCount}, Mass={totalMass}");
                 __instance.storage.DropAll(false, false, default, true);
                 
-                // Call the private method CleanupBottleProxyObject using Traverse
-                Traverse.Create(__instance).Method("CleanupBottleProxyObject").GetValue();
+                // We DON'T call CleanupBottleProxyObject here anymore.
+                // The game will call it naturally in OnStopWork, avoiding the "could not clean up" warning.
             }
         }
     }

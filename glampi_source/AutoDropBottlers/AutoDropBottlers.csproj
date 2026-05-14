@@ -8,23 +8,23 @@
 
   <ItemGroup>
     <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\GameLibs\Assembly-CSharp.dll</HintPath>
+      <HintPath>..\..\peterhan_source\Lib\Assembly-CSharp_public.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Assembly-CSharp-firstpass">
-      <HintPath>..\..\GameLibs\Assembly-CSharp-firstpass.dll</HintPath>
+      <HintPath>..\..\peterhan_source\Lib\Assembly-CSharp-firstpass_public.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="0Harmony">
-      <HintPath>..\..\GameLibs\0Harmony.dll</HintPath>
+      <HintPath>..\..\peterhan_source\Lib\0Harmony.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine">
-      <HintPath>..\..\GameLibs\UnityEngine.dll</HintPath>
+      <HintPath>..\..\peterhan_source\Lib\UnityEngine.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>..\..\GameLibs\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>..\..\peterhan_source\Lib\UnityEngine.CoreModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
