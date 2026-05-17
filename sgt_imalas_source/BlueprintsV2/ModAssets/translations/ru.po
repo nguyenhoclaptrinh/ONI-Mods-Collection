@@ -1,0 +1,1077 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: DarkEviL <darkevilx17@gmail.com>\n"
+"Language-Team: \n"
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Application: Oxygen Not IncludedPOT Version: 2.0\n"
+"X-Generator: Poedit 3.9\n"
+
+#. BlueprintsV2.STRINGS.BLUEPRINTS_BLUEPRINTNOTE.DELETE_NOTE.NAME
+msgctxt "BlueprintsV2.STRINGS.BLUEPRINTS_BLUEPRINTNOTE.DELETE_NOTE.NAME"
+msgid "Delete Note"
+msgstr "Удалить заметку"
+
+#. BlueprintsV2.STRINGS.BLUEPRINTS_BLUEPRINTNOTE.DELETE_NOTE.TOOLTIP
+msgctxt "BlueprintsV2.STRINGS.BLUEPRINTS_BLUEPRINTNOTE.DELETE_NOTE.TOOLTIP"
+msgid "Delete this note entity"
+msgstr "Удалить эту запись"
+
+#. BlueprintsV2.STRINGS.BLUEPRINTS_BLUEPRINTNOTE.ELEMENT_NOTE
+msgctxt "BlueprintsV2.STRINGS.BLUEPRINTS_BLUEPRINTNOTE.ELEMENT_NOTE"
+msgid "Planned {0} ({1}, {2})"
+msgstr "Запланировано {0} ({1}, {2})"
+
+#. BlueprintsV2.STRINGS.BLUEPRINTS_BLUEPRINTNOTE.ELEMENT_NOTE_DESC
+msgctxt "BlueprintsV2.STRINGS.BLUEPRINTS_BLUEPRINTNOTE.ELEMENT_NOTE_DESC"
+msgid "There should be {1} of {0} here, at a temperature of {2}."
+msgstr "Здесь должно быть {1} из {0} при температуре {2}."
+
+#. BlueprintsV2.STRINGS.BLUEPRINTS_BLUEPRINTNOTE.ELEMENT_NOTE_SPECIAL
+msgctxt "BlueprintsV2.STRINGS.BLUEPRINTS_BLUEPRINTNOTE.ELEMENT_NOTE_SPECIAL"
+msgid "Planned {0}"
+msgstr "Запланировано {0}"
+
+#. BlueprintsV2.STRINGS.BLUEPRINTS_BLUEPRINTNOTE.ELEMENT_NOTE_SPECIAL_DESC
+msgctxt "BlueprintsV2.STRINGS.BLUEPRINTS_BLUEPRINTNOTE.ELEMENT_NOTE_SPECIAL_DESC"
+msgid "There should be {0} here."
+msgstr "Здесь должно быть {0}."
+
+#. BlueprintsV2.STRINGS.BLUEPRINTS_BLUEPRINTNOTE.INFO_TITLE
+msgctxt "BlueprintsV2.STRINGS.BLUEPRINTS_BLUEPRINTNOTE.INFO_TITLE"
+msgid "Planned Element Settings:"
+msgstr "Настройки запланированных элементов:"
+
+#. BlueprintsV2.STRINGS.BLUEPRINTS_BLUEPRINTNOTE.MASSCONFIG.TITLE
+msgctxt "BlueprintsV2.STRINGS.BLUEPRINTS_BLUEPRINTNOTE.MASSCONFIG.TITLE"
+msgid "Element Target Mass:"
+msgstr "Масса целевого элемента:"
+
+#. BlueprintsV2.STRINGS.BLUEPRINTS_BLUEPRINTNOTE.MASSCONFIG.TOOLTIP
+msgctxt "BlueprintsV2.STRINGS.BLUEPRINTS_BLUEPRINTNOTE.MASSCONFIG.TOOLTIP"
+msgid "Planned Mass: {0}"
+msgstr "Планируемая масса: {0}"
+
+#. BlueprintsV2.STRINGS.BLUEPRINTS_BLUEPRINTNOTE.SANDBOX_SPAWN.NAME
+msgctxt "BlueprintsV2.STRINGS.BLUEPRINTS_BLUEPRINTNOTE.SANDBOX_SPAWN.NAME"
+msgid "Spawn Element (Sandbox)"
+msgstr "Создать элемент (песочница)"
+
+#. BlueprintsV2.STRINGS.BLUEPRINTS_BLUEPRINTNOTE.SANDBOX_SPAWN.TOOLTIP
+msgctxt "BlueprintsV2.STRINGS.BLUEPRINTS_BLUEPRINTNOTE.SANDBOX_SPAWN.TOOLTIP"
+msgid "Spawn the configured element and remove this element note."
+msgstr "Создать настроенный элемент и удалить заметку к этому элементу."
+
+#. BlueprintsV2.STRINGS.BLUEPRINTS_BLUEPRINTNOTE.TEMPERATURECONFIG.TITLE
+msgctxt "BlueprintsV2.STRINGS.BLUEPRINTS_BLUEPRINTNOTE.TEMPERATURECONFIG.TITLE"
+msgid "Element Target Temperature:"
+msgstr "Температура целевого элемента:"
+
+#. BlueprintsV2.STRINGS.BLUEPRINTS_BLUEPRINTNOTE.TEMPERATURECONFIG.TOOLTIP
+msgctxt "BlueprintsV2.STRINGS.BLUEPRINTS_BLUEPRINTNOTE.TEMPERATURECONFIG.TOOLTIP"
+msgid "Planned Temperature: {0}"
+msgstr "Планируемая температура: {0}"
+
+#. BlueprintsV2.STRINGS.BLUEPRINTS_BLUEPRINTNOTE.TEXTNOTE_EMPTY.TEXT
+msgctxt "BlueprintsV2.STRINGS.BLUEPRINTS_BLUEPRINTNOTE.TEXTNOTE_EMPTY.TEXT"
+msgid "No Description..."
+msgstr "Описание отсутствует..."
+
+#. BlueprintsV2.STRINGS.BLUEPRINTS_BLUEPRINTNOTE.TEXTNOTE_EMPTY.TITLE
+msgctxt "BlueprintsV2.STRINGS.BLUEPRINTS_BLUEPRINTNOTE.TEXTNOTE_EMPTY.TITLE"
+msgid "Unnamed Note"
+msgstr "Заметка без имени"
+
+#. BlueprintsV2.STRINGS.BLUEPRINTS_CONFIG.CREATEBLUEPRINTTOOLSYNC.TITLE
+msgctxt "BlueprintsV2.STRINGS.BLUEPRINTS_CONFIG.CREATEBLUEPRINTTOOLSYNC.TITLE"
+msgid "Синхронизация инструмента \"Чертёж\" со схемой"
+msgstr "Синхронизация инструмента \"Чертёж\" со схемой"
+
+#. BlueprintsV2.STRINGS.BLUEPRINTS_CONFIG.CREATEBLUEPRINTTOOLSYNC.TOOLTIP
+msgctxt "BlueprintsV2.STRINGS.BLUEPRINTS_CONFIG.CREATEBLUEPRINTTOOLSYNC.TOOLTIP"
+msgid "Синхронизируется ли инструмент «Чертёж» с текущей схемой (также настраивается в игре)"
+msgstr "Синхронизируется ли инструмент «Чертёж» с текущей схемой (также настраивается в игре)"
+
+#. BlueprintsV2.STRINGS.BLUEPRINTS_CONFIG.DEFAULTMENUSELECTION.DEFAULTMENUSELECTION_ALL
+msgctxt "BlueprintsV2.STRINGS.BLUEPRINTS_CONFIG.DEFAULTMENUSELECTION.DEFAULTMENUSELECTION_ALL"
+msgid "Все"
+msgstr "Все"
+
+#. BlueprintsV2.STRINGS.BLUEPRINTS_CONFIG.DEFAULTMENUSELECTION.DEFAULTMENUSELECTION_NONE
+msgctxt "BlueprintsV2.STRINGS.BLUEPRINTS_CONFIG.DEFAULTMENUSELECTION.DEFAULTMENUSELECTION_NONE"
+msgid "Ничего"
+msgstr "Ничего"
+
+#. BlueprintsV2.STRINGS.BLUEPRINTS_CONFIG.DEFAULTMENUSELECTION.TITLE
+msgctxt "BlueprintsV2.STRINGS.BLUEPRINTS_CONFIG.DEFAULTMENUSELECTION.TITLE"
+msgid "Выбор меню по умолчанию"
+msgstr "Выбор меню по умолчанию"
+
+#. BlueprintsV2.STRINGS.BLUEPRINTS_CONFIG.DEFAULTMENUSELECTION.TOOLTIP
+msgctxt "BlueprintsV2.STRINGS.BLUEPRINTS_CONFIG.DEFAULTMENUSELECTION.TOOLTIP"
+msgid "Выбор по умолчанию при открытии меню расширенного фильтра."
+msgstr "Выбор по умолчанию при открытии меню расширенного фильтра."
+
+#. BlueprintsV2.STRINGS.BLUEPRINTS_CONFIG.EXTRA_DEFAULTS_CATEGORY
+msgctxt "BlueprintsV2.STRINGS.BLUEPRINTS_CONFIG.EXTRA_DEFAULTS_CATEGORY"
+msgid "Extra Filter Selections"
+msgstr "Дополнительные параметры фильтрации"
+
+#. BlueprintsV2.STRINGS.BLUEPRINTS_CONFIG.FXTIME.TITLE
+msgctxt "BlueprintsV2.STRINGS.BLUEPRINTS_CONFIG.FXTIME.TITLE"
+msgid "Длительность эффектов"
+msgstr "Длительность эффектов"
+
+#. BlueprintsV2.STRINGS.BLUEPRINTS_CONFIG.FXTIME.TOOLTIP
+msgctxt "BlueprintsV2.STRINGS.BLUEPRINTS_CONFIG.FXTIME.TOOLTIP"
+msgid "Как долго эффекты, созданные чертежами, остаются на экране. Измеряется в секундах."
+msgstr "Как долго эффекты, созданные чертежами, остаются на экране. Измеряется в секундах."
+
+#. BlueprintsV2.STRINGS.BLUEPRINTS_CONFIG.REQUIRECONSTRUCTABLE_MATERIAL.TITLE
+msgctxt "BlueprintsV2.STRINGS.BLUEPRINTS_CONFIG.REQUIRECONSTRUCTABLE_MATERIAL.TITLE"
+msgid "Require blueprint building materials"
+msgstr "Требуются строительные материалы"
+
+#. BlueprintsV2.STRINGS.BLUEPRINTS_CONFIG.REQUIRECONSTRUCTABLE_MATERIAL.TOOLTIP
+msgctxt "BlueprintsV2.STRINGS.BLUEPRINTS_CONFIG.REQUIRECONSTRUCTABLE_MATERIAL.TOOLTIP"
+msgid "If enabled, buildings in blueprints are only placed down if their materials are available."
+msgstr "Если включено, то здания в чертежах размещаются только в том случае, если для них доступны необходимые материалы."
+
+#. BlueprintsV2.STRINGS.BLUEPRINTS_CONFIG.REQUIRECONSTRUCTABLE_TECH.TITLE
+msgctxt "BlueprintsV2.STRINGS.BLUEPRINTS_CONFIG.REQUIRECONSTRUCTABLE_TECH.TITLE"
+msgid "Require blueprint building tech"
+msgstr "Требуются изученные технологии"
+
+#. BlueprintsV2.STRINGS.BLUEPRINTS_CONFIG.REQUIRECONSTRUCTABLE_TECH.TOOLTIP
+msgctxt "BlueprintsV2.STRINGS.BLUEPRINTS_CONFIG.REQUIRECONSTRUCTABLE_TECH.TOOLTIP"
+msgid "If enabled, buildings in blueprints are only placed down if their required tech has been researched."
+msgstr "Если включено, то здания в чертежах размещаются только в том случае, если для них исследована необходимая технология."
+
+#. BlueprintsV2.STRINGS.BLUEPRINTS_CONFIG.SNAPSHOTTOOLSYNC.TITLE
+msgctxt "BlueprintsV2.STRINGS.BLUEPRINTS_CONFIG.SNAPSHOTTOOLSYNC.TITLE"
+msgid "Синхронизация инструмента \"Снимок\" со схемой"
+msgstr "Синхронизация инструмента \"Снимок\" со схемой"
+
+#. BlueprintsV2.STRINGS.BLUEPRINTS_CONFIG.SNAPSHOTTOOLSYNC.TOOLTIP
+msgctxt "BlueprintsV2.STRINGS.BLUEPRINTS_CONFIG.SNAPSHOTTOOLSYNC.TOOLTIP"
+msgid "Синхронизируется ли инструмент «Снимок» с текущей схемой (также настраивается в игре)"
+msgstr "Синхронизируется ли инструмент «Снимок» с текущей схемой (также настраивается в игре)"
+
+#. BlueprintsV2.STRINGS.UI.ACTIONS.CHANGE_ANCHOR_TITLE
+msgctxt "BlueprintsV2.STRINGS.UI.ACTIONS.CHANGE_ANCHOR_TITLE"
+msgid "Изменить якорь чертежа"
+msgstr "Изменить якорь чертежа"
+
+#. BlueprintsV2.STRINGS.UI.ACTIONS.CREATE_TITLE
+msgctxt "BlueprintsV2.STRINGS.UI.ACTIONS.CREATE_TITLE"
+msgid "Создать чертёж"
+msgstr "Создать чертёж"
+
+#. BlueprintsV2.STRINGS.UI.ACTIONS.FLIP_BLUEPRINT_H
+msgctxt "BlueprintsV2.STRINGS.UI.ACTIONS.FLIP_BLUEPRINT_H"
+msgid "Flip Blueprint Horizontal"
+msgstr "Перевернуть чертёж по горизонтали"
+
+#. BlueprintsV2.STRINGS.UI.ACTIONS.FLIP_BLUEPRINT_V
+msgctxt "BlueprintsV2.STRINGS.UI.ACTIONS.FLIP_BLUEPRINT_V"
+msgid "Flip Blueprint Vertical"
+msgstr "Перевернуть чертёж по вертикали"
+
+#. BlueprintsV2.STRINGS.UI.ACTIONS.NOTETOOL_TITLE
+msgctxt "BlueprintsV2.STRINGS.UI.ACTIONS.NOTETOOL_TITLE"
+msgid "Create Notes"
+msgstr "Создать заметку"
+
+#. BlueprintsV2.STRINGS.UI.ACTIONS.ROTATE_BLUEPRINT
+msgctxt "BlueprintsV2.STRINGS.UI.ACTIONS.ROTATE_BLUEPRINT"
+msgid "Rotate Blueprint"
+msgstr "Вращать чертёж"
+
+#. BlueprintsV2.STRINGS.UI.ACTIONS.ROTATE_INV_BLUEPRINT
+msgctxt "BlueprintsV2.STRINGS.UI.ACTIONS.ROTATE_INV_BLUEPRINT"
+msgid "Reverse Rotate Blueprint"
+msgstr "Обратное вращение чертежа"
+
+#. BlueprintsV2.STRINGS.UI.ACTIONS.SELECT_DIFFERENT_TITLE
+msgctxt "BlueprintsV2.STRINGS.UI.ACTIONS.SELECT_DIFFERENT_TITLE"
+msgid "Выбрать другой чертёж"
+msgstr "Выбрать другой чертёж"
+
+#. BlueprintsV2.STRINGS.UI.ACTIONS.SELECT_NEXT
+msgctxt "BlueprintsV2.STRINGS.UI.ACTIONS.SELECT_NEXT"
+msgid "Next Blueprint"
+msgstr "Следующий чертёж"
+
+#. BlueprintsV2.STRINGS.UI.ACTIONS.SELECT_NEXT_FOLDER
+msgctxt "BlueprintsV2.STRINGS.UI.ACTIONS.SELECT_NEXT_FOLDER"
+msgid "Next Folder"
+msgstr "Следующая папка"
+
+#. BlueprintsV2.STRINGS.UI.ACTIONS.SELECT_PREV
+msgctxt "BlueprintsV2.STRINGS.UI.ACTIONS.SELECT_PREV"
+msgid "Previous Blueprint"
+msgstr "Предыдущий чертёж"
+
+#. BlueprintsV2.STRINGS.UI.ACTIONS.SELECT_PREV_FOLDER
+msgctxt "BlueprintsV2.STRINGS.UI.ACTIONS.SELECT_PREV_FOLDER"
+msgid "Previous Folder"
+msgstr "Предыдущая папка"
+
+#. BlueprintsV2.STRINGS.UI.ACTIONS.SNAPSHOT_REUSE_TITLE
+msgctxt "BlueprintsV2.STRINGS.UI.ACTIONS.SNAPSHOT_REUSE_TITLE"
+msgid "Использовать последний снимок"
+msgstr "Использовать последний снимок"
+
+#. BlueprintsV2.STRINGS.UI.ACTIONS.SNAPSHOT_TITLE
+msgctxt "BlueprintsV2.STRINGS.UI.ACTIONS.SNAPSHOT_TITLE"
+msgid "Сделать снимок"
+msgstr "Сделать снимок"
+
+#. BlueprintsV2.STRINGS.UI.ACTIONS.TOGGLE_FORCE
+msgctxt "BlueprintsV2.STRINGS.UI.ACTIONS.TOGGLE_FORCE"
+msgid "Переключить принудительное перестроение"
+msgstr "Переключить принудительное перестроение"
+
+#. BlueprintsV2.STRINGS.UI.ACTIONS.TOGGLETOOLTIPS
+msgctxt "BlueprintsV2.STRINGS.UI.ACTIONS.TOGGLETOOLTIPS"
+msgid "Toggle keybind tooltips"
+msgstr "Включить/выключить всплывающие подсказки назначения клавиш"
+
+#. BlueprintsV2.STRINGS.UI.ACTIONS.USE_TITLE
+msgctxt "BlueprintsV2.STRINGS.UI.ACTIONS.USE_TITLE"
+msgid "Использовать чертёж"
+msgstr "Использовать чертёж"
+
+#. BlueprintsV2.STRINGS.UI.BLUEPRINTS_ROOTFOLDER
+msgctxt "BlueprintsV2.STRINGS.UI.BLUEPRINTS_ROOTFOLDER"
+msgid "Main Folder"
+msgstr "Главная папка"
+
+#. BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.BLUEPRINTINFO.BUTTONS.APPLYBUTTON.TEXT
+msgctxt "BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.BLUEPRINTINFO.BUTTONS.APPLYBUTTON.TEXT"
+msgid "Save Desc. Changes"
+msgstr "Сохранит описание изменений"
+
+#. BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.BLUEPRINTINFO.BUTTONS.RESETBUTTON.TEXT
+msgctxt "BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.BLUEPRINTINFO.BUTTONS.RESETBUTTON.TEXT"
+msgid "Reset Desc. Changes"
+msgstr "Сбросить описания изменений"
+
+#. BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.BLUEPRINTINFO.DESCRIPTION.INPUT.TEXTAREA.PLACEHOLDER
+msgctxt "BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.BLUEPRINTINFO.DESCRIPTION.INPUT.TEXTAREA.PLACEHOLDER"
+msgid "Add description to blueprint"
+msgstr "Добавить описание к чертежу"
+
+#. BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.BLUEPRINTINFO.DESCRIPTION.LABEL
+msgctxt "BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.BLUEPRINTINFO.DESCRIPTION.LABEL"
+msgid "Description:"
+msgstr "Описание:"
+
+#. BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.BLUEPRINTINFO.STATS.BUILDINGCOUNT.DESCRIPTOR.LABEL
+msgctxt "BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.BLUEPRINTINFO.STATS.BUILDINGCOUNT.DESCRIPTOR.LABEL"
+msgid "Number of Buildings:"
+msgstr "Количество зданий:"
+
+#. BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.BLUEPRINTINFO.STATS.DIGCOUNT.DESCRIPTOR.LABEL
+msgctxt "BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.BLUEPRINTINFO.STATS.DIGCOUNT.DESCRIPTOR.LABEL"
+msgid "Number of non-solid tiles:"
+msgstr "Количество нетвёрдых клеток:"
+
+#. BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.BLUEPRINTINFO.STATS.DIMENSION.DESCRIPTOR.LABEL
+msgctxt "BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.BLUEPRINTINFO.STATS.DIMENSION.DESCRIPTOR.LABEL"
+msgid "Dimensions:"
+msgstr "Размеры:"
+
+#. BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.BLUEPRINTINFO.STATS.ICONCONTAINER.LABEL
+msgctxt "BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.BLUEPRINTINFO.STATS.ICONCONTAINER.LABEL"
+msgid "Blueprint Icon:"
+msgstr "Значок чертежа:"
+
+#. BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.BLUEPRINTINFO.STATS.LABEL
+msgctxt "BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.BLUEPRINTINFO.STATS.LABEL"
+msgid "Parameters:"
+msgstr "Параметры:"
+
+#. BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.BLUEPRINTINFO.STATS.LIQUIDCOUNT.DESCRIPTOR.LABEL
+msgctxt "BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.BLUEPRINTINFO.STATS.LIQUIDCOUNT.DESCRIPTOR.LABEL"
+msgid "Number of notes:"
+msgstr "Количество заметок:"
+
+#. BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.BUILDINGLIST.HEADER.LABEL
+msgctxt "BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.BUILDINGLIST.HEADER.LABEL"
+msgid "Building List:"
+msgstr "Список зданий:"
+
+#. BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.BUILDINGLIST.SCROLLAREA.CONTENT.BUILDINGENTRYPREFAB.DESCRIPTOR.LABEL
+msgctxt "BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.BUILDINGLIST.SCROLLAREA.CONTENT.BUILDINGENTRYPREFAB.DESCRIPTOR.LABEL"
+msgid "BuildingName"
+msgstr "Название здания"
+
+#. BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.BUILDINGLIST.SCROLLAREA.CONTENT.NOBUILDINGSINBLUEPRINT.LABEL
+msgctxt "BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.BUILDINGLIST.SCROLLAREA.CONTENT.NOBUILDINGSINBLUEPRINT.LABEL"
+msgid "Blueprint does not contain any buildings"
+msgstr "В чертеже отсутствуют какие-либо здания"
+
+#. BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.BUILDINGLIST.SEARCHBAR.INPUT.TEXTAREA.PLACEHOLDER
+msgctxt "BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.BUILDINGLIST.SEARCHBAR.INPUT.TEXTAREA.PLACEHOLDER"
+msgid "Enter text to filter buildings..."
+msgstr "Введите текст для фильтрации зданий..."
+
+#. BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.CLOSEBUTTON.TEXT
+msgctxt "BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.CLOSEBUTTON.TEXT"
+msgid "Закрыть"
+msgstr "Закрыть"
+
+#. BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.FILEHIERARCHY.FILTERS.DATESORT.TEXT
+msgctxt "BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.FILEHIERARCHY.FILTERS.DATESORT.TEXT"
+msgid "Sort by date modified"
+msgstr "Сортировать по дате изменения"
+
+#. BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.FILEHIERARCHY.FILTERS.NAMESORT.TEXT
+msgctxt "BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.FILEHIERARCHY.FILTERS.NAMESORT.TEXT"
+msgid "Sort by name"
+msgstr "Сортировать по имени"
+
+#. BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.FILEHIERARCHY.IMPORTBUTTON.TEXT
+msgctxt "BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.FILEHIERARCHY.IMPORTBUTTON.TEXT"
+msgid "Import new blueprint from clipboard"
+msgstr "Импортировать новый чертёж из буфера обмена"
+
+#. BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.FILEHIERARCHY.IMPORTBUTTON.TOOLTIP
+msgctxt "BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.FILEHIERARCHY.IMPORTBUTTON.TOOLTIP"
+msgid "Import a bluprint string you have stored in your clipboard"
+msgstr "Импортируйте строку чертежа, которая хранится в буфере обмена."
+
+#. BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.FILEHIERARCHY.SCROLLAREA.CONTENT.BLUEPRINTENTRY.TOOLTIP_DELETE
+msgctxt "BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.FILEHIERARCHY.SCROLLAREA.CONTENT.BLUEPRINTENTRY.TOOLTIP_DELETE"
+msgid "Удалить чертёж.\n"
+"Удаление последнего чертежа в подпапке также приведёт к удалению папки."
+msgstr "Удалить чертёж.\n"
+"Удаление последнего чертежа в подпапке также приведёт к удалению папки."
+
+#. BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.FILEHIERARCHY.SCROLLAREA.CONTENT.BLUEPRINTENTRY.TOOLTIP_EXPORT
+msgctxt "BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.FILEHIERARCHY.SCROLLAREA.CONTENT.BLUEPRINTENTRY.TOOLTIP_EXPORT"
+msgid "Export the blueprint as a shareable string to your clipboard."
+msgstr "Экспортируйте чертёж в виде строки, доступной для совместного использования, в буфер обмена."
+
+#. BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.FILEHIERARCHY.SCROLLAREA.CONTENT.BLUEPRINTENTRY.TOOLTIP_INFO
+msgctxt "BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.FILEHIERARCHY.SCROLLAREA.CONTENT.BLUEPRINTENTRY.TOOLTIP_INFO"
+msgid "Show more detailed info about the blueprint or add some notes to it"
+msgstr "Показать более детальную информацию о чертеже или добавить к нему заметки."
+
+#. BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.FILEHIERARCHY.SCROLLAREA.CONTENT.BLUEPRINTENTRY.TOOLTIP_MOVE
+msgctxt "BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.FILEHIERARCHY.SCROLLAREA.CONTENT.BLUEPRINTENTRY.TOOLTIP_MOVE"
+msgid "Переместить чертёж в другую папку.\n"
+"Создаст новую папку, если она не существует.\n"
+"Если оставить имя новой папки пустым, чертёж будет перемещён в основную папку."
+msgstr "Переместить чертёж в другую папку.\n"
+"Создаст новую папку, если она не существует.\n"
+"Если оставить имя новой папки пустым, чертёж будет перемещён в основную папку."
+
+#. BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.FILEHIERARCHY.SCROLLAREA.CONTENT.BLUEPRINTENTRY.TOOLTIP_RENAME
+msgctxt "BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.FILEHIERARCHY.SCROLLAREA.CONTENT.BLUEPRINTENTRY.TOOLTIP_RENAME"
+msgid "Переименовать чертёж"
+msgstr "Переименовать чертёж"
+
+#. BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.FILEHIERARCHY.SCROLLAREA.CONTENT.BLUEPRINTENTRY.TOOLTIP_RETAKE
+msgctxt "BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.FILEHIERARCHY.SCROLLAREA.CONTENT.BLUEPRINTENTRY.TOOLTIP_RETAKE"
+msgid "Re-Take the blueprint, replacing its content with a new selection of buildings."
+msgstr "Переделать чертёж, заменив его содержимое новым набором зданий."
+
+#. BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.FILEHIERARCHY.SCROLLAREA.CONTENT.FOLDERUP.LABEL
+msgctxt "BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.FILEHIERARCHY.SCROLLAREA.CONTENT.FOLDERUP.LABEL"
+msgid "Перейти к родительской папке"
+msgstr "Перейти к корневой папке"
+
+#. BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.FILEHIERARCHY.SCROLLAREA.CONTENT.NONEAVAILABLE.LABEL
+msgctxt "BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.FILEHIERARCHY.SCROLLAREA.CONTENT.NONEAVAILABLE.LABEL"
+msgid "Нет доступных чертежей"
+msgstr "Нет доступных чертежей"
+
+#. BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.FILEHIERARCHY.SEARCHBAR.CLEARTOOLTIP
+msgctxt "BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.FILEHIERARCHY.SEARCHBAR.CLEARTOOLTIP"
+msgid "Очистить строку поиска"
+msgstr "Очистить строку поиска"
+
+#. BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.FILEHIERARCHY.SEARCHBAR.INPUT.TEXTAREA.PLACEHOLDER
+msgctxt "BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.FILEHIERARCHY.SEARCHBAR.INPUT.TEXTAREA.PLACEHOLDER"
+msgid "Введите текст для фильтрации чертежей..."
+msgstr "Введите текст для фильтрации чертежей..."
+
+#. BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.FILEHIERARCHY.SEARCHBAR.INPUT.TEXTAREA.TEXT
+#, fuzzy
+#| msgid ""
+msgctxt "BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.FILEHIERARCHY.SEARCHBAR.INPUT.TEXTAREA.TEXT"
+msgid ""
+msgstr ""
+
+#. BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.FILEHIERARCHY.SEARCHBAR.OPENFOLDERTOOLTIP
+msgctxt "BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.FILEHIERARCHY.SEARCHBAR.OPENFOLDERTOOLTIP"
+msgid "Открыть папку, в которой хранятся чертежи."
+msgstr "Открыть папку, в которой хранятся чертежи."
+
+#. BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.MATERIALREPLACER.SCROLLAREA.CONTENT.ELEMENTSTATE.NOTENOUGH
+msgctxt "BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.MATERIALREPLACER.SCROLLAREA.CONTENT.ELEMENTSTATE.NOTENOUGH"
+msgid "На нынешнем астероиде этого материала недостаточно!\n"
+"В данный момент доступно: {0}\n"
+"Требуется при выборе: {1}"
+msgstr "На нынешнем астероиде этого материала недостаточно!\n"
+"В данный момент доступно: {0}\n"
+"Требуется при выборе: {1}"
+
+#. BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.MATERIALREPLACER.SCROLLAREA.CONTENT.ELEMENTSTATE.NOTFOUND
+msgctxt "BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.MATERIALREPLACER.SCROLLAREA.CONTENT.ELEMENTSTATE.NOTFOUND"
+msgid "Этот материал не был найден в текущей игре!"
+msgstr "Этот материал не был найден в текущей игре!"
+
+#. BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.MATERIALREPLACER.SCROLLAREA.CONTENT.NOREPLACEELEMENTS.LABEL
+msgctxt "BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.MATERIALREPLACER.SCROLLAREA.CONTENT.NOREPLACEELEMENTS.LABEL"
+msgid "Не найдено подходящих элементов"
+msgstr "Не найдено подходящих элементов"
+
+#. BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.MATERIALREPLACER.SEARCHBAR.CLEARTOOLTIP
+msgctxt "BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.MATERIALREPLACER.SEARCHBAR.CLEARTOOLTIP"
+msgid "Clear search bar"
+msgstr "Очистить строку поиска"
+
+#. BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.MATERIALREPLACER.SEARCHBAR.INPUT.TEXTAREA.PLACEHOLDER
+msgctxt "BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.MATERIALREPLACER.SEARCHBAR.INPUT.TEXTAREA.PLACEHOLDER"
+msgid "Enter text to filter elements..."
+msgstr "Введите текст для фильтрации элементов..."
+
+#. BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.MATERIALREPLACER.SEARCHBAR.INPUT.TEXTAREA.TEXT
+#, fuzzy
+#| msgid ""
+msgctxt "BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.MATERIALREPLACER.SEARCHBAR.INPUT.TEXTAREA.TEXT"
+msgid ""
+msgstr ""
+
+#. BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.MATERIALREPLACER.TOREPLACE.LABEL
+msgctxt "BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.MATERIALREPLACER.TOREPLACE.LABEL"
+msgid "Тип материала:"
+msgstr "Тип материала:"
+
+#. BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.MATERIALSWITCH.BUTTONS.CREATEMODIFIED.TOOLTIP
+msgctxt "BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.MATERIALSWITCH.BUTTONS.CREATEMODIFIED.TOOLTIP"
+msgid "Создать копию текущего чертежа с заменой всех локальных материалов."
+msgstr "Создать копию текущего чертежа с заменой всех локальных материалов."
+
+#. BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.MATERIALSWITCH.BUTTONS.PLACEBPBTN.TEXT
+msgctxt "BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.MATERIALSWITCH.BUTTONS.PLACEBPBTN.TEXT"
+msgid "Разместить чертёж"
+msgstr "Разместить чертёж"
+
+#. BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.MATERIALSWITCH.BUTTONS.RESETBUTTON.TEXT
+msgctxt "BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.MATERIALSWITCH.BUTTONS.RESETBUTTON.TEXT"
+msgid "Сбросить замены"
+msgstr "Сбросить замены"
+
+#. BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.MATERIALSWITCH.MATERIALSHEADER.LABEL
+msgctxt "BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.MATERIALSWITCH.MATERIALSHEADER.LABEL"
+msgid "Материалы в \"{0}\":"
+msgstr "Материалы в \"{0}\":"
+
+#. BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.MATERIALSWITCH.PERBUILDINGOVERRIDES.LABEL
+msgctxt "BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.MATERIALSWITCH.PERBUILDINGOVERRIDES.LABEL"
+msgid "Расширенное изменение материалов:"
+msgstr "Расширенное изменение материалов:"
+
+#. BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.MATERIALSWITCH.PERBUILDINGOVERRIDES.TOOLTIP
+msgctxt "BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.MATERIALSWITCH.PERBUILDINGOVERRIDES.TOOLTIP"
+msgid "Включение этой функции позволяет выбирать заменяющие материалы для каждого типа здания."
+msgstr "Включение этой функции позволяет выбирать заменяющие материалы для каждого типа здания."
+
+#. BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.MATERIALSWITCH.SCROLLAREA.CONTENT.NOELEMENTSINBLUEPRINT.LABEL
+msgctxt "BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.MATERIALSWITCH.SCROLLAREA.CONTENT.NOELEMENTSINBLUEPRINT.LABEL"
+msgid "Нет элементов в чертеже"
+msgstr "Нет элементов в чертеже"
+
+#. BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.MATERIALSWITCH.SCROLLAREA.CONTENT.PRESETENTRYPREFAB.LABEL
+msgctxt "BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.MATERIALSWITCH.SCROLLAREA.CONTENT.PRESETENTRYPREFAB.LABEL"
+msgid "{0} (как {1})"
+msgstr "{0} (как {1})"
+
+#. BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.MATERIALSWITCH.SCROLLAREA.CONTENT.PRESETENTRYPREFAB.LOCALLYREPLACE
+msgctxt "BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.MATERIALSWITCH.SCROLLAREA.CONTENT.PRESETENTRYPREFAB.LOCALLYREPLACE"
+msgid "Заменить локально: "
+msgstr "Заменить локально: "
+
+#. BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.MATERIALSWITCH.SCROLLAREA.CONTENT.PRESETENTRYPREFAB.MASSTEXT
+msgctxt "BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.MATERIALSWITCH.SCROLLAREA.CONTENT.PRESETENTRYPREFAB.MASSTEXT"
+msgid "Общая масса:"
+msgstr "Общая масса:"
+
+#. BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.MATERIALSWITCH.SCROLLAREA.CONTENT.PRESETENTRYPREFAB.NONE
+msgctxt "BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.MATERIALSWITCH.SCROLLAREA.CONTENT.PRESETENTRYPREFAB.NONE"
+msgid "Нет"
+msgstr "Нет"
+
+#. BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.MATERIALSWITCH.WARNING
+msgctxt "BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.MATERIALSWITCH.WARNING"
+msgid "Для некоторых материалов в чертеже требуется больше массы, чем доступно на текущем астероиде!"
+msgstr "Для некоторых материалов в чертеже требуется больше массы, чем доступно на текущем астероиде!"
+
+#. BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.MATERIALSWITCH.WARNINGSEVERE
+msgctxt "BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.MATERIALSWITCH.WARNINGSEVERE"
+msgid "Некоторые материалы в чертеже ещё не разблокированы!"
+msgstr "Некоторые материалы в чертеже ещё не разблокированы!"
+
+#. BlueprintsV2.STRINGS.UI.COLOR_LEGEND.BLUEPRINTS_COLOR_CAN_APPLY_SETTINGS
+msgctxt "BlueprintsV2.STRINGS.UI.COLOR_LEGEND.BLUEPRINTS_COLOR_CAN_APPLY_SETTINGS"
+msgid "Can apply stored blueprint settings"
+msgstr "Можно применять сохраненные настройки чертежа"
+
+#. BlueprintsV2.STRINGS.UI.COLOR_LEGEND.BLUEPRINTS_COLOR_INVALIDPLACEMENT
+msgctxt "BlueprintsV2.STRINGS.UI.COLOR_LEGEND.BLUEPRINTS_COLOR_INVALIDPLACEMENT"
+msgid "Invalid Building Placement"
+msgstr "Неправильное размещение здания"
+
+#. BlueprintsV2.STRINGS.UI.COLOR_LEGEND.BLUEPRINTS_COLOR_NOMATERIALS
+msgctxt "BlueprintsV2.STRINGS.UI.COLOR_LEGEND.BLUEPRINTS_COLOR_NOMATERIALS"
+msgid "Missing Construction Materials"
+msgstr "Недостаточно строительных материалов"
+
+#. BlueprintsV2.STRINGS.UI.COLOR_LEGEND.BLUEPRINTS_COLOR_NOTALLOWEDINWORLD
+msgctxt "BlueprintsV2.STRINGS.UI.COLOR_LEGEND.BLUEPRINTS_COLOR_NOTALLOWEDINWORLD"
+msgid "Not allowed in current asteroid"
+msgstr "Не допускается на текущем астероиде"
+
+#. BlueprintsV2.STRINGS.UI.COLOR_LEGEND.BLUEPRINTS_COLOR_NOTECH
+msgctxt "BlueprintsV2.STRINGS.UI.COLOR_LEGEND.BLUEPRINTS_COLOR_NOTECH"
+msgid "Building not researched"
+msgstr "Здание не исследовано"
+
+#. BlueprintsV2.STRINGS.UI.COLOR_LEGEND.BLUEPRINTS_COLOR_VALIDPLACEMENT
+msgctxt "BlueprintsV2.STRINGS.UI.COLOR_LEGEND.BLUEPRINTS_COLOR_VALIDPLACEMENT"
+msgid "Valid Building Placement"
+msgstr "Допустимое размещение здания"
+
+#. BlueprintsV2.STRINGS.UI.DIALOGUE.BASE64_EXPORTED.TEXT
+msgctxt "BlueprintsV2.STRINGS.UI.DIALOGUE.BASE64_EXPORTED.TEXT"
+msgid "The blueprint has been added to your clipboard."
+msgstr "Чертёж добавлен в буфер обмена"
+
+#. BlueprintsV2.STRINGS.UI.DIALOGUE.BASE64_EXPORTED.TITLE
+msgctxt "BlueprintsV2.STRINGS.UI.DIALOGUE.BASE64_EXPORTED.TITLE"
+msgid "Copied to Clipboard!"
+msgstr "Скопировано в буфер обмена!"
+
+#. BlueprintsV2.STRINGS.UI.DIALOGUE.BASE64_IMPORT_FAIL.TEXT
+msgctxt "BlueprintsV2.STRINGS.UI.DIALOGUE.BASE64_IMPORT_FAIL.TEXT"
+msgid "Unable to import a blueprint from the current clipboard contents."
+msgstr "Не удалось импортировать чертёж из содержимого текущего буфера обмена."
+
+#. BlueprintsV2.STRINGS.UI.DIALOGUE.BASE64_IMPORT_FAIL.TITLE
+msgctxt "BlueprintsV2.STRINGS.UI.DIALOGUE.BASE64_IMPORT_FAIL.TITLE"
+msgid "Import Failure!"
+msgstr "Ошибка импорта!"
+
+#. BlueprintsV2.STRINGS.UI.DIALOGUE.BASE64_IMPORT_SUCCESS.TEXT
+msgctxt "BlueprintsV2.STRINGS.UI.DIALOGUE.BASE64_IMPORT_SUCCESS.TEXT"
+msgid "The blueprint {0} has been imported successfully."
+msgstr "Чертёж {0} успешно импортирован."
+
+#. BlueprintsV2.STRINGS.UI.DIALOGUE.BASE64_IMPORT_SUCCESS.TITLE
+msgctxt "BlueprintsV2.STRINGS.UI.DIALOGUE.BASE64_IMPORT_SUCCESS.TITLE"
+msgid "Import Successful!"
+msgstr "Импорт прошёл успешно!"
+
+#. BlueprintsV2.STRINGS.UI.DIALOGUE.CONFIRMDELETE.TEXT
+msgctxt "BlueprintsV2.STRINGS.UI.DIALOGUE.CONFIRMDELETE.TEXT"
+msgid "Вы действительно хотите удалить чертёж {0}?"
+msgstr "Вы действительно хотите удалить чертёж {0}?"
+
+#. BlueprintsV2.STRINGS.UI.DIALOGUE.CONFIRMDELETE.TITLE
+msgctxt "BlueprintsV2.STRINGS.UI.DIALOGUE.CONFIRMDELETE.TITLE"
+msgid "Подтвердить удаление"
+msgstr "Подтвердить удаление"
+
+#. BlueprintsV2.STRINGS.UI.DIALOGUE.FOLDERBLUEPRINT_TITLE
+msgctxt "BlueprintsV2.STRINGS.UI.DIALOGUE.FOLDERBLUEPRINT_TITLE"
+msgid "НАЗНАЧИТЬ ПАПКУ"
+msgstr "НАЗНАЧИТЬ ПАПКУ"
+
+#. BlueprintsV2.STRINGS.UI.DIALOGUE.MOVETOFOLDER_TITLE
+msgctxt "BlueprintsV2.STRINGS.UI.DIALOGUE.MOVETOFOLDER_TITLE"
+msgid "ПЕРЕМЕСТИТЬ В ПАПКУ"
+msgstr "ПЕРЕМЕСТИТЬ В ПАПКУ"
+
+#. BlueprintsV2.STRINGS.UI.DIALOGUE.NAMEBLUEPRINT_TITLE
+msgctxt "BlueprintsV2.STRINGS.UI.DIALOGUE.NAMEBLUEPRINT_TITLE"
+msgid "НАЗВАТЬ ЧЕРТЁЖ"
+msgstr "НАЗВАТЬ ЧЕРТЁЖ"
+
+#. BlueprintsV2.STRINGS.UI.DIALOGUE.RENAMEBLUEPRINT_TITLE
+msgctxt "BlueprintsV2.STRINGS.UI.DIALOGUE.RENAMEBLUEPRINT_TITLE"
+msgid "ПЕРЕИМЕНОВАТЬ ЧЕРТЁЖ"
+msgstr "ПЕРЕИМЕНОВАТЬ ЧЕРТЁЖ"
+
+#. BlueprintsV2.STRINGS.UI.ICONSELECTOR.CLOSEBUTTON.TEXT
+msgctxt "BlueprintsV2.STRINGS.UI.ICONSELECTOR.CLOSEBUTTON.TEXT"
+msgid "Close"
+msgstr "Закрыть"
+
+#. BlueprintsV2.STRINGS.UI.ICONSELECTOR.ICONLIST.HEADER.LABEL
+msgctxt "BlueprintsV2.STRINGS.UI.ICONSELECTOR.ICONLIST.HEADER.LABEL"
+msgid "Icon List"
+msgstr "Список значков"
+
+#. BlueprintsV2.STRINGS.UI.ICONSELECTOR.ICONLIST.SCROLLAREA.CONTENT.ITEM.LABEL
+msgctxt "BlueprintsV2.STRINGS.UI.ICONSELECTOR.ICONLIST.SCROLLAREA.CONTENT.ITEM.LABEL"
+msgid "ico_spr"
+msgstr "ico_spr"
+
+#. BlueprintsV2.STRINGS.UI.ICONSELECTOR.ICONLIST.SEARCHBAR.INPUT.TEXTAREA.PLACEHOLDER
+msgctxt "BlueprintsV2.STRINGS.UI.ICONSELECTOR.ICONLIST.SEARCHBAR.INPUT.TEXTAREA.PLACEHOLDER"
+msgid "Enter text to filter icons..."
+msgstr "Введите текст для фильтрации значков..."
+
+#. BlueprintsV2.STRINGS.UI.NOTETOOLSTATECONTAINER.BUTTONS.ELEMENTTOGGLE.TEXT
+msgctxt "BlueprintsV2.STRINGS.UI.NOTETOOLSTATECONTAINER.BUTTONS.ELEMENTTOGGLE.TEXT"
+msgid "Element Notes"
+msgstr "Заметки к элементу"
+
+#. BlueprintsV2.STRINGS.UI.NOTETOOLSTATECONTAINER.BUTTONS.TEXTTOGGLE.TEXT
+msgctxt "BlueprintsV2.STRINGS.UI.NOTETOOLSTATECONTAINER.BUTTONS.TEXTTOGGLE.TEXT"
+msgid "Text Notes"
+msgstr "Текстовые заметки"
+
+#. BlueprintsV2.STRINGS.UI.NOTETOOLSTATECONTAINER.COLORPICKERLABEL
+msgctxt "BlueprintsV2.STRINGS.UI.NOTETOOLSTATECONTAINER.COLORPICKERLABEL"
+msgid "Note Icon Color:"
+msgstr "Цвет значка заметки:"
+
+#. BlueprintsV2.STRINGS.UI.NOTETOOLSTATECONTAINER.NOTETEXTINPUT.INPUT.TEXTAREA.PLACEHOLDER
+msgctxt "BlueprintsV2.STRINGS.UI.NOTETOOLSTATECONTAINER.NOTETEXTINPUT.INPUT.TEXTAREA.PLACEHOLDER"
+msgid "Add note text..."
+msgstr "Добавить текст заметки..."
+
+#. BlueprintsV2.STRINGS.UI.NOTETOOLSTATECONTAINER.NOTETEXTINPUT.LABEL
+msgctxt "BlueprintsV2.STRINGS.UI.NOTETOOLSTATECONTAINER.NOTETEXTINPUT.LABEL"
+msgid "Note Text:"
+msgstr "Текст заметки:"
+
+#. BlueprintsV2.STRINGS.UI.NOTETOOLSTATECONTAINER.NOTETITLEINPUT.INPUT.TEXTAREA.PLACEHOLDER
+msgctxt "BlueprintsV2.STRINGS.UI.NOTETOOLSTATECONTAINER.NOTETITLEINPUT.INPUT.TEXTAREA.PLACEHOLDER"
+msgid "Add note name..."
+msgstr "Добавить название заметки..."
+
+#. BlueprintsV2.STRINGS.UI.NOTETOOLSTATECONTAINER.NOTETITLEINPUT.LABEL
+msgctxt "BlueprintsV2.STRINGS.UI.NOTETOOLSTATECONTAINER.NOTETITLEINPUT.LABEL"
+msgid "Note Name:"
+msgstr "Название заметки:"
+
+#. BlueprintsV2.STRINGS.UI.NOTETOOLSTATECONTAINER.TITLE.SIDESCREENTEXT
+msgctxt "BlueprintsV2.STRINGS.UI.NOTETOOLSTATECONTAINER.TITLE.SIDESCREENTEXT"
+msgid "Textnote Edit Screen"
+msgstr "Экран редактирования текстовой заметки"
+
+#. BlueprintsV2.STRINGS.UI.NOTETOOLSTATECONTAINER.TITLE.TITLETEXT
+msgctxt "BlueprintsV2.STRINGS.UI.NOTETOOLSTATECONTAINER.TITLE.TITLETEXT"
+msgid "Note Creation Tool"
+msgstr "Инструмент для создания заметок"
+
+#. BlueprintsV2.STRINGS.UI.PRECONFIGURE_UNDERCONSTRUCTION.TITLE
+msgctxt "BlueprintsV2.STRINGS.UI.PRECONFIGURE_UNDERCONSTRUCTION.TITLE"
+msgid "Предварительная настройка параметров здания"
+msgstr "Предварительная настройка параметров здания"
+
+#. BlueprintsV2.STRINGS.UI.PRECONFIGURE_UNDERCONSTRUCTION.TOOLTIP
+msgctxt "BlueprintsV2.STRINGS.UI.PRECONFIGURE_UNDERCONSTRUCTION.TOOLTIP"
+msgid "Использовать передачу данных чертежа для предварительной конфигурации этого здания"
+msgstr "Использовать передачу данных чертежа для предварительной конфигурации этого здания"
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.CREATE_TOOL.ACTION_BACK
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.CREATE_TOOL.ACTION_BACK"
+msgid "НАЗАД"
+msgstr "НАЗАД"
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.CREATE_TOOL.ACTION_DRAG
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.CREATE_TOOL.ACTION_DRAG"
+msgid "ПЕРЕТАЩИТЬ"
+msgstr "ПЕРЕТАЩИТЬ"
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.CREATE_TOOL.CANCELLED
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.CREATE_TOOL.CANCELLED"
+msgid "Отменённый чертёж!"
+msgstr "Отменённый чертёж!"
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.CREATE_TOOL.CREATED
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.CREATE_TOOL.CREATED"
+msgid "Созданный чертёж!"
+msgstr "Созданный чертёж!"
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.CREATE_TOOL.EMPTY
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.CREATE_TOOL.EMPTY"
+msgid "Чертёж пуст!"
+msgstr "Чертёж пуст!"
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.CREATE_TOOL.NAME
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.CREATE_TOOL.NAME"
+msgid "Новый чертёж"
+msgstr "Новый чертёж"
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.CREATE_TOOL.RETAKING_TOOLTIP
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.CREATE_TOOL.RETAKING_TOOLTIP"
+msgid "Replacing contents of blueprint: {0}"
+msgstr "Замена содержимого чертежа: {0}"
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.CREATE_TOOL.TOOLTIP
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.CREATE_TOOL.TOOLTIP"
+msgid "Создать чертёж {0}"
+msgstr "Создать чертёж {0}"
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.CREATE_TOOL.TOOLTIP_TITLE
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.CREATE_TOOL.TOOLTIP_TITLE"
+msgid "ИНСТРУМЕНТ СОЗДАНИЯ ЧЕРТЕЖА"
+msgstr "ИНСТРУМЕНТ СОЗДАНИЯ ЧЕРТЕЖА"
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.CREATE_TOOL.TOOLTIP_TITLE_RETAKE
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.CREATE_TOOL.TOOLTIP_TITLE_RETAKE"
+msgid "RE-TAKE BLUEPRINT TOOL"
+msgstr "ИНСТРУМЕНТ ПЕРЕСОЗДАНИЯ ЧЕРТЕЖА"
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.FILTERLAYERS.ALL
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.FILTERLAYERS.ALL"
+msgid "Все"
+msgstr "Все"
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.FILTERLAYERS.AUTOSYNC
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.FILTERLAYERS.AUTOSYNC"
+msgid "Авто синхр."
+msgstr "Авто синхр."
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.FILTERLAYERS.AUTOSYNC_TOOLTIP
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.FILTERLAYERS.AUTOSYNC_TOOLTIP"
+msgid "Automatically synchronize the filters with the active overlay"
+msgstr "Автоматическая синхронизация фильтров с активной схемой."
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.FILTERLAYERS.BLUEPRINTV2_COLLECT_NATURAL_ELEMENTS.NAME
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.FILTERLAYERS.BLUEPRINTV2_COLLECT_NATURAL_ELEMENTS.NAME"
+msgid "Create Tile Notes"
+msgstr "Создать заметки к клетке"
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.FILTERLAYERS.BLUEPRINTV2_COLLECT_NATURAL_ELEMENTS.TOOLTIP
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.FILTERLAYERS.BLUEPRINTV2_COLLECT_NATURAL_ELEMENTS.TOOLTIP"
+msgid "Store the world element tiles of the chosen element states as Element Notes in the blueprint."
+msgstr "Сохранить клетки элементов мира для выбранных состояний элементов в качестве заметок об элементах в чертеже."
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.FILTERLAYERS.BLUEPRINTV2_COLLECT_NOTES.NAME
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.FILTERLAYERS.BLUEPRINTV2_COLLECT_NOTES.NAME"
+msgid "Blueprint Notes"
+msgstr "Заметки к чертежу"
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.FILTERLAYERS.BLUEPRINTV2_COLLECT_NOTES.TOOLTIP
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.FILTERLAYERS.BLUEPRINTV2_COLLECT_NOTES.TOOLTIP"
+msgid "Store notes from the blueprint note tool in the blueprint."
+msgstr "Сохранить заметки в чертеже из инструмента для создания заметок."
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.FILTERLAYERS.BLUEPRINTV2_FILTER_NOTES.NAME
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.FILTERLAYERS.BLUEPRINTV2_FILTER_NOTES.NAME"
+msgid "Blueprint Notes"
+msgstr "Заметки к чертежу"
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.FILTERLAYERS.BLUEPRINTV2_FILTER_NOTES.TOOLTIP
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.FILTERLAYERS.BLUEPRINTV2_FILTER_NOTES.TOOLTIP"
+msgid "Blueprint Notes only"
+msgstr "Только заметки к чертежу"
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.FILTERLAYERS.BLUEPRINTV2_PLANNINGTOOL_SHAPES.NAME
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.FILTERLAYERS.BLUEPRINTV2_PLANNINGTOOL_SHAPES.NAME"
+msgid "PlanningTool Shapes"
+msgstr "Формы инструментов планирования"
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.FILTERLAYERS.BLUEPRINTV2_PLANNINGTOOL_SHAPES.TOOLTIP
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.FILTERLAYERS.BLUEPRINTV2_PLANNINGTOOL_SHAPES.TOOLTIP"
+msgid "Store PlanningTool-Mod Shapes in the blueprint\n"
+"Only works when the PlanningTool mod is enabled."
+msgstr "Сохраняет формы инструмента планирования из мода PlanningTool в чертеже\n"
+"Работает только при включенном моде PlanningTool."
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.FILTERLAYERS.BLUEPRINTV2_PRESERVEAIRTILES.NAME
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.FILTERLAYERS.BLUEPRINTV2_PRESERVEAIRTILES.NAME"
+msgid "Воздушные карманы"
+msgstr "Воздушные карманы"
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.FILTERLAYERS.BLUEPRINTV2_PRESERVEAIRTILES.TOOLTIP
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.FILTERLAYERS.BLUEPRINTV2_PRESERVEAIRTILES.TOOLTIP"
+msgid "Команды для копания на клетках, которые не являются твёрдыми"
+msgstr "Команды для копания на клетках, которые не являются твёрдыми"
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.FILTERLAYERS.NONE
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.FILTERLAYERS.NONE"
+msgid "Ничего"
+msgstr "Ничего"
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.NOTE_TOOL.NAME
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.NOTE_TOOL.NAME"
+msgid "Create Notes"
+msgstr "Создать заметки"
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.NOTE_TOOL.TOOLTIP
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.NOTE_TOOL.TOOLTIP"
+msgid "Create Text- and ElementNotes in the world that can be stored in Blueprints."
+msgstr "Создать текстовые заметки и примечания к элементам в мире, которые можно хранить в чертежах."
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.NOTE_TOOL.TOOLTIP_TITLE
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.NOTE_TOOL.TOOLTIP_TITLE"
+msgid "NOTE TOOL"
+msgstr "ИНСТРУМЕНТ \"ЗАМЕТКИ\""
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.SNAPSHOT_TOOL.EMPTY
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.SNAPSHOT_TOOL.EMPTY"
+msgid "Снимок пуст!"
+msgstr "Снимок пуст!"
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.SNAPSHOT_TOOL.NAME
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.SNAPSHOT_TOOL.NAME"
+msgid "Сделать снимок"
+msgstr "Сделать снимок"
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.SNAPSHOT_TOOL.NEWSNAPSHOT
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.SNAPSHOT_TOOL.NEWSNAPSHOT"
+msgid "Нажмите {0}, чтобы сделать новый снимок."
+msgstr "Нажмите {0}, чтобы сделать новый снимок."
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.SNAPSHOT_TOOL.REUSELASTSNAPSHOT
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.SNAPSHOT_TOOL.REUSELASTSNAPSHOT"
+msgid "Нажмите {0}, чтобы повторно использовать последний сделанный снимок."
+msgstr "Нажмите {0}, чтобы повторно использовать последний сделанный снимок."
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.SNAPSHOT_TOOL.SELECTNEXT_SNAPSHOT
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.SNAPSHOT_TOOL.SELECTNEXT_SNAPSHOT"
+msgid "Next snapshot: {0}"
+msgstr "Следующий снимок: {0}"
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.SNAPSHOT_TOOL.SELECTPREV_SNAPSHOT
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.SNAPSHOT_TOOL.SELECTPREV_SNAPSHOT"
+msgid "Previous snapshot: {0}"
+msgstr "Предыдущий снимок: {0}"
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.SNAPSHOT_TOOL.TAKEN
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.SNAPSHOT_TOOL.TAKEN"
+msgid "Снимок сделан!"
+msgstr "Снимок сделан!"
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.SNAPSHOT_TOOL.TOOLTIP
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.SNAPSHOT_TOOL.TOOLTIP"
+msgid "Сделайте снимок {0} или повторно используйте последний снимок {1}\n"
+"\n"
+"Создайте чертёж и быстро разместите его в другом месте, не загромождая свою коллекцию чертежей!\n"
+"Снимки не сохраняются между играми или мирами."
+msgstr "Сделайте снимок {0} или повторно используйте последний снимок {1}\n"
+"\n"
+"Создайте чертёж и быстро разместите его в другом месте, не загромождая свою коллекцию чертежей!\n"
+"Снимки не сохраняются между играми или мирами."
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.SNAPSHOT_TOOL.TOOLTIP_TITLE
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.SNAPSHOT_TOOL.TOOLTIP_TITLE"
+msgid "ИНСТРУМЕНТ \"СНИМОК\""
+msgstr "ИНСТРУМЕНТ \"СНИМОК\""
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.ACTION_BACK
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.ACTION_BACK"
+msgid "ОТМЕНА"
+msgstr "ОТМЕНА"
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.ACTION_CHANGE_ANCHOR
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.ACTION_CHANGE_ANCHOR"
+msgid "Изменить точку привязки чертежа: {0}"
+msgstr "Изменить точку привязки чертежа: {0}"
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.ACTION_CLICK
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.ACTION_CLICK"
+msgid "РАЗМЕСТИТЬ"
+msgstr "РАЗМЕСТИТЬ"
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.ACTION_DRAG
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.ACTION_DRAG"
+msgid "ПЕРЕТАЩИТЬ"
+msgstr "ПЕРЕТАЩИТЬ"
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.ACTION_SELECT
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.ACTION_SELECT"
+msgid "Настроить выбранный чертёж: {0}"
+msgstr "Настроить выбранный чертёж: {0}"
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.ERRORMESSAGE
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.ERRORMESSAGE"
+msgid "Этот чертёж содержал {0} неправильно настроенных или отсутствующих объектов, которые были удалены!"
+msgstr "Этот чертёж содержал {0} неправильно настроенных или отсутствующих объектов, которые были удалены!"
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.FLIP
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.FLIP"
+msgid "Flip ({0}:{1}/{2}:{3})"
+msgstr "Перевернуть ({0}:{1}/{2}:{3})"
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.FORCEREBUILD
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.FORCEREBUILD"
+msgid "Принудительно перестроить существующие здания с использованием материалов в чертежах, если они отличаются:\n"
+"{0} (удерживайте {1}, чтобы включить)"
+msgstr "Принудительно перестроить существующие здания с использованием материалов в чертежах, если они отличаются:\n"
+"{0} (удерживайте {1}, чтобы включить)"
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.NAME
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.NAME"
+msgid "Использовать чертёж"
+msgstr "Использовать чертёж"
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.NOBLUEPRINTS
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.NOBLUEPRINTS"
+msgid "Чертежи не загружены!"
+msgstr "Чертежи не загружены!"
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.NONESELECTED
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.NONESELECTED"
+msgid "Чертёж не выбран!"
+msgstr "Чертёж не выбран!"
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.ORIENTATION_H
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.ORIENTATION_H"
+msgid "Horizontal"
+msgstr "Горизонтально"
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.ORIENTATION_V
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.ORIENTATION_V"
+msgid "Vertical"
+msgstr "Вертикально"
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.REBUILD_ACTIVE
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.REBUILD_ACTIVE"
+msgid "Включено"
+msgstr "Включено"
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.REBUILD_INACTIVE
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.REBUILD_INACTIVE"
+msgid "Выключено"
+msgstr "Выключено"
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.ROTATE
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.ROTATE"
+msgid "Rotate blueprint: {0}/{1}"
+msgstr "Вращать чертёж: {0}/{1}"
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.SELECTEDBLUEPRINT
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.SELECTEDBLUEPRINT"
+msgid "Selected blueprint: {0} ({1}/{2} in {3})"
+msgstr "Выбранный чертёж: {0} ({1}/{2} в {3})"
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.SELECTNEXT
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.SELECTNEXT"
+msgid "Next blueprint: {0}"
+msgstr "Следующий чертёж: {0}"
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.SELECTNEXTFOLDER
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.SELECTNEXTFOLDER"
+msgid "Next folder: {0}"
+msgstr "Следующая папка: {0}"
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.SELECTPREV
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.SELECTPREV"
+msgid "Previous blueprint: {0}"
+msgstr "Предыдущий чертёж: {0}"
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.SELECTPREVFOLDER
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.SELECTPREVFOLDER"
+msgid "Previous folder: {0}"
+msgstr "Предыдущая папка: {0}"
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.SETTINGS_APPLIED
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.SETTINGS_APPLIED"
+msgid "настройки применены!"
+msgstr "настройки применены!"
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.TOGGLE_SHOW_HOTKEYS
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.TOGGLE_SHOW_HOTKEYS"
+msgid "Toggle hotkey infos: {0}"
+msgstr "Переключить инфо о клавишах: {0}"
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.TOOLTIP
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.TOOLTIP"
+msgid "Использовать чертёж {0}"
+msgstr "Использовать чертёж {0}"
+
+#. BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.TOOLTIP_TITLE
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.TOOLTIP_TITLE"
+msgid "ИСПОЛЬЗОВАТЬ ИНСТРУМЕНТ \"ЧЕРТЁЖ\""
+msgstr "ИСПОЛЬЗОВАТЬ ИНСТРУМЕНТ \"ЧЕРТЁЖ\""
+
+#. BlueprintsV2.STRINGS.UI.USEBLUEPRINTSTATECONTAINER.FLIP_BLOCKED
+msgctxt "BlueprintsV2.STRINGS.UI.USEBLUEPRINTSTATECONTAINER.FLIP_BLOCKED"
+msgid "Cannot flip the current blueprint.\n"
+"This is prevented by the contained building: {0}"
+msgstr "Невозможно перевернуть текущий чертёж.\n"
+"Этому препятствует содержащееся в нём здание: {0}"
+
+#. BlueprintsV2.STRINGS.UI.USEBLUEPRINTSTATECONTAINER.INFOITEMSCONTAINER.APPLYSTOREDSETTINGS.LABEL
+msgctxt "BlueprintsV2.STRINGS.UI.USEBLUEPRINTSTATECONTAINER.INFOITEMSCONTAINER.APPLYSTOREDSETTINGS.LABEL"
+msgid "Apply stored building settings on place:"
+msgstr "Применить сохранённые настройки здания на месте:"
+
+#. BlueprintsV2.STRINGS.UI.USEBLUEPRINTSTATECONTAINER.INFOITEMSCONTAINER.FLIPACTIONS.FLIPH.LABEL
+msgctxt "BlueprintsV2.STRINGS.UI.USEBLUEPRINTSTATECONTAINER.INFOITEMSCONTAINER.FLIPACTIONS.FLIPH.LABEL"
+msgid "Flip Horizontal"
+msgstr "Перевернуть по горизонтали"
+
+#. BlueprintsV2.STRINGS.UI.USEBLUEPRINTSTATECONTAINER.INFOITEMSCONTAINER.FLIPACTIONS.FLIPV.LABEL
+msgctxt "BlueprintsV2.STRINGS.UI.USEBLUEPRINTSTATECONTAINER.INFOITEMSCONTAINER.FLIPACTIONS.FLIPV.LABEL"
+msgid "Flip Vertical"
+msgstr "Перевернуть по вертикали"
+
+#. BlueprintsV2.STRINGS.UI.USEBLUEPRINTSTATECONTAINER.INFOITEMSCONTAINER.FOLDERINFO.LABEL
+msgctxt "BlueprintsV2.STRINGS.UI.USEBLUEPRINTSTATECONTAINER.INFOITEMSCONTAINER.FOLDERINFO.LABEL"
+msgid "Folder: {0}, Position: {1}/{2}"
+msgstr "Папка: {0}, Страница: {1}/{2}"
+
+#. BlueprintsV2.STRINGS.UI.USEBLUEPRINTSTATECONTAINER.INFOITEMSCONTAINER.FOLDERINFO.LABEL_SNAPSHOT
+msgctxt "BlueprintsV2.STRINGS.UI.USEBLUEPRINTSTATECONTAINER.INFOITEMSCONTAINER.FOLDERINFO.LABEL_SNAPSHOT"
+msgid "Current Snapshot: {0}/{1}"
+msgstr "Текущий снимок: {0}/{1}"
+
+#. BlueprintsV2.STRINGS.UI.USEBLUEPRINTSTATECONTAINER.INFOITEMSCONTAINER.FORCEREBUILD.LABEL
+msgctxt "BlueprintsV2.STRINGS.UI.USEBLUEPRINTSTATECONTAINER.INFOITEMSCONTAINER.FORCEREBUILD.LABEL"
+msgid "Rebuild existing with mismatched material:"
+msgstr "Перестроить существующее здание, используя несоответствующий материал:"
+
+#. BlueprintsV2.STRINGS.UI.USEBLUEPRINTSTATECONTAINER.INFOITEMSCONTAINER.MATERIALOVERRIDES.BUTTON.LABEL
+msgctxt "BlueprintsV2.STRINGS.UI.USEBLUEPRINTSTATECONTAINER.INFOITEMSCONTAINER.MATERIALOVERRIDES.BUTTON.LABEL"
+msgid "Change Material Overrides"
+msgstr "Изменить переопределения материалов"
+
+#. BlueprintsV2.STRINGS.UI.USEBLUEPRINTSTATECONTAINER.INFOITEMSCONTAINER.MATERIALREPLACEMENT.LABEL
+msgctxt "BlueprintsV2.STRINGS.UI.USEBLUEPRINTSTATECONTAINER.INFOITEMSCONTAINER.MATERIALREPLACEMENT.LABEL"
+msgid "Material Overrides in Snapshots:"
+msgstr "Замена материалов в снимках:"
+
+#. BlueprintsV2.STRINGS.UI.USEBLUEPRINTSTATECONTAINER.INFOITEMSCONTAINER.MATERIALREPLACEMENT.TOOLTIP
+msgctxt "BlueprintsV2.STRINGS.UI.USEBLUEPRINTSTATECONTAINER.INFOITEMSCONTAINER.MATERIALREPLACEMENT.TOOLTIP"
+msgid "Enable material overrides in snapshots."
+msgstr "Включить замену материалов в снимках."
+
+#. BlueprintsV2.STRINGS.UI.USEBLUEPRINTSTATECONTAINER.INFOITEMSCONTAINER.ROTATEACTIONS.ROTATEL.LABEL
+msgctxt "BlueprintsV2.STRINGS.UI.USEBLUEPRINTSTATECONTAINER.INFOITEMSCONTAINER.ROTATEACTIONS.ROTATEL.LABEL"
+msgid "Rotate Left"
+msgstr "Вращать влево"
+
+#. BlueprintsV2.STRINGS.UI.USEBLUEPRINTSTATECONTAINER.INFOITEMSCONTAINER.ROTATEACTIONS.ROTATER.LABEL
+msgctxt "BlueprintsV2.STRINGS.UI.USEBLUEPRINTSTATECONTAINER.INFOITEMSCONTAINER.ROTATEACTIONS.ROTATER.LABEL"
+msgid "Rotate Right"
+msgstr "Вращать вправо"
+
+#. BlueprintsV2.STRINGS.UI.USEBLUEPRINTSTATECONTAINER.ROTATION_BLOCKED
+msgctxt "BlueprintsV2.STRINGS.UI.USEBLUEPRINTSTATECONTAINER.ROTATION_BLOCKED"
+msgid "Cannot rotate the current blueprint.\n"
+"This is prevented by the contained building: {0}"
+msgstr "Невозможно вращать текущий чертёж.\n"
+"Этому препятствует содержащееся в нём здание: {0}"
+
+#. BlueprintsV2.STRINGS.UI.USEBLUEPRINTSTATECONTAINER.TITLE.TITLETEXT
+msgctxt "BlueprintsV2.STRINGS.UI.USEBLUEPRINTSTATECONTAINER.TITLE.TITLETEXT"
+msgid "Current Blueprint State"
+msgstr "Текущее состояние чертежа"
+

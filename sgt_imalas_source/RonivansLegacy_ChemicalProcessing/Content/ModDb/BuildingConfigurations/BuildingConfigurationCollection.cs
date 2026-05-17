@@ -1,0 +1,55 @@
+﻿using Klei;
+using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using UtilLibs;
+
+namespace RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations
+{
+    /// <summary>
+    /// serializable
+    /// </summary>
+    class BuildingConfigurationCollection
+	{
+		static readonly string ConfigFileLocation = FileSystem.Normalize(Path.Combine(KMod.Manager.GetDirectory(), "config", "RonivansLegacy_ChemicalProcessing", "RonivanAIO_BuildingConfig.json"));
+		static readonly string OldConfigFileLocation = FileSystem.Normalize(Path.Combine(KMod.Manager.GetDirectory(), "config", "RonivansAIO_BuildingConfig.json"));
+		public Dictionary<string, BuildingConfigurationEntry> BuildingConfigurations = new ();
+
+		static void MigrateOldFile()
+		{
+			if(File.Exists(OldConfigFileLocation) && !File.Exists(ConfigFileLocation))
+			{
+				var directory = Path.GetDirectoryName(ConfigFileLocation);
+				if(!Directory.Exists(directory))
+					Directory.CreateDirectory(directory);
+
+				File.Move(OldConfigFileLocation, ConfigFileLocation);
+			};
+		}
+		internal static BuildingConfigurationCollection LoadFromFile()
+		{
+			MigrateOldFile();
+			var file = new FileInfo(ConfigFileLocation);
+
+			SgtLogger.l("Loading Building Configuration from " + file.FullName);
+			if (file.Exists && IO_Utils.ReadFromFile<BuildingConfigurationCollection>(file, out var outlines, converterSettings: new JsonSerializerSettings() { TypeNameHandling = TypeNameHandling.Auto }))
+			{
+				SgtLogger.l("loaded building config file with " + outlines.BuildingConfigurations.Count + " entries");
+				return outlines;
+			}
+			else
+			{
+				return new();
+			}
+		}
+
+		internal void WriteToFile()
+		{
+			IO_Utils.WriteToFile(this, ConfigFileLocation, new JsonSerializerSettings() { TypeNameHandling = TypeNameHandling.Auto });
+		}
+	}
+}

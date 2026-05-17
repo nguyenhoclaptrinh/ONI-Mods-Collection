@@ -1,0 +1,3 @@
+<Project>
+  <!-- Ngăn parent Directory.Build.props được áp dụng, tránh lỗi missing reference -->
+</Project>

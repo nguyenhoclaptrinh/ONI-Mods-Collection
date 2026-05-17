@@ -1,0 +1,3 @@
+title: "Liquid Bottler (Piped)"
+description: "Patches the vanilla Liquid Bottler to accept liquid from pipes and auto-drop bottles when full."
+staticID: "Hilliurn.mod.oni.Auto_Liquid_Bottler"

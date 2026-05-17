@@ -1,0 +1,26 @@
+﻿Originally made by Emphasia [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1820638089&searchtext=Liquid+]
+
+this especific entry only changes the default Auto-Drop from Disabled to Enabled
+
+[h1][b]A piped LiquidBottler.[/b][/h1]
+uses CanisterFiller's animation.
+[h1]description:[/h1]
+[list]
+    [*]Allow Duplicants to fetch bottled liquids from pipe for delivery to buildings (like Pitcher-Pump).
+    [*]research [b]Improved-Plumbing[/b] must be finished to unlock this building.
+    [*]Optional [b]Auto-Drop when Full[/b] (and then continue filling as long as piped).
+    [*][b]won't[/b] produce polluted-oxygen when connected to polluted-water (like Liquid-Reservoir).
+[/list]
+
+[h1]bug report or suggestion:[/h1]
+For bug reporting or suggestions, please visit and create an issue in [url=https://github.com/Emphasia/ONI-mod/issues?utf8=%E2%9C%93&q=is%3Aissue+sort%3Aupdated-desc]repository on GitHub[/url].
+
+
+[h1][b]一个液体装瓶器。[/b][/h1]
+[h1]简介：[/h1]
+[list]
+    [*]使得复制人可以从此处获取瓶装水以供应其他建筑（≈手压泵）
+    [*]必须完成研究[b]改良水管[/b]来解锁此建筑
+    [*]可选[b]瓶满自动掉出[/b]（只要有供水就持续装瓶）
+    [*]供水为污染水时[b]不会[/b]释放污染氧（≈储液库，但瓶装污染水离开建筑后不受控制）
+[/list]

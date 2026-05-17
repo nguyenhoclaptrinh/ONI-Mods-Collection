@@ -1,0 +1,343 @@
+﻿using HarmonyLib;
+using RonivansLegacy_ChemicalProcessing;
+using RonivansLegacy_ChemicalProcessing.Content.ModDb;
+using RonivansLegacy_ChemicalProcessing.Content.Scripts;
+using RonivansLegacy_ChemicalProcessing.Content.Scripts.ComplexFabricatorsRandom;
+using RonivansLegacy_ChemicalProcessing.Content.Scripts.CustomComplexFabricators;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using TUNING;
+using UnityEngine;
+using UtilLibs;
+using static RonivansLegacy_ChemicalProcessing.STRINGS;
+using static RonivansLegacy_ChemicalProcessing.STRINGS.UI.CHEMICAL_COMPLEXFABRICATOR_STRINGS;
+
+
+namespace Dupes_Industrial_Overhaul.Chemical_Processing.Buildings
+{
+	//====[ CHEMICAL: SELECTIVE ARC-FURNACE CONFIG ]=========================================================================
+	public class Chemical_SelectiveArcFurnaceConfig : IBuildingConfig
+	{
+		//--[ Base Information ]---------------------------------------------------------------------------------------------
+		public static string ID = "Chemical_SelectiveArcFurnace";
+
+		//--[ Building Definitions ]-----------------------------------------------------------------------------------------
+		public override BuildingDef CreateBuildingDef()
+		{
+			EffectorValues tier = NOISE_POLLUTION.NOISY.TIER5;
+			BuildingDef buildingDef = BuildingTemplates.CreateBuildingDef(ID, 4, 3, "arc_smelter_kanim", 100, 30f, [600, 200], [GameTags.Metal.ToString(), GameTags.Insulator.ToString()], 800f, BuildLocationRule.OnFloor, TUNING.BUILDINGS.DECOR.PENALTY.TIER3, tier);
+			buildingDef.Overheatable = false;
+			buildingDef.RequiresPowerInput = true;
+			buildingDef.EnergyConsumptionWhenActive = 1200f;
+			buildingDef.ExhaustKilowattsWhenActive = 24f; //total of 32kw, original
+			buildingDef.SelfHeatKilowattsWhenActive = 8f;
+
+			//buildingDef.ExhaustKilowattsWhenActive = 3f; //heat moved to individual recipes
+			//buildingDef.SelfHeatKilowattsWhenActive = 1f;
+
+			buildingDef.UtilityInputOffset = new CellOffset(0, 1);
+			buildingDef.UtilityOutputOffset = new CellOffset(0, 0);
+			buildingDef.InputConduitType = ConduitType.Liquid;
+			buildingDef.OutputConduitType = ConduitType.Liquid;
+
+			buildingDef.ViewMode = OverlayModes.LiquidConduits.ID;
+			buildingDef.AudioCategory = "Metal";
+			buildingDef.PermittedRotations = PermittedRotations.FlipH;
+			SoundUtils.CopySoundsToAnim("arc_smelter_kanim", "suit_maker_kanim");
+			buildingDef.LogicOutputPorts = [.. ComplexFabricatorActiveLogicOutput.CreateSingleOutputPortList(new CellOffset(0, 2)),
+			LogicPorts.Port.OutputPort(ContinuousLiquidCooledFabricatorAddon.PORT_ID, new(1,0),
+				UI.LOGIC_PORTS.COOLANT_BATTERY_THRESHOLD.LOGIC_PORT,
+				UI.LOGIC_PORTS.COOLANT_BATTERY_THRESHOLD.LOGIC_PORT_ACTIVE,
+				UI.LOGIC_PORTS.COOLANT_BATTERY_THRESHOLD.LOGIC_PORT_INACTIVE)
+			];
+
+			return buildingDef;
+		}
+
+		//--[ Building Operation Definitions ]--------------------------------------------------------------------------------
+		public override void ConfigureBuildingTemplate(GameObject go, Tag prefab_tag)
+		{
+			go.AddOrGet<DropAllWorkable>();
+			go.AddOrGet<BuildingComplete>().isManuallyOperated = true;
+			CustomComplexFabricatorWorkableBase workable = go.AddOrGet<CustomComplexFabricatorWorkableBase>();
+			ComplexFabricatorRandomOutput complexFabricator = go.AddOrGet<ComplexFabricatorRandomOutput>();
+			complexFabricator.sideScreenStyle = ComplexFabricatorSideScreen.StyleSetting.ListQueueHybrid;
+			complexFabricator.heatedTemperature = 320.15f;
+			complexFabricator.duplicantOperated = true;
+			go.AddOrGet<FabricatorIngredientStatusManager>();
+
+			go.AddOrGet<CopyBuildingSettings>();
+			BuildingTemplates.CreateComplexFabricatorStorage(go, complexFabricator);
+			workable.overrideAnims = [Assets.GetAnim("anim_interacts_metalrefinery_kanim")];
+
+			complexFabricator.inStorage.SetDefaultStoredItemModifiers(Storage.StandardInsulatedStorage);
+			complexFabricator.buildStorage.SetDefaultStoredItemModifiers(Storage.StandardInsulatedStorage);
+			complexFabricator.outStorage.SetDefaultStoredItemModifiers(Storage.StandardInsulatedStorage);
+
+			//var coolerBuilding = go.AddOrGet<EnvironmentCooledFabricatorAddon>();
+			//coolerBuilding.thermalFudge = 1f / Config.Instance.ChemProc_ArcDivider;
+
+			var coolerBuilding = go.AddOrGet<ContinuousLiquidCooledFabricatorAddon>();
+			coolerBuilding.thermalFudge = Config.Instance.ChemProc_ArcFudge;
+			//coolerBuilding.thermalFudge = 1f / Config.Instance.ChemProc_ArcDivider;
+			ConfigureRecipes(go);
+			Prioritizable.AddRef(go);
+		}
+
+		//====[ CHEMICAL: SELECTIVE ARC-FURNACE RECIPES ]========================================================================
+		private static void ConfigureRecipes(GameObject go)
+		{
+
+			int index = 0;
+
+			//---- [ Brass ] ----------------------------------------------------------------------------------------------------
+			// Ingredient: Copper    - 70kg
+			//             Zinc      - 30kg
+			// Result: Brass         - 100kg
+			//-------------------------------------------------------------------------------------------------------------------
+			RecipeBuilder.Create(ID, 40)
+				.Input(SimHashes.Copper, 70)
+				.Input([ModElements.Zinc_Solid.Tag, "Beached_Zinc"], 30)
+				.Output(ModElements.Brass_Solid, 100, ComplexRecipe.RecipeElement.TemperatureOperation.Heated)
+				.NameDisplay(ComplexRecipe.RecipeNameDisplay.Result)
+				.Description(ARCFURNACE_SMELT_2_1, 2, 1)
+				.SortOrder(index++)
+				.Build();
+
+			//---- [ Phosphor Bronze ] --------------------------------------------------------------------------------------------
+			// Ingredient: Copper      - 80kg
+			//             Lead        - 15kg
+			//             Phosphorus  - 5kg
+			// Result: Phosphor Bronze - 100kg
+			//---------------------------------------------------------------------------------------------------------------------
+			RecipeBuilder.Create(ID, 40)
+				.Input(SimHashes.Copper, 80)
+				.Input(SimHashes.Lead, 15)
+				.Input(SimHashes.Phosphorus, 5)
+				.Output(ModElements.PhosphorBronze, 100, ComplexRecipe.RecipeElement.TemperatureOperation.Heated)
+				.NameDisplay(ComplexRecipe.RecipeNameDisplay.Result)
+				.Description(ARCFURNACE_SMELT_3_1, 3, 1)
+				.SortOrder(index++)
+				.Build();
+
+
+			//---- [ Ferrochrome #1] --------------------------------------------------------------------------------------------
+			// Ingredient: Chromite   - 100kg
+			// Result:     Ferrochrome   - 100kg
+			// ImpurityRemoval:  Refined Carbon->Slag - 10kg
+			//-------------------------------------------------------------------------------------------------------------------------
+			RecipeBuilder.Create(ID, 50)
+				.Input(ModElements.ChromiteOre_Solid, 100)
+				.Input(SimHashes.RefinedCarbon, 20)
+				.Output(ModElements.FerroChrome_Solid, 100, ComplexRecipe.RecipeElement.TemperatureOperation.Heated)
+				.Output(ModElements.Slag_Solid, 20, ComplexRecipe.RecipeElement.TemperatureOperation.Heated)
+				.Description(ARCFURNACE_SMELT_2_1, 2, 1)
+				.NameDisplay(ComplexRecipe.RecipeNameDisplay.ResultWithIngredient)
+				.SortOrder(index++)
+				.Build();
+
+			//---- [ Ferrochrome #1] --------------------------------------------------------------------------------------------
+			// Ingredient: Chromium & iron at established rates
+			// Result:     Ferrochrome   - 100kg
+			//-------------------------------------------------------------------------------------------------------------------------
+			RecipeBuilder.Create(ID, 50)
+				.Input(ModElements.Chromium_Solid, 68)
+				.Input(SimHashes.Iron, 32)
+				.Output(ModElements.FerroChrome_Solid, 100, ComplexRecipe.RecipeElement.TemperatureOperation.Heated)
+				.Description(ARCFURNACE_SMELT_2_1, 2, 1)
+				.NameDisplay(ComplexRecipe.RecipeNameDisplay.ResultWithIngredient)
+				.SortOrder(index++)
+				.Build();
+
+			//---- [ Invar ] --------------------------------------------------------------------------------------------
+			// 36% Nickel, 64% Iron
+			// Ingredient: Iron          - 59kg
+			//             Nickel        - 33kg
+			//             Borax         - 8kg
+			// Result:     Invar       - 100kg             
+			//-------------------------------------------------------------------------------------------------------------------------
+			RecipeBuilder.Create(ID, 50)
+				.Input(SimHashes.Iron, 59)
+				.Input(SimHashes.Nickel, 33)
+				.Input(ModElements.Borax_Solid, 8)
+				.Output(ModElements.Invar_Solid, 100, ComplexRecipe.RecipeElement.TemperatureOperation.Heated)
+				.Description(ARCFURNACE_SMELT_3_1, 3, 1)
+				.NameDisplay(ComplexRecipe.RecipeNameDisplay.Result)
+				.SortOrder(index++)
+				.Build();
+			//---- [ Permendur ] --------------------------------------------------------------------------------------------
+			// Ingredient: Iron          - 46kg
+			//             Cobalt        - 46kg
+			//             Borax         - 8kg
+			// Result:     Permendur     - 100kg             
+			//-------------------------------------------------------------------------------------------------------------------------
+
+			RecipeBuilder.Create(ID, 50)
+				.Input(SimHashes.Iron, 46)
+				.Input(SimHashes.Cobalt, 46)
+				.Input(ModElements.Borax_Solid, 8)
+				.Output(ModElements.Permendur_Solid, 100, ComplexRecipe.RecipeElement.TemperatureOperation.Heated)
+				.Description(ARCFURNACE_SMELT_3_1, 3, 1)
+				.NameDisplay(ComplexRecipe.RecipeNameDisplay.Result)
+				.SortOrder(index++)
+				.Build();
+
+
+			//---- [ Steel #1 ] -----------------------------------------------------------------------------------------------------
+			// Ingredient: Iron             - 70kg
+			//             Refined Coal     - 20kg
+			//             Lime             - 10kg
+			// Result:     Steel            - 100kg  
+			//-----------------------------------------------------------------------------------------------------------------------
+			RecipeBuilder.Create(ID, 50)
+				.Input(SimHashes.Iron, 70)
+				.Input(SimHashes.RefinedCarbon, 20)
+				.Input(SimHashes.Lime, 10)
+				.Output(SimHashes.Steel, 100, ComplexRecipe.RecipeElement.TemperatureOperation.Heated)
+				.NameDisplay(ComplexRecipe.RecipeNameDisplay.Result)
+				.Description(ARCFURNACE_STEEL_1, 3, 1)
+				.SortOrder(index++)
+				.Build();
+			//---- [ Steel #2 ] --------------------------------------------------------------------------------------------------------
+			// Ingredient: Iron             - 70kg
+			//             Refined Coal     - 20kg
+			//             Borax            - 5kg
+			//             Lime             - 5kg
+			// Result:     Steel            - 100kg  
+			//---------------------------------------------------------------------------------------------------------------------------
+			RecipeBuilder.Create(ID, 50)
+				.Input(SimHashes.Iron, 70)
+				.Input(SimHashes.RefinedCarbon, 20)
+				.Input(SimHashes.Lime, 5)
+				.Input(ModElements.Borax_Solid, 5)
+				.Output(SimHashes.Steel, 100, ComplexRecipe.RecipeElement.TemperatureOperation.Heated)
+				.NameDisplay(ComplexRecipe.RecipeNameDisplay.Result)
+				.Description(ARCFURNACE_STEEL_2, 4, 1)
+				.SortOrder(index++)
+				.Build();
+
+			//---- [ Stainless Steel #1 ] --------------------------------------------------------------------------------------------------------
+			// Ingredient: Iron             - 55kg
+			//             Ferrochrome      - 25kg == 17% chrome
+			//             Refined Coal     - 10kg
+			//             Borax/Lime       - 10kg
+			// Result:     Stainless Steel  - 100kg  
+			//---------------------------------------------------------------------------------------------------------------------------
+			RecipeBuilder.Create(ID, 50)
+				.Input(SimHashes.Iron, 55)
+				.Input(ModElements.FerroChrome_Solid, 25)
+				.Input(SimHashes.RefinedCarbon, 10)
+				.Input([SimHashes.Lime, ModElements.Borax_Solid], 10, SimHashes.Lime.CreateTag())
+				.Output(ModElements.StainlessSteel_Solid, 100, ComplexRecipe.RecipeElement.TemperatureOperation.Heated)
+				.NameDisplay(ComplexRecipe.RecipeNameDisplay.Result)
+				.Description(ARCFURNACE_STEEL_2, 4, 1)
+				.SortOrder(index++)
+				.Build();
+
+			//---- [ Stainless Steel #2 ] --------------------------------------------------------------------------------------------------------
+			// Ingredient: Iron             - 45kg
+			//             Ferrochrome      - 25kg == 17% chrome
+			//			   Nickel           - 10kg
+			//             Refined Coal     - 10kg
+			//             Borax/Lime       - 10kg
+			// Result:     Stainless Steel  - 100kg  
+			//---------------------------------------------------------------------------------------------------------------------------
+			RecipeBuilder.Create(ID, 50)
+				.Input(SimHashes.Nickel, 10)
+				.Input(SimHashes.Iron, 45)
+				.Input(ModElements.FerroChrome_Solid, 25)
+				.Input(SimHashes.RefinedCarbon, 10)
+				.Input([SimHashes.Lime, ModElements.Borax_Solid], 10, SimHashes.Lime.CreateTag())
+				.Output(ModElements.StainlessSteel_Solid, 100, ComplexRecipe.RecipeElement.TemperatureOperation.Heated)
+				.NameDisplay(ComplexRecipe.RecipeNameDisplay.ResultWithIngredient)
+				.Description(ARCFURNACE_STEEL_2, 4, 1)
+				.SortOrder(index++)
+				.Build();
+
+			//---- [ Thermium Seperation ] --------------------------------------------------------------------------------------------
+			// Ingredient: Thermium      - 100kg
+			// Result:     Niobium       - 100kg             
+			//-------------------------------------------------------------------------------------------------------------------------
+			RecipeBuilder.Create(ID, 50)
+				.Input(SimHashes.TempConductorSolid, 100)
+				.Output(SimHashes.Niobium, 100)
+				.Description1I1O(ARCFURNACE_NIOBIUM)
+				.NameDisplay(ComplexRecipe.RecipeNameDisplay.IngredientToResult)
+				.SortOrder(index++)
+				.Build();
+
+
+			//---- [ Low-Grade Metallic Sand ] --------------------------------------------------------------------------------------------
+			// Ingredient: Low-Grade Metallic Sand    - 100kg
+			//             Borax                      - 10kg
+			// Random Results: Copper, Zinc, Silver, Lead
+			// Assured Result: Slag - 20kg, 90kg randoms
+			//------------------------------------------------------------------------------------------------------------------------------
+			RecipeBuilder.Create(ID, 30)
+				.Input(ModElements.LowGradeSand_Solid, 100)
+				.Input(ModElements.Borax_Solid, 10)
+				.Output(ModElements.Slag_Solid, 20, ComplexRecipe.RecipeElement.TemperatureOperation.Heated)
+				.DescriptionFunc(RandomRecipeProducts.GetArcFurnaceRandomResultString)
+				.NameDisplay(ComplexRecipe.RecipeNameDisplay.Ingredient)
+				.SortOrder(index++)
+				.Build();
+
+			//---- [ Base-Grade Metallic Sand ] ---------------------------------------------------------------------------------------------
+			// Ingredient: Base-Grade Metallic Sand    - 100kg
+			//             Borax                       - 10kg
+			// Random Results: Iron, Aluminum, Gold, Tungsten
+			// Assured Result: Slag - 20kg, 90kg randoms
+			//-------------------------------------------------------------------------------------------------------------------------------
+			RecipeBuilder.Create(ID, 30)
+				.Input(ModElements.BaseGradeSand_Solid, 100)
+				.Input(ModElements.Borax_Solid, 10)
+				.Output(ModElements.Slag_Solid, 20, ComplexRecipe.RecipeElement.TemperatureOperation.Heated)
+				.DescriptionFunc(RandomRecipeProducts.GetArcFurnaceRandomResultString)
+				.NameDisplay(ComplexRecipe.RecipeNameDisplay.Ingredient)
+				.SortOrder(index++)
+				.Build();
+
+			//---- [ High-Grade Metallic Sand ] -------------------------------------------------------------------------------
+			// Ingredient: High-Grade Metallic Sand    - 100kg
+			//             Borax                       - 10kg
+			//  Vanilla :  Lime                        - 10kg
+			//or DLC1   :  Graphite					   - 10kg
+			// Random Results: Tungsten, Fullerene, Niobium
+			// Assured Result: Slag - 30kg
+			//-----------------------------------------------------------------------------------------------------------------------------------
+			RecipeBuilder.Create(ID, 30)
+				.Input(ModElements.HighGradeSand_Solid, 100)
+				.Input(ModElements.Borax_Solid, 10)
+				.InputDlcDependent(SimHashes.Fullerene, SimHashes.Graphite, 10)
+				.Output(ModElements.Slag_Solid, 30, ComplexRecipe.RecipeElement.TemperatureOperation.Heated)
+				.DescriptionFunc(RandomRecipeProducts.GetArcFurnaceRandomResultString)
+				.NameDisplay(ComplexRecipe.RecipeNameDisplay.Ingredient)
+				.SortOrder(index++)
+				.Build();
+		}
+
+		public override void DoPostConfigureComplete(GameObject go)
+		{
+			go.AddOrGetDef<PoweredActiveController.Def>().showWorkingStatus = true;
+			go.GetComponent<RequireInputs>().SetRequirements(true, false);
+			UnityEngine.Object.DestroyImmediate(go.GetComponent<RequireOutputs>());
+			UnityEngine.Object.DestroyImmediate(go.GetComponent<ConduitConsumer>());
+			UnityEngine.Object.DestroyImmediate(go.GetComponent<ConduitDispenser>());
+
+			go.AddOrGet<ComplexFabricatorActiveLogicOutput>();
+		}
+
+		public override void DoPostConfigurePreview(BuildingDef def, GameObject go)
+		{
+			base.DoPostConfigurePreview(def, go);
+		}
+
+		public override void DoPostConfigureUnderConstruction(GameObject go)
+		{
+			base.DoPostConfigureUnderConstruction(go);
+		}
+	}
+}

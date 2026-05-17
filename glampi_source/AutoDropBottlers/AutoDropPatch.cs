@@ -55,9 +55,8 @@ namespace AutoDropBottlers
         }
     }
 
-    // Modify the Bottler so it checks the autoDropEnabled state
-    [HarmonyPatch(typeof(Bottler), "CreateBottleProxyObject")]
-    public class Bottler_CreateBottleProxyObject_Patch
+    [HarmonyPatch(typeof(Bottler), "UpdateStoredItemState")]
+    public class Bottler_UpdateStoredItemState_Patch
     {
         public static void Postfix(Bottler __instance)
         {
@@ -65,18 +64,79 @@ namespace AutoDropBottlers
 
             AutoDropControl control = __instance.GetComponent<AutoDropControl>();
             bool enabled = control != null && control.autoDropEnabled;
-            
-            int itemCount = (__instance.storage != null) ? __instance.storage.items.Count : -1;
-            float totalMass = (__instance.storage != null) ? __instance.storage.GetMassAvailable(GameTags.Any) : 0f;
 
-            // Log details for debugging
-            if (enabled && __instance.storage != null && (itemCount > 0 || totalMass > 0f))
+            if (__instance.storage != null)
             {
-                Debug.Log($"[AutoDropBottlers] Auto-dropping: Items={itemCount}, Mass={totalMass}");
-                __instance.storage.DropAll(false, false, default, true);
-                
-                // We DON'T call CleanupBottleProxyObject here anymore.
-                // The game will call it naturally in OnStopWork, avoiding the "could not clean up" warning.
+                float currentMass = __instance.storage.GetMassAvailable(GameTags.Any);
+                float maxCapacity = __instance.UserMaxCapacity;
+
+                // Log every change where mass > 0 to help debug
+                if (currentMass > 0)
+                {
+                    Debug.Log($"[AutoDropBottlers] {__instance.name} Updated - Mass: {currentMass:F3}kg, Max: {maxCapacity:F3}kg, Enabled: {enabled}");
+                }
+
+                // If storage is at or above user set capacity, drop it
+                if (enabled && currentMass >= maxCapacity && maxCapacity > 0)
+                {
+                    Debug.Log($"[AutoDropBottlers] Auto-dropping (Full): {currentMass:F3}kg / {maxCapacity:F3}kg");
+                    __instance.storage.DropAll(false, false, default, true);
+                }
+            }
+        }
+    }
+
+
+    [HarmonyPatch(typeof(Bottler), "OnCompleteWork")]
+    public class Bottler_OnCompleteWork_Patch
+    {
+        public static void Postfix(Bottler __instance)
+        {
+            if (__instance == null) return;
+            AutoDropControl control = __instance.GetComponent<AutoDropControl>();
+            if (control != null && control.autoDropEnabled && __instance.storage != null)
+            {
+                if (__instance.storage.items.Count > 0)
+                {
+                    Debug.Log($"[AutoDropBottlers] Auto-dropping (Work Complete): {__instance.name}");
+                    __instance.storage.DropAll(false, false, default, true);
+                }
+            }
+        }
+    }
+
+    [HarmonyPatch(typeof(Bottler), "OnStopWork")]
+    public class Bottler_OnStopWork_Patch
+    {
+        public static void Postfix(Bottler __instance)
+        {
+            if (__instance == null) return;
+            AutoDropControl control = __instance.GetComponent<AutoDropControl>();
+            if (control != null && control.autoDropEnabled && __instance.storage != null)
+            {
+                if (__instance.storage.items.Count > 0)
+                {
+                    Debug.Log($"[AutoDropBottlers] Auto-dropping (Work Stop): {__instance.name}");
+                    __instance.storage.DropAll(false, false, default, true);
+                }
+            }
+        }
+    }
+
+    [HarmonyPatch(typeof(Bottler), "CreateBottleProxyObject")]
+    public class Bottler_CreateBottleProxyObject_Patch
+    {
+        public static void Postfix(Bottler __instance)
+        {
+            if (__instance == null) return;
+            AutoDropControl control = __instance.GetComponent<AutoDropControl>();
+            if (control != null && control.autoDropEnabled && __instance.storage != null)
+            {
+                if (__instance.storage.items.Count > 0)
+                {
+                    Debug.Log($"[AutoDropBottlers] Auto-dropping (Proxy Created): {__instance.name}");
+                    __instance.storage.DropAll(false, false, default, true);
+                }
             }
         }
     }

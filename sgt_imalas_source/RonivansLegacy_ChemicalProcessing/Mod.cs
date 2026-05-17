@@ -1,0 +1,107 @@
+﻿using HarmonyLib;
+using KMod;
+using PeterHan.PLib.Core;
+using PeterHan.PLib.Options;
+using RonivansLegacy_ChemicalProcessing.Content.ModDb;
+using RonivansLegacy_ChemicalProcessing.Content.ModDb.ModIntegrations;
+using RonivansLegacy_ChemicalProcessing.Content.Scripts;
+using RonivansLegacy_ChemicalProcessing.Patches;
+using System;
+using System.Collections.Generic;
+using ElementUtilNamespace;
+using UtilLibs;
+using UtilLibs.BuildingPortUtils;
+using UtilLibs.SharedTweaks;
+
+namespace RonivansLegacy_ChemicalProcessing
+{
+	public class Mod : UserMod2
+	{
+		public static bool WriteWikiData => Mod.GenerateWiki && Mod.Instance.mod.IsDev && DlcManager.IsExpansion1Active();
+		public static bool GenerateWiki = false;
+		public static bool IsDev => Instance.mod.IsDev;
+
+		public static Mod Instance;
+		public static Harmony HarmonyInstance;
+		public override void OnLoad(Harmony harmony)
+		{
+			Instance = this;
+
+			ModAssets.LoadAssets();
+			PUtil.InitLibrary(false);
+			new POptions().RegisterOptions(this, typeof(Config));
+			HarmonyInstance = harmony;
+
+			SgtLogger.LogVersion(this, harmony);
+
+			SgtLogger.log("Current Config Settings:");
+			UtilMethods.ListAllPropertyValues(Config.Instance, (s) => s.Contains("System.Action"));
+			base.OnLoad(harmony);
+
+
+			SgtElementUtil.ExecuteElementEnumPatches(harmony);
+			ConduitDisplayPortPatching.PatchAll(harmony);
+			BuildingDatabase.RegisterAdditionalBuildingElements();
+			AdditionalRecipes.RegisterTags();
+
+			ResearchNotificationMessageFix.Register();
+			ResearchScreenCollapseEntries.Register();
+
+			ElementConverterDescriptionImprovement.Register();
+			ElementConverterRecipePanelSplit.Register();
+
+			ResearchScreenBetterConnectionLines.Register();
+			DynamicMaterialSelectorHeaderHeight.Register();
+			SelectedRecipeQueueScreenSizeFix.Register();
+			SkillsWidgetBetterConnectionLines.Register();
+			AttachmentPointTagNameFix.Register();
+		}
+		public override void OnAllModsLoaded(Harmony harmony, IReadOnlyList<KMod.Mod> mods)
+		{
+			base.OnAllModsLoaded(harmony, mods);
+			CompatibilityNotifications.FlagLoggingPrevention(mods);
+			CompatibilityNotifications.FixBrokenTimeout(harmony);
+			DisableOldRonivanMods(harmony, mods);
+			CustomizeBuildings.FixOilWell(harmony);
+			HighPressureConduitRegistration.InitCache(true);
+			Config.Instance.SetElementMaxMassIfApplicable();
+		}
+
+		internal static void RegisterLocalizedDescription()
+		{
+			Instance.mod.title = Strings.Get("STRINGS.RONIVANSLEGACY_AIO_NAME");
+			Instance.mod.description = Strings.Get("STRINGS.RONIVANSLEGACY_AIO_DESC");
+		}
+
+		static HashSet<string> RonivanModIds = [
+			"Ronivan.ChemProcessingBiochemistry",
+			"Ronivan.ChemProcessing",
+			"Ronivan.CustomGenerators",
+			"Ronivan.CustomReservoirs",
+			"Ronivan.CustomBuildings", //Dupes Engineering
+			//part of dupes engineering:
+			"Ronivan.WoodenSetStructures","Ronivan.CustomTiles",
+
+			"Ronivan.DupesLogistics",
+			"Ronivan.DupesMachinery",
+			"Ronivan.DupesRefrigeration",
+			"Ronivan.HighPressureApplications",
+			"Ronivan.MineralProcessingMetallurgy",
+			"Ronivan.MineralProcessingMining",
+			"Ronivan.NuclearProcessing",
+		];
+
+		static void DisableOldRonivanMods(Harmony harmony, IReadOnlyList<KMod.Mod> mods)
+		{
+			foreach (var mod in mods)
+			{
+				if (RonivanModIds.Contains(mod.staticID))
+				{
+					mod.SetEnabledForActiveDlc(false);
+					harmony.UnpatchAll(mod.staticID);
+				}
+
+			}
+		}
+	}
+}

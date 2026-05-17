@@ -8,11 +8,11 @@
 
   <ItemGroup>
     <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\peterhan_source\Lib\Assembly-CSharp_public.dll</HintPath>
+      <HintPath>..\..\peterhan_source\Lib\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Assembly-CSharp-firstpass">
-      <HintPath>..\..\peterhan_source\Lib\Assembly-CSharp-firstpass_public.dll</HintPath>
+      <HintPath>..\..\peterhan_source\Lib\Assembly-CSharp-firstpass.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="0Harmony">

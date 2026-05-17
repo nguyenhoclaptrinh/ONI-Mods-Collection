@@ -25,3 +25,9 @@ Thumbs.db
 
 # Agent related
 .agents/
+
+# Game logs
+Player.log
+
+# Temp PowerShell scripts
+*.ps1
