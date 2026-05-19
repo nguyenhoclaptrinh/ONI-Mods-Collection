@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Title>Control your Robots</Title>
+    <Description>Adds a couple of features to better control your Robots: "Move To" and "Turn Off/On" buttons, Energy saving mode when idling, etc.</Description>
+    <ModVersion>1.7.3</ModVersion>
+    <UsesPLib>true</UsesPLib>
+  </PropertyGroup>
+  <ItemGroup>
+    <SharedCS Include="BaseOptions;StateMachinesExtensions;TranspilerUtils" />
+  </ItemGroup>
+</Project>

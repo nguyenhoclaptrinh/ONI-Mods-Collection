@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Title>Auto Drop Wrong Liquid</Title>
+    <Description>Now an errand to empty the Hydroponic Farms storage of the wrong liquid is created automatically.</Description>
+    <ModVersion>1.0.3</ModVersion>
+    <UsesPLib>false</UsesPLib>
+  </PropertyGroup>
+  <ItemGroup>
+    <SharedCS Include="TranspilerUtils" />
+  </ItemGroup>
+</Project>

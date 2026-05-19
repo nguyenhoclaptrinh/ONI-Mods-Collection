@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <Import Condition=" !Exists('Directory.Build.props.user') " Project="Directory.Build.props.default" />
+  <Import Condition=" Exists('Directory.Build.props.user') " Project="Directory.Build.props.user" />
+
+  <!-- конфигурации -->
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <Platforms>Steam;Backup</Platforms>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>Latest</LangVersion>
+    <OutputType>Library</OutputType>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NoWarn>MSB3277</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+
+  <!-- основные свойства -->
+  <PropertyGroup>
+    <APIVersion>2</APIVersion>
+    <ModVersion Condition=" '$(ModVersion)' == '' ">1.0.0</ModVersion>
+    <!-- VANILLA_ID, EXPANSION1_ID, DLC2_ID, DLC3_ID -->
+    <!--
+    <RequiredDlcIds></RequiredDlcIds>
+    <ForbiddenDlcIds></ForbiddenDlcIds>
+    -->
+    <DistributeMod Condition=" '$(DistributeMod)' != 'false' ">true</DistributeMod>
+    <UsesPLib Condition=" '$(UsesPLib)' != 'true' ">false</UsesPLib>
+    <UsesPublicise Condition=" '$(UsesPublicise)' != 'true' ">false</UsesPublicise>
+    <MSBuildTasksHelperDLL>$(MSBuildProjectDirectory)/../../bin/MSBuildTasksHelper.dll</MSBuildTasksHelperDLL>
+    <PublicisedFolder>$(MSBuildProjectDirectory)/../../bin/Publicised/$(Platform)</PublicisedFolder>
+  </PropertyGroup>
+
+  <!-- выбор пути где лежат соответсвующие файлы игры -->
+  <PropertyGroup Condition=" '$(Platform)' == 'Steam' ">
+    <GameFolder>$(GameFolderSteam)</GameFolder>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Platform)' != 'Steam' ">
+    <GameFolder>$(GameFolderBackup)</GameFolder>
+  </PropertyGroup>
+
+  <!-- подключаем DLL: -->
+  <ItemDefinitionGroup>
+    <Reference Private="false" SpecificVersion="false" />
+    <ProjectReference Private="false" />
+    <PackageReference PrivateAssets="All" GeneratePathProperty="true" />
+  </ItemDefinitionGroup>
+
+  <!-- вспомогательные средства для сборки -->
+  <ItemGroup Condition=" '$(UsesPLib)' == 'true' ">
+    <PackageReference Include="ILRepack.Lib.MSBuild.Task" Version="2.0.34.2" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(UsesPublicise)' == 'true' ">
+    <PackageReference Include="Aze.Publicise.MSBuild.Task" Version="1.1.0" />
+  </ItemGroup>
+
+  <!--
+  <ItemGroup Condition=" '$(DistributeMod)' == 'true' ">
+    <ProjectReference Include="$(MSBuildProjectDirectory)/../MSBuildTasksHelper/MSBuildTasksHelper.csproj" ReferenceOutputAssembly="false" SkipGetTargetFrameworkProperties="true" />
+  </ItemGroup>
+  -->
+
+  <!-- DLL игры -->
+  <!-- нормальные -->
+  <ItemGroup Condition=" '$(DistributeMod)' == 'true' And '$(UsesPublicise)' != 'true' ">
+    <Reference Include="Assembly-CSharp" HintPath="$(GameFolder)/Assembly-CSharp.dll" />
+    <Reference Include="Assembly-CSharp-firstpass" HintPath="$(GameFolder)/Assembly-CSharp-firstpass.dll" />
+  </ItemGroup>
+
+  <!-- либо публицырованые -->
+  <ItemGroup Condition=" '$(DistributeMod)' == 'true' And '$(UsesPublicise)' == 'true' ">
+    <Reference Include="Assembly-CSharp" HintPath="$(PublicisedFolder)/Assembly-CSharp_public.dll" />
+    <Reference Include="Assembly-CSharp-firstpass" HintPath="$(PublicisedFolder)/Assembly-CSharp-firstpass_public.dll" />
+  </ItemGroup>
+
+  <!-- и остальные -->
+  <ItemGroup Condition=" '$(DistributeMod)' == 'true' ">
+    <!-- чтобы была документация
+    <Reference Include="0Harmony" HintPath="$(GameFolder)/0Harmony.dll" /> -->
+    <PackageReference Include="Lib.Harmony" Version="2.4.2" />
+    <Reference Include="Newtonsoft.Json" HintPath="$(GameFolder)/Newtonsoft.Json.dll" />
+    <Reference Include="UnityEngine" HintPath="$(GameFolder)/UnityEngine.dll" />
+    <Reference Include="UnityEngine.CoreModule" HintPath="$(GameFolder)/UnityEngine.CoreModule.dll" />
+    <Reference Include="UnityEngine.ImageConversionModule" HintPath="$(GameFolder)/UnityEngine.ImageConversionModule.dll" />
+    <Reference Include="UnityEngine.TextRenderingModule" HintPath="$(GameFolder)/UnityEngine.TextRenderingModule.dll" />
+    <Reference Include="UnityEngine.UI" HintPath="$(GameFolder)/UnityEngine.UI.dll" />
+    <Reference Include="UnityEngine.UIModule" HintPath="$(GameFolder)/UnityEngine.UIModule.dll" />
+    <Reference Include="Unity.TextMeshPro" HintPath="$(GameFolder)/Unity.TextMeshPro.dll" />
+    <Reference Include="FMODUnity" HintPath="$(GameFolder)/FMODUnity.dll" />
+  </ItemGroup>
+
+  <!-- PLib -->
+  <ItemGroup Condition=" '$(DistributeMod)' == 'true' And '$(UsesPLib)' == 'true' ">
+    <Reference Include="PLibCore" HintPath="$(PLibFolder)/PLibCore.dll" />
+    <Reference Include="PLibActions" HintPath="$(PLibFolder)/PLibActions.dll" />
+    <Reference Include="PLibAVC" HintPath="$(PLibFolder)/PLibAVC.dll" />
+    <Reference Include="PLibBuildings" HintPath="$(PLibFolder)/PLibBuildings.dll" />
+    <Reference Include="PLibDatabase" HintPath="$(PLibFolder)/PLibDatabase.dll" />
+    <Reference Include="PLibLighting" HintPath="$(PLibFolder)/PLibLighting.dll" />
+    <Reference Include="PLibOptions" HintPath="$(PLibFolder)/PLibOptions.dll" />
+    <Reference Include="PLibUI" HintPath="$(PLibFolder)/PLibUI.dll" />
+  </ItemGroup>
+
+  <!-- сведения о сборке -->
+  <PropertyGroup>
+    <Author>Sanchozz</Author>
+    <Company>Sanchozz (https://github.com/SanchozzDeponianin)</Company>
+    <Product>Sanchozz's ONI Mods</Product>
+    <Copyright>Copyright © Sanchozz 2019-$([System.DateTime]::Now.Year)</Copyright>
+  </PropertyGroup>
+
+</Project>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{2DED5B57-FD32-4F67-88B5-924AC4300952}</ProjectGuid>
+    <Configurations>VanillaDebug;VanillaRelease;SpacedOutDebug;SpacedOutRelease</Configurations>
+    <RootNamespace>CaiLib</RootNamespace>
+    <AssemblyName>CaiLib</AssemblyName>
+    <AssemblyVersion>2022.10.10.0</AssemblyVersion>
+    <FileVersion>2022.10.10.2</FileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'VanillaRelease'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'VanillaDebug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'SpacedOutRelease'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'SpacedOutDebug'" />
+</Project>

@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project>
+
+  <!-- общие файлы из lib -->
+  <ItemGroup Condition=" '$(DistributeMod)' == 'true' ">
+    <SharedCS Include="Utils" />
+    <Compile Include="@(SharedCS->'$(MSBuildProjectDirectory)/../lib/%(Identity).cs')" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="scml/**" />
+  </ItemGroup>
+
+  <!-- пустышка для строк для модов у которых нет своих строк -->
+  <Target Name="CreateStubStrings" BeforeTargets="ResolveAssemblyReferences;BeforeBuild"
+          Condition=" '$(DistributeMod)' == 'true' And !Exists('$(MSBuildProjectDirectory)/STRINGS.cs') ">
+    <PropertyGroup>
+      <StubStringsFile>$(MSBuildProjectDirectory)/obj/STRINGS.cs</StubStringsFile>
+      <StubStrings>
+namespace $(AssemblyName)
+{
+    public class STRINGS
+    {
+        public static LocString MOD_TITLE = ""%3B
+        public static LocString MOD_DESCRIPTION = ""%3B
+    }
+}
+      </StubStrings>
+    </PropertyGroup>
+    <WriteLinesToFile File="$(StubStringsFile)" Lines="$(StubStrings)" Overwrite="true" WriteOnlyWhenDifferent="true" />
+    <ItemGroup>
+      <Compile Include="$(StubStringsFile)" />
+    </ItemGroup>
+  </Target>
+
+  <!-- константы для компилятора и прочее -->
+  <Target Name="DefineConstants" AfterTargets="ResolveAssemblyReferences">
+    <PropertyGroup>
+      <AssemblyVersion>$(ModVersion)</AssemblyVersion>
+      <Version>$(ModVersion)</Version>
+      <FileVersion>$(ModVersion)</FileVersion>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Platform)' == 'Steam' ">
+      <DefineConstants>$(DefineConstants);STEAM</DefineConstants>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Platform)' != 'Steam' ">
+      <DefineConstants>$(DefineConstants);BACKUP</DefineConstants>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(UsesPLib)' == 'true' ">
+      <DefineConstants>$(DefineConstants);USESPLIB</DefineConstants>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(UsesPublicise)' == 'true' ">
+      <DefineConstants>$(DefineConstants);PUBLICISED</DefineConstants>
+      <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ReferenceCopyLocalPaths Remove="@(ReferenceCopyLocalPaths)" />
+    </ItemGroup>
+  </Target>
+
+  <Target Name="CheckDependencies">
+    <Error Condition=" '$(DistributeMod)' == 'true' And !Exists('$(MSBuildTasksHelperDLL)') "
+           Text="First you need to compile the 'MSBuildTasksHelper' project." />
+  </Target>
+
+  <!-- вкоряченные ресурсы -->
+  <Target Name="EmbeddedResources" BeforeTargets="PreBuildEvent">
+    <ItemGroup>
+      <SpriteFiles Include="$(ProjectDir)/sprites/**/*.png" />
+      <AudioSheets Include="$(ProjectDir)/AudioSheets/**/*.csv" />
+      <EmbeddedResource Include="@(SpriteFiles)" LogicalName="sprites/%(SpriteFiles.RecursiveDir)%(SpriteFiles.Filename)%(SpriteFiles.Extension)" />
+      <EmbeddedResource Include="@(AudioSheets)" LogicalName="AudioSheets/%(AudioSheets.RecursiveDir)%(AudioSheets.Filename)%(AudioSheets.Extension)" />
+      <EmbeddedResource Include="$(ProjectDir)/../SFXTagsGlobal.csv" LogicalName="SFXTagsGlobal.csv" />
+      <EmbeddedResource LogicalName="$([System.String]::new('%(LogicalName)').Replace('\','/'))" />
+    </ItemGroup>
+  </Target>
+
+  <!-- дегенерация публицизированых длл игры -->
+  <Target Name="PubliciseMkdir" BeforeTargets="Publicise" Condition=" '$(DistributeMod)' == 'true' And '$(UsesPublicise)' == 'true' " >
+    <MakeDir Directories="$(PublicisedFolder)" Condition = "!Exists('$(PublicisedFolder)')" />
+    <ItemGroup>
+      <PubliciseInputAssemblies Include="$(GameFolder)/Assembly-CSharp.dll;$(GameFolder)/Assembly-CSharp-firstpass.dll;" />
+    </ItemGroup>
+  </Target>
+  <Target Name="Publicise" Condition=" '$(DistributeMod)' == 'true' And '$(UsesPublicise)' == 'true' "
+    Inputs="@(PubliciseInputAssemblies)"
+    Outputs="@(PubliciseInputAssemblies->'$(PublicisedFolder)/%(Filename)_public%(Extension)')" >
+    <Publicise
+       InputAssemblies="@(PubliciseInputAssemblies)"
+       OutputPath="$(PublicisedFolder)"
+       PubliciseCompilerGenerated="false"/>
+    <Touch Files="@(PubliciseInputAssemblies->'$(PublicisedFolder)/%(Filename)_public%(Extension)')" />
+  </Target>
+
+  <!-- подчищаем при очистке -->
+  <Target Name="CleanPublicise" AfterTargets="Clean" Condition=" '$(DistributeMod)' == 'true' And '$(UsesPublicise)' == 'true' " >
+    <RemoveDir Directories="$(PublicisedFolder)" Condition="Exists('$(PublicisedFolder)')" />
+  </Target>
+
+  <!-- вытаскиваем информацию о версии и ветке из файлов игры. для записи ямлов и вычисления конечного пути -->
+  <UsingTask
+    Condition=" '$(DistributeMod)' == 'true' "
+    TaskName="SanchozzONIMods.GetKleiAssemblyInfo"
+    AssemblyFile="$(MSBuildTasksHelperDLL)" />
+
+  <Target Name="GetKleiAssemblyInfo" Condition=" '$(DistributeMod)' == 'true' ">
+    <PropertyGroup>
+      <AssemblyCSharp Condition=" '$(UsesPublicise)' != 'true' " >$(GameFolder)/Assembly-CSharp.dll</AssemblyCSharp>
+      <AssemblyCSharp Condition=" '$(UsesPublicise)' == 'true' " >$(PublicisedFolder)/Assembly-CSharp_public.dll</AssemblyCSharp>
+    </PropertyGroup>
+
+    <SanchozzONIMods.GetKleiAssemblyInfo AssemblyCSharp="$(AssemblyCSharp)" LibraryPath="$(GameFolder)" >
+      <Output TaskParameter="KleiGameVersion" PropertyName="GameVersion" />
+      <Output TaskParameter="KleiBuildNumber" PropertyName="BuildNumber" />
+      <Output TaskParameter="KleiBuildBranch" PropertyName="BuildBranch" />
+    </SanchozzONIMods.GetKleiAssemblyInfo>
+  </Target>
+
+  <!-- создание ямлов файлов  -->
+  <UsingTask
+    Condition=" '$(DistributeMod)' == 'true' "
+    TaskName="SanchozzONIMods.WriteYamlFiles"
+    AssemblyFile="$(MSBuildTasksHelperDLL)" />
+
+  <Target Name="WriteYamlFiles" Condition=" '$(DistributeMod)' == 'true' ">
+    <PropertyGroup>
+      <ModInfoFile>$(IntermediateOutputPath)/mod_info.yaml</ModInfoFile>
+      <ModDescriptionFile>$(IntermediateOutputPath)/mod.yaml</ModDescriptionFile>
+    </PropertyGroup>
+
+    <SanchozzONIMods.WriteYamlFiles
+      OutputPath="$(IntermediateOutputPath)"
+
+      Title="$(Title)"
+      Description="$(Description)"
+      StaticID="Sanchozz.ONIMods.$(AssemblyName)"
+      
+      RequiredDlcIds="$(RequiredDlcIds)"
+      ForbiddenDlcIds="$(ForbiddenDlcIds)"
+      MinimumSupportedBuild="$(BuildNumber)"
+      Version="$(ModVersion)"
+      APIVersion="$(APIVersion)"
+    />
+
+    <ItemGroup>
+      <FileWrites Include="$(ModInfoFile)" />
+      <FileWrites Include="$(ModDescriptionFile)" />
+    </ItemGroup>
+  </Target>
+
+  <!-- перепаковка вместе с PLib -->
+  <!-- так как теперь PLib имеет модульную архитектуру, сделана детекция и перепаковка только нужных PLib*.dll-->
+  <!-- немного грубовато, но сойдёт -->
+  <UsingTask
+    Condition=" '$(UsesPLib)' == 'true' "
+    TaskName="SanchozzONIMods.GetReallyReferencedAssembliesAtFolder"
+    AssemblyFile="$(MSBuildTasksHelperDLL)" />
+
+  <Target Name="ILRepack" Condition=" '$(DistributeMod)' == 'true' And '$(UsesPLib)' == 'true' ">
+    <ItemGroup>
+      <InputAssemblies Include="$(TargetPath)" />
+    </ItemGroup>
+
+    <SanchozzONIMods.GetReallyReferencedAssembliesAtFolder
+      AssemblyName="$(IntermediateOutputPath)/$(TargetFileName)"
+      ReferencedAssembliesFolder="$(PLibFolder)" >
+      <Output TaskParameter="ReallyReferencedAssemblies" ItemName="InputAssemblies" />
+    </SanchozzONIMods.GetReallyReferencedAssembliesAtFolder>
+
+    <ILRepack
+        TargetKind="SameAsPrimaryAssembly"
+        OutputFile="$(TargetPath)"
+        InputAssemblies="@(InputAssemblies)"
+        LibraryPath="$(GameFolder)"
+        Internalize="true"
+        XmlDocumentation="false" />
+  </Target>
+
+  <UsingTask
+    Condition=" '$(DistributeMod)' == 'true' "
+    TaskName="SanchozzONIMods.TestInstallFolder"
+    AssemblyFile="$(MSBuildTasksHelperDLL)" />
+
+  <!-- вычисляем целевую папку для копирования потрохов -->
+  <Target Name="DetermineInstallFolder" Condition=" '$(DistributeMod)' == 'true' ">
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+      <InstallRootFolder>$(ModOutputFolderDebug)/$(ProjectName)</InstallRootFolder>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+      <InstallRootFolder>$(ModOutputFolderRelease)/$(ProjectName)</InstallRootFolder>
+    </PropertyGroup>
+
+    <SanchozzONIMods.TestInstallFolder
+      RootModInfoFile="$(InstallRootFolder)/mod_info.yaml"
+      KnownGameVersionsFile="$(ProjectDir)/../KnownGameVersions.yaml"
+      CurrentGameVersion="$(GameVersion)"
+      CurrentBuildNumber="$(BuildNumber)" >
+      <Output TaskParameter="PreviousGameVersion" PropertyName="PreviousGameVersion" />
+      <Output TaskParameter="PreviousBuildNumber" PropertyName="PreviousBuildNumber" />
+      <Output TaskParameter="DoInstallToRootFolder" PropertyName="DoInstallToRootFolder" />
+      <Output TaskParameter="NeededArchiving" PropertyName="NeededArchiving" />
+    </SanchozzONIMods.TestInstallFolder>
+
+    <PropertyGroup Condition=" '$(DoInstallToRootFolder)' == 'true' ">
+      <InstallFolder>$(InstallRootFolder)</InstallFolder>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(DoInstallToRootFolder)' != 'true' And '$(GameVersion)' == '??' ">
+      <InstallFolder>$(InstallRootFolder)/archived_versions/previous_$(BuildNumber)</InstallFolder>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(DoInstallToRootFolder)' != 'true' And '$(GameVersion)' != '??' ">
+      <InstallFolder>$(InstallRootFolder)/archived_versions/previous_$(GameVersion)</InstallFolder>
+    </PropertyGroup>
+  </Target>
+
+  <!-- при необходимости архивируем ранее существующие потроха -->
+  <Target Name="Archiving" Condition=" '$(DistributeMod)' == 'true' And '$(NeededArchiving)' == 'true' ">
+    <Message Importance="high" Text="Found mod for Previous Game version $(PreviousGameVersion)-$(PreviousBuildNumber)" />
+
+    <PropertyGroup Condition=" '$(PreviousGameVersion)' == '??' ">
+      <ArchiveFolder>$(InstallRootFolder)/archived_versions/previous_$(PreviousBuildNumber)</ArchiveFolder>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(PreviousGameVersion)' != '??' ">
+      <ArchiveFolder>$(InstallRootFolder)/archived_versions/previous_$(PreviousGameVersion)</ArchiveFolder>
+    </PropertyGroup>
+
+    <Message Importance="high" Text="Archiving into '$(ArchiveFolder)'" />
+
+    <ItemGroup>
+      <FilesToArchive Include="$(InstallRootFolder)/**/*" Exclude="$(InstallRootFolder)/archived_versions/**/*;$(InstallRootFolder)/mod.yaml" />
+    </ItemGroup>
+
+    <Move SourceFiles="@(FilesToArchive)" DestinationFiles="@(FilesToArchive->'$(ArchiveFolder)/%(RecursiveDir)%(Filename)%(Extension)')" />
+  </Target>
+
+  <!-- копируем все потроха в целевую папку -->
+  <Target Name="CopyArtifactsToInstallFolder" Condition=" '$(DistributeMod)' == 'true' ">
+    <Message Importance="high" Text="Installing into '$(InstallFolder)'" />
+
+    <ItemGroup>
+      <AnimFiles Include="$(ProjectDir)/anim\**/*.*" />
+      <TranslationFiles Include="$(ProjectDir)/translations/*.po" />
+      <TranslationFiles Include="$(ProjectDir)/translations/*.pot" />
+      <WorldGenFiles Include="$(ProjectDir)/worldgen/**/*.*" />
+      <YamlFiles Include="$(ProjectDir)/*.yaml" />
+    </ItemGroup>
+
+    <Copy SourceFiles="$(TargetPath)" DestinationFiles="$(InstallFolder)/$(TargetFileName)" />
+
+    <Copy SourceFiles="@(AnimFiles)" DestinationFiles="@(AnimFiles->'$(InstallFolder)/anim/%(RecursiveDir)%(Filename)%(Extension)')" />
+    <Copy SourceFiles="@(TranslationFiles)" DestinationFolder="$(InstallFolder)/translations" />
+    <Copy SourceFiles="@(WorldGenFiles)" DestinationFiles="@(WorldGenFiles->'$(InstallFolder)/worldgen/%(RecursiveDir)%(Filename)%(Extension)')" />
+    <Copy SourceFiles="@(YamlFiles)" DestinationFolder="$(InstallFolder)" />
+    <Copy SourceFiles="$(ModInfoFile)" DestinationFolder="$(InstallFolder)" />
+    <Copy SourceFiles="$(ModDescriptionFile)" DestinationFolder="$(InstallRootFolder)" />
+    <Copy SourceFiles="$(ProjectDir)/Preview.png" DestinationFiles="$(InstallFolder)/preview.png" Condition=" $(CopyPreview) == true " />
+  </Target>
+
+  <!-- ищем и очищаем старые ненужные архивы -->
+  <UsingTask
+    Condition=" '$(DistributeMod)' == 'true' "
+    TaskName="SanchozzONIMods.FindTooOldArchivedVersions"
+    AssemblyFile="$(MSBuildTasksHelperDLL)" />
+
+  <Target Name="CleanTooOldArchivedVersions" Condition=" '$(DistributeMod)' == 'true' ">
+    <ItemGroup>
+      <ArchivedModInfoFiles Include="$(InstallRootFolder)/archived_versions/**/mod_info.yaml" />
+    </ItemGroup>
+
+    <SanchozzONIMods.FindTooOldArchivedVersions
+      RootModInfoFile="$(InstallRootFolder)/mod_info.yaml"
+      KnownGameVersionsFile="$(ProjectDir)/../KnownGameVersions.yaml"
+      ArchivedModInfoFiles="@(ArchivedModInfoFiles)" >
+      <Output TaskParameter="TooOldArchivedVersions" ItemName="TooOldArchivedVersions" />
+    </SanchozzONIMods.FindTooOldArchivedVersions>
+
+    <Message Importance="high" Text="Found Too Old Archived Versions, delete:" Condition=" '@(TooOldArchivedVersions->Count())' &gt; 0 " />
+    <Message Importance="high" Text="%(TooOldArchivedVersions.Identity)" />
+
+    <RemoveDir Directories="@(TooOldArchivedVersions)" />
+  </Target>
+</Project>

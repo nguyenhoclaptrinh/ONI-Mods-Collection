@@ -1,0 +1,35 @@
+msgid ""
+msgstr ""
+"Application: Oxygen Not Included"
+"POT Version: 2.0"
+
+#. SandboxMutantPlant.STRINGS.MOD_DESCRIPTION
+msgctxt "SandboxMutantPlant.STRINGS.MOD_DESCRIPTION"
+msgid "Allows to quickly receive mutant Seeds and Plants in the Sandbox mode."
+msgstr "Позволяет быстро получать мутантные семена и растения в режиме Песочницы."
+
+#. SandboxMutantPlant.STRINGS.MOD_TITLE
+msgctxt "SandboxMutantPlant.STRINGS.MOD_TITLE"
+msgid "Sandbox: Mutant Plants"
+msgstr "Песочница: Растения-мутанты"
+
+#. SandboxMutantPlant.STRINGS.UI.USERMENUACTIONS.IDENTIFY_MUTATION.NAME
+msgctxt "SandboxMutantPlant.STRINGS.UI.USERMENUACTIONS.IDENTIFY_MUTATION.NAME"
+msgid "Identify"
+msgstr "Распознать"
+
+#. SandboxMutantPlant.STRINGS.UI.USERMENUACTIONS.IDENTIFY_MUTATION.TOOLTIP
+msgctxt "SandboxMutantPlant.STRINGS.UI.USERMENUACTIONS.IDENTIFY_MUTATION.TOOLTIP"
+msgid "Instantly identify Mutation without analysis it at the {GENETICANALYSISSTATION}."
+msgstr "Мнгновенно распознать эту мутацию, {GENETICANALYSISSTATION} не требуется."
+
+#. SandboxMutantPlant.STRINGS.UI.USERMENUACTIONS.MUTATOR.NAME
+msgctxt "SandboxMutantPlant.STRINGS.UI.USERMENUACTIONS.MUTATOR.NAME"
+msgid "Mutate"
+msgstr "Мутировать"
+
+#. SandboxMutantPlant.STRINGS.UI.USERMENUACTIONS.MUTATOR.TOOLTIP
+msgctxt "SandboxMutantPlant.STRINGS.UI.USERMENUACTIONS.MUTATOR.TOOLTIP"
+msgid "Apply a random Mutation to this Seed or Plant."
+msgstr "Применить случайную мутацию к этому семени или растению."
+

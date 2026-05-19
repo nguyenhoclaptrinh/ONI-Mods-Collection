@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{4D49609F-40B3-4A26-BA6F-1DB0E14D4F47}</ProjectGuid>
+    <Configurations>VanillaDebug;VanillaRelease;SpacedOutDebug;SpacedOutRelease</Configurations>
+    <TargetFramework>net471</TargetFramework>
+    <RootNamespace>Wallpaper</RootNamespace>
+    <AssemblyName>Wallpaper</AssemblyName>
+    <AssemblyVersion>2022.10.10.0</AssemblyVersion>
+    <FileVersion>2022.10.10.0</FileVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ModName>Wallpaper</ModName>
+    <ModDescription></ModDescription>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'VanillaRelease'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'VanillaDebug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'SpacedOutRelease'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'SpacedOutDebug'" />
+</Project>

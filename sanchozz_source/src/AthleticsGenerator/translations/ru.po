@@ -1,0 +1,35 @@
+msgid ""
+msgstr ""
+"Application: Oxygen Not Included"
+"POT Version: 2.0"
+
+#. AthleticsGenerator.STRINGS.DUPLICANTS.ATTRIBUTES.ATHLETICS.POWERMODIFIER
+msgctxt "AthleticsGenerator.STRINGS.DUPLICANTS.ATTRIBUTES.ATHLETICS.POWERMODIFIER"
+msgid "{0} Manual Generator Power"
+msgstr "Мощность Ручного генератора: {0}"
+
+#. AthleticsGenerator.STRINGS.MOD_DESCRIPTION
+msgctxt "AthleticsGenerator.STRINGS.MOD_DESCRIPTION"
+msgid "Now the Manual Generator produces more energy the higher the level of the Duplicant's Athletics attribute."
+msgstr "Теперь Ручной генератор вырабатывает тем больше энергии, чем выше уровень атрибута Атлетика у Дупликанта."
+
+#. AthleticsGenerator.STRINGS.MOD_TITLE
+msgctxt "AthleticsGenerator.STRINGS.MOD_TITLE"
+msgid "Athletic Manual Generator"
+msgstr "Атлетичный Ручной Генератор"
+
+#. AthleticsGenerator.STRINGS.OPTIONS.ENABLE_LIGHT.NAME
+msgctxt "AthleticsGenerator.STRINGS.OPTIONS.ENABLE_LIGHT.NAME"
+msgid "Enable Wattage meter light"
+msgstr "Включить лампочку измерителя мощности"
+
+#. AthleticsGenerator.STRINGS.OPTIONS.ENABLE_METER.NAME
+msgctxt "AthleticsGenerator.STRINGS.OPTIONS.ENABLE_METER.NAME"
+msgid "Enable Wattage meter"
+msgstr "Включить измеритель мощности"
+
+#. AthleticsGenerator.STRINGS.OPTIONS.WATTS_PER_LEVEL.NAME
+msgctxt "AthleticsGenerator.STRINGS.OPTIONS.WATTS_PER_LEVEL.NAME"
+msgid "+X Wattage per Athletics attribute level"
+msgstr "Мощность +X за уровень атрибута Атлетики"
+

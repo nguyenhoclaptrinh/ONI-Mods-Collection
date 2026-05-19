@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{75BDFADD-CE37-42C3-869D-F3EB2C064170}</ProjectGuid>
+    <Configurations>VanillaDebug;VanillaRelease;SpacedOutDebug;SpacedOutRelease</Configurations>
+    <TargetFramework>net471</TargetFramework>
+    <RootNamespace>PlanBuildingsWithoutMaterials</RootNamespace>
+    <AssemblyName>PlanBuildingsWithoutMaterials</AssemblyName>
+    <AssemblyVersion>2022.10.10.0</AssemblyVersion>
+    <FileVersion>2022.10.10.0</FileVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ModName>Plan Buildings Without Materials</ModName>
+    <ModDescription></ModDescription>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'VanillaRelease'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'VanillaDebug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'SpacedOutRelease'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'SpacedOutDebug'" />
+</Project>

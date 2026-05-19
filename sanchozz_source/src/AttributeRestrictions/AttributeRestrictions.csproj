@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Title>Attribute-based Workshop Restrictions</Title>
+    <Description>You can more flexibly control which Buildings are allowed to Duplicants, depending on the level of their Attributes.</Description>
+    <ModVersion>1.0.10.1</ModVersion>
+    <UsesPLib>true</UsesPLib>
+  </PropertyGroup>
+  <ItemGroup>
+    <SharedCS Include="BaseOptions;UI" />
+  </ItemGroup>
+</Project>

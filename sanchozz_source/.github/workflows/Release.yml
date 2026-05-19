@@ -1,0 +1,50 @@
+name: Create Release
+
+on: workflow_dispatch
+
+permissions:
+  contents: write # Grant write permission for creating releases
+
+jobs:
+  make_release:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v6
+   
+    - name: Create Zip
+      id: create-zip
+      run: |
+        mkdir Zipped
+        cd Mods/
+        zip -rlq ../Zipped/0_All_Mods.zip ./*
+        find * -maxdepth 0 -type d -exec zip -rlq "../Zipped/{}.zip" "{}" \;
+
+    - name: Delete old releases
+      id: delete_release
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
+      continue-on-error: true
+      run: |
+        gh release delete AllModsRelease --cleanup-tag --yes
+
+    - name: Create GitHub release
+      id: create_release
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
+      run: |
+        gh release create AllModsRelease --draft=true --prerelease=false --latest=false --title "Local Mod Download" --notes-file ".github/Release.md"
+
+    - name: Upload files to github release
+      id: upload_files
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
+      run: |
+        gh release upload AllModsRelease "Zipped/*.zip" --clobber
+        
+    - name: Publish GitHub release
+      id: publish_release
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
+      run: |
+        gh release edit AllModsRelease --draft=false --prerelease=false --latest=true

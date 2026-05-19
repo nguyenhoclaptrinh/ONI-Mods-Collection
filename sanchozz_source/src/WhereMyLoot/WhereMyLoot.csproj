@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Title>Where's My Loot?</Title>
+    <Description>Allows you to get the expected loot from objects that have not been inspected but have been demolished.</Description>
+    <ModVersion>1.0.3</ModVersion>
+    <UsesPLib>true</UsesPLib>
+  </PropertyGroup>
+  <ItemGroup>
+    <SharedCS Include="TranspilerUtils" />
+  </ItemGroup>
+</Project>

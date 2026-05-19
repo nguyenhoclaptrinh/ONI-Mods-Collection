@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Title>Wrangle &amp; Carry</Title>
+    <Description>Eliminates the lag between the moment when the Rancher caught the Creature, and the moment when the Creature became available for transportation. Allows the Rancher to immediately carry the Creature to the Delivery Point. Adds the Sack.</Description>
+    <ModVersion>1.0.8</ModVersion>
+    <UsesPLib>false</UsesPLib>
+  </PropertyGroup>
+</Project>

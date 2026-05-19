@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Title>Endless Telescope</Title>
+    <Description>Allows you to explore the entire space map, but the further away, the slower.</Description>
+    <ModVersion>1.0.3</ModVersion>
+    <RequiredDlcIds>EXPANSION1_ID</RequiredDlcIds>
+    <UsesPLib>false</UsesPLib>
+  </PropertyGroup>
+  <ItemGroup>
+    <SharedCS Include="TranspilerUtils" />
+  </ItemGroup>
+</Project>

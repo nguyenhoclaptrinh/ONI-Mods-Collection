@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{172D2D02-9391-4913-92CE-2E77EE5980BB}</ProjectGuid>
+    <Configurations>VanillaDebug;VanillaRelease;SpacedOutDebug;SpacedOutRelease</Configurations>
+    <TargetFramework>net471</TargetFramework>
+    <RootNamespace>BuildablePOIProps</RootNamespace>
+    <AssemblyName>BuildablePOIProps</AssemblyName>
+    <AssemblyVersion>2022.10.10.0</AssemblyVersion>
+    <FileVersion>2022.10.10.1</FileVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ModName>Buildable POI Props</ModName>
+    <ModDescription></ModDescription>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'VanillaRelease'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'VanillaDebug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'SpacedOutRelease'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'SpacedOutDebug'" />
+</Project>

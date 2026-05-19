@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Title>Suit Recharger</Title>
+    <Description>Allows Duplicants to recharge their Suits and Oxygen Masks without taking them off.</Description>
+    <ModVersion>1.3.1</ModVersion>
+    <UsesPLib>true</UsesPLib>
+  </PropertyGroup>
+  <ItemGroup>
+    <SharedCS Include="BaseOptions;DurabilityExtensions;ManualDeliveryKGPatch;StorageDropper;TranspilerUtils;UI" />
+  </ItemGroup>
+</Project>

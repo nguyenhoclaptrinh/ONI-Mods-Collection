@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{85A32D56-D00E-4703-8066-7BF30EBE1566}</ProjectGuid>
+    <Configurations>VanillaDebug;VanillaRelease;SpacedOutDebug;SpacedOutRelease</Configurations>
+    <TargetFramework>net471</TargetFramework>
+    <RootNamespace>WoundedGoToMedBed</RootNamespace>
+    <AssemblyName>WoundedGoToMedBed</AssemblyName>
+    <AssemblyVersion>2022.10.10.0</AssemblyVersion>
+    <FileVersion>2022.10.10.0</FileVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ModName>Wounded Go To Med Bed</ModName>
+    <ModDescription></ModDescription>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'VanillaRelease'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'VanillaDebug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'SpacedOutRelease'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'SpacedOutDebug'" />
+</Project>

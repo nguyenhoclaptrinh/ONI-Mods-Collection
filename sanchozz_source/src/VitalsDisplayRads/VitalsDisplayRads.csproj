@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Title>Vitals Display Rads</Title>
+    <Description>The Vitals screen now shows the amount of Absorbed Rad Dose.</Description>
+    <ModVersion>1.0.2</ModVersion>
+    <RequiredDlcIds>EXPANSION1_ID</RequiredDlcIds>
+    <UsesPLib>false</UsesPLib>
+    <UsesPublicise>true</UsesPublicise>
+  </PropertyGroup>
+  <ItemGroup>
+    <SharedCS Include="TranspilerUtils" />
+  </ItemGroup>
+</Project>

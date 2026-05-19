@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{9A77C55D-CF9C-4E16-ACA4-9844821F67DA}</ProjectGuid>
+    <Configurations>VanillaDebug;VanillaRelease;SpacedOutDebug;SpacedOutRelease</Configurations>
+    <TargetFramework>net471</TargetFramework>
+    <RootNamespace>DebugDoesNotDiscoverMap</RootNamespace>
+    <AssemblyName>DebugDoesNotDiscoverMap</AssemblyName>
+    <AssemblyVersion>2022.10.7.0</AssemblyVersion>
+    <FileVersion>2022.10.7.0</FileVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ModName>Debug Does Not Discover Map</ModName>
+    <ModDescription></ModDescription>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'VanillaRelease'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'VanillaDebug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'SpacedOutRelease'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'SpacedOutDebug'" />
+</Project>

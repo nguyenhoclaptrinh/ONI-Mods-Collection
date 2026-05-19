@@ -1,0 +1,30 @@
+msgid ""
+msgstr ""
+"Application: Oxygen Not Included"
+"POT Version: 2.0"
+
+#. BuildableGeneShuffler.STRINGS.BUILDINGS.PREFABS.BUILDABLEGENESHUFFLER.DESC
+msgctxt "BuildableGeneShuffler.STRINGS.BUILDINGS.PREFABS.BUILDABLEGENESHUFFLER.DESC"
+msgid "Pickled morb`s brains... mmm... yummy!"
+msgstr ""
+
+#. BuildableGeneShuffler.STRINGS.MOD_DESCRIPTION
+msgctxt "BuildableGeneShuffler.STRINGS.MOD_DESCRIPTION"
+msgid "Allows you to build your own Neural Vacillator. Vacillator Recharge not Included."
+msgstr ""
+
+#. BuildableGeneShuffler.STRINGS.MOD_TITLE
+msgctxt "BuildableGeneShuffler.STRINGS.MOD_TITLE"
+msgid "Buildable Neural Vacillator"
+msgstr ""
+
+#. BuildableGeneShuffler.STRINGS.OPTIONS.CONSTRUCTIONTIME.NAME
+msgctxt "BuildableGeneShuffler.STRINGS.OPTIONS.CONSTRUCTIONTIME.NAME"
+msgid "Construction Time to build a new Neural Vacillator, seconds"
+msgstr ""
+
+#. BuildableGeneShuffler.STRINGS.OPTIONS.MANIPULATIONTIME.NAME
+msgctxt "BuildableGeneShuffler.STRINGS.OPTIONS.MANIPULATIONTIME.NAME"
+msgid "Manipulation Time to prepare a Neural Vacillator for work, seconds"
+msgstr ""
+

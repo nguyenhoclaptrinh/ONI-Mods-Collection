@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Title>Squirrel Wheel</Title>
+    <Description>Adds a new Squirrel Wheel building that your Pips can use to running, and you will get a small profit of bonus electricity power.</Description>
+    <ModVersion>1.5.1</ModVersion>
+    <UsesPLib>true</UsesPLib>
+  </PropertyGroup>
+  <ItemGroup>
+    <SharedCS Include="BaseOptions;TranspilerUtils" />
+  </ItemGroup>
+</Project>

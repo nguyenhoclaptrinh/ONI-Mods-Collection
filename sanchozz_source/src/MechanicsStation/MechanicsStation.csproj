@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Title>Mechanics Station</Title>
+    <Description>Adds a new Mechanics Station, with which engineers could improve the performance of various buildings.</Description>
+    <ModVersion>1.4.6</ModVersion>
+    <UsesPLib>true</UsesPLib>
+  </PropertyGroup>
+  <ItemGroup>
+    <SharedCS Include="BaseOptions;FreezeEffectDuration;MultiRoomTracker;TranspilerUtils" />
+  </ItemGroup>
+</Project>

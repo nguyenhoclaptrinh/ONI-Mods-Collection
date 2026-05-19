@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Title>Varicoloured Balloons</Title>
+    <Description>Total randomization of the Balloon skin, choosing from all available (unlocked) skins if the Duplicant Artist has the assignment of a default red skin.</Description>
+    <ModVersion>2.0.3</ModVersion>
+    <UsesPLib>true</UsesPLib>
+  </PropertyGroup>
+  <ItemGroup>
+    <SharedCS Include="TranspilerUtils" />
+  </ItemGroup>
+</Project>

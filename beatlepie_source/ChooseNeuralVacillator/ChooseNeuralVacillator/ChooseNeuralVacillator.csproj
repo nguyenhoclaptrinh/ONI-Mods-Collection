@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <AssemblyName>ChooseNeuralVacillator</AssemblyName>
+    <AssemblyTitle>Choose Neural Vacillator</AssemblyTitle>
+    <Product>Choose Neural Vacillator</Product>
+    <Copyright>Copyright © beatlepie 2022</Copyright>
+    <Version>1.0.0.0</Version>
+    <FileVersion>1.0.0.0</FileVersion>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>D:\Games\OxygenNotIncludedCrack\oxygen.not.included.v679336\Oxygen.Not.Included.v679336-P2P\OxygenNotIncluded_Data\Managed\0Harmony.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>D:\Games\OxygenNotIncludedCrack\oxygen.not.included.v679336\Oxygen.Not.Included.v679336-P2P\OxygenNotIncluded_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp-firstpass">
+      <HintPath>D:\Games\OxygenNotIncludedCrack\oxygen.not.included.v679336\Oxygen.Not.Included.v679336-P2P\OxygenNotIncluded_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="PLib">
+      <HintPath>lib\PLib.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>D:\Games\OxygenNotIncludedCrack\oxygen.not.included.v679336\Oxygen.Not.Included.v679336-P2P\OxygenNotIncluded_Data\Managed\Unity.TextMeshPro.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>D:\Games\OxygenNotIncludedCrack\oxygen.not.included.v679336\Oxygen.Not.Included.v679336-P2P\OxygenNotIncluded_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>D:\Games\OxygenNotIncludedCrack\oxygen.not.included.v679336\Oxygen.Not.Included.v679336-P2P\OxygenNotIncluded_Data\Managed\UnityEngine.UI.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+</Project>

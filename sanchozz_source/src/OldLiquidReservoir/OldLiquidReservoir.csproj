@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Title>Old Liquid Reservoir</Title>
+    <Description>Returns the old visual art of the Liquid Reservoir from older "early access" versions of the game.</Description>
+    <ModVersion>1.1.2</ModVersion>
+  </PropertyGroup>
+</Project>

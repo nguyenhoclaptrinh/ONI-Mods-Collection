@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Title>Any Ice Liquefier</Title>
+    <Description>Allows you to choose which type of Ice will heat the Ice Liquefier.</Description>
+    <ModVersion>1.3.0</ModVersion>
+    <RequiredDlcIds>DLC2_ID</RequiredDlcIds>
+    <UsesPLib>true</UsesPLib>
+    <UsesPublicise>true</UsesPublicise>
+  </PropertyGroup>
+  <ItemGroup>
+    <SharedCS Include="BaseOptions" />
+  </ItemGroup>
+</Project>

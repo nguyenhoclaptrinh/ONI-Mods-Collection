@@ -1,0 +1,610 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{477BAC88-9C78-4A44-956A-71F97CF313C4}"
+	ProjectSection(SolutionItems) = preProject
+		lib\BaseOptions.cs = lib\BaseOptions.cs
+		lib\DurabilityExtensions.cs = lib\DurabilityExtensions.cs
+		lib\EffectsExtensions.cs = lib\EffectsExtensions.cs
+		lib\FreezeEffectDuration.cs = lib\FreezeEffectDuration.cs
+		lib\FXLoopAnim.cs = lib\FXLoopAnim.cs
+		lib\KAnimGroupManager.cs = lib\KAnimGroupManager.cs
+		lib\ManualDeliveryKGPatch.cs = lib\ManualDeliveryKGPatch.cs
+		lib\ModdedSpicesSerializationManager.cs = lib\ModdedSpicesSerializationManager.cs
+		lib\MultiRoomTracker.cs = lib\MultiRoomTracker.cs
+		lib\RotPileSilentNotification.cs = lib\RotPileSilentNotification.cs
+		lib\StateMachinesExtensions.cs = lib\StateMachinesExtensions.cs
+		lib\StorageDropper.cs = lib\StorageDropper.cs
+		lib\TranspilerUtils.cs = lib\TranspilerUtils.cs
+		lib\UI.cs = lib\UI.cs
+		lib\Utils.cs = lib\Utils.cs
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test", "Test\Test.csproj", "{5FC6C2F5-20FE-4735-BCD9-A17F59B789DA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MSBuildTasksHelper", "MSBuildTasksHelper\MSBuildTasksHelper.csproj", "{22C4C87F-B935-4E28-921F-FF279507634A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnyIceKettle", "AnyIceKettle\AnyIceKettle.csproj", "{6F02BB6C-F5B0-4959-9A53-A972B3E9B4F8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AquaticFarm", "AquaticFarm\AquaticFarm.csproj", "{E33F1B5E-89D9-4345-8B82-8D05C41CFA30}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Archaeologist", "Archaeologist\Archaeologist.csproj", "{8853F8F9-B723-4B89-804E-F162A183AE89}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArtifactCarePackages", "ArtifactCarePackages\ArtifactCarePackages.csproj", "{A4099134-55DC-477C-BD16-870ABA43FEB9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AthleticsGenerator", "AthleticsGenerator\AthleticsGenerator.csproj", "{7CC35D4F-C0F8-4057-865B-58E711D6AFAB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AttributeRestrictions", "AttributeRestrictions\AttributeRestrictions.csproj", "{D810E80F-8882-459F-A9CD-13E3D47937EB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutomaticDispenserOnlyTransferFromLowerPriority", "AutomaticDispenserOnlyTransferFromLowerPriority\AutomaticDispenserOnlyTransferFromLowerPriority.csproj", "{4D58EC71-C750-483B-8CC3-0CA7ABE91F87}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BetterPlantTending", "BetterPlantTending\BetterPlantTending.csproj", "{982F3EF4-7F06-4698-B887-20B006C70141}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BigRedButton", "BigRedButton\BigRedButton.csproj", "{347E18A7-561D-453E-9C55-B071DA21BD58}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BuildableGeneShuffler", "BuildableGeneShuffler\BuildableGeneShuffler.csproj", "{36FEBD03-3F61-44E1-B503-804DE0D80571}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ButcherStation", "ButcherStation\ButcherStation.csproj", "{7C73CCA2-E94A-462E-83E6-B0DBB9C3E1C0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarouselCentrifuge", "CarouselCentrifuge\CarouselCentrifuge.csproj", "{C1C412F6-2F4D-487E-8AB1-F3B5AB369BE0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ControlYourRobots", "ControlYourRobots\ControlYourRobots.csproj", "{71FCFA2C-4253-4F27-BAA6-45559E438AEE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CorpseOnPedestal", "CorpseOnPedestal\CorpseOnPedestal.csproj", "{22FA8C43-28BD-4F4A-AEBD-48BC71C3308A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrabsProfit", "CrabsProfit\CrabsProfit.csproj", "{C5C6F9F2-A0C4-4611-BC86-1EE553C39C9D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DumpIncorrectFertilizers", "DumpIncorrectFertilizers\DumpIncorrectFertilizers.csproj", "{04CC5C9A-DF3F-433E-B69F-388EC13A29EB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EatEveryDay", "EatEveryDay\EatEveryDay.csproj", "{90B82F71-0536-4820-A41D-9C9C61711AF1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EndlessTelescope", "EndlessTelescope\EndlessTelescope.csproj", "{5CFB9047-50D9-4A27-B97C-14799B7FFFCE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExoticSpices", "ExoticSpices\ExoticSpices.csproj", "{04C04730-5781-4C2C-BCE2-F2A224F4AB9A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GraveyardKeeper", "GraveyardKeeper\GraveyardKeeper.csproj", "{195F088E-11A2-42B3-B837-B7E95561D76C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HEPBridgeInsulationTile", "HEPBridgeInsulationTile\HEPBridgeInsulationTile.csproj", "{2EFBFA64-0574-44CB-B714-D6FA36659F6E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hydrocactus", "Hydrocactus\Hydrocactus.csproj", "{23F3F4E5-4CB6-45AB-AF81-E2174FE93208}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lagoo", "Lagoo\Lagoo.csproj", "{62FD82E3-D595-45BB-8EA8-FB541B90BDB8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LargeTelescope", "LargeTelescope\LargeTelescope.csproj", "{6BF95E8A-DDF8-460A-A7CE-A24E970FB249}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MechanicsStation", "MechanicsStation\MechanicsStation.csproj", "{E517092A-E2A9-42EA-AC07-550EC9302126}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MooDiet", "MooDiet\MooDiet.csproj", "{5435CC70-6EEA-49DE-A9E4-2A965FC504D1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoreEmotions", "MoreEmotions\MoreEmotions.csproj", "{68830044-B949-4A3B-80BF-E493963E9186}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NoManualDelivery", "NoManualDelivery\NoManualDelivery.csproj", "{5779847C-B257-4180-8E21-7671CB8A3924}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OldLiquidReservoir", "OldLiquidReservoir\OldLiquidReservoir.csproj", "{9C19F596-BCDF-4ECE-B400-9E1D47498F5B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PickupFloppingPacu", "PickupFloppingPacu\PickupFloppingPacu.csproj", "{392E7EA6-94F3-444D-9FF8-DF7D269E35DF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PotatoElectrobanks", "PotatoElectrobanks\PotatoElectrobanks.csproj", "{FCA0AB8A-EBB1-43F0-9A48-4FC308C4C9E7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReBuildableAETN", "ReBuildableAETN\ReBuildableAETN.csproj", "{9AC34BD6-605A-4AD7-9282-02BB6E6C17EA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoverRefueling", "RoverRefueling\RoverRefueling.csproj", "{AC7EF0AE-DAE8-48B3-85E0-9D7C3D578F95}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SandboxMutantPlant", "SandboxMutantPlant\SandboxMutantPlant.csproj", "{1CF93B24-E8B1-49B1-8509-38CD775E1587}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartLogicDoors", "SmartLogicDoors\SmartLogicDoors.csproj", "{A3EFF508-44C6-49A1-B35D-7DE55A7FDC62}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Smelter", "Smelter\Smelter.csproj", "{091899DF-CB06-4578-B556-84C466932615}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SquirrelGenerator", "SquirrelGenerator\SquirrelGenerator.csproj", "{976CDC05-7E19-439B-ABAA-8478475EFCD2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuitRecharger", "SuitRecharger\SuitRecharger.csproj", "{C2B252A1-F48A-4352-A5A0-6E211F455987}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SupplyToClosest", "SupplyToClosest\SupplyToClosest.csproj", "{79C550D6-0A6A-47FF-8F98-18C5A9FB12CC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TravelTubesExpanded", "TravelTubesExpanded\TravelTubesExpanded.csproj", "{ED0633D0-BC8E-4D2D-80DC-A1F87EAD7A16}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TweakedBiologicalCargoBay", "TweakedBiologicalCargoBay\TweakedBiologicalCargoBay.csproj", "{4FCD4662-85E5-4F7A-A357-B41D66838593}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VaricolouredBalloons", "VaricolouredBalloons\VaricolouredBalloons.csproj", "{E2B2E9CD-C9CF-4A05-B43A-68DC90429583}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VitalsDisplayRads", "VitalsDisplayRads\VitalsDisplayRads.csproj", "{0D895303-5096-4B73-B448-E8A9D8F0F63C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WhereMyLoot", "WhereMyLoot\WhereMyLoot.csproj", "{FA9F9701-B9EF-43CC-B87C-E2534C378FF5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WornSuitDischarge", "WornSuitDischarge\WornSuitDischarge.csproj", "{57925A80-A534-499E-9BB1-289A3C3D7E38}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WrangleCarry", "WrangleCarry\WrangleCarry.csproj", "{BC79007D-AACA-43B8-A216-D3D7AA1B48D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "0Cleaner", "0Cleaner\0Cleaner.csproj", "{6BE64EE9-A454-43DD-BF6D-50E9340029D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnyIceMachine", "AnyIceMachine\AnyIceMachine.csproj", "{B7D33888-FEF4-44E8-B664-E57E31478CE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExplorerBooster", "ExplorerBooster\ExplorerBooster.csproj", "{12E6EC61-0154-4A26-8325-9F5D96BBFC4F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeadPlantsNotifier", "DeadPlantsNotifier\DeadPlantsNotifier.csproj", "{FE87E859-B174-4614-A909-5A6235236B41}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DualDiningTable", "DualDiningTable\DualDiningTable.csproj", "{A7D8DCAE-63EE-4B18-A395-A55B67B6DEBD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrabsFlippCompost", "CrabsFlippCompost\CrabsFlippCompost.csproj", "{AB6B59E6-B62D-44B5-A546-A41E30A32E8B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoComposter", "AutoComposter\AutoComposter.csproj", "{EC60C9EA-CD99-409A-8B1B-3DF0CBA59B7C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MorePlantMutations", "MorePlantMutations\MorePlantMutations.csproj", "{65AC396B-7617-4366-9588-8AC2D3940F91}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelTubesFlydo", "TravelTubesFlydo\TravelTubesFlydo.csproj", "{65B4051B-C24E-4C4F-A734-3523E389D94C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Backup = Debug|Backup
+		Debug|Steam = Debug|Steam
+		Release|Backup = Release|Backup
+		Release|Steam = Release|Steam
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5FC6C2F5-20FE-4735-BCD9-A17F59B789DA}.Debug|Backup.ActiveCfg = Debug|Backup
+		{5FC6C2F5-20FE-4735-BCD9-A17F59B789DA}.Debug|Backup.Build.0 = Debug|Backup
+		{5FC6C2F5-20FE-4735-BCD9-A17F59B789DA}.Debug|Steam.ActiveCfg = Debug|Steam
+		{5FC6C2F5-20FE-4735-BCD9-A17F59B789DA}.Debug|Steam.Build.0 = Debug|Steam
+		{5FC6C2F5-20FE-4735-BCD9-A17F59B789DA}.Release|Backup.ActiveCfg = Release|Backup
+		{5FC6C2F5-20FE-4735-BCD9-A17F59B789DA}.Release|Backup.Build.0 = Release|Backup
+		{5FC6C2F5-20FE-4735-BCD9-A17F59B789DA}.Release|Steam.ActiveCfg = Release|Steam
+		{5FC6C2F5-20FE-4735-BCD9-A17F59B789DA}.Release|Steam.Build.0 = Release|Steam
+		{22C4C87F-B935-4E28-921F-FF279507634A}.Debug|Backup.ActiveCfg = Debug|Backup
+		{22C4C87F-B935-4E28-921F-FF279507634A}.Debug|Backup.Build.0 = Debug|Backup
+		{22C4C87F-B935-4E28-921F-FF279507634A}.Debug|Steam.ActiveCfg = Debug|Steam
+		{22C4C87F-B935-4E28-921F-FF279507634A}.Debug|Steam.Build.0 = Debug|Steam
+		{22C4C87F-B935-4E28-921F-FF279507634A}.Release|Backup.ActiveCfg = Release|Backup
+		{22C4C87F-B935-4E28-921F-FF279507634A}.Release|Backup.Build.0 = Release|Backup
+		{22C4C87F-B935-4E28-921F-FF279507634A}.Release|Steam.ActiveCfg = Release|Steam
+		{22C4C87F-B935-4E28-921F-FF279507634A}.Release|Steam.Build.0 = Release|Steam
+		{6F02BB6C-F5B0-4959-9A53-A972B3E9B4F8}.Debug|Backup.ActiveCfg = Debug|Backup
+		{6F02BB6C-F5B0-4959-9A53-A972B3E9B4F8}.Debug|Backup.Build.0 = Debug|Backup
+		{6F02BB6C-F5B0-4959-9A53-A972B3E9B4F8}.Debug|Steam.ActiveCfg = Debug|Steam
+		{6F02BB6C-F5B0-4959-9A53-A972B3E9B4F8}.Debug|Steam.Build.0 = Debug|Steam
+		{6F02BB6C-F5B0-4959-9A53-A972B3E9B4F8}.Release|Backup.ActiveCfg = Release|Backup
+		{6F02BB6C-F5B0-4959-9A53-A972B3E9B4F8}.Release|Backup.Build.0 = Release|Backup
+		{6F02BB6C-F5B0-4959-9A53-A972B3E9B4F8}.Release|Steam.ActiveCfg = Release|Steam
+		{6F02BB6C-F5B0-4959-9A53-A972B3E9B4F8}.Release|Steam.Build.0 = Release|Steam
+		{E33F1B5E-89D9-4345-8B82-8D05C41CFA30}.Debug|Backup.ActiveCfg = Debug|Backup
+		{E33F1B5E-89D9-4345-8B82-8D05C41CFA30}.Debug|Backup.Build.0 = Debug|Backup
+		{E33F1B5E-89D9-4345-8B82-8D05C41CFA30}.Debug|Steam.ActiveCfg = Debug|Steam
+		{E33F1B5E-89D9-4345-8B82-8D05C41CFA30}.Debug|Steam.Build.0 = Debug|Steam
+		{E33F1B5E-89D9-4345-8B82-8D05C41CFA30}.Release|Backup.ActiveCfg = Release|Backup
+		{E33F1B5E-89D9-4345-8B82-8D05C41CFA30}.Release|Backup.Build.0 = Release|Backup
+		{E33F1B5E-89D9-4345-8B82-8D05C41CFA30}.Release|Steam.ActiveCfg = Release|Steam
+		{E33F1B5E-89D9-4345-8B82-8D05C41CFA30}.Release|Steam.Build.0 = Release|Steam
+		{8853F8F9-B723-4B89-804E-F162A183AE89}.Debug|Backup.ActiveCfg = Debug|Backup
+		{8853F8F9-B723-4B89-804E-F162A183AE89}.Debug|Backup.Build.0 = Debug|Backup
+		{8853F8F9-B723-4B89-804E-F162A183AE89}.Debug|Steam.ActiveCfg = Debug|Steam
+		{8853F8F9-B723-4B89-804E-F162A183AE89}.Debug|Steam.Build.0 = Debug|Steam
+		{8853F8F9-B723-4B89-804E-F162A183AE89}.Release|Backup.ActiveCfg = Release|Backup
+		{8853F8F9-B723-4B89-804E-F162A183AE89}.Release|Backup.Build.0 = Release|Backup
+		{8853F8F9-B723-4B89-804E-F162A183AE89}.Release|Steam.ActiveCfg = Release|Steam
+		{8853F8F9-B723-4B89-804E-F162A183AE89}.Release|Steam.Build.0 = Release|Steam
+		{A4099134-55DC-477C-BD16-870ABA43FEB9}.Debug|Backup.ActiveCfg = Debug|Backup
+		{A4099134-55DC-477C-BD16-870ABA43FEB9}.Debug|Backup.Build.0 = Debug|Backup
+		{A4099134-55DC-477C-BD16-870ABA43FEB9}.Debug|Steam.ActiveCfg = Debug|Steam
+		{A4099134-55DC-477C-BD16-870ABA43FEB9}.Debug|Steam.Build.0 = Debug|Steam
+		{A4099134-55DC-477C-BD16-870ABA43FEB9}.Release|Backup.ActiveCfg = Release|Backup
+		{A4099134-55DC-477C-BD16-870ABA43FEB9}.Release|Backup.Build.0 = Release|Backup
+		{A4099134-55DC-477C-BD16-870ABA43FEB9}.Release|Steam.ActiveCfg = Release|Steam
+		{A4099134-55DC-477C-BD16-870ABA43FEB9}.Release|Steam.Build.0 = Release|Steam
+		{7CC35D4F-C0F8-4057-865B-58E711D6AFAB}.Debug|Backup.ActiveCfg = Debug|Backup
+		{7CC35D4F-C0F8-4057-865B-58E711D6AFAB}.Debug|Backup.Build.0 = Debug|Backup
+		{7CC35D4F-C0F8-4057-865B-58E711D6AFAB}.Debug|Steam.ActiveCfg = Debug|Steam
+		{7CC35D4F-C0F8-4057-865B-58E711D6AFAB}.Debug|Steam.Build.0 = Debug|Steam
+		{7CC35D4F-C0F8-4057-865B-58E711D6AFAB}.Release|Backup.ActiveCfg = Release|Backup
+		{7CC35D4F-C0F8-4057-865B-58E711D6AFAB}.Release|Backup.Build.0 = Release|Backup
+		{7CC35D4F-C0F8-4057-865B-58E711D6AFAB}.Release|Steam.ActiveCfg = Release|Steam
+		{7CC35D4F-C0F8-4057-865B-58E711D6AFAB}.Release|Steam.Build.0 = Release|Steam
+		{D810E80F-8882-459F-A9CD-13E3D47937EB}.Debug|Backup.ActiveCfg = Debug|Backup
+		{D810E80F-8882-459F-A9CD-13E3D47937EB}.Debug|Backup.Build.0 = Debug|Backup
+		{D810E80F-8882-459F-A9CD-13E3D47937EB}.Debug|Steam.ActiveCfg = Debug|Steam
+		{D810E80F-8882-459F-A9CD-13E3D47937EB}.Debug|Steam.Build.0 = Debug|Steam
+		{D810E80F-8882-459F-A9CD-13E3D47937EB}.Release|Backup.ActiveCfg = Release|Backup
+		{D810E80F-8882-459F-A9CD-13E3D47937EB}.Release|Backup.Build.0 = Release|Backup
+		{D810E80F-8882-459F-A9CD-13E3D47937EB}.Release|Steam.ActiveCfg = Release|Steam
+		{D810E80F-8882-459F-A9CD-13E3D47937EB}.Release|Steam.Build.0 = Release|Steam
+		{4D58EC71-C750-483B-8CC3-0CA7ABE91F87}.Debug|Backup.ActiveCfg = Debug|Backup
+		{4D58EC71-C750-483B-8CC3-0CA7ABE91F87}.Debug|Backup.Build.0 = Debug|Backup
+		{4D58EC71-C750-483B-8CC3-0CA7ABE91F87}.Debug|Steam.ActiveCfg = Debug|Steam
+		{4D58EC71-C750-483B-8CC3-0CA7ABE91F87}.Debug|Steam.Build.0 = Debug|Steam
+		{4D58EC71-C750-483B-8CC3-0CA7ABE91F87}.Release|Backup.ActiveCfg = Release|Backup
+		{4D58EC71-C750-483B-8CC3-0CA7ABE91F87}.Release|Backup.Build.0 = Release|Backup
+		{4D58EC71-C750-483B-8CC3-0CA7ABE91F87}.Release|Steam.ActiveCfg = Release|Steam
+		{4D58EC71-C750-483B-8CC3-0CA7ABE91F87}.Release|Steam.Build.0 = Release|Steam
+		{982F3EF4-7F06-4698-B887-20B006C70141}.Debug|Backup.ActiveCfg = Debug|Backup
+		{982F3EF4-7F06-4698-B887-20B006C70141}.Debug|Backup.Build.0 = Debug|Backup
+		{982F3EF4-7F06-4698-B887-20B006C70141}.Debug|Steam.ActiveCfg = Debug|Steam
+		{982F3EF4-7F06-4698-B887-20B006C70141}.Debug|Steam.Build.0 = Debug|Steam
+		{982F3EF4-7F06-4698-B887-20B006C70141}.Release|Backup.ActiveCfg = Release|Backup
+		{982F3EF4-7F06-4698-B887-20B006C70141}.Release|Backup.Build.0 = Release|Backup
+		{982F3EF4-7F06-4698-B887-20B006C70141}.Release|Steam.ActiveCfg = Release|Steam
+		{982F3EF4-7F06-4698-B887-20B006C70141}.Release|Steam.Build.0 = Release|Steam
+		{347E18A7-561D-453E-9C55-B071DA21BD58}.Debug|Backup.ActiveCfg = Debug|Backup
+		{347E18A7-561D-453E-9C55-B071DA21BD58}.Debug|Backup.Build.0 = Debug|Backup
+		{347E18A7-561D-453E-9C55-B071DA21BD58}.Debug|Steam.ActiveCfg = Debug|Steam
+		{347E18A7-561D-453E-9C55-B071DA21BD58}.Debug|Steam.Build.0 = Debug|Steam
+		{347E18A7-561D-453E-9C55-B071DA21BD58}.Release|Backup.ActiveCfg = Release|Backup
+		{347E18A7-561D-453E-9C55-B071DA21BD58}.Release|Backup.Build.0 = Release|Backup
+		{347E18A7-561D-453E-9C55-B071DA21BD58}.Release|Steam.ActiveCfg = Release|Steam
+		{347E18A7-561D-453E-9C55-B071DA21BD58}.Release|Steam.Build.0 = Release|Steam
+		{36FEBD03-3F61-44E1-B503-804DE0D80571}.Debug|Backup.ActiveCfg = Debug|Backup
+		{36FEBD03-3F61-44E1-B503-804DE0D80571}.Debug|Backup.Build.0 = Debug|Backup
+		{36FEBD03-3F61-44E1-B503-804DE0D80571}.Debug|Steam.ActiveCfg = Debug|Steam
+		{36FEBD03-3F61-44E1-B503-804DE0D80571}.Debug|Steam.Build.0 = Debug|Steam
+		{36FEBD03-3F61-44E1-B503-804DE0D80571}.Release|Backup.ActiveCfg = Release|Backup
+		{36FEBD03-3F61-44E1-B503-804DE0D80571}.Release|Backup.Build.0 = Release|Backup
+		{36FEBD03-3F61-44E1-B503-804DE0D80571}.Release|Steam.ActiveCfg = Release|Steam
+		{36FEBD03-3F61-44E1-B503-804DE0D80571}.Release|Steam.Build.0 = Release|Steam
+		{7C73CCA2-E94A-462E-83E6-B0DBB9C3E1C0}.Debug|Backup.ActiveCfg = Debug|Backup
+		{7C73CCA2-E94A-462E-83E6-B0DBB9C3E1C0}.Debug|Backup.Build.0 = Debug|Backup
+		{7C73CCA2-E94A-462E-83E6-B0DBB9C3E1C0}.Debug|Steam.ActiveCfg = Debug|Steam
+		{7C73CCA2-E94A-462E-83E6-B0DBB9C3E1C0}.Debug|Steam.Build.0 = Debug|Steam
+		{7C73CCA2-E94A-462E-83E6-B0DBB9C3E1C0}.Release|Backup.ActiveCfg = Release|Backup
+		{7C73CCA2-E94A-462E-83E6-B0DBB9C3E1C0}.Release|Backup.Build.0 = Release|Backup
+		{7C73CCA2-E94A-462E-83E6-B0DBB9C3E1C0}.Release|Steam.ActiveCfg = Release|Steam
+		{7C73CCA2-E94A-462E-83E6-B0DBB9C3E1C0}.Release|Steam.Build.0 = Release|Steam
+		{C1C412F6-2F4D-487E-8AB1-F3B5AB369BE0}.Debug|Backup.ActiveCfg = Debug|Backup
+		{C1C412F6-2F4D-487E-8AB1-F3B5AB369BE0}.Debug|Backup.Build.0 = Debug|Backup
+		{C1C412F6-2F4D-487E-8AB1-F3B5AB369BE0}.Debug|Steam.ActiveCfg = Debug|Steam
+		{C1C412F6-2F4D-487E-8AB1-F3B5AB369BE0}.Debug|Steam.Build.0 = Debug|Steam
+		{C1C412F6-2F4D-487E-8AB1-F3B5AB369BE0}.Release|Backup.ActiveCfg = Release|Backup
+		{C1C412F6-2F4D-487E-8AB1-F3B5AB369BE0}.Release|Backup.Build.0 = Release|Backup
+		{C1C412F6-2F4D-487E-8AB1-F3B5AB369BE0}.Release|Steam.ActiveCfg = Release|Steam
+		{C1C412F6-2F4D-487E-8AB1-F3B5AB369BE0}.Release|Steam.Build.0 = Release|Steam
+		{71FCFA2C-4253-4F27-BAA6-45559E438AEE}.Debug|Backup.ActiveCfg = Debug|Backup
+		{71FCFA2C-4253-4F27-BAA6-45559E438AEE}.Debug|Backup.Build.0 = Debug|Backup
+		{71FCFA2C-4253-4F27-BAA6-45559E438AEE}.Debug|Steam.ActiveCfg = Debug|Steam
+		{71FCFA2C-4253-4F27-BAA6-45559E438AEE}.Debug|Steam.Build.0 = Debug|Steam
+		{71FCFA2C-4253-4F27-BAA6-45559E438AEE}.Release|Backup.ActiveCfg = Release|Backup
+		{71FCFA2C-4253-4F27-BAA6-45559E438AEE}.Release|Backup.Build.0 = Release|Backup
+		{71FCFA2C-4253-4F27-BAA6-45559E438AEE}.Release|Steam.ActiveCfg = Release|Steam
+		{71FCFA2C-4253-4F27-BAA6-45559E438AEE}.Release|Steam.Build.0 = Release|Steam
+		{22FA8C43-28BD-4F4A-AEBD-48BC71C3308A}.Debug|Backup.ActiveCfg = Debug|Backup
+		{22FA8C43-28BD-4F4A-AEBD-48BC71C3308A}.Debug|Backup.Build.0 = Debug|Backup
+		{22FA8C43-28BD-4F4A-AEBD-48BC71C3308A}.Debug|Steam.ActiveCfg = Debug|Steam
+		{22FA8C43-28BD-4F4A-AEBD-48BC71C3308A}.Debug|Steam.Build.0 = Debug|Steam
+		{22FA8C43-28BD-4F4A-AEBD-48BC71C3308A}.Release|Backup.ActiveCfg = Release|Backup
+		{22FA8C43-28BD-4F4A-AEBD-48BC71C3308A}.Release|Backup.Build.0 = Release|Backup
+		{22FA8C43-28BD-4F4A-AEBD-48BC71C3308A}.Release|Steam.ActiveCfg = Release|Steam
+		{22FA8C43-28BD-4F4A-AEBD-48BC71C3308A}.Release|Steam.Build.0 = Release|Steam
+		{C5C6F9F2-A0C4-4611-BC86-1EE553C39C9D}.Debug|Backup.ActiveCfg = Debug|Backup
+		{C5C6F9F2-A0C4-4611-BC86-1EE553C39C9D}.Debug|Backup.Build.0 = Debug|Backup
+		{C5C6F9F2-A0C4-4611-BC86-1EE553C39C9D}.Debug|Steam.ActiveCfg = Debug|Steam
+		{C5C6F9F2-A0C4-4611-BC86-1EE553C39C9D}.Debug|Steam.Build.0 = Debug|Steam
+		{C5C6F9F2-A0C4-4611-BC86-1EE553C39C9D}.Release|Backup.ActiveCfg = Release|Backup
+		{C5C6F9F2-A0C4-4611-BC86-1EE553C39C9D}.Release|Backup.Build.0 = Release|Backup
+		{C5C6F9F2-A0C4-4611-BC86-1EE553C39C9D}.Release|Steam.ActiveCfg = Release|Steam
+		{C5C6F9F2-A0C4-4611-BC86-1EE553C39C9D}.Release|Steam.Build.0 = Release|Steam
+		{04CC5C9A-DF3F-433E-B69F-388EC13A29EB}.Debug|Backup.ActiveCfg = Debug|Backup
+		{04CC5C9A-DF3F-433E-B69F-388EC13A29EB}.Debug|Backup.Build.0 = Debug|Backup
+		{04CC5C9A-DF3F-433E-B69F-388EC13A29EB}.Debug|Steam.ActiveCfg = Debug|Steam
+		{04CC5C9A-DF3F-433E-B69F-388EC13A29EB}.Debug|Steam.Build.0 = Debug|Steam
+		{04CC5C9A-DF3F-433E-B69F-388EC13A29EB}.Release|Backup.ActiveCfg = Release|Backup
+		{04CC5C9A-DF3F-433E-B69F-388EC13A29EB}.Release|Backup.Build.0 = Release|Backup
+		{04CC5C9A-DF3F-433E-B69F-388EC13A29EB}.Release|Steam.ActiveCfg = Release|Steam
+		{04CC5C9A-DF3F-433E-B69F-388EC13A29EB}.Release|Steam.Build.0 = Release|Steam
+		{90B82F71-0536-4820-A41D-9C9C61711AF1}.Debug|Backup.ActiveCfg = Debug|Backup
+		{90B82F71-0536-4820-A41D-9C9C61711AF1}.Debug|Backup.Build.0 = Debug|Backup
+		{90B82F71-0536-4820-A41D-9C9C61711AF1}.Debug|Steam.ActiveCfg = Debug|Steam
+		{90B82F71-0536-4820-A41D-9C9C61711AF1}.Debug|Steam.Build.0 = Debug|Steam
+		{90B82F71-0536-4820-A41D-9C9C61711AF1}.Release|Backup.ActiveCfg = Release|Backup
+		{90B82F71-0536-4820-A41D-9C9C61711AF1}.Release|Backup.Build.0 = Release|Backup
+		{90B82F71-0536-4820-A41D-9C9C61711AF1}.Release|Steam.ActiveCfg = Release|Steam
+		{90B82F71-0536-4820-A41D-9C9C61711AF1}.Release|Steam.Build.0 = Release|Steam
+		{5CFB9047-50D9-4A27-B97C-14799B7FFFCE}.Debug|Backup.ActiveCfg = Debug|Backup
+		{5CFB9047-50D9-4A27-B97C-14799B7FFFCE}.Debug|Backup.Build.0 = Debug|Backup
+		{5CFB9047-50D9-4A27-B97C-14799B7FFFCE}.Debug|Steam.ActiveCfg = Debug|Steam
+		{5CFB9047-50D9-4A27-B97C-14799B7FFFCE}.Debug|Steam.Build.0 = Debug|Steam
+		{5CFB9047-50D9-4A27-B97C-14799B7FFFCE}.Release|Backup.ActiveCfg = Release|Backup
+		{5CFB9047-50D9-4A27-B97C-14799B7FFFCE}.Release|Backup.Build.0 = Release|Backup
+		{5CFB9047-50D9-4A27-B97C-14799B7FFFCE}.Release|Steam.ActiveCfg = Release|Steam
+		{5CFB9047-50D9-4A27-B97C-14799B7FFFCE}.Release|Steam.Build.0 = Release|Steam
+		{04C04730-5781-4C2C-BCE2-F2A224F4AB9A}.Debug|Backup.ActiveCfg = Debug|Backup
+		{04C04730-5781-4C2C-BCE2-F2A224F4AB9A}.Debug|Backup.Build.0 = Debug|Backup
+		{04C04730-5781-4C2C-BCE2-F2A224F4AB9A}.Debug|Steam.ActiveCfg = Debug|Steam
+		{04C04730-5781-4C2C-BCE2-F2A224F4AB9A}.Debug|Steam.Build.0 = Debug|Steam
+		{04C04730-5781-4C2C-BCE2-F2A224F4AB9A}.Release|Backup.ActiveCfg = Release|Backup
+		{04C04730-5781-4C2C-BCE2-F2A224F4AB9A}.Release|Backup.Build.0 = Release|Backup
+		{04C04730-5781-4C2C-BCE2-F2A224F4AB9A}.Release|Steam.ActiveCfg = Release|Steam
+		{04C04730-5781-4C2C-BCE2-F2A224F4AB9A}.Release|Steam.Build.0 = Release|Steam
+		{195F088E-11A2-42B3-B837-B7E95561D76C}.Debug|Backup.ActiveCfg = Debug|Backup
+		{195F088E-11A2-42B3-B837-B7E95561D76C}.Debug|Backup.Build.0 = Debug|Backup
+		{195F088E-11A2-42B3-B837-B7E95561D76C}.Debug|Steam.ActiveCfg = Debug|Steam
+		{195F088E-11A2-42B3-B837-B7E95561D76C}.Debug|Steam.Build.0 = Debug|Steam
+		{195F088E-11A2-42B3-B837-B7E95561D76C}.Release|Backup.ActiveCfg = Release|Backup
+		{195F088E-11A2-42B3-B837-B7E95561D76C}.Release|Backup.Build.0 = Release|Backup
+		{195F088E-11A2-42B3-B837-B7E95561D76C}.Release|Steam.ActiveCfg = Release|Steam
+		{195F088E-11A2-42B3-B837-B7E95561D76C}.Release|Steam.Build.0 = Release|Steam
+		{2EFBFA64-0574-44CB-B714-D6FA36659F6E}.Debug|Backup.ActiveCfg = Debug|Backup
+		{2EFBFA64-0574-44CB-B714-D6FA36659F6E}.Debug|Backup.Build.0 = Debug|Backup
+		{2EFBFA64-0574-44CB-B714-D6FA36659F6E}.Debug|Steam.ActiveCfg = Debug|Steam
+		{2EFBFA64-0574-44CB-B714-D6FA36659F6E}.Debug|Steam.Build.0 = Debug|Steam
+		{2EFBFA64-0574-44CB-B714-D6FA36659F6E}.Release|Backup.ActiveCfg = Release|Backup
+		{2EFBFA64-0574-44CB-B714-D6FA36659F6E}.Release|Backup.Build.0 = Release|Backup
+		{2EFBFA64-0574-44CB-B714-D6FA36659F6E}.Release|Steam.ActiveCfg = Release|Steam
+		{2EFBFA64-0574-44CB-B714-D6FA36659F6E}.Release|Steam.Build.0 = Release|Steam
+		{23F3F4E5-4CB6-45AB-AF81-E2174FE93208}.Debug|Backup.ActiveCfg = Debug|Backup
+		{23F3F4E5-4CB6-45AB-AF81-E2174FE93208}.Debug|Backup.Build.0 = Debug|Backup
+		{23F3F4E5-4CB6-45AB-AF81-E2174FE93208}.Debug|Steam.ActiveCfg = Debug|Steam
+		{23F3F4E5-4CB6-45AB-AF81-E2174FE93208}.Debug|Steam.Build.0 = Debug|Steam
+		{23F3F4E5-4CB6-45AB-AF81-E2174FE93208}.Release|Backup.ActiveCfg = Release|Backup
+		{23F3F4E5-4CB6-45AB-AF81-E2174FE93208}.Release|Backup.Build.0 = Release|Backup
+		{23F3F4E5-4CB6-45AB-AF81-E2174FE93208}.Release|Steam.ActiveCfg = Release|Steam
+		{23F3F4E5-4CB6-45AB-AF81-E2174FE93208}.Release|Steam.Build.0 = Release|Steam
+		{62FD82E3-D595-45BB-8EA8-FB541B90BDB8}.Debug|Backup.ActiveCfg = Debug|Backup
+		{62FD82E3-D595-45BB-8EA8-FB541B90BDB8}.Debug|Backup.Build.0 = Debug|Backup
+		{62FD82E3-D595-45BB-8EA8-FB541B90BDB8}.Debug|Steam.ActiveCfg = Debug|Steam
+		{62FD82E3-D595-45BB-8EA8-FB541B90BDB8}.Debug|Steam.Build.0 = Debug|Steam
+		{62FD82E3-D595-45BB-8EA8-FB541B90BDB8}.Release|Backup.ActiveCfg = Release|Backup
+		{62FD82E3-D595-45BB-8EA8-FB541B90BDB8}.Release|Backup.Build.0 = Release|Backup
+		{62FD82E3-D595-45BB-8EA8-FB541B90BDB8}.Release|Steam.ActiveCfg = Release|Steam
+		{62FD82E3-D595-45BB-8EA8-FB541B90BDB8}.Release|Steam.Build.0 = Release|Steam
+		{6BF95E8A-DDF8-460A-A7CE-A24E970FB249}.Debug|Backup.ActiveCfg = Debug|Backup
+		{6BF95E8A-DDF8-460A-A7CE-A24E970FB249}.Debug|Backup.Build.0 = Debug|Backup
+		{6BF95E8A-DDF8-460A-A7CE-A24E970FB249}.Debug|Steam.ActiveCfg = Debug|Steam
+		{6BF95E8A-DDF8-460A-A7CE-A24E970FB249}.Debug|Steam.Build.0 = Debug|Steam
+		{6BF95E8A-DDF8-460A-A7CE-A24E970FB249}.Release|Backup.ActiveCfg = Release|Backup
+		{6BF95E8A-DDF8-460A-A7CE-A24E970FB249}.Release|Backup.Build.0 = Release|Backup
+		{6BF95E8A-DDF8-460A-A7CE-A24E970FB249}.Release|Steam.ActiveCfg = Release|Steam
+		{6BF95E8A-DDF8-460A-A7CE-A24E970FB249}.Release|Steam.Build.0 = Release|Steam
+		{E517092A-E2A9-42EA-AC07-550EC9302126}.Debug|Backup.ActiveCfg = Debug|Backup
+		{E517092A-E2A9-42EA-AC07-550EC9302126}.Debug|Backup.Build.0 = Debug|Backup
+		{E517092A-E2A9-42EA-AC07-550EC9302126}.Debug|Steam.ActiveCfg = Debug|Steam
+		{E517092A-E2A9-42EA-AC07-550EC9302126}.Debug|Steam.Build.0 = Debug|Steam
+		{E517092A-E2A9-42EA-AC07-550EC9302126}.Release|Backup.ActiveCfg = Release|Backup
+		{E517092A-E2A9-42EA-AC07-550EC9302126}.Release|Backup.Build.0 = Release|Backup
+		{E517092A-E2A9-42EA-AC07-550EC9302126}.Release|Steam.ActiveCfg = Release|Steam
+		{E517092A-E2A9-42EA-AC07-550EC9302126}.Release|Steam.Build.0 = Release|Steam
+		{5435CC70-6EEA-49DE-A9E4-2A965FC504D1}.Debug|Backup.ActiveCfg = Debug|Backup
+		{5435CC70-6EEA-49DE-A9E4-2A965FC504D1}.Debug|Backup.Build.0 = Debug|Backup
+		{5435CC70-6EEA-49DE-A9E4-2A965FC504D1}.Debug|Steam.ActiveCfg = Debug|Steam
+		{5435CC70-6EEA-49DE-A9E4-2A965FC504D1}.Debug|Steam.Build.0 = Debug|Steam
+		{5435CC70-6EEA-49DE-A9E4-2A965FC504D1}.Release|Backup.ActiveCfg = Release|Backup
+		{5435CC70-6EEA-49DE-A9E4-2A965FC504D1}.Release|Backup.Build.0 = Release|Backup
+		{5435CC70-6EEA-49DE-A9E4-2A965FC504D1}.Release|Steam.ActiveCfg = Release|Steam
+		{5435CC70-6EEA-49DE-A9E4-2A965FC504D1}.Release|Steam.Build.0 = Release|Steam
+		{68830044-B949-4A3B-80BF-E493963E9186}.Debug|Backup.ActiveCfg = Debug|Backup
+		{68830044-B949-4A3B-80BF-E493963E9186}.Debug|Backup.Build.0 = Debug|Backup
+		{68830044-B949-4A3B-80BF-E493963E9186}.Debug|Steam.ActiveCfg = Debug|Steam
+		{68830044-B949-4A3B-80BF-E493963E9186}.Debug|Steam.Build.0 = Debug|Steam
+		{68830044-B949-4A3B-80BF-E493963E9186}.Release|Backup.ActiveCfg = Release|Backup
+		{68830044-B949-4A3B-80BF-E493963E9186}.Release|Backup.Build.0 = Release|Backup
+		{68830044-B949-4A3B-80BF-E493963E9186}.Release|Steam.ActiveCfg = Release|Steam
+		{68830044-B949-4A3B-80BF-E493963E9186}.Release|Steam.Build.0 = Release|Steam
+		{5779847C-B257-4180-8E21-7671CB8A3924}.Debug|Backup.ActiveCfg = Debug|Backup
+		{5779847C-B257-4180-8E21-7671CB8A3924}.Debug|Backup.Build.0 = Debug|Backup
+		{5779847C-B257-4180-8E21-7671CB8A3924}.Debug|Steam.ActiveCfg = Debug|Steam
+		{5779847C-B257-4180-8E21-7671CB8A3924}.Debug|Steam.Build.0 = Debug|Steam
+		{5779847C-B257-4180-8E21-7671CB8A3924}.Release|Backup.ActiveCfg = Release|Backup
+		{5779847C-B257-4180-8E21-7671CB8A3924}.Release|Backup.Build.0 = Release|Backup
+		{5779847C-B257-4180-8E21-7671CB8A3924}.Release|Steam.ActiveCfg = Release|Steam
+		{5779847C-B257-4180-8E21-7671CB8A3924}.Release|Steam.Build.0 = Release|Steam
+		{9C19F596-BCDF-4ECE-B400-9E1D47498F5B}.Debug|Backup.ActiveCfg = Debug|Backup
+		{9C19F596-BCDF-4ECE-B400-9E1D47498F5B}.Debug|Backup.Build.0 = Debug|Backup
+		{9C19F596-BCDF-4ECE-B400-9E1D47498F5B}.Debug|Steam.ActiveCfg = Debug|Steam
+		{9C19F596-BCDF-4ECE-B400-9E1D47498F5B}.Debug|Steam.Build.0 = Debug|Steam
+		{9C19F596-BCDF-4ECE-B400-9E1D47498F5B}.Release|Backup.ActiveCfg = Release|Backup
+		{9C19F596-BCDF-4ECE-B400-9E1D47498F5B}.Release|Backup.Build.0 = Release|Backup
+		{9C19F596-BCDF-4ECE-B400-9E1D47498F5B}.Release|Steam.ActiveCfg = Release|Steam
+		{9C19F596-BCDF-4ECE-B400-9E1D47498F5B}.Release|Steam.Build.0 = Release|Steam
+		{392E7EA6-94F3-444D-9FF8-DF7D269E35DF}.Debug|Backup.ActiveCfg = Debug|Backup
+		{392E7EA6-94F3-444D-9FF8-DF7D269E35DF}.Debug|Backup.Build.0 = Debug|Backup
+		{392E7EA6-94F3-444D-9FF8-DF7D269E35DF}.Debug|Steam.ActiveCfg = Debug|Steam
+		{392E7EA6-94F3-444D-9FF8-DF7D269E35DF}.Debug|Steam.Build.0 = Debug|Steam
+		{392E7EA6-94F3-444D-9FF8-DF7D269E35DF}.Release|Backup.ActiveCfg = Release|Backup
+		{392E7EA6-94F3-444D-9FF8-DF7D269E35DF}.Release|Backup.Build.0 = Release|Backup
+		{392E7EA6-94F3-444D-9FF8-DF7D269E35DF}.Release|Steam.ActiveCfg = Release|Steam
+		{392E7EA6-94F3-444D-9FF8-DF7D269E35DF}.Release|Steam.Build.0 = Release|Steam
+		{FCA0AB8A-EBB1-43F0-9A48-4FC308C4C9E7}.Debug|Backup.ActiveCfg = Debug|Backup
+		{FCA0AB8A-EBB1-43F0-9A48-4FC308C4C9E7}.Debug|Backup.Build.0 = Debug|Backup
+		{FCA0AB8A-EBB1-43F0-9A48-4FC308C4C9E7}.Debug|Steam.ActiveCfg = Debug|Steam
+		{FCA0AB8A-EBB1-43F0-9A48-4FC308C4C9E7}.Debug|Steam.Build.0 = Debug|Steam
+		{FCA0AB8A-EBB1-43F0-9A48-4FC308C4C9E7}.Release|Backup.ActiveCfg = Release|Backup
+		{FCA0AB8A-EBB1-43F0-9A48-4FC308C4C9E7}.Release|Backup.Build.0 = Release|Backup
+		{FCA0AB8A-EBB1-43F0-9A48-4FC308C4C9E7}.Release|Steam.ActiveCfg = Release|Steam
+		{FCA0AB8A-EBB1-43F0-9A48-4FC308C4C9E7}.Release|Steam.Build.0 = Release|Steam
+		{9AC34BD6-605A-4AD7-9282-02BB6E6C17EA}.Debug|Backup.ActiveCfg = Debug|Backup
+		{9AC34BD6-605A-4AD7-9282-02BB6E6C17EA}.Debug|Backup.Build.0 = Debug|Backup
+		{9AC34BD6-605A-4AD7-9282-02BB6E6C17EA}.Debug|Steam.ActiveCfg = Debug|Steam
+		{9AC34BD6-605A-4AD7-9282-02BB6E6C17EA}.Debug|Steam.Build.0 = Debug|Steam
+		{9AC34BD6-605A-4AD7-9282-02BB6E6C17EA}.Release|Backup.ActiveCfg = Release|Backup
+		{9AC34BD6-605A-4AD7-9282-02BB6E6C17EA}.Release|Backup.Build.0 = Release|Backup
+		{9AC34BD6-605A-4AD7-9282-02BB6E6C17EA}.Release|Steam.ActiveCfg = Release|Steam
+		{9AC34BD6-605A-4AD7-9282-02BB6E6C17EA}.Release|Steam.Build.0 = Release|Steam
+		{AC7EF0AE-DAE8-48B3-85E0-9D7C3D578F95}.Debug|Backup.ActiveCfg = Debug|Backup
+		{AC7EF0AE-DAE8-48B3-85E0-9D7C3D578F95}.Debug|Backup.Build.0 = Debug|Backup
+		{AC7EF0AE-DAE8-48B3-85E0-9D7C3D578F95}.Debug|Steam.ActiveCfg = Debug|Steam
+		{AC7EF0AE-DAE8-48B3-85E0-9D7C3D578F95}.Debug|Steam.Build.0 = Debug|Steam
+		{AC7EF0AE-DAE8-48B3-85E0-9D7C3D578F95}.Release|Backup.ActiveCfg = Release|Backup
+		{AC7EF0AE-DAE8-48B3-85E0-9D7C3D578F95}.Release|Backup.Build.0 = Release|Backup
+		{AC7EF0AE-DAE8-48B3-85E0-9D7C3D578F95}.Release|Steam.ActiveCfg = Release|Steam
+		{AC7EF0AE-DAE8-48B3-85E0-9D7C3D578F95}.Release|Steam.Build.0 = Release|Steam
+		{1CF93B24-E8B1-49B1-8509-38CD775E1587}.Debug|Backup.ActiveCfg = Debug|Backup
+		{1CF93B24-E8B1-49B1-8509-38CD775E1587}.Debug|Backup.Build.0 = Debug|Backup
+		{1CF93B24-E8B1-49B1-8509-38CD775E1587}.Debug|Steam.ActiveCfg = Debug|Steam
+		{1CF93B24-E8B1-49B1-8509-38CD775E1587}.Debug|Steam.Build.0 = Debug|Steam
+		{1CF93B24-E8B1-49B1-8509-38CD775E1587}.Release|Backup.ActiveCfg = Release|Backup
+		{1CF93B24-E8B1-49B1-8509-38CD775E1587}.Release|Backup.Build.0 = Release|Backup
+		{1CF93B24-E8B1-49B1-8509-38CD775E1587}.Release|Steam.ActiveCfg = Release|Steam
+		{1CF93B24-E8B1-49B1-8509-38CD775E1587}.Release|Steam.Build.0 = Release|Steam
+		{A3EFF508-44C6-49A1-B35D-7DE55A7FDC62}.Debug|Backup.ActiveCfg = Debug|Backup
+		{A3EFF508-44C6-49A1-B35D-7DE55A7FDC62}.Debug|Backup.Build.0 = Debug|Backup
+		{A3EFF508-44C6-49A1-B35D-7DE55A7FDC62}.Debug|Steam.ActiveCfg = Debug|Steam
+		{A3EFF508-44C6-49A1-B35D-7DE55A7FDC62}.Debug|Steam.Build.0 = Debug|Steam
+		{A3EFF508-44C6-49A1-B35D-7DE55A7FDC62}.Release|Backup.ActiveCfg = Release|Backup
+		{A3EFF508-44C6-49A1-B35D-7DE55A7FDC62}.Release|Backup.Build.0 = Release|Backup
+		{A3EFF508-44C6-49A1-B35D-7DE55A7FDC62}.Release|Steam.ActiveCfg = Release|Steam
+		{A3EFF508-44C6-49A1-B35D-7DE55A7FDC62}.Release|Steam.Build.0 = Release|Steam
+		{091899DF-CB06-4578-B556-84C466932615}.Debug|Backup.ActiveCfg = Debug|Backup
+		{091899DF-CB06-4578-B556-84C466932615}.Debug|Backup.Build.0 = Debug|Backup
+		{091899DF-CB06-4578-B556-84C466932615}.Debug|Steam.ActiveCfg = Debug|Steam
+		{091899DF-CB06-4578-B556-84C466932615}.Debug|Steam.Build.0 = Debug|Steam
+		{091899DF-CB06-4578-B556-84C466932615}.Release|Backup.ActiveCfg = Release|Backup
+		{091899DF-CB06-4578-B556-84C466932615}.Release|Backup.Build.0 = Release|Backup
+		{091899DF-CB06-4578-B556-84C466932615}.Release|Steam.ActiveCfg = Release|Steam
+		{091899DF-CB06-4578-B556-84C466932615}.Release|Steam.Build.0 = Release|Steam
+		{976CDC05-7E19-439B-ABAA-8478475EFCD2}.Debug|Backup.ActiveCfg = Debug|Backup
+		{976CDC05-7E19-439B-ABAA-8478475EFCD2}.Debug|Backup.Build.0 = Debug|Backup
+		{976CDC05-7E19-439B-ABAA-8478475EFCD2}.Debug|Steam.ActiveCfg = Debug|Steam
+		{976CDC05-7E19-439B-ABAA-8478475EFCD2}.Debug|Steam.Build.0 = Debug|Steam
+		{976CDC05-7E19-439B-ABAA-8478475EFCD2}.Release|Backup.ActiveCfg = Release|Backup
+		{976CDC05-7E19-439B-ABAA-8478475EFCD2}.Release|Backup.Build.0 = Release|Backup
+		{976CDC05-7E19-439B-ABAA-8478475EFCD2}.Release|Steam.ActiveCfg = Release|Steam
+		{976CDC05-7E19-439B-ABAA-8478475EFCD2}.Release|Steam.Build.0 = Release|Steam
+		{C2B252A1-F48A-4352-A5A0-6E211F455987}.Debug|Backup.ActiveCfg = Debug|Backup
+		{C2B252A1-F48A-4352-A5A0-6E211F455987}.Debug|Backup.Build.0 = Debug|Backup
+		{C2B252A1-F48A-4352-A5A0-6E211F455987}.Debug|Steam.ActiveCfg = Debug|Steam
+		{C2B252A1-F48A-4352-A5A0-6E211F455987}.Debug|Steam.Build.0 = Debug|Steam
+		{C2B252A1-F48A-4352-A5A0-6E211F455987}.Release|Backup.ActiveCfg = Release|Backup
+		{C2B252A1-F48A-4352-A5A0-6E211F455987}.Release|Backup.Build.0 = Release|Backup
+		{C2B252A1-F48A-4352-A5A0-6E211F455987}.Release|Steam.ActiveCfg = Release|Steam
+		{C2B252A1-F48A-4352-A5A0-6E211F455987}.Release|Steam.Build.0 = Release|Steam
+		{79C550D6-0A6A-47FF-8F98-18C5A9FB12CC}.Debug|Backup.ActiveCfg = Debug|Backup
+		{79C550D6-0A6A-47FF-8F98-18C5A9FB12CC}.Debug|Backup.Build.0 = Debug|Backup
+		{79C550D6-0A6A-47FF-8F98-18C5A9FB12CC}.Debug|Steam.ActiveCfg = Debug|Steam
+		{79C550D6-0A6A-47FF-8F98-18C5A9FB12CC}.Debug|Steam.Build.0 = Debug|Steam
+		{79C550D6-0A6A-47FF-8F98-18C5A9FB12CC}.Release|Backup.ActiveCfg = Release|Backup
+		{79C550D6-0A6A-47FF-8F98-18C5A9FB12CC}.Release|Backup.Build.0 = Release|Backup
+		{79C550D6-0A6A-47FF-8F98-18C5A9FB12CC}.Release|Steam.ActiveCfg = Release|Steam
+		{79C550D6-0A6A-47FF-8F98-18C5A9FB12CC}.Release|Steam.Build.0 = Release|Steam
+		{ED0633D0-BC8E-4D2D-80DC-A1F87EAD7A16}.Debug|Backup.ActiveCfg = Debug|Backup
+		{ED0633D0-BC8E-4D2D-80DC-A1F87EAD7A16}.Debug|Backup.Build.0 = Debug|Backup
+		{ED0633D0-BC8E-4D2D-80DC-A1F87EAD7A16}.Debug|Steam.ActiveCfg = Debug|Steam
+		{ED0633D0-BC8E-4D2D-80DC-A1F87EAD7A16}.Debug|Steam.Build.0 = Debug|Steam
+		{ED0633D0-BC8E-4D2D-80DC-A1F87EAD7A16}.Release|Backup.ActiveCfg = Release|Backup
+		{ED0633D0-BC8E-4D2D-80DC-A1F87EAD7A16}.Release|Backup.Build.0 = Release|Backup
+		{ED0633D0-BC8E-4D2D-80DC-A1F87EAD7A16}.Release|Steam.ActiveCfg = Release|Steam
+		{ED0633D0-BC8E-4D2D-80DC-A1F87EAD7A16}.Release|Steam.Build.0 = Release|Steam
+		{4FCD4662-85E5-4F7A-A357-B41D66838593}.Debug|Backup.ActiveCfg = Debug|Backup
+		{4FCD4662-85E5-4F7A-A357-B41D66838593}.Debug|Backup.Build.0 = Debug|Backup
+		{4FCD4662-85E5-4F7A-A357-B41D66838593}.Debug|Steam.ActiveCfg = Debug|Steam
+		{4FCD4662-85E5-4F7A-A357-B41D66838593}.Debug|Steam.Build.0 = Debug|Steam
+		{4FCD4662-85E5-4F7A-A357-B41D66838593}.Release|Backup.ActiveCfg = Release|Backup
+		{4FCD4662-85E5-4F7A-A357-B41D66838593}.Release|Backup.Build.0 = Release|Backup
+		{4FCD4662-85E5-4F7A-A357-B41D66838593}.Release|Steam.ActiveCfg = Release|Steam
+		{4FCD4662-85E5-4F7A-A357-B41D66838593}.Release|Steam.Build.0 = Release|Steam
+		{E2B2E9CD-C9CF-4A05-B43A-68DC90429583}.Debug|Backup.ActiveCfg = Debug|Backup
+		{E2B2E9CD-C9CF-4A05-B43A-68DC90429583}.Debug|Backup.Build.0 = Debug|Backup
+		{E2B2E9CD-C9CF-4A05-B43A-68DC90429583}.Debug|Steam.ActiveCfg = Debug|Steam
+		{E2B2E9CD-C9CF-4A05-B43A-68DC90429583}.Debug|Steam.Build.0 = Debug|Steam
+		{E2B2E9CD-C9CF-4A05-B43A-68DC90429583}.Release|Backup.ActiveCfg = Release|Backup
+		{E2B2E9CD-C9CF-4A05-B43A-68DC90429583}.Release|Backup.Build.0 = Release|Backup
+		{E2B2E9CD-C9CF-4A05-B43A-68DC90429583}.Release|Steam.ActiveCfg = Release|Steam
+		{E2B2E9CD-C9CF-4A05-B43A-68DC90429583}.Release|Steam.Build.0 = Release|Steam
+		{0D895303-5096-4B73-B448-E8A9D8F0F63C}.Debug|Backup.ActiveCfg = Debug|Backup
+		{0D895303-5096-4B73-B448-E8A9D8F0F63C}.Debug|Backup.Build.0 = Debug|Backup
+		{0D895303-5096-4B73-B448-E8A9D8F0F63C}.Debug|Steam.ActiveCfg = Debug|Steam
+		{0D895303-5096-4B73-B448-E8A9D8F0F63C}.Debug|Steam.Build.0 = Debug|Steam
+		{0D895303-5096-4B73-B448-E8A9D8F0F63C}.Release|Backup.ActiveCfg = Release|Backup
+		{0D895303-5096-4B73-B448-E8A9D8F0F63C}.Release|Backup.Build.0 = Release|Backup
+		{0D895303-5096-4B73-B448-E8A9D8F0F63C}.Release|Steam.ActiveCfg = Release|Steam
+		{0D895303-5096-4B73-B448-E8A9D8F0F63C}.Release|Steam.Build.0 = Release|Steam
+		{FA9F9701-B9EF-43CC-B87C-E2534C378FF5}.Debug|Backup.ActiveCfg = Debug|Backup
+		{FA9F9701-B9EF-43CC-B87C-E2534C378FF5}.Debug|Backup.Build.0 = Debug|Backup
+		{FA9F9701-B9EF-43CC-B87C-E2534C378FF5}.Debug|Steam.ActiveCfg = Debug|Steam
+		{FA9F9701-B9EF-43CC-B87C-E2534C378FF5}.Debug|Steam.Build.0 = Debug|Steam
+		{FA9F9701-B9EF-43CC-B87C-E2534C378FF5}.Release|Backup.ActiveCfg = Release|Backup
+		{FA9F9701-B9EF-43CC-B87C-E2534C378FF5}.Release|Backup.Build.0 = Release|Backup
+		{FA9F9701-B9EF-43CC-B87C-E2534C378FF5}.Release|Steam.ActiveCfg = Release|Steam
+		{FA9F9701-B9EF-43CC-B87C-E2534C378FF5}.Release|Steam.Build.0 = Release|Steam
+		{57925A80-A534-499E-9BB1-289A3C3D7E38}.Debug|Backup.ActiveCfg = Debug|Backup
+		{57925A80-A534-499E-9BB1-289A3C3D7E38}.Debug|Backup.Build.0 = Debug|Backup
+		{57925A80-A534-499E-9BB1-289A3C3D7E38}.Debug|Steam.ActiveCfg = Debug|Steam
+		{57925A80-A534-499E-9BB1-289A3C3D7E38}.Debug|Steam.Build.0 = Debug|Steam
+		{57925A80-A534-499E-9BB1-289A3C3D7E38}.Release|Backup.ActiveCfg = Release|Backup
+		{57925A80-A534-499E-9BB1-289A3C3D7E38}.Release|Backup.Build.0 = Release|Backup
+		{57925A80-A534-499E-9BB1-289A3C3D7E38}.Release|Steam.ActiveCfg = Release|Steam
+		{57925A80-A534-499E-9BB1-289A3C3D7E38}.Release|Steam.Build.0 = Release|Steam
+		{BC79007D-AACA-43B8-A216-D3D7AA1B48D9}.Debug|Backup.ActiveCfg = Debug|Backup
+		{BC79007D-AACA-43B8-A216-D3D7AA1B48D9}.Debug|Backup.Build.0 = Debug|Backup
+		{BC79007D-AACA-43B8-A216-D3D7AA1B48D9}.Debug|Steam.ActiveCfg = Debug|Steam
+		{BC79007D-AACA-43B8-A216-D3D7AA1B48D9}.Debug|Steam.Build.0 = Debug|Steam
+		{BC79007D-AACA-43B8-A216-D3D7AA1B48D9}.Release|Backup.ActiveCfg = Release|Backup
+		{BC79007D-AACA-43B8-A216-D3D7AA1B48D9}.Release|Backup.Build.0 = Release|Backup
+		{BC79007D-AACA-43B8-A216-D3D7AA1B48D9}.Release|Steam.ActiveCfg = Release|Steam
+		{BC79007D-AACA-43B8-A216-D3D7AA1B48D9}.Release|Steam.Build.0 = Release|Steam
+		{6BE64EE9-A454-43DD-BF6D-50E9340029D9}.Debug|Backup.ActiveCfg = Debug|Backup
+		{6BE64EE9-A454-43DD-BF6D-50E9340029D9}.Debug|Backup.Build.0 = Debug|Backup
+		{6BE64EE9-A454-43DD-BF6D-50E9340029D9}.Debug|Steam.ActiveCfg = Debug|Steam
+		{6BE64EE9-A454-43DD-BF6D-50E9340029D9}.Debug|Steam.Build.0 = Debug|Steam
+		{6BE64EE9-A454-43DD-BF6D-50E9340029D9}.Release|Backup.ActiveCfg = Release|Backup
+		{6BE64EE9-A454-43DD-BF6D-50E9340029D9}.Release|Backup.Build.0 = Release|Backup
+		{6BE64EE9-A454-43DD-BF6D-50E9340029D9}.Release|Steam.ActiveCfg = Release|Steam
+		{6BE64EE9-A454-43DD-BF6D-50E9340029D9}.Release|Steam.Build.0 = Release|Steam
+		{B7D33888-FEF4-44E8-B664-E57E31478CE0}.Debug|Backup.ActiveCfg = Debug|Backup
+		{B7D33888-FEF4-44E8-B664-E57E31478CE0}.Debug|Backup.Build.0 = Debug|Backup
+		{B7D33888-FEF4-44E8-B664-E57E31478CE0}.Debug|Steam.ActiveCfg = Debug|Steam
+		{B7D33888-FEF4-44E8-B664-E57E31478CE0}.Debug|Steam.Build.0 = Debug|Steam
+		{B7D33888-FEF4-44E8-B664-E57E31478CE0}.Release|Backup.ActiveCfg = Release|Backup
+		{B7D33888-FEF4-44E8-B664-E57E31478CE0}.Release|Backup.Build.0 = Release|Backup
+		{B7D33888-FEF4-44E8-B664-E57E31478CE0}.Release|Steam.ActiveCfg = Release|Steam
+		{B7D33888-FEF4-44E8-B664-E57E31478CE0}.Release|Steam.Build.0 = Release|Steam
+		{12E6EC61-0154-4A26-8325-9F5D96BBFC4F}.Debug|Backup.ActiveCfg = Debug|Backup
+		{12E6EC61-0154-4A26-8325-9F5D96BBFC4F}.Debug|Backup.Build.0 = Debug|Backup
+		{12E6EC61-0154-4A26-8325-9F5D96BBFC4F}.Debug|Steam.ActiveCfg = Debug|Steam
+		{12E6EC61-0154-4A26-8325-9F5D96BBFC4F}.Debug|Steam.Build.0 = Debug|Steam
+		{12E6EC61-0154-4A26-8325-9F5D96BBFC4F}.Release|Backup.ActiveCfg = Release|Backup
+		{12E6EC61-0154-4A26-8325-9F5D96BBFC4F}.Release|Backup.Build.0 = Release|Backup
+		{12E6EC61-0154-4A26-8325-9F5D96BBFC4F}.Release|Steam.ActiveCfg = Release|Steam
+		{12E6EC61-0154-4A26-8325-9F5D96BBFC4F}.Release|Steam.Build.0 = Release|Steam
+		{FE87E859-B174-4614-A909-5A6235236B41}.Debug|Backup.ActiveCfg = Debug|Backup
+		{FE87E859-B174-4614-A909-5A6235236B41}.Debug|Backup.Build.0 = Debug|Backup
+		{FE87E859-B174-4614-A909-5A6235236B41}.Debug|Steam.ActiveCfg = Debug|Steam
+		{FE87E859-B174-4614-A909-5A6235236B41}.Debug|Steam.Build.0 = Debug|Steam
+		{FE87E859-B174-4614-A909-5A6235236B41}.Release|Backup.ActiveCfg = Release|Backup
+		{FE87E859-B174-4614-A909-5A6235236B41}.Release|Backup.Build.0 = Release|Backup
+		{FE87E859-B174-4614-A909-5A6235236B41}.Release|Steam.ActiveCfg = Release|Steam
+		{FE87E859-B174-4614-A909-5A6235236B41}.Release|Steam.Build.0 = Release|Steam
+		{A7D8DCAE-63EE-4B18-A395-A55B67B6DEBD}.Debug|Backup.ActiveCfg = Debug|Backup
+		{A7D8DCAE-63EE-4B18-A395-A55B67B6DEBD}.Debug|Backup.Build.0 = Debug|Backup
+		{A7D8DCAE-63EE-4B18-A395-A55B67B6DEBD}.Debug|Steam.ActiveCfg = Debug|Steam
+		{A7D8DCAE-63EE-4B18-A395-A55B67B6DEBD}.Debug|Steam.Build.0 = Debug|Steam
+		{A7D8DCAE-63EE-4B18-A395-A55B67B6DEBD}.Release|Backup.ActiveCfg = Release|Backup
+		{A7D8DCAE-63EE-4B18-A395-A55B67B6DEBD}.Release|Backup.Build.0 = Release|Backup
+		{A7D8DCAE-63EE-4B18-A395-A55B67B6DEBD}.Release|Steam.ActiveCfg = Release|Steam
+		{A7D8DCAE-63EE-4B18-A395-A55B67B6DEBD}.Release|Steam.Build.0 = Release|Steam
+		{AB6B59E6-B62D-44B5-A546-A41E30A32E8B}.Debug|Backup.ActiveCfg = Debug|Backup
+		{AB6B59E6-B62D-44B5-A546-A41E30A32E8B}.Debug|Backup.Build.0 = Debug|Backup
+		{AB6B59E6-B62D-44B5-A546-A41E30A32E8B}.Debug|Steam.ActiveCfg = Debug|Steam
+		{AB6B59E6-B62D-44B5-A546-A41E30A32E8B}.Debug|Steam.Build.0 = Debug|Steam
+		{AB6B59E6-B62D-44B5-A546-A41E30A32E8B}.Release|Backup.ActiveCfg = Release|Backup
+		{AB6B59E6-B62D-44B5-A546-A41E30A32E8B}.Release|Backup.Build.0 = Release|Backup
+		{AB6B59E6-B62D-44B5-A546-A41E30A32E8B}.Release|Steam.ActiveCfg = Release|Steam
+		{AB6B59E6-B62D-44B5-A546-A41E30A32E8B}.Release|Steam.Build.0 = Release|Steam
+		{EC60C9EA-CD99-409A-8B1B-3DF0CBA59B7C}.Debug|Backup.ActiveCfg = Debug|Backup
+		{EC60C9EA-CD99-409A-8B1B-3DF0CBA59B7C}.Debug|Backup.Build.0 = Debug|Backup
+		{EC60C9EA-CD99-409A-8B1B-3DF0CBA59B7C}.Debug|Steam.ActiveCfg = Debug|Steam
+		{EC60C9EA-CD99-409A-8B1B-3DF0CBA59B7C}.Debug|Steam.Build.0 = Debug|Steam
+		{EC60C9EA-CD99-409A-8B1B-3DF0CBA59B7C}.Release|Backup.ActiveCfg = Release|Backup
+		{EC60C9EA-CD99-409A-8B1B-3DF0CBA59B7C}.Release|Backup.Build.0 = Release|Backup
+		{EC60C9EA-CD99-409A-8B1B-3DF0CBA59B7C}.Release|Steam.ActiveCfg = Release|Steam
+		{EC60C9EA-CD99-409A-8B1B-3DF0CBA59B7C}.Release|Steam.Build.0 = Release|Steam
+		{65AC396B-7617-4366-9588-8AC2D3940F91}.Debug|Backup.ActiveCfg = Debug|Backup
+		{65AC396B-7617-4366-9588-8AC2D3940F91}.Debug|Backup.Build.0 = Debug|Backup
+		{65AC396B-7617-4366-9588-8AC2D3940F91}.Debug|Steam.ActiveCfg = Debug|Steam
+		{65AC396B-7617-4366-9588-8AC2D3940F91}.Debug|Steam.Build.0 = Debug|Steam
+		{65AC396B-7617-4366-9588-8AC2D3940F91}.Release|Backup.ActiveCfg = Release|Backup
+		{65AC396B-7617-4366-9588-8AC2D3940F91}.Release|Backup.Build.0 = Release|Backup
+		{65AC396B-7617-4366-9588-8AC2D3940F91}.Release|Steam.ActiveCfg = Release|Steam
+		{65AC396B-7617-4366-9588-8AC2D3940F91}.Release|Steam.Build.0 = Release|Steam
+		{65B4051B-C24E-4C4F-A734-3523E389D94C}.Debug|Backup.ActiveCfg = Debug|Backup
+		{65B4051B-C24E-4C4F-A734-3523E389D94C}.Debug|Backup.Build.0 = Debug|Backup
+		{65B4051B-C24E-4C4F-A734-3523E389D94C}.Debug|Steam.ActiveCfg = Debug|Steam
+		{65B4051B-C24E-4C4F-A734-3523E389D94C}.Debug|Steam.Build.0 = Debug|Steam
+		{65B4051B-C24E-4C4F-A734-3523E389D94C}.Release|Backup.ActiveCfg = Release|Backup
+		{65B4051B-C24E-4C4F-A734-3523E389D94C}.Release|Backup.Build.0 = Release|Backup
+		{65B4051B-C24E-4C4F-A734-3523E389D94C}.Release|Steam.ActiveCfg = Release|Steam
+		{65B4051B-C24E-4C4F-A734-3523E389D94C}.Release|Steam.Build.0 = Release|Steam
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A9AF77B7-A9D8-4064-B1C4-0A424919BB45}
+	EndGlobalSection
+EndGlobal

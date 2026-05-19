@@ -1,0 +1,534 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using System.Reflection.Emit;
+using UnityEngine;
+using HarmonyLib;
+using SanchozzONIMods.Lib;
+using PeterHan.PLib.Core;
+using PeterHan.PLib.PatchManager;
+using PeterHan.PLib.Options;
+
+namespace TravelTubesExpanded
+{
+    internal sealed class Patches : KMod.UserMod2
+    {
+        public override void OnLoad(Harmony harmony)
+        {
+            if (this.LogModVersion()) return;
+            base.OnLoad(harmony);
+            new PPatchManager(harmony).RegisterPatchClass(typeof(Patches));
+            new POptions().RegisterOptions(this, typeof(ModOptions));
+        }
+
+        [PLibMethod(RunAt.BeforeDbInit)]
+        private static void BeforeDbInit()
+        {
+            Utils.InitLocalization(typeof(STRINGS));
+            var type = PPatchTools.GetTypeSafe("TravelTubesFlydo.Patches", "TravelTubesFlydo");
+            AccessControlSideScreen_RefreshContainerObjects.AllowFlydo = type != null;
+        }
+
+        [PLibMethod(RunAt.AfterDbInit)]
+        private static void AfterDbInit()
+        {
+            var ids = new string[] { TravelTubeInsulatedWallBridgeConfig.ID, TravelTubeBunkerWallBridgeConfig.ID,
+                TravelTubeLadderBridgeConfig.ID, TravelTubeFirePoleBridgeConfig.ID,
+                TravelTubeCrossBridgeConfig.ID, TravelTubeDoorConfig.ID };
+            for (int i = ids.Length - 1; i >= 0; i--)
+                Utils.AddBuildingToPlanScreen(BUILD_CATEGORY.Base, ids[i], BUILD_SUBCATEGORY.transport, TravelTubeWallBridgeConfig.ID);
+            Utils.AddBuildingToTechnology("TravelTubes", ids);
+        }
+
+        [HarmonyPatch(typeof(TravelTubeEntranceConfig), nameof(TravelTubeEntranceConfig.DoPostConfigureComplete))]
+        private static class TravelTubeEntranceConfig_ConfigureBuildingTemplate
+        {
+            private static void Postfix(GameObject go)
+            {
+                go.AddOrGet<TravelTubeEntrance>().joulesPerLaunch = ModOptions.Instance.kjoules_per_launch * Constants.KW2W;
+                go.AddOrGet<EntranceFakeTubes>();
+            }
+        }
+
+        // возможность использовать мост над пускачом как вход в трубы
+        [HarmonyPatch(typeof(TravelTubeEntrance), nameof(TravelTubeEntrance.TubeConnectionsChanged))]
+        [HarmonyPatch(new[] { typeof(UtilityConnections) })]
+        private static class TravelTubeEntrance_TubeConnectionsChanged
+        {
+            private static void Prefix(TravelTubeEntrance __instance, ref UtilityConnections connections)
+            {
+                if (connections == 0)
+                {
+                    int bridge_cell = Grid.OffsetCell(Grid.PosToCell(__instance), 0, 2);
+                    var go = Grid.Objects[bridge_cell, (int)ObjectLayer.TravelTubeConnection];
+                    if (go != null && go.TryGetComponent(out TravelTubeUtilityNetworkLink link))
+                    {
+                        link.GetCells(out int a, out int b);
+                        if (UtilityConnectionsExtensions.DirectionFromToCell(bridge_cell, a) == UtilityConnections.Up
+                            || UtilityConnectionsExtensions.DirectionFromToCell(bridge_cell, b) == UtilityConnections.Up)
+                            connections = UtilityConnections.Up;
+                    }
+                }
+            }
+        }
+
+        // внедряем длинную транзицыю для прохода скрещивания по горизонтали
+        [HarmonyPatch]
+        private static class NavGrid_Constructor
+        {
+            private static MethodBase TargetMethod() => typeof(NavGrid).GetConstructors()[0];
+
+            private static void Prefix(string id, ref NavGrid.Transition[] transitions)
+            {
+                if (id == "MinionNavGrid")
+                    transitions = AddLongJump(transitions);
+            }
+
+            internal static NavGrid.Transition[] AddLongJump(NavGrid.Transition[] transitions)
+            {
+                var jump = new NavGrid.Transition(
+                    start: NavType.Tube,
+                    end: NavType.Tube,
+                    x: 2,
+                    y: 0,
+                    start_axis: NavAxis.NA,
+                    is_looping: true,
+                    loop_has_pre: false,
+                    is_escape: false,
+                    cost: 10,
+                    anim: "",
+                    void_offsets: new CellOffset[0],
+                    solid_offsets: new CellOffset[] { new CellOffset(1, 0) }, // требовать твердый блок посередине
+                    valid_nav_offsets: new NavOffset[] { new NavOffset(NavType.Tube, 1, 0) }, // требовать трубность посередине
+                    invalid_nav_offsets: new NavOffset[0],
+                    critter: false,
+                    animSpeed: 0.5f);
+                var stub = null as GameNavGrids; // затычка чтобы дёрнуть методы эксземпляра без this
+                return stub.CombineTransitions(transitions, stub.MirrorTransitions(new[] { jump }));
+            }
+        }
+
+        // самопатч для затычки, callvirt => call
+        [HarmonyPatch(typeof(NavGrid_Constructor), nameof(NavGrid_Constructor.AddLongJump))]
+        private static class NavGrid_AddLongJump
+        {
+            private static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
+            {
+                foreach (var instr in instructions)
+                {
+                    if (instr.opcode == OpCodes.Callvirt && instr.operand is MethodBase method && method.DeclaringType == typeof(GameNavGrids))
+                        instr.opcode = OpCodes.Call;
+                }
+                return instructions;
+            }
+        }
+
+        // правим проверки нафигационных транзицый
+        [HarmonyPatch(typeof(NavGrid.Transition), nameof(NavGrid.Transition.IsValid))]
+        private static class NavGrid_Transition_IsValid
+        {
+            private static ParameterInfo cell;
+            private static MethodInfo get_connections;
+
+            private static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions, MethodBase original, ILGenerator IL)
+            {
+                cell = original.GetParameters().FirstOrDefault(p => p.ParameterType == typeof(int) && p.Name == "cell");
+                get_connections = typeof(UtilityNetworkManager<TravelTubeNetwork, TravelTube>)
+                    .GetMethod(nameof(UtilityNetworkTubesManager.GetConnections));
+
+                // эти слои ObjectLayer.TravelTube ObjectLayer.TravelTubeConnection почему то не используются игрой
+                // добавим оптимизацию не дергать фундаменты
+                instructions = PPatchTools.ReplaceConstant(instructions,
+                    (int)ObjectLayer.FoundationTile, (int)ObjectLayer.TravelTubeConnection, true)
+                    .Transpile(original, IL, AddJumpEntranceAndDualBridgeTest)
+                    .Transpile(original, IL, AddTubeAndBridgeExitTest)
+                    .Transpile(original, IL, AddFloorToTubeTest);
+                return instructions;
+            }
+
+            // возможность проскочить через скрещивание длинным прыжком
+            // возможность проскочить через пускачь
+            // возможность пройти через два моста прислонённых другкдругу
+            /*
+                if (this.start == NavType.Tube)
+                {
+                    if (this.end == NavType.Tube)
+                    {
+                        GameObject go1 = Grid.Objects[cell, 9];
+                        GameObject go2 = Grid.Objects[to_cell, 9];
+                        var link1 = (go1) ? go1.GetComponent<TravelTubeUtilityNetworkLink>() : null;
+                        var link2 = (go2) ? go2.GetComponent<TravelTubeUtilityNetworkLink>() : null;
+            +++         if (TestDualBridge(this, cell, ref to_cell, go1, go2, link1, link2)
+            +++             return to_cell;
+                        if (link1)
+                        {
+            */
+            private static bool AddJumpEntranceAndDualBridgeTest(ref List<CodeInstruction> instructions, ILGenerator IL)
+            {
+                var get_link = typeof(GameObject).GetMethodSafe(nameof(GameObject.GetComponent), false)
+                    ?.MakeGenericMethod(typeof(TravelTubeUtilityNetworkLink));
+                var test = typeof(NavGrid_Transition_IsValid).GetMethodSafe(nameof(TestJumpEntranceAndDualBridge), true, PPatchTools.AnyArguments);
+                if (cell != null && get_link != null && test != null)
+                {
+                    Predicate<CodeInstruction> match = inst => inst.Calls(get_link);
+                    int i = instructions.FindIndex(match);
+                    if (i != -1 && instructions[i - 1].IsLdloc() && instructions[i + 1].IsStloc())
+                    {
+                        var go1 = instructions[i - 1];
+                        var link1 = instructions[i + 1];
+                        i++;
+                        i = instructions.FindIndex(i, match);
+                        if (i != -1 && instructions[i - 1].IsLdloc() && instructions[i + 1].IsStloc())
+                        {
+                            var go2 = instructions[i - 1];
+                            var link2 = instructions[i + 1];
+                            i += 2;
+                            var to_cell = IL.DeclareLocal(typeof(int));
+                            var @else = IL.DefineLabel();
+                            instructions.Insert(i++, new CodeInstruction(OpCodes.Ldarg_0));
+                            instructions.Insert(i++, TranspilerUtils.GetLoadArgInstruction(cell));
+                            instructions.Insert(i++, TranspilerUtils.GetLoadLocalInstruction(to_cell.LocalIndex, true));
+                            instructions.Insert(i++, go1.Clone());
+                            instructions.Insert(i++, go2.Clone());
+                            instructions.Insert(i++, TranspilerUtils.GetMatchingLoadInstruction(link1));
+                            instructions.Insert(i++, TranspilerUtils.GetMatchingLoadInstruction(link2));
+                            instructions.Insert(i++, new CodeInstruction(OpCodes.Call, test));
+                            instructions.Insert(i++, new CodeInstruction(OpCodes.Brfalse_S, @else));
+                            instructions.Insert(i++, TranspilerUtils.GetLoadLocalInstruction(to_cell.LocalIndex));
+                            instructions.Insert(i++, new CodeInstruction(OpCodes.Ret));
+                            instructions.Insert(i, new CodeInstruction(OpCodes.Nop));
+                            instructions[i].labels.Add(@else);
+                            return true;
+                        }
+                    }
+                }
+                return false;
+            }
+
+            private static bool HasEntrance(GameObject go)
+            {
+                return go != null && Grid.HasTubeEntrance[Grid.PosToCell(go)];
+            }
+
+            private static bool TestJumpEntranceAndDualBridge(ref NavGrid.Transition transition, int from, ref int to,
+                GameObject go_from, GameObject go_to,
+                TravelTubeUtilityNetworkLink link_from, TravelTubeUtilityNetworkLink link_to)
+            {
+                to = Grid.OffsetCell(from, transition.x, transition.y);
+                int a, b;
+                // сначала пускачь, проверяем только вертикаль
+                if (transition.x == 0)
+                {
+                    if (HasEntrance(go_from))
+                    {
+                        if (HasEntrance(go_to)) // проход внутре пускача
+                            return true;
+                        else if (link_to != null) // выход из пускача
+                        {
+                            link_to.GetCells(out a, out b);
+                            if (from == a || from == b)
+                                return true;
+                        }
+                        else
+                        {
+                            if (UtilityConnectionsExtensions.DirectionFromToCell(from, to)
+                                == Game.Instance.travelTubeSystem.GetConnections(to, false))
+                            {
+                                return true;
+                            }
+                        }
+                    }
+                    else if (HasEntrance(go_to)) // вход внутьрь пускача
+                    {
+                        if (link_from != null)
+                        {
+                            link_from.GetCells(out a, out b);
+                            if (to == a || to == b)
+                                return true;
+                        }
+                        else
+                        {
+                            if (UtilityConnectionsExtensions.DirectionFromToCell(to, from)
+                                == Game.Instance.travelTubeSystem.GetConnections(from, false))
+                            {
+                                return true;
+                            }
+                        }
+                    }
+                }
+                // теперь скрещивание
+                if (transition.y == 0 && Math.Abs(transition.x) == 2)
+                {
+                    int cross = Grid.OffsetCell(from, transition.x / 2, 0);
+                    var go_cross = Grid.Objects[cross, (int)ObjectLayer.TravelTubeConnection];
+                    if (go_cross == null || !go_cross.IsPrefabID(TravelTubeCrossBridgeConfig.ID))
+                    {
+                        to = Grid.InvalidCell;
+                        return true;
+                    }
+                    else
+                    {
+                        bool pass_from = false, pass_to = false;
+                        if (link_from != null)
+                        {
+                            link_from.GetCells(out a, out b);
+                            if (cross == a || cross == b)
+                                pass_from = true;
+                        }
+                        else
+                        {
+                            if (UtilityConnectionsExtensions.DirectionFromToCell(cross, from)
+                                == Game.Instance.travelTubeSystem.GetConnections(from, false))
+                            {
+                                pass_from = true;
+                            }
+                        }
+                        if (link_to != null)
+                        {
+                            link_to.GetCells(out a, out b);
+                            if (cross == a || cross == b)
+                                pass_to = true;
+                        }
+                        else
+                        {
+                            if (UtilityConnectionsExtensions.DirectionFromToCell(cross, to)
+                                == Game.Instance.travelTubeSystem.GetConnections(to, false))
+                            {
+                                pass_to = true;
+                            }
+                        }
+                        if (!pass_from || !pass_to)
+                        {
+                            to = Grid.InvalidCell;
+                        }
+                        return true;
+                    }
+                }
+                // теперь пара мостов
+                if (link_from == null || link_to == null)
+                    return false;
+                link_from.GetCells(out a, out b);
+                if (to != a && to != b)
+                {
+                    to = Grid.InvalidCell;
+                    return true;
+                }
+                link_to.GetCells(out a, out b);
+                if (from != a && from != b)
+                {
+                    to = Grid.InvalidCell;
+                    return true;
+                }
+                if (UtilityConnectionsExtensions.DirectionFromToCell(from, to) == 0)
+                    to = Grid.InvalidCell;
+                return true;
+            }
+
+            // для трубы с одним направлением проверим отсутствие моста с другой стороны
+            // для избежания неправомерного выхода через лестничный мост
+            // возможность использовать полуподключенный мост как выход из труб
+            /*
+                if (this.start == NavType.Tube)
+                {
+                    if (this.end == NavType.Tube)
+                    {
+                        GameObject go1 = Grid.Objects[cell, 9];
+                        GameObject go2 = Grid.Objects[to_cell, 9];
+                        блаблабла;
+                    }
+                    else
+                    {
+                        UtilityConnections connections = Game.Instance.travelTubeSystem.GetConnections(cell, false);
+            +++         TestTubeConnections(connections, cell);
+            +++         TestBridgeConnections(connections, cell);
+                        здесь куча проверок Left Right Up Down;
+            */
+            private static bool AddTubeAndBridgeExitTest(ref List<CodeInstruction> instructions, ILGenerator IL)
+            {
+                var grid_objects = typeof(Grid).GetField(nameof(Grid.Objects));
+                var test1 = typeof(NavGrid_Transition_IsValid).GetMethodSafe(nameof(TestTubeConnections), true, PPatchTools.AnyArguments);
+                var test2 = typeof(NavGrid_Transition_IsValid).GetMethodSafe(nameof(TestBridgeConnections), true, PPatchTools.AnyArguments);
+                if (cell != null && grid_objects != null && test1 != null && test2 != null)
+                {
+                    int i = instructions.FindIndex(inst => inst.LoadsField(grid_objects, true));
+                    if (i == -1) return false;
+                    Label? @else = null;
+                    i = instructions.FindLastIndex(i, inst => inst.Branches(out @else));
+                    if (i == -1 || @else == null) return false;
+                    i = instructions.FindIndex(i, inst => inst.labels.Contains((Label)@else));
+                    if (i == -1) return false;
+                    i = instructions.FindIndex(i, inst => inst.Calls(get_connections));
+                    if (i == -1) return false;
+                    i++;
+                    instructions.Insert(i++, TranspilerUtils.GetLoadArgInstruction(cell));
+                    instructions.Insert(i++, new CodeInstruction(OpCodes.Call, test1));
+                    instructions.Insert(i++, TranspilerUtils.GetLoadArgInstruction(cell));
+                    instructions.Insert(i++, new CodeInstruction(OpCodes.Ldarg_0));
+                    instructions.Insert(i++, new CodeInstruction(OpCodes.Call, test2));
+                    return true;
+                }
+                return false;
+            }
+
+            // если кусок трубы имеет соединение только в одну сторону
+            // проверим есть ли с другой стороны мост
+            private static UtilityConnections TestTubeConnections(UtilityConnections connection, int tube_cell)
+            {
+                if (connection != UtilityConnections.Left && connection != UtilityConnections.Right
+                    && connection != UtilityConnections.Up && connection != UtilityConnections.Down)
+                    return connection;
+                connection |= GetDirectionTubeToNeighbourBridge(tube_cell, connection.InverseDirection().CellInDirection(tube_cell));
+                return connection;
+            }
+
+            private static UtilityConnections GetDirectionTubeToNeighbourBridge(int tube_cell, int neighbour_cell)
+            {
+                var go = Grid.Objects[neighbour_cell, (int)ObjectLayer.TravelTubeConnection];
+                if (go != null && go.TryGetComponent(out TravelTubeUtilityNetworkLink neighbour_link))
+                {
+                    neighbour_link.GetCells(out int a, out int b);
+                    if (a == tube_cell || b == tube_cell)
+                        return UtilityConnectionsExtensions.DirectionFromToCell(tube_cell, neighbour_cell);
+                }
+                return 0;
+            }
+
+            // в норме для мостов GetConnections == 0
+            // проверим есть ли тут мост и соединён ли он с трубами и соседними мостами
+            private static UtilityConnections TestBridgeConnections(UtilityConnections connection, int bridge_cell, ref NavGrid.Transition transition)
+            {
+                if (connection != 0)
+                    return connection;
+                var go = Grid.Objects[bridge_cell, (int)ObjectLayer.TravelTubeConnection];
+                if (go != null && go.TryGetComponent(out TravelTubeUtilityNetworkLink link))
+                {
+                    link.GetCells(out int a, out int b);
+                    connection |= GetDirectionBridgeToNeighbour(bridge_cell, a);
+                    connection |= GetDirectionBridgeToNeighbour(bridge_cell, b);
+                    // граничный случай, одиночный мост над пускачом
+                    if (connection == 0)
+                    {
+                        int below_cell = Grid.CellBelow(bridge_cell);
+                        if (Grid.IsValidCell(below_cell) && (below_cell == a || below_cell == b)
+                            && HasEntrance(Grid.Objects[below_cell, (int)ObjectLayer.TravelTubeConnection]))
+                        {
+                            if (transition.end == NavType.Tube)
+                                connection = UtilityConnections.Up;
+                            else if (transition.y > 0)
+                                connection = UtilityConnections.Down;
+                            else if (transition.y < 0)
+                                connection = UtilityConnections.Up;
+                        }
+                    }
+                }
+                return connection;
+            }
+
+            private static UtilityConnections GetDirectionBridgeToNeighbour(int bridge_cell, int neighbour_cell)
+            {
+                var mustbe = UtilityConnectionsExtensions.DirectionFromToCell(bridge_cell, neighbour_cell);
+                var neighbour = Game.Instance.travelTubeSystem.GetConnections(neighbour_cell, false);
+                if (mustbe == neighbour)
+                    return neighbour;
+                else if (neighbour == 0)
+                    return GetDirectionTubeToNeighbourBridge(bridge_cell, neighbour_cell);
+                else
+                    return 0;
+            }
+
+            // возможность использовать полуподключенный мост над пускачом как вход в трубы
+            /*
+            else if (this.start == NavType.Floor && this.end == NavType.Tube)
+            {
+                int cell5 = Grid.OffsetCell(cell, this.x, this.y);              |
+                                                                                V
+                if (Game.Instance.travelTubeSystem.GetConnections(cell5, false) != UtilityConnections.Up)
+                    return Grid.InvalidCell;
+            }
+            */
+            private static bool AddFloorToTubeTest(ref List<CodeInstruction> instructions, ILGenerator IL)
+            {
+                var end = typeof(NavGrid.Transition).GetField(nameof(NavGrid.Transition.end));
+                var test = typeof(NavGrid_Transition_IsValid).GetMethodSafe(nameof(TestBridgeConnections), true, PPatchTools.AnyArguments);
+                if (end != null && get_connections != null && test != null)
+                {
+                    int i = instructions.FindLastIndex(inst => inst.LoadsField(end));
+                    if (i != -1 && instructions[i + 1].LoadsConstant(NavType.Tube))
+                    {
+                        i = instructions.FindIndex(i, inst => inst.Calls(get_connections));
+                        if (i != -1 && instructions[i - 2].IsLdloc())
+                        {
+                            var to_cell = instructions[i - 2];
+                            i++;
+                            instructions.Insert(i++, to_cell.Clone());
+                            instructions.Insert(i++, new CodeInstruction(OpCodes.Ldarg_0));
+                            instructions.Insert(i++, new CodeInstruction(OpCodes.Call, test));
+                            return true;
+                        }
+                    }
+                }
+                return false;
+            }
+        }
+
+        // коррекция проверки статуса наличия выхода для трубы с длинным прыжком у скрещивания
+        [HarmonyPatch(typeof(TravelTube), nameof(TravelTube.OnDirtyNavCellUpdated))]
+        private static class TravelTube_OnDirtyNavCellUpdated
+        {
+            private static UtilityConnections DirectionFromToCell(int from_cell, int to_cell)
+            {
+                if (Math.Abs(from_cell - to_cell) == 2)
+                    from_cell = (from_cell + to_cell) / 2;
+                return UtilityConnectionsExtensions.DirectionFromToCell(from_cell, to_cell);
+            }
+
+            private static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions, MethodBase original, ILGenerator IL)
+            {
+                return instructions.Transpile(original, ReplaceDirection);
+            }
+
+            private static bool ReplaceDirection(ref List<CodeInstruction> instructions)
+            {
+                var direction = typeof(UtilityConnectionsExtensions).GetMethodSafe(nameof(DirectionFromToCell), true, typeof(int), typeof(int));
+                var correction = typeof(TravelTube_OnDirtyNavCellUpdated).GetMethodSafe(nameof(DirectionFromToCell), true, typeof(int), typeof(int));
+                if (direction != null && correction != null)
+                {
+                    instructions = PPatchTools.ReplaceMethodCallSafe(instructions, direction, correction).ToList();
+                    return true;
+                }
+                return false;
+            }
+        }
+
+        // если дупель проходит через скрещивание, отрубим ему асинхронный пересчёт путей
+        [HarmonyPatch(typeof(AsyncPathProber.Manager), nameof(AsyncPathProber.Manager.makeWorkOrder))]
+        private static class AsyncPathProber_Manager_MakeWorkOrder
+        {
+            private static void Postfix(ref AsyncPathProber.WorkOrder __result, Navigator nav)
+            {
+                if (Grid.IsValidCell(__result.originCell) && __result.startingNavType == NavType.Tube
+                    && Grid.Objects[__result.originCell, (int)ObjectLayer.TravelTubeConnection] != null
+                    && nav.IsMoving())
+                {
+                    __result.originCell = Grid.InvalidCell;
+                }
+            }
+        }
+
+        // скрываем роботов из трубной двери
+        [HarmonyPatch(typeof(AccessControlSideScreen), nameof(AccessControlSideScreen.RefreshContainerObjects))]
+        private static class AccessControlSideScreen_RefreshContainerObjects
+        {
+            internal static bool AllowFlydo = false;
+            private static void Postfix(AccessControlSideScreen __instance)
+            {
+                if (__instance.target != null && __instance.target.IsPrefabID(TravelTubeDoorConfig.ID)
+                    && !(AllowFlydo && Game.IsDlcActiveForCurrentSave(DlcManager.DLC3_ID)))
+                {
+                    __instance.robotSectionHeader.SetActive(false);
+                }
+            }
+        }
+    }
+}
