@@ -1,4 +1,4 @@
-﻿using HarmonyLib;
+using HarmonyLib;
 using PeterHan.PLib.Core;
 using PeterHan.PLib.UI;
 using System;
@@ -170,7 +170,9 @@ namespace UtilLibs.SharedTweaks
 			infoText.enableAutoSizing = false;
 			infoText.fontSize = 32;
 			infoText.alignment = TextAlignmentOptions.Center;
-			infoText.textWrappingMode = TextWrappingModes.NoWrap;
+#pragma warning disable CS0618
+			infoText.enableWordWrapping = false;
+#pragma warning restore CS0618
 			infoText.overflowMode = TextOverflowModes.Overflow;
 
 			CollapsedIndicators[entry] = freeIcon;

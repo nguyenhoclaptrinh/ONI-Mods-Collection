@@ -1,4 +1,4 @@
-﻿
+
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Linq;
@@ -44,7 +44,9 @@ namespace UtilLibs
 					LT.fontStyle = data.FontStyle;
 					LT.fontSize = data.FontSize;
 					LT.maxVisibleLines = data.MaxVisibleLines;
-					LT.textWrappingMode = data.EnableWordWrapping ? TextWrappingModes.Normal : TextWrappingModes.NoWrap;
+#pragma warning disable CS0618
+					LT.enableWordWrapping = data.EnableWordWrapping;
+#pragma warning restore CS0618
 					LT.text = "";
 					LT.overflowMode = data.Overflow;
 					LT.color = new Color(data.Color[0], data.Color[1], data.Color[2]);
