@@ -1,0 +1,35 @@
+msgid ""
+msgstr ""
+"Application: Oxygen Not Included"
+"POT Version: 2.0"
+
+#. LightBridge.STRINGS.BUILDINGS.PREFABS.LB_LIGHTBRIDGEEMITTER.DESC
+msgctxt "LightBridge.STRINGS.BUILDINGS.PREFABS.LB_LIGHTBRIDGEEMITTER.DESC"
+msgid "These bridges are made from light. If you rubbed your cheek on one, it would be like standing outside with the sun shining on your face. It would also set your hair on fire, so don't actually do it."
+msgstr ""
+
+#. LightBridge.STRINGS.BUILDINGS.PREFABS.LB_LIGHTBRIDGEEMITTER.EFFECT
+msgctxt "LightBridge.STRINGS.BUILDINGS.PREFABS.LB_LIGHTBRIDGEEMITTER.EFFECT"
+msgid "Emitts a semi-permeable light bridge of configurable length.\n\nLonger bridges require higher amounts of power"
+msgstr ""
+
+#. LightBridge.STRINGS.BUILDINGS.PREFABS.LB_LIGHTBRIDGEEMITTER.NAME
+msgctxt "LightBridge.STRINGS.BUILDINGS.PREFABS.LB_LIGHTBRIDGEEMITTER.NAME"
+msgid "Light Bridge Emitter"
+msgstr ""
+
+#. LightBridge.STRINGS.UI.UISIDESCREENS.LIGHTBRIDGESIDESCREEN.DESC
+msgctxt "LightBridge.STRINGS.UI.UISIDESCREENS.LIGHTBRIDGESIDESCREEN.DESC"
+msgid "Set length of light bridge.\nLonger light bridges cost more power to maintain."
+msgstr ""
+
+#. LightBridge.STRINGS.UI.UISIDESCREENS.LIGHTBRIDGESIDESCREEN.TILEUNITS
+msgctxt "LightBridge.STRINGS.UI.UISIDESCREENS.LIGHTBRIDGESIDESCREEN.TILEUNITS"
+msgid " Tiles"
+msgstr ""
+
+#. LightBridge.STRINGS.UI.UISIDESCREENS.LIGHTBRIDGESIDESCREEN.TITLE
+msgctxt "LightBridge.STRINGS.UI.UISIDESCREENS.LIGHTBRIDGESIDESCREEN.TITLE"
+msgid "Light Bridge"
+msgstr ""
+

@@ -1,0 +1,70 @@
+msgid ""
+msgstr ""
+"Application: Oxygen Not Included"
+"POT Version: 2.0"
+
+#. MassMoveTo.STRINGS.MISC.PLACERS.MMT_MULTIMOVEPICKUPABLEPLACER.NAME
+msgctxt "MassMoveTo.STRINGS.MISC.PLACERS.MMT_MULTIMOVEPICKUPABLEPLACER.NAME"
+msgid "Mass Relocate Here"
+msgstr ""
+
+#. MassMoveTo.STRINGS.MISC.PLACERS.MMT_MULTIMOVEPICKUPABLEPLACER.TITLE
+msgctxt "MassMoveTo.STRINGS.MISC.PLACERS.MMT_MULTIMOVEPICKUPABLEPLACER.TITLE"
+msgid "Experimental: use Multi-Delivery Targets"
+msgstr ""
+
+#. MassMoveTo.STRINGS.MISC.PLACERS.MMT_MULTIMOVEPICKUPABLEPLACER.TOOLTIP
+msgctxt "MassMoveTo.STRINGS.MISC.PLACERS.MMT_MULTIMOVEPICKUPABLEPLACER.TOOLTIP"
+msgid "Replaces the Relocate targets with a custom modded variant that allows multiple deliveries in parallel.\nTurn off if you experience crashes"
+msgstr ""
+
+#. MassMoveTo.STRINGS.UI.MASSMOVETOOL_MULTITARGET.TITLE
+msgctxt "MassMoveTo.STRINGS.UI.MASSMOVETOOL_MULTITARGET.TITLE"
+msgid "Experimental: use Multi-Delivery Targets"
+msgstr ""
+
+#. MassMoveTo.STRINGS.UI.MASSMOVETOOL_MULTITARGET.TOOLTIP
+msgctxt "MassMoveTo.STRINGS.UI.MASSMOVETOOL_MULTITARGET.TOOLTIP"
+msgid "Replaces the Relocate targets with a custom modded variant that allows multiple deliveries in parallel.\nTurn off if you experience crashes"
+msgstr ""
+
+#. MassMoveTo.STRINGS.UI.TOOLS.MOVETOSELECTTOOL.CATEGORY_MISCPICKUPABLE
+msgctxt "MassMoveTo.STRINGS.UI.TOOLS.MOVETOSELECTTOOL.CATEGORY_MISCPICKUPABLE"
+msgid "Other"
+msgstr ""
+
+#. MassMoveTo.STRINGS.UI.TOOLS.MOVETOSELECTTOOL.DIALOG_TITLE
+msgctxt "MassMoveTo.STRINGS.UI.TOOLS.MOVETOSELECTTOOL.DIALOG_TITLE"
+msgid "Materials to move"
+msgstr ""
+
+#. MassMoveTo.STRINGS.UI.TOOLS.MOVETOSELECTTOOL.NAME
+msgctxt "MassMoveTo.STRINGS.UI.TOOLS.MOVETOSELECTTOOL.NAME"
+msgid "Mass Move To"
+msgstr ""
+
+#. MassMoveTo.STRINGS.UI.TOOLS.MOVETOSELECTTOOL.TOOL_NAME_FILTERED
+msgctxt "MassMoveTo.STRINGS.UI.TOOLS.MOVETOSELECTTOOL.TOOL_NAME_FILTERED"
+msgid "FILTERED MASS MOVE TOOL"
+msgstr ""
+
+#. MassMoveTo.STRINGS.UI.TOOLS.MOVETOSELECTTOOL.TOOLACTION
+msgctxt "MassMoveTo.STRINGS.UI.TOOLS.MOVETOSELECTTOOL.TOOLACTION"
+msgid "MOVE ALL ITEMS"
+msgstr ""
+
+#. MassMoveTo.STRINGS.UI.TOOLS.MOVETOSELECTTOOL.TOOLACTION_FILTERED
+msgctxt "MassMoveTo.STRINGS.UI.TOOLS.MOVETOSELECTTOOL.TOOLACTION_FILTERED"
+msgid "MOVE ONLY SELECTED ITEMS"
+msgstr ""
+
+#. MassMoveTo.STRINGS.UI.TOOLS.MOVETOSELECTTOOL.TOOLNAME
+msgctxt "MassMoveTo.STRINGS.UI.TOOLS.MOVETOSELECTTOOL.TOOLNAME"
+msgid "MASS MOVE TOOL"
+msgstr ""
+
+#. MassMoveTo.STRINGS.UI.TOOLS.MOVETOSELECTTOOL.TOOLTIP
+msgctxt "MassMoveTo.STRINGS.UI.TOOLS.MOVETOSELECTTOOL.TOOLTIP"
+msgid "Move debris to a location in bulk {0}"
+msgstr ""
+
