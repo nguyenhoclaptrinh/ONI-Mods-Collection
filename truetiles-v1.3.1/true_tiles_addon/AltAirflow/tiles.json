@@ -1,0 +1,81 @@
+{
+  "GasPermeableMembrane": {
+    "AluminumOre": {
+      "MainTex": "airflow_aluminumore_main"
+    },
+    "Cinnabar": {
+      "MainTex": "airflow_cinnabar_main"
+    },
+    "Cobaltite": {
+      "MainTex": "airflow_cobaltite_main"
+    },
+    "Cuprite": {
+      "MainTex": "airflow_cuprite_main"
+    },
+    "Electrum": {
+      "MainTex": "airflow_electrum_main"
+    },
+    "GoldAmalgam": {
+      "MainTex": "airflow_goldamalgam_main"
+    },
+    "IronOre": {
+      "MainTex": "airflow_ironore_main"
+    },
+    "Niobium": {
+      "MainTex": "airflow_niobium_main"
+    },
+    "Steel": {
+      "MainTex": "airflow_steel_main"
+    },
+    "TempConductorSolid": {
+      "MainTex": "airflow_tempconductorsolid_main"
+    },
+    "UraniumOre": {
+      "MainTex": "airflow_uraniumore_main"
+    },
+    "Wolframite": {
+      "MainTex": "airflow_wolframite_main"
+    },
+    "Aluminum": {
+      "MainTex": "airflow_aluminumore_main"
+    },
+    "Cobalt": {
+      "MainTex": "airflow_cobaltite_main"
+    },
+    "Copper": {
+      "MainTex": "airflow_cuprite_main"
+    },
+    "Gold": {
+      "MainTex": "airflow_goldamalgam_main"
+    },
+    "FoolsGold": {
+      "MainTex": "airflow_goldamalgam_main"
+    },
+    "Iron": {
+      "MainTex": "airflow_ironore_main"
+    },
+    "SolidMercury": {
+      "MainTex": "airflow_cinnabar_main"
+    },
+    "Lead": {
+      "MainTex": "airflow_lead_main",
+      "TopTex": "airflow_lead_top",
+      "MainSpecular": "airflow_lead_spec"
+    },
+    "DepletedUranium": {
+      "MainTex": "airflow_uraniumore_main"
+    },
+    "EnrichedUranium": {
+      "MainTex": "airflow_uraniumore_main",
+      "MainSpecularColor": [
+        0.0,
+        1.0,
+        0.0,
+        1.0
+      ]
+    },
+    "Tungsten": {
+      "MainTex": "airflow_wolframite_main"
+    }
+  }
+}

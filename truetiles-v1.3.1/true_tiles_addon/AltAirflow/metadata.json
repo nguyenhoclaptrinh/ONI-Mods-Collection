@@ -1,0 +1,10 @@
+{
+  "Id": "AltAirflow",
+  "Name": "TrueTiles.STRINGS.TEXTUREPACKS.ALTAIRFLOW.NAME",
+  "Author": "Aki",
+  "Description": "TrueTiles.STRINGS.TEXTUREPACKS.ALTAIRFLOW.DESCRIPTION",
+  "Order": -5,
+  "AssetBundle": "truetiles_altairflow",
+  "AssetBundleRoot": "assets/tiles/airflow_textures/",
+  "Version": "1.1.0.0"
+}

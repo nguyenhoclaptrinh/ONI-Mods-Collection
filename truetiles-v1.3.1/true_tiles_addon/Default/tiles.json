@@ -1,0 +1,386 @@
+{
+  "Tile": {
+    "Ceramic": {
+      "MainTex": "tile_ceramic_main"
+    },
+    "Fossil": {
+      "MainTex": "tile_fossil_main",
+      "TopTex": "tile_fossil_top"
+    },
+    "Granite": {
+      "MainTex": "tile_granite_main"
+    },
+    "Graphite": {
+      "MainTex": "tile_graphite_main",
+      "TopTex": "tile_graphite_top"
+    },
+    "IgneousRock": {
+      "MainTex": "tile_igneousrock_main",
+      "TopTex": "tile_igneousrock_top"
+    },
+    "Isoresin": {
+      "MainTex": "tile_isoresin_main",
+      "TopTex": "tile_isoresin_top"
+    },
+    "MaficRock": {
+      "MainTex": "tile_maficrock_main",
+      "TopTex": "tile_maficrock_top"
+    },
+    "Obsidian": {
+      "MainTex": "tile_obsidian_main",
+      "TopTex": "tile_obsidian_top"
+    },
+    "SandStone": {
+      "MainTex": "tile_sandstone_main",
+      "TopTex": "tile_sandstone_top"
+    },
+    "SedimentaryRock": {
+      "MainTex": "tile_sedimentaryrock_main",
+      "TopTex": "tile_sedimentaryrock_top"
+    },
+    "SuperInsulator": {
+      "MainTex": "tile_superinsulator_main",
+      "TopTex": "tile_superinsulator_top"
+    }
+  },
+  "CarpetTile": {
+    "Ceramic": {
+      "MainTex": "carpet_ceramic_main",
+      "TopTex": "carpet_ceramic_top"
+    },
+    "Fossil": {
+      "MainTex": "carpet_fossil_main",
+      "TopTex": "carpet_fossil_top"
+    },
+    "Granite": {
+      "MainTex": "carpet_granite_main",
+      "TopTex": "carpet_granite_top"
+    },
+    "Graphite": {
+      "MainTex": "carpet_graphite_main",
+      "TopTex": "carpet_graphite_top"
+    },
+    "IgneousRock": {
+      "MainTex": "carpet_igneousrock_main",
+      "TopTex": "carpet_igneousrock_top"
+    },
+    "Isoresin": {
+      "MainTex": "carpet_isoresin_main",
+      "TopTex": "carpet_isoresin_top"
+    },
+    "MaficRock": {
+      "MainTex": "carpet_maficrock_main",
+      "TopTex": "carpet_maficrock_top"
+    },
+    "Obsidian": {
+      "MainTex": "carpet_obsidian_main",
+      "TopTex": "carpet_obsidian_top"
+    },
+    "SedimentaryRock": {
+      "MainTex": "carpet_sedimentaryrock_main",
+      "TopTex": "carpet_sedimentaryrock_top"
+    },
+    "SuperInsulator": {
+      "MainTex": "carpet_superinsulator_main",
+      "TopTex": "carpet_superinsulator_top"
+    }
+  },
+  "InsulationTile": {
+    "Ceramic": {
+      "MainTex": "insulation_ceramic_main"
+    },
+    "Fossil": {
+      "MainTex": "insulation_fossil_main"
+    },
+    "Granite": {
+      "MainTex": "insulation_granite_main"
+    },
+    "Graphite": {
+      "MainTex": "insulation_graphite_main"
+    },
+    "IgneousRock": {
+      "MainTex": "insulation_igneousrock_main"
+    },
+    "Isoresin": {
+      "MainTex": "insulation_isoresin_main"
+    },
+    "MaficRock": {
+      "MainTex": "insulation_maficrock_main"
+    },
+    "Obsidian": {
+      "MainTex": "insulation_obsidian_main"
+    },
+    "SandStone": {
+      "MainTex": "insulation_sandstone_main"
+    },
+    "SedimentaryRock": {
+      "MainTex": "insulation_sedimentaryrock_main"
+    },
+    "SuperInsulator": {
+      "MainTex": "insulation_superinsulator_main"
+    }
+  },
+  "PlasticTile": {
+    "HardPolypropylene": {
+      "MainTex": "plastic_hardpolypropylene_main",
+      "TopTex": "plastic_hardpolypropylene_top"
+    }
+  },
+  "MeshTile": {
+    "AluminumOre": {
+      "MainTex": "mesh_aluminumore_main",
+      "TopTex": "mesh_aluminumore_top",
+      "MainSpecular": "mesh_aluminumore_spec"
+    },
+    "Cinnabar": {
+      "MainTex": "mesh_cinnabar_main",
+      "TopTex": "mesh_cinnabar_top",
+      "MainSpecular": "mesh_cinnabar_spec"
+    },
+    "Cobaltite": {
+      "MainTex": "mesh_cobaltite_main",
+      "TopTex": "mesh_cobaltite_top",
+      "MainSpecular": "mesh_cobaltite_spec"
+    },
+    "Cuprite": {
+      "MainTex": "mesh_cuprite_main",
+      "TopTex": "mesh_cuprite_top",
+      "MainSpecular": "mesh_cuprite_spec"
+    },
+    "Electrum": {
+      "MainTex": "mesh_electrum_main",
+      "TopTex": "mesh_electrum_top",
+      "MainSpecular": "mesh_electrum_spec"
+    },
+    "GoldAmalgam": {
+      "MainTex": "mesh_goldamalgam_main",
+      "TopTex": "mesh_goldamalgam_top",
+      "MainSpecular": "mesh_goldamalgam_spec"
+    },
+    "IronOre": {
+      "MainTex": "mesh_ironore_main"
+    },
+    "Niobium": {
+      "MainTex": "mesh_niobium_main",
+      "MainSpecular": "mesh_niobium_spec"
+    },
+    "Steel": {
+      "MainTex": "mesh_steel_main",
+      "TopTex": "mesh_steel_top",
+      "MainSpecular": "mesh_steel_spec"
+    },
+    "TempConductorSolid": {
+      "MainTex": "mesh_tempconductorsolid_main",
+      "TopTex": "mesh_tempconductorsolid_top",
+      "MainSpecular": "mesh_tempconductorsolid_spec"
+    },
+    "UraniumOre": {
+      "MainTex": "mesh_uraniumore_main",
+      "TopTex": "mesh_uraniumore_top",
+      "MainSpecular": "mesh_uraniumore_spec"
+    },
+    "Wolframite": {
+      "MainTex": "mesh_wolframite_main",
+      "TopTex": "mesh_wolframite_top",
+      "MainSpecular": "mesh_wolframite_spec"
+    },
+    "Aluminum": {
+      "MainTex": "mesh_aluminumore_main",
+      "MainSpecular": "mesh_aluminumore_spec"
+    },
+    "Cobalt": {
+      "MainTex": "mesh_cobaltite_main",
+      "MainSpecular": "mesh_cobaltite_spec"
+    },
+    "Copper": {
+      "MainTex": "mesh_cuprite_main",
+      "MainSpecular": "mesh_cuprite_spec"
+    },
+    "Gold": {
+      "MainTex": "mesh_goldamalgam_main",
+      "MainSpecular": "mesh_goldamalgam_spec"
+    },
+    "FoolsGold": {
+      "MainTex": "mesh_goldamalgam_main",
+      "MainSpecular": "mesh_goldamalgam_spec"
+    },
+    "Iron": {
+      "MainTex": "mesh_ironore_main"
+    },
+    "Lead": {
+      "MainTex": "mesh_lead_main",
+      "TopTex": "mesh_lead_top",
+      "MainSpecular": "mesh_lead_spec"
+    },
+    "DepletedUranium": {
+      "MainTex": "mesh_uraniumore_main",
+      "MainSpecular": "mesh_uraniumore_spec"
+    },
+    "EnrichedUranium": {
+      "MainTex": "mesh_uraniumore_main",
+      "MainSpecular": "mesh_uraniumore_spec",
+      "MainSpecularColor": [
+        0.0,
+        1.0,
+        0.0,
+        1.0
+      ]
+    },
+    "SolidMercury": {
+      "MainTex": "mesh_cinnabar_main",
+      "MainSpecular": "mesh_cinnabar_spec"
+    },
+    "Tungsten": {
+      "MainTex": "mesh_wolframite_main",
+      "MainSpecular": "mesh_wolframite_spec"
+    }
+  },
+  "GasPermeableMembrane": {
+    "AluminumOre": {
+      "MainTex": "airflow_aluminumore_main"
+    },
+    "Cinnabar": {
+      "MainTex": "airflow_cinnabar_main"
+    },
+    "Cobaltite": {
+      "MainTex": "airflow_cobaltite_main"
+    },
+    "Cuprite": {
+      "MainTex": "airflow_cuprite_main"
+    },
+    "Electrum": {
+      "MainTex": "airflow_electrum_main"
+    },
+    "GoldAmalgam": {
+      "MainTex": "airflow_goldamalgam_main"
+    },
+    "IronOre": {
+      "MainTex": "airflow_ironore_main"
+    },
+    "Niobium": {
+      "MainTex": "airflow_niobium_main"
+    },
+    "Steel": {
+      "MainTex": "airflow_steel_main"
+    },
+    "TempConductorSolid": {
+      "MainTex": "airflow_tempconductorsolid_main"
+    },
+    "UraniumOre": {
+      "MainTex": "airflow_uraniumore_main"
+    },
+    "Wolframite": {
+      "MainTex": "airflow_wolframite_main"
+    },
+    "Aluminum": {
+      "MainTex": "airflow_aluminumore_main"
+    },
+    "SolidMercury": {
+      "MainTex": "airflow_cinnabar_main"
+    },
+    "Cobalt": {
+      "MainTex": "airflow_cobaltite_main"
+    },
+    "Copper": {
+      "MainTex": "airflow_cuprite_main"
+    },
+    "Gold": {
+      "MainTex": "airflow_goldamalgam_main"
+    },
+    "FoolsGold": {
+      "MainTex": "airflow_goldamalgam_main"
+    },
+    "Iron": {
+      "MainTex": "airflow_ironore_main"
+    },
+    "Lead": {
+      "MainTex": "airflow_lead_main",
+      "TopTex": "airflow_lead_top",
+      "MainSpecular": "airflow_lead_spec"
+    },
+    "DepletedUranium": {
+      "MainTex": "airflow_uraniumore_main"
+    },
+    "EnrichedUranium": {
+      "MainTex": "airflow_uraniumore_main",
+      "MainSpecularColor": [
+        0.0,
+        1.0,
+        0.0,
+        1.0
+      ]
+    },
+    "Tungsten": {
+      "MainTex": "airflow_wolframite_main"
+    }
+  },
+  "MetalTile": {
+    "Aluminum": {
+      "MainTex": "metal_aluminum_main",
+      "MainSpecular": "metal_aluminum_spec"
+    },
+    "Cobalt": {
+      "MainTex": "metal_cobalt_main",
+      "TopTex": "metal_cobalt_top",
+      "MainSpecular": "metal_cobalt_spec"
+    },
+    "Copper": {
+      "MainTex": "metal_copper_main",
+      "TopTex": "metal_copper_top",
+      "MainSpecular": "metal_copper_spec"
+    },
+    "DepletedUranium": {
+      "MainTex": "metal_depleteduranium_main",
+      "TopTex": "metal_depleteduranium_top",
+      "MainSpecular": "metal_depleteduranium_spec"
+    },
+    "Gold": {
+      "MainTex": "metal_gold_main",
+      "TopTex": "metal_gold_top",
+      "MainSpecular": "metal_gold_spec"
+    },
+    "Iron": {
+      "MainTex": "metal_iron_main",
+      "TopTex": "metal_iron_top",
+      "MainSpecular": "metal_iron_spec"
+    },
+    "Lead": {
+      "MainTex": "metal_lead_main",
+      "TopTex": "metal_lead_top",
+      "MainSpecular": "metal_lead_spec"
+    },
+    "Niobium": {
+      "MainTex": "metal_niobium_main",
+      "TopTex": "metal_niobium_top",
+      "MainSpecular": "metal_niobium_spec"
+    },
+    "Steel": {
+      "MainTex": "metal_steel_main",
+      "TopTex": "metal_steel_top",
+      "MainSpecular": "metal_steel_spec"
+    },
+    "TempConductorSolid": {
+      "MainTex": "metal_tempconductorsolid_main",
+      "TopTex": "metal_tempconductorsolid_top",
+      "MainSpecular": "metal_tempconductorsolid_spec"
+    },
+    "SolidMercury": {
+      "MainTex": "metal_solidmercury_main",
+      "TopTex": "metal_solidmercury_top",
+      "MainSpecular": "metal_solidmercury_spec"
+    },
+    "Tungsten": {
+      "MainTex": "metal_tungsten_main",
+      "TopTex": "metal_tungsten_top",
+      "MainSpecular": "metal_tungsten_spec"
+    }
+  },
+  "GlassTile": {
+    "Diamond": {
+      "MainTex": "window_diamond_main",
+      "TopTex": "window_diamond_top",
+      "MainSpecular": "window_diamond_spec",
+      "TopSpecular": "window_diamond_spec_top"
+    }
+  }
+}

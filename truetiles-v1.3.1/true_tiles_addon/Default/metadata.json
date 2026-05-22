@@ -1,0 +1,11 @@
+{
+  "Id": "Default",
+  "Name": "TrueTiles.STRINGS.TEXTUREPACKS.DEFAULT.NAME",
+  "Author": "Aki",
+  "Description": "TrueTiles.STRINGS.TEXTUREPACKS.DEFAULT.DESCRIPTION",
+  "Order": -10,
+  "Enabled": true,
+  "AssetBundle": "truetiles_default",
+  "AssetBundleRoot": "assets/tiles/default_textures/",
+  "Version": "1.1.0.0"
+}

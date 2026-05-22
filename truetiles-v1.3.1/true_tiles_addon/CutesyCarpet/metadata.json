@@ -1,0 +1,10 @@
+{
+  "Id": "CutesyCarpet",
+  "Name": "TrueTiles.STRINGS.TEXTUREPACKS.CUTESYCARPET.NAME",
+  "Author": "Aki",
+  "Description": "TrueTiles.STRINGS.TEXTUREPACKS.CUTESYCARPET.DESCRIPTION",
+  "Order": -5,
+  "AssetBundle": "truetiles_cutesy_carpets",
+  "AssetBundleRoot": "assets/tiles/cutesy_carpet_textures/",
+  "Version": "1.1.0.0"
+}

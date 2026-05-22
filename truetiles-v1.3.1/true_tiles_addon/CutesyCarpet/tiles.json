@@ -1,0 +1,48 @@
+{
+  "CarpetTile": {
+    "Ceramic": {
+      "MainTex": "carpet_ceramic_main",
+      "TopTex": "carpet_ceramic_top"
+    },
+    "Fossil": {
+      "MainTex": "carpet_fossil_main",
+      "TopTex": "carpet_fossil_top"
+    },
+    "Granite": {
+      "MainTex": "carpet_granite_main",
+      "TopTex": "carpet_granite_top"
+    },
+    "Graphite": {
+      "MainTex": "carpet_graphite_main",
+      "TopTex": "carpet_graphite_top"
+    },
+    "IgneousRock": {
+      "MainTex": "carpet_igneousrock_main",
+      "TopTex": "carpet_igneousrock_top"
+    },
+    "Isoresin": {
+      "MainTex": "carpet_isoresin_main",
+      "TopTex": "carpet_isoresin_top"
+    },
+    "MaficRock": {
+      "MainTex": "carpet_maficrock_main",
+      "TopTex": "carpet_maficrock_top"
+    },
+    "Obsidian": {
+      "MainTex": "carpet_obsidian_main",
+      "TopTex": "carpet_obsidian_top"
+    },
+    "SandStone": {
+      "MainTex": "carpet_sandstone_main",
+      "TopTex": "carpet_sandstone_top"
+    },
+    "SedimentaryRock": {
+      "MainTex": "carpet_sedimentaryrock_main",
+      "TopTex": "carpet_sedimentaryrock_top"
+    },
+    "SuperInsulator": {
+      "MainTex": "carpet_superinsulator_main",
+      "TopTex": "carpet_superinsulator_top"
+    }
+  }
+}

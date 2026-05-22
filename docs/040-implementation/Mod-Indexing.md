@@ -299,7 +299,7 @@ Tổng số lượng dự án/mod được phân loại: **310+ dự án & thư 
 | 26 | `DigUpFossils` | Cho phép đào và khai quật các mỏ hóa thạch lớn để chế biến thành vôi (Lime) chất lượng cao. | Xây dựng |
 | 27 | `DontCrashMyMods` | Bộ lọc bắt lỗi Exception thông minh giúp game không bị văng (Crash to Desktop) khi mod lỗi. | Hệ thống |
 | 28 | `DupePodRailgun` | Súng điện từ bắn kén vận chuyển Duplicant qua lại giữa các hành tinh mà không cần tên lửa. | Vũ trụ |
-| 29 | `DupePrioPresetManager` | Trình quản lý lưu/tải các thiết lập ưu tiên công việc (Priorities) cho Duplicant theo nhóm. | Giao diện |
+| 29 | `DupePrioPresetManager` [✅ Hoạt động] | Trình quản lý lưu/tải các thiết lập ưu tiên công việc (Priorities) cho Duplicant theo nhóm. | Giao diện |
 | 30 | `DupeTransportViaNetwork` | Dịch chuyển tức thời Duplicant xuyên qua mạng lưới đường ống năng lượng cao. | Vận chuyển |
 | 31 | `FlybotRoboPort` | Trạm sạc cho Flybot - robot bay tự động sửa chữa các công trình bị hỏng trên bề mặt. | Robot AI |
 | 32 | `ForceFieldWallTile` | Ô gạch tường lực trường chặn đứng khí và nước nhưng cho phép Duplicant đi xuyên qua tự do. | Xây dựng |
