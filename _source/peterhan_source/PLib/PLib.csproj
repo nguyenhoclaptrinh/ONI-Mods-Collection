@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net48;netstandard2.1</TargetFrameworks>
+    <Title>PeterHan.PLib</Title>
+    <AssemblyTitle>PLib</AssemblyTitle>
+    <Version>$(PLibVersion)</Version>
+    <!--<PackageVersion>$(PLibVersion)-beta</PackageVersion>-->
+    <Authors>Peter Han (https://github.com/peterhaneve)</Authors>
+    <PackageProjectUrl>https://github.com/peterhaneve/ONIMods</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageTags>Game, OxygenNotIncluded, Oxygen, PLib, Library</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Copyright>Copyright 2025 Peter Han</Copyright>
+    <Description>PLib - Peter Han's library used for creating mods for Oxygen Not Included, a simulation game by Klei Entertainment.
+    
+Contains methods aimed at improving cross-mod compatibility, in-game user interfaces, and game-wide functions such as Actions and Lighting. An easy-to-use Mod Options menu is also included.</Description>
+    <PackageReleaseNotes>
+StringOptionsEntry default width can now be customized for manually created instances.
+        
+Migrate legacy target version from netframework471 to net48. The primary version will remain netstandard2.1.
+    </PackageReleaseNotes>
+    <RootNamespace>PeterHan.PLib</RootNamespace>
+    <AssemblyVersion>$(PLibVersion)</AssemblyVersion>
+    <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>  
+    <GenerateAssemblyInformationalVersionAttribute>false</GenerateAssemblyInformationalVersionAttribute>
+    <UsesPLib>false</UsesPLib>
+    <DistributeMod>false</DistributeMod>
+    <Platforms>Vanilla;Mergedown</Platforms>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DocumentationFile>bin\$(Platform)\Release\PLib.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="icon.png" Pack="True" PackagePath="" />
+    <ProjectReference Include="../PLibCore/PLibCore.csproj" PrivateAssets="all" />
+    <ProjectReference Include="../PLibActions/PLibActions.csproj" PrivateAssets="all" />
+    <ProjectReference Include="../PLibAVC/PLibAVC.csproj" PrivateAssets="all" />
+    <ProjectReference Include="../PLibBuildings/PLibBuildings.csproj" PrivateAssets="all" />
+    <ProjectReference Include="../PLibDatabase/PLibDatabase.csproj" PrivateAssets="all" />
+    <ProjectReference Include="../PLibLighting/PLibLighting.csproj" PrivateAssets="all" />
+    <ProjectReference Include="../PLibOptions/PLibOptions.csproj" PrivateAssets="all" />
+    <ProjectReference Include="../PLibUI/PLibUI.csproj" PrivateAssets="all" />
+    <PLibLibraries Include="$(TargetDir)/PLib*.dll" />
+    <PLibXMLs Include="$(TargetDir)/PLib*.xml" />
+  </ItemGroup>
+  <Target Name="BuildZip" AfterTargets="Build">
+    <MakeDir Directories="$(IntermediateOutputPath)/PLib" ContinueOnError="true" />
+    <Copy SourceFiles="@(PLibLibraries)" DestinationFolder="$(IntermediateOutputPath)/PLib" />
+    <Copy SourceFiles="@(PLibXMLs)" DestinationFolder="$(IntermediateOutputPath)/PLib" />
+    <Delete Files="$(IntermediateOutputPath)/PLib/PLib.dll" ContinueOnError="true" />
+    <Delete Files="$(IntermediateOutputPath)/PLib/PLib.xml" ContinueOnError="true" />
+    <ZipDirectory SourceDirectory="$(IntermediateOutputPath)/PLib" DestinationFile="$(OutputPath)/PLib.zip" Overwrite="true" />
+  </Target>
+</Project>

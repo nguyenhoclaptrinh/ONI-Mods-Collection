@@ -1,0 +1,30 @@
+msgid ""
+msgstr ""
+"Application: Oxygen Not Included"
+"POT Version: 2.0"
+
+#. CustomGameSettingsModifier.STRINGS.UI.CUSTOMGAMESETTINGSCHANGER.BUTTONTEXT
+msgctxt "CustomGameSettingsModifier.STRINGS.UI.CUSTOMGAMESETTINGSCHANGER.BUTTONTEXT"
+msgid "Change Difficulty Settings"
+msgstr ""
+
+#. CustomGameSettingsModifier.STRINGS.UI.CUSTOMGAMESETTINGSCHANGER.CHANGEWARNING
+msgctxt "CustomGameSettingsModifier.STRINGS.UI.CUSTOMGAMESETTINGSCHANGER.CHANGEWARNING"
+msgid "<color=#fec315>Most of these changes require a reload!</color>"
+msgstr ""
+
+#. CustomGameSettingsModifier.STRINGS.UI.CUSTOMGAMESETTINGSCHANGER.CHANGEWARNINGTOOLTIP
+msgctxt "CustomGameSettingsModifier.STRINGS.UI.CUSTOMGAMESETTINGSCHANGER.CHANGEWARNINGTOOLTIP"
+msgid "Changing the majority of these settings wont have an immediate effect.\nTo activate the effects:\n1. Change settings to your desired configuration.\n2. Save the game.\n3. Load that save game.\n4. Your changes should now be active."
+msgstr ""
+
+#. CustomGameSettingsModifier.STRINGS.UI.CUSTOMGAMESETTINGSCHANGER.CLOSE.TEXT
+msgctxt "CustomGameSettingsModifier.STRINGS.UI.CUSTOMGAMESETTINGSCHANGER.CLOSE.TEXT"
+msgid "Close"
+msgstr ""
+
+#. CustomGameSettingsModifier.STRINGS.UI.CUSTOMGAMESETTINGSCHANGER.TITLE.TITLETEXT
+msgctxt "CustomGameSettingsModifier.STRINGS.UI.CUSTOMGAMESETTINGSCHANGER.TITLE.TITLETEXT"
+msgid "Difficulty Settings"
+msgstr ""
+

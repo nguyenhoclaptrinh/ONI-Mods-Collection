@@ -9,8 +9,8 @@ created: 2026-05-21
 
 Tài liệu này tổng hợp toàn bộ danh sách các mod và dự án thành phần có trong mã nguồn cục bộ (Local workspace) của bạn. Hệ thống mã nguồn được tổ chức theo cấu trúc Monorepo/Multi-repo với các thư mục đại diện cho từng tác giả lớn (`*_source`).
 
-Tổng số thư mục tác giả nguồn: **8 tác giả**
-Tổng số lượng dự án/mod được phân loại: **290+ dự án & thư viện hỗ trợ**
+Tổng số thư mục tác giả nguồn: **10 tác giả**
+Tổng số lượng dự án/mod được phân loại: **310+ dự án & thư viện hỗ trợ**
 
 > [!NOTE]
 > Bản chỉ mục này hỗ trợ đắc lực cho việc định vị nhanh vị trí file mã nguồn, phục vụ cho việc gỡ lỗi (Debugging), nâng cấp API game (ví dụ từ v67 Frosty Planet lên v70 Scramble) và phát triển các mod mới dựa trên nền tảng có sẵn.
@@ -21,21 +21,23 @@ Tổng số lượng dự án/mod được phân loại: **290+ dự án & thư 
 
 | STT | Thư mục Nguồn | Tác giả | Số lượng Dự án | Vị trí Nguồn | Thư viện đi kèm |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1 | [beatlepie_source](file:///d:/Documents/Klei/OxygenNotIncluded/mods/Local/beatlepie_source) | beatlepie | 6 | `/beatlepie_source/` | *Không* |
-| 2 | [cairath_source](file:///d:/Documents/Klei/OxygenNotIncluded/mods/Local/cairath_source) | Cairath | 38 | `/cairath_source/src/` | CaiLib |
-| 3 | [doctorfeelgood_source](file:///d:/Documents/Klei/OxygenNotIncluded/mods/Local/doctorfeelgood_source) | DoctorFeelGoodMD | 9 | `/doctorfeelgood_source/source/` | *Không* |
-| 4 | [glampi_source](file:///d:/Documents/Klei/OxygenNotIncluded/mods/Local/glampi_source) | Glampi | 2 | `/glampi_source/` | *Không* |
-| 5 | [hilliurn_source](file:///d:/Documents/Klei/OxygenNotIncluded/mods/Local/hilliurn_source) | Hilliurn | 1 | `/hilliurn_source/` | *Không* |
-| 6 | [peterhan_source](file:///d:/Documents/Klei/OxygenNotIncluded/mods/Local/peterhan_source) | Peter Han | 56 | `/peterhan_source/` | PLib (9 modules) |
-| 7 | [sanchozz_source](file:///d:/Documents/Klei/OxygenNotIncluded/mods/Local/sanchozz_source) | Sanchozz | 57 | `/sanchozz_source/src/` | *Không* |
-| 8 | [sgt_imalas_source](file:///d:/Documents/Klei/OxygenNotIncluded/mods/Local/sgt_imalas_source) | Sgt_Imalas | 124 | `/sgt_imalas_source/` | UtilLibs, TwitchLib |
+| 1 | [beatlepie_source](file:///d:/Documents/Klei/OxygenNotIncluded/mods/Local/_source/beatlepie_source) | beatlepie | 6 | `/_source/beatlepie_source/` | *Không* |
+| 2 | [cairath_source](file:///d:/Documents/Klei/OxygenNotIncluded/mods/Local/_source/cairath_source) | Cairath | 38 | `/_source/cairath_source/src/` | CaiLib |
+| 3 | [doctorfeelgood_source](file:///d:/Documents/Klei/OxygenNotIncluded/mods/Local/_source/doctorfeelgood_source) | DoctorFeelGoodMD | 9 | `/_source/doctorfeelgood_source/source/` | *Không* |
+| 4 | [glampi_source](file:///d:/Documents/Klei/OxygenNotIncluded/mods/Local/_source/glampi_source) | Glampi | 2 | `/_source/glampi_source/` | *Không* |
+| 5 | [hilliurn_source](file:///d:/Documents/Klei/OxygenNotIncluded/mods/Local/_source/hilliurn_source) | Hilliurn | 1 | `/_source/hilliurn_source/` | *Không* |
+| 6 | [peterhan_source](file:///d:/Documents/Klei/OxygenNotIncluded/mods/Local/_source/peterhan_source) | Peter Han | 56 | `/_source/peterhan_source/` | PLib (9 modules) |
+| 7 | [sanchozz_source](file:///d:/Documents/Klei/OxygenNotIncluded/mods/Local/_source/sanchozz_source) | Sanchozz | 57 | `/_source/sanchozz_source/src/` | *Không* |
+| 8 | [sgt_imalas_source](file:///d:/Documents/Klei/OxygenNotIncluded/mods/Local/_source/sgt_imalas_source) | Sgt_Imalas | 124 | `/_source/sgt_imalas_source/` | UtilLibs, TwitchLib |
+| 9 | [AzeTheGreat_source](file:///d:/Documents/Klei/OxygenNotIncluded/mods/Local/_source/AzeTheGreat_source) | AzeTheGreat | 23 | `/_source/AzeTheGreat_source/src/` | AzeLib |
+| 10 | [ony_mods](file:///d:/Documents/Klei/OxygenNotIncluded/mods/Local/_source/ony_mods) | Ony | 1 | `/_source/ony_mods/` | *Bug Tracker* |
 
 ---
 
 ## 2. Chi Tiết Danh Sách Mod Theo Tác Giả
 
 ### 2.1. Nhóm Mod của Beatlepie (`beatlepie_source`)
-*Đường dẫn cục bộ:* [beatlepie_source/](file:///d:/Documents/Klei/OxygenNotIncluded/mods/Local/beatlepie_source)
+*Đường dẫn cục bộ:* [beatlepie_source/](file:///d:/Documents/Klei/OxygenNotIncluded/mods/Local/_source/beatlepie_source)
 
 | STT | Tên Thư mục / Project | Chức năng Dự kiến | Ghi chú |
 | :--- | :--- | :--- | :--- |
@@ -49,7 +51,7 @@ Tổng số lượng dự án/mod được phân loại: **290+ dự án & thư 
 ---
 
 ### 2.2. Nhóm Mod của Cairath (`cairath_source`)
-*Đường dẫn cục bộ:* [cairath_source/src/](file:///d:/Documents/Klei/OxygenNotIncluded/mods/Local/cairath_source/src)
+*Đường dẫn cục bộ:* [cairath_source/src/](file:///d:/Documents/Klei/OxygenNotIncluded/mods/Local/_source/cairath_source/src)
 
 | STT | Tên Thư mục / Project | Chức năng Dự kiến | Phân loại |
 | :--- | :--- | :--- | :--- |
@@ -94,7 +96,7 @@ Tổng số lượng dự án/mod được phân loại: **290+ dự án & thư 
 ---
 
 ### 2.3. Nhóm Mod của DoctorFeelGoodMD (`doctorfeelgood_source`)
-*Đường dẫn cục bộ:* [doctorfeelgood_source/source/](file:///d:/Documents/Klei/OxygenNotIncluded/mods/Local/doctorfeelgood_source/source)
+*Đường dẫn cục bộ:* [doctorfeelgood_source/source/](file:///d:/Documents/Klei/OxygenNotIncluded/mods/Local/_source/doctorfeelgood_source/source)
 
 | STT | Tên Thư mục / Project | Chức năng Dự kiến | Phân loại |
 | :--- | :--- | :--- | :--- |
@@ -111,7 +113,7 @@ Tổng số lượng dự án/mod được phân loại: **290+ dự án & thư 
 ---
 
 ### 2.4. Nhóm Mod của Glampi (`glampi_source`)
-*Đường dẫn cục bộ:* [glampi_source/](file:///d:/Documents/Klei/OxygenNotIncluded/mods/Local/glampi_source)
+*Đường dẫn cục bộ:* [glampi_source/](file:///d:/Documents/Klei/OxygenNotIncluded/mods/Local/_source/glampi_source)
 
 | STT | Tên Thư mục / Project | Chức năng Dự kiến | Phân loại |
 | :--- | :--- | :--- | :--- |
@@ -121,7 +123,7 @@ Tổng số lượng dự án/mod được phân loại: **290+ dự án & thư 
 ---
 
 ### 2.5. Nhóm Mod của Hilliurn (`hilliurn_source`)
-*Đường dẫn cục bộ:* [hilliurn_source/](file:///d:/Documents/Klei/OxygenNotIncluded/mods/Local/hilliurn_source)
+*Đường dẫn cục bộ:* [hilliurn_source/](file:///d:/Documents/Klei/OxygenNotIncluded/mods/Local/_source/hilliurn_source)
 
 | STT | Tên Thư mục / Project | Chức năng Dự kiến | Phân loại |
 | :--- | :--- | :--- | :--- |
@@ -130,7 +132,7 @@ Tổng số lượng dự án/mod được phân loại: **290+ dự án & thư 
 ---
 
 ### 2.6. Nhóm Mod & Thư Viện của Peter Han (`peterhan_source`)
-*Đường dẫn cục bộ:* [peterhan_source/](file:///d:/Documents/Klei/OxygenNotIncluded/mods/Local/peterhan_source)
+*Đường dẫn cục bộ:* [peterhan_source/](file:///d:/Documents/Klei/OxygenNotIncluded/mods/Local/_source/peterhan_source)
 
 Đây là kho lưu trữ của **Peter Han**, tác giả nổi tiếng bậc nhất trong cộng đồng ONI modding với bộ thư viện **PLib** huyền thoại.
 
@@ -199,7 +201,7 @@ Tổng số lượng dự án/mod được phân loại: **290+ dự án & thư 
 ---
 
 ### 2.7. Nhóm Mod của Sanchozz (`sanchozz_source`)
-*Đường dẫn cục bộ:* [sanchozz_source/src/](file:///d:/Documents/Klei/OxygenNotIncluded/mods/Local/sanchozz_source/src)
+*Đường dẫn cục bộ:* [sanchozz_source/src/](file:///d:/Documents/Klei/OxygenNotIncluded/mods/Local/_source/sanchozz_source/src)
 
 | STT | Tên Thư mục / Project | Chức năng Dự kiến | Phân loại |
 | :--- | :--- | :--- | :--- |
@@ -263,7 +265,7 @@ Tổng số lượng dự án/mod được phân loại: **290+ dự án & thư 
 ---
 
 ### 2.8. Nhóm Mod & Dự án của Sgt_Imalas (`sgt_imalas_source`)
-*Đường dẫn cục bộ:* [sgt_imalas_source/](file:///d:/Documents/Klei/OxygenNotIncluded/mods/Local/sgt_imalas_source)
+*Đường dẫn cục bộ:* [sgt_imalas_source/](file:///d:/Documents/Klei/OxygenNotIncluded/mods/Local/_source/sgt_imalas_source)
 
 Đây là kho mã nguồn khổng lồ của **Sgt_Imalas**, một modder cực kỳ năng suất. Dưới đây là các dự án mod nổi bật nhất trong tổng số 120+ thư mục:
 
@@ -284,7 +286,7 @@ Tổng số lượng dự án/mod được phân loại: **290+ dự án & thư 
 | 13 | `CannedFoodNGoods` | Hệ thống bảo quản thực phẩm bằng phương pháp đóng hộp kim loại, lưu trữ vô thời hạn. | Thực phẩm |
 | 14 | `Cheese` | Bổ sung chuỗi sản xuất phô mai khổng lồ (vắt sữa bò Moo, ủ men phô mai, chế biến món ăn ngon). | Nội dung mở rộng |
 | 15 | `ClaimNotification` | Nhắc nhở người chơi bằng thông báo nổi bật khi Cổng In có quà tiếp tế chưa nhận. | Giao diện |
-| 16 | `ClusterTraitGenerationManager` | Trình quản lý cho phép tùy biến chi tiết các đặc tính (Traits) của hành tinh khi tạo game mới. | Thế giới |
+| 16 | `ClusterTraitGenerationManager` [✅ Hoạt động] | Trình quản lý cho phép tùy biến chi tiết các đặc tính (Traits) của hành tinh khi tạo game mới. | Thế giới |
 | 17 | `ComplexFabricatorRibbonController` | Hỗ trợ điều khiển tự động hóa các máy chế tạo phức tạp bằng cáp tín hiệu dẹt Ribbon. | Tự động hóa |
 | 18 | `CompressedCritters` | Cho phép đóng gói thú nuôi thành dạng hộp nhỏ gọn để vận chuyển hàng loạt bằng băng chuyền. | Thú nuôi |
 | 19 | `ConveyorTiles` | Ô gạch tích hợp sẵn đường băng chuyền ngầm chạy xuyên qua, tiết kiệm không gian xây dựng. | Xận chuyển |
@@ -317,6 +319,44 @@ Tổng số lượng dự án/mod được phân loại: **290+ dự án & thư 
 | 46 | `TrainMod` | Hệ thống đường ray xe lửa vận chuyển khối lượng lớn tài nguyên và Duplicant chạy dọc căn cứ. | Vận chuyển lớn |
 | 47 | `UndigYourself` | AI Duplicant tự động đào bới giải cứu bản thân khi vô tình bị cát/sỏi sạt lở chôn vùi. | QoL / AI |
 | 48 | `UtilLibs` | Bộ thư viện tiện ích cốt lõi hỗ trợ vẽ lưới xây dựng, tính toán quỹ đạo và kết nối logic. | Library |
+| 49 | `ItemDropPrevention` [✅ Hoạt động] | Ngăn chặn Duplicant đánh rơi vật phẩm trên tay khi bị gián đoạn công việc (No drop). | QoL |
+| 50 | `SGTIM_NotificationManager` [✅ Hoạt động] | Quản lý và chặn các thông báo rác, toast thông báo phiền phức xuất hiện trên màn hình (Suppress noti). | Giao diện |
+
+---
+
+### 2.9. Nhóm Mod của AzeTheGreat (`AzeTheGreat_source`)
+*Đường dẫn cục bộ:* [AzeTheGreat_source/src/](file:///d:/Documents/Klei/OxygenNotIncluded/mods/Local/_source/AzeTheGreat_source/src)
+
+| STT | Tên Thư mục / Project | Chức năng Dự kiến | Phân loại |
+| :--- | :--- | :--- | :--- |
+| 1 | `AzeLib` | Thư viện lõi chứa code tiện ích mở rộng (Extensions) cho UI, LogicPorts dùng chung. | Library |
+| 2 | `BetterDeselect` | Cải tiến cơ chế bỏ chọn công cụ khi ấn chuột phải mà không ảnh hưởng thao tác khác. | QoL |
+| 3 | `BetterInfoCards` [✅ Hoạt động] | Thiết kế lại hoàn toàn thẻ thông tin (Info Card) ở góc dưới phải, trực quan và gọn hơn. | Giao diện |
+| 4 | `BetterLogicOverlay` [✅ Hoạt động] | Tối ưu hóa lớp phủ Mạng tự động hóa (Logic Overlay), hiển thị số tín hiệu và dải ruy băng. | Giao diện / Logic |
+| 5 | `BuildMenuSearchHotkey` | Thêm phím tắt giúp mở nhanh thanh tìm kiếm công trình trong menu xây dựng. | Giao diện |
+| 6 | `ClarifiedMaxDecor` | Làm rõ hiển thị ngưỡng Decor (Điểm trang trí) tối đa mà một Duplicant có thể nhận. | Giao diện |
+| 7 | `CleanFloors` | Ẩn bớt các hiệu ứng mảnh vỡ, nứt nẻ thừa thãi trên mặt sàn/gạch giúp gọn mắt hơn. | Đồ họa |
+| 8 | `CleanHUD` | Tùy biến và ẩn bớt các thành phần thừa trên giao diện người dùng (HUD). | Giao diện |
+| 9 | `DefaultBuildingSettings` | Lưu và thiết lập sẵn cấu hình mặc định (ví dụ: nhiệt độ, tín hiệu) cho công trình mới xây. | QoL |
+| 10 | `DefaultSaveSettings` | Ghi nhớ tùy chỉnh cấu hình lưu game. | QoL |
+| 11 | `DeleteFullWord` | Cho phép sử dụng Ctrl+Backspace để xóa nguyên một từ trong các khung nhập văn bản. | QoL |
+| 12 | `DrinkTeaNotCoffee` | Đổi tên/hình ảnh máy pha cà phê thành máy pha trà (Espresso Machine -> Tea Machine). | Giải trí |
+| 13 | `FixedCameraPan` | Sửa lỗi trượt camera, giúp góc nhìn cố định vững chắc hơn khi di chuyển chuột. | QoL / Camera |
+| 14 | `NoDoorIdle` | Ngăn chặn hành vi Duplicant đứng chờ lảng vảng (Idle) trước cửa ra vào. | Tối ưu / AI |
+| 15 | `NoMeteors` | Loại bỏ hoàn toàn mưa thiên thạch trên bề mặt hành tinh. | Thử thách / Dễ |
+| 16 | `NoNotificationSounds` | Tắt âm thanh phát ra khi có thông báo hệ thống mới hiện lên. | Âm thanh |
+| 17 | `NoPointlessScrollbars` | Ẩn các thanh cuộn thừa trên giao diện khi nội dung không dài. | Giao diện |
+| 18 | `NoResearchAlerts` | Tắt chuông báo động mỗi khi hoàn thành một nhánh nghiên cứu mới. | QoL |
+| 19 | `NoStutter` | Cố gắng triệt tiêu các đợt giật lag nhỏ (Stutter) xảy ra theo chu kỳ trong game. | Tối ưu |
+| 20 | `RebalancedTiles` | Điều chỉnh và cân bằng lại thông số của một số loại gạch sàn. | Hệ thống |
+| 21 | `SuppressNotifications` | Ẩn hoặc chặn triệt để các thông báo rác không mong muốn. | Giao diện |
+
+---
+
+### 2.10. Nhóm Mod của Ony (`ony_mods`)
+*Đường dẫn cục bộ:* [ony_mods/](file:///d:/Documents/Klei/OxygenNotIncluded/mods/Local/_source/ony_mods)
+
+*Lưu ý: Kho mã nguồn này trên Github hiện tại chỉ đóng vai trò là Bug Tracker và chứa hình ảnh giới thiệu, không chứa mã nguồn C# thực tế.*
 
 ---
 

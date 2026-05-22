@@ -5,14 +5,26 @@ using System.Collections.Generic;
 
 namespace AutoDesalinator
 {
+    // Entry point for the mod to register strings
+    public class AutoDesalinatorMod : KMod.UserMod2
+    {
+        public override void OnLoad(Harmony harmony)
+        {
+            base.OnLoad(harmony);
+            Strings.Add("STRINGS.UI.UISIDESCREENS.AUTODROPSALT.TITLE", "Auto Drop Salt");
+            Strings.Add("STRINGS.UI.UISIDESCREENS.AUTODROPSALT.TOOLTIP", "Automatically drop salt when full instead of requiring a duplicant to empty it.");
+            Debug.Log("[AutoDesalinator] Loaded and strings registered.");
+        }
+    }
+
     [SerializationConfig(MemberSerialization.OptIn)]
     public class AutoDropSaltControl : KMonoBehaviour, ICheckboxControl
     {
         [Serialize]
         public bool autoDropEnabled = true;
 
-        public string CheckboxTitleKey => "STRINGS.UI.UISIDESCREENS.AUTODROP.TITLE";
-        public string CheckboxToolTipKey => "STRINGS.UI.UISIDESCREENS.AUTODROP.TOOLTIP";
+        public string CheckboxTitleKey => "STRINGS.UI.UISIDESCREENS.AUTODROPSALT.TITLE";
+        public string CheckboxToolTipKey => "STRINGS.UI.UISIDESCREENS.AUTODROPSALT.TOOLTIP";
         public string CheckboxLabel => "Auto Drop Salt";
         public string CheckboxTooltip => "Automatically drop salt when full instead of requiring a duplicant to empty it.";
 
@@ -46,11 +58,11 @@ namespace AutoDesalinator
                     if (item == null) continue;
 
                     PrimaryElement pe = item.GetComponent<PrimaryElement>();
-                    // Nếu là chất rắn (Muối) và khối lượng đạt ngưỡng rớt (để tránh rớt lắt nhắt gây lag)
-                    // Mặc định Desalinator đầy ở 1000kg, ta cho rớt khi >= 900kg hoặc bất cứ khi nào tắt máy.
+                    // Hạ ngưỡng xuống 500kg để an toàn tuyệt đối, tránh việc máy dừng hoạt động 
+                    // trước khi đạt tới 900kg nếu Klei có thay đổi capacity.
                     if (pe != null && pe.Element.IsSolid)
                     {
-                        if (pe.Mass >= 900f)
+                        if (pe.Mass >= 500f)
                         {
                             storage.Drop(item, true);
                         }
