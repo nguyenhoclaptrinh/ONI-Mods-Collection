@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright 2026 Peter Han
  * Permission is hereby granted, free of charge, to any person obtaining a copy of this software
  * and associated documentation files (the "Software"), to deal in the Software without
@@ -111,7 +111,7 @@ namespace PeterHan.CleanDrop {
 		}
 	}
 
-	public enum LastUsedDirection {
+	public enum LastUsedDirection : byte {
 		None, UpLeft, Up, UpRight, Left, Center, Right, DownLeft, Down, DownRight
 	}
 }

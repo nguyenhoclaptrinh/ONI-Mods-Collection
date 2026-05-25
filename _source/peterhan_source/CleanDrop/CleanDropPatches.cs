@@ -76,8 +76,7 @@ namespace PeterHan.CleanDrop {
 			var obj = material.gameObject;
 			LastUsedDirection direction;
 			if (inst != null && Grid.IsValidCell(cell) && (direction = inst[cell]) !=
-					LastUsedDirection.None && obj.GetSMI<DeathMonitor.Instance>()?.IsDead() !=
-					false && ((Grid.Solid[cell] && Grid.Foundation[cell]) || Grid.Properties[
+					LastUsedDirection.None && ((Grid.Solid[cell] && Grid.Foundation[cell]) || Grid.Properties[
 					cell] != 0)) {
 				var tryFirst = ListPool<int, CleanDropManager>.Allocate();
 #if DEBUG
