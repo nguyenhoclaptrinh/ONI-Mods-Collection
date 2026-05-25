@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright 2026 Peter Han
  * Permission is hereby granted, free of charge, to any person obtaining a copy of this software
  * and associated documentation files (the "Software"), to deal in the Software without
@@ -41,6 +41,11 @@ namespace PeterHan.SweepByType {
 			PDetours.DetourField<InterfaceTool, Texture2D>(nameof(cursor));
 		private static readonly IDetouredField<InterfaceTool, GameObject> VISUALIZER =
 			PDetours.DetourField<InterfaceTool, GameObject>(nameof(visualizer));
+
+		// Bộ đệm tĩnh các thẻ định danh Duplicant để tăng tốc độ so sánh và tránh lỗi biên dịch do thay đổi API
+		private static readonly Tag MINION_STANDARD = new Tag("Minion");
+		private static readonly Tag MINION_BIONIC = new Tag("BionicMinion");
+		private static readonly Tag MINION_BASE = new Tag("BaseMinion");
 
 		/// <summary>
 		/// Destroys the singleton instance.
@@ -162,8 +167,8 @@ namespace PeterHan.SweepByType {
 				while (objectListNode != null) {
 					var content = objectListNode.gameObject;
 					objectListNode = objectListNode.nextItem;
-					// Ignore Duplicants
-					if (content != null && !content.TryGetComponent(out MinionIdentity _))
+					// Ignore Duplicants using high-performance Tag checking
+					if (content != null && !content.HasTag(MINION_STANDARD) && !content.HasTag(MINION_BIONIC) && !content.HasTag(MINION_BASE))
 						MarkForClear(content, priority);
 				}
 			}
