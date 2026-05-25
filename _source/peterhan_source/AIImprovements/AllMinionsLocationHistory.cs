@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright 2026 Peter Han
  * Permission is hereby granted, free of charge, to any person obtaining a copy of this software
  * and associated documentation files (the "Software"), to deal in the Software without
@@ -45,10 +45,10 @@ namespace PeterHan.AIImprovements {
 		/// <summary>
 		/// The locations where Duplicants have been.
 		/// </summary>
-		private readonly int[] history;
+		private readonly byte[] history;
 
 		private AllMinionsLocationHistory() {
-			history = new int[Grid.CellCount];
+			history = new byte[Grid.CellCount];
 		}
 
 		/// <summary>
@@ -57,9 +57,9 @@ namespace PeterHan.AIImprovements {
 		/// </summary>
 		/// <param name="cell">The cell to modify.</param>
 		internal void DecrementRefCount(int cell) {
-			int value = history[cell];
+			byte value = history[cell];
 			if (value > 0)
-				history[cell] = value - 1;
+				history[cell] = (byte)(value - 1);
 		}
 
 		/// <summary>
@@ -67,7 +67,9 @@ namespace PeterHan.AIImprovements {
 		/// </summary>
 		/// <param name="cell">The cell to modify.</param>
 		internal void IncrementRefCount(int cell) {
-			history[cell]++;
+			byte value = history[cell];
+			if (value < 255)
+				history[cell] = (byte)(value + 1);
 		}
 
 		/// <summary>
