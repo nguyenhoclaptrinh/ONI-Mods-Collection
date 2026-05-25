@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright 2026 Peter Han
  * Permission is hereby granted, free of charge, to any person obtaining a copy of this software
  * and associated documentation files (the "Software"), to deal in the Software without
@@ -173,10 +173,14 @@ namespace PeterHan.QueueForSinks {
 			/// </summary>
 			private Navigator nav;
 
+			private float updateTimer;
+			private const float UPDATE_INTERVAL = 0.15f;
+
 			internal WorkCheckpointReactable(WorkCheckpoint<T> checkpoint) : base(checkpoint.
 					gameObject, "WorkCheckpointReactable", Db.Get().ChoreTypes.Checkpoint,
 					1, 1, false, 0.0f, 0.0f, float.PositiveInfinity, 0.0f, NUM_LAYERS) {
 				begun = false;
+				updateTimer = 0f;
 				this.checkpoint = checkpoint;
 				distractedAnim = Assets.GetAnim("anim_idle_distracted_kanim");
 				preventChoreInterruption = false;
@@ -250,8 +254,12 @@ namespace PeterHan.QueueForSinks {
 					Cleanup();
 				else {
 					nav.AdvancePath(false);
-					if (!nav.path.IsValid() || !MustStop(reactor, nav.GetNextTransition().x))
-						Cleanup();
+					updateTimer += dt;
+					if (updateTimer >= UPDATE_INTERVAL) {
+						updateTimer = 0f;
+						if (!nav.path.IsValid() || !MustStop(reactor, nav.GetNextTransition().x))
+							Cleanup();
+					}
 				}
 			}
 		}

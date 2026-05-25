@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright 2026 Peter Han
  * Permission is hereby granted, free of charge, to any person obtaining a copy of this software
  * and associated documentation files (the "Software"), to deal in the Software without
@@ -29,6 +29,8 @@ namespace PeterHan.QueueForSinks {
 		/// </summary>
 		private readonly int buildingLayer;
 
+		private int widthInCells = 2;
+
 #pragma warning disable CS0649
 #pragma warning disable IDE0044 // Add readonly modifier
 		[MyCmpReq]
@@ -39,6 +41,12 @@ namespace PeterHan.QueueForSinks {
 		public SinkCheckpoint() {
 			buildingLayer = (int)PGameUtils.GetObjectLayer(nameof(ObjectLayer.Building),
 				ObjectLayer.Building);
+		}
+
+		protected override void OnSpawn() {
+			base.OnSpawn();
+			if (TryGetComponent(out Building building))
+				widthInCells = building.Def.WidthInCells;
 		}
 
 		/// <summary>
@@ -53,9 +61,7 @@ namespace PeterHan.QueueForSinks {
 			bool stop = true;
 			int cell;
 			if (sink != null && Grid.IsValidCell(cell = Grid.PosToCell(sink))) {
-				int offset = 2;
-				if (sink.TryGetComponent(out Building building))
-					offset = building.Def.WidthInCells;
+				int offset = widthInCells;
 				cell = Grid.OffsetCell(cell, new CellOffset(dir ? offset : -offset, 0));
 				if (Grid.IsValidBuildingCell(cell) && (nSink = Grid.Objects[cell,
 						buildingLayer]) != null) {
