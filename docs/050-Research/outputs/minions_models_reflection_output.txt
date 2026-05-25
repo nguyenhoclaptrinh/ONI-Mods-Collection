@@ -1,0 +1,25 @@
+# TÁC DỤNG: Lưu trữ kết quả phản chiếu (Reflection) thô của các lớp con (inner classes) GameTags+Minions và GameTags+Minions+Models trong Assembly-CSharp.dll của game Oxygen Not Included (v706793).
+# Ý NGHĨA: Xác định chính xác cách thức phân loại Duplicant (Standard vs Bionic) trong phiên bản game mới phục vụ các mod liên quan đến Duplicants.
+
+=== GameTags+Minions & GameTags+Minions+Models Fields Reflection Output (v706793) ===
+Ngày thực hiện: 2026-05-25
+Công cụ thực hiện: InspectGameAssembly.ps1
+
+1. Lớp 'GameTags+Minions':
+- Không định nghĩa trực tiếp các trường tĩnh (Các trường tĩnh đã được dời xuống lớp con Models).
+
+2. Lớp 'GameTags+Minions+Models' (GameTags.Minions.Models):
+- Lớp tĩnh định nghĩa các mô hình thực thể Duplicant khác nhau trong game hiện tại (bao gồm cả Bionic Duplicants mới).
+
+Name      Type    Static  Value
+----      ----    ------  -----
+Standard  Tag     True    "Minion"        (Thẻ đại diện cho Duplicant truyền thống)
+Bionic    Tag     True    "BionicMinion"  (Thẻ đại diện cho Duplicant sinh học/cơ khí mới)
+AllModels Tag[]   True    Tag[]           (Mảng chứa cả hai nhãn trên để duyệt nhanh)
+
+----------------------------------------------------------------------
+GHI CHÚ SỬ DỤNG:
+- Khi game chạy trên phiên bản U56+, các Duplicants sinh học cơ khí (Bionic) được đưa vào game.
+- Nếu chỉ lọc thẻ `"Minion"`, mod sẽ vô tình bỏ qua các Duplicants Bionic, dẫn đến lỗi dọn dẹp đệ bionic hoặc đệ bionic bị quét đè.
+- Phép so sánh tối ưu nhất cho cả hai dòng đệ là:
+  `gameObject.HasTag(new Tag("Minion")) || gameObject.HasTag(new Tag("BionicMinion"))`

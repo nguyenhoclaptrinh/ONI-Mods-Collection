@@ -1,0 +1,41 @@
+# TÁC DỤNG: Lưu trữ kết quả phản chiếu (Reflection) thô của lớp tĩnh GameTags trong Assembly-CSharp.dll của game Oxygen Not Included (v706793).
+# Ý NGHĨA: Giúp tra cứu nhanh các nhãn (Tags) hệ thống của game mà không cần chạy lại các script reflection đắt đỏ hoặc dịch ngược game.
+
+=== GameTags Fields Reflection Output (Oxygen Not Included v706793) ===
+Ngày thực hiện: 2026-05-25
+Công cụ thực hiện: InspectGameAssembly.ps1
+
+Các trường tĩnh tiêu biểu liên quan đến Duplicants và cấu trúc game:
+
+Name                                 Type        Value
+----                                 ----        -----
+BaseMinion                           Tag         (Đại diện cho tất cả thực thể Duplicant)
+DupeBrain                            Tag         (Đại diện cho trí tuệ nhân tạo/pathfinding của đệ)
+MinionSelectPreview                  Tag         (Nhãn preview màn hình chọn đệ)
+CreatureBrain                        Tag         (Bộ não của sinh vật)
+Asleep                               Tag         (Trạng thái ngủ)
+HoldingBreath                        Tag         (Trạng thái nín thở)
+Overjoyed                            Tag         (Trạng thái cực kỳ vui sướng)
+PleasantConversation                 Tag         (Trực quan nói chuyện vui vẻ)
+DoNotInterruptMe                     Tag         (Nhãn không ngắt quãng hành động)
+Operational                          Tag         (Công trình đang hoạt động)
+UnderConstruction                    Tag         (Công trình đang được xây)
+Entombed                             Tag         (Bị chôn vùi)
+Uprooted                             Tag         (Cây bị nhổ)
+Compostable                          Tag         (Có thể ủ phân)
+Dead                                 Tag         (Đã chết)
+Idle                                 Tag         (Nhàn rỗi)
+Reachable                            Tag         (Có thể tiếp cận)
+Stored                               Tag         (Đang được lưu trữ trong kho)
+Sealed                               Tag         (Đã được niêm phong)
+CorrosionProof                       Tag         (Chống ăn mòn)
+CropSeed                             Tag         (Hạt giống cây trồng)
+DecorSeed                            Tag         (Hạt giống cây trang trí)
+Harvestable                          Tag         (Có thể thu hoạch)
+MassChunk                            Tag         (Vật phẩm dạng khối lượng)
+UnitChunk                            Tag         (Vật phẩm dạng đơn vị)
+
+----------------------------------------------------------------------
+GHI CHÚ SỬ DỤNG:
+- Để lọc bỏ Duplicant hiệu năng cao: Sử dụng phép kiểm tra nhanh `!gameObject.HasTag(new Tag("Minion")) && !gameObject.HasTag(new Tag("BionicMinion")) && !gameObject.HasTag(new Tag("BaseMinion"))`.
+- Tránh dùng `TryGetComponent<MinionIdentity>()` trong các vòng lặp quét vật phẩm của Unity DragTools.
