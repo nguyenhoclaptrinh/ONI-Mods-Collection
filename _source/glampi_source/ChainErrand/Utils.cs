@@ -198,6 +198,21 @@ namespace ChainErrand {
          return chainedErrand != null;
       }
 
+      public static void SetChainErrandPreconditionData(this Chore chore, object data) {
+         if (chore == null) return;
+         var preconditions = chore.GetPreconditions();
+         for (int i = 0; i < preconditions.Count; i++)
+         {
+            if (preconditions[i].condition.id == Main.ChainedErrandPrecondition.id)
+            {
+               var prec = preconditions[i];
+               prec.data = data;
+               preconditions[i] = prec;
+               break;
+            }
+         }
+      }
+
       public static bool IsTile(GameObject obj, out SimCellOccupier cellOccupier) {
          cellOccupier = null;
          return obj != null && obj.TryGetComponent(out cellOccupier);

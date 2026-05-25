@@ -1,4 +1,4 @@
-﻿using ChainErrand.ChainedErrandPacks;
+using ChainErrand.ChainedErrandPacks;
 using ChainErrand.Patches;
 using ChainErrand.Strings;
 using KSerialization;
@@ -39,14 +39,26 @@ namespace ChainErrand.ChainHierarchy {
 
          if(chore != null)
          {
-            var precondition = chore.GetPreconditions().FirstOrDefault(p => p.condition.id == Main.ChainedErrandPrecondition.id);
-            if(precondition.condition.id == default)
+            var preconditions = chore.GetPreconditions();
+            bool found = false;
+            for (int i = 0; i < preconditions.Count; i++)
             {
-               chore.AddPrecondition(Main.ChainedErrandPrecondition, true/*<--Enables the precondition. If false, the precondition is ignored*/);
+               if (preconditions[i].condition.id == Main.ChainedErrandPrecondition.id)
+               {
+                  var prec = preconditions[i];
+                  if (!ReferenceEquals(prec.data, this))
+                  {
+                     prec.data = this;
+                     preconditions[i] = prec;
+                  }
+                  found = true;
+                  break;
+               }
             }
-            else if(precondition.data != null && ((bool)precondition.data == false))// if precondition is disabled
+
+            if (!found)
             {
-               precondition.data = true;
+               chore.AddPrecondition(Main.ChainedErrandPrecondition, this);
             }
 
             if(parentLink.linkNumber != 0)// stop dupes from doing errands that are not in the first link
@@ -115,9 +127,7 @@ namespace ChainErrand.ChainHierarchy {
             // disabling the chore precondition:
             if(chore != null)
             {
-               var precondition = chore.GetPreconditions().FirstOrDefault(precondition => precondition.condition.id == nameof(Main.ChainedErrandPrecondition));
-               if(precondition.condition.id != default)
-                  precondition.data = false;
+               chore.SetChainErrandPreconditionData(null);
             }
 
             chore = null;

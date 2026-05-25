@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -34,28 +34,14 @@ namespace ChainErrand {
       public static Chore.Precondition ChainedErrandPrecondition = new() {
          id = nameof(ChainedErrandPrecondition),
          description = MYSTRINGS.UI.CHOREPRECONDITION.NOTFIRSTLINK,
-         fn = (ref Chore.Precondition.Context context, object preconditionEnabled) => {
-            if(preconditionEnabled == null || !(bool)preconditionEnabled)
+         fn = (ref Chore.Precondition.Context context, object data) => {
+            if (data is not ChainedErrand chainedErrand || chainedErrand == null)
                return true;
 
             if(context.chore.masterPriority.priority_class == PriorityScreen.PriorityClass.topPriority)
                return true;
 
-            GameObject go;
-            if(context.chore is MovePickupableChore moveChore)
-            {
-               go = moveChore.smi.sm.pickupablesource.Get(moveChore.smi);// MoveTo errand's prioritizable isn't attached to the GameObject that has the errand
-            }
-            else
-            {
-               go = context.chore.prioritizable.gameObject;
-            }
-            if(go != null && context.chore.TryGetCorrespondingChainedErrand(go, out ChainedErrand chainedErrand))
-            {
-               return chainedErrand.parentLink == null || chainedErrand.parentLink.linkNumber == 0;
-            }
-
-            return true;// this return shouldn't normally be reached, but if it is reached - no need to block the execution of the chore
+            return chainedErrand.parentLink == null || chainedErrand.parentLink.linkNumber == 0;
          }
       };
 
