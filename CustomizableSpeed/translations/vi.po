@@ -1,0 +1,46 @@
+# Vietnamese translation for CustomizableSpeed
+msgid ""
+msgstr ""
+"Project-Id-Version: CustomizableSpeed\n"
+"POT-Creation-Date: 2026-05-25 14:15+0700\n"
+"PO-Revision-Date: 2026-05-25 14:20+0700\n"
+"Last-Translator: Antigravity AI\n"
+"Language-Team: Vietnamese\n"
+"Language: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+# Options
+msgctxt "CustomizableSpeed.SpeedOptions.slowSpeed.title"
+msgid "Slow Speed (1)"
+msgstr "Tốc Độ Chậm (1)"
+
+msgctxt "CustomizableSpeed.SpeedOptions.slowSpeed.tooltip"
+msgid "Speed multiplier for the first speed level (Default: 1x)"
+msgstr "Hệ số nhân tốc độ cho mốc tốc độ thứ nhất (Mặc định: 1x)"
+
+msgctxt "CustomizableSpeed.SpeedOptions.normalSpeed.title"
+msgid "Normal Speed (2)"
+msgstr "Tốc Độ Thường (2)"
+
+msgctxt "CustomizableSpeed.SpeedOptions.normalSpeed.tooltip"
+msgid "Speed multiplier for the second speed level (Default: 2x)"
+msgstr "Hệ số nhân tốc độ cho mốc tốc độ thứ hai (Mặc định: 2x)"
+
+msgctxt "CustomizableSpeed.SpeedOptions.superSpeed.title"
+msgid "Super Speed (3)"
+msgstr "Tốc Độ Siêu Nhanh (3)"
+
+msgctxt "CustomizableSpeed.SpeedOptions.superSpeed.tooltip"
+msgid "Speed multiplier for the third speed level (Default: 3x)"
+msgstr "Hệ số nhân tốc độ cho mốc tốc độ thứ ba (Mặc định: 3x)"
+
+msgctxt "CustomizableSpeed.SpeedOptions.enableHotkeys.title"
+msgid "Enable Hotkeys"
+msgstr "Bật Phím Nóng"
+
+msgctxt "CustomizableSpeed.SpeedOptions.enableHotkeys.tooltip"
+msgid "Enables Ctrl + Plus/Minus to dynamically adjust speed of current level in-game"
+msgstr "Cho phép nhấn Ctrl + Plus/Minus (hoặc Shift + Plus/Minus) để tăng/giảm nhanh tốc độ của mốc hiện tại ngay trong game"
