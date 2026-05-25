@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright 2026 Peter Han
  * Permission is hereby granted, free of charge, to any person obtaining a copy of this software
  * and associated documentation files (the "Software"), to deal in the Software without
@@ -245,8 +245,7 @@ namespace PeterHan.FastSave {
 		[HarmonyPatch(typeof(Timelapser), "RenderAndPrint")]
 		public static class Timelapser_RenderAndPrint_Patch {
 			internal static bool Prepare() {
-				// Only enable if background save is on
-				return FastSaveOptions.Instance.BackgroundSave;
+				return true; // Always prepare to handle both background save and disabling timelapse
 			}
 
 			/// <summary>
@@ -255,6 +254,12 @@ namespace PeterHan.FastSave {
 			internal static bool Prefix(RenderTexture ___bufferRenderTexture, float ___camSize,
 					string ___previewSaveGamePath, bool ___previewScreenshot,
 					Vector3 ___camPosition, int world_id) {
+				if (FastSaveOptions.Instance.DisableTimelapse) {
+					return false; // Bypass daily timelapse completely
+				}
+				if (!FastSaveOptions.Instance.BackgroundSave) {
+					return true; // Run original synchronous method if background save is disabled
+				}
 				var world = ClusterManager.Instance.GetWorld(world_id);
 				var rt = ___bufferRenderTexture;
 				var inst = CameraController.Instance;
@@ -284,6 +289,19 @@ namespace PeterHan.FastSave {
 					RenderTexture.active = oldRT;
 				}
 				return false;
+			}
+		}
+
+		/// <summary>
+		/// Applied to Timelapser to disable colony preview screenshots.
+		/// </summary>
+		[HarmonyPatch(typeof(Timelapser), "SaveColonyPreview")]
+		public static class Timelapser_SaveColonyPreview_Patch {
+			internal static bool Prefix() {
+				if (FastSaveOptions.Instance.DisableColonyPreview) {
+					return false; // Bypass colony preview screenshot completely
+				}
+				return true;
 			}
 		}
 	}

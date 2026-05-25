@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright 2026 Peter Han
  * Permission is hereby granted, free of charge, to any person obtaining a copy of this software
  * and associated documentation files (the "Software"), to deal in the Software without
@@ -49,10 +49,20 @@ namespace PeterHan.FastSave {
 		[JsonProperty]
 		public bool DelegateSave { get; set; }
 
+		[Option("Disable Daily Timelapse", "Disables taking screenshots at the end of each cycle to speed up saving")]
+		[JsonProperty]
+		public bool DisableTimelapse { get; set; }
+
+		[Option("Disable Colony Preview", "Disables colony preview screenshots during saving to speed up saving")]
+		[JsonProperty]
+		public bool DisableColonyPreview { get; set; }
+
 		public FastSaveOptions() {
 			Mode = FastSaveMode.Safe;
-			DelegateSave = false;
+			DelegateSave = true;
 			BackgroundSave = true;
+			DisableTimelapse = false;
+			DisableColonyPreview = false;
 		}
 
 		public override string ToString() {
