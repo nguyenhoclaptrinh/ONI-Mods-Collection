@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright 2026 Peter Han
  * Permission is hereby granted, free of charge, to any person obtaining a copy of this software
  * and associated documentation files (the "Software"), to deal in the Software without
@@ -192,9 +192,18 @@ namespace PeterHan.EfficientFetch {
 			var destination = chore.destination;
 			float required = chore.originalAmount, target = required * thresholdFraction,
 				canGet = 0.0f;
+			// Lấy danh sách tag yêu cầu của chore để lọc trước
+			var choreTags = chore.tags;
+
 			foreach (var pickup in fmPickups) {
 				var pickupable = pickup.pickupable;
-				// Is this item accessible?
+				if (pickupable == null) continue;
+
+				// Lọc nhanh bằng so sánh Tag trước khi gọi hàm tìm đường đắt đỏ
+				Tag itemType = pickupable.PrefabID();
+				if (choreTags == null || !choreTags.Contains(itemType)) continue;
+
+				// Chỉ thực hiện kiểm tra tìm đường đắt đỏ nếu loại vật phẩm trùng khớp
 				if (FetchManager.IsFetchablePickup(pickupable, chore, destination)) {
 					float amount = pickupable.UnreservedAmount;
 					if (bestMatch == null) {
