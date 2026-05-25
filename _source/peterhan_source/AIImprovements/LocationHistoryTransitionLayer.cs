@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright 2026 Peter Han
  * Permission is hereby granted, free of charge, to any person obtaining a copy of this software
  * and associated documentation files (the "Software"), to deal in the Software without
@@ -48,7 +48,7 @@ namespace PeterHan.AIImprovements {
 				if (inst != null) {
 					int droppedCell = VisitedCells[TRACK_CELLS - 1];
 					inst.IncrementRefCount(cell);
-					if (Grid.IsValidBuildingCell(droppedCell))
+					if (Grid.IsValidCell(droppedCell))
 						inst.DecrementRefCount(droppedCell);
 				}
 				for (int i = TRACK_CELLS - 1; i > 0; i--)

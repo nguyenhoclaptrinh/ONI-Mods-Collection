@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright 2026 Peter Han
  * Permission is hereby granted, free of charge, to any person obtaining a copy of this software
  * and associated documentation files (the "Software"), to deal in the Software without
@@ -77,13 +77,13 @@ namespace PeterHan.AIImprovements {
 				if (collection != null)
 					foreach (var id in collection)
 						if (!string.IsNullOrEmpty(id))
-							ret.PrioritizeBuildings.Add(id);
+							ret.PrioritizeBuildings.Add(new Tag(id));
 				// Buildings that get -0.3
 				collection = options.DeprioritizeBuildings;
 				if (collection != null)
 					foreach (var id in collection)
 						if (!string.IsNullOrEmpty(id))
-							ret.DeprioritizeBuildings.Add(id);
+							ret.DeprioritizeBuildings.Add(new Tag(id));
 			}
 			return ret;
 		}
@@ -91,16 +91,16 @@ namespace PeterHan.AIImprovements {
 		/// <summary>
 		/// Buildings of this type will get -0.3 priority when planned.
 		/// </summary>
-		public ICollection<string> DeprioritizeBuildings { get; }
+		public ICollection<Tag> DeprioritizeBuildings { get; }
 
 		/// <summary>
 		/// Buildings of this type will get +0.3 priority when planned.
 		/// </summary>
-		public ICollection<string> PrioritizeBuildings { get; }
+		public ICollection<Tag> PrioritizeBuildings { get; }
 
 		internal AIImprovementsOptionsInstance() {
-			DeprioritizeBuildings = new HashSet<string>();
-			PrioritizeBuildings = new HashSet<string>();
+			DeprioritizeBuildings = new HashSet<Tag>();
+			PrioritizeBuildings = new HashSet<Tag>();
 		}
 	}
 }

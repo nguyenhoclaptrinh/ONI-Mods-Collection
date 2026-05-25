@@ -73,10 +73,10 @@ namespace PeterHan.AIImprovements {
 			// The queue would work, but the Building field is required and faster
 			if (chore.target is Constructable target && target != null && (building =
 					CONS_BUILDING.Get(target)) != null && (def = building.Def) != null) {
-				string id = def.PrefabID;
-				if (Options.PrioritizeBuildings.Contains(id))
+				Tag tag = building.PrefabID();
+				if (Options.PrioritizeBuildings.Contains(tag))
 					priorityMod += AIImprovementsOptions.BUILD_PRIORIY_MOD;
-				else if (Options.DeprioritizeBuildings.Contains(id))
+				else if (Options.DeprioritizeBuildings.Contains(tag))
 					priorityMod -= AIImprovementsOptions.BUILD_PRIORIY_MOD;
 				if (def.IsFoundation) {
 					if (Game.IsOnMainThread()) {
@@ -104,10 +104,10 @@ namespace PeterHan.AIImprovements {
 					reprioritize.TryAdd(chore, true);
 				else if (target.TryGetComponent(out Building building) &&
 						(def = building.Def) != null) {
-					string id = def.PrefabID;
-					if (Options.PrioritizeBuildings.Contains(id))
+					Tag tag = building.PrefabID();
+					if (Options.PrioritizeBuildings.Contains(tag))
 						priorityMod -= AIImprovementsOptions.BUILD_PRIORIY_MOD;
-					else if (Options.DeprioritizeBuildings.Contains(id))
+					else if (Options.DeprioritizeBuildings.Contains(tag))
 						priorityMod += AIImprovementsOptions.BUILD_PRIORIY_MOD;
 					if (def.IsFoundation) {
 						// Avoid destroying a tile recently stood on by a dupe
@@ -303,7 +303,8 @@ namespace PeterHan.AIImprovements {
 			/// Applied after FindNextChore runs.
 			/// </summary>
 			internal static void Postfix() {
-				reprioritize.Clear();
+				if (!reprioritize.IsEmpty)
+					reprioritize.Clear();
 			}
 		}
 
