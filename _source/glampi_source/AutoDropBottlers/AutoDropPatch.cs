@@ -4,22 +4,22 @@ using UnityEngine;
 
 namespace AutoDropBottlers
 {
-    // Entry point for the mod
+    // Khởi tạo mod và đăng ký ngôn ngữ UI
     public class AutoDropBottlersMod : KMod.UserMod2
     {
         public override void OnLoad(Harmony harmony)
         {
             base.OnLoad(harmony);
             
-            // Add strings for the UI
+            // Đăng ký chuỗi ngôn ngữ cho giao diện UI
             Strings.Add("STRINGS.UI.UISIDESCREENS.AUTODROP.TITLE", "Auto Drop Bottles");
             Strings.Add("STRINGS.UI.UISIDESCREENS.AUTODROP.TOOLTIP", "If enabled, bottles will automatically drop when the bottler reaches maximum capacity or is emptied manually.");
             
-            Debug.Log("[AutoDropBottlers] Loaded and strings registered.");
+            Debug.Log("[AutoDropBottlers] Loaded and strings registered successfully.");
         }
     }
 
-    // A component that handles the UI Checkbox for Auto Drop and saves the state
+    // Component điều khiển Checkbox trên giao diện UI
     [SerializationConfig(MemberSerialization.OptIn)]
     public class AutoDropControl : KMonoBehaviour, ICheckboxControl
     {
@@ -31,6 +31,8 @@ namespace AutoDropBottlers
         public string CheckboxLabel => "Auto Drop Bottles";
         public string CheckboxTooltip => "If enabled, bottles will automatically drop when the bottler reaches maximum capacity or is emptied manually.";
 
+        private Bottler bottler;
+
         public bool GetCheckboxValue()
         {
             return autoDropEnabled;
@@ -41,45 +43,56 @@ namespace AutoDropBottlers
             autoDropEnabled = value;
             if (value)
             {
-                // Nếu bật, thử kiểm tra xem đã đầy chưa để rớt luôn
-                OnStorageChange(null);
+                // Nếu bật, kiểm tra ngay xem trong máy có chai nước không để thả luôn
+                TriggerDrop();
             }
+        }
+
+        protected override void OnPrefabInit()
+        {
+            base.OnPrefabInit();
+            bottler = GetComponent<Bottler>();
         }
 
         protected override void OnSpawn()
         {
             base.OnSpawn();
-            // Đăng ký sự kiện thay đổi dung lượng của công trình thay vì patch Update loop
+            // Đăng ký sự kiện thay đổi dung lượng kho chứa (tốt cho máy tự động bơm không cần đệ)
             Subscribe((int)GameHashes.OnStorageChange, OnStorageChange);
+        }
+
+        // Tách biệt logic thả toàn bộ chai trong kho chứa ra đất
+        public void TriggerDrop()
+        {
+            if (!autoDropEnabled || bottler == null || bottler.storage == null || bottler.storage.IsEmpty())
+                return;
+
+            // Đảm bảo không có Duplicant nào đang trực tiếp đứng vận hành máy bơm để tránh làm ngắt quãng công việc
+            if (bottler.worker == null)
+            {
+                bottler.storage.DropAll(false, false, default, true);
+            }
         }
 
         private void OnStorageChange(object data)
         {
-            if (!autoDropEnabled) return;
+            if (!autoDropEnabled || bottler == null || bottler.storage == null) return;
 
-            Bottler bottler = GetComponent<Bottler>();
-            if (bottler != null && bottler.storage != null)
+            // Nếu kho chứa đầy, trì hoãn 1 frame để đảm bảo đồng bộ sự kiện của game và thả chai
+            if (bottler.storage.IsFull())
             {
-                if (bottler.storage.IsFull())
-                {
-                    // Trì hoãn việc rơi chai nước 1 frame để không phá vỡ vòng lặp sự kiện đồng bộ của game
-                    GameScheduler.Instance.Schedule("AutoDrop", 0f, (obj) => {
-                        // Kiểm tra lại bottler có còn tồn tại không sau 1 frame
-                        if (bottler != null && bottler.storage != null && bottler.storage.IsFull())
-                        {
-                            // Đảm bảo không có Duplicant nào đang đứng thao tác (bơm/lấy) tại Bottler này
-                            if (bottler.worker == null)
-                            {
-                                bottler.storage.DropAll(false, false, default, true);
-                            }
-                        }
-                    });
-                }
+                GameScheduler.Instance.Schedule("AutoDropOnStorageFull", 0f, (obj) => {
+                    // Kiểm tra an toàn trước khi thực hiện để tránh NullReferenceException nếu công trình bị phá hủy
+                    if (this != null && bottler != null && bottler.storage != null && bottler.storage.IsFull())
+                    {
+                        TriggerDrop();
+                    }
+                });
             }
         }
     }
 
-    // Add the control to all Bottler instances (Gas and Liquid)
+    // Tự động thêm component điều khiển vào tất cả các máy bơm chai (chất lỏng và chất khí)
     [HarmonyPatch(typeof(Bottler), "OnPrefabInit")]
     public class Bottler_OnPrefabInit_Patch
     {
@@ -88,6 +101,29 @@ namespace AutoDropBottlers
             if (__instance != null)
             {
                 __instance.gameObject.AddOrGet<AutoDropControl>();
+            }
+        }
+    }
+
+    // Harmony Patch: Thả chai nước/khí ngay lập tức khi Duplicant dừng làm việc (bơm xong hoặc dừng dở dang)
+    [HarmonyPatch(typeof(Bottler), "OnStopWork")]
+    public class Bottler_OnStopWork_Patch
+    {
+        public static void Postfix(Bottler __instance)
+        {
+            if (__instance != null)
+            {
+                var control = __instance.GetComponent<AutoDropControl>();
+                if (control != null && control.autoDropEnabled)
+                {
+                    // Trì hoãn 1 frame để Duplicant hoàn toàn giải phóng khỏi trạng thái làm việc (workable state) trước khi drop
+                    GameScheduler.Instance.Schedule("AutoDropOnStopWork", 0f, (obj) => {
+                        if (control != null)
+                        {
+                            control.TriggerDrop();
+                        }
+                    });
+                }
             }
         }
     }
