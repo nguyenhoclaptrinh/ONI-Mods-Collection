@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using KSerialization;
 using STRINGS;
 using UnityEngine;
 using SanchozzONIMods.Lib;
+using HarmonyLib;
 
 namespace AutoComposter
 {
@@ -42,7 +43,7 @@ namespace AutoComposter
 
         public bool IsOperational => operational.IsOperational;
 
-        public override void OnPrefabInit()
+        protected override void OnPrefabInit()
         {
             if (mutantSeedStatusItem == null)
             {
@@ -64,14 +65,17 @@ namespace AutoComposter
             filterable.AcceptedTags.UnionWith(Patches.CanBeMarkedCompostables);
             var chore_type = Db.Get().ChoreTypes.Get(delivery.choreTypeIDHash);
             filtered = new(this, null, this, false, chore_type);
-            filtered.storage = garbage;
+            Traverse.Create(filtered).Field("storage").SetValue(garbage);
             Subscribe((int)GameHashes.CopySettings, OnCopySettingsDelegate);
             Subscribe((int)GameHashes.RefreshUserMenu, OnRefreshUserMenuDelegate);
             Subscribe((int)GameHashes.OnStorageInteracted, OnStorageInteractedDelegate);
-            Subscribe((int)GameHashes.OperationalChanged, filtered.OnFunctionalChanged);
+            
+            var onFunctionalChanged = Traverse.Create(filtered).Method("OnFunctionalChanged").GetValue<System.Action<object>>();
+            if (onFunctionalChanged != null)
+                Subscribe((int)GameHashes.OperationalChanged, onFunctionalChanged);
         }
 
-        public override void OnSpawn()
+        protected override void OnSpawn()
         {
             base.OnSpawn();
             ForbidMutantSeeds = ForbidMutantSeeds;
@@ -81,12 +85,14 @@ namespace AutoComposter
             DiscoveredResources.Instance.Discover(SimHashes.ToxicSand.CreateTag());
         }
 
-        public override void OnCleanUp()
+        protected override void OnCleanUp()
         {
             Unsubscribe((int)GameHashes.CopySettings, OnCopySettingsDelegate);
             Unsubscribe((int)GameHashes.RefreshUserMenu, OnRefreshUserMenuDelegate);
             Unsubscribe((int)GameHashes.OnStorageInteracted, OnStorageInteractedDelegate);
-            Unsubscribe((int)GameHashes.OperationalChanged, filtered.OnFunctionalChanged);
+            var onFunctionalChanged = Traverse.Create(filtered).Method("OnFunctionalChanged").GetValue<System.Action<object>>();
+            if (onFunctionalChanged != null)
+                Unsubscribe((int)GameHashes.OperationalChanged, onFunctionalChanged);
             if (storage != null)
                 storage.OnStorageChange -= OnStorageChange;
             if (garbage != null)

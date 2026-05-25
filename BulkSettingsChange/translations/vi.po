@@ -1,0 +1,66 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: BulkSettingsChange\n"
+"POT-Creation-Date: 2026-05-25 13:10+0700\n"
+"PO-Revision-Date: 2026-05-25 13:10+0700\n"
+"Last-Translator: Antigravity AI\n"
+"Language-Team: Vietnamese\n"
+"Language: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgctxt "PeterHan.BulkSettingsChange.BulkChangeStrings.ACTION_TITLE"
+msgid "Settings Change Tool"
+msgstr "Công cụ thay đổi cài đặt"
+
+msgctxt "PeterHan.BulkSettingsChange.BulkChangeStrings.TOOL_DESCRIPTION"
+msgid "Enable or disable Auto-Disinfect, Auto-Repair, or buildings {Hotkey}"
+msgstr ""
+"Bật hoặc tắt Tự động khử trùng, Tự động sửa chữa hoặc tòa nhà {Hotkey}"
+
+msgctxt "PeterHan.BulkSettingsChange.BulkChangeStrings.TOOL_DISABLE_BUILDINGS"
+msgid "Building Disabled"
+msgstr "Tòa nhà bị vô hiệu hóa"
+
+msgctxt "PeterHan.BulkSettingsChange.BulkChangeStrings.TOOL_DISABLE_COMPOST"
+msgid "Compost Disabled"
+msgstr "Phân hữu cơ bị vô hiệu hóa"
+
+msgctxt "PeterHan.BulkSettingsChange.BulkChangeStrings.TOOL_DISABLE_DISINFECT"
+msgid "Disinfect Disabled"
+msgstr "Khử trùng bị vô hiệu hóa"
+
+msgctxt "PeterHan.BulkSettingsChange.BulkChangeStrings.TOOL_DISABLE_EMPTY"
+msgid "Empty Storage Cancelled"
+msgstr "Đã hủy bộ nhớ trống"
+
+msgctxt "PeterHan.BulkSettingsChange.BulkChangeStrings.TOOL_DISABLE_REPAIR"
+msgid "Auto-Repair Disabled"
+msgstr "Tự động sửa chữa bị vô hiệu hóa"
+
+msgctxt "PeterHan.BulkSettingsChange.BulkChangeStrings.TOOL_ENABLE_BUILDINGS"
+msgid "Building Enabled"
+msgstr "Đã bật tòa nhà"
+
+msgctxt "PeterHan.BulkSettingsChange.BulkChangeStrings.TOOL_ENABLE_COMPOST"
+msgid "Compost Enabled"
+msgstr "Đã kích hoạt phân trộn"
+
+msgctxt "PeterHan.BulkSettingsChange.BulkChangeStrings.TOOL_ENABLE_DISINFECT"
+msgid "Disinfect Enabled"
+msgstr "Đã kích hoạt khử trùng"
+
+msgctxt "PeterHan.BulkSettingsChange.BulkChangeStrings.TOOL_ENABLE_EMPTY"
+msgid "Storage Emptied"
+msgstr "Đã trống bộ nhớ"
+
+msgctxt "PeterHan.BulkSettingsChange.BulkChangeStrings.TOOL_ENABLE_REPAIR"
+msgid "Auto-Repair Enabled"
+msgstr "Đã bật tính năng tự động sửa chữa"
+
+msgctxt "PeterHan.BulkSettingsChange.BulkChangeStrings.TOOL_TITLE"
+msgid "Change Settings"
+msgstr "Thay đổi cài đặt"

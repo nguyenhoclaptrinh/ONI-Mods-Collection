@@ -62,7 +62,18 @@ namespace AutoDropBottlers
             {
                 if (bottler.storage.IsFull())
                 {
-                    bottler.storage.DropAll(false, false, default, true);
+                    // Trì hoãn việc rơi chai nước 1 frame để không phá vỡ vòng lặp sự kiện đồng bộ của game
+                    GameScheduler.Instance.Schedule("AutoDrop", 0f, (obj) => {
+                        // Kiểm tra lại bottler có còn tồn tại không sau 1 frame
+                        if (bottler != null && bottler.storage != null && bottler.storage.IsFull())
+                        {
+                            // Đảm bảo không có Duplicant nào đang đứng thao tác (bơm/lấy) tại Bottler này
+                            if (bottler.worker == null)
+                            {
+                                bottler.storage.DropAll(false, false, default, true);
+                            }
+                        }
+                    });
                 }
             }
         }

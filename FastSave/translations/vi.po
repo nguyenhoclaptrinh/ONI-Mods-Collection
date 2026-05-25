@@ -1,0 +1,29 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: FastSave\n"
+"POT-Creation-Date: 2026-05-25 13:15+0700\n"
+"PO-Revision-Date: 2026-05-25 13:15+0700\n"
+"Last-Translator: Antigravity AI\n"
+"Language-Team: Vietnamese\n"
+"Language: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgctxt "PeterHan.FastSave.FastSaveStrings.AUTOSAVE_FAILED"
+msgid "Autosave failed!"
+msgstr "Tự động lưu không thành công!"
+
+msgctxt "PeterHan.FastSave.FastSaveStrings.AUTOSAVE_PROGRESS"
+msgid "Auto-Save in progress"
+msgstr "Đang tự động lưu"
+
+msgctxt "PeterHan.FastSave.FastSaveStrings.DESKTOP_QUIT_WARNING"
+msgid "Exit to Desktop may corrupt the current autosave!"
+msgstr "Thoát ra Desktop có thể làm hỏng quá trình lưu tự động hiện tại!"
+
+msgctxt "PeterHan.FastSave.FastSaveStrings.IO_ERROR"
+msgid "IOException. You may not have enough free space!"
+msgstr "IOException. Bạn có thể không có đủ không gian trống!"

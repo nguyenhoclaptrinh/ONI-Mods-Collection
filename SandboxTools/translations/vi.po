@@ -1,0 +1,81 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: SandboxTools\n"
+"POT-Creation-Date: 2026-05-25 13:19+0700\n"
+"PO-Revision-Date: 2026-05-25 13:19+0700\n"
+"Last-Translator: Antigravity AI\n"
+"Language-Team: Vietnamese\n"
+"Language: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgctxt "PeterHan.SandboxTools.SandboxToolsStrings.DESTROY_ALL"
+msgid "All"
+msgstr "Tất cả"
+
+msgctxt "PeterHan.SandboxTools.SandboxToolsStrings.DESTROY_AUTO"
+msgid "Automation"
+msgstr "Tự động hóa"
+
+msgctxt "PeterHan.SandboxTools.SandboxToolsStrings.DESTROY_BUILDINGS"
+msgid "Buildings"
+msgstr "Tòa nhà"
+
+msgctxt "PeterHan.SandboxTools.SandboxToolsStrings.DESTROY_CREATURES"
+msgid "Creatures"
+msgstr "sinh vật"
+
+msgctxt "PeterHan.SandboxTools.SandboxToolsStrings.DESTROY_DRYWALL"
+msgid "Background Buildings"
+msgstr "Tòa Nhà Nền"
+
+msgctxt "PeterHan.SandboxTools.SandboxToolsStrings.DESTROY_ELEMENTS"
+msgid "Elements"
+msgstr "Yếu tố"
+
+msgctxt "PeterHan.SandboxTools.SandboxToolsStrings.DESTROY_GPIPES"
+msgid "Gas Pipes"
+msgstr "Ống dẫn khí"
+
+msgctxt "PeterHan.SandboxTools.SandboxToolsStrings.DESTROY_ITEMS"
+msgid "Items"
+msgstr "Mặt hàng"
+
+msgctxt "PeterHan.SandboxTools.SandboxToolsStrings.DESTROY_LPIPES"
+msgid "Liquid Pipes"
+msgstr "Ống lỏng"
+
+msgctxt "PeterHan.SandboxTools.SandboxToolsStrings.DESTROY_PLANTS"
+msgid "Plants"
+msgstr "Thực vật"
+
+msgctxt "PeterHan.SandboxTools.SandboxToolsStrings.DESTROY_POWER"
+msgid "Power Wires"
+msgstr "Dây điện"
+
+msgctxt "PeterHan.SandboxTools.SandboxToolsStrings.DESTROY_SHIPPING"
+msgid "Conveyor Rails"
+msgstr "Ray băng tải"
+
+msgctxt "PeterHan.SandboxTools.SandboxToolsStrings.FILTER_ARTIFACTS"
+msgid "Artifacts"
+msgstr "Hiện vật"
+
+msgctxt "PeterHan.SandboxTools.SandboxToolsStrings.FILTER_GEYSERS"
+msgid "Geysers"
+msgstr "mạch nước phun"
+
+msgctxt "PeterHan.SandboxTools.SandboxToolsStrings.FILTER_POIPROPS"
+msgid "Props"
+msgstr "đạo cụ"
+
+msgctxt "PeterHan.SandboxTools.SandboxToolsStrings.TOOL_DESTROY_NAME"
+msgid "Filtered Destroy"
+msgstr "Lọc tiêu diệt"
+
+msgctxt "PeterHan.SandboxTools.SandboxToolsStrings.TOOL_DESTROY_TOOLTIP"
+msgid "Delete objects from the selected cell(s) {Hotkey}"
+msgstr "Xóa đối tượng khỏi (các) ô đã chọn {Hotkey}"

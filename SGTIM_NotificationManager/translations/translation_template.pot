@@ -1,0 +1,155 @@
+msgid ""
+msgstr ""
+"Application: Oxygen Not Included"
+"POT Version: 2.0"
+
+#. SGTIM_NotificationManager.STRINGS.NOTIFICATION_CONFIG.ALERTS.CATEGORY
+msgctxt "SGTIM_NotificationManager.STRINGS.NOTIFICATION_CONFIG.ALERTS.CATEGORY"
+msgid "Alerts"
+msgstr ""
+
+#. SGTIM_NotificationManager.STRINGS.NOTIFICATION_CONFIG.ALERTS.MUTEREDALERT
+msgctxt "SGTIM_NotificationManager.STRINGS.NOTIFICATION_CONFIG.ALERTS.MUTEREDALERT"
+msgid "Mute Red Alert Sound"
+msgstr ""
+
+#. SGTIM_NotificationManager.STRINGS.NOTIFICATION_CONFIG.ALERTS.MUTEYELLOWALERT
+msgctxt "SGTIM_NotificationManager.STRINGS.NOTIFICATION_CONFIG.ALERTS.MUTEYELLOWALERT"
+msgid "Mute Yellow Alert Sound"
+msgstr ""
+
+#. SGTIM_NotificationManager.STRINGS.NOTIFICATION_CONFIG.ATTACK.CATEGORY
+msgctxt "SGTIM_NotificationManager.STRINGS.NOTIFICATION_CONFIG.ATTACK.CATEGORY"
+msgid "Chiến đấu!-Thông báo"
+msgstr ""
+
+#. SGTIM_NotificationManager.STRINGS.NOTIFICATION_CONFIG.BROKENMACHINE.CATEGORY
+msgctxt "SGTIM_NotificationManager.STRINGS.NOTIFICATION_CONFIG.BROKENMACHINE.CATEGORY"
+msgid "Công trình hỏng-Thông báo"
+msgstr ""
+
+#. SGTIM_NotificationManager.STRINGS.NOTIFICATION_CONFIG.DUPLICANTDIED.CATEGORY
+msgctxt "SGTIM_NotificationManager.STRINGS.NOTIFICATION_CONFIG.DUPLICANTDIED.CATEGORY"
+msgid "Mấy thằng Đệ đã chết-Thông báo"
+msgstr ""
+
+#. SGTIM_NotificationManager.STRINGS.NOTIFICATION_CONFIG.ENTOMBED.CATEGORY
+msgctxt "SGTIM_NotificationManager.STRINGS.NOTIFICATION_CONFIG.ENTOMBED.CATEGORY"
+msgid "Vùi lấp-Thông báo"
+msgstr ""
+
+#. SGTIM_NotificationManager.STRINGS.NOTIFICATION_CONFIG.FLEE.CATEGORY
+msgctxt "SGTIM_NotificationManager.STRINGS.NOTIFICATION_CONFIG.FLEE.CATEGORY"
+msgid "Bỏ chạy!-Thông báo"
+msgstr ""
+
+#. SGTIM_NotificationManager.STRINGS.NOTIFICATION_CONFIG.FOODROT.CATEGORY
+msgctxt "SGTIM_NotificationManager.STRINGS.NOTIFICATION_CONFIG.FOODROT.CATEGORY"
+msgid "Thực phẩm bị phân hủy-Thông báo"
+msgstr ""
+
+#. SGTIM_NotificationManager.STRINGS.NOTIFICATION_CONFIG.INCAPACITATED.CATEGORY
+msgctxt "SGTIM_NotificationManager.STRINGS.NOTIFICATION_CONFIG.INCAPACITATED.CATEGORY"
+msgid "Ngất xỉu-Thông báo"
+msgstr ""
+
+#. SGTIM_NotificationManager.STRINGS.NOTIFICATION_CONFIG.MUTE_PING
+msgctxt "SGTIM_NotificationManager.STRINGS.NOTIFICATION_CONFIG.MUTE_PING"
+msgid "Mute notification ping"
+msgstr ""
+
+#. SGTIM_NotificationManager.STRINGS.NOTIFICATION_CONFIG.MUTE_PING_TOOLTIP
+msgctxt "SGTIM_NotificationManager.STRINGS.NOTIFICATION_CONFIG.MUTE_PING_TOOLTIP"
+msgid "Enable this option to remove the ping-sound from the warning."
+msgstr ""
+
+#. SGTIM_NotificationManager.STRINGS.NOTIFICATION_CONFIG.PAUSE_ON_NOTIFICATION
+msgctxt "SGTIM_NotificationManager.STRINGS.NOTIFICATION_CONFIG.PAUSE_ON_NOTIFICATION"
+msgid "Pause game on trigger"
+msgstr ""
+
+#. SGTIM_NotificationManager.STRINGS.NOTIFICATION_CONFIG.PAUSE_ON_NOTIFICATION_TOOLTIP
+msgctxt "SGTIM_NotificationManager.STRINGS.NOTIFICATION_CONFIG.PAUSE_ON_NOTIFICATION_TOOLTIP"
+msgid "Pauses the game when the notification triggers."
+msgstr ""
+
+#. SGTIM_NotificationManager.STRINGS.NOTIFICATION_CONFIG.PEE.CATEGORY
+msgctxt "SGTIM_NotificationManager.STRINGS.NOTIFICATION_CONFIG.PEE.CATEGORY"
+msgid "Đái dầm-Thông báo"
+msgstr ""
+
+#. SGTIM_NotificationManager.STRINGS.NOTIFICATION_CONFIG.PLANTDEATH.CATEGORY
+msgctxt "SGTIM_NotificationManager.STRINGS.NOTIFICATION_CONFIG.PLANTDEATH.CATEGORY"
+msgid "Cây đã chết-Thông báo"
+msgstr ""
+
+#. SGTIM_NotificationManager.STRINGS.NOTIFICATION_CONFIG.RADIATIONVOMITING.CATEGORY
+msgctxt "SGTIM_NotificationManager.STRINGS.NOTIFICATION_CONFIG.RADIATIONVOMITING.CATEGORY"
+msgid "Nôn mửa do bức xạ-Thông báo"
+msgstr ""
+
+#. SGTIM_NotificationManager.STRINGS.NOTIFICATION_CONFIG.SCALDING.CATEGORY
+msgctxt "SGTIM_NotificationManager.STRINGS.NOTIFICATION_CONFIG.SCALDING.CATEGORY"
+msgid "Bỏng-Thông báo"
+msgstr ""
+
+#. SGTIM_NotificationManager.STRINGS.NOTIFICATION_CONFIG.STARVATION.CATEGORY
+msgctxt "SGTIM_NotificationManager.STRINGS.NOTIFICATION_CONFIG.STARVATION.CATEGORY"
+msgid "Đói-Thông báo"
+msgstr ""
+
+#. SGTIM_NotificationManager.STRINGS.NOTIFICATION_CONFIG.STARVATION.THRESHOLD
+msgctxt "SGTIM_NotificationManager.STRINGS.NOTIFICATION_CONFIG.STARVATION.THRESHOLD"
+msgid "Starvation Calorie Threshold"
+msgstr ""
+
+#. SGTIM_NotificationManager.STRINGS.NOTIFICATION_CONFIG.STARVATION.THRESHOLD_TOOLTIP
+msgctxt "SGTIM_NotificationManager.STRINGS.NOTIFICATION_CONFIG.STARVATION.THRESHOLD_TOOLTIP"
+msgid "Calorie threshold for the starvation notification.\nDefault is 1000"
+msgstr ""
+
+#. SGTIM_NotificationManager.STRINGS.NOTIFICATION_CONFIG.STRESS.CATEGORY
+msgctxt "SGTIM_NotificationManager.STRINGS.NOTIFICATION_CONFIG.STRESS.CATEGORY"
+msgid "Stress cao-Thông báo"
+msgstr ""
+
+#. SGTIM_NotificationManager.STRINGS.NOTIFICATION_CONFIG.STRESS.THRESHOLD
+msgctxt "SGTIM_NotificationManager.STRINGS.NOTIFICATION_CONFIG.STRESS.THRESHOLD"
+msgid "Stress Threshold"
+msgstr ""
+
+#. SGTIM_NotificationManager.STRINGS.NOTIFICATION_CONFIG.STRESS.THRESHOLD_TOOLTIP
+msgctxt "SGTIM_NotificationManager.STRINGS.NOTIFICATION_CONFIG.STRESS.THRESHOLD_TOOLTIP"
+msgid "Stress level where the notification triggers in percent.\nDefault is 80%"
+msgstr ""
+
+#. SGTIM_NotificationManager.STRINGS.NOTIFICATION_CONFIG.SUFFOCATION.CATEGORY
+msgctxt "SGTIM_NotificationManager.STRINGS.NOTIFICATION_CONFIG.SUFFOCATION.CATEGORY"
+msgid "Ngạt thở-Thông báo"
+msgstr ""
+
+#. SGTIM_NotificationManager.STRINGS.NOTIFICATION_CONFIG.SUFFOCATION.THRESHOLD
+msgctxt "SGTIM_NotificationManager.STRINGS.NOTIFICATION_CONFIG.SUFFOCATION.THRESHOLD"
+msgid "Suffocation Time Threshold"
+msgstr ""
+
+#. SGTIM_NotificationManager.STRINGS.NOTIFICATION_CONFIG.SUFFOCATION.THRESHOLD_TOOLTIP
+msgctxt "SGTIM_NotificationManager.STRINGS.NOTIFICATION_CONFIG.SUFFOCATION.THRESHOLD_TOOLTIP"
+msgid "Time from notification start to death by suffocation in seconds.\nDefault is 50 seconds, higher values warn earlier"
+msgstr ""
+
+#. SGTIM_NotificationManager.STRINGS.NOTIFICATION_CONFIG.UNREFRIGERATEDFOOD.CATEGORY
+msgctxt "SGTIM_NotificationManager.STRINGS.NOTIFICATION_CONFIG.UNREFRIGERATEDFOOD.CATEGORY"
+msgid "Thức ăn chưa bảo quản-Thông báo"
+msgstr ""
+
+#. SGTIM_NotificationManager.STRINGS.NOTIFICATION_CONFIG.ZOOM_ON_NOTIFICATION
+msgctxt "SGTIM_NotificationManager.STRINGS.NOTIFICATION_CONFIG.ZOOM_ON_NOTIFICATION"
+msgid "Pan to origin"
+msgstr ""
+
+#. SGTIM_NotificationManager.STRINGS.NOTIFICATION_CONFIG.ZOOM_ON_NOTIFICATION_TOOLTIP
+msgctxt "SGTIM_NotificationManager.STRINGS.NOTIFICATION_CONFIG.ZOOM_ON_NOTIFICATION_TOOLTIP"
+msgid "Moves the camera to the origin of the notification when it triggers."
+msgstr ""
+

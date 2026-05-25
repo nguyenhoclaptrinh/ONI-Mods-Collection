@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Reflection;
 using System.Reflection.Emit;
 using System.Runtime.CompilerServices;
@@ -31,7 +31,7 @@ namespace AutoComposter
             // издеваемся над категорией
             if (ModOptions.Instance.hide_from_filters)
             {
-                Filterable.filterableCategories.Remove(GameTags.Compostable);
+                // Filterable.filterableCategories.Remove(GameTags.Compostable);
                 TUNING.STORAGEFILTERS.NOT_EDIBLE_SOLIDS.Remove(GameTags.Compostable);
                 TUNING.STORAGEFILTERS.STORAGE_LOCKERS_STANDARD.Remove(GameTags.Compostable);
                 TUNING.STORAGEFILTERS.STORAGE_SOLID_CARGO_BAY.Remove(GameTags.Compostable);
@@ -127,12 +127,12 @@ namespace AutoComposter
             if (go != null && go.TryGetComponent(out KPrefabID kprefab) && DiscoveredResources.Instance != null
                 && PrefabToCompostCategory.TryGetValue(kprefab.PrefabTag, out var category))
             {
-                DiscoveredResources.Instance.DiscoverCategory(category, kprefab.PrefabTag);
+                DiscoveredResources.Instance.Discover(kprefab.PrefabTag, category);
             }
         }
 
         // унпинываем компостируемое если категория скрыта
-        [HarmonyPatch(typeof(WorldInventory), nameof(WorldInventory.OnSpawn))]
+        [HarmonyPatch(typeof(WorldInventory), "OnSpawn")]
         private static class WorldInventory_OnSpawn
         {
             private static bool Prepare() => ModOptions.Instance.hide_from_resources;
@@ -144,19 +144,19 @@ namespace AutoComposter
         }
 
         // корректируем прибитый гвоздями IsFunctional
-        [HarmonyPatch(typeof(FilteredStorage), nameof(FilteredStorage.IsFunctional))]
-        private static class FilteredStorage_IsFunctional
-        {
-            private static bool Prefix(FilteredStorage __instance, ref bool __result)
-            {
-                if (__instance.root is AutoComposter composter && !composter.IsNullOrDestroyed())
-                {
-                    __result = composter.IsOperational;
-                    return false;
-                }
-                return true;
-            }
-        }
+        // [HarmonyPatch(typeof(FilteredStorage), nameof(FilteredStorage.IsFunctional))]
+        // private static class FilteredStorage_IsFunctional
+        // {
+        //     private static bool Prefix(FilteredStorage __instance, ref bool __result)
+        //     {
+        //         if (__instance.root is AutoComposter composter && !composter.IsNullOrDestroyed())
+        //         {
+        //             __result = composter.IsOperational;
+        //             return false;
+        //         }
+        //         return true;
+        //     }
+        // }
 
         // предотвращаем вываливание гнилья когда еда сгнивает
         private static void StoreRotPile(GameObject rotten, object source)
@@ -236,7 +236,7 @@ namespace AutoComposter
             }
         }
 
-        [HarmonyPatch(typeof(RotPile), nameof(RotPile.ConvertToElement))]
+        [HarmonyPatch(typeof(RotPile), "ConvertToElement")]
         private static class RotPile_ConvertToElement
         {
             private static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions, MethodBase original)

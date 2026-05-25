@@ -1,0 +1,402 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: MoreAchievements\n"
+"POT-Creation-Date: 2026-05-25 13:17+0700\n"
+"PO-Revision-Date: 2026-05-25 13:17+0700\n"
+"Last-Translator: Antigravity AI\n"
+"Language-Team: Vietnamese\n"
+"Language: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.ABALANCEDDIET.DESC"
+msgid ""
+"Eat 1,000 kcal of each Food type available on Terra or through care "
+"packages."
+msgstr ""
+"Ăn 1.000 kcal của mỗi loại Thực phẩm có sẵn trên Terra hoặc thông qua các "
+"gói chăm sóc."
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.ABALANCEDDIET.NAME"
+msgid "A Balanced Diet"
+msgstr "Một chế độ ăn uống cân bằng"
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.ABALANCEDDIET.PROGRESS"
+msgid "Calories from {0}: {1} / {2}"
+msgstr "Lượng calo từ {0}: {1} / {2}"
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.ADALOVELACE.DESC"
+msgid "Raise a Duplicant's Science attribute to 20."
+msgstr "Tăng thuộc tính Khoa học của Người sao chép lên 20."
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.ADALOVELACE.NAME"
+msgid "Ada Lovelace"
+msgstr "Ada Lovelace"
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.ALLTHEDUPLICANTS.DESC"
+msgid "Have at least 100 living Duplicants living in the colony at one time."
+msgstr "Có ít nhất 100 Nhân bản còn sống sống trong thuộc địa cùng một lúc."
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.ALLTHEDUPLICANTS.NAME"
+msgid "ALL the Duplicants!"
+msgstr "TẤT CẢ những bản sao!"
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.BELONGSINAMUSEUM.DESC"
+msgid "Obtain at least one of each space artifact."
+msgstr "Có được ít nhất một trong mỗi hiện vật không gian."
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.BELONGSINAMUSEUM.NAME"
+msgid "That Belongs in a Museum"
+msgstr "Đó thuộc về một bảo tàng"
+
+msgctxt ""
+"PeterHan.MoreAchievements.AchievementStrings.BELONGSINAMUSEUM.PROGRESS"
+msgid "Artifacts obtained: {0:D} / {1:D}"
+msgstr "Cổ vật thu được: {0:D} / {1:D}"
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.CHUTESANDLADDERS.DESC"
+msgid "Have Duplicants travel 10,000 m by Fire Pole."
+msgstr "Yêu cầu Người sao chép di chuyển 10.000 m bằng Cột Lửa."
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.CHUTESANDLADDERS.NAME"
+msgid "Chutes and Ladders"
+msgstr "Máng và thang"
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.COWBOY.DESC"
+msgid "Raise a Duplicant's Ranching attribute to 20."
+msgstr "Tăng thuộc tính Trang trại của Người sao chép lên 20."
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.COWBOY.NAME"
+msgid "Cowboy"
+msgstr "cao bồi"
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.CRITTERSINGER.DESC"
+msgid ""
+"Tame at least one of every critter morph of each critter species in the "
+"world."
+msgstr ""
+"Thuần hóa ít nhất một trong các hình thái sinh vật của mỗi loài sinh vật "
+"trên thế giới."
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.CRITTERSINGER.NAME"
+msgid "Critter Ventriloquist"
+msgstr "Người nói bụng"
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.DEFAULT_PROGRESS"
+msgid "Complete requirement"
+msgstr "Yêu cầu đầy đủ"
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.DESTROYEROFWORLDS.DESC"
+msgid "Raise a Duplicant's Excavation attribute to 20."
+msgstr "Tăng thuộc tính Khai quật của Người sao chép lên 20."
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.DESTROYEROFWORLDS.NAME"
+msgid "Destroyer of Worlds"
+msgstr "Kẻ hủy diệt thế giới"
+
+msgctxt ""
+"PeterHan.MoreAchievements.AchievementStrings.DESTROYEROFWORLDS.PROGRESS"
+msgid "Highest attribute value: {0:F0} / {1:F0}"
+msgstr "Giá trị thuộc tính cao nhất: {0:F0} / {1:F0}"
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.EMPIREBUILDER.DESC"
+msgid "Build 2,500 buildings."
+msgstr "Xây dựng 2.500 tòa nhà."
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.EMPIREBUILDER.NAME"
+msgid "Empire Builder"
+msgstr "Người xây dựng đế chế"
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.EMPIREBUILDER.PROGRESS"
+msgid "Buildings constructed: {0:D} / {1:D}"
+msgstr "Tòa nhà đã xây dựng: {0:D} / {1:D}"
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.FINALBREATH.DESC"
+msgid ""
+"Have a Duplicant reach oxygen with less than 5 seconds left until "
+"suffocation."
+msgstr ""
+"Yêu cầu Nhân bản tiếp cận oxy chỉ còn chưa đầy 5 giây cho đến khi ngạt thở."
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.FINALBREATH.NAME"
+msgid "Final Breath"
+msgstr "Hơi thở cuối cùng"
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.FINALBREATH.PROGRESS"
+msgid "Reached breathable area with less than 5 seconds until death"
+msgstr "Đạt đến vùng dễ thở chỉ còn chưa đầy 5 giây cho đến khi chết"
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.FIRSTDONOHARM.DESC"
+msgid "Raise a Duplicant's Doctoring attribute to 20."
+msgstr "Tăng thuộc tính Tiến sĩ của Người sao chép lên 20."
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.FIRSTDONOHARM.NAME"
+msgid "First Do No Harm"
+msgstr "Đầu tiên không làm hại"
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.HAVEIWONYET.DESC"
+msgid "Reach cycle 4,000 with at least one living Duplicant."
+msgstr "Đạt đến chu kỳ 4.000 với ít nhất một Bản sao còn sống."
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.HAVEIWONYET.NAME"
+msgid "Have I Won Yet?"
+msgstr "Tôi đã thắng chưa?"
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.IMGONNABE.DESC"
+msgid "Have Duplicants travel 1,609,000 m by walking."
+msgstr "Yêu cầu Người sao chép đi 1.609.000 m bằng cách đi bộ."
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.IMGONNABE.NAME"
+msgid "I'm Gonna Be"
+msgstr "Tôi Sẽ Trở Thành"
+
+msgctxt ""
+"PeterHan.MoreAchievements.AchievementStrings.ISEEWHATYOUDIDTHERE.DESC"
+msgid "Obtain a chunk of Neutronium."
+msgstr "Thu được một khối neutronium."
+
+msgctxt ""
+"PeterHan.MoreAchievements.AchievementStrings.ISEEWHATYOUDIDTHERE.NAME"
+msgid "I See What You Did There"
+msgstr "Tôi thấy những gì bạn đã làm ở đó"
+
+msgctxt ""
+"PeterHan.MoreAchievements.AchievementStrings.ISEEWHATYOUDIDTHERE.PROGRESS"
+msgid "Obtain the unobtainium"
+msgstr "Thu được unobtainium"
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.ISITHOTINHERE.DESC"
+msgid "Increase the temperature of a building to 2226.9 ºC."
+msgstr "Tăng nhiệt độ của tòa nhà lên 2226,9 oC."
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.ISITHOTINHERE.NAME"
+msgid "Is It Hot in Here?"
+msgstr "Ở đây có nóng không?"
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.ISITHOTINHERE.PROGRESS"
+msgid "Hottest building: {0} / {1}"
+msgstr "Tòa nhà hot nhất: {0} / {1}"
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.JACKOFALLTRADES.DESC"
+msgid "Raise all of a single Duplicant's attributes to 10."
+msgstr "Nâng tất cả thuộc tính của một Bản sao lên 10."
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.JACKOFALLTRADES.NAME"
+msgid "Jack of All Trades"
+msgstr "Jack của mọi giao dịch"
+
+msgctxt ""
+"PeterHan.MoreAchievements.AchievementStrings.JACKOFALLTRADES.PROGRESS"
+msgid "Raise attributes to {0:F0}"
+msgstr "Nâng thuộc tính lên {0:F0}"
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.JOHNHENRY.DESC"
+msgid "Dig 10,000 tiles."
+msgstr "Đào 10.000 viên gạch."
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.JOHNHENRY.NAME"
+msgid "John Henry"
+msgstr "John Henry"
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.JOHNHENRY.PROGRESS"
+msgid "Tiles dug by Duplicants: {0:D} / {1:D}"
+msgstr "Gạch do người sao chép đào: {0:D} / {1:D}"
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.MASTERBUILDER.DESC"
+msgid "Raise a Duplicant's Construction attribute to 20."
+msgstr "Tăng thuộc tính Xây dựng của Người sao chép lên 20."
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.MASTERBUILDER.NAME"
+msgid "Master Builder"
+msgstr "Bậc thầy xây dựng"
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.MASTERCHEF.DESC"
+msgid "Raise a Duplicant's Cooking attribute to 20."
+msgstr "Tăng thuộc tính Nấu ăn của Người sao chép lên 20."
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.MASTERCHEF.NAME"
+msgid "MasterChef"
+msgstr "đầu bếp bậc thầy"
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.MASTEROFDISASTER.DESC"
+msgid "Lose a Duplicant to each (stock game) cause of death."
+msgstr "Mất một bản sao cho mỗi nguyên nhân tử vong (trò chơi chứng khoán)."
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.MASTEROFDISASTER.NAME"
+msgid "Master of Disaster"
+msgstr "Bậc thầy thảm họa"
+
+msgctxt ""
+"PeterHan.MoreAchievements.AchievementStrings.MASTEROFDISASTER.PROGRESS"
+msgid "Duplicant died due to {0}"
+msgstr "Người sao chép đã chết do {0}"
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.MICHELANGELO.DESC"
+msgid "Raise a Duplicant's Creativity attribute to 20."
+msgstr "Tăng thuộc tính Sáng tạo của Người sao chép lên 20."
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.MICHELANGELO.NAME"
+msgid "Michelangelo"
+msgstr "Michelangelo"
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.MOTHEREARTH.DESC"
+msgid "Raise a Duplicant's Agriculture attribute to 20."
+msgstr "Tăng thuộc tính Nông nghiệp của Người sao chép lên 20."
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.MOTHEREARTH.NAME"
+msgid "Mother Earth"
+msgstr "Đất Mẹ"
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.MOUNTAINMOVER.DESC"
+msgid "Raise a Duplicant's Strength attribute to 20."
+msgstr "Tăng thuộc tính Sức mạnh của Người sao chép lên 20."
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.MOUNTAINMOVER.NAME"
+msgid "Mountain Mover"
+msgstr "Máy kéo núi"
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.OLYMPIAN.DESC"
+msgid "Raise a Duplicant's Athletics attribute to 20."
+msgstr "Tăng thuộc tính Điền kinh của Người sao chép lên 20."
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.OLYMPIAN.NAME"
+msgid "Olympian"
+msgstr "vận động viên Olympic"
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.POWEROVERWHELMING.DESC"
+msgid "Overload a Heavi-Watt Conductive Wire."
+msgstr "Quá tải dây dẫn điện nặng."
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.POWEROVERWHELMING.NAME"
+msgid "Power Overwhelming"
+msgstr "Sức mạnh áp đảo"
+
+msgctxt ""
+"PeterHan.MoreAchievements.AchievementStrings.POWEROVERWHELMING.PROGRESS"
+msgid "Overload wire with {0}"
+msgstr "Quá tải dây với {0}"
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.SAFESPACE.DESC"
+msgid "Avoid any Duplicant deaths for 100 consecutive cycles."
+msgstr ""
+"Tránh bất kỳ trường hợp tử vong trùng lặp nào trong 100 chu kỳ liên tiếp."
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.SAFESPACE.NAME"
+msgid "Safe Space"
+msgstr "Không gian an toàn"
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.SAFESPACE.PROGRESS"
+msgid "Last Duplicant death: Cycle {0:D}"
+msgstr "Cái chết của bản sao cuối cùng: Chu kỳ {0:D}"
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.SAVINGMEEP.DESC"
+msgid ""
+"Have a Duplicant reach a Triage Cot under their own power with no more than "
+"10 Hit Points remaining."
+msgstr ""
+"Yêu cầu Người sao chép tiếp cận Triage Cot bằng sức mạnh của chính họ và "
+"không còn quá 10 Điểm Hit."
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.SAVINGMEEP.NAME"
+msgid "Saving Private Meep"
+msgstr "Lưu Meep riêng tư"
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.SAVINGMEEP.PROGRESS"
+msgid ""
+"Reached Triage Cot with less than or equal to 10 health without being "
+"Incapacitated"
+msgstr ""
+"Đã đạt đến Triage Cot với ít hơn hoặc bằng 10 máu mà không bị mất năng lực"
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.SCALDED"
+msgid "Badly Burned"
+msgstr "bị cháy nặng"
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.SMALLWORLD.DESC"
+msgid "Have at least 35 living Duplicants living in the colony at one time."
+msgstr "Có ít nhất 35 Bản sao còn sống sống trong thuộc địa cùng một lúc."
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.SMALLWORLD.NAME"
+msgid "Small World After All"
+msgstr "Rốt cuộc thế giới nhỏ"
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.SMOOTHOPERATOR.DESC"
+msgid "Raise a Duplicant's Machinery attribute to 20."
+msgstr "Tăng thuộc tính Máy móc của Người sao chép lên 20."
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.SMOOTHOPERATOR.NAME"
+msgid "Smooth Operator"
+msgstr "Toán tử mượt mà"
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.TESTOFTIME.DESC"
+msgid "Reach cycle 1,000 with at least one living Duplicant."
+msgstr "Đạt đến chu kỳ 1.000 với ít nhất một Bản sao còn sống."
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.TESTOFTIME.NAME"
+msgid "To Stand the Test of Time"
+msgstr "Để đứng trước thử thách của thời gian"
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.THINKINGAHEAD.DESC"
+msgid "Use the Neural Vacillator 10 times."
+msgstr "Sử dụng Máy tạo dao động thần kinh 10 lần."
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.THINKINGAHEAD.NAME"
+msgid "Thinking Ahead"
+msgstr "Suy nghĩ trước"
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.THINKINGAHEAD.PROGRESS"
+msgid "Neural Vacillator used: {0:D} / {1:D}"
+msgstr "Bộ dao động thần kinh được sử dụng: {0:D} / {1:D}"
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.TOTALLYECSTATIC.DESC"
+msgid "Raise a single Duplicant's Morale to 60."
+msgstr "Nâng Tinh thần của một Bản sao lên 60."
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.TOTALLYECSTATIC.NAME"
+msgid "Totally Ecstatic"
+msgstr "Hoàn toàn ngây ngất"
+
+msgctxt ""
+"PeterHan.MoreAchievements.AchievementStrings.TOTALLYECSTATIC.PROGRESS"
+msgid "Highest Morale: {0:F0} / {1:F0}"
+msgstr "Tinh thần cao nhất: {0:F0} / {1:F0}"
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.WATCHTHEWORLDBURN.DESC"
+msgid "Melt a unique building generated in a point of interest."
+msgstr "Làm tan chảy một tòa nhà độc đáo được tạo ra ở một điểm ưa thích."
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.WATCHTHEWORLDBURN.NAME"
+msgid "Watch the World Burn"
+msgstr "Xem thế giới bùng cháy"
+
+msgctxt ""
+"PeterHan.MoreAchievements.AchievementStrings.WATCHTHEWORLDBURN.PROGRESS"
+msgid "Melt a normally non-constructable POI building"
+msgstr "Làm tan chảy tòa nhà POI thông thường không thể xây dựng được"
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.WHOLENEWWORLDS.DESC"
+msgid "Send a Space Mission to each destination on the Starmap."
+msgstr "Gửi Nhiệm vụ Không gian đến từng điểm đến trên Starmap."
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.WHOLENEWWORLDS.NAME"
+msgid "Whole New Worlds"
+msgstr "Thế giới hoàn toàn mới"
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.WHOLENEWWORLDS.PROGRESS"
+msgid "Destinations visited: {0:D} / {1:D}"
+msgstr "Các điểm đến đã ghé thăm: {0:D} / {1:D}"
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.YOUMONSTER.DESC"
+msgid "Kill 100 critters before they die of old age."
+msgstr "Giết 100 sinh vật trước khi chúng chết vì tuổi già."
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.YOUMONSTER.NAME"
+msgid "You Monster"
+msgstr "bạn quái vật"
+
+msgctxt "PeterHan.MoreAchievements.AchievementStrings.YOUMONSTER.PROGRESS"
+msgid "Critters killed by non-natural causes: {0:D} / {1:D}"
+msgstr "Sinh vật bị giết vì nguyên nhân phi tự nhiên: {0:D} / {1:D}"

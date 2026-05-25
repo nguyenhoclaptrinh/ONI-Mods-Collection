@@ -1,0 +1,996 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: BlueprintsV2\n"
+"POT-Creation-Date: 2026-05-25 13:07+0700\n"
+"PO-Revision-Date: 2026-05-25 13:07+0700\n"
+"Last-Translator: Antigravity AI\n"
+"Language-Team: Vietnamese\n"
+"Language: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgctxt "BlueprintsV2.STRINGS.BLUEPRINTS_BLUEPRINTNOTE.DELETE_NOTE.NAME"
+msgid "Delete Note"
+msgstr "Xóa ghi chú"
+
+msgctxt "BlueprintsV2.STRINGS.BLUEPRINTS_BLUEPRINTNOTE.DELETE_NOTE.TOOLTIP"
+msgid "Delete this note entity"
+msgstr "Xóa thực thể ghi chú này"
+
+msgctxt "BlueprintsV2.STRINGS.BLUEPRINTS_BLUEPRINTNOTE.ELEMENT_NOTE"
+msgid "Planned {0} ({1}, {2})"
+msgstr "Đã lên kế hoạch {0} ({1}, {2})"
+
+msgctxt "BlueprintsV2.STRINGS.BLUEPRINTS_BLUEPRINTNOTE.ELEMENT_NOTE_DESC"
+msgid "There should be {1} of {0} here, at a temperature of {2}."
+msgstr "Cần có {1} trong số {0} ở đây, ở nhiệt độ {2}."
+
+msgctxt "BlueprintsV2.STRINGS.BLUEPRINTS_BLUEPRINTNOTE.ELEMENT_NOTE_SPECIAL"
+msgid "Planned {0}"
+msgstr "Đã lên kế hoạch {0}"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.BLUEPRINTS_BLUEPRINTNOTE.ELEMENT_NOTE_SPECIAL_DESC"
+msgid "There should be {0} here."
+msgstr "Cần có {0} ở đây."
+
+msgctxt "BlueprintsV2.STRINGS.BLUEPRINTS_BLUEPRINTNOTE.INFO_TITLE"
+msgid "Planned Element Settings:"
+msgstr "Cài đặt phần tử theo kế hoạch:"
+
+msgctxt "BlueprintsV2.STRINGS.BLUEPRINTS_BLUEPRINTNOTE.MASSCONFIG.TITLE"
+msgid "Element Target Mass:"
+msgstr "Khối lượng mục tiêu của phần tử:"
+
+msgctxt "BlueprintsV2.STRINGS.BLUEPRINTS_BLUEPRINTNOTE.MASSCONFIG.TOOLTIP"
+msgid "Planned Mass: {0}"
+msgstr "Thánh lễ dự kiến: {0}"
+
+msgctxt "BlueprintsV2.STRINGS.BLUEPRINTS_BLUEPRINTNOTE.SANDBOX_SPAWN.NAME"
+msgid "Spawn Element (Sandbox)"
+msgstr "Yếu tố sinh sản (Hộp cát)"
+
+msgctxt "BlueprintsV2.STRINGS.BLUEPRINTS_BLUEPRINTNOTE.SANDBOX_SPAWN.TOOLTIP"
+msgid "Spawn the configured element and remove this element note."
+msgstr "Sinh ra phần tử đã định cấu hình và xóa ghi chú phần tử này."
+
+msgctxt ""
+"BlueprintsV2.STRINGS.BLUEPRINTS_BLUEPRINTNOTE.TEMPERATURECONFIG.TITLE"
+msgid "Element Target Temperature:"
+msgstr "Nhiệt độ mục tiêu của phần tử:"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.BLUEPRINTS_BLUEPRINTNOTE.TEMPERATURECONFIG.TOOLTIP"
+msgid "Planned Temperature: {0}"
+msgstr "Nhiệt độ dự kiến: {0}"
+
+msgctxt "BlueprintsV2.STRINGS.BLUEPRINTS_BLUEPRINTNOTE.TEXTNOTE_EMPTY.TEXT"
+msgid "No Description..."
+msgstr "Không có mô tả..."
+
+msgctxt "BlueprintsV2.STRINGS.BLUEPRINTS_BLUEPRINTNOTE.TEXTNOTE_EMPTY.TITLE"
+msgid "Unnamed Note"
+msgstr "Ghi chú chưa đặt tên"
+
+msgctxt "BlueprintsV2.STRINGS.BLUEPRINTS_CONFIG.CREATEBLUEPRINTTOOLSYNC.TITLE"
+msgid "Blueprint Tool Overlay Sync"
+msgstr "Đồng bộ hóa lớp phủ công cụ Bản vẽ"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.BLUEPRINTS_CONFIG.CREATEBLUEPRINTTOOLSYNC.TOOLTIP"
+msgid ""
+"Whether the Blueprint Tool syncs with the current overlay. (configurable in "
+"game too)"
+msgstr ""
+"Công cụ Bản vẽ có đồng bộ hóa với lớp phủ hiện tại hay không. (có thể cấu "
+"hình trong trò chơi)"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.BLUEPRINTS_CONFIG.DEFAULTMENUSELECTION.DEFAULTMENUSELECTION_ALL"
+msgid "All Defaults"
+msgstr "Tất cả mặc định"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.BLUEPRINTS_CONFIG.DEFAULTMENUSELECTION.DEFAULTMENUSELECTION_NONE"
+msgid "None"
+msgstr "Không có"
+
+msgctxt "BlueprintsV2.STRINGS.BLUEPRINTS_CONFIG.DEFAULTMENUSELECTION.TITLE"
+msgid "Default Menu Selections"
+msgstr "Lựa chọn menu mặc định"
+
+msgctxt "BlueprintsV2.STRINGS.BLUEPRINTS_CONFIG.DEFAULTMENUSELECTION.TOOLTIP"
+msgid "The default selections made when an advanced filter menu is opened."
+msgstr "Các lựa chọn mặc định được thực hiện khi mở menu bộ lọc nâng cao."
+
+msgctxt "BlueprintsV2.STRINGS.BLUEPRINTS_CONFIG.EXTRA_DEFAULTS_CATEGORY"
+msgid "Extra Filter Selections"
+msgstr "Lựa chọn bộ lọc bổ sung"
+
+msgctxt "BlueprintsV2.STRINGS.BLUEPRINTS_CONFIG.FXTIME.TITLE"
+msgid "FX Time"
+msgstr "Giờ FX"
+
+msgctxt "BlueprintsV2.STRINGS.BLUEPRINTS_CONFIG.FXTIME.TOOLTIP"
+msgid ""
+"How long FX created by Blueprints remain on the screen. Measured in seconds."
+msgstr ""
+"FX do Bản vẽ tạo sẽ tồn tại trên màn hình trong bao lâu. Tính bằng giây."
+
+msgctxt ""
+"BlueprintsV2.STRINGS.BLUEPRINTS_CONFIG.REQUIRECONSTRUCTABLE_MATERIAL.TITLE"
+msgid "Require blueprint building materials"
+msgstr "Yêu cầu bản thiết kế vật liệu xây dựng"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.BLUEPRINTS_CONFIG.REQUIRECONSTRUCTABLE_MATERIAL.TOOLTIP"
+msgid ""
+"If enabled, buildings in blueprints are only placed down if their materials "
+"are available."
+msgstr ""
+"Nếu được bật, các tòa nhà trong bản thiết kế chỉ được xây dựng nếu có sẵn "
+"vật liệu."
+
+msgctxt ""
+"BlueprintsV2.STRINGS.BLUEPRINTS_CONFIG.REQUIRECONSTRUCTABLE_TECH.TITLE"
+msgid "Require blueprint building tech"
+msgstr "Yêu cầu công nghệ xây dựng bản thiết kế"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.BLUEPRINTS_CONFIG.REQUIRECONSTRUCTABLE_TECH.TOOLTIP"
+msgid ""
+"If enabled, buildings in blueprints are only placed down if their required "
+"tech has been researched."
+msgstr ""
+"Nếu được bật, các tòa nhà trong bản thiết kế chỉ được xây dựng nếu công nghệ"
+" yêu cầu của chúng đã được nghiên cứu."
+
+msgctxt "BlueprintsV2.STRINGS.BLUEPRINTS_CONFIG.SNAPSHOTTOOLSYNC.TITLE"
+msgid "Snapshot Tool Overlay Sync"
+msgstr "Đồng bộ hóa lớp phủ công cụ chụp nhanh"
+
+msgctxt "BlueprintsV2.STRINGS.BLUEPRINTS_CONFIG.SNAPSHOTTOOLSYNC.TOOLTIP"
+msgid ""
+"Whether the Snapshot Tool syncs with the current overlay. (configurable in "
+"game too)"
+msgstr ""
+"Công cụ chụp nhanh có đồng bộ hóa với lớp phủ hiện tại hay không. (có thể "
+"cấu hình trong trò chơi)"
+
+msgctxt "BlueprintsV2.STRINGS.UI.ACTIONS.CHANGE_ANCHOR_TITLE"
+msgid "Change Blueprint Anchor"
+msgstr "Thay đổi điểm neo bản thiết kế"
+
+msgctxt "BlueprintsV2.STRINGS.UI.ACTIONS.CREATE_TITLE"
+msgid "Create Blueprint"
+msgstr "Tạo bản thiết kế"
+
+msgctxt "BlueprintsV2.STRINGS.UI.ACTIONS.FLIP_BLUEPRINT_H"
+msgid "Flip Blueprint Horizontal"
+msgstr "Lật bản thiết kế theo chiều ngang"
+
+msgctxt "BlueprintsV2.STRINGS.UI.ACTIONS.FLIP_BLUEPRINT_V"
+msgid "Flip Blueprint Vertical"
+msgstr "Lật bản thiết kế theo chiều dọc"
+
+msgctxt "BlueprintsV2.STRINGS.UI.ACTIONS.NOTETOOL_TITLE"
+msgid "Create Notes"
+msgstr "Tạo ghi chú"
+
+msgctxt "BlueprintsV2.STRINGS.UI.ACTIONS.ROTATE_BLUEPRINT"
+msgid "Rotate Blueprint"
+msgstr "Xoay bản thiết kế"
+
+msgctxt "BlueprintsV2.STRINGS.UI.ACTIONS.ROTATE_INV_BLUEPRINT"
+msgid "Reverse Rotate Blueprint"
+msgstr "Kế hoạch xoay ngược"
+
+msgctxt "BlueprintsV2.STRINGS.UI.ACTIONS.SELECT_DIFFERENT_TITLE"
+msgid "Select different Blueprint"
+msgstr "Chọn bản thiết kế khác nhau"
+
+msgctxt "BlueprintsV2.STRINGS.UI.ACTIONS.SELECT_NEXT"
+msgid "Next Blueprint"
+msgstr "Kế hoạch tiếp theo"
+
+msgctxt "BlueprintsV2.STRINGS.UI.ACTIONS.SELECT_PREV"
+msgid "Previous Blueprint"
+msgstr "Bản thiết kế trước đó"
+
+msgctxt "BlueprintsV2.STRINGS.UI.ACTIONS.SNAPSHOT_REUSE_TITLE"
+msgid "Use last Snapshot"
+msgstr "Sử dụng Ảnh chụp nhanh cuối cùng"
+
+msgctxt "BlueprintsV2.STRINGS.UI.ACTIONS.SNAPSHOT_TITLE"
+msgid "Take Snapshot"
+msgstr "Chụp ảnh nhanh"
+
+msgctxt "BlueprintsV2.STRINGS.UI.ACTIONS.TOGGLE_FORCE"
+msgid "Toggle force rebuild"
+msgstr "Chuyển đổi lực lượng xây dựng lại"
+
+msgctxt "BlueprintsV2.STRINGS.UI.ACTIONS.TOGGLETOOLTIPS"
+msgid "Toggle keybind tooltips"
+msgstr "Chuyển đổi chú giải công cụ liên kết phím"
+
+msgctxt "BlueprintsV2.STRINGS.UI.ACTIONS.USE_TITLE"
+msgid "Use Blueprint"
+msgstr "Sử dụng bản thiết kế"
+
+msgctxt "BlueprintsV2.STRINGS.UI.BLUEPRINTS_ROOTFOLDER"
+msgid "Main Folder"
+msgstr "Thư mục chính"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.BLUEPRINTINFO.BUTTONS.APPLYBUTTON.TEXT"
+msgid "Save Desc. Changes"
+msgstr "Lưu mô tả Thay đổi"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.BLUEPRINTINFO.BUTTONS.RESETBUTTON.TEXT"
+msgid "Reset Desc. Changes"
+msgstr "Đặt lại mô tả Thay đổi"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.BLUEPRINTINFO.DESCRIPTION.INPUT.TEXTAREA.PLACEHOLDER"
+msgid "Add description to blueprint"
+msgstr "Thêm mô tả vào bản thiết kế"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.BLUEPRINTINFO.DESCRIPTION.LABEL"
+msgid "Description:"
+msgstr "Sự miêu tả:"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.BLUEPRINTINFO.STATS.BUILDINGCOUNT.DESCRIPTOR.LABEL"
+msgid "Number of Buildings:"
+msgstr "Số lượng tòa nhà:"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.BLUEPRINTINFO.STATS.DIGCOUNT.DESCRIPTOR.LABEL"
+msgid "Number of non-solid tiles:"
+msgstr "Số lượng gạch không đặc:"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.BLUEPRINTINFO.STATS.DIMENSION.DESCRIPTOR.LABEL"
+msgid "Dimensions:"
+msgstr "Kích thước:"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.BLUEPRINTINFO.STATS.ICONCONTAINER.LABEL"
+msgid "Blueprint Icon:"
+msgstr "Biểu tượng bản thiết kế:"
+
+msgctxt "BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.BLUEPRINTINFO.STATS.LABEL"
+msgid "Parameters:"
+msgstr "Thông số:"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.BLUEPRINTINFO.STATS.LIQUIDCOUNT.DESCRIPTOR.LABEL"
+msgid "Number of notes:"
+msgstr "Số lượng ghi chú:"
+
+msgctxt "BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.BUILDINGLIST.HEADER.LABEL"
+msgid "Building List:"
+msgstr "Danh sách tòa nhà:"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.BUILDINGLIST.SCROLLAREA.CONTENT.BUILDINGENTRYPREFAB.DESCRIPTOR.LABEL"
+msgid "BuildingName"
+msgstr "Tên tòa nhà"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.BUILDINGLIST.SCROLLAREA.CONTENT.NOBUILDINGSINBLUEPRINT.LABEL"
+msgid "Blueprint does not contain any buildings"
+msgstr "Bản thiết kế không chứa bất kỳ tòa nhà nào"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.BUILDINGLIST.SEARCHBAR.INPUT.TEXTAREA.PLACEHOLDER"
+msgid "Enter text to filter buildings..."
+msgstr "Nhập văn bản để lọc các tòa nhà..."
+
+msgctxt "BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.CLOSEBUTTON.TEXT"
+msgid "Close"
+msgstr "Đóng"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.FILEHIERARCHY.FILTERS.DATESORT.TEXT"
+msgid "Sort by date modified"
+msgstr "Sắp xếp theo ngày sửa đổi"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.FILEHIERARCHY.FILTERS.NAMESORT.TEXT"
+msgid "Sort by name"
+msgstr "Sắp xếp theo tên"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.FILEHIERARCHY.IMPORTBUTTON.TEXT"
+msgid "Import new blueprint from clipboard"
+msgstr "Nhập bản thiết kế mới từ clipboard"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.FILEHIERARCHY.IMPORTBUTTON.TOOLTIP"
+msgid "Import a bluprint string you have stored in your clipboard"
+msgstr "Nhập chuỗi bản vẽ bạn đã lưu vào khay nhớ tạm"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.FILEHIERARCHY.SCROLLAREA.CONTENT.BLUEPRINTENTRY.TOOLTIP_DELETE"
+msgid ""
+"Delete Blueprint.\n"
+"Deleting the last blueprint in a sub folder will also delete the folder."
+msgstr ""
+"Xóa bản thiết kế.\n"
+"Xóa bản thiết kế cuối cùng trong thư mục con cũng sẽ xóa thư mục đó."
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.FILEHIERARCHY.SCROLLAREA.CONTENT.BLUEPRINTENTRY.TOOLTIP_EXPORT"
+msgid "Export the blueprint as a shareable string to your clipboard."
+msgstr ""
+"Xuất bản thiết kế dưới dạng chuỗi có thể chia sẻ vào khay nhớ tạm của bạn."
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.FILEHIERARCHY.SCROLLAREA.CONTENT.BLUEPRINTENTRY.TOOLTIP_INFO"
+msgid "Show more detailed info about the blueprint or add some notes to it"
+msgstr ""
+"Hiển thị thông tin chi tiết hơn về bản thiết kế hoặc thêm một số ghi chú vào"
+" đó"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.FILEHIERARCHY.SCROLLAREA.CONTENT.BLUEPRINTENTRY.TOOLTIP_MOVE"
+msgid ""
+"Move Blueprint to other folder.\n"
+"Will create new folder if it does not exist.\n"
+"Leaving the new folder name empty will move the blueprint to the main folder."
+msgstr ""
+"Di chuyển Bản vẽ sang thư mục khác.\n"
+"Sẽ tạo thư mục mới nếu nó không tồn tại.\n"
+"Để trống tên thư mục mới sẽ di chuyển bản thiết kế vào thư mục chính."
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.FILEHIERARCHY.SCROLLAREA.CONTENT.BLUEPRINTENTRY.TOOLTIP_RENAME"
+msgid "Rename Blueprint"
+msgstr "Đổi tên bản thiết kế"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.FILEHIERARCHY.SCROLLAREA.CONTENT.BLUEPRINTENTRY.TOOLTIP_RETAKE"
+msgid ""
+"Re-Take the blueprint, replacing its content with a new selection of "
+"buildings."
+msgstr ""
+"Lấy lại bản thiết kế, thay thế nội dung của nó bằng một loạt các tòa nhà "
+"mới."
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.FILEHIERARCHY.SCROLLAREA.CONTENT.FOLDERUP.LABEL"
+msgid "Go to parent folder"
+msgstr "Chuyển đến thư mục mẹ"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.FILEHIERARCHY.SCROLLAREA.CONTENT.NONEAVAILABLE.LABEL"
+msgid "No Blueprints available"
+msgstr "Không có bản thiết kế nào"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.FILEHIERARCHY.SEARCHBAR.CLEARTOOLTIP"
+msgid "Clear search bar"
+msgstr "Xóa thanh tìm kiếm"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.FILEHIERARCHY.SEARCHBAR.INPUT.TEXTAREA.PLACEHOLDER"
+msgid "Enter text to filter Blueprints..."
+msgstr "Nhập văn bản để lọc Bản thiết kế..."
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.FILEHIERARCHY.SEARCHBAR.OPENFOLDERTOOLTIP"
+msgid "Open the folder where the Blueprints are stored."
+msgstr "Mở thư mục chứa Bản thiết kế."
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.MATERIALREPLACER.SCROLLAREA.CONTENT.ELEMENTSTATE.NOTENOUGH"
+msgid ""
+"You don't have enough of that material on the current asteroid!\n"
+"Currently available: {0}\n"
+"Required when selecting this: {1}"
+msgstr ""
+"Bạn không có đủ vật liệu đó trên tiểu hành tinh hiện tại!\n"
+"Hiện có sẵn: {0}\n"
+"Bắt buộc khi chọn mục này: {1}"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.MATERIALREPLACER.SCROLLAREA.CONTENT.ELEMENTSTATE.NOTFOUND"
+msgid "This material has not been found in the current game!"
+msgstr "Tài liệu này chưa được tìm thấy trong trò chơi hiện tại!"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.MATERIALREPLACER.SCROLLAREA.CONTENT.NOREPLACEELEMENTS.LABEL"
+msgid "No suitable elements found"
+msgstr "Không tìm thấy phần tử phù hợp"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.MATERIALREPLACER.SEARCHBAR.CLEARTOOLTIP"
+msgid "Clear search bar"
+msgstr "Xóa thanh tìm kiếm"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.MATERIALREPLACER.SEARCHBAR.INPUT.TEXTAREA.PLACEHOLDER"
+msgid "Enter text to filter elements..."
+msgstr "Nhập văn bản để lọc các phần tử..."
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.MATERIALREPLACER.TOREPLACE.LABEL"
+msgid "Material Type:"
+msgstr "Loại vật liệu:"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.MATERIALSWITCH.BUTTONS.CREATEMODIFIED.TOOLTIP"
+msgid ""
+"Create a copy of the current blueprint with all local material replacements "
+"applied to it."
+msgstr ""
+"Tạo một bản sao của bản thiết kế hiện tại với tất cả các vật liệu thay thế "
+"cục bộ được áp dụng cho nó."
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.MATERIALSWITCH.BUTTONS.PLACEBPBTN.TEXT"
+msgid "Place Blueprint"
+msgstr "Đặt bản thiết kế"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.MATERIALSWITCH.BUTTONS.RESETBUTTON.TEXT"
+msgid "Reset Replacements"
+msgstr "Đặt lại thay thế"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.MATERIALSWITCH.MATERIALSHEADER.LABEL"
+msgid "Materials in \"{0}\":"
+msgstr "Tài liệu trong \"{0}\":"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.MATERIALSWITCH.PERBUILDINGOVERRIDES.LABEL"
+msgid "Advanced Material Overrides:"
+msgstr "Ghi đè vật liệu nâng cao:"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.MATERIALSWITCH.PERBUILDINGOVERRIDES.TOOLTIP"
+msgid ""
+"Enabling this allows selecting replacement materials per building type."
+msgstr ""
+"Kích hoạt tính năng này cho phép chọn vật liệu thay thế cho mỗi loại tòa "
+"nhà."
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.MATERIALSWITCH.SCROLLAREA.CONTENT.NOELEMENTSINBLUEPRINT.LABEL"
+msgid "No elements in blueprint"
+msgstr "Không có yếu tố nào trong bản thiết kế"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.MATERIALSWITCH.SCROLLAREA.CONTENT.PRESETENTRYPREFAB.LABEL"
+msgid "{0} ( as {1})"
+msgstr "{0} ( dưới dạng {1})"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.MATERIALSWITCH.SCROLLAREA.CONTENT.PRESETENTRYPREFAB.LOCALLYREPLACE"
+msgid "Replace Locally: "
+msgstr "Thay thế cục bộ:"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.MATERIALSWITCH.SCROLLAREA.CONTENT.PRESETENTRYPREFAB.MASSTEXT"
+msgid "Total Mass:"
+msgstr "Tổng khối lượng:"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.MATERIALSWITCH.SCROLLAREA.CONTENT.PRESETENTRYPREFAB.NONE"
+msgid "No"
+msgstr "KHÔNG"
+
+msgctxt "BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.MATERIALSWITCH.WARNING"
+msgid ""
+"Some materials in the blueprint require more mass than available on the "
+"current asteroid!"
+msgstr ""
+"Một số vật liệu trong bản thiết kế yêu cầu khối lượng lớn hơn khối lượng có "
+"sẵn trên tiểu hành tinh hiện tại!"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.BLUEPRINTSELECTOR.MATERIALSWITCH.WARNINGSEVERE"
+msgid "Some materials in the blueprint are not unlocked yet!"
+msgstr "Một số vật liệu trong bản thiết kế vẫn chưa được mở khóa!"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.COLOR_LEGEND.BLUEPRINTS_COLOR_CAN_APPLY_SETTINGS"
+msgid "Can apply stored blueprint settings"
+msgstr "Có thể áp dụng cài đặt bản thiết kế được lưu trữ"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.COLOR_LEGEND.BLUEPRINTS_COLOR_INVALIDPLACEMENT"
+msgid "Invalid Building Placement"
+msgstr "Vị trí tòa nhà không hợp lệ"
+
+msgctxt "BlueprintsV2.STRINGS.UI.COLOR_LEGEND.BLUEPRINTS_COLOR_NOMATERIALS"
+msgid "Missing Construction Materials"
+msgstr "Thiếu vật liệu xây dựng"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.COLOR_LEGEND.BLUEPRINTS_COLOR_NOTALLOWEDINWORLD"
+msgid "Not allowed in current asteroid"
+msgstr "Không được phép ở tiểu hành tinh hiện tại"
+
+msgctxt "BlueprintsV2.STRINGS.UI.COLOR_LEGEND.BLUEPRINTS_COLOR_NOTECH"
+msgid "Building not researched"
+msgstr "Tòa nhà chưa được nghiên cứu"
+
+msgctxt "BlueprintsV2.STRINGS.UI.COLOR_LEGEND.BLUEPRINTS_COLOR_VALIDPLACEMENT"
+msgid "Valid Building Placement"
+msgstr "Vị trí tòa nhà hợp lệ"
+
+msgctxt "BlueprintsV2.STRINGS.UI.DIALOGUE.BASE64_EXPORTED.TEXT"
+msgid "The blueprint has been added to your clipboard."
+msgstr "Bản thiết kế đã được thêm vào khay nhớ tạm của bạn."
+
+msgctxt "BlueprintsV2.STRINGS.UI.DIALOGUE.BASE64_EXPORTED.TITLE"
+msgid "Copied to Clipboard!"
+msgstr "Đã sao chép vào Clipboard!"
+
+msgctxt "BlueprintsV2.STRINGS.UI.DIALOGUE.BASE64_IMPORT_FAIL.TEXT"
+msgid "Unable to import a blueprint from the current clipboard contents."
+msgstr "Không thể nhập bản thiết kế từ nội dung bảng nhớ tạm hiện tại."
+
+msgctxt "BlueprintsV2.STRINGS.UI.DIALOGUE.BASE64_IMPORT_FAIL.TITLE"
+msgid "Import Failure!"
+msgstr "Nhập thất bại!"
+
+msgctxt "BlueprintsV2.STRINGS.UI.DIALOGUE.BASE64_IMPORT_SUCCESS.TEXT"
+msgid "The blueprint {0} has been imported successfully."
+msgstr "Bản thiết kế {0} đã được nhập thành công."
+
+msgctxt "BlueprintsV2.STRINGS.UI.DIALOGUE.BASE64_IMPORT_SUCCESS.TITLE"
+msgid "Import Successful!"
+msgstr "Nhập thành công!"
+
+msgctxt "BlueprintsV2.STRINGS.UI.DIALOGUE.CONFIRMDELETE.TEXT"
+msgid "Do you really want to delete the blueprint {0}?"
+msgstr "Bạn có thực sự muốn xóa bản thiết kế {0} không?"
+
+msgctxt "BlueprintsV2.STRINGS.UI.DIALOGUE.CONFIRMDELETE.TITLE"
+msgid "Confirm Delete"
+msgstr "Xác nhận Xóa"
+
+msgctxt "BlueprintsV2.STRINGS.UI.DIALOGUE.FOLDERBLUEPRINT_TITLE"
+msgid "ASSIGN FOLDER"
+msgstr "Gán thư mục"
+
+msgctxt "BlueprintsV2.STRINGS.UI.DIALOGUE.MOVETOFOLDER_TITLE"
+msgid "MOVE TO FOLDER"
+msgstr "CHUYỂN ĐẾN THƯ MỤC"
+
+msgctxt "BlueprintsV2.STRINGS.UI.DIALOGUE.NAMEBLUEPRINT_TITLE"
+msgid "NAME BLUEPRINT"
+msgstr "TÊN TÊN"
+
+msgctxt "BlueprintsV2.STRINGS.UI.DIALOGUE.RENAMEBLUEPRINT_TITLE"
+msgid "RENAME BLUEPRINT"
+msgstr "ĐỔI TÊN BẢN KẾ HOẠCH"
+
+msgctxt "BlueprintsV2.STRINGS.UI.ICONSELECTOR.CLOSEBUTTON.TEXT"
+msgid "Close"
+msgstr "Đóng"
+
+msgctxt "BlueprintsV2.STRINGS.UI.ICONSELECTOR.ICONLIST.HEADER.LABEL"
+msgid "Icon List"
+msgstr "Danh sách biểu tượng"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.ICONSELECTOR.ICONLIST.SCROLLAREA.CONTENT.ITEM.LABEL"
+msgid "ico_spr"
+msgstr "ico_spr"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.ICONSELECTOR.ICONLIST.SEARCHBAR.INPUT.TEXTAREA.PLACEHOLDER"
+msgid "Enter text to filter icons..."
+msgstr "Nhập văn bản để lọc biểu tượng..."
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.NOTETOOLSTATECONTAINER.BUTTONS.ELEMENTTOGGLE.TEXT"
+msgid "Element Notes"
+msgstr "Ghi chú yếu tố"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.NOTETOOLSTATECONTAINER.BUTTONS.TEXTTOGGLE.TEXT"
+msgid "Text Notes"
+msgstr "Ghi chú văn bản"
+
+msgctxt "BlueprintsV2.STRINGS.UI.NOTETOOLSTATECONTAINER.COLORPICKERLABEL"
+msgid "Note Icon Color:"
+msgstr "Lưu ý Màu biểu tượng:"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.NOTETOOLSTATECONTAINER.NOTETEXTINPUT.INPUT.TEXTAREA.PLACEHOLDER"
+msgid "Add note text..."
+msgstr "Thêm văn bản ghi chú..."
+
+msgctxt "BlueprintsV2.STRINGS.UI.NOTETOOLSTATECONTAINER.NOTETEXTINPUT.LABEL"
+msgid "Note Text:"
+msgstr "Văn bản ghi chú:"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.NOTETOOLSTATECONTAINER.NOTETITLEINPUT.INPUT.TEXTAREA.PLACEHOLDER"
+msgid "Add note name..."
+msgstr "Thêm tên ghi chú..."
+
+msgctxt "BlueprintsV2.STRINGS.UI.NOTETOOLSTATECONTAINER.NOTETITLEINPUT.LABEL"
+msgid "Note Name:"
+msgstr "Tên ghi chú:"
+
+msgctxt "BlueprintsV2.STRINGS.UI.NOTETOOLSTATECONTAINER.TITLE.SIDESCREENTEXT"
+msgid "Textnote Edit Screen"
+msgstr "Màn hình chỉnh sửa văn bản"
+
+msgctxt "BlueprintsV2.STRINGS.UI.NOTETOOLSTATECONTAINER.TITLE.TITLETEXT"
+msgid "Note Creation Tool"
+msgstr "Công cụ tạo ghi chú"
+
+msgctxt "BlueprintsV2.STRINGS.UI.PRECONFIGURE_UNDERCONSTRUCTION.TITLE"
+msgid "Preconfigure building settings"
+msgstr "Cấu hình trước cài đặt tòa nhà"
+
+msgctxt "BlueprintsV2.STRINGS.UI.PRECONFIGURE_UNDERCONSTRUCTION.TOOLTIP"
+msgid "Use blueprint data transfer to preconfigure this building"
+msgstr ""
+"Sử dụng tính năng truyền dữ liệu bản thiết kế để định cấu hình trước tòa nhà"
+" này"
+
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.CREATE_TOOL.ACTION_BACK"
+msgid "BACK"
+msgstr "MẶT SAU"
+
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.CREATE_TOOL.ACTION_DRAG"
+msgid "DRAG"
+msgstr "LÔI KÉO"
+
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.CREATE_TOOL.CANCELLED"
+msgid "Cancelled blueprint!"
+msgstr "Bản thiết kế bị hủy bỏ!"
+
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.CREATE_TOOL.CREATED"
+msgid "Created blueprint!"
+msgstr "Đã tạo bản thiết kế!"
+
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.CREATE_TOOL.EMPTY"
+msgid "Blueprint would have been empty!"
+msgstr "Bản thiết kế sẽ trống rỗng!"
+
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.CREATE_TOOL.NAME"
+msgid "New Blueprint"
+msgstr "Kế hoạch mới"
+
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.CREATE_TOOL.RETAKING_TOOLTIP"
+msgid "Replacing contents of blueprint: {0}"
+msgstr "Thay thế nội dung bản thiết kế: {0}"
+
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.CREATE_TOOL.TOOLTIP"
+msgid "Create blueprint {0}"
+msgstr "Tạo bản thiết kế {0}"
+
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.CREATE_TOOL.TOOLTIP_TITLE"
+msgid "CREATE BLUEPRINT TOOL"
+msgstr "TẠO CÔNG CỤ Bản vẽ"
+
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.CREATE_TOOL.TOOLTIP_TITLE_RETAKE"
+msgid "RE-TAKE BLUEPRINT TOOL"
+msgstr "LẠI CÔNG CỤ Bản vẽ"
+
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.FILTERLAYERS.ALL"
+msgid "All"
+msgstr "Tất cả"
+
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.FILTERLAYERS.AUTOSYNC"
+msgid "Auto. Sync to Overlays"
+msgstr "Tự động. Đồng bộ hóa với lớp phủ"
+
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.FILTERLAYERS.AUTOSYNC_TOOLTIP"
+msgid "Automatically synchronize the filters with the active overlay"
+msgstr "Tự động đồng bộ hóa các bộ lọc với lớp phủ đang hoạt động"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.TOOLS.FILTERLAYERS.BLUEPRINTV2_COLLECT_NATURAL_ELEMENTS.NAME"
+msgid "Create Tile Notes"
+msgstr "Tạo ghi chú xếp ô"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.TOOLS.FILTERLAYERS.BLUEPRINTV2_COLLECT_NATURAL_ELEMENTS.TOOLTIP"
+msgid ""
+"Store the world element tiles of the chosen element states as Element Notes "
+"in the blueprint."
+msgstr ""
+"Lưu trữ các ô phần tử thế giới của trạng thái phần tử đã chọn dưới dạng Ghi "
+"chú phần tử trong bản thiết kế."
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.TOOLS.FILTERLAYERS.BLUEPRINTV2_COLLECT_NOTES.NAME"
+msgid "Blueprint Notes"
+msgstr "Ghi chú kế hoạch chi tiết"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.TOOLS.FILTERLAYERS.BLUEPRINTV2_COLLECT_NOTES.TOOLTIP"
+msgid "Store notes from the blueprint note tool in the blueprint."
+msgstr ""
+"Lưu trữ các ghi chú từ công cụ ghi chú bản thiết kế trong bản thiết kế."
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.TOOLS.FILTERLAYERS.BLUEPRINTV2_FILTER_NOTES.NAME"
+msgid "Blueprint Notes"
+msgstr "Ghi chú kế hoạch chi tiết"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.TOOLS.FILTERLAYERS.BLUEPRINTV2_FILTER_NOTES.TOOLTIP"
+msgid "Blueprint Notes only"
+msgstr "Chỉ ghi chú bản thiết kế"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.TOOLS.FILTERLAYERS.BLUEPRINTV2_PLANNINGTOOL_SHAPES.NAME"
+msgid "PlanningTool Shapes"
+msgstr "Lập kế hoạchHình dạng công cụ"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.TOOLS.FILTERLAYERS.BLUEPRINTV2_PLANNINGTOOL_SHAPES.TOOLTIP"
+msgid ""
+"Store PlanningTool-Mod Shapes in the blueprint\n"
+"Only works when the PlanningTool mod is enabled."
+msgstr ""
+"Lưu trữ các hình dạng PlanningTool-Mod trong bản thiết kế\n"
+"Chỉ hoạt động khi mod PlanningTool được bật."
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.TOOLS.FILTERLAYERS.BLUEPRINTV2_PRESERVEAIRTILES.NAME"
+msgid "Air/Liquid Bubbles"
+msgstr "Bong bóng khí/lỏng"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.TOOLS.FILTERLAYERS.BLUEPRINTV2_PRESERVEAIRTILES.TOOLTIP"
+msgid ""
+"Create Dig commands for tiles that are not solid, but otherwise empty of "
+"buildings"
+msgstr "Tạo lệnh Dig cho các ô không đặc nhưng không có tòa nhà"
+
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.FILTERLAYERS.NONE"
+msgid "None"
+msgstr "Không có"
+
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.NOTE_TOOL.NAME"
+msgid "Create Notes"
+msgstr "Tạo ghi chú"
+
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.NOTE_TOOL.TOOLTIP"
+msgid ""
+"Create Text- and ElementNotes in the world that can be stored in Blueprints."
+msgstr ""
+"Tạo Văn bản và Ghi chú phần tử trên thế giới có thể được lưu trữ trong Bản "
+"thiết kế."
+
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.NOTE_TOOL.TOOLTIP_TITLE"
+msgid "NOTE TOOL"
+msgstr "CÔNG CỤ LƯU Ý"
+
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.SNAPSHOT_TOOL.EMPTY"
+msgid "Snapshot would have been empty!"
+msgstr "Ảnh chụp nhanh sẽ trống!"
+
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.SNAPSHOT_TOOL.NAME"
+msgid "Take Snapshot"
+msgstr "Chụp ảnh nhanh"
+
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.SNAPSHOT_TOOL.NEWSNAPSHOT"
+msgid "Press {0} to take new snapshot."
+msgstr "Nhấn {0} để chụp ảnh nhanh mới."
+
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.SNAPSHOT_TOOL.REUSELASTSNAPSHOT"
+msgid "Press {0} to reuse your last taken snapshot."
+msgstr "Nhấn {0} để sử dụng lại ảnh chụp nhanh cuối cùng của bạn."
+
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.SNAPSHOT_TOOL.SELECTNEXT_SNAPSHOT"
+msgid "Next snapshot: {0}"
+msgstr "Ảnh chụp nhanh tiếp theo: {0}"
+
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.SNAPSHOT_TOOL.SELECTPREV_SNAPSHOT"
+msgid "Previous snapshot: {0}"
+msgstr "Ảnh chụp nhanh trước đó: {0}"
+
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.SNAPSHOT_TOOL.TAKEN"
+msgid "Snapshot taken!"
+msgstr "Đã chụp ảnh nhanh!"
+
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.SNAPSHOT_TOOL.TOOLTIP"
+msgid ""
+"Take snapshot {0} or reuse last snapshot {1} \n"
+"\n"
+"Create a blueprint and quickly place it elsewhere\n"
+"while not cluttering your blueprint collection!\n"
+"Snapshots do not persist between games or worlds."
+msgstr ""
+"Chụp nhanh {0} hoặc sử dụng lại ảnh chụp nhanh cuối cùng {1} \n"
+"\n"
+"Tạo một bản thiết kế và nhanh chóng đặt nó ở nơi khác\n"
+"trong khi không làm lộn xộn bộ sưu tập bản thiết kế của bạn!\n"
+"Ảnh chụp nhanh không tồn tại giữa các trò chơi hoặc thế giới."
+
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.SNAPSHOT_TOOL.TOOLTIP_TITLE"
+msgid "SNAPSHOT TOOL"
+msgstr "CÔNG CỤ CHỤP ẢNH"
+
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.ACTION_BACK"
+msgid "CANCEL"
+msgstr "HỦY BỎ"
+
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.ACTION_CHANGE_ANCHOR"
+msgid "Change blueprint anchor point: {0}"
+msgstr "Thay đổi điểm neo của bản thiết kế: {0}"
+
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.ACTION_CLICK"
+msgid "PLACE"
+msgstr "ĐỊA ĐIỂM"
+
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.ACTION_DRAG"
+msgid "DRAG"
+msgstr "LÔI KÉO"
+
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.ACTION_SELECT"
+msgid "Adjust selected blueprint: {0}"
+msgstr "Điều chỉnh bản thiết kế đã chọn: {0}"
+
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.ERRORMESSAGE"
+msgid ""
+"This blueprint contained {0} misconfigured or missing prefabs which have "
+"been omitted!"
+msgstr ""
+"Bản thiết kế này chứa {0} các prefab bị định cấu hình sai hoặc bị thiếu đã "
+"bị bỏ qua!"
+
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.FLIP"
+msgid "Flip ({0}:{1}/{2}:{3})"
+msgstr "Lật ({0}:{1}/{2}:{3})"
+
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.FORCEREBUILD"
+msgid ""
+"Replace buildings with mismatched material:\n"
+"{0} (hold {1})"
+msgstr ""
+"Thay thế các tòa nhà bằng vật liệu không phù hợp:\n"
+"{0} (giữ {1})"
+
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.NAME"
+msgid "Use Blueprint"
+msgstr "Sử dụng bản thiết kế"
+
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.NOBLUEPRINTS"
+msgid "No blueprints loaded!"
+msgstr "Không có bản thiết kế nào được tải!"
+
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.NONESELECTED"
+msgid "No blueprint selected!"
+msgstr "Không có bản thiết kế nào được chọn!"
+
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.ORIENTATION_H"
+msgid "Horizontal"
+msgstr "Nằm ngang"
+
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.ORIENTATION_V"
+msgid "Vertical"
+msgstr "Thẳng đứng"
+
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.REBUILD_ACTIVE"
+msgid "Active"
+msgstr "Tích cực"
+
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.REBUILD_INACTIVE"
+msgid "Inactive"
+msgstr "Không hoạt động"
+
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.ROTATE"
+msgid "Rotate blueprint: {0}/{1}"
+msgstr "Xoay bản thiết kế: {0}/{1}"
+
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.SELECTEDBLUEPRINT"
+msgid "Selected blueprint: {0} ({1}/{2} in {3})"
+msgstr "Bản thiết kế đã chọn: {0} ({1}/{2} trong {3})"
+
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.SELECTNEXT"
+msgid "Next blueprint: {0}"
+msgstr "Bản thiết kế tiếp theo: {0}"
+
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.SELECTPREV"
+msgid "Previous blueprint: {0}"
+msgstr "Bản thiết kế trước đó: {0}"
+
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.SETTINGS_APPLIED"
+msgid "Settings applied!"
+msgstr "Đã áp dụng cài đặt!"
+
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.TOGGLE_SHOW_HOTKEYS"
+msgid "Toggle hotkey infos: {0}"
+msgstr "Chuyển đổi thông tin phím nóng: {0}"
+
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.TOOLTIP"
+msgid "Use blueprint {0}"
+msgstr "Sử dụng bản thiết kế {0}"
+
+msgctxt "BlueprintsV2.STRINGS.UI.TOOLS.USE_TOOL.TOOLTIP_TITLE"
+msgid "USE BLUEPRINT TOOL"
+msgstr "SỬ DỤNG CÔNG CỤ Bản vẽ"
+
+msgctxt "BlueprintsV2.STRINGS.UI.USEBLUEPRINTSTATECONTAINER.FLIP_BLOCKED"
+msgid ""
+"Cannot flip the current blueprint.\n"
+"This is prevented by the contained building: {0}"
+msgstr ""
+"Không thể lật bản thiết kế hiện tại.\n"
+"Điều này được ngăn chặn bởi tòa nhà khép kín: {0}"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.USEBLUEPRINTSTATECONTAINER.INFOITEMSCONTAINER.APPLYSTOREDSETTINGS.LABEL"
+msgid "Apply stored building settings on place:"
+msgstr "Áp dụng cài đặt tòa nhà được lưu trữ tại chỗ:"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.USEBLUEPRINTSTATECONTAINER.INFOITEMSCONTAINER.FLIPACTIONS.FLIPH.LABEL"
+msgid "Flip Horizontal"
+msgstr "Lật ngang"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.USEBLUEPRINTSTATECONTAINER.INFOITEMSCONTAINER.FLIPACTIONS.FLIPV.LABEL"
+msgid "Flip Vertical"
+msgstr "Lật dọc"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.USEBLUEPRINTSTATECONTAINER.INFOITEMSCONTAINER.FOLDERINFO.LABEL"
+msgid "Folder: {0}, Position: {1}/{2}"
+msgstr "Thư mục: {0}, Vị trí: {1}/{2}"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.USEBLUEPRINTSTATECONTAINER.INFOITEMSCONTAINER.FOLDERINFO.LABEL_SNAPSHOT"
+msgid "Current Snapshot: {0}/{1}"
+msgstr "Ảnh chụp nhanh hiện tại: {0}/{1}"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.USEBLUEPRINTSTATECONTAINER.INFOITEMSCONTAINER.FORCEREBUILD.LABEL"
+msgid "Rebuild existing with mismatched material:"
+msgstr "Xây dựng lại hiện có với vật liệu không phù hợp:"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.USEBLUEPRINTSTATECONTAINER.INFOITEMSCONTAINER.MATERIALOVERRIDES.BUTTON.LABEL"
+msgid "Change Material Overrides"
+msgstr "Thay đổi ghi đè tài liệu"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.USEBLUEPRINTSTATECONTAINER.INFOITEMSCONTAINER.MATERIALREPLACEMENT.LABEL"
+msgid "Material Overrides in Snapshots:"
+msgstr "Ghi đè vật liệu trong Ảnh chụp nhanh:"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.USEBLUEPRINTSTATECONTAINER.INFOITEMSCONTAINER.MATERIALREPLACEMENT.TOOLTIP"
+msgid "Enable material overrides in snapshots."
+msgstr "Cho phép ghi đè tài liệu trong ảnh chụp nhanh."
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.USEBLUEPRINTSTATECONTAINER.INFOITEMSCONTAINER.ROTATEACTIONS.ROTATEL.LABEL"
+msgid "Rotate Left"
+msgstr "Xoay trái"
+
+msgctxt ""
+"BlueprintsV2.STRINGS.UI.USEBLUEPRINTSTATECONTAINER.INFOITEMSCONTAINER.ROTATEACTIONS.ROTATER.LABEL"
+msgid "Rotate Right"
+msgstr "Xoay phải"
+
+msgctxt "BlueprintsV2.STRINGS.UI.USEBLUEPRINTSTATECONTAINER.ROTATION_BLOCKED"
+msgid ""
+"Cannot rotate the current blueprint.\n"
+"This is prevented by the contained building: {0}"
+msgstr ""
+"Không thể xoay bản thiết kế hiện tại.\n"
+"Điều này được ngăn chặn bởi tòa nhà khép kín: {0}"
+
+msgctxt "BlueprintsV2.STRINGS.UI.USEBLUEPRINTSTATECONTAINER.TITLE.TITLETEXT"
+msgid "Current Blueprint State"
+msgstr "Trạng thái bản thiết kế hiện tại"

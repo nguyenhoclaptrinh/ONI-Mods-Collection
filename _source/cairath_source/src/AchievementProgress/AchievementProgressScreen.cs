@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using TUNING;
@@ -293,7 +293,7 @@ namespace AchievementProgress
 				FOOD.FOOD_TYPES.BURGER.Id
 			};
 
-			var cal = RationTracker.Get().GetCaloiresConsumedByFood(foods);
+			var cal = RationTracker.Get().GetAmountConsumedForIDs(foods);
 			var kcal = cal / 1000f;
 
 			var before100 = GameClock.Instance.GetCycle() + 1 <= 100;
@@ -306,7 +306,7 @@ namespace AchievementProgress
 		{
 			var goal = 400000;
 
-			var cal = RationTracker.Get().GetCaloriesConsumed();
+			var cal = RationTracker.Get().GetAmountConsumed();
 			var kcal = cal / 1000f;
 
 			var hasPlantables = false;

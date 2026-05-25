@@ -1,0 +1,229 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ChainErrand\n"
+"POT-Creation-Date: 2026-05-25 13:10+0700\n"
+"PO-Revision-Date: 2026-05-25 13:10+0700\n"
+"Last-Translator: Antigravity AI\n"
+"Language-Team: Vietnamese\n"
+"Language: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgctxt "ChainErrand.Strings.MYSTRINGS.UI.TOOLS.CHAIN.NAME"
+msgid "Chain"
+msgstr "Xích"
+
+msgctxt "ChainErrand.Strings.MYSTRINGS.UI.TOOLS.FILTERLAYERS.MOP.NAME"
+msgid "Mopping"
+msgstr "Lau nhà"
+
+msgctxt "ChainErrand.Strings.MYSTRINGS.UI.TOOLS.FILTERLAYERS.MOP.TOOLTIP"
+msgid "Target <style=\"KKeyword\">Mopping</style> errands only"
+msgstr "Chỉ nhắm mục tiêu <style=\"KKeyword\">Dọn dẹp</style> việc vặt"
+
+msgctxt ""
+"ChainErrand.Strings.MYSTRINGS.UI.TOOLS.FILTERLAYERS.EMPTYPIPE.TOOLTIP"
+msgid "Target <style=\"KKeyword\">Empty Pipe</style> errands only"
+msgstr "Mục tiêu <style=\"KKeyword\">Ống rỗng</style> chỉ làm việc vặt"
+
+msgctxt "ChainErrand.Strings.MYSTRINGS.UI.TOOLS.FILTERLAYERS.MOVETO.TOOLTIP"
+msgid "Target <style=\"KKeyword\">Move To</style> errands only"
+msgstr "Mục tiêu <style=\"KKeyword\">Chỉ di chuyển đến</style> việc vặt"
+
+msgctxt "ChainErrand.Strings.MYSTRINGS.UI.TOOLTIPS.CHAINBUTTON"
+msgid "Chain up errands to be executed in some specific order {Hotkey}"
+msgstr ""
+"Sắp xếp các công việc lặt vặt để thực hiện theo một số thứ tự cụ thể "
+"{Hotkey}"
+
+msgctxt "ChainErrand.Strings.MYSTRINGS.UI.CHAINTOOLSMENU.TITLE"
+msgid "Chain Tools"
+msgstr "Công cụ dây chuyền"
+
+msgctxt "ChainErrand.Strings.MYSTRINGS.UI.CHAINTOOLSMENU.CREATEBUTTON"
+msgid "Create"
+msgstr "Tạo nên"
+
+msgctxt "ChainErrand.Strings.MYSTRINGS.UI.CHAINTOOLSMENU.DELETEBUTTON"
+msgid "Delete"
+msgstr "Xóa bỏ"
+
+msgctxt "ChainErrand.Strings.MYSTRINGS.UI.CHAINTOOLSMENU.CREATECHAIN"
+msgid "Create Chain"
+msgstr "Tạo chuỗi"
+
+msgctxt "ChainErrand.Strings.MYSTRINGS.UI.CHAINTOOLSMENU.CREATECHAIN_TOOLTIP"
+msgid "Create the first link of a new chain"
+msgstr "Tạo liên kết đầu tiên của chuỗi mới"
+
+msgctxt "ChainErrand.Strings.MYSTRINGS.UI.CHAINTOOLSMENU.CREATELINK"
+msgid "Create/Expand Link"
+msgstr "Tạo/Mở rộng liên kết"
+
+msgctxt "ChainErrand.Strings.MYSTRINGS.UI.CHAINTOOLSMENU.CREATELINK_TOOLTIP"
+msgid ""
+"Create a new link at the end/inside of an existing chain, or expand an "
+"existing link"
+msgstr ""
+"Tạo một liên kết mới ở cuối/bên trong chuỗi hiện có hoặc mở rộng liên kết "
+"hiện có"
+
+msgctxt "ChainErrand.Strings.MYSTRINGS.UI.CHAINTOOLSMENU.CHAINNUMBER"
+msgid "Chain ID:"
+msgstr "ID chuỗi:"
+
+msgctxt "ChainErrand.Strings.MYSTRINGS.UI.CHAINTOOLSMENU.CHAINNUMBER_TOOLTIP"
+msgid "ID of the chain that should be modified"
+msgstr "ID của chuỗi cần được sửa đổi"
+
+msgctxt "ChainErrand.Strings.MYSTRINGS.UI.CHAINTOOLSMENU.LINKNUMBER"
+msgid "Link Nr.:"
+msgstr "Liên kết số:"
+
+msgctxt "ChainErrand.Strings.MYSTRINGS.UI.CHAINTOOLSMENU.LINKNUMBER_TOOLTIP"
+msgid ""
+"Number of the link\n"
+"If the number is whole, an existing link will be expanded\n"
+"If the number is a fraction, a new link will be inserted inbetween"
+msgstr ""
+"Số liên kết\n"
+"Nếu là số nguyên thì liên kết hiện có sẽ được mở rộng\n"
+"Nếu số là phân số thì một liên kết mới sẽ được chèn vào giữa"
+
+msgctxt "ChainErrand.Strings.MYSTRINGS.UI.CHAINTOOLSMENU.GOTOLINK_TOOLTIP"
+msgid "Go to this chain link"
+msgstr "Tới liên kết chuỗi này"
+
+msgctxt "ChainErrand.Strings.MYSTRINGS.UI.CHAINTOOLSMENU.CHAINNUMBER_NOTFOUND"
+msgid "NO CHAINS"
+msgstr "KHÔNG CÓ CHUỖI"
+
+msgctxt "ChainErrand.Strings.MYSTRINGS.UI.CHAINTOOLSMENU.LINKNUMBER_NOTFOUND"
+msgid "NO LINKS"
+msgstr "KHÔNG CÓ LIÊN KẾT"
+
+msgctxt "ChainErrand.Strings.MYSTRINGS.UI.CHAINTOOLSMENU.DELETECHAIN"
+msgid "Delete Chain"
+msgstr "Xóa chuỗi"
+
+msgctxt "ChainErrand.Strings.MYSTRINGS.UI.CHAINTOOLSMENU.DELETECHAIN_TOOLTIP"
+msgid "Delete an entire chain"
+msgstr "Xóa toàn bộ chuỗi"
+
+msgctxt "ChainErrand.Strings.MYSTRINGS.UI.CHAINTOOLSMENU.DELETELINK"
+msgid "Delete Errand"
+msgstr "Xóa việc vặt"
+
+msgctxt "ChainErrand.Strings.MYSTRINGS.UI.CHAINTOOLSMENU.DELETELINK_TOOLTIP"
+msgid "Delete selected errands from the chain they are in"
+msgstr "Xóa các công việc vặt đã chọn khỏi chuỗi chứa chúng"
+
+msgctxt "ChainErrand.Strings.MYSTRINGS.UI.CHAINNUMBERS.POSTFIX_1"
+msgid "st"
+msgstr "st"
+
+msgctxt "ChainErrand.Strings.MYSTRINGS.UI.CHAINNUMBERS.POSTFIX_2"
+msgid "nd"
+msgstr "thứ"
+
+msgctxt "ChainErrand.Strings.MYSTRINGS.UI.CHAINNUMBERS.POSTFIX_3"
+msgid "rd"
+msgstr "thứ"
+
+msgctxt "ChainErrand.Strings.MYSTRINGS.UI.CHAINNUMBERS.POSTFIX_4"
+msgid "th"
+msgstr "th"
+
+msgctxt "ChainErrand.Strings.MYSTRINGS.UI.CHAINNUMBERS.POSTFIX_5"
+msgid "th"
+msgstr "th"
+
+msgctxt "ChainErrand.Strings.MYSTRINGS.UI.CHAINNUMBERS.POSTFIX_6"
+msgid "th"
+msgstr "th"
+
+msgctxt "ChainErrand.Strings.MYSTRINGS.UI.CHAINNUMBERS.POSTFIX_7"
+msgid "th"
+msgstr "th"
+
+msgctxt "ChainErrand.Strings.MYSTRINGS.UI.CHAINNUMBERS.POSTFIX_8"
+msgid "th"
+msgstr "th"
+
+msgctxt "ChainErrand.Strings.MYSTRINGS.UI.CHAINNUMBERS.POSTFIX_9"
+msgid "th"
+msgstr "th"
+
+msgctxt "ChainErrand.Strings.MYSTRINGS.UI.CHAINNUMBERS.POSTFIX_10"
+msgid "th"
+msgstr "th"
+
+msgctxt "ChainErrand.Strings.MYSTRINGS.UI.CHAINNUMBERS.POSTFIX_DEFAULT"
+msgid "th"
+msgstr "th"
+
+msgctxt "ChainErrand.Strings.MYSTRINGS.UI.CHOREPRECONDITION.NOTFIRSTLINK"
+msgid "Must be in the 1st link"
+msgstr "Phải ở liên kết đầu tiên"
+
+msgctxt "ChainErrand.Strings.MYSTRINGS.UI.AUTOCHAINBUTTON.TOOLTIP_HEADER"
+msgid "Toggle Auto Chain"
+msgstr "Chuyển đổi chuỗi tự động"
+
+msgctxt "ChainErrand.Strings.MYSTRINGS.UI.AUTOCHAINBUTTON.TOOLTIP_CONTENT"
+msgid ""
+"If enabled, all new errands (that can be added to a chain) will be chained up.\n"
+"Switch off and on to create a new chain.\n"
+"\n"
+"Errands that were created simultaneously and building errands that were created with one stroke (without releasing the left mouse button) will be added to the same link."
+msgstr ""
+"Nếu được bật, tất cả các công việc vặt mới (có thể được thêm vào chuỗi) sẽ được xâu chuỗi lại.\n"
+"Tắt và bật để tạo chuỗi mới.\n"
+"\n"
+"Những việc vặt được tạo đồng thời và việc vặt xây dựng được tạo bằng một nét (không nhả chuột trái) sẽ được thêm vào cùng một liên kết."
+
+msgctxt "ChainErrand.Strings.MYSTRINGS.UI.AUTOCHAINNOTIFICATION.NAME"
+msgid "Auto Chain Enabled"
+msgstr "Đã bật chuỗi tự động"
+
+msgctxt "ChainErrand.Strings.MYSTRINGS.UI.AUTOCHAINNOTIFICATION.TOOLTIP"
+msgid ""
+"All newly created errands will be chained up\n"
+"\n"
+"Press to disable"
+msgstr ""
+"Tất cả các việc vặt mới được tạo sẽ được xâu chuỗi\n"
+"\n"
+"Nhấn để tắt"
+
+msgctxt ""
+"ChainErrand.Strings.STRINGS.GLAMPISTRINGS.MODCONFIG.DISABLEAUTOCHAINVIGNETTE"
+msgid "Disable Auto Chain Vignette"
+msgstr "Tắt họa tiết chuỗi tự động"
+
+msgctxt ""
+"ChainErrand.Strings.STRINGS.GLAMPISTRINGS.MODCONFIG.DISABLEAUTOCHAINVIGNETTE_TOOLTIP"
+msgid ""
+"If enabled, the blue vignette around the screen will not be shown when auto chain is enabled.\n"
+"It is recommended to leave this option in its defaut state for your own convenience\n"
+"(you can forget that auto chain is enabled if there is no vignette)."
+msgstr ""
+"Nếu được bật, họa tiết màu xanh xung quanh màn hình sẽ không hiển thị khi bật chuỗi tự động.\n"
+"Bạn nên để tùy chọn này ở trạng thái mặc định để thuận tiện cho bạn\n"
+"(bạn có thể quên rằng chuỗi tự động được bật nếu không có họa tiết)."
+
+msgctxt "ChainErrand.Strings.STRINGS.GLAMPISTRINGS.MODCONFIG.DISABLEUIHELP"
+msgid "Disable UI Help"
+msgstr "Vô hiệu hóa trợ giúp giao diện người dùng"
+
+msgctxt ""
+"ChainErrand.Strings.STRINGS.GLAMPISTRINGS.MODCONFIG.DISABLEUIHELP_TOOLTIP"
+msgid ""
+"If enabled, all UI help such as automatically switching from \"Create Chain\" to \"Create/Expand Link\"\n"
+"or automatically increasing the link number will be disabled."
+msgstr ""
+"Nếu được bật, tất cả trợ giúp về giao diện người dùng như tự động chuyển từ \"Tạo chuỗi\" sang \"Tạo/Mở rộng liên kết\"\n"
+"hoặc việc tự động tăng số lượng liên kết sẽ bị vô hiệu hóa."

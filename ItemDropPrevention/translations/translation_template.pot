@@ -1,0 +1,30 @@
+msgid ""
+msgstr ""
+"Application: Oxygen Not Included"
+"POT Version: 2.0"
+
+#. ItemDropPrevention.STRINGS.IDP_MOD_CONFIG.PAUSE_MENU_OPEN_CONFIG_BUTTONTEXT
+msgctxt "ItemDropPrevention.STRINGS.IDP_MOD_CONFIG.PAUSE_MENU_OPEN_CONFIG_BUTTONTEXT"
+msgid "Adjust GripNowIncluded Settings"
+msgstr ""
+
+#. ItemDropPrevention.STRINGS.IDP_MOD_CONFIG.SWEEP_DROPPED_ITEMS
+msgctxt "ItemDropPrevention.STRINGS.IDP_MOD_CONFIG.SWEEP_DROPPED_ITEMS"
+msgid "Schedule sweep task for dropped items."
+msgstr ""
+
+#. ItemDropPrevention.STRINGS.IDP_MOD_CONFIG.SWEEP_DROPPED_ITEMS_TOOLTIP
+msgctxt "ItemDropPrevention.STRINGS.IDP_MOD_CONFIG.SWEEP_DROPPED_ITEMS_TOOLTIP"
+msgid "Automatically issue a sweep task for items that were dropped before reaching their destinations"
+msgstr ""
+
+#. ItemDropPrevention.STRINGS.IDP_MOD_CONFIG.WRANGLE_DROPPED_CRITTERS
+msgctxt "ItemDropPrevention.STRINGS.IDP_MOD_CONFIG.WRANGLE_DROPPED_CRITTERS"
+msgid "Schedule wrangle task for dropped critters."
+msgstr ""
+
+#. ItemDropPrevention.STRINGS.IDP_MOD_CONFIG.WRANGLE_DROPPED_CRITTERS_TOOLTIP
+msgctxt "ItemDropPrevention.STRINGS.IDP_MOD_CONFIG.WRANGLE_DROPPED_CRITTERS_TOOLTIP"
+msgid "Automatically issue a new wrangle task for a critter if it was dropped before reaching its destination"
+msgstr ""
+
