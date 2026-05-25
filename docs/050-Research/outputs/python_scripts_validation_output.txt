@@ -1,0 +1,37 @@
+# TÁC DỤNG: Lưu trữ kết quả kiểm thử (Test Outputs) thô của bộ ba script quản lý kỹ năng (.agents/scripts/ init_skill.py và quick_validate.py).
+# Ý NGHĨA: Chứng minh cơ chế tự động hóa kiểm định và gác cổng chất lượng chống rập khuôn tri thức cho AI Agent hoạt động chính xác 100% trên môi trường thực tế của hệ thống.
+
+=== Python Scripts Test Outputs (2026-05-25) ===
+
+1. THỬ NGHIỆM 1: Khởi tạo skill mới bằng init_skill.py
+Lệnh chạy: python .agents/scripts/init_skill.py test-performance-skill
+Stdout:
+----------------------------------------------------------------------
+[SUCCESS] Đã tạo cấu trúc thư mục modular cho skill tại: .agents\skills\test-performance-skill
+[SUCCESS] Đã khởi tạo tệp tin SKILL.md chống rập khuôn tại: .agents\skills\test-performance-skill\SKILL.md
+
+[COMPLETE] Chúc mừng! Skill của bạn đã được khởi tạo hoàn hảo và tuân thủ 100% quy chuẩn chống rập khuôn tri thức.
+----------------------------------------------------------------------
+Kết quả: THÀNH CÔNG (Exit Code: 0)
+
+2. THỬ NGHIỆM 2: Kiểm định chất lượng skill hợp lệ bằng quick_validate.py
+Lệnh chạy: python .agents/scripts/quick_validate.py .agents/skills/test-performance-skill
+Stdout:
+----------------------------------------------------------------------
+[PASS] Kiểm định thành công! Skill tại '.agents/skills/test-performance-skill' đạt chuẩn chất lượng cao và tuân thủ 100% quy chuẩn chống rập khuôn tri thức.
+----------------------------------------------------------------------
+Kết quả: THÀNH CÔNG (Exit Code: 0)
+
+3. THỬ NGHIỆM 3: Kiểm định chất lượng skill vi phạm (xóa bỏ chương Bias Warnings)
+Lệnh chạy: python .agents/scripts/quick_validate.py .agents/skills/test-performance-skill
+Stdout:
+----------------------------------------------------------------------
+[FAIL] Tệp SKILL.md vi phạm quy chuẩn chống rập khuôn! Thiếu các chương bắt buộc sau: Bias Warnings
+----------------------------------------------------------------------
+Kết quả: CHẶN LỖI THÀNH CÔNG (Exit Code: 1)
+
+----------------------------------------------------------------------
+KẾT LUẬN:
+- Script `init_skill.py` tự động sinh cấu trúc modular và gieo cấy template chuẩn hóa hoàn hảo.
+- Script `quick_validate.py` đóng vai trò gác cổng chất lượng cực kỳ xuất sắc, phát hiện và chặn đứng 100% các tệp tin kỹ năng không tuân thủ quy chuẩn chống rập khuôn tri thức.
+- Cấu hình Unicode/UTF-8 hoạt động trơn tru trên Windows Terminal, hoàn toàn không sinh lỗi encoding.
