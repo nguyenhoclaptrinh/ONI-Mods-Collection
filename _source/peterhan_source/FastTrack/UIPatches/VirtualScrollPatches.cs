@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright 2026 Peter Han
  * Permission is hereby granted, free of charge, to any person obtaining a copy of this software
  * and associated documentation files (the "Software"), to deal in the Software without
@@ -129,6 +129,31 @@ namespace PeterHan.FastTrack.UIPatches {
 		private static bool initializing;
 
 		/// <summary>
+		/// Caches the number of active items in each category to avoid calling transform.GetChild() repeatedly.
+		/// </summary>
+		private static readonly Dictionary<Transform, int> ACTIVE_COUNTS = new Dictionary<Transform, int>(32);
+
+		/// <summary>
+		/// Caches the Image component for each MultiToggle to avoid GetComponentInChildrenOnly call.
+		/// </summary>
+		private static readonly Dictionary<MultiToggle, Image> TOGGLE_IMAGES = new Dictionary<MultiToggle, Image>(32);
+
+		/// <summary>
+		/// Caches the GameObject for each toggle key to avoid calling key.gameObject.
+		/// </summary>
+		private static readonly Dictionary<object, GameObject> TOGGLE_GO = new Dictionary<object, GameObject>(64);
+
+		/// <summary>
+		/// Caches the parent Transform of each toggle to avoid calling go.transform.parent.
+		/// </summary>
+		private static readonly Dictionary<object, Transform> TOGGLE_PARENTS = new Dictionary<object, Transform>(64);
+
+		/// <summary>
+		/// Caches the ImageToggleState for each MultiToggle to avoid calling TryGetComponent.
+		/// </summary>
+		private static readonly Dictionary<MultiToggle, ImageToggleState> TOGGLE_STATES = new Dictionary<MultiToggle, ImageToggleState>(64);
+
+		/// <summary>
 		/// Applied to ReceptacleSideScreen to prepare existing virtual scroll panels for a
 		/// rebuild.
 		/// </summary>
@@ -140,6 +165,13 @@ namespace PeterHan.FastTrack.UIPatches {
 			/// Applied before Initialize runs.
 			/// </summary>
 			internal static void Prefix(ReceptacleSideScreen __instance) {
+				// Clear caches to prevent memory leak
+				ACTIVE_COUNTS.Clear();
+				TOGGLE_IMAGES.Clear();
+				TOGGLE_GO.Clear();
+				TOGGLE_PARENTS.Clear();
+				TOGGLE_STATES.Clear();
+
 				// Content containers are not disposed
 				foreach (var pair in __instance.contentContainers)
 					if (pair.Value.TryGetComponent(out HierarchyReferences hr)) {
@@ -170,6 +202,7 @@ namespace PeterHan.FastTrack.UIPatches {
 			/// </summary>
 			[HarmonyPriority(Priority.Low)]
 			internal static bool Prefix(ReceptacleSideScreen __instance, ref bool __result) {
+				ACTIVE_COUNTS.Clear();
 				bool result = false, hide = !DebugHandler.InstantBuildMode &&
 					__instance.hideUndiscoveredEntities;
 				var inst = DiscoveredResources.Instance;
@@ -179,9 +212,15 @@ namespace PeterHan.FastTrack.UIPatches {
 				foreach (var pair in __instance.depositObjectMap) {
 					var key = pair.Key;
 					var display = pair.Value;
-					var go = key.gameObject;
+					if (!TOGGLE_GO.TryGetValue(key, out GameObject go) || go == null) {
+						go = key.gameObject;
+						TOGGLE_GO[key] = go;
+					}
 					// Finds the GridLayout
-					var parent = go.transform.parent;
+					if (!TOGGLE_PARENTS.TryGetValue(key, out Transform parent) || parent == null) {
+						parent = go.transform.parent;
+						TOGGLE_PARENTS[key] = parent;
+					}
 					bool active = go.activeSelf;
 					var tag = display.tag;
 					// Hide undiscovered entities in some screens (like pedestal)
@@ -195,6 +234,12 @@ namespace PeterHan.FastTrack.UIPatches {
 						go.SetActive(active = true);
 					}
 					if (active) {
+						if (parent != null) {
+							if (ACTIVE_COUNTS.TryGetValue(parent, out int count))
+								ACTIVE_COUNTS[parent] = count + 1;
+							else
+								ACTIVE_COUNTS[parent] = 1;
+						}
 						var toggle = key.toggle;
 						// Do not update amounts of inactive items
 						float availableAmount = __instance.GetAvailableAmount(tag);
@@ -233,27 +278,35 @@ namespace PeterHan.FastTrack.UIPatches {
 			/// <param name="state">The state to apply.</param>
 			private static void SetImageToggleState(ReceptacleSideScreen instance,
 					MultiToggle toggle, ITState state) {
-				if (toggle.TryGetComponent(out ImageToggleState its) && (initializing ||
-						state != its.currentState)) {
+				if (!TOGGLE_STATES.TryGetValue(toggle, out ImageToggleState its) || its == null) {
+					toggle.TryGetComponent(out its);
+					TOGGLE_STATES[toggle] = its;
+				}
+				if (its != null && (initializing || state != its.currentState)) {
 					// SetState provides no feedback on whether the state actually changed
-					var targetImage = toggle.gameObject.GetComponentInChildrenOnly<Image>();
-					switch (state) {
-					case ITState.Disabled:
-						its.SetDisabled();
-						targetImage.material = instance.desaturatedMaterial;
-						break;
-					case ITState.Inactive:
-						its.SetInactive();
-						targetImage.material = instance.defaultMaterial;
-						break;
-					case ITState.Active:
-						its.SetActive();
-						targetImage.material = instance.defaultMaterial;
-						break;
-					case ITState.DisabledActive:
-						its.SetDisabledActive();
-						targetImage.material = instance.desaturatedMaterial;
-						break;
+					if (!TOGGLE_IMAGES.TryGetValue(toggle, out Image targetImage) || targetImage == null) {
+						targetImage = toggle.gameObject.GetComponentInChildrenOnly<Image>();
+						TOGGLE_IMAGES[toggle] = targetImage;
+					}
+					if (targetImage != null) {
+						switch (state) {
+						case ITState.Disabled:
+							its.SetDisabled();
+							targetImage.material = instance.desaturatedMaterial;
+							break;
+						case ITState.Inactive:
+							its.SetInactive();
+							targetImage.material = instance.defaultMaterial;
+							break;
+						case ITState.Active:
+							its.SetActive();
+							targetImage.material = instance.defaultMaterial;
+							break;
+						case ITState.DisabledActive:
+							its.SetDisabledActive();
+							targetImage.material = instance.desaturatedMaterial;
+							break;
+						}
 					}
 				}
 			}
@@ -300,11 +353,7 @@ namespace PeterHan.FastTrack.UIPatches {
 					if (cc != null && cc.TryGetComponent(out HierarchyReferences refs)) {
 						var gl = refs.GetReference<GridLayoutGroup>("GridLayout");
 						var transform = gl.transform;
-						bool anyActive = false;
-						int n = transform.childCount;
-						for (int i = 0; i < n && !anyActive; i++)
-							if (transform.GetChild(i).gameObject.activeSelf)
-								anyActive = true;
+						bool anyActive = ACTIVE_COUNTS.TryGetValue(transform, out int count) && count > 0;
 						if (cc.activeSelf != anyActive)
 							cc.SetActive(anyActive);
 						// If hidden, no need to rebuild it
