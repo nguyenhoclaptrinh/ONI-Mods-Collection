@@ -35,6 +35,10 @@
       <HintPath>..\..\peterhan_source\PLibOptions\bin\Release\netstandard2.1\PLibOptions.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="PLibUI">
+      <HintPath>..\..\peterhan_source\PLibUI\bin\Release\netstandard2.1\PLibUI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\..\peterhan_source\Lib\Newtonsoft.Json.dll</HintPath>
       <Private>False</Private>
@@ -57,6 +61,7 @@
       <ModFiles Include="$(TargetDir)AutoDropBottlers.pdb" Condition="Exists('$(TargetDir)AutoDropBottlers.pdb')" />
       <ModFiles Include="$(TargetDir)PLibCore.dll" Condition="Exists('$(TargetDir)PLibCore.dll')" />
       <ModFiles Include="$(TargetDir)PLibOptions.dll" Condition="Exists('$(TargetDir)PLibOptions.dll')" />
+      <ModFiles Include="$(TargetDir)PLibUI.dll" Condition="Exists('$(TargetDir)PLibUI.dll')" />
       <ModFiles Include="$(TargetDir)mod.yaml" Condition="Exists('$(TargetDir)mod.yaml')" />
       <ModFiles Include="$(TargetDir)mod_info.yaml" Condition="Exists('$(TargetDir)mod_info.yaml')" />
     </ItemGroup>
