@@ -68,26 +68,13 @@
   </ItemGroup>
 
   <ItemGroup Condition=" '$(UsesPublicise)' == 'true' ">
-    <PackageReference Include="Aze.Publicise.MSBuild.Task" Version="1.1.0" />
+    <PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" Version="0.4.3" PrivateAssets="all" />
   </ItemGroup>
-
-  <!--
-  <ItemGroup Condition=" '$(DistributeMod)' == 'true' ">
-    <ProjectReference Include="$(MSBuildProjectDirectory)/../MSBuildTasksHelper/MSBuildTasksHelper.csproj" ReferenceOutputAssembly="false" SkipGetTargetFrameworkProperties="true" />
-  </ItemGroup>
-  -->
 
   <!-- DLL игры -->
-  <!-- нормальные -->
-  <ItemGroup Condition=" '$(DistributeMod)' == 'true' And '$(UsesPublicise)' != 'true' ">
-    <Reference Include="Assembly-CSharp" HintPath="$(GameFolder)/Assembly-CSharp.dll" />
-    <Reference Include="Assembly-CSharp-firstpass" HintPath="$(GameFolder)/Assembly-CSharp-firstpass.dll" />
-  </ItemGroup>
-
-  <!-- либо публицырованые -->
-  <ItemGroup Condition=" '$(DistributeMod)' == 'true' And '$(UsesPublicise)' == 'true' ">
-    <Reference Include="Assembly-CSharp" HintPath="$(PublicisedFolder)/Assembly-CSharp_public.dll" />
-    <Reference Include="Assembly-CSharp-firstpass" HintPath="$(PublicisedFolder)/Assembly-CSharp-firstpass_public.dll" />
+  <ItemGroup Condition=" '$(DistributeMod)' == 'true' ">
+    <Reference Include="Assembly-CSharp" HintPath="$(GameFolder)/Assembly-CSharp.dll" Publicize="$(UsesPublicise)" />
+    <Reference Include="Assembly-CSharp-firstpass" HintPath="$(GameFolder)/Assembly-CSharp-firstpass.dll" Publicize="$(UsesPublicise)" />
   </ItemGroup>
 
   <!-- и остальные -->

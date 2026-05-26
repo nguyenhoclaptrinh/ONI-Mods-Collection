@@ -44,6 +44,10 @@
       <Private>False</Private>
     </Reference>
   </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="ILRepack.Lib.MSBuild.Task" Version="2.0.34.2" />
+  </ItemGroup>
 
   <ItemGroup>
     <None Update="mod.yaml">
@@ -54,14 +58,29 @@
     </None>
   </ItemGroup>
 
+  <!-- ILRepack to merge and internalize PLib dependencies -->
+  <Target Name="ILRepack" AfterTargets="Build">
+    <ItemGroup>
+      <InputAssemblies Include="$(TargetPath)" />
+      <InputAssemblies Include="$(TargetDir)PLibCore.dll" />
+      <InputAssemblies Include="$(TargetDir)PLibOptions.dll" />
+      <InputAssemblies Include="$(TargetDir)PLibUI.dll" />
+    </ItemGroup>
+    <ILRepack
+        TargetPlatformVersion="v4"
+        TargetPlatformDirectory="C:\Windows\Microsoft.NET\Framework64\v4.0.30319"
+        TargetKind="SameAsPrimaryAssembly"
+        OutputFile="$(TargetPath)"
+        InputAssemblies="@(InputAssemblies)"
+        Internalize="true"
+        Wildcards="true" />
+  </Target>
+
   <!-- Export to Local Mod folder after build -->
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <ItemGroup>
       <ModFiles Include="$(TargetPath)" />
       <ModFiles Include="$(TargetDir)AutoDropBottlers.pdb" Condition="Exists('$(TargetDir)AutoDropBottlers.pdb')" />
-      <ModFiles Include="$(TargetDir)PLibCore.dll" Condition="Exists('$(TargetDir)PLibCore.dll')" />
-      <ModFiles Include="$(TargetDir)PLibOptions.dll" Condition="Exists('$(TargetDir)PLibOptions.dll')" />
-      <ModFiles Include="$(TargetDir)PLibUI.dll" Condition="Exists('$(TargetDir)PLibUI.dll')" />
       <ModFiles Include="$(TargetDir)mod.yaml" Condition="Exists('$(TargetDir)mod.yaml')" />
       <ModFiles Include="$(TargetDir)mod_info.yaml" Condition="Exists('$(TargetDir)mod_info.yaml')" />
     </ItemGroup>
@@ -69,3 +88,4 @@
   </Target>
 
 </Project>
+
