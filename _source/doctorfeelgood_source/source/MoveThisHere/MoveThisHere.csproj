@@ -43,4 +43,23 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
+
+  <!-- Export to Local Mod folder after build -->
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <ItemGroup>
+      <ModFiles Include="$(TargetPath)" />
+      <ModFiles Include="$(TargetDir)MoveThisHere.pdb" Condition="Exists('$(TargetDir)MoveThisHere.pdb')" />
+      <ModFiles Include="$(ProjectDir)mod.yaml" Condition="Exists('$(ProjectDir)mod.yaml')" />
+      <ModFiles Include="$(ProjectDir)mod_info.yaml" Condition="Exists('$(ProjectDir)mod_info.yaml')" />
+      <ModFiles Include="$(ProjectDir)preview.png" Condition="Exists('$(ProjectDir)preview.png')" />
+      <ModFiles Include="$(ProjectDir)readme.md" Condition="Exists('$(ProjectDir)readme.md')" />
+    </ItemGroup>
+    <Copy SourceFiles="@(ModFiles)" DestinationFolder="$(ProjectDir)..\..\..\MoveThisHere\" SkipUnchangedFiles="true" />
+    <ItemGroup>
+      <AnimFiles Include="$(ProjectDir)anim\**\*.*" />
+      <LocaleFiles Include="$(ProjectDir)locales\**\*.*" />
+    </ItemGroup>
+    <Copy SourceFiles="@(AnimFiles)" DestinationFiles="@(AnimFiles->'$(ProjectDir)..\..\..\MoveThisHere\anim\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(LocaleFiles)" DestinationFiles="@(LocaleFiles->'$(ProjectDir)..\..\..\MoveThisHere\locales\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+  </Target>
 </Project>

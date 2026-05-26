@@ -29,11 +29,15 @@
     </Reference>
   </ItemGroup>
 
-  <!-- Export DLL và config sang thư mục mod sau khi build -->
+  <!-- Export DLL và config sang thư mục mod sau khi build sạch sẽ 100% -->
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="xcopy /y /i &quot;$(TargetDir)*.*&quot; &quot;d:\Documents\Klei\OxygenNotIncluded\mods\Local\AutoLiquidBottler\&quot;" />
-    <Exec Command="xcopy /y &quot;$(ProjectDir)mod.yaml&quot; &quot;d:\Documents\Klei\OxygenNotIncluded\mods\Local\AutoLiquidBottler\&quot;" />
-    <Exec Command="xcopy /y &quot;$(ProjectDir)mod_info.yaml&quot; &quot;d:\Documents\Klei\OxygenNotIncluded\mods\Local\AutoLiquidBottler\&quot;" />
+    <ItemGroup>
+      <ModFiles Include="$(TargetPath)" />
+      <ModFiles Include="$(TargetDir)Auto_Liquid_Bottler.pdb" Condition="Exists('$(TargetDir)Auto_Liquid_Bottler.pdb')" />
+      <ModFiles Include="$(ProjectDir)mod.yaml" Condition="Exists('$(ProjectDir)mod.yaml')" />
+      <ModFiles Include="$(ProjectDir)mod_info.yaml" Condition="Exists('$(ProjectDir)mod_info.yaml')" />
+    </ItemGroup>
+    <Copy SourceFiles="@(ModFiles)" DestinationFolder="$(ProjectDir)..\..\..\AutoLiquidBottler\" SkipUnchangedFiles="true" />
   </Target>
 
 </Project>

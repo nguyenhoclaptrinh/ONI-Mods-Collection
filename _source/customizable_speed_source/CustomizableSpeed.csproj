@@ -50,9 +50,19 @@
     </None>
   </ItemGroup>
 
-  <!-- Export to Local Mod folder after build -->
+  <!-- Export to Local Mod folder after build sạch sẽ 100% -->
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="xcopy /y /i &quot;$(TargetDir)*.*&quot; &quot;d:\Documents\Klei\OxygenNotIncluded\mods\Local\CustomizableSpeed\&quot;" />
+    <ItemGroup>
+      <ModFiles Include="$(TargetPath)" />
+      <ModFiles Include="$(TargetDir)CustomizableSpeed.pdb" Condition="Exists('$(TargetDir)CustomizableSpeed.pdb')" />
+      <ModFiles Include="$(ProjectDir)mod.yaml" Condition="Exists('$(ProjectDir)mod.yaml')" />
+      <ModFiles Include="$(ProjectDir)mod_info.yaml" Condition="Exists('$(ProjectDir)mod_info.yaml')" />
+    </ItemGroup>
+    <Copy SourceFiles="@(ModFiles)" DestinationFolder="$(ProjectDir)..\..\CustomizableSpeed\" SkipUnchangedFiles="true" />
+    <ItemGroup>
+      <TranslationFiles Include="$(ProjectDir)translations\**\*.*" Condition="Exists('$(ProjectDir)translations')" />
+    </ItemGroup>
+    <Copy SourceFiles="@(TranslationFiles)" DestinationFiles="@(TranslationFiles->'$(ProjectDir)..\..\CustomizableSpeed\translations\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" Condition="Exists('$(ProjectDir)translations')" />
   </Target>
 
 </Project>

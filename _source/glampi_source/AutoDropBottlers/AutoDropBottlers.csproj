@@ -27,6 +27,18 @@
       <HintPath>..\..\peterhan_source\Lib\UnityEngine.CoreModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="PLibCore">
+      <HintPath>..\..\peterhan_source\PLibCore\bin\Release\netstandard2.1\PLibCore.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PLibOptions">
+      <HintPath>..\..\peterhan_source\PLibOptions\bin\Release\netstandard2.1\PLibOptions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\peterhan_source\Lib\Newtonsoft.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
   </ItemGroup>
 
   <ItemGroup>
@@ -40,7 +52,15 @@
 
   <!-- Export to Local Mod folder after build -->
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="xcopy /y /i &quot;$(TargetDir)*.*&quot; &quot;d:\Documents\Klei\OxygenNotIncluded\mods\Local\AutoDropBottlers\&quot;" />
+    <ItemGroup>
+      <ModFiles Include="$(TargetPath)" />
+      <ModFiles Include="$(TargetDir)AutoDropBottlers.pdb" Condition="Exists('$(TargetDir)AutoDropBottlers.pdb')" />
+      <ModFiles Include="$(TargetDir)PLibCore.dll" Condition="Exists('$(TargetDir)PLibCore.dll')" />
+      <ModFiles Include="$(TargetDir)PLibOptions.dll" Condition="Exists('$(TargetDir)PLibOptions.dll')" />
+      <ModFiles Include="$(TargetDir)mod.yaml" Condition="Exists('$(TargetDir)mod.yaml')" />
+      <ModFiles Include="$(TargetDir)mod_info.yaml" Condition="Exists('$(TargetDir)mod_info.yaml')" />
+    </ItemGroup>
+    <Copy SourceFiles="@(ModFiles)" DestinationFolder="$(ProjectDir)..\..\..\AutoDropBottlers\" SkipUnchangedFiles="true" />
   </Target>
 
 </Project>
