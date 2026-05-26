@@ -5,102 +5,102 @@ msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.CLUSTER_NAMES.CGM.DESCRIPTION
 msgctxt "ClusterTraitGenerationManager.STRINGS.CLUSTER_NAMES.CGM.DESCRIPTION"
-msgid "This cluster has been handcrafted in the Cluster Generation Manager"
+msgid "Cụm này đã được tạo thủ công trong Trình quản lý tạo cụm"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.CLUSTER_NAMES.CGM.NAME
 msgctxt "ClusterTraitGenerationManager.STRINGS.CLUSTER_NAMES.CGM.NAME"
-msgid "CGM Custom Cluster"
+msgid "Cụm tùy chỉnh CGM"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.ERRORMESSAGES.MISSINGWORLD
 msgctxt "ClusterTraitGenerationManager.STRINGS.ERRORMESSAGES.MISSINGWORLD"
-msgid "Missing Worlds!\nThe preset cannot be loaded since its start world is missing."
+msgid "Thế giới bị thiếu!\nKhông thể tải cài đặt trước vì thế giới bắt đầu của nó bị thiếu."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.ERRORMESSAGES.MISSINGWORLDS_TEXT
 msgctxt "ClusterTraitGenerationManager.STRINGS.ERRORMESSAGES.MISSINGWORLDS_TEXT"
-msgid "There were {0} worlds in the preset that\ndon't exist in the current game!"
+msgid "Đã có {0} thế giới được cài đặt sẵn\nkhông tồn tại trong trò chơi hiện tại!"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.ERRORMESSAGES.MISSINGWORLDS_TITLE
 msgctxt "ClusterTraitGenerationManager.STRINGS.ERRORMESSAGES.MISSINGWORLDS_TITLE"
-msgid "Missing Worlds!"
+msgid "Thế giới bị thiếu!"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.ERRORMESSAGES.PLANETPLACEMENTERROR
 msgctxt "ClusterTraitGenerationManager.STRINGS.ERRORMESSAGES.PLANETPLACEMENTERROR"
-msgid "Starmap Generation Error!\n{0} could not be placed on the star map. Increase the maximum distance of of this asteroid to fix this issue."
+msgid "Lỗi tạo bản đồ sao!\n{0} không thể được đặt trên bản đồ sao. Tăng khoảng cách tối đa của tiểu hành tinh này để khắc phục vấn đề này."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.MODCONFIG.CHALLENGEASTEROIDS.NAME
 msgctxt "ClusterTraitGenerationManager.STRINGS.MODCONFIG.CHALLENGEASTEROIDS.NAME"
-msgid "Enable Challenge Asteroids"
+msgid "Kích hoạt thử thách tiểu hành tinh"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.MODCONFIG.CHALLENGEASTEROIDS.TOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.MODCONFIG.CHALLENGEASTEROIDS.TOOLTIP"
-msgid "Generate more challenging start asteroids like superconductive and regolith moonlet"
+msgid "Tạo ra các tiểu hành tinh khởi đầu đầy thách thức hơn như mặt trăng siêu dẫn và regolith"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.MODCONFIG.MANUALCLUSTERPRESETS.NAME
 msgctxt "ClusterTraitGenerationManager.STRINGS.MODCONFIG.MANUALCLUSTERPRESETS.NAME"
-msgid "Automated Cluster Preset"
+msgid "Cài đặt trước cụm tự động"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.MODCONFIG.MANUALCLUSTERPRESETS.TOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.MODCONFIG.MANUALCLUSTERPRESETS.TOOLTIP"
-msgid "Each time you start a new CGM cluster, a cluster preset will be created automatically.\nif deactivated, there will be a button for manual creation on the start screen instead."
+msgid "Mỗi khi bạn bắt đầu một cụm CGM mới, một cài đặt trước của cụm sẽ được tạo tự động.\nnếu tắt, thay vào đó sẽ có nút tạo thủ công trên màn hình bắt đầu."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CATEGORYENUM.OUTER
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CATEGORYENUM.OUTER"
-msgid "Outer Asteroids"
+msgid "Tiểu hành tinh bên ngoài"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CATEGORYENUM.POI
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CATEGORYENUM.POI"
-msgid "Points of Interest"
+msgid "Điểm ưa thích"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CATEGORYENUM.START
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CATEGORYENUM.START"
-msgid "Start Asteroid"
+msgid "Tiểu hành tinh khởi đầu"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CATEGORYENUM.VANILLASTARMAP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CATEGORYENUM.VANILLASTARMAP"
-msgid "Starmap"
+msgid "Bản đồ sao"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CATEGORYENUM.WARP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CATEGORYENUM.WARP"
-msgid "Teleport Asteroid"
+msgid "Dịch chuyển tiểu hành tinh"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.CATEGORIES.FOOTERCONTENT.GAMESETTINGS.TOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.CATEGORIES.FOOTERCONTENT.GAMESETTINGS.TOOLTIP"
-msgid "Open the game settings."
+msgid "Mở cài đặt trò chơi."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.CATEGORIES.FOOTERCONTENT.MIXINGSETTINGS.TOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.CATEGORIES.FOOTERCONTENT.MIXINGSETTINGS.TOOLTIP"
-msgid "Open the mixing settings."
+msgid "Mở cài đặt trộn."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.CATEGORIES.FOOTERCONTENT.STORYTRAITS.TOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.CATEGORIES.FOOTERCONTENT.STORYTRAITS.TOOLTIP"
-msgid "Open the story traits selection."
+msgid "Mở lựa chọn đặc điểm câu chuyện."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.CATEGORIES.FOOTERCONTENT.TITLE.LABEL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.CATEGORIES.FOOTERCONTENT.TITLE.LABEL"
-msgid "World Settings"
+msgid "Cài đặt thế giới"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.CATEGORIES.HEADER.LABEL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.CATEGORIES.HEADER.LABEL"
-msgid "Starmap Item Categories"
+msgid "Danh mục vật phẩm Starmap"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.AMOUNTOFCLASSICPLANETS.DESCRIPTOR.INPUT.TEXT
@@ -110,7 +110,7 @@ msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.AMOUNTOFCLASSICPLANETS.DESCRIPTOR.LABEL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.AMOUNTOFCLASSICPLANETS.DESCRIPTOR.LABEL"
-msgid "Max. Number of Classic planets:"
+msgid "Tối đa. Số lượng hành tinh cổ điển:"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.AMOUNTOFCLASSICPLANETS.DESCRIPTOR.OUTPUT
@@ -120,7 +120,7 @@ msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.AMOUNTOFCLASSICPLANETS.DESCRIPTOR.TOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.AMOUNTOFCLASSICPLANETS.DESCRIPTOR.TOOLTIP"
-msgid "How many of the random planets are allowed to be \"classic\" size.\nA large number of classic size asteroids can impact performance.\nThis check includes start and warp planet in its calculcations."
+msgid "Có bao nhiêu hành tinh ngẫu nhiên được phép có kích thước \"cổ điển\".\nMột số lượng lớn các tiểu hành tinh có kích thước cổ điển có thể ảnh hưởng đến hiệu suất.\nKiểm tra này bao gồm hành tinh bắt đầu và hành tinh cong trong tính toán của nó."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.AMOUNTSLIDER.DESCRIPTOR.INPUT.TEXT
@@ -130,7 +130,7 @@ msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.AMOUNTSLIDER.DESCRIPTOR.LABEL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.AMOUNTSLIDER.DESCRIPTOR.LABEL"
-msgid "Number to generate:"
+msgid "Số cần tạo:"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.AMOUNTSLIDER.DESCRIPTOR.OUTPUT
@@ -140,37 +140,37 @@ msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.AMOUNTSLIDER.DESCRIPTOR.TOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.AMOUNTSLIDER.DESCRIPTOR.TOOLTIP"
-msgid "How many instances of this starmap item should be generated.\nValues that aren't full numbers represent a chance to generate for POIs.\n(f.e. 0.8 = 80% chance to generate this POI)"
+msgid "Sẽ tạo ra bao nhiêu phiên bản của mục bản đồ sao này.\nCác giá trị không phải là số đầy đủ thể hiện cơ hội tạo cho POI.\n(ví dụ: 0,8 = 80% cơ hội tạo POI này)"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDGEYSERS.CONTENT.BLACKLIST.BLACKLISTAFFECTNONGENERICS.LABEL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDGEYSERS.CONTENT.BLACKLIST.BLACKLISTAFFECTNONGENERICS.LABEL"
-msgid "Blacklist affects all geysers"
+msgid "Danh sách đen ảnh hưởng đến tất cả các mạch nước phun"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDGEYSERS.CONTENT.BLACKLIST.BLACKLISTAFFECTNONGENERICS.TOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDGEYSERS.CONTENT.BLACKLIST.BLACKLISTAFFECTNONGENERICS.TOOLTIP"
-msgid "If enabled, the blacklist will also replace predetermined and curated geysers from the blacklist with random geysers."
+msgid "Nếu được bật, danh sách đen cũng sẽ thay thế các mạch nước phun được xác định trước và sắp xếp từ danh sách đen bằng các mạch nước phun ngẫu nhiên."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDGEYSERS.CONTENT.BLACKLIST.BLACKLISTBUTTON.TEXT
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDGEYSERS.CONTENT.BLACKLIST.BLACKLISTBUTTON.TEXT"
-msgid "Add geyser to blacklist"
+msgid "Thêm mạch nước phun vào danh sách đen"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDGEYSERS.CONTENT.BLACKLIST.DESCRIPTOR.INFOTOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDGEYSERS.CONTENT.BLACKLIST.DESCRIPTOR.INFOTOOLTIP"
-msgid "Prevent geyser types from generating as fully random geysers.\nThese are then replaced with random (generic) geysers.\nHas no effect on semi-random, curated geysers unless toggled on.\nAsteroids will share a central blacklist unless toggled off."
+msgid "Ngăn chặn các loại mạch nước phun tạo ra dưới dạng mạch nước phun hoàn toàn ngẫu nhiên.\nSau đó, chúng được thay thế bằng các mạch nước phun ngẫu nhiên (chung).\nKhông có tác dụng đối với các mạch nước phun được quản lý, bán ngẫu nhiên trừ khi được bật.\nCác tiểu hành tinh sẽ chia sẻ danh sách đen trung tâm trừ khi bị tắt."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDGEYSERS.CONTENT.BLACKLIST.DESCRIPTOR.LABEL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDGEYSERS.CONTENT.BLACKLIST.DESCRIPTOR.LABEL"
-msgid "Blacklist:"
+msgid "Danh sách đen:"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDGEYSERS.CONTENT.BLACKLIST.DESCRIPTOR.LABEL_SHARED
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDGEYSERS.CONTENT.BLACKLIST.DESCRIPTOR.LABEL_SHARED"
-msgid "Blacklist (shared):"
+msgid "Danh sách đen (được chia sẻ):"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDGEYSERS.CONTENT.BLACKLIST.SCROLLAREA.CONTENT.NONE.LABEL
@@ -180,7 +180,7 @@ msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDGEYSERS.CONTENT.BLACKLIST.SHAREDBLACKLIST.LABEL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDGEYSERS.CONTENT.BLACKLIST.SHAREDBLACKLIST.LABEL"
-msgid "Use shared blacklist for asteroid"
+msgid "Sử dụng danh sách đen được chia sẻ cho tiểu hành tinh"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDGEYSERS.CONTENT.BLACKLIST.SHAREDBLACKLIST.TOOLTIP
@@ -195,17 +195,17 @@ msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDGEYSERS.CONTENT.GUARANTEED.DESCRIPTOR.INFOTOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDGEYSERS.CONTENT.GUARANTEED.DESCRIPTOR.INFOTOOLTIP"
-msgid "Geyser overrides can be used to force specific geysers to appear in place of fully randomly generated geysers.\nSemi-Random, pre-picked geysers cannot be changed.\nfully random geysers also include those added by the \"Geoactive\" trait."
+msgid "Ghi đè mạch nước phun có thể được sử dụng để buộc các mạch nước phun cụ thể xuất hiện thay cho các mạch nước phun được tạo hoàn toàn ngẫu nhiên.\nKhông thể thay đổi mạch nước phun bán ngẫu nhiên, được chọn trước.\ncác mạch nước phun hoàn toàn ngẫu nhiên cũng bao gồm các mạch nước phun được thêm vào bởi đặc điểm \"Geoactive\"."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDGEYSERS.CONTENT.GUARANTEED.DESCRIPTOR.LABEL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDGEYSERS.CONTENT.GUARANTEED.DESCRIPTOR.LABEL"
-msgid "Overrides:"
+msgid "Ghi đè:"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDGEYSERS.CONTENT.GUARANTEED.SCROLLAREA.CONTENT.NONE.LABEL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDGEYSERS.CONTENT.GUARANTEED.SCROLLAREA.CONTENT.NONE.LABEL"
-msgid "No geyser overrides"
+msgid "Không có mạch nước phun ghi đè"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDGEYSERS.DESCRIPTOR.LABEL
@@ -215,42 +215,42 @@ msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDGEYSERS.DESCRIPTOR.NONE
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDGEYSERS.DESCRIPTOR.NONE"
-msgid "No available geysers"
+msgid "Không có mạch nước phun nào"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDMIXINGTARGETSELECTOR.DESCRIPTOR.LABEL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDMIXINGTARGETSELECTOR.DESCRIPTOR.LABEL"
-msgid "Asteroid Remix Target:"
+msgid "Mục tiêu phối lại tiểu hành tinh:"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDMIXINGTARGETSELECTOR.DESCRIPTOR.TOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDMIXINGTARGETSELECTOR.DESCRIPTOR.TOOLTIP"
-msgid "The target asteroid that is getting remixed."
+msgid "Tiểu hành tinh mục tiêu đang được phối lại."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.BIOMEMISSINGWARNING
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.BIOMEMISSINGWARNING"
-msgid "Warning!\nThe selected planet dimensions are too small, making it very likely to fail worldgen.\nIncrease them to avoid that!"
+msgid "Cảnh báo!\nKích thước hành tinh được chọn quá nhỏ nên rất có thể nó sẽ bị lỗi trên thế giới.\nTăng chúng để tránh điều đó!"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.CONTENT.INFO.HEIGHTLABEL.LABEL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.CONTENT.INFO.HEIGHTLABEL.LABEL"
-msgid "Height:"
+msgid "Chiều cao:"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.CONTENT.INFO.WIDTHLABEL.LABEL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.CONTENT.INFO.WIDTHLABEL.LABEL"
-msgid "Width:"
+msgid "Chiều rộng:"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.DESCRIPTOR.LABEL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.DESCRIPTOR.LABEL"
-msgid "Asteroid Size:"
+msgid "Kích thước tiểu hành tinh:"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.DESCRIPTOR.TOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.DESCRIPTOR.TOOLTIP"
-msgid "The dimensions of this asteroid."
+msgid "Kích thước của tiểu hành tinh này."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.INPUT.TEXT
@@ -260,232 +260,232 @@ msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.RATIOSELECTOR.HEIGHT1
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.RATIOSELECTOR.HEIGHT1"
-msgid "Slightly Taller"
+msgid "cao hơn một chút"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.RATIOSELECTOR.HEIGHT1TOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.RATIOSELECTOR.HEIGHT1TOOLTIP"
-msgid "The asteroid is a bit taller than normal."
+msgid "Tiểu hành tinh cao hơn bình thường một chút."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.RATIOSELECTOR.HEIGHT2
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.RATIOSELECTOR.HEIGHT2"
-msgid "Taller"
+msgid "Cao hơn"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.RATIOSELECTOR.HEIGHT2TOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.RATIOSELECTOR.HEIGHT2TOOLTIP"
-msgid "The asteroid is taller than normal."
+msgid "Tiểu hành tinh cao hơn bình thường."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.RATIOSELECTOR.HEIGHT3
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.RATIOSELECTOR.HEIGHT3"
-msgid "Much Taller"
+msgid "Cao hơn nhiều"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.RATIOSELECTOR.HEIGHT3TOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.RATIOSELECTOR.HEIGHT3TOOLTIP"
-msgid "The asteroid is a lot taller than normal."
+msgid "Tiểu hành tinh cao hơn rất nhiều so với bình thường."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.RATIOSELECTOR.NORMAL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.RATIOSELECTOR.NORMAL"
-msgid "Normal Shape"
+msgid "Hình dạng bình thường"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.RATIOSELECTOR.NORMALTOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.RATIOSELECTOR.NORMALTOOLTIP"
-msgid "The asteroid has its usual shape."
+msgid "Tiểu hành tinh có hình dạng thông thường."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.RATIOSELECTOR.WIDE1
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.RATIOSELECTOR.WIDE1"
-msgid "Slightly Wider"
+msgid "Rộng hơn một chút"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.RATIOSELECTOR.WIDE1TOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.RATIOSELECTOR.WIDE1TOOLTIP"
-msgid "The asteroid is a bit wider than normal."
+msgid "Tiểu hành tinh rộng hơn một chút so với bình thường."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.RATIOSELECTOR.WIDE2
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.RATIOSELECTOR.WIDE2"
-msgid "Wider"
+msgid "rộng hơn"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.RATIOSELECTOR.WIDE2TOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.RATIOSELECTOR.WIDE2TOOLTIP"
-msgid "The asteroid is wider than normal."
+msgid "Tiểu hành tinh rộng hơn bình thường."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.RATIOSELECTOR.WIDE3
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.RATIOSELECTOR.WIDE3"
-msgid "Much Wider"
+msgid "Rộng hơn nhiều"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.RATIOSELECTOR.WIDE3TOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.RATIOSELECTOR.WIDE3TOOLTIP"
-msgid "The asteroid is a lot wider than normal."
+msgid "Tiểu hành tinh rộng hơn rất nhiều so với bình thường."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.SIZESELECTOR.NEGSIZE0
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.SIZESELECTOR.NEGSIZE0"
-msgid "Tiny"
+msgid "Nhỏ xíu"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.SIZESELECTOR.NEGSIZE0TOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.SIZESELECTOR.NEGSIZE0TOOLTIP"
-msgid "The asteroid is at 30% of its usual size."
+msgid "Tiểu hành tinh này có kích thước bằng 30% kích thước thông thường của nó."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.SIZESELECTOR.NEGSIZE1
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.SIZESELECTOR.NEGSIZE1"
-msgid "Smaller"
+msgid "Nhỏ hơn"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.SIZESELECTOR.NEGSIZE1TOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.SIZESELECTOR.NEGSIZE1TOOLTIP"
-msgid "The asteroid is at 45% of its usual size."
+msgid "Tiểu hành tinh này có kích thước bằng 45% kích thước thông thường của nó."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.SIZESELECTOR.NEGSIZE2
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.SIZESELECTOR.NEGSIZE2"
-msgid "Small"
+msgid "Bé nhỏ"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.SIZESELECTOR.NEGSIZE2TOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.SIZESELECTOR.NEGSIZE2TOOLTIP"
-msgid "The asteroid is at 60% of its usual size."
+msgid "Tiểu hành tinh này có kích thước bằng 60% kích thước thông thường của nó."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.SIZESELECTOR.NEGSIZE3
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.SIZESELECTOR.NEGSIZE3"
-msgid "Slightly Smaller"
+msgid "Nhỏ hơn một chút"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.SIZESELECTOR.NEGSIZE3TOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.SIZESELECTOR.NEGSIZE3TOOLTIP"
-msgid "The asteroid is at 80% of its usual size."
+msgid "Tiểu hành tinh này có kích thước bằng 80% kích thước thông thường của nó."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.SIZESELECTOR.SIZE0
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.SIZESELECTOR.SIZE0"
-msgid "Normal"
+msgid "Bình thường"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.SIZESELECTOR.SIZE0TOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.SIZESELECTOR.SIZE0TOOLTIP"
-msgid "The asteroid is at its usual size."
+msgid "Tiểu hành tinh có kích thước bình thường."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.SIZESELECTOR.SIZE1
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.SIZESELECTOR.SIZE1"
-msgid "Slightly Larger"
+msgid "Lớn hơn một chút"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.SIZESELECTOR.SIZE1TOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.SIZESELECTOR.SIZE1TOOLTIP"
-msgid "The asteroid is 25% larger than normal."
+msgid "Tiểu hành tinh này lớn hơn 25% so với bình thường."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.SIZESELECTOR.SIZE2
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.SIZESELECTOR.SIZE2"
-msgid "Large"
+msgid "Lớn"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.SIZESELECTOR.SIZE2TOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.SIZESELECTOR.SIZE2TOOLTIP"
-msgid "The asteroid is 50% larger than normal."
+msgid "Tiểu hành tinh này lớn hơn 50% so với bình thường."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.SIZESELECTOR.SIZE3
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.SIZESELECTOR.SIZE3"
-msgid "Huge"
+msgid "To lớn"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.SIZESELECTOR.SIZE3TOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.SIZESELECTOR.SIZE3TOOLTIP"
-msgid "The asteroid has twice its usual size."
+msgid "Tiểu hành tinh này có kích thước gấp đôi thông thường."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.SIZESELECTOR.SIZE4
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.SIZESELECTOR.SIZE4"
-msgid "Massive"
+msgid "To lớn"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.SIZESELECTOR.SIZE4TOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.SIZESELECTOR.SIZE4TOOLTIP"
-msgid "The asteroid has three times its usual size."
+msgid "Tiểu hành tinh này có kích thước gấp ba lần thông thường."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.SIZESELECTOR.SIZE5
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.SIZESELECTOR.SIZE5"
-msgid "Enormous"
+msgid "Lớn lao"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.SIZESELECTOR.SIZE5TOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.SIZESELECTOR.SIZE5TOOLTIP"
-msgid "The asteroid has four times its usual size."
+msgid "Tiểu hành tinh này có kích thước gấp bốn lần thông thường."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.SIZEWARNING
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSIZE.SIZEWARNING"
-msgid "Warning!\nThe planet size you have selected has {0}% more area than a normal vanilla size asteroid.\nThis might lead to low game performance!"
+msgid "Cảnh báo!\nKích thước hành tinh bạn đã chọn có diện tích lớn hơn {0}% so với một tiểu hành tinh có kích thước thông thường.\nĐiều này có thể dẫn đến hiệu suất trò chơi thấp!"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSKY.CONTENT.NORTHERNLIGHTSCYCLE.LABEL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSKY.CONTENT.NORTHERNLIGHTSCYCLE.LABEL"
-msgid "Northern Lights:"
+msgid "Đèn phía Bắc:"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSKY.CONTENT.RADIATIONCYCLE.LABEL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSKY.CONTENT.RADIATIONCYCLE.LABEL"
-msgid "Space Radiation:"
+msgid "Bức xạ không gian:"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSKY.CONTENT.SUNLIGHTCYCLE.LABEL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSKY.CONTENT.SUNLIGHTCYCLE.LABEL"
-msgid "Sunlight:"
+msgid "Ánh nắng:"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSKY.DESCRIPTOR.LABEL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSKY.DESCRIPTOR.LABEL"
-msgid "Asteroid Sky:"
+msgid "Bầu trời tiểu hành tinh:"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSKY.DESCRIPTOR.TOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDSKY.DESCRIPTOR.TOOLTIP"
-msgid "The space behavior of this asteroid"
+msgid "Hành vi không gian của tiểu hành tinh này"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDTRAITS.ADDTRAITBUTTON.TEXT
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDTRAITS.ADDTRAITBUTTON.TEXT"
-msgid "Add Trait"
+msgid "Thêm đặc điểm"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDTRAITS.CONTENT.ADDSEASONBUTTON.TEXT
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDTRAITS.CONTENT.ADDSEASONBUTTON.TEXT"
-msgid "Add Trait"
+msgid "Thêm đặc điểm"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDTRAITS.CONTENT.TRAITCONTAINER.SCROLLAREA.CONTENT.LISTVIEWENTRYPREFAB.AWAILABLERANDOMTRAITS.LABEL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDTRAITS.CONTENT.TRAITCONTAINER.SCROLLAREA.CONTENT.LISTVIEWENTRYPREFAB.AWAILABLERANDOMTRAITS.LABEL"
-msgid "Blacklist Traits"
+msgid "Danh sách đen"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDTRAITS.CONTENT.TRAITCONTAINER.SCROLLAREA.CONTENT.LISTVIEWENTRYPREFAB.AWAILABLERANDOMTRAITS.TOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDTRAITS.CONTENT.TRAITCONTAINER.SCROLLAREA.CONTENT.LISTVIEWENTRYPREFAB.AWAILABLERANDOMTRAITS.TOOLTIP"
-msgid "Disable Traits you want to not show up as random traits."
+msgid "Vô hiệu hóa các Đặc điểm bạn muốn không hiển thị dưới dạng các đặc điểm ngẫu nhiên."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDTRAITS.CONTENT.TRAITCONTAINER.SCROLLAREA.CONTENT.NOTRAITS.LABEL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDTRAITS.CONTENT.TRAITCONTAINER.SCROLLAREA.CONTENT.NOTRAITS.LABEL"
-msgid "No Traits"
+msgid "Không có đặc điểm"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDTRAITS.DESCRIPTOR.LABEL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.ASTEROIDTRAITS.DESCRIPTOR.LABEL"
-msgid "Asteroid Traits:"
+msgid "Đặc điểm của tiểu hành tinh:"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.BUFFERSLIDER.DESCRIPTOR.INPUT.TEXT
@@ -495,7 +495,7 @@ msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.BUFFERSLIDER.DESCRIPTOR.LABEL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.BUFFERSLIDER.DESCRIPTOR.LABEL"
-msgid "Buffer Distance:"
+msgid "Khoảng cách đệm:"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.BUFFERSLIDER.DESCRIPTOR.OUTPUT
@@ -505,42 +505,42 @@ msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.BUFFERSLIDER.DESCRIPTOR.TOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.BUFFERSLIDER.DESCRIPTOR.TOOLTIP"
-msgid "The minimum distance this asteroid has to other asteroids."
+msgid "Khoảng cách tối thiểu mà tiểu hành tinh này có với các tiểu hành tinh khác."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.METEORSEASONCYCLE.ACTIVEMETEORSLABEL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.METEORSEASONCYCLE.ACTIVEMETEORSLABEL"
-msgid "Active Meteor Showers:"
+msgid "Mưa sao băng đang hoạt động:"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.METEORSEASONCYCLE.ACTIVESEASONSELECTORLABEL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.METEORSEASONCYCLE.ACTIVESEASONSELECTORLABEL"
-msgid "Active Meteor Seasons:"
+msgid "Mùa sao băng hoạt động:"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.METEORSEASONCYCLE.ADDNEWSEASON
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.METEORSEASONCYCLE.ADDNEWSEASON"
-msgid "Add additional meteor season"
+msgid "Thêm mùa sao băng"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.METEORSEASONCYCLE.ADDNEWSEASONTOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.METEORSEASONCYCLE.ADDNEWSEASONTOOLTIP"
-msgid "Add another type of meteor season type to this asteroid.\nWarning: Meteor season types are all active at the same time,\nleading to a high volume of meteors at the same time if multiple are added.\nNormal asteroids have usually one season type."
+msgid "Thêm một loại mùa sao băng khác vào tiểu hành tinh này.\nCảnh báo: Các loại mùa sao băng đều hoạt động cùng một lúc,\ndẫn đến một lượng lớn sao băng cùng lúc nếu nhiều thiên thạch được thêm vào.\nCác tiểu hành tinh bình thường thường có một loại mùa."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.METEORSEASONCYCLE.CONTENT.ASTEROIDS.SCROLLAREA.CONTENT.NOMETEORSAVAILABLE.LABEL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.METEORSEASONCYCLE.CONTENT.ASTEROIDS.SCROLLAREA.CONTENT.NOMETEORSAVAILABLE.LABEL"
-msgid "No Meteor Showers"
+msgid "Không có mưa sao băng"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.METEORSEASONCYCLE.CONTENT.NOSEASONTYPESAVAILABLE
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.METEORSEASONCYCLE.CONTENT.NOSEASONTYPESAVAILABLE"
-msgid "No more available Season Types"
+msgid "Không còn loại Mùa nào nữa"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.METEORSEASONCYCLE.CONTENT.SEASONS.SEASONSCROLLAREA.CONTENT.ADDSEASONBUTTON.TEXT
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.METEORSEASONCYCLE.CONTENT.SEASONS.SEASONSCROLLAREA.CONTENT.ADDSEASONBUTTON.TEXT"
-msgid "Add new season type"
+msgid "Thêm loại mùa mới"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.METEORSEASONCYCLE.CONTENT.SEASONS.SEASONSCROLLAREA.CONTENT.NOSEASONSELECTED.LABEL
@@ -550,17 +550,17 @@ msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.METEORSEASONCYCLE.CONTENT.SEASONTYPENOMETEORSTOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.METEORSEASONCYCLE.CONTENT.SEASONTYPENOMETEORSTOOLTIP"
-msgid "This season type does not contain any meteor shower types.\nThis might change in the future if Klei decides to add some showers to this season type.\nFor this reason the season type is listed here."
+msgid "Loại mùa này không chứa bất kỳ loại mưa sao băng nào.\nĐiều này có thể thay đổi trong tương lai nếu Klei quyết định thêm một số cơn mưa rào vào loại mùa này.\nVì lý do này, loại mùa được liệt kê ở đây."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.METEORSEASONCYCLE.CONTENT.SEASONTYPETOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.METEORSEASONCYCLE.CONTENT.SEASONTYPETOOLTIP"
-msgid "This season type contains the following shower types:"
+msgid "Loại mùa này có các loại vòi hoa sen sau:"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.METEORSEASONCYCLE.CONTENT.TITLE
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.METEORSEASONCYCLE.CONTENT.TITLE"
-msgid "Available Meteor Season Types:"
+msgid "Các loại mùa sao băng có sẵn:"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.METEORSEASONCYCLE.DESCRIPTOR.LABEL
@@ -570,42 +570,42 @@ msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.METEORSEASONCYCLE.DESCRIPTOR.TOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.METEORSEASONCYCLE.DESCRIPTOR.TOOLTIP"
-msgid "What kind of meteors should come down on this asteroid?"
+msgid "Những loại thiên thạch nào sẽ rơi xuống tiểu hành tinh này?"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.METEORSEASONCYCLE.FULLERENETOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.METEORSEASONCYCLE.FULLERENETOOLTIP"
-msgid "One time shower event when opening the tear."
+msgid "Sự kiện tắm một lần khi mở nước mắt."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.METEORSEASONCYCLE.NOSEASONSSELECTED
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.METEORSEASONCYCLE.NOSEASONSSELECTED"
-msgid "No season types selected"
+msgid "Không có loại mùa nào được chọn"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.METEORSEASONCYCLE.REMOVESEASONTOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.METEORSEASONCYCLE.REMOVESEASONTOOLTIP"
-msgid "Remove this season type"
+msgid "Xóa loại phần này"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.METEORSEASONCYCLE.SHOWERTOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.METEORSEASONCYCLE.SHOWERTOOLTIP"
-msgid "Meteor type present in these shower types:"
+msgid "Loại sao băng có trong các loại mưa rào này:"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.METEORSEASONCYCLE.SWITCHTOOTHERSEASONTOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.METEORSEASONCYCLE.SWITCHTOOTHERSEASONTOOLTIP"
-msgid "Swap this season to a different type"
+msgid "Đổi mùa này sang loại khác"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.METEORSEASONCYCLE.VANILLASEASON
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.METEORSEASONCYCLE.VANILLASEASON"
-msgid "Vanilla Meteor Showers"
+msgid "Mưa sao băng Vani"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.MINMAXDISTANCE.DESCRIPTOR.FORMAT
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.MINMAXDISTANCE.DESCRIPTOR.FORMAT"
-msgid "Between {0} and {1}"
+msgid "Giữa {0} và {1}"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.MINMAXDISTANCE.DESCRIPTOR.INPUT.TEXT
@@ -615,7 +615,7 @@ msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.MINMAXDISTANCE.DESCRIPTOR.LABEL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.MINMAXDISTANCE.DESCRIPTOR.LABEL"
-msgid "Distance to Center:"
+msgid "Khoảng cách đến trung tâm:"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.MINMAXDISTANCE.DESCRIPTOR.OUTPUT
@@ -625,292 +625,292 @@ msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.MINMAXDISTANCE.DESCRIPTOR.TOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.MINMAXDISTANCE.DESCRIPTOR.TOOLTIP"
-msgid "The minimum and maximum distance to the center of the starmap the starmap item can generate with.\nSetting the range to 0 - 0 will always spawn the starmap item the center of the map.\nSetting the range to 3 - 8 will spawn the starmap item randomly between 3 and 8 hexes away from the center of the starmap."
+msgid "Khoảng cách tối thiểu và tối đa đến tâm của bản đồ sao mà mục bản đồ sao có thể tạo ra.\nĐặt phạm vi thành 0 - 0 sẽ luôn tạo ra vật phẩm bản đồ sao ở giữa bản đồ.\nĐặt phạm vi thành 3 - 8 sẽ sinh ra vật phẩm bản đồ sao một cách ngẫu nhiên trong khoảng từ 3 đến 8 hình lục giác tính từ tâm của bản đồ sao."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.POI_ALLOWDUPLICATES.LABEL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.POI_ALLOWDUPLICATES.LABEL"
-msgid "Allow Spawning Duplicates:"
+msgid "Cho phép sinh sản trùng lặp:"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.POI_ALLOWDUPLICATES.TOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.POI_ALLOWDUPLICATES.TOOLTIP"
-msgid "When enabled, a POI from the POI pool can generate multiple times from this POI group."
+msgid "Khi được bật, POI từ nhóm POI có thể được tạo nhiều lần từ nhóm POI này."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.POI_AVOIDCLUMPING.LABEL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.POI_AVOIDCLUMPING.LABEL"
-msgid "Avoid Clumping:"
+msgid "Tránh vón cục:"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.POI_AVOIDCLUMPING.TOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.POI_AVOIDCLUMPING.TOOLTIP"
-msgid "When enabled, POIs generated from this group cannot generate adjacent to other POIs."
+msgid "Khi được bật, các POI được tạo từ nhóm này không thể tạo liền kề với các POI khác."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.POI_GUARANTEE.LABEL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.POI_GUARANTEE.LABEL"
-msgid "Guarantee all POIs:"
+msgid "Đảm bảo tất cả POI:"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.POI_GUARANTEE.TOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.POI_GUARANTEE.TOOLTIP"
-msgid "When enabled, all POIs will be spawned, even if their placement fails by regular placement rules."
+msgid "Khi được bật, tất cả POI sẽ được tạo ra, ngay cả khi vị trí của chúng không tuân theo các quy tắc vị trí thông thường."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.SO_POIGROUP_CONTAINER.ADDPOIBUTTON.LABEL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.SO_POIGROUP_CONTAINER.ADDPOIBUTTON.LABEL"
-msgid "Add new POI to group"
+msgid "Thêm POI mới vào nhóm"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.SO_POIGROUP_CONTAINER.GROUPHEADER.LABEL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.SO_POIGROUP_CONTAINER.GROUPHEADER.LABEL"
-msgid "POIs in this Group:"
+msgid "POI trong nhóm này:"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.SO_POIGROUP_CONTAINER.POICONTAINER.SCROLLAREA.CONTENT.NOPOIS.LABEL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.SO_POIGROUP_CONTAINER.POICONTAINER.SCROLLAREA.CONTENT.NOPOIS.LABEL"
-msgid "No POIs in this group..."
+msgid "Không có POI nào trong nhóm này..."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.SO_POIGROUP_REMOVE.LABEL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.SO_POIGROUP_REMOVE.LABEL"
-msgid "Delete this POI Group"
+msgid "Xóa nhóm POI này"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.SO_POIGROUP_REMOVE.TOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.SO_POIGROUP_REMOVE.TOOLTIP"
-msgid "Delete the currently selected POI group from the custom cluster."
+msgid "Xóa nhóm POI hiện được chọn khỏi cụm tùy chỉnh."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.STARMAPITEMENABLED.LABEL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.STARMAPITEMENABLED.LABEL"
-msgid "Generate [STARMAPITEMTYPE]:"
+msgid "Tạo [STARMAPITEMTYPE]:"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.STARMAPITEMENABLED.TOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.STARMAPITEMENABLED.TOOLTIP"
-msgid "Should this starmap item be generated at all?"
+msgid "Mục bản đồ sao này có nên được tạo ra không?"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.STORYTRAIT.STORYTRAITBLACKLIST.DESCRIPTOR.LABEL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.STORYTRAIT.STORYTRAITBLACKLIST.DESCRIPTOR.LABEL"
-msgid "Allow Story Traits on these Asteroids:"
+msgid "Cho phép Đặc điểm câu chuyện trên các tiểu hành tinh này:"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.STORYTRAIT.STORYTRAITBLACKLIST.DESCRIPTOR.TOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.STORYTRAIT.STORYTRAITBLACKLIST.DESCRIPTOR.TOOLTIP"
-msgid "Allows you to block the game from spawning this story trait on certain asteroids.\n\nBlocking too many asteroids can prevent the worldgen from succeeding!"
+msgid "Cho phép bạn chặn trò chơi sinh ra đặc điểm câu chuyện này trên một số tiểu hành tinh nhất định.\n\nViệc chặn quá nhiều tiểu hành tinh có thể ngăn cản thế giới thành công!"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.STORYTRAIT.STORYTRAITENABLED.LABEL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.STORYTRAIT.STORYTRAITENABLED.LABEL"
-msgid "Generate Story Trait:"
+msgid "Tạo đặc điểm câu chuyện:"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.STORYTRAIT.STORYTRAITENABLED.TOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.STORYTRAIT.STORYTRAITENABLED.TOOLTIP"
-msgid "Should this Story Trait be generated?"
+msgid "Đặc điểm câu chuyện này có nên được tạo ra không?"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.VANILLAPOI_RESOURCES.CAPACITY.LABEL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.VANILLAPOI_RESOURCES.CAPACITY.LABEL"
-msgid "Mineable Mass:"
+msgid "Khối lượng có thể khai thác:"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.VANILLAPOI_RESOURCES.CONTENT.RESOURCECONTAINER.SCROLLAREA.CONTENT.LISTVIEWENTRYPREFAB.BIOLABEL.LABEL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.VANILLAPOI_RESOURCES.CONTENT.RESOURCECONTAINER.SCROLLAREA.CONTENT.LISTVIEWENTRYPREFAB.BIOLABEL.LABEL"
-msgid "Bio-Resource"
+msgid "Tài nguyên sinh học"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.VANILLAPOI_RESOURCES.CONTENT.RESOURCECONTAINER.SCROLLAREA.CONTENT.LISTVIEWENTRYPREFAB.BIOLABEL.TOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.VANILLAPOI_RESOURCES.CONTENT.RESOURCECONTAINER.SCROLLAREA.CONTENT.LISTVIEWENTRYPREFAB.BIOLABEL.TOOLTIP"
-msgid "This resource requires a biological cargo bay to collect."
+msgid "Tài nguyên này cần có khoang chở hàng sinh học để thu thập."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.VANILLAPOI_RESOURCES.CONTENT.RESOURCECONTAINER.SCROLLAREA.CONTENT.NORESOURCES.LABEL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.VANILLAPOI_RESOURCES.CONTENT.RESOURCECONTAINER.SCROLLAREA.CONTENT.NORESOURCES.LABEL"
-msgid "No Resources here.."
+msgid "Không có tài nguyên ở đây.."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.VANILLAPOI_RESOURCES.DISTANCELABEL_DLC
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.VANILLAPOI_RESOURCES.DISTANCELABEL_DLC"
-msgid "POI-Group {0}\nSpawns {1} of these POIs at Distance {2} to {3}:"
+msgid "Nhóm POI {0}\nSinh ra {1} trong số các POI này ở Khoảng cách {2} đến {3}:"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.VANILLAPOI_RESOURCES.MODIFYPOIBTN.MODIFYPOI.TEXT
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.VANILLAPOI_RESOURCES.MODIFYPOIBTN.MODIFYPOI.TEXT"
-msgid "Modify this POI Type"
+msgid "Sửa đổi Loại POI này"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.VANILLAPOI_RESOURCES.NONESELECTED
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.VANILLAPOI_RESOURCES.NONESELECTED"
-msgid "None"
+msgid "Không có"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.VANILLAPOI_RESOURCES.REPLENISMENT.LABEL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.VANILLAPOI_RESOURCES.REPLENISMENT.LABEL"
-msgid "Replenishment per cycle:"
+msgid "Bổ sung mỗi chu kỳ:"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.VANILLAPOI_RESOURCES.RESOURCEHEADER.LABEL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.VANILLAPOI_RESOURCES.RESOURCEHEADER.LABEL"
-msgid "Resources:"
+msgid "Tài nguyên:"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.VANILLAPOI_RESOURCES.SELECTEDDISTANCE
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.VANILLAPOI_RESOURCES.SELECTEDDISTANCE"
-msgid "{0} at {1} {2}"
+msgid "{0} tại {1} {2}"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.VANILLAPOI_RESOURCES.SELECTEDDISTANCE_SO
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.VANILLAPOI_RESOURCES.SELECTEDDISTANCE_SO"
-msgid "{0} in Group {1}"
+msgid "{0} trong Nhóm {1}"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.VANILLAPOI_RESOURCES.VANILLAPOI_ARTIFACT.ARTIFACTRATES.AMAZING
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.VANILLAPOI_RESOURCES.VANILLAPOI_ARTIFACT.ARTIFACTRATES.AMAZING"
-msgid "Amazing"
+msgid "Tuyệt vời"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.VANILLAPOI_RESOURCES.VANILLAPOI_ARTIFACT.ARTIFACTRATES.BAD
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.VANILLAPOI_RESOURCES.VANILLAPOI_ARTIFACT.ARTIFACTRATES.BAD"
-msgid "Bad"
+msgid "Xấu"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.VANILLAPOI_RESOURCES.VANILLAPOI_ARTIFACT.ARTIFACTRATES.DLC_NO
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.VANILLAPOI_RESOURCES.VANILLAPOI_ARTIFACT.ARTIFACTRATES.DLC_NO"
-msgid "No Artifacts"
+msgid "Không có hiện vật"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.VANILLAPOI_RESOURCES.VANILLAPOI_ARTIFACT.ARTIFACTRATES.DLC_YES
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.VANILLAPOI_RESOURCES.VANILLAPOI_ARTIFACT.ARTIFACTRATES.DLC_YES"
-msgid "Produces Artifacts"
+msgid "Sản xuất hiện vật"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.VANILLAPOI_RESOURCES.VANILLAPOI_ARTIFACT.ARTIFACTRATES.GOOD
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.VANILLAPOI_RESOURCES.VANILLAPOI_ARTIFACT.ARTIFACTRATES.GOOD"
-msgid "Good"
+msgid "Tốt"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.VANILLAPOI_RESOURCES.VANILLAPOI_ARTIFACT.ARTIFACTRATES.GREAT
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.VANILLAPOI_RESOURCES.VANILLAPOI_ARTIFACT.ARTIFACTRATES.GREAT"
-msgid "Great"
+msgid "Tuyệt"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.VANILLAPOI_RESOURCES.VANILLAPOI_ARTIFACT.ARTIFACTRATES.MEDIOCRE
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.VANILLAPOI_RESOURCES.VANILLAPOI_ARTIFACT.ARTIFACTRATES.MEDIOCRE"
-msgid "Mediocre"
+msgid "tầm thường"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.VANILLAPOI_RESOURCES.VANILLAPOI_ARTIFACT.ARTIFACTRATES.NONE
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.VANILLAPOI_RESOURCES.VANILLAPOI_ARTIFACT.ARTIFACTRATES.NONE"
-msgid "None"
+msgid "Không có"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.VANILLAPOI_RESOURCES.VANILLAPOI_ARTIFACT.ARTIFACTRATES.PERFECT
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.VANILLAPOI_RESOURCES.VANILLAPOI_ARTIFACT.ARTIFACTRATES.PERFECT"
-msgid "Perfect"
+msgid "Hoàn hảo"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.VANILLAPOI_RESOURCES.VANILLAPOI_ARTIFACT.LABEL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.VANILLAPOI_RESOURCES.VANILLAPOI_ARTIFACT.LABEL"
-msgid "Artifact Rarity:"
+msgid "Độ hiếm của hiện vật:"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.VANILLAPOI_RESOURCES.VANILLAPOI_REMOVE.DELETEPOI.TEXT
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.CONTENT.SCROLLRECTCONTAINER.VANILLAPOI_RESOURCES.VANILLAPOI_REMOVE.DELETEPOI.TEXT"
-msgid "Remove this POI"
+msgid "Xóa POI này"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.FOOTER.BUTTONS.GENERATECLUSTERBUTTON.TEXT
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.FOOTER.BUTTONS.GENERATECLUSTERBUTTON.TEXT"
-msgid "Start modified Game"
+msgid "Bắt đầu trò chơi đã sửa đổi"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.FOOTER.BUTTONS.GENERATECLUSTERBUTTON.TOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.FOOTER.BUTTONS.GENERATECLUSTERBUTTON.TOOLTIP"
-msgid "Start generating a modified Cluster based on selected parameters.\nModified Cluster Generation is only activated if this button here is used."
+msgid "Bắt đầu tạo Cụm đã sửa đổi dựa trên các tham số đã chọn.\nTạo cụm đã sửa đổi chỉ được kích hoạt nếu nút này ở đây được sử dụng."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.FOOTER.BUTTONS.GENERATECLUSTERBUTTON.TOOLTIP_CLUSTERPLACEMENTFAILED
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.FOOTER.BUTTONS.GENERATECLUSTERBUTTON.TOOLTIP_CLUSTERPLACEMENTFAILED"
-msgid "The current asteroid placement rules do not allow a spot for all asteroids on the starmap.\nPlease adjust your asteroid placement rules or reduce the total amount of asteroids!"
+msgid "Các quy tắc về vị trí tiểu hành tinh hiện tại không cho phép một vị trí dành cho tất cả các tiểu hành tinh trên bản đồ sao.\nVui lòng điều chỉnh quy tắc đặt tiểu hành tinh của bạn hoặc giảm tổng số lượng tiểu hành tinh!"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.FOOTER.BUTTONS.GENERATECLUSTERBUTTON.TOOLTIP_CLUSTERPLACEMENTFAILED_ADJACENTASTEROIDS
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.FOOTER.BUTTONS.GENERATECLUSTERBUTTON.TOOLTIP_CLUSTERPLACEMENTFAILED_ADJACENTASTEROIDS"
-msgid "You currently have at least 2 asteroids directly adjacent to each other.\nThis will lead to crashes when a rocket tries landing on either of them with roundtrip enabled.\nPlease adjust your asteroids positions so they are no longer directly adjacent!"
+msgid "Hiện tại bạn có ít nhất 2 tiểu hành tinh ở gần nhau.\nĐiều này sẽ dẫn đến sự cố khi tên lửa cố gắng hạ cánh xuống một trong hai khi kích hoạt hành trình khứ hồi.\nHãy điều chỉnh vị trí các tiểu hành tinh của bạn để chúng không còn ở gần nhau nữa!"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.FOOTER.BUTTONS.GENERATECLUSTERBUTTON.TOOLTIP_CLUSTERPLACEMENTFAILED_ASTEROID
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.FOOTER.BUTTONS.GENERATECLUSTERBUTTON.TOOLTIP_CLUSTERPLACEMENTFAILED_ASTEROID"
-msgid "The current asteroid placement rules for the {0} currently fail to place the asteroid on the starmap.\nPlease adjust its placements or reduce the total amount of asteroids!"
+msgid "Các quy tắc về vị trí tiểu hành tinh hiện tại cho {0} hiện không thể đặt tiểu hành tinh trên bản đồ sao.\nHãy điều chỉnh vị trí của nó hoặc giảm tổng số lượng tiểu hành tinh!"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.FOOTER.BUTTONS.GENERATECLUSTERBUTTON.TOOLTIP_CLUSTERPLACEMENTFAILED_COMETS
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.FOOTER.BUTTONS.GENERATECLUSTERBUTTON.TOOLTIP_CLUSTERPLACEMENTFAILED_COMETS"
-msgid "The current asteroid placement rules do not allow meteors to reach the {0}.\nThis would cause a crash on the spawn of the first meteor shower that tries to target this unreachable asteroid.\nPlease adjust your starmap placements!"
+msgid "Quy tắc đặt tiểu hành tinh hiện tại không cho phép thiên thạch chạm tới {0}.\nĐiều này sẽ gây ra sự cố khi xuất hiện trận mưa sao băng đầu tiên cố gắng nhắm vào tiểu hành tinh không thể tiếp cận này.\nVui lòng điều chỉnh vị trí bản đồ sao của bạn!"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.FOOTER.BUTTONS.GENERATECLUSTERBUTTON.TOOLTIP_CLUSTERPLACEMENTFAILED_TEAR
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.FOOTER.BUTTONS.GENERATECLUSTERBUTTON.TOOLTIP_CLUSTERPLACEMENTFAILED_TEAR"
-msgid "There is currently no temporal tear on the starmap.\nPlease add a temporal tear to the starmap!"
+msgid "Hiện tại không có vết rách tạm thời trên bản đồ sao.\nHãy thêm một vết rách tạm thời vào bản đồ sao!"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.FOOTER.BUTTONS.PRESETBUTTON.TEXT
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.FOOTER.BUTTONS.PRESETBUTTON.TEXT"
-msgid "Cluster Presets"
+msgid "Cài đặt trước cụm"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.FOOTER.BUTTONS.PRESETBUTTON.TOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.FOOTER.BUTTONS.PRESETBUTTON.TOOLTIP"
-msgid "Create new or load your existing cluster presets"
+msgid "Tạo mới hoặc tải các cài đặt trước cụm hiện có của bạn"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.FOOTER.BUTTONS.RESETCLUSTERBUTTON.TEXT
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.FOOTER.BUTTONS.RESETCLUSTERBUTTON.TEXT"
-msgid "Reset Everything"
+msgid "Đặt lại mọi thứ"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.FOOTER.BUTTONS.RESETCLUSTERBUTTON.TOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.FOOTER.BUTTONS.RESETCLUSTERBUTTON.TOOLTIP"
-msgid "Undo all changes you have made by reloading the vanilla cluster template."
+msgid "Hoàn tác tất cả các thay đổi bạn đã thực hiện bằng cách tải lại mẫu cụm vanilla."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.FOOTER.BUTTONS.RESETCLUSTERBUTTON.TOOLTIP_VANILLA
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.FOOTER.BUTTONS.RESETCLUSTERBUTTON.TOOLTIP_VANILLA"
-msgid "Undo all changes you have made by reloading the world from the vanilla template."
+msgid "Hoàn tác tất cả các thay đổi bạn đã thực hiện bằng cách tải lại thế giới từ mẫu vanilla."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.FOOTER.BUTTONS.RESETSELECTIONBUTTON.TEXT
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.FOOTER.BUTTONS.RESETSELECTIONBUTTON.TEXT"
-msgid "Reset Selected Item"
+msgid "Đặt lại mục đã chọn"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.FOOTER.BUTTONS.RESETSELECTIONBUTTON.TOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.FOOTER.BUTTONS.RESETSELECTIONBUTTON.TOOLTIP"
-msgid "Undo all changes you have made to the currently selected item."
+msgid "Hoàn tác tất cả các thay đổi bạn đã thực hiện đối với mục hiện được chọn."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.FOOTER.BUTTONS.RETURNBUTTON.TEXT
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.FOOTER.BUTTONS.RETURNBUTTON.TEXT"
-msgid "Return"
+msgid "Trở lại"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.FOOTER.BUTTONS.RETURNBUTTON.TOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.FOOTER.BUTTONS.RETURNBUTTON.TOOLTIP"
-msgid "Return to the previous screen."
+msgid "Quay lại màn hình trước đó."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.FOOTER.BUTTONS.STARMAPBUTTON.TEXT
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.FOOTER.BUTTONS.STARMAPBUTTON.TEXT"
-msgid "Reset Starmap"
+msgid "Đặt lại bản đồ sao"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.FOOTER.BUTTONS.STARMAPBUTTON.TOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.FOOTER.BUTTONS.STARMAPBUTTON.TOOLTIP"
-msgid "Undo all changes you have made to the starmap."
+msgid "Hoàn tác tất cả các thay đổi bạn đã thực hiện đối với starmap."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.FOOTER.CLUSTERSIZESLIDER.DESCRIPTOR.INPUT.TEXT
@@ -920,7 +920,7 @@ msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.FOOTER.CLUSTERSIZESLIDER.DESCRIPTOR.LABEL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.FOOTER.CLUSTERSIZESLIDER.DESCRIPTOR.LABEL"
-msgid "Cluster Size (Radius):"
+msgid "Kích thước cụm (Bán kính):"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.FOOTER.CLUSTERSIZESLIDER.DESCRIPTOR.OUTPUT
@@ -930,22 +930,22 @@ msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.FOOTER.CLUSTERSIZESLIDER.DESCRIPTOR.TOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.FOOTER.CLUSTERSIZESLIDER.DESCRIPTOR.TOOLTIP"
-msgid "The radius of the starmap."
+msgid "Bán kính của bản đồ sao."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.HEADER.LABEL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.HEADER.LABEL"
-msgid "Currently selected [STARMAPITEMTYPE]: {0}"
+msgid "Hiện được chọn [STARMAPITEMTYPE]: {0}"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.HEADER.LABEL_LOCATION
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.DETAILS.HEADER.LABEL_LOCATION"
-msgid "Current [STARMAPITEMTYPE]: {0} at {1}"
+msgid "[STARMAPITEMTYPE] hiện tại: {0} tại {1}"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.ITEMSELECTION.FOOTER.TOOLBOX.BOXOFPOI.INPUT.TEXTAREA.PLACEHOLDER
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.ITEMSELECTION.FOOTER.TOOLBOX.BOXOFPOI.INPUT.TEXTAREA.PLACEHOLDER"
-msgid "Enter Text to filter POIs"
+msgid "Nhập văn bản để lọc POI"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.ITEMSELECTION.FOOTER.TOOLBOX.BOXOFPOI.INPUT.TEXTAREA.TEXT
@@ -955,12 +955,12 @@ msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.ITEMSELECTION.FOOTER.TOOLBOX.BOXOFPOI.LABEL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.ITEMSELECTION.FOOTER.TOOLBOX.BOXOFPOI.LABEL"
-msgid "Drag POI here to delete."
+msgid "Kéo POI vào đây để xóa."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.ITEMSELECTION.FOOTER.TOOLBOX.BOXOFPOI.POINOTINSTARMAP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.ITEMSELECTION.FOOTER.TOOLBOX.BOXOFPOI.POINOTINSTARMAP"
-msgid "This POI is currently not present on the starmap"
+msgid "POI này hiện không có trên starmap"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.ITEMSELECTION.FOOTER.TOOLBOX.TRASHCANCONTAINER.INPUT.TEXT
@@ -970,371 +970,371 @@ msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.ITEMSELECTION.FOOTER.TOOLBOX.TRASHCANCONTAINER.LABEL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.ITEMSELECTION.FOOTER.TOOLBOX.TRASHCANCONTAINER.LABEL"
-msgid "Drag POI here to delete."
+msgid "Kéo POI vào đây để xóa."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.ITEMSELECTION.FOOTER.TOOLBOX.TRASHCANCONTAINER.SHOWPERMALABELS.LABEL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.ITEMSELECTION.FOOTER.TOOLBOX.TRASHCANCONTAINER.SHOWPERMALABELS.LABEL"
-msgid "Show Names"
+msgid "Hiển thị tên"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.ITEMSELECTION.HEADER.LABEL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.ITEMSELECTION.HEADER.LABEL"
-msgid "[STARMAPITEMTYPEPL] in this category:"
+msgid "[STARMAPITEMTYPEPL] trong danh mục này:"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.ITEMSELECTION.STARITEMCONTENT.INPUT.TEXTAREA.PLACEHOLDER
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.ITEMSELECTION.STARITEMCONTENT.INPUT.TEXTAREA.PLACEHOLDER"
-msgid "Enter text to filter asteroids..."
+msgid "Nhập văn bản để lọc các tiểu hành tinh..."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.ITEMSELECTION.VANILLASTARMAPCONTENT.VANILLASTARMAPCONTAINER.ADDMISSINGPOI.LABEL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.ITEMSELECTION.VANILLASTARMAPCONTENT.VANILLASTARMAPCONTAINER.ADDMISSINGPOI.LABEL"
-msgid "Add another POI group"
+msgid "Thêm một nhóm POI khác"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.ITEMSELECTION.VANILLASTARMAPCONTENT.VANILLASTARMAPCONTAINER.ADDMISSINGPOI.LABEL_BASEGAME
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.ITEMSELECTION.VANILLASTARMAPCONTENT.VANILLASTARMAPCONTAINER.ADDMISSINGPOI.LABEL_BASEGAME"
-msgid "Add missing POIs ({0} missing)"
+msgid "Thêm POI bị thiếu (thiếu {0})"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.ITEMSELECTION.VANILLASTARMAPCONTENT.VANILLASTARMAPCONTAINER.ADDMISSINGPOI.TOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.ITEMSELECTION.VANILLASTARMAPCONTENT.VANILLASTARMAPCONTAINER.ADDMISSINGPOI.TOOLTIP"
-msgid "The following POI types are currently missing:{0}"
+msgid "Các loại POI sau hiện đang bị thiếu:{0}"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.ITEMSELECTION.VANILLASTARMAPCONTENT.VANILLASTARMAPCONTAINER.ADDNEWDISTANCEBUTTONCONTAINER.ADDDISTANCEROW.LABEL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.ITEMSELECTION.VANILLASTARMAPCONTENT.VANILLASTARMAPCONTAINER.ADDNEWDISTANCEBUTTONCONTAINER.ADDDISTANCEROW.LABEL"
-msgid "Increase max. Distance"
+msgid "Tăng tối đa. Khoảng cách"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.ITEMSELECTION.VANILLASTARMAPCONTENT.VANILLASTARMAPCONTAINER.ADDNEWDISTANCEBUTTONCONTAINER.REMOVEDISTANCEROW.LABEL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.ITEMSELECTION.VANILLASTARMAPCONTENT.VANILLASTARMAPCONTAINER.ADDNEWDISTANCEBUTTONCONTAINER.REMOVEDISTANCEROW.LABEL"
-msgid "Reduce max. Distance"
+msgid "Giảm tối đa. Khoảng cách"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.ITEMSELECTION.VANILLASTARMAPCONTENT.VANILLASTARMAPCONTAINER.VANILLASTARMAPENTRYPREFAB.MININGWORLDSCONTAINER.SCROLLAREA.CONTENT.ADDPOI.LABEL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGM_MAINSCREENEXPORT.ITEMSELECTION.VANILLASTARMAPCONTENT.VANILLASTARMAPCONTAINER.VANILLASTARMAPENTRYPREFAB.MININGWORLDSCONTAINER.SCROLLAREA.CONTENT.ADDPOI.LABEL"
-msgid "Add new POI"
+msgid "Thêm POI mới"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGMBUTTON.DESC
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGMBUTTON.DESC"
-msgid "Start customizing the currently selected cluster."
+msgid "Bắt đầu tùy chỉnh cụm hiện được chọn."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGMEXPORT_SIDEMENUS.PRESETWINDOWCGM.DELETEWINDOW.CANCEL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGMEXPORT_SIDEMENUS.PRESETWINDOWCGM.DELETEWINDOW.CANCEL"
-msgid "Cancel"
+msgid "Hủy bỏ"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGMEXPORT_SIDEMENUS.PRESETWINDOWCGM.DELETEWINDOW.DESC
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGMEXPORT_SIDEMENUS.PRESETWINDOWCGM.DELETEWINDOW.DESC"
-msgid "You are about to delete the preset \"{0}\".\nDo you want to continue?"
+msgid "Bạn sắp xóa cài đặt trước \"{0}\".\nBạn có muốn tiếp tục không?"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGMEXPORT_SIDEMENUS.PRESETWINDOWCGM.DELETEWINDOW.TITLE
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGMEXPORT_SIDEMENUS.PRESETWINDOWCGM.DELETEWINDOW.TITLE"
-msgid "Delete {0}"
+msgid "Xóa {0}"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGMEXPORT_SIDEMENUS.PRESETWINDOWCGM.DELETEWINDOW.YES
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGMEXPORT_SIDEMENUS.PRESETWINDOWCGM.DELETEWINDOW.YES"
-msgid "Confirm Deletion"
+msgid "Xác nhận xóa"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGMEXPORT_SIDEMENUS.PRESETWINDOWCGM.HORIZONTALLAYOUT.ITEMINFO.BUTTONS.APPLYPRESETBUTTON.TEXT
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGMEXPORT_SIDEMENUS.PRESETWINDOWCGM.HORIZONTALLAYOUT.ITEMINFO.BUTTONS.APPLYPRESETBUTTON.TEXT"
-msgid "Apply Preset"
+msgid "Áp dụng cài sẵn"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGMEXPORT_SIDEMENUS.PRESETWINDOWCGM.HORIZONTALLAYOUT.ITEMINFO.BUTTONS.APPLYPRESETBUTTON.TOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGMEXPORT_SIDEMENUS.PRESETWINDOWCGM.HORIZONTALLAYOUT.ITEMINFO.BUTTONS.APPLYPRESETBUTTON.TOOLTIP"
-msgid "Apply the preset thats currently displayed in the preview to the custom cluster."
+msgid "Áp dụng cài đặt trước hiện được hiển thị trong bản xem trước cho cụm tùy chỉnh."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGMEXPORT_SIDEMENUS.PRESETWINDOWCGM.HORIZONTALLAYOUT.ITEMINFO.BUTTONS.CLOSEBUTTON.TEXT
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGMEXPORT_SIDEMENUS.PRESETWINDOWCGM.HORIZONTALLAYOUT.ITEMINFO.BUTTONS.CLOSEBUTTON.TEXT"
-msgid "Return"
+msgid "Trở lại"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGMEXPORT_SIDEMENUS.PRESETWINDOWCGM.HORIZONTALLAYOUT.ITEMINFO.BUTTONS.CLOSEBUTTON.TOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGMEXPORT_SIDEMENUS.PRESETWINDOWCGM.HORIZONTALLAYOUT.ITEMINFO.BUTTONS.CLOSEBUTTON.TOOLTIP"
-msgid "Close this preset window"
+msgid "Đóng cửa sổ cài sẵn này"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGMEXPORT_SIDEMENUS.PRESETWINDOWCGM.HORIZONTALLAYOUT.ITEMINFO.BUTTONS.GENERATEFROMCURRENT.TEXT
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGMEXPORT_SIDEMENUS.PRESETWINDOWCGM.HORIZONTALLAYOUT.ITEMINFO.BUTTONS.GENERATEFROMCURRENT.TEXT"
-msgid "Generate new Preset"
+msgid "Tạo cài đặt trước mới"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGMEXPORT_SIDEMENUS.PRESETWINDOWCGM.HORIZONTALLAYOUT.ITEMINFO.BUTTONS.GENERATEFROMCURRENT.TEXT_STARTSCREEN
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGMEXPORT_SIDEMENUS.PRESETWINDOWCGM.HORIZONTALLAYOUT.ITEMINFO.BUTTONS.GENERATEFROMCURRENT.TEXT_STARTSCREEN"
-msgid "Cluster Preset"
+msgid "Cài sẵn cụm"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGMEXPORT_SIDEMENUS.PRESETWINDOWCGM.HORIZONTALLAYOUT.ITEMINFO.BUTTONS.GENERATEFROMCURRENT.TOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGMEXPORT_SIDEMENUS.PRESETWINDOWCGM.HORIZONTALLAYOUT.ITEMINFO.BUTTONS.GENERATEFROMCURRENT.TOOLTIP"
-msgid "Save the currently loaded cluster configuration to a new preset."
+msgid "Lưu cấu hình cụm hiện được tải vào cài đặt trước mới."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGMEXPORT_SIDEMENUS.PRESETWINDOWCGM.HORIZONTALLAYOUT.OBJECTLIST.SCROLLAREA.CONTENT.NOPRESETSAVAILABLE.LABEL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGMEXPORT_SIDEMENUS.PRESETWINDOWCGM.HORIZONTALLAYOUT.OBJECTLIST.SCROLLAREA.CONTENT.NOPRESETSAVAILABLE.LABEL"
-msgid "No presets available"
+msgid "Không có cài đặt trước nào"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGMEXPORT_SIDEMENUS.PRESETWINDOWCGM.HORIZONTALLAYOUT.OBJECTLIST.SCROLLAREA.CONTENT.PRESETENTRYPREFAB.ADDTHISTRAITBUTTON.TEXT
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGMEXPORT_SIDEMENUS.PRESETWINDOWCGM.HORIZONTALLAYOUT.OBJECTLIST.SCROLLAREA.CONTENT.PRESETENTRYPREFAB.ADDTHISTRAITBUTTON.TEXT"
-msgid "Load Preset"
+msgid "Tải cài sẵn"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGMEXPORT_SIDEMENUS.PRESETWINDOWCGM.HORIZONTALLAYOUT.OBJECTLIST.SCROLLAREA.CONTENT.PRESETENTRYPREFAB.ADDTHISTRAITBUTTON.TOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGMEXPORT_SIDEMENUS.PRESETWINDOWCGM.HORIZONTALLAYOUT.OBJECTLIST.SCROLLAREA.CONTENT.PRESETENTRYPREFAB.ADDTHISTRAITBUTTON.TOOLTIP"
-msgid "Load this preset to the preview"
+msgid "Tải cài đặt trước này vào bản xem trước"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGMEXPORT_SIDEMENUS.PRESETWINDOWCGM.HORIZONTALLAYOUT.OBJECTLIST.SCROLLAREA.CONTENT.PRESETENTRYPREFAB.DELETEPRESETTOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGMEXPORT_SIDEMENUS.PRESETWINDOWCGM.HORIZONTALLAYOUT.OBJECTLIST.SCROLLAREA.CONTENT.PRESETENTRYPREFAB.DELETEPRESETTOOLTIP"
-msgid "Delete Preset"
+msgid "Xóa cài sẵn"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGMEXPORT_SIDEMENUS.PRESETWINDOWCGM.HORIZONTALLAYOUT.OBJECTLIST.SCROLLAREA.CONTENT.PRESETENTRYPREFAB.RENAMEPRESETTOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGMEXPORT_SIDEMENUS.PRESETWINDOWCGM.HORIZONTALLAYOUT.OBJECTLIST.SCROLLAREA.CONTENT.PRESETENTRYPREFAB.RENAMEPRESETTOOLTIP"
-msgid "Rename Preset"
+msgid "Đổi tên cài sẵn"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGMEXPORT_SIDEMENUS.PRESETWINDOWCGM.TITLE
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGMEXPORT_SIDEMENUS.PRESETWINDOWCGM.TITLE"
-msgid "Cluster Presets"
+msgid "Cài đặt trước cụm"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGMEXPORT_SIDEMENUS.TRAITPOPUP.CANCELBUTTON.TEXT
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGMEXPORT_SIDEMENUS.TRAITPOPUP.CANCELBUTTON.TEXT"
-msgid "Close"
+msgid "Đóng"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGMEXPORT_SIDEMENUS.TRAITPOPUP.SCROLLAREA.CONTENT.LISTVIEWENTRYPREFAB.ADDTHISTRAITBUTTON.TEXT
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGMEXPORT_SIDEMENUS.TRAITPOPUP.SCROLLAREA.CONTENT.LISTVIEWENTRYPREFAB.ADDTHISTRAITBUTTON.TEXT"
-msgid "Add this trait"
+msgid "Thêm đặc điểm này"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGMEXPORT_SIDEMENUS.TRAITPOPUP.SCROLLAREA.CONTENT.LISTVIEWENTRYPREFAB.LABEL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGMEXPORT_SIDEMENUS.TRAITPOPUP.SCROLLAREA.CONTENT.LISTVIEWENTRYPREFAB.LABEL"
-msgid "trait label"
+msgid "nhãn đặc điểm"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGMEXPORT_SIDEMENUS.TRAITPOPUP.SCROLLAREA.CONTENT.LISTVIEWENTRYPREFAB.TOGGLETRAITBUTTON.ADDTOBLACKLIST
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGMEXPORT_SIDEMENUS.TRAITPOPUP.SCROLLAREA.CONTENT.LISTVIEWENTRYPREFAB.TOGGLETRAITBUTTON.ADDTOBLACKLIST"
-msgid "Disable as Random"
+msgid "Tắt ngẫu nhiên"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGMEXPORT_SIDEMENUS.TRAITPOPUP.SCROLLAREA.CONTENT.LISTVIEWENTRYPREFAB.TOGGLETRAITBUTTON.ADDTOBLACKLISTTOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGMEXPORT_SIDEMENUS.TRAITPOPUP.SCROLLAREA.CONTENT.LISTVIEWENTRYPREFAB.TOGGLETRAITBUTTON.ADDTOBLACKLISTTOOLTIP"
-msgid "Prevent the Trait from generating as a random trait"
+msgid "Ngăn chặn Đặc điểm tạo ra như một đặc điểm ngẫu nhiên"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGMEXPORT_SIDEMENUS.TRAITPOPUP.SCROLLAREA.CONTENT.LISTVIEWENTRYPREFAB.TOGGLETRAITBUTTON.REMOVEFROMBLACKLIST
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGMEXPORT_SIDEMENUS.TRAITPOPUP.SCROLLAREA.CONTENT.LISTVIEWENTRYPREFAB.TOGGLETRAITBUTTON.REMOVEFROMBLACKLIST"
-msgid "Enable as Random"
+msgid "Bật dưới dạng ngẫu nhiên"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGMEXPORT_SIDEMENUS.TRAITPOPUP.SCROLLAREA.CONTENT.LISTVIEWENTRYPREFAB.TOGGLETRAITBUTTON.REMOVEFROMBLACKLISTTOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGMEXPORT_SIDEMENUS.TRAITPOPUP.SCROLLAREA.CONTENT.LISTVIEWENTRYPREFAB.TOGGLETRAITBUTTON.REMOVEFROMBLACKLISTTOOLTIP"
-msgid "Allows the Trait generating as a random trait"
+msgid "Cho phép tạo Đặc điểm dưới dạng đặc điểm ngẫu nhiên"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGMEXPORT_SIDEMENUS.TRAITPOPUP.SCROLLAREA.CONTENT.NOTRAITAVAILABLE.LABEL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGMEXPORT_SIDEMENUS.TRAITPOPUP.SCROLLAREA.CONTENT.NOTRAITAVAILABLE.LABEL"
-msgid "No Traits available"
+msgid "Không có đặc điểm nào"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGMEXPORT_SIDEMENUS.TRAITPOPUP.TEXT
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGMEXPORT_SIDEMENUS.TRAITPOPUP.TEXT"
-msgid "available Traits:"
+msgid "Đặc điểm có sẵn:"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGMEXPORT_SIDEMENUS.TRAITPOPUP.TOGGLE.LABEL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGMEXPORT_SIDEMENUS.TRAITPOPUP.TOGGLE.LABEL"
-msgid "Override asteroid trait rules:"
+msgid "Ghi đè các quy tắc đặc điểm của tiểu hành tinh:"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.CGMEXPORT_SIDEMENUS.TRAITPOPUP.TOGGLE.TOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.CGMEXPORT_SIDEMENUS.TRAITPOPUP.TOGGLE.TOOLTIP"
-msgid "Force overrides the trait rules for the asteroids,\nallowing to add traits that would not be allowed by vanilla generation.\nCaution; might increase worldgen failure rates or result in weird asteroid layouts, depending on the trait."
+msgid "Lực lượng ghi đè các quy tắc đặc điểm cho các tiểu hành tinh,\ncho phép thêm những đặc điểm mà thế hệ vanilla không cho phép.\nThận trọng; có thể làm tăng tỷ lệ thất bại của thế giới hoặc dẫn đến bố cục tiểu hành tinh kỳ lạ, tùy thuộc vào đặc điểm."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.GENERATIONWARNING.DESCRIPTION
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.GENERATIONWARNING.DESCRIPTION"
-msgid "You have selected more than 6 outer planets, which can lead to placement failures.\n Automatically adjust cluster size and placements?"
+msgid "Bạn đã chọn hơn 6 hành tinh bên ngoài, điều này có thể dẫn đến sai sót về vị trí.\n Tự động điều chỉnh kích thước và vị trí cụm?"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.GENERATIONWARNING.NOMANUAL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.GENERATIONWARNING.NOMANUAL"
-msgid "No, let me do it manually."
+msgid "Không, hãy để tôi làm điều đó bằng tay."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.GENERATIONWARNING.WINDOWNAME
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.GENERATIONWARNING.WINDOWNAME"
-msgid "Potential Generation Errors detected!"
+msgid "Đã phát hiện lỗi thế hệ tiềm năng!"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.GENERATIONWARNING.YES
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.GENERATIONWARNING.YES"
-msgid "Yes"
+msgid "Đúng"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.GENERIC_YESNO.NO
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.GENERIC_YESNO.NO"
-msgid "No"
+msgid "KHÔNG"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.GENERIC_YESNO.YES
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.GENERIC_YESNO.YES"
-msgid "Yes"
+msgid "Đúng"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.INFOTOOLTIPS.INFO_ONLY
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.INFOTOOLTIPS.INFO_ONLY"
-msgid "These are for info only and are not configurable."
+msgid "Đây chỉ là thông tin và không thể cấu hình được."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.SEEDLOCK.NAME
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.SEEDLOCK.NAME"
-msgid "Seed rerolling affects traits"
+msgid "Việc cuộn lại hạt ảnh hưởng đến tính trạng"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.SEEDLOCK.NAME_MIXING
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.SEEDLOCK.NAME_MIXING"
-msgid "reroll Mixings:"
+msgid "cuộn lại Hỗn hợp:"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.SEEDLOCK.NAME_SHORT
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.SEEDLOCK.NAME_SHORT"
-msgid "reroll Traits:"
+msgid "cuộn lại"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.SEEDLOCK.NAME_STARMAP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.SEEDLOCK.NAME_STARMAP"
-msgid "reroll Starmap:"
+msgid "cuộn lại Starmap:"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.SEEDLOCK.SEED_PLACEHOLDER
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.SEEDLOCK.SEED_PLACEHOLDER"
-msgid "Enter Seed..."
+msgid "Nhập hạt giống..."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.SEEDLOCK.TOOLTIP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.SEEDLOCK.TOOLTIP"
-msgid "When enabled, rerolling the seed will also reroll the planet traits to those of the new seed.\nDisable to reroll the seed without affecting the traits.\nOnly blocks trait rerolling for the seed setting above."
+msgid "Khi được bật, việc cuộn lại hạt giống cũng sẽ cuộn lại các đặc điểm của hành tinh thành đặc điểm của hạt giống mới.\nVô hiệu hóa để cuộn lại hạt giống mà không ảnh hưởng đến các đặc tính.\nChỉ chặn tính năng cuộn lại cho cài đặt hạt giống ở trên."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.SEEDLOCK.TOOLTIP_STARMAP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.SEEDLOCK.TOOLTIP_STARMAP"
-msgid "When enabled, rerolling the seed will also reroll the starmap to the new seed.\nDisable to reroll the seed without affecting the starmap."
+msgid "Khi được bật, việc cuộn lại hạt giống cũng sẽ cuộn lại bản đồ sao sang hạt giống mới.\nTắt để cuộn lại hạt giống mà không ảnh hưởng đến bản đồ sao."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.SPACEDESTINATIONS.CGM_RANDOM_OUTER.DESCRIPTION
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.SPACEDESTINATIONS.CGM_RANDOM_OUTER.DESCRIPTION"
-msgid "Choose an amount of random outer asteroids.\n\nEach asteroid can only generate once"
+msgid "Chọn một lượng tiểu hành tinh bên ngoài ngẫu nhiên.\n\nMỗi tiểu hành tinh chỉ có thể tạo ra một lần"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.SPACEDESTINATIONS.CGM_RANDOM_OUTER.NAME
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.SPACEDESTINATIONS.CGM_RANDOM_OUTER.NAME"
-msgid "Random Outer Asteroid(s)"
+msgid "(Các) tiểu hành tinh bên ngoài ngẫu nhiên"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.SPACEDESTINATIONS.CGM_RANDOM_POI.DESCRIPTION
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.SPACEDESTINATIONS.CGM_RANDOM_POI.DESCRIPTION"
-msgid "Chooses a random POI during worldgen.\n\nDoes not roll unique POIs\n(Temporal Tear, Russel's Teapot)"
+msgid "Chọn một POI ngẫu nhiên trong worldgen.\n\nKhông cuộn POI duy nhất\n(Nước mắt tạm thời, Ấm trà của Russel)"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.SPACEDESTINATIONS.CGM_RANDOM_POI.NAME
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.SPACEDESTINATIONS.CGM_RANDOM_POI.NAME"
-msgid "Random POI"
+msgid "POI ngẫu nhiên"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.SPACEDESTINATIONS.CGM_RANDOM_STARTER.DESCRIPTION
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.SPACEDESTINATIONS.CGM_RANDOM_STARTER.DESCRIPTION"
-msgid "The starting asteroid will be picked at random"
+msgid "Tiểu hành tinh bắt đầu sẽ được chọn ngẫu nhiên"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.SPACEDESTINATIONS.CGM_RANDOM_STARTER.NAME
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.SPACEDESTINATIONS.CGM_RANDOM_STARTER.NAME"
-msgid "Random Start Asteroid"
+msgid "Tiểu hành tinh khởi đầu ngẫu nhiên"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.SPACEDESTINATIONS.CGM_RANDOM_WARP.DESCRIPTION
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.SPACEDESTINATIONS.CGM_RANDOM_WARP.DESCRIPTION"
-msgid "The teleporter asteroid will be picked at random"
+msgid "Tiểu hành tinh dịch chuyển sẽ được chọn ngẫu nhiên"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.SPACEDESTINATIONS.CGM_RANDOM_WARP.NAME
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.SPACEDESTINATIONS.CGM_RANDOM_WARP.NAME"
-msgid "Random Teleporter Asteroid"
+msgid "Tiểu hành tinh dịch chuyển ngẫu nhiên"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.SPACEDESTINATIONS.MODDEDPLANET
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.SPACEDESTINATIONS.MODDEDPLANET"
-msgid "(Modded)"
+msgid "(Đã sửa đổi)"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.SPACEDESTINATIONS.MODDEDPLANETDESC
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.SPACEDESTINATIONS.MODDEDPLANETDESC"
-msgid "Added by the mod \"{0}\""
+msgid "Được thêm bởi mod \"{0}\""
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.STARMAPITEMDESCRIPTOR.ASTEROID
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.STARMAPITEMDESCRIPTOR.ASTEROID"
-msgid "Asteroid"
+msgid "tiểu hành tinh"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.STARMAPITEMDESCRIPTOR.ASTEROIDPLURAL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.STARMAPITEMDESCRIPTOR.ASTEROIDPLURAL"
-msgid "Asteroids"
+msgid "Tiểu hành tinh"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.STARMAPITEMDESCRIPTOR.NOPOISAVAILABLE
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.STARMAPITEMDESCRIPTOR.NOPOISAVAILABLE"
-msgid "No more available POI types."
+msgid "Không có thêm loại POI nào nữa."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.STARMAPITEMDESCRIPTOR.POI
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.STARMAPITEMDESCRIPTOR.POI"
-msgid "Point of Interest"
+msgid "Điểm ưa thích"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.STARMAPITEMDESCRIPTOR.POI_GROUP
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.STARMAPITEMDESCRIPTOR.POI_GROUP"
-msgid "POI Group"
+msgid "Nhóm POI"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.STARMAPITEMDESCRIPTOR.POI_GROUP_PLURAL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.STARMAPITEMDESCRIPTOR.POI_GROUP_PLURAL"
-msgid "POI Groups"
+msgid "Nhóm POI"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.STARMAPITEMDESCRIPTOR.POIPLURAL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.STARMAPITEMDESCRIPTOR.POIPLURAL"
-msgid "Points of Interest"
+msgid "Điểm ưa thích"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.STARMAPITEMDESCRIPTOR.STORYTRAIT
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.STARMAPITEMDESCRIPTOR.STORYTRAIT"
-msgid "Story Trait"
+msgid "Đặc điểm câu chuyện"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.UI.STARMAPITEMDESCRIPTOR.STORYTRAITPLURAL
 msgctxt "ClusterTraitGenerationManager.STRINGS.UI.STARMAPITEMDESCRIPTOR.STORYTRAITPLURAL"
-msgid "Story Traits"
+msgid "Đặc điểm câu chuyện"
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.WORLD_TRAITS.CGM_RANDOMTRAIT.DESCRIPTION
 msgctxt "ClusterTraitGenerationManager.STRINGS.WORLD_TRAITS.CGM_RANDOMTRAIT.DESCRIPTION"
-msgid "Chooses between 1 and 3 Traits at random.\n(Between 0 and 2 for random planets)\nMutually exclusive with other selectable Traits."
+msgid "Chọn ngẫu nhiên từ 1 đến 3 Đặc điểm.\n(Từ 0 đến 2 cho các hành tinh ngẫu nhiên)\nLoại trừ lẫn nhau với các Đặc điểm có thể lựa chọn khác."
 msgstr ""
 
 #. ClusterTraitGenerationManager.STRINGS.WORLD_TRAITS.CGM_RANDOMTRAIT.NAME
 msgctxt "ClusterTraitGenerationManager.STRINGS.WORLD_TRAITS.CGM_RANDOMTRAIT.NAME"
-msgid "Randomized Traits"
+msgid "Đặc điểm ngẫu nhiên"
 msgstr ""
 

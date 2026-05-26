@@ -5,31 +5,31 @@ msgstr ""
 
 #. LightBridge.STRINGS.BUILDINGS.PREFABS.LB_LIGHTBRIDGEEMITTER.DESC
 msgctxt "LightBridge.STRINGS.BUILDINGS.PREFABS.LB_LIGHTBRIDGEEMITTER.DESC"
-msgid "These bridges are made from light. If you rubbed your cheek on one, it would be like standing outside with the sun shining on your face. It would also set your hair on fire, so don't actually do it."
+msgid "Những cây cầu này được làm từ ánh sáng. Nếu bạn dụi má vào một bên, điều đó sẽ giống như bạn đang đứng bên ngoài với ánh nắng chiếu vào mặt. Nó cũng sẽ khiến tóc bạn bị cháy, vì vậy đừng thực sự làm vậy."
 msgstr ""
 
 #. LightBridge.STRINGS.BUILDINGS.PREFABS.LB_LIGHTBRIDGEEMITTER.EFFECT
 msgctxt "LightBridge.STRINGS.BUILDINGS.PREFABS.LB_LIGHTBRIDGEEMITTER.EFFECT"
-msgid "Emitts a semi-permeable light bridge of configurable length.\n\nLonger bridges require higher amounts of power"
+msgid "Phát ra một cây cầu ánh sáng bán thấm có chiều dài có thể định cấu hình.\n\nCây cầu dài hơn đòi hỏi lượng điện năng cao hơn"
 msgstr ""
 
 #. LightBridge.STRINGS.BUILDINGS.PREFABS.LB_LIGHTBRIDGEEMITTER.NAME
 msgctxt "LightBridge.STRINGS.BUILDINGS.PREFABS.LB_LIGHTBRIDGEEMITTER.NAME"
-msgid "Light Bridge Emitter"
+msgid "Bộ phát cầu ánh sáng"
 msgstr ""
 
 #. LightBridge.STRINGS.UI.UISIDESCREENS.LIGHTBRIDGESIDESCREEN.DESC
 msgctxt "LightBridge.STRINGS.UI.UISIDESCREENS.LIGHTBRIDGESIDESCREEN.DESC"
-msgid "Set length of light bridge.\nLonger light bridges cost more power to maintain."
+msgid "Đặt chiều dài của cầu đèn.\nCầu ánh sáng dài hơn sẽ tốn nhiều năng lượng hơn để bảo trì."
 msgstr ""
 
 #. LightBridge.STRINGS.UI.UISIDESCREENS.LIGHTBRIDGESIDESCREEN.TILEUNITS
 msgctxt "LightBridge.STRINGS.UI.UISIDESCREENS.LIGHTBRIDGESIDESCREEN.TILEUNITS"
-msgid " Tiles"
+msgid "Gạch lát"
 msgstr ""
 
 #. LightBridge.STRINGS.UI.UISIDESCREENS.LIGHTBRIDGESIDESCREEN.TITLE
 msgctxt "LightBridge.STRINGS.UI.UISIDESCREENS.LIGHTBRIDGESIDESCREEN.TITLE"
-msgid "Light Bridge"
+msgid "Cầu Ánh Sáng"
 msgstr ""
 

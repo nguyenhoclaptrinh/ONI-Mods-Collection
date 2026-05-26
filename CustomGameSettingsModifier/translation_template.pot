@@ -5,26 +5,26 @@ msgstr ""
 
 #. CustomGameSettingsModifier.STRINGS.UI.CUSTOMGAMESETTINGSCHANGER.BUTTONTEXT
 msgctxt "CustomGameSettingsModifier.STRINGS.UI.CUSTOMGAMESETTINGSCHANGER.BUTTONTEXT"
-msgid "Change Difficulty Settings"
+msgid "Thay đổi cài đặt độ khó"
 msgstr ""
 
 #. CustomGameSettingsModifier.STRINGS.UI.CUSTOMGAMESETTINGSCHANGER.CHANGEWARNING
 msgctxt "CustomGameSettingsModifier.STRINGS.UI.CUSTOMGAMESETTINGSCHANGER.CHANGEWARNING"
-msgid "<color=#fec315>Most of these changes require a reload!</color>"
+msgid "<color=#fec315>Hầu hết những thay đổi này đều yêu cầu tải lại!</color>"
 msgstr ""
 
 #. CustomGameSettingsModifier.STRINGS.UI.CUSTOMGAMESETTINGSCHANGER.CHANGEWARNINGTOOLTIP
 msgctxt "CustomGameSettingsModifier.STRINGS.UI.CUSTOMGAMESETTINGSCHANGER.CHANGEWARNINGTOOLTIP"
-msgid "Changing the majority of these settings wont have an immediate effect.\nTo activate the effects:\n1. Change settings to your desired configuration.\n2. Save the game.\n3. Load that save game.\n4. Your changes should now be active."
+msgid "Việc thay đổi phần lớn các cài đặt này sẽ không có tác dụng ngay lập tức.\nĐể kích hoạt các hiệu ứng:\n1. Thay đổi cài đặt thành cấu hình mong muốn của bạn.\n2. Lưu trò chơi.\n3. Tải game save đó.\n4. Bây giờ những thay đổi của bạn sẽ có hiệu lực."
 msgstr ""
 
 #. CustomGameSettingsModifier.STRINGS.UI.CUSTOMGAMESETTINGSCHANGER.CLOSE.TEXT
 msgctxt "CustomGameSettingsModifier.STRINGS.UI.CUSTOMGAMESETTINGSCHANGER.CLOSE.TEXT"
-msgid "Close"
+msgid "Đóng"
 msgstr ""
 
 #. CustomGameSettingsModifier.STRINGS.UI.CUSTOMGAMESETTINGSCHANGER.TITLE.TITLETEXT
 msgctxt "CustomGameSettingsModifier.STRINGS.UI.CUSTOMGAMESETTINGSCHANGER.TITLE.TITLETEXT"
-msgid "Difficulty Settings"
+msgid "Cài đặt độ khó"
 msgstr ""
 

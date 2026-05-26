@@ -5,162 +5,162 @@ msgstr ""
 
 #. SetStartDupes.STRINGS.BIONIC_STRESS_HARDWIRED
 msgctxt "SetStartDupes.STRINGS.BIONIC_STRESS_HARDWIRED"
-msgid "Bionic duplicants have a hardwired stress reaction since they are mostly incompatible with normal stress reactions"
+msgid "Các bản sao sinh học có phản ứng căng thẳng cố định vì chúng hầu như không tương thích với các phản ứng căng thẳng thông thường"
 msgstr ""
 
 #. SetStartDupes.STRINGS.EXCLUSIVITY_RULE_CONFLICTING
 msgctxt "SetStartDupes.STRINGS.EXCLUSIVITY_RULE_CONFLICTING"
-msgid "Mutual exclusivity detected:\nWith vanilla generation rules,\nthis would not be added, as it is mutually exclusive with:"
+msgid "Đã phát hiện sự loại trừ lẫn nhau:\nVới quy tắc tạo vanilla,\nđiều này sẽ không được thêm vào vì nó loại trừ lẫn nhau với:"
 msgstr ""
 
 #. SetStartDupes.STRINGS.MISSINGSKILLGROUP
 msgctxt "SetStartDupes.STRINGS.MISSINGSKILLGROUP"
-msgid "Missing Attribute!"
+msgid "Thiếu thuộc tính!"
 msgstr ""
 
 #. SetStartDupes.STRINGS.MISSINGSKILLGROUPDESC
 msgctxt "SetStartDupes.STRINGS.MISSINGSKILLGROUPDESC"
-msgid "This Attribute could not be found: {0}"
+msgid "Không thể tìm thấy thuộc tính này: {0}"
 msgstr ""
 
 #. SetStartDupes.STRINGS.MISSINGTRAIT
 msgctxt "SetStartDupes.STRINGS.MISSINGTRAIT"
-msgid "Missing Trait!"
+msgid "Thiếu Tính Cách!"
 msgstr ""
 
 #. SetStartDupes.STRINGS.MISSINGTRAITDESC
 msgctxt "SetStartDupes.STRINGS.MISSINGTRAITDESC"
-msgid "This Trait could not be found: {0}"
+msgid "Không thể tìm thấy Đặc điểm này: {0}"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.BUTTONS.ADDTOSTATS
 msgctxt "SetStartDupes.STRINGS.UI.BUTTONS.ADDTOSTATS"
-msgid "Add new"
+msgid "Thêm mới"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.BUTTONS.APPLYSKIN
 msgctxt "SetStartDupes.STRINGS.UI.BUTTONS.APPLYSKIN"
-msgid "Apply this Personality"
+msgid "Áp dụng tính cách này"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.BUTTONS.CYCLENEXT
 msgctxt "SetStartDupes.STRINGS.UI.BUTTONS.CYCLENEXT"
-msgid "Cycle to next"
+msgid "Chu kỳ tiếp theo"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.BUTTONS.CYCLEPREV
 msgctxt "SetStartDupes.STRINGS.UI.BUTTONS.CYCLEPREV"
-msgid "Cycle to previous"
+msgid "Chu kỳ về trước"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.BUTTONS.DUPELICITYEDITINGBUTTONTOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.BUTTONS.DUPELICITYEDITINGBUTTONTOOLTIP"
-msgid "Edit Duplicants"
+msgid "Chỉnh sửa bản sao"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.BUTTONS.DUPESKINBUTTONTOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.BUTTONS.DUPESKINBUTTONTOOLTIP"
-msgid "Select Duplicant Personality (Skin)"
+msgid "Chọn nhân cách (Skin)"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.BUTTONS.MODIFYBUTTONTOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.BUTTONS.MODIFYBUTTONTOOLTIP"
-msgid "Modify Duplicant Stats"
+msgid "Sửa đổi số liệu thống kê trùng lặp"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.BUTTONS.MODIFYBUTTONTOOLTIP2
 msgctxt "SetStartDupes.STRINGS.UI.BUTTONS.MODIFYBUTTONTOOLTIP2"
-msgid "Apply Stat Changes"
+msgid "Áp dụng thay đổi thống kê"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.BUTTONS.PRESETWINDOWBUTTONTOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.BUTTONS.PRESETWINDOWBUTTONTOOLTIP"
-msgid "Open Duplicant Preset Window\nTo create a preset from this duplicants stats,\nclick the \"Generate Preset\" button in the preset window."
+msgid "Mở cửa sổ cài sẵn nhân bản\nĐể tạo giá trị đặt trước từ số liệu thống kê trùng lặp này,\nnhấp vào nút \"Tạo giá trị đặt trước\" trong cửa sổ đặt trước."
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.BUTTONS.REMOVEFROMSTATS
 msgctxt "SetStartDupes.STRINGS.UI.BUTTONS.REMOVEFROMSTATS"
-msgid "Remove"
+msgid "Di dời"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.BUTTONS.REROLLCAREPACKAGE
 msgctxt "SetStartDupes.STRINGS.UI.BUTTONS.REROLLCAREPACKAGE"
-msgid "Reroll for a different Care Package"
+msgid "Reroll để nhận Gói chăm sóc khác"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.BUTTONS.CLOSEBUTTON.TEXT
 msgctxt "SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.BUTTONS.CLOSEBUTTON.TEXT"
-msgid "Return"
+msgid "Trở lại"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.BUTTONS.CLOSEBUTTON.TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.BUTTONS.CLOSEBUTTON.TOOLTIP"
-msgid "Close window"
+msgid "Đóng cửa sổ"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.BUTTONS.RESETBUTTON.TEXT
 msgctxt "SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.BUTTONS.RESETBUTTON.TEXT"
-msgid "Reset All Changes"
+msgid "Đặt lại tất cả thay đổi"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.BUTTONS.RESETBUTTON.TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.BUTTONS.RESETBUTTON.TOOLTIP"
-msgid "Reset all changes you have made to the care package selection"
+msgid "Đặt lại tất cả các thay đổi bạn đã thực hiện đối với việc lựa chọn gói chăm sóc"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.CREATECAREPACKAGEPOPUP.INVALIDID
 msgctxt "SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.CREATECAREPACKAGEPOPUP.INVALIDID"
-msgid "Could not create new care package!\n\nThere is no item with the Id or name \"{0}\""
+msgid "Không thể tạo gói chăm sóc mới!\n\nKhông có mục nào có Id hoặc tên \"{0}\""
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.CREATECAREPACKAGEPOPUP.SUCCESS
 msgctxt "SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.CREATECAREPACKAGEPOPUP.SUCCESS"
-msgid "Successfully created a new care package with {0}"
+msgid "Đã tạo thành công gói chăm sóc mới với {0}"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.CREATECAREPACKAGEPOPUP.TITLE
 msgctxt "SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.CREATECAREPACKAGEPOPUP.TITLE"
-msgid "Care Package Creation"
+msgid "Tạo gói chăm sóc"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.HORIZONTALLAYOUT.ITEMINFO.SCROLLAREA.CONTENT.AMOUNTINPUT.LABEL
 msgctxt "SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.HORIZONTALLAYOUT.ITEMINFO.SCROLLAREA.CONTENT.AMOUNTINPUT.LABEL"
-msgid "Amount:"
+msgid "Số lượng:"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.HORIZONTALLAYOUT.ITEMINFO.SCROLLAREA.CONTENT.ITEMDISCOVERED.LABEL
 msgctxt "SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.HORIZONTALLAYOUT.ITEMINFO.SCROLLAREA.CONTENT.ITEMDISCOVERED.LABEL"
-msgid "Item Discovered"
+msgid "Mục được phát hiện"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.HORIZONTALLAYOUT.ITEMINFO.SCROLLAREA.CONTENT.REQUIREDDLCS.LABEL
 msgctxt "SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.HORIZONTALLAYOUT.ITEMINFO.SCROLLAREA.CONTENT.REQUIREDDLCS.LABEL"
-msgid "Required Dlcs:"
+msgid "Dlc cần thiết:"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.HORIZONTALLAYOUT.ITEMINFO.SCROLLAREA.CONTENT.UNLOCKATCYCLE.LABEL
 msgctxt "SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.HORIZONTALLAYOUT.ITEMINFO.SCROLLAREA.CONTENT.UNLOCKATCYCLE.LABEL"
-msgid "Unlocked at cycle:"
+msgid "Mở khóa theo chu kỳ:"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.HORIZONTALLAYOUT.ITEMINFO.SCROLLAREA.CONTENT.UNLOCKCONDITIONSLABEL
 msgctxt "SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.HORIZONTALLAYOUT.ITEMINFO.SCROLLAREA.CONTENT.UNLOCKCONDITIONSLABEL"
-msgid "Conditions required to unlock:"
+msgid "Điều kiện cần để mở khóa:"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.HORIZONTALLAYOUT.OBJECTLIST.ADDCAREPACKAGEBTN.TEXT
 msgctxt "SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.HORIZONTALLAYOUT.OBJECTLIST.ADDCAREPACKAGEBTN.TEXT"
-msgid "Add new custom care package"
+msgid "Thêm gói chăm sóc tùy chỉnh mới"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.HORIZONTALLAYOUT.OBJECTLIST.ADDCAREPACKAGEBTN.TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.HORIZONTALLAYOUT.OBJECTLIST.ADDCAREPACKAGEBTN.TOOLTIP"
-msgid "Add a new custom care package.\nEnter the id of the item you want to add in the text field above."
+msgid "Thêm gói chăm sóc tùy chỉnh mới.\nNhập id của mục bạn muốn thêm vào trường văn bản ở trên."
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.HORIZONTALLAYOUT.OBJECTLIST.CAREPACKAGEITEMID.TEXTAREA.PLACEHOLDER
 msgctxt "SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.HORIZONTALLAYOUT.OBJECTLIST.CAREPACKAGEITEMID.TEXTAREA.PLACEHOLDER"
-msgid "insert new care package item Id or Name (experimental)..."
+msgid "chèn Id hoặc Tên mục gói chăm sóc mới (thử nghiệm)..."
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.HORIZONTALLAYOUT.OBJECTLIST.CAREPACKAGEITEMID.TEXTAREA.TEXT
@@ -170,27 +170,27 @@ msgstr ""
 
 #. SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.HORIZONTALLAYOUT.OBJECTLIST.SCROLLAREA.CONTENT.NONEAVAILABLE.LABEL
 msgctxt "SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.HORIZONTALLAYOUT.OBJECTLIST.SCROLLAREA.CONTENT.NONEAVAILABLE.LABEL"
-msgid "No custom care packages yet"
+msgid "Chưa có gói chăm sóc tùy chỉnh nào"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.HORIZONTALLAYOUT.OBJECTLIST.SCROLLAREA.CONTENT.PRESETENTRYPREFAB.DELETE_CARE_PACKAGE_TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.HORIZONTALLAYOUT.OBJECTLIST.SCROLLAREA.CONTENT.PRESETENTRYPREFAB.DELETE_CARE_PACKAGE_TOOLTIP"
-msgid "Delete Care Package"
+msgid "Xóa gói chăm sóc"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.HORIZONTALLAYOUT.OBJECTLIST.SCROLLAREA.CONTENT.PRESETENTRYPREFAB.TOGGLE_VANILLA_CAREPACKAGE
 msgctxt "SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.HORIZONTALLAYOUT.OBJECTLIST.SCROLLAREA.CONTENT.PRESETENTRYPREFAB.TOGGLE_VANILLA_CAREPACKAGE"
-msgid "Toggle this vanilla care package from the care package list.\nDisabled care packages won't show up in the selection list and cannot be rolled."
+msgid "Chuyển đổi gói chăm sóc vanilla này khỏi danh sách gói chăm sóc.\nCác gói chăm sóc người khuyết tật sẽ không hiển thị trong danh sách lựa chọn và không thể cuộn được."
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.HORIZONTALLAYOUT.OBJECTLIST.SEARCHBAR.CLEARTOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.HORIZONTALLAYOUT.OBJECTLIST.SEARCHBAR.CLEARTOOLTIP"
-msgid "Clear search bar"
+msgid "Xóa thanh tìm kiếm"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.HORIZONTALLAYOUT.OBJECTLIST.SEARCHBAR.INPUT.TEXTAREA.PLACEHOLDER
 msgctxt "SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.HORIZONTALLAYOUT.OBJECTLIST.SEARCHBAR.INPUT.TEXTAREA.PLACEHOLDER"
-msgid "Filter care packages..."
+msgid "Lọc các gói chăm sóc..."
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.HORIZONTALLAYOUT.OBJECTLIST.SEARCHBAR.INPUT.TEXTAREA.TEXT
@@ -200,622 +200,622 @@ msgstr ""
 
 #. SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.HORIZONTALLAYOUT.OBJECTLIST.SHOWVANILLA.LABEL
 msgctxt "SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.HORIZONTALLAYOUT.OBJECTLIST.SHOWVANILLA.LABEL"
-msgid "Show Vanilla Care Packages:"
+msgid "Hiển thị các gói chăm sóc Vanilla:"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.HORIZONTALLAYOUT.OBJECTLIST.SHOWVANILLA.TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.HORIZONTALLAYOUT.OBJECTLIST.SHOWVANILLA.TOOLTIP"
-msgid "Also show vanilla care packages in the list.\nNote that these cannot be modified."
+msgid "Đồng thời hiển thị các gói chăm sóc vanilla trong danh sách.\nLưu ý rằng những điều này không thể được sửa đổi."
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.RESETALLPACKAGES.TEXT
 msgctxt "SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.RESETALLPACKAGES.TEXT"
-msgid "Are you sure you want to reset all modifications you have done to the care package selection?"
+msgid "Bạn có chắc chắn muốn đặt lại tất cả các sửa đổi bạn đã thực hiện đối với việc lựa chọn gói chăm sóc không?"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.RESETALLPACKAGES.TITLE
 msgctxt "SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.RESETALLPACKAGES.TITLE"
-msgid "Reset Care Packages"
+msgid "Đặt lại các gói chăm sóc"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.TITLE
 msgctxt "SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.TITLE"
-msgid "Care Package Editor"
+msgid "Trình chỉnh sửa gói chăm sóc"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.UNKNOWN_ITEM_TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.UNKNOWN_ITEM_TOOLTIP"
-msgid "The item of this care package could not be found in the current game version."
+msgid "Không thể tìm thấy vật phẩm của gói chăm sóc này trong phiên bản trò chơi hiện tại."
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.UNLOCKCONDITIONTOOLTIPS.ALWAYSAVAILABLE
 msgctxt "SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.UNLOCKCONDITIONTOOLTIPS.ALWAYSAVAILABLE"
-msgid "This care package is always unlocked"
+msgid "Gói chăm sóc này luôn được mở khóa"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.UNLOCKCONDITIONTOOLTIPS.AND
 msgctxt "SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.UNLOCKCONDITIONTOOLTIPS.AND"
-msgid "AND"
+msgid "VÀ"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.UNLOCKCONDITIONTOOLTIPS.CYCLETHRESHOLD
 msgctxt "SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.UNLOCKCONDITIONTOOLTIPS.CYCLETHRESHOLD"
-msgid "Cycle {0} has been reached"
+msgid "Đã đạt đến chu kỳ {0}"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.UNLOCKCONDITIONTOOLTIPS.DISCOVERY
 msgctxt "SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.UNLOCKCONDITIONTOOLTIPS.DISCOVERY"
-msgid "{0} has been discovered"
+msgid "{0} đã được phát hiện"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.UNLOCKCONDITIONTOOLTIPS.OR
 msgctxt "SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.UNLOCKCONDITIONTOOLTIPS.OR"
-msgid "OR"
+msgid "HOẶC"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.UNLOCKCONDITIONTOOLTIPS.START
 msgctxt "SetStartDupes.STRINGS.UI.CAREPACKAGEEDITOR.UNLOCKCONDITIONTOOLTIPS.START"
-msgid "This care package unlocks after:"
+msgid "Gói chăm sóc này sẽ mở khóa sau:"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.ADDANDREMOVE.NAME
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.ADDANDREMOVE.NAME"
-msgid "Add/Remove Interests and Traits"
+msgid "Thêm/Xóa sở thích và đặc điểm"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.ADDANDREMOVE.TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.ADDANDREMOVE.TOOLTIP"
-msgid "Allows to add new or remove existing Traits and Interests on Duplicants.\nCan be overpowered if used excessively."
+msgid "Cho phép thêm mới hoặc xóa các Đặc điểm và Sở thích hiện có đối với Người trùng lặp.\nCó thể bị áp đảo nếu sử dụng quá mức."
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.ADDVACCILATORTRAITS.NAME
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.ADDVACCILATORTRAITS.NAME"
-msgid "Allow adding Vaccilator Traits"
+msgid "Cho phép thêm Đặc điểm Vaccilator"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.ADDVACCILATORTRAITS.TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.ADDVACCILATORTRAITS.TOOLTIP"
-msgid "Allows adding Neural-Vaccilator-Traits with the \"Add Trait\" Feature."
+msgid "Cho phép thêm Đặc điểm thần kinh-Vaccilator với tính năng \"Thêm đặc điểm\"."
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.CAREPACKAGEEDITOR.NAME
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.CAREPACKAGEEDITOR.NAME"
-msgid "Open Care Package Editor"
+msgid "Trình chỉnh sửa gói chăm sóc mở"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.CAREPACKAGEEDITOR.TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.CAREPACKAGEEDITOR.TOOLTIP"
-msgid "View and modify the different additional care packages or create new ones."
+msgid "Xem và sửa đổi các gói chăm sóc bổ sung khác nhau hoặc tạo gói mới."
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.CAREPACKAGEMULTIPLIER.NAME
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.CAREPACKAGEMULTIPLIER.NAME"
-msgid "Care Package Multiplier"
+msgid "Hệ số gói chăm sóc"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.CAREPACKAGEMULTIPLIER.TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.CAREPACKAGEMULTIPLIER.TOOLTIP"
-msgid "Global multiplier for the amount of item amount inside of care packages.\nDefault is 1."
+msgid "Hệ số nhân toàn cầu cho số lượng vật phẩm bên trong các gói chăm sóc.\nMặc định là 1."
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.CAREPACKAGESONLY.BEDCOUNT.NAME
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.CAREPACKAGESONLY.BEDCOUNT.NAME"
-msgid "Bed Count"
+msgid "Số giường"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.CAREPACKAGESONLY.BEDCOUNT.TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.CAREPACKAGESONLY.BEDCOUNT.TOOLTIP"
-msgid "When the number of duplicants in your colony reaches the number of constructed beds, the printing pod will only print care packages."
+msgid "Khi số lượng bản sao trong thuộc địa của bạn đạt đến số lượng giường được xây dựng, bộ phận in sẽ chỉ in các gói chăm sóc."
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.CAREPACKAGESONLY.BEDCOUNT_SIC.NAME
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.CAREPACKAGESONLY.BEDCOUNT_SIC.NAME"
-msgid "Bed Count (Sharing is Caring)"
+msgid "Đếm Giường (Sẻ chia là quan tâm)"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.CAREPACKAGESONLY.BEDCOUNT_SIC.TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.CAREPACKAGESONLY.BEDCOUNT_SIC.TOOLTIP"
-msgid "Use this option when you use the mod \"Sharing is Caring\".\nIf the mod is not enabled, this option works like the regular \"Bed Count\" option.\nWhen the number of duplicants in your colony reaches the number of constructed beds times the number of schedules, the printing pod will only print care packages.\nAs an example; if you have 3 beds, with 4 schedules, the printing pod will stop offering duplicants once there are 12 (3x4)."
+msgid "Sử dụng tùy chọn này khi bạn sử dụng mod \"Chia sẻ là quan tâm\".\nNếu mod không được bật, tùy chọn này hoạt động giống như tùy chọn \"Đếm giường\" thông thường.\nKhi số lượng bản sao trong thuộc địa của bạn đạt đến số lượng giường được xây dựng nhân với số lượng lịch trình, bộ phận in sẽ chỉ in các gói chăm sóc.\nNhư một ví dụ; nếu bạn có 3 giường, với 4 lịch trình, bộ phận in sẽ ngừng cung cấp bản sao khi có 12 giường (3x4)."
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.CAREPACKAGESONLY.DUPECOUNT.NAME
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.CAREPACKAGESONLY.DUPECOUNT.NAME"
-msgid "Duplicant Count"
+msgid "Số lượng trùng lặp"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.CAREPACKAGESONLY.DUPECOUNT.TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.CAREPACKAGESONLY.DUPECOUNT.TOOLTIP"
-msgid "When the number of duplicants in your colony is at or above the configured threshold, the printing pod will only print care packages."
+msgid "Khi số lượng bản sao trong thuộc địa của bạn bằng hoặc cao hơn ngưỡng được định cấu hình, nhóm in sẽ chỉ in các gói chăm sóc."
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.CAREPACKAGESONLY.NAME
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.CAREPACKAGESONLY.NAME"
-msgid "Print Care Packages only"
+msgid "Chỉ các gói chăm sóc in"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.CAREPACKAGESONLY.NONE.NAME
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.CAREPACKAGESONLY.NONE.NAME"
-msgid "Disabled"
+msgid "Tàn tật"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.CAREPACKAGESONLY.NONE.TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.CAREPACKAGESONLY.NONE.TOOLTIP"
-msgid "The printing pod will print duplicants and care packages as normal."
+msgid "Bộ phận in sẽ in các bản sao và gói bảo trì như bình thường."
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.CAREPACKAGESONLY.PRINTERCHECKBOX.NAME
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.CAREPACKAGESONLY.PRINTERCHECKBOX.NAME"
-msgid "Toggle on Printer"
+msgid "Bật máy in"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.CAREPACKAGESONLY.PRINTERCHECKBOX.TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.CAREPACKAGESONLY.PRINTERCHECKBOX.TOOLTIP"
-msgid "When the (new) checkbox in the sidescreen of the printing pod is checked, it will only print care packages."
+msgid "Khi hộp kiểm (mới) trong màn hình bên của hộp in được chọn, nó sẽ chỉ in các gói chăm sóc."
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.CAREPACKAGESONLY.TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.CAREPACKAGESONLY.TOOLTIP"
-msgid "When enabled, the printing pod will only give care packages when the configured condition has been satisfied\nOverrides the care package configuration of a save game (no care package difficulty setting is ignored)."
+msgid "Khi được bật, nhóm in sẽ chỉ cung cấp các gói chăm sóc khi đáp ứng được điều kiện đã định cấu hình\nGhi đè cấu hình gói chăm sóc của trò chơi đã lưu (không bỏ qua cài đặt độ khó của gói chăm sóc)."
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.CAREPACKAGESONLYDUPECAP.NAME
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.CAREPACKAGESONLYDUPECAP.NAME"
-msgid "Duplicant Threshold for care packages only"
+msgid "Ngưỡng trùng lặp chỉ dành cho các gói chăm sóc"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.CAREPACKAGESONLYDUPECAP.TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.CAREPACKAGESONLYDUPECAP.TOOLTIP"
-msgid "Only has an effect if \"Print Care Packages only\" is enabled and configured to use the option \"Duplicant Count\".\nWhile above or at this number of duplicants, the printer will only give care packages."
+msgid "Chỉ có hiệu lực nếu \"Chỉ gói chăm sóc in\" được bật và định cấu hình để sử dụng tùy chọn \"Số lượng bản sao\".\nKhi ở trên hoặc ở số lượng bản sao này, nhà in sẽ chỉ đưa ra các gói chăm sóc."
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.CAREPACKAGESONLYPACKAGECAP.NAME
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.CAREPACKAGESONLYPACKAGECAP.NAME"
-msgid "Number of care packages for care packages only"
+msgid "Số gói chăm sóc chỉ dành cho gói chăm sóc"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.CAREPACKAGESONLYPACKAGECAP.TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.CAREPACKAGESONLYPACKAGECAP.TOOLTIP"
-msgid "Only has an effect if \"Print Care Packages only\" is enabled.\nSet the number of care packages that generate when the cap is in effect."
+msgid "Chỉ có hiệu lực nếu \"Chỉ gói chăm sóc in\" được bật.\nĐặt số lượng gói chăm sóc được tạo khi giới hạn có hiệu lực."
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.CATEGORIES.A_GAMESTART
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.CATEGORIES.A_GAMESTART"
-msgid "Options for Game Start"
+msgid "Tùy chọn bắt đầu trò chơi"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.CATEGORIES.B_PRINTINGPOD
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.CATEGORIES.B_PRINTINGPOD"
-msgid "Options for Printing Pod"
+msgid "Tùy chọn cho hộp in"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.CATEGORIES.C_EXTRAS
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.CATEGORIES.C_EXTRAS"
-msgid "Options for Traits and Interests"
+msgid "Tùy chọn về Đặc điểm và Sở thích"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.CATEGORIES.D_SKINSETTINGS
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.CATEGORIES.D_SKINSETTINGS"
-msgid "Skin Options"
+msgid "Tùy chọn da"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.CATEGORIES.E_UTIL
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.CATEGORIES.E_UTIL"
-msgid "Extra Settings"
+msgid "Cài đặt bổ sung"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.DIRECTATTRIBUTEEDITING.NAME
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.DIRECTATTRIBUTEEDITING.NAME"
-msgid "Direct Attribute Editing"
+msgid "Chỉnh sửa thuộc tính trực tiếp"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.DIRECTATTRIBUTEEDITING.TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.DIRECTATTRIBUTEEDITING.TOOLTIP"
-msgid "Allows to directly edit the starting attributes of duplicants.\nCan be overpowered."
+msgid "Cho phép chỉnh sửa trực tiếp các thuộc tính bắt đầu của bản sao.\nCó thể bị áp đảo."
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.DUPLICANTSTARTAMOUNT.NAME
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.DUPLICANTSTARTAMOUNT.NAME"
-msgid "Number of Starting Duplicants"
+msgid "Số lượng bản sao bắt đầu"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.DUPLICANTSTARTAMOUNT.TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.DUPLICANTSTARTAMOUNT.TOOLTIP"
-msgid "Choose the amount of duplicants you want to start with."
+msgid "Chọn số lượng bản sao bạn muốn bắt đầu."
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.FORCEPRINTINGMODEL.NAME
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.FORCEPRINTINGMODEL.NAME"
-msgid "Print only specific duplicant models"
+msgid "Chỉ in các mẫu trùng lặp cụ thể"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.FORCEPRINTINGMODEL.TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.FORCEPRINTINGMODEL.TOOLTIP"
-msgid "Force the printing pod to only produce duplicants of the selected model"
+msgid "Buộc nhóm in chỉ tạo các bản sao của mẫu đã chọn"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.HERMITSKIN.NAME
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.HERMITSKIN.NAME"
-msgid "Hermit Skin"
+msgid "Da ẩn sĩ"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.HERMITSKIN.TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.HERMITSKIN.TOOLTIP"
-msgid "Adds the Hermit to the pool of selectable skins\nonce the story trait has been completed atleast once on any savegame."
+msgid "Thêm Hermit vào nhóm giao diện có thể lựa chọn\nkhi đặc điểm câu chuyện đã được hoàn thành ít nhất một lần trên bất kỳ trò chơi lưu trữ nào."
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.INTERESTPOINTSBALANCING.NAME
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.INTERESTPOINTSBALANCING.NAME"
-msgid "Interest Point Balancing"
+msgid "Cân bằng điểm lãi"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.INTERESTPOINTSBALANCING.TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.INTERESTPOINTSBALANCING.TOOLTIP"
-msgid "Use the vanilla interest point bonus for active interests determined by active traits.\nDeactivate to override this point limit."
+msgid "Sử dụng phần thưởng điểm lãi suất vanilla cho các sở thích hoạt động được xác định bởi các đặc điểm hoạt động.\nVô hiệu hóa để ghi đè giới hạn điểm này."
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.LIVEDUPESKINCHANGE.NAME
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.LIVEDUPESKINCHANGE.NAME"
-msgid "Skins for active Duplicants"
+msgid "Giao diện cho người sao chép đang hoạt động"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.LIVEDUPESKINCHANGE.TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.LIVEDUPESKINCHANGE.TOOLTIP"
-msgid "Change the Skin of already existing duplicants"
+msgid "Thay đổi giao diện của các bản sao hiện có"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.LIVEDUPESTATCHANGE.NAME
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.LIVEDUPESTATCHANGE.NAME"
-msgid "Enable Duplicity-style Duplicant Editor"
+msgid "Kích hoạt trình soạn thảo trùng lặp kiểu trùng lặp"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.LIVEDUPESTATCHANGE.TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.LIVEDUPESTATCHANGE.TOOLTIP"
-msgid "Edit your active duplicants in a new editor similar to the Duplicity-savegame editor"
+msgid "Chỉnh sửa các bản sao đang hoạt động của bạn trong trình chỉnh sửa mới tương tự như trình chỉnh sửa trò chơi lưu trùng lặp"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.MODIFYDURINGGAME_CAREPACKAGES.NAME
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.MODIFYDURINGGAME_CAREPACKAGES.NAME"
-msgid "Care Package selection menu"
+msgid "Menu lựa chọn Gói Chăm sóc"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.MODIFYDURINGGAME_CAREPACKAGES.TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.MODIFYDURINGGAME_CAREPACKAGES.TOOLTIP"
-msgid "Enable this option allows replacing printing pod care packages from a list of all at that time unlocked care packages.\nEnable Sandbox or Debug to ignore the unlock condition and make ALL packages available to select, regardless of unlock status."
+msgid "Bật tùy chọn này cho phép thay thế các gói chăm sóc in từ danh sách tất cả các gói chăm sóc đã được mở khóa tại thời điểm đó.\nBật Hộp cát hoặc Gỡ lỗi để bỏ qua điều kiện mở khóa và cung cấp TẤT CẢ các gói để chọn, bất kể trạng thái mở khóa."
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.MODIFYDURINGGAME_MINIONS.NAME
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.MODIFYDURINGGAME_MINIONS.NAME"
-msgid "Modification of printing pod Duplicants"
+msgid "Sửa đổi nhóm in"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.MODIFYDURINGGAME_MINIONS.TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.MODIFYDURINGGAME_MINIONS.TOOLTIP"
-msgid "Enable this option to add the modify button to printing pod dupes\nWhen disabled, the feature only appears on the starter dupe selection.\nThis also enables the use of presets."
+msgid "Bật tùy chọn này để thêm nút sửa đổi để in bản sao nhóm\nKhi bị tắt, tính năng này chỉ xuất hiện trên lựa chọn bản dupe khởi động.\nĐiều này cũng cho phép sử dụng các cài đặt trước."
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.MORECAREPACKAGES.NAME
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.MORECAREPACKAGES.NAME"
-msgid "Enable Care Package Editor"
+msgid "Bật Trình chỉnh sửa gói chăm sóc"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.MORECAREPACKAGES.TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.MORECAREPACKAGES.TOOLTIP"
-msgid "Additional types of care packages become available to print.\nThese can be viewed and modified in the care package editor.\nBy default it contains a small selection of items that can potentially become unavailable.\nAlso allows disabling of vanilla care packages."
+msgid "Các loại gói chăm sóc bổ sung có sẵn để in.\nBạn có thể xem và sửa đổi những thông tin này trong trình chỉnh sửa gói chăm sóc.\nTheo mặc định, nó chứa một số lựa chọn nhỏ các mục có khả năng không còn khả dụng.\nCũng cho phép vô hiệu hóa các gói chăm sóc vanilla."
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.MYSTERIOUSMINIONMODE.NAME
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.MYSTERIOUSMINIONMODE.NAME"
-msgid "Mysterious Minion Mode"
+msgid "Chế độ Minion bí ẩn"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.MYSTERIOUSMINIONMODE.TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.MYSTERIOUSMINIONMODE.TOOLTIP"
-msgid "All Interests and Traits are hidden until printed"
+msgid "Tất cả Sở thích và Đặc điểm đều bị ẩn cho đến khi được in"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.NEWGAMEPLUS.NAME
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.NEWGAMEPLUS.NAME"
-msgid "NewGame+"
+msgid "Trò chơi mới+"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.NEWGAMEPLUS.TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.NEWGAMEPLUS.TOOLTIP"
-msgid "Start your game with dupes you sent through the tear in previous playthroughs."
+msgid "Bắt đầu trò chơi của bạn với những trò lừa đảo mà bạn đã gửi qua nước mắt trong các lần chơi trước."
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.NOJOYREACTION.NAME
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.NOJOYREACTION.NAME"
-msgid "Disable Overjoyed Responses"
+msgid "Vô hiệu hóa các phản hồi quá vui mừng"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.NOJOYREACTION.TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.NOJOYREACTION.TOOLTIP"
-msgid "Deactivates Overjoyed Responses on newly generated duplicants"
+msgid "Vô hiệu hóa Phản hồi vui mừng trên các bản sao mới được tạo"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.NORMALTRAITSONBIONICS.NAME
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.NORMALTRAITSONBIONICS.NAME"
-msgid "Allow normal traits on Bionic Duplicants"
+msgid "Cho phép các đặc điểm bình thường trên Bản sao Bionic"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.NORMALTRAITSONBIONICS.TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.NORMALTRAITSONBIONICS.TOOLTIP"
-msgid "When active, allows adding regular traits to bionic duplicants."
+msgid "Khi hoạt động, cho phép thêm các đặc điểm thông thường vào các bản sao sinh học."
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.NOSTRESSREACTION.NAME
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.NOSTRESSREACTION.NAME"
-msgid "Disable Stress Reactions"
+msgid "Vô hiệu hóa phản ứng căng thẳng"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.NOSTRESSREACTION.TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.NOSTRESSREACTION.TOOLTIP"
-msgid "Deactivates Stress Reactions on newly generated duplicants"
+msgid "Vô hiệu hóa các phản ứng căng thẳng trên các bản sao mới được tạo"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.OVERRIDEPRINTERCAREPACKAGECOUNT.NAME
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.OVERRIDEPRINTERCAREPACKAGECOUNT.NAME"
-msgid "Override printing pod care package count"
+msgid "Ghi đè số lượng gói chăm sóc nhóm in"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.OVERRIDEPRINTERCAREPACKAGECOUNT.TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.OVERRIDEPRINTERCAREPACKAGECOUNT.TOOLTIP"
-msgid "Override the number of care packages offered in the printing pod.\nA value of 0 or lower disables this feature.\nDisabling care packages in the difficulty settings disables this feature.\nNo effect if care packages only mode is active."
+msgid "Ghi đè số lượng gói chăm sóc được cung cấp trong nhóm in.\nGiá trị 0 hoặc thấp hơn sẽ vô hiệu hóa tính năng này.\nViệc tắt các gói chăm sóc trong cài đặt độ khó sẽ tắt tính năng này.\nKhông có hiệu lực nếu chế độ chỉ gói chăm sóc được kích hoạt."
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.OVERRIDEPRINTERDUPECOUNT.NAME
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.OVERRIDEPRINTERDUPECOUNT.NAME"
-msgid "Override printing pod dupe count"
+msgid "Ghi đè số lượng bản sao của nhóm in"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.OVERRIDEPRINTERDUPECOUNT.TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.OVERRIDEPRINTERDUPECOUNT.TOOLTIP"
-msgid "Override the number of duplicants offered in the printing pod.\nA value of 0 or lower disables this feature."
+msgid "Ghi đè số lượng bản sao được cung cấp trong nhóm in.\nGiá trị 0 hoặc thấp hơn sẽ vô hiệu hóa tính năng này."
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.PAUSEONREADYTOPRING.NAME
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.PAUSEONREADYTOPRING.NAME"
-msgid "Pause on \"ready to print\""
+msgid "Tạm dừng ở trạng thái \"sẵn sàng in\""
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.PAUSEONREADYTOPRING.TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.PAUSEONREADYTOPRING.TOOLTIP"
-msgid "Pause the game when the printing pod has recharged for a new print"
+msgid "Tạm dừng trò chơi khi hộp in đã được sạc lại để in mới"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.PODDUPESKINCHANGE.NAME
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.PODDUPESKINCHANGE.NAME"
-msgid "Skin selection for Printing Pod Duplicants"
+msgid "Lựa chọn giao diện cho Bản sao Pod in"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.PODDUPESKINCHANGE.TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.PODDUPESKINCHANGE.TOOLTIP"
-msgid "Change the Skin of printing pod duplicants"
+msgid "Thay đổi giao diện của bản sao pod in"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.PRINTINGPODRECHARGETIME.NAME
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.PRINTINGPODRECHARGETIME.NAME"
-msgid "Printing pod cooldown time"
+msgid "Thời gian hồi chiêu của hộp in"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.PRINTINGPODRECHARGETIME.TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.PRINTINGPODRECHARGETIME.TOOLTIP"
-msgid "Time it takes for the printing pod to recharge for the next print in cycles.\nDefault is 3 cycles."
+msgid "Thời gian cần thiết để hộp in nạp lại năng lượng cho lần in tiếp theo theo chu kỳ.\nMặc định là 3 chu kỳ."
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.PRINTINGPODRECHARGETIMEFIRST.NAME
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.PRINTINGPODRECHARGETIMEFIRST.NAME"
-msgid "First print time"
+msgid "Lần in đầu tiên"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.PRINTINGPODRECHARGETIMEFIRST.TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.PRINTINGPODRECHARGETIMEFIRST.TOOLTIP"
-msgid "Time after the printing pod offers its first print, in cycles.\nDefault is 2.5 cycles."
+msgid "Thời gian sau khi nhóm in đưa ra bản in đầu tiên, tính theo chu kỳ.\nMặc định là 2,5 chu kỳ."
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.REROLLCRYOPODANDJORGE.NAME
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.REROLLCRYOPODANDJORGE.NAME"
-msgid "Hermit/Cryopod Modification"
+msgid "Sửa đổi Hermit/Cryopod"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.REROLLCRYOPODANDJORGE.TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.REROLLCRYOPODANDJORGE.TOOLTIP"
-msgid "Allows modifying of the Hermit and Cryopod Duplicants.\n\"Ancient Knowledge\"-Trait no longer takes the slot of a positive trait during generation of these duplicants."
+msgid "Cho phép sửa đổi Bản sao Hermit và Cryopod.\n\"Kiến thức cổ xưa\" -Đặc điểm không còn chiếm vị trí đặc điểm tích cực trong quá trình tạo ra các bản sao này."
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.REROLLDURINGGAME_CAREPACKAGES.NAME
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.REROLLDURINGGAME_CAREPACKAGES.NAME"
-msgid "Reroll Care Packages"
+msgid "Gói chăm sóc lại"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.REROLLDURINGGAME_CAREPACKAGES.TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.REROLLDURINGGAME_CAREPACKAGES.TOOLTIP"
-msgid "Enable this option to add the reroll button to printing pod care packages."
+msgid "Bật tùy chọn này để thêm nút cuộn lại để in các gói chăm sóc nhóm."
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.REROLLDURINGGAME_LIMITCOUNTER.NAME
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.REROLLDURINGGAME_LIMITCOUNTER.NAME"
-msgid "Limit Reroll Count"
+msgid "Giới hạn số lần cuộn lại"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.REROLLDURINGGAME_LIMITCOUNTER.TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.REROLLDURINGGAME_LIMITCOUNTER.TOOLTIP"
-msgid "Limit how many times you can reroll in tge printing pod each time the it becomes ready.\n\nOnly has an effect if any of the printing pod reroll options are enabled\n\nA value of 0 disables any limiting.\n\nDoes not affect direct editing options, play with those disabled if you want to avoid temptation."
+msgid "Giới hạn số lần bạn có thể cuộn lại trong nhóm in tge mỗi khi nó sẵn sàng.\n\nChỉ có hiệu lực nếu bất kỳ tùy chọn cuộn lại nhóm in nào được bật\n\nGiá trị 0 sẽ vô hiệu hóa mọi giới hạn.\n\nKhông ảnh hưởng đến các tùy chọn chỉnh sửa trực tiếp, hãy chơi với những tùy chọn bị vô hiệu hóa nếu bạn muốn tránh bị cám dỗ."
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.REROLLDURINGGAME_MINIONS.NAME
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.REROLLDURINGGAME_MINIONS.NAME"
-msgid "Reroll printing pod duplicants"
+msgid "Reroll bản sao pod in"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.REROLLDURINGGAME_MINIONS.TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.REROLLDURINGGAME_MINIONS.TOOLTIP"
-msgid "Enable this option to add the reroll button to printing pod Duplicants."
+msgid "Bật tùy chọn này để thêm nút cuộn lại vào nhóm in Bản sao."
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.SKINSDOREACTS.NAME
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.SKINSDOREACTS.NAME"
-msgid "Skins include reactions"
+msgid "Da bao gồm các phản ứng"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.SKINSDOREACTS.TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.SKINSDOREACTS.TOOLTIP"
-msgid "When applying a skin, the inherited overjoyed response and stress reaction get applied in addition to the skin."
+msgid "Khi thoa lên da, phản ứng vui mừng và phản ứng căng thẳng được di truyền sẽ được áp dụng cùng với da."
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.SORTEDCAREPACKAGES.NAME
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.SORTEDCAREPACKAGES.NAME"
-msgid "Sorted Care Package Lists"
+msgid "Danh sách gói chăm sóc được sắp xếp"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.SORTEDCAREPACKAGES.TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.SORTEDCAREPACKAGES.TOOLTIP"
-msgid "Care packages listings are sorted alphabetically.\nAffects care package editor and printing pod selection\nCare packages in the editor can be sorted manually when this option is turned off."
+msgid "Danh sách các gói chăm sóc được sắp xếp theo thứ tự bảng chữ cái.\nẢnh hưởng đến việc lựa chọn trình soạn thảo gói chăm sóc và nhóm in\nCác gói chăm sóc trong trình chỉnh sửa có thể được sắp xếp theo cách thủ công khi tắt tùy chọn này."
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.SORTEDPRINTINGPOD.NAME
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.SORTEDPRINTINGPOD.NAME"
-msgid "Sorted Printing Pod"
+msgid "Pod in được sắp xếp"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.SORTEDPRINTINGPOD.TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.SORTEDPRINTINGPOD.TOOLTIP"
-msgid "Printing pod entries are sorted by their type, dupes come first, then care packages."
+msgid "Các mục trong nhóm in được sắp xếp theo loại của chúng, các bản sao xuất hiện trước, sau đó là các gói chăm sóc."
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.STARTUPRESOURCES.NAME
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.STARTUPRESOURCES.NAME"
-msgid "Extra Starting Resources"
+msgid "Tài nguyên khởi đầu bổ sung"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.STARTUPRESOURCES.TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.STARTUPRESOURCES.TOOLTIP"
-msgid "Add some extra startup resources for your additional duplicants.\nOnly goes in effect with more than 3 dupes.\nOnly accounts for extra dupes above 3."
+msgid "Thêm một số tài nguyên khởi động bổ sung cho các bản sao bổ sung của bạn.\nChỉ có hiệu lực với hơn 3 lần lừa đảo.\nChỉ chiếm các khoản lừa đảo bổ sung trên 3."
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.SUPPORTEDDAYS.NAME
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.SUPPORTEDDAYS.NAME"
-msgid "Supported Days"
+msgid "Ngày được hỗ trợ"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DSS_OPTIONS.SUPPORTEDDAYS.TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.DSS_OPTIONS.SUPPORTEDDAYS.TOOLTIP"
-msgid "Amount of days the extra starting resources should last.\nNo effect if \"Extra Starting Resources\" is disabled."
+msgid "Số ngày mà tài nguyên ban đầu bổ sung sẽ kéo dài.\nKhông có hiệu lực nếu \"Tài nguyên khởi đầu bổ sung\" bị tắt."
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPEEDITING.CATEGORIES.HEADER.LABEL
 msgctxt "SetStartDupes.STRINGS.UI.DUPEEDITING.CATEGORIES.HEADER.LABEL"
-msgid "Duplicants"
+msgid "Bản sao"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPEEDITING.CONFIRMATIONDIALOG.APPLYCHANGES
 msgctxt "SetStartDupes.STRINGS.UI.DUPEEDITING.CONFIRMATIONDIALOG.APPLYCHANGES"
-msgid "Apply changes"
+msgid "Áp dụng thay đổi"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPEEDITING.CONFIRMATIONDIALOG.CANCEL
 msgctxt "SetStartDupes.STRINGS.UI.DUPEEDITING.CONFIRMATIONDIALOG.CANCEL"
-msgid "Cancel"
+msgid "Hủy bỏ"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPEEDITING.CONFIRMATIONDIALOG.DISCARDCHANGES
 msgctxt "SetStartDupes.STRINGS.UI.DUPEEDITING.CONFIRMATIONDIALOG.DISCARDCHANGES"
-msgid "Discard changes"
+msgid "Hủy thay đổi"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPEEDITING.CONFIRMATIONDIALOG.TEXT
 msgctxt "SetStartDupes.STRINGS.UI.DUPEEDITING.CONFIRMATIONDIALOG.TEXT"
-msgid "Warning, there are pending changes that have not been applied yet.\nChoose an action on how to proceed:"
+msgid "Cảnh báo, có những thay đổi đang chờ xử lý chưa được áp dụng.\nChọn một hành động về cách tiến hành:"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPEEDITING.CONFIRMATIONDIALOG.TITLE
 msgctxt "SetStartDupes.STRINGS.UI.DUPEEDITING.CONFIRMATIONDIALOG.TITLE"
-msgid "Unsaved Changes"
+msgid "Những thay đổi chưa được lưu"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPEEDITING.DETAILS.CONTENT.SCROLLRECTCONTAINER.EFFECTS.DYNAMIC_EFFECT_TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.DUPEEDITING.DETAILS.CONTENT.SCROLLRECTCONTAINER.EFFECTS.DYNAMIC_EFFECT_TOOLTIP"
-msgid "This effect has been created dynamically by the game without registering as a resource.\nThus you won't be able to readd it from the list if you decide to remove it."
+msgid "Hiệu ứng này đã được trò chơi tạo ra một cách linh hoạt mà không cần đăng ký làm tài nguyên.\nVì vậy, bạn sẽ không thể đọc lại nó từ danh sách nếu bạn quyết định xóa nó."
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPEEDITING.DETAILS.CONTENT.SCROLLRECTCONTAINER.EFFECTS.EFFECT
 msgctxt "SetStartDupes.STRINGS.UI.DUPEEDITING.DETAILS.CONTENT.SCROLLRECTCONTAINER.EFFECTS.EFFECT"
-msgid "Effect"
+msgid "Tác dụng"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPEEDITING.DETAILS.CONTENT.SCROLLRECTCONTAINER.EFFECTS.TIMEREMAINING
 msgctxt "SetStartDupes.STRINGS.UI.DUPEEDITING.DETAILS.CONTENT.SCROLLRECTCONTAINER.EFFECTS.TIMEREMAINING"
-msgid "Remaining time in seconds | Remove Effect"
+msgid "Thời gian còn lại tính bằng giây | Xóa hiệu ứng"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPEEDITING.DETAILS.CONTENT.SCROLLRECTCONTAINER.NEWBUTTONPREFAB.LABEL
 msgctxt "SetStartDupes.STRINGS.UI.DUPEEDITING.DETAILS.CONTENT.SCROLLRECTCONTAINER.NEWBUTTONPREFAB.LABEL"
-msgid "Add new effect"
+msgid "Thêm hiệu ứng mới"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPEEDITING.DETAILS.CONTENT.SCROLLRECTCONTAINER.NEWBUTTONPREFAB.TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.DUPEEDITING.DETAILS.CONTENT.SCROLLRECTCONTAINER.NEWBUTTONPREFAB.TOOLTIP"
-msgid "Choose another effect to add to the duplicant"
+msgid "Chọn một hiệu ứng khác để thêm vào bản sao"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPEEDITING.DETAILS.CONTENT.SCROLLRECTCONTAINER.SKILLS.EXPERIENCE
 msgctxt "SetStartDupes.STRINGS.UI.DUPEEDITING.DETAILS.CONTENT.SCROLLRECTCONTAINER.SKILLS.EXPERIENCE"
-msgid "Experience:"
+msgid "Kinh nghiệm:"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPEEDITING.DETAILS.CONTENT.SCROLLRECTCONTAINER.SKILLS.MASTERY
 msgctxt "SetStartDupes.STRINGS.UI.DUPEEDITING.DETAILS.CONTENT.SCROLLRECTCONTAINER.SKILLS.MASTERY"
-msgid "Mastered"
+msgid "Thành thạo"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPEEDITING.DETAILS.CONTENT.SCROLLRECTCONTAINER.SKILLS.SKILL
 msgctxt "SetStartDupes.STRINGS.UI.DUPEEDITING.DETAILS.CONTENT.SCROLLRECTCONTAINER.SKILLS.SKILL"
-msgid "Skill"
+msgid "Kỹ năng"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPEEDITING.DETAILS.CONTENT.SCROLLRECTCONTAINER.TRAITINTERESTCONTAINER.CONTENT.GRP2.ADDINTERESTBUTTON.TEXT
 msgctxt "SetStartDupes.STRINGS.UI.DUPEEDITING.DETAILS.CONTENT.SCROLLRECTCONTAINER.TRAITINTERESTCONTAINER.CONTENT.GRP2.ADDINTERESTBUTTON.TEXT"
-msgid "Add new interest"
+msgid "Thêm sở thích mới"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPEEDITING.DETAILS.CONTENT.SCROLLRECTCONTAINER.TRAITINTERESTCONTAINER.CONTENT.GRP2.ADDINTERESTBUTTON.TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.DUPEEDITING.DETAILS.CONTENT.SCROLLRECTCONTAINER.TRAITINTERESTCONTAINER.CONTENT.GRP2.ADDINTERESTBUTTON.TOOLTIP"
-msgid "Choose another interest to add to the duplicant"
+msgid "Chọn một sở thích khác để thêm vào bản sao"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPEEDITING.DETAILS.CONTENT.SCROLLRECTCONTAINER.TRAITINTERESTCONTAINER.CONTENT.GRP2.ADDTRAITBUTTON.TEXT
 msgctxt "SetStartDupes.STRINGS.UI.DUPEEDITING.DETAILS.CONTENT.SCROLLRECTCONTAINER.TRAITINTERESTCONTAINER.CONTENT.GRP2.ADDTRAITBUTTON.TEXT"
-msgid "Add new trait"
+msgid "Thêm đặc điểm mới"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPEEDITING.DETAILS.CONTENT.SCROLLRECTCONTAINER.TRAITINTERESTCONTAINER.CONTENT.GRP2.ADDTRAITBUTTON.TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.DUPEEDITING.DETAILS.CONTENT.SCROLLRECTCONTAINER.TRAITINTERESTCONTAINER.CONTENT.GRP2.ADDTRAITBUTTON.TOOLTIP"
-msgid "Choose another trait to add to the duplicant"
+msgid "Chọn một đặc điểm khác để thêm vào bản sao"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPEEDITING.DETAILS.CONTENT.SCROLLRECTCONTAINER.TRAITINTERESTCONTAINER.DESCRIPTOR.INTERESTLABEL
 msgctxt "SetStartDupes.STRINGS.UI.DUPEEDITING.DETAILS.CONTENT.SCROLLRECTCONTAINER.TRAITINTERESTCONTAINER.DESCRIPTOR.INTERESTLABEL"
-msgid "Interests:"
+msgid "Sở thích:"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPEEDITING.DETAILS.CONTENT.SCROLLRECTCONTAINER.TRAITINTERESTCONTAINER.DESCRIPTOR.TRAITLABEL
 msgctxt "SetStartDupes.STRINGS.UI.DUPEEDITING.DETAILS.CONTENT.SCROLLRECTCONTAINER.TRAITINTERESTCONTAINER.DESCRIPTOR.TRAITLABEL"
-msgid "Traits:"
+msgid "Đặc điểm:"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPEEDITING.DETAILS.FOOTER.BUTTONS.CLEANSLATEBUTTON.TEXT
 msgctxt "SetStartDupes.STRINGS.UI.DUPEEDITING.DETAILS.FOOTER.BUTTONS.CLEANSLATEBUTTON.TEXT"
-msgid "Clear Everything"
+msgid "Xóa mọi thứ"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPEEDITING.DETAILS.FOOTER.BUTTONS.CLEANSLATEBUTTON.TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.DUPEEDITING.DETAILS.FOOTER.BUTTONS.CLEANSLATEBUTTON.TOOLTIP"
-msgid "Sets all the attributes to 0 and clears all skills, interests, effects and traits.\nIntended for sandbox testing to provide a \"clean slate\""
+msgid "Đặt tất cả các thuộc tính về 0 và xóa tất cả các kỹ năng, sở thích, hiệu ứng và đặc điểm.\nDành cho thử nghiệm hộp cát để cung cấp \"phương tiện chặn sạch\""
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPEEDITING.DETAILS.FOOTER.BUTTONS.EXITBUTTON.TEXT
 msgctxt "SetStartDupes.STRINGS.UI.DUPEEDITING.DETAILS.FOOTER.BUTTONS.EXITBUTTON.TEXT"
-msgid "Exit"
+msgid "Ra"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPEEDITING.DETAILS.FOOTER.BUTTONS.EXITBUTTON.TOOLTIP
@@ -825,7 +825,7 @@ msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPEEDITING.DETAILS.FOOTER.BUTTONS.RESETBUTTON.TEXT
 msgctxt "SetStartDupes.STRINGS.UI.DUPEEDITING.DETAILS.FOOTER.BUTTONS.RESETBUTTON.TEXT"
-msgid "Reset Changes"
+msgid "Đặt lại thay đổi"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPEEDITING.DETAILS.FOOTER.BUTTONS.RESETBUTTON.TOOLTIP
@@ -835,7 +835,7 @@ msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPEEDITING.DETAILS.FOOTER.BUTTONS.SAVECHANGESBUTTON.TEXT
 msgctxt "SetStartDupes.STRINGS.UI.DUPEEDITING.DETAILS.FOOTER.BUTTONS.SAVECHANGESBUTTON.TEXT"
-msgid "Save Changes"
+msgid "Lưu thay đổi"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPEEDITING.DETAILS.FOOTER.BUTTONS.SAVECHANGESBUTTON.TOOLTIP
@@ -845,7 +845,7 @@ msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPEEDITING.DETAILS.HEADER.BUTTONS.APPEARANCEBUTTON.TEXT
 msgctxt "SetStartDupes.STRINGS.UI.DUPEEDITING.DETAILS.HEADER.BUTTONS.APPEARANCEBUTTON.TEXT"
-msgid "Appearance"
+msgid "Vẻ bề ngoài"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPEEDITING.DETAILS.HEADER.BUTTONS.APPEARANCEBUTTON.TOOLTIP
@@ -855,7 +855,7 @@ msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPEEDITING.DETAILS.HEADER.BUTTONS.ATTRIBUTEBUTTON.TEXT
 msgctxt "SetStartDupes.STRINGS.UI.DUPEEDITING.DETAILS.HEADER.BUTTONS.ATTRIBUTEBUTTON.TEXT"
-msgid "Attributes"
+msgid "Thuộc tính"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPEEDITING.DETAILS.HEADER.BUTTONS.ATTRIBUTEBUTTON.TOOLTIP
@@ -865,7 +865,7 @@ msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPEEDITING.DETAILS.HEADER.BUTTONS.EFFECTSBUTTON.TEXT
 msgctxt "SetStartDupes.STRINGS.UI.DUPEEDITING.DETAILS.HEADER.BUTTONS.EFFECTSBUTTON.TEXT"
-msgid "Effects"
+msgid "Các hiệu ứng"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPEEDITING.DETAILS.HEADER.BUTTONS.EFFECTSBUTTON.TOOLTIP
@@ -875,7 +875,7 @@ msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPEEDITING.DETAILS.HEADER.BUTTONS.HEALTHBUTTON.TEXT
 msgctxt "SetStartDupes.STRINGS.UI.DUPEEDITING.DETAILS.HEADER.BUTTONS.HEALTHBUTTON.TEXT"
-msgid "Health"
+msgid "Sức khỏe"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPEEDITING.DETAILS.HEADER.BUTTONS.HEALTHBUTTON.TOOLTIP
@@ -885,7 +885,7 @@ msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPEEDITING.DETAILS.HEADER.BUTTONS.SKILLSBUTTON.TEXT
 msgctxt "SetStartDupes.STRINGS.UI.DUPEEDITING.DETAILS.HEADER.BUTTONS.SKILLSBUTTON.TEXT"
-msgid "Skills"
+msgid "Kỹ năng"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPEEDITING.DETAILS.HEADER.BUTTONS.SKILLSBUTTON.TOOLTIP
@@ -895,12 +895,12 @@ msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPEEDITING.DETAILS.HEADER.LABEL
 msgctxt "SetStartDupes.STRINGS.UI.DUPEEDITING.DETAILS.HEADER.LABEL"
-msgid "Duplicants"
+msgid "Bản sao"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPEEDITING.DETAILS.HEADER.LABEL_FILLED
 msgctxt "SetStartDupes.STRINGS.UI.DUPEEDITING.DETAILS.HEADER.LABEL_FILLED"
-msgid "Selected Duplicant: {0}"
+msgid "Bản sao đã chọn: {0}"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPESETTINGSSCREEN.APTITUDEENTRY
@@ -915,37 +915,37 @@ msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPESETTINGSSCREEN.BALANCE_BALANCED
 msgctxt "SetStartDupes.STRINGS.UI.DUPESETTINGSSCREEN.BALANCE_BALANCED"
-msgid "<b>balanced</b>"
+msgid "<b>cân bằng</b>"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPESETTINGSSCREEN.BALANCE_STRONGER
 msgctxt "SetStartDupes.STRINGS.UI.DUPESETTINGSSCREEN.BALANCE_STRONGER"
-msgid "<b>stronger</b>"
+msgid "<b>mạnh hơn</b>"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPESETTINGSSCREEN.BALANCE_TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.DUPESETTINGSSCREEN.BALANCE_TOOLTIP"
-msgid "The current trait composition is {0}.\nThe trait balance value is {1}, for vanilla balancing it's usually between {2} and {3}\nBalance Composition:"
+msgid "Thành phần đặc điểm hiện tại là {0}.\nGiá trị cân bằng đặc điểm là {1}, để cân bằng vanilla, giá trị này thường nằm trong khoảng {2} và {3}\nThành phần cân bằng:"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPESETTINGSSCREEN.BALANCE_TOOLTIP_SIMPLE
 msgctxt "SetStartDupes.STRINGS.UI.DUPESETTINGSSCREEN.BALANCE_TOOLTIP_SIMPLE"
-msgid "The current trait balance value is {0}.\nValues above 0 indicate a trait balance favouring positive traits (overall stronger duplicant),\nvalues below 0 indicate a trait balance favouring negative traits (overall weaker duplicant).\nThis is purely informational and does not limit your ability to edit traits\n\nBalance Composition:"
+msgid "Giá trị cân bằng đặc điểm hiện tại là {0}.\nCác giá trị trên 0 biểu thị sự cân bằng tính trạng thiên về các tính trạng tích cực (nhân bản tổng thể mạnh hơn),\ncác giá trị dưới 0 biểu thị sự cân bằng tính trạng thiên về các tính trạng tiêu cực (nhân bản tổng thể yếu hơn).\nĐây hoàn toàn là thông tin và không giới hạn khả năng chỉnh sửa các đặc điểm của bạn\n\nThành phần cân bằng:"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPESETTINGSSCREEN.BALANCE_WEAKER
 msgctxt "SetStartDupes.STRINGS.UI.DUPESETTINGSSCREEN.BALANCE_WEAKER"
-msgid "<b>weaker</b>"
+msgid "<b>yếu hơn</b>"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPESETTINGSSCREEN.CONFIGBALANCINGDISABLED
 msgctxt "SetStartDupes.STRINGS.UI.DUPESETTINGSSCREEN.CONFIGBALANCINGDISABLED"
-msgid "ModConfig - Balancing Disabled"
+msgid "ModConfig - Cân bằng bị vô hiệu hóa"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPESETTINGSSCREEN.OTHERMODORIGINNAME
 msgctxt "SetStartDupes.STRINGS.UI.DUPESETTINGSSCREEN.OTHERMODORIGINNAME"
-msgid "Mysterious Origin (other mods)"
+msgid "Nguồn gốc bí ẩn (các mod khác)"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPESETTINGSSCREEN.TRAIT
@@ -955,256 +955,256 @@ msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPESETTINGSSCREEN.TRAIT_RARITY_COMMON
 msgctxt "SetStartDupes.STRINGS.UI.DUPESETTINGSSCREEN.TRAIT_RARITY_COMMON"
-msgid "<b>Common</b>"
+msgid "<b>Chung</b>"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPESETTINGSSCREEN.TRAIT_RARITY_EPIC
 msgctxt "SetStartDupes.STRINGS.UI.DUPESETTINGSSCREEN.TRAIT_RARITY_EPIC"
-msgid "<b>Epic</b>"
+msgid "<b>Sử thi</b>"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPESETTINGSSCREEN.TRAIT_RARITY_LEGENDARY
 msgctxt "SetStartDupes.STRINGS.UI.DUPESETTINGSSCREEN.TRAIT_RARITY_LEGENDARY"
-msgid "<b>Legendary</b>"
+msgid "<b>Huyền thoại</b>"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPESETTINGSSCREEN.TRAIT_RARITY_RARE
 msgctxt "SetStartDupes.STRINGS.UI.DUPESETTINGSSCREEN.TRAIT_RARITY_RARE"
-msgid "<b>Rare</b>"
+msgid "<b>Hiếm</b>"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPESETTINGSSCREEN.TRAIT_RARITY_UNCOMMON
 msgctxt "SetStartDupes.STRINGS.UI.DUPESETTINGSSCREEN.TRAIT_RARITY_UNCOMMON"
-msgid "<b>Uncommon</b>"
+msgid "<b>Không phổ biến</b>"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPESETTINGSSCREEN.TRAIT_RARITYLEVEL
 msgctxt "SetStartDupes.STRINGS.UI.DUPESETTINGSSCREEN.TRAIT_RARITYLEVEL"
-msgid "Trait Rarity: {0}"
+msgid "Độ hiếm của đặc điểm: {0}"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPESETTINGSSCREEN.TRAITBALANCEHEADER
 msgctxt "SetStartDupes.STRINGS.UI.DUPESETTINGSSCREEN.TRAITBALANCEHEADER"
-msgid "Current Trait Balance: {0}"
+msgid "Số dư đặc điểm hiện tại: {0}"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPESETTINGSSCREEN.TRAITBONUSPOINTS
 msgctxt "SetStartDupes.STRINGS.UI.DUPESETTINGSSCREEN.TRAITBONUSPOINTS"
-msgid "Interest Bonus:"
+msgid "Tiền thưởng lãi suất:"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPESETTINGSSCREEN.TRAITBONUSPOOL
 msgctxt "SetStartDupes.STRINGS.UI.DUPESETTINGSSCREEN.TRAITBONUSPOOL"
-msgid "Interest points to spend:"
+msgid "Điểm thú vị để chi tiêu:"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPESETTINGSSCREEN.TRAITBONUSPOOLTOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.DUPESETTINGSSCREEN.TRAITBONUSPOOLTOOLTIP"
-msgid "This Duplicant has {0} total interest bonus points\nThese come from the following trait boni:"
+msgid "Người sao chép này có tổng số {0} điểm thưởng lãi suất\nChúng đến từ đặc điểm sau đây của boni:"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPESKILLSPOPUP.SCROLLAREA.CONTENT.NOSKILLSAVAILABLE.LABEL
 msgctxt "SetStartDupes.STRINGS.UI.DUPESKILLSPOPUP.SCROLLAREA.CONTENT.NOSKILLSAVAILABLE.LABEL"
-msgid "No items available."
+msgid "Không có mặt hàng nào có sẵn."
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPESKILLSPOPUP.SCROLLAREA.CONTENT.PRESETENTRYPREFAB.SWITCHIN.TEXT
 msgctxt "SetStartDupes.STRINGS.UI.DUPESKILLSPOPUP.SCROLLAREA.CONTENT.PRESETENTRYPREFAB.SWITCHIN.TEXT"
-msgid "Select this"
+msgid "Chọn cái này"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.DUPESKILLSPOPUP.TOREPLACE.LABEL
 msgctxt "SetStartDupes.STRINGS.UI.DUPESKILLSPOPUP.TOREPLACE.LABEL"
-msgid "To replace:"
+msgid "Để thay thế:"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.MODDEDIMMIGRANTSCREEN.ADDDUPE
 msgctxt "SetStartDupes.STRINGS.UI.MODDEDIMMIGRANTSCREEN.ADDDUPE"
-msgid "ADD SLOT"
+msgid "THÊM KHE"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.MODDEDIMMIGRANTSCREEN.ADDDUPETOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.MODDEDIMMIGRANTSCREEN.ADDDUPETOOLTIP"
-msgid "Add an additional duplicant slot, increasing your total starting duplicant count by 1."
+msgid "Thêm một vị trí trùng lặp bổ sung, tăng tổng số bản sao ban đầu của bạn lên 1."
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.MODDEDIMMIGRANTSCREEN.GUARANTEETRAIT
 msgctxt "SetStartDupes.STRINGS.UI.MODDEDIMMIGRANTSCREEN.GUARANTEETRAIT"
-msgid "Guarantee this trait to be rolled on a reroll.\nWorks in combination with the interest selector."
+msgid "Đảm bảo đặc điểm này sẽ được tung ra khi quay lại.\nHoạt động kết hợp với bộ chọn sở thích."
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.MODDEDIMMIGRANTSCREEN.LOCKPERSONALITY_TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.MODDEDIMMIGRANTSCREEN.LOCKPERSONALITY_TOOLTIP"
-msgid "Lock the current personality for rolls.\nWhile locked, all duplicants rolled will automatically have the locked personality."
+msgid "Khóa tính cách hiện tại cho cuộn.\nTrong khi bị khóa, tất cả các bản sao được tung ra sẽ tự động có tính cách bị khóa."
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.MODDEDIMMIGRANTSCREEN.PRINTINGPOD_SELECT
 msgctxt "SetStartDupes.STRINGS.UI.MODDEDIMMIGRANTSCREEN.PRINTINGPOD_SELECT"
-msgid "The current planet the active printing pod is on.\nClick to change the active printing pod"
+msgid "Hành tinh hiện tại có nhóm in đang hoạt động.\nBấm để thay đổi nhóm in đang hoạt động"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.MODDEDIMMIGRANTSCREEN.REMOVEDUPE
 msgctxt "SetStartDupes.STRINGS.UI.MODDEDIMMIGRANTSCREEN.REMOVEDUPE"
-msgid "REMOVE SLOT"
+msgid "LOẠI BỎ KHE"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.MODDEDIMMIGRANTSCREEN.REMOVEDUPETOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.MODDEDIMMIGRANTSCREEN.REMOVEDUPETOOLTIP"
-msgid "Remove this duplicant slot, reducing your total starting duplicant count by 1."
+msgid "Xóa vị trí trùng lặp này, giảm tổng số bản sao bắt đầu của bạn xuống 1."
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.MODDEDIMMIGRANTSCREEN.ROLLWITHTRAIT_LABEL
 msgctxt "SetStartDupes.STRINGS.UI.MODDEDIMMIGRANTSCREEN.ROLLWITHTRAIT_LABEL"
-msgid "REROLL WITH TRAIT"
+msgid "REROLL VỚI ĐẶC ĐIỂM"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.MODDEDIMMIGRANTSCREEN.SELECTYOURCREW
 msgctxt "SetStartDupes.STRINGS.UI.MODDEDIMMIGRANTSCREEN.SELECTYOURCREW"
-msgid "CHOOSE YOUR DUPLICANTS TO BEGIN"
+msgid "CHỌN NHÂN VIÊN CỦA BẠN ĐỂ BẮT ĐẦU"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.MODDEDIMMIGRANTSCREEN.SELECTYOURLONECREWMAN
 msgctxt "SetStartDupes.STRINGS.UI.MODDEDIMMIGRANTSCREEN.SELECTYOURLONECREWMAN"
-msgid "CHOOSE YOUR LONE DUPLICANT TO BEGIN"
+msgid "CHỌN NGƯỜI SAO ĐÔI DUY NHẤT CỦA BẠN ĐỂ BẮT ĐẦU"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.PRESETWINDOW.DELETEWINDOW.CANCEL
 msgctxt "SetStartDupes.STRINGS.UI.PRESETWINDOW.DELETEWINDOW.CANCEL"
-msgid "Cancel"
+msgid "Hủy bỏ"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.PRESETWINDOW.DELETEWINDOW.DESC
 msgctxt "SetStartDupes.STRINGS.UI.PRESETWINDOW.DELETEWINDOW.DESC"
-msgid "You are about to delete the stat preset \"{0}\".\nDo you want to continue?"
+msgid "Bạn sắp xóa cài đặt trước chỉ số \"{0}\".\nBạn có muốn tiếp tục không?"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.PRESETWINDOW.DELETEWINDOW.TITLE
 msgctxt "SetStartDupes.STRINGS.UI.PRESETWINDOW.DELETEWINDOW.TITLE"
-msgid "Delete {0}"
+msgid "Xóa {0}"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.PRESETWINDOW.DELETEWINDOW.YES
 msgctxt "SetStartDupes.STRINGS.UI.PRESETWINDOW.DELETEWINDOW.YES"
-msgid "Confirm Deletion"
+msgid "Xác nhận xóa"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.PRESETWINDOW.HORIZONTALLAYOUT.ITEMINFO.BUTTONS.APPLYPRESETBUTTON.TEXT
 msgctxt "SetStartDupes.STRINGS.UI.PRESETWINDOW.HORIZONTALLAYOUT.ITEMINFO.BUTTONS.APPLYPRESETBUTTON.TEXT"
-msgid "Apply Preset"
+msgid "Áp dụng cài sẵn"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.PRESETWINDOW.HORIZONTALLAYOUT.ITEMINFO.BUTTONS.APPLYPRESETBUTTON.TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.PRESETWINDOW.HORIZONTALLAYOUT.ITEMINFO.BUTTONS.APPLYPRESETBUTTON.TOOLTIP"
-msgid "Apply the currenly displayed stats to the Duplicant this window was opened from."
+msgid "Áp dụng số liệu thống kê được hiển thị hiện tại cho Bản sao mà cửa sổ này đã được mở từ đó."
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.PRESETWINDOW.HORIZONTALLAYOUT.ITEMINFO.BUTTONS.APPLYPRESETBUTTON.TOOLTIPCREW
 msgctxt "SetStartDupes.STRINGS.UI.PRESETWINDOW.HORIZONTALLAYOUT.ITEMINFO.BUTTONS.APPLYPRESETBUTTON.TOOLTIPCREW"
-msgid "Load the Crew Preset thats currently displayed in the preview"
+msgid "Tải cài đặt trước của phi hành đoàn hiện đang được hiển thị trong bản xem trước"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.PRESETWINDOW.HORIZONTALLAYOUT.ITEMINFO.BUTTONS.CLOSEBUTTON.TEXT
 msgctxt "SetStartDupes.STRINGS.UI.PRESETWINDOW.HORIZONTALLAYOUT.ITEMINFO.BUTTONS.CLOSEBUTTON.TEXT"
-msgid "Return"
+msgid "Trở lại"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.PRESETWINDOW.HORIZONTALLAYOUT.ITEMINFO.BUTTONS.CLOSEBUTTON.TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.PRESETWINDOW.HORIZONTALLAYOUT.ITEMINFO.BUTTONS.CLOSEBUTTON.TOOLTIP"
-msgid "Close preset window"
+msgid "Đóng cửa sổ đặt trước"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.PRESETWINDOW.HORIZONTALLAYOUT.ITEMINFO.BUTTONS.GENERATEFROMCURRENT.TEXT
 msgctxt "SetStartDupes.STRINGS.UI.PRESETWINDOW.HORIZONTALLAYOUT.ITEMINFO.BUTTONS.GENERATEFROMCURRENT.TEXT"
-msgid "Generate Preset"
+msgid "Tạo giá trị đặt trước"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.PRESETWINDOW.HORIZONTALLAYOUT.ITEMINFO.BUTTONS.GENERATEFROMCURRENT.TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.PRESETWINDOW.HORIZONTALLAYOUT.ITEMINFO.BUTTONS.GENERATEFROMCURRENT.TOOLTIP"
-msgid "Generate and store a new preset from the currenly displayed values.\nOnly has an effect if the preset doesn't exist yet"
+msgid "Tạo và lưu trữ giá trị đặt trước mới từ các giá trị được hiển thị hiện tại.\nChỉ có hiệu lực nếu cài đặt trước chưa tồn tại"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.PRESETWINDOW.HORIZONTALLAYOUT.ITEMINFO.CHECKBOXES.NAMEOVERRIDE.LABEL
 msgctxt "SetStartDupes.STRINGS.UI.PRESETWINDOW.HORIZONTALLAYOUT.ITEMINFO.CHECKBOXES.NAMEOVERRIDE.LABEL"
-msgid "Preset overrides Name"
+msgid "Đặt trước ghi đè Tên"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.PRESETWINDOW.HORIZONTALLAYOUT.ITEMINFO.CHECKBOXES.NAMEOVERRIDE.TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.PRESETWINDOW.HORIZONTALLAYOUT.ITEMINFO.CHECKBOXES.NAMEOVERRIDE.TOOLTIP"
-msgid "If enabled, applying presets to duplicants also sets their name to that of the preset"
+msgid "Nếu được bật, việc áp dụng giá trị đặt trước cho các bản sao cũng đặt tên của chúng theo tên của giá trị đặt trước"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.PRESETWINDOW.HORIZONTALLAYOUT.ITEMINFO.CHECKBOXES.REACTIONOVERRIDE.LABEL
 msgctxt "SetStartDupes.STRINGS.UI.PRESETWINDOW.HORIZONTALLAYOUT.ITEMINFO.CHECKBOXES.REACTIONOVERRIDE.LABEL"
-msgid "Preset overrides Reactions"
+msgid "Đặt trước ghi đè Phản ứng"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.PRESETWINDOW.HORIZONTALLAYOUT.ITEMINFO.CHECKBOXES.REACTIONOVERRIDE.TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.PRESETWINDOW.HORIZONTALLAYOUT.ITEMINFO.CHECKBOXES.REACTIONOVERRIDE.TOOLTIP"
-msgid "If enabled, applying presets to duplicants also overrides their inherited stress reaction and overjoyed response."
+msgid "Nếu được bật, việc áp dụng các giá trị đặt trước cho các bản sao cũng sẽ ghi đè phản ứng căng thẳng và phản ứng vui mừng khôn xiết vốn có của chúng."
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.PRESETWINDOW.HORIZONTALLAYOUT.ITEMINFO.CHECKBOXES.XPOVERRIDE.LABEL
 msgctxt "SetStartDupes.STRINGS.UI.PRESETWINDOW.HORIZONTALLAYOUT.ITEMINFO.CHECKBOXES.XPOVERRIDE.LABEL"
-msgid "Preset overrides XP"
+msgid "Đặt trước ghi đè XP"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.PRESETWINDOW.HORIZONTALLAYOUT.ITEMINFO.CHECKBOXES.XPOVERRIDE.TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.PRESETWINDOW.HORIZONTALLAYOUT.ITEMINFO.CHECKBOXES.XPOVERRIDE.TOOLTIP"
-msgid "If enabled, applying presets to duplicants also sets their experience points and skill points available"
+msgid "Nếu được bật, việc áp dụng cài đặt trước cho người sao chép cũng sẽ đặt sẵn điểm kinh nghiệm và điểm kỹ năng của họ"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.PRESETWINDOW.HORIZONTALLAYOUT.OBJECTLIST.SCROLLAREA.CONTENT.NOPRESETSAVAILABLE.LABEL
 msgctxt "SetStartDupes.STRINGS.UI.PRESETWINDOW.HORIZONTALLAYOUT.OBJECTLIST.SCROLLAREA.CONTENT.NOPRESETSAVAILABLE.LABEL"
-msgid "No presets available."
+msgid "Không có cài đặt trước có sẵn."
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.PRESETWINDOW.HORIZONTALLAYOUT.OBJECTLIST.SCROLLAREA.CONTENT.PRESETENTRYPREFAB.ADDTHISTRAITBUTTON.TEXT
 msgctxt "SetStartDupes.STRINGS.UI.PRESETWINDOW.HORIZONTALLAYOUT.OBJECTLIST.SCROLLAREA.CONTENT.PRESETENTRYPREFAB.ADDTHISTRAITBUTTON.TEXT"
-msgid "Load Preset"
+msgid "Tải cài sẵn"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.PRESETWINDOW.HORIZONTALLAYOUT.OBJECTLIST.SCROLLAREA.CONTENT.PRESETENTRYPREFAB.DELETEPRESETTOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.PRESETWINDOW.HORIZONTALLAYOUT.OBJECTLIST.SCROLLAREA.CONTENT.PRESETENTRYPREFAB.DELETEPRESETTOOLTIP"
-msgid "Delete Preset"
+msgid "Xóa cài sẵn"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.PRESETWINDOW.HORIZONTALLAYOUT.OBJECTLIST.SCROLLAREA.CONTENT.PRESETENTRYPREFAB.IMPORTEDPRESET
 msgctxt "SetStartDupes.STRINGS.UI.PRESETWINDOW.HORIZONTALLAYOUT.OBJECTLIST.SCROLLAREA.CONTENT.PRESETENTRYPREFAB.IMPORTEDPRESET"
-msgid "This crew preset was imported from your old dgsm presets, it cannot be modified directly."
+msgid "Cài đặt trước của nhóm này đã được nhập từ cài đặt trước dgsm cũ của bạn, nó không thể sửa đổi trực tiếp."
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.PRESETWINDOW.HORIZONTALLAYOUT.OBJECTLIST.SCROLLAREA.CONTENT.PRESETENTRYPREFAB.INVALIDMODELTOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.PRESETWINDOW.HORIZONTALLAYOUT.OBJECTLIST.SCROLLAREA.CONTENT.PRESETENTRYPREFAB.INVALIDMODELTOOLTIP"
-msgid "Preset not compatible with current duplicant model!"
+msgid "Cài đặt sẵn không tương thích với mô hình sao chép hiện tại!"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.PRESETWINDOW.HORIZONTALLAYOUT.OBJECTLIST.SCROLLAREA.CONTENT.PRESETENTRYPREFAB.RENAMEPRESETTOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.PRESETWINDOW.HORIZONTALLAYOUT.OBJECTLIST.SCROLLAREA.CONTENT.PRESETENTRYPREFAB.RENAMEPRESETTOOLTIP"
-msgid "Rename Preset"
+msgid "Đổi tên cài sẵn"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.PRESETWINDOW.TITLE
 msgctxt "SetStartDupes.STRINGS.UI.PRESETWINDOW.TITLE"
-msgid "Stat Presets"
+msgid "Cài đặt trước thống kê"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.PRESETWINDOW.TITLECREW
 msgctxt "SetStartDupes.STRINGS.UI.PRESETWINDOW.TITLECREW"
-msgid "Crew Presets"
+msgid "Cài đặt trước của phi hành đoàn"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.STARTAGAIN.SIDESCREEN_TEXT
 msgctxt "SetStartDupes.STRINGS.UI.STARTAGAIN.SIDESCREEN_TEXT"
-msgid "Reselect start duplicants"
+msgid "Chọn lại bắt đầu sao chép"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UI.STARTAGAIN.SIDESCREEN_TOOLTIP
 msgctxt "SetStartDupes.STRINGS.UI.STARTAGAIN.SIDESCREEN_TOOLTIP"
-msgid "Restart Light"
+msgid "Khởi động lại ánh sáng"
 msgstr ""
 
 #. SetStartDupes.STRINGS.UNNAMEDPRESET
 msgctxt "SetStartDupes.STRINGS.UNNAMEDPRESET"
-msgid "(Unnamed Preset)"
+msgid "(Cài đặt sẵn chưa được đặt tên)"
 msgstr ""
 
