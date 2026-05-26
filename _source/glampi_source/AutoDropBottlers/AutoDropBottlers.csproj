@@ -58,8 +58,8 @@
     </None>
   </ItemGroup>
 
-  <!-- ILRepack to merge and internalize PLib dependencies -->
-  <Target Name="ILRepack" AfterTargets="Build">
+  <!-- ILRepack to merge and internalize PLib dependencies (renamed to MergePLib to prevent override by global Directory.Build.targets) -->
+  <Target Name="MergePLib" AfterTargets="Build">
     <ItemGroup>
       <InputAssemblies Include="$(TargetPath)" />
       <InputAssemblies Include="$(TargetDir)PLibCore.dll" />
@@ -72,12 +72,13 @@
         TargetKind="SameAsPrimaryAssembly"
         OutputFile="$(TargetPath)"
         InputAssemblies="@(InputAssemblies)"
+        LibraryPath="$(GameLibsFolder);$(ProjectDir)..\..\peterhan_source\Lib"
         Internalize="true"
         Wildcards="true" />
   </Target>
 
   <!-- Export to Local Mod folder after build -->
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+  <Target Name="PostBuild" AfterTargets="MergePLib">
     <ItemGroup>
       <ModFiles Include="$(TargetPath)" />
       <ModFiles Include="$(TargetDir)AutoDropBottlers.pdb" Condition="Exists('$(TargetDir)AutoDropBottlers.pdb')" />
