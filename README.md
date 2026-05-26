@@ -1,102 +1,125 @@
 # ONI Mods Collection (v706793+)
 
-Bộ sưu tập các bản mod được duy trì, tối ưu hóa và hiện đại hóa cho Oxygen Not Included (bao gồm cả DLC Spaced Out & The Frosty Planet). Tập trung vào hiệu năng CPU cực hạn ở late-game, trải nghiệm người dùng (QoL) và tính ổn định của bản dịch Tiếng Việt chuẩn hóa.
+[![Game Version](https://img.shields.io/badge/Game_Version-U56--706793-blue.svg)](https://forums.kleientertainment.com/forums/forum/119-oxygen-not-included-mods-and-tools/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Mod Count](https://img.shields.io/badge/Mods-66_Forks-orange.svg)](#)
+
+A curated monorepo containing maintained, optimized, and localized mods for **Oxygen Not Included** (supporting base game, *Spaced Out!* DLC, and *The Frosty Planet Pack* DLC).
+
+Dự án này là bộ sưu tập monorepo lưu trữ, duy trì và tối ưu hóa sâu các bản mod trong game **Oxygen Not Included**. Trọng tâm của bộ sưu tập là cải thiện hiệu năng CPU cực hạn ở giai đoạn late-game, nâng cấp trải nghiệm người dùng (QoL), và cung cấp bản dịch tiếng Việt chuẩn hóa, chính xác nhất.
 
 ---
 
-## 📂 Cấu trúc Thư mục Monorepo (Folder Structure)
+## 🎮 Hướng dẫn Cài đặt dành cho Người chơi (Installation)
 
-Kho lưu trữ được tổ chức theo mô hình Monorepo giúp tách biệt hoàn chỉnh giữa thư mục cài đặt hoạt động cục bộ của game và kho mã nguồn gốc để phát triển:
+Để cài đặt và sử dụng bộ mod này một cách nhanh chóng và an toàn:
+
+1. **Tải xuống**: Tải tệp nén của bộ mod về máy tính và giải nén.
+2. **Mở thư mục Mod**:
+   - Khởi động game **Oxygen Not Included**.
+   - Truy cập vào mục **Mods** trong Menu chính.
+   - Nhấp chuột vào nút **"Show Local Mods Folder"** (Hiển thị thư mục mod cục bộ). Hệ điều hành sẽ tự động mở thư mục mod chính xác nhất của bạn.
+3. **Sao chép**: Copy (sao chép) toàn bộ các thư mục mod đã giải nén (ví dụ: `AutoDropBottlers`, `FastTrack`, `TiengViet`...) thả trực tiếp vào thư mục mod cục bộ vừa được mở.
+4. **Kích hoạt**: Bật các mod mong muốn trong menu Mod của game.
+5. **Khởi động lại**: Khởi động lại game để áp dụng các thay đổi và thưởng thức!
+
+---
+
+## 📋 Danh sách Mod chính & Đường dẫn Mã nguồn (Featured Mods)
+
+Đây là các bản mod được phát triển mới, Việt hóa chất lượng cao hoặc tối ưu hóa sâu bởi tác giả của bộ sưu tập này.
+
+| Tên Mod | Tính năng & Tác dụng chính | Đường dẫn Mã nguồn (Source Path) |
+| :--- | :--- | :--- |
+| **Critter AI Architect** | Mod độc lập tối ưu hiệu năng AI sinh vật (LOD & Time-Slicing), giảm lag CPU cực hạn cho trang trại late-game. | [`_source/CritterAIArchitect`](./_source/CritterAIArchitect) |
+| **Tiếng Việt chuẩn hóa** | Bản dịch Việt hóa Oxygen Not Included chất lượng cao, chuẩn văn phong game của Chuot Chanel. | [`TiengViet`](./TiengViet) |
+| **Auto Drop Bottlers** | Tự động thả chai chất lỏng/chất khí ra đất. Hỗ trợ sao chép thiết lập nhanh, menu cấu hình PLib và Việt hóa. | [`_source/glampi_source/AutoDropBottlers`](./_source/glampi_source/AutoDropBottlers) |
+| **Move This Here** | Điểm gom đồ và trung chuyển tạm thời. Bản dịch Tiếng Việt chuẩn hóa (sửa dịch máy thô sơ của bản gốc). | [`_source/doctorfeelgood_source/source/MoveThisHere`](./_source/doctorfeelgood_source/source/MoveThisHere) |
+| **Auto Liquid Bottler** | Máy đóng chai chất lỏng tự động. Cấu hình build deploy sạch sẽ, tối ưu hóa dung lượng (chỉ 16 KB). | [`_source/hilliurn_source/Auto Liquid Bottler`](./_source/hilliurn_source/Auto%20Liquid%20Bottler) |
+| **Customizable Speed** | Tùy chỉnh tốc độ chạy game linh hoạt. Sửa lỗi cơ chế PostBuild an toàn, dọn dẹp file DLL thừa. | [`_source/customizable_speed_source`](./_source/customizable_speed_source) |
+
+*(Đối với hơn 60+ mod fork và duy trì khác, vui lòng xem mã nguồn chi tiết tại các thư mục tương ứng trong `_source/`)*
+
+---
+
+## 📂 Cấu trúc Thư mục Monorepo (Project Structure)
+
+Kho lưu trữ Monorepo được thiết kế theo cấu trúc tách biệt rõ ràng giữa các mod chạy thực tế và mã nguồn phát triển:
 
 ```
 .
-├── [ModName]/                     # Thư mục Mod chạy cục bộ của game (đã deploy sạch 100%)
+├── [ModName]/                     # Thư mục mod chạy cục bộ của game (deploy sạch 100%)
 │   ├── [ModName].dll              # File thư viện mod chính
 │   ├── mod.yaml & mod_info.yaml   # Metadata cấu hình mod của game
 │   └── locales/                   # Bản dịch ngôn ngữ (nếu có)
 ├── _source/                       # Kho lưu trữ toàn bộ Mã nguồn gốc (Source Code)
-│   ├── [Tac_Gia_source]/          # Thư mục mã nguồn của các tác giả lớn trong cộng đồng
-│   │   ├── [ModName]/             # Mã nguồn cụ thể của từng mod
-│   │   │   └── [ModName].csproj   # File dự án C# / MSBuild
+│   ├── [Tác_giả_source]/          # Thư mục mã nguồn của từng tác giả lớn trong cộng đồng
+│   │   ├── [ModName]/             # Mã nguồn dự án cụ thể của mod
+│   │   │   └── [ModName].csproj   # Tệp cấu hình dự án C# / MSBuild
 │   │   ├── Directory.Build.props  # Cấu hình MSBuild chung
-│   │   └── Directory.Build.targets# Script đóng gói & tự động deploy sạch
-│   └── CritterAIArchitect/        # Mod tối ưu hóa AI do bạn tự phát triển
-└── README.md                      # Hướng dẫn sử dụng và phát triển này
+│   │   └── Directory.Build.targets# Script tự động đóng gói & deploy sạch
+│   └── CritterAIArchitect/        # Mod tối ưu hóa AI gốc tự phát triển
+├── LICENSE                        # Giấy phép sử dụng mã nguồn
+└── README.md                      # Tài liệu hướng dẫn này
 ```
 
 ---
 
-## 📑 Danh sách Mod & Đường dẫn Mã nguồn (Mod List & Source Paths)
+## ⚙️ Thiết lập Môi trường Phát triển (Developer Setup)
 
-### 1. Mod Tự phát triển & Tối ưu hóa sâu rộng (Đóng góp của bạn)
+Để biên dịch thành công mã nguồn trên máy tính của bạn mà không bị lỗi thiếu tham chiếu DLL game gốc:
 
-| Tên Mod | Tính năng & Tác dụng chính | Đường dẫn Mã nguồn (Source Path) |
-| :--- | :--- | :--- |
-| **Critter AI Architect** | Tối ưu hóa hiệu năng AI sinh vật (LOD & Time-Slicing), giảm lag CPU cực hạn cho trang trại thú late-game. | [`_source/CritterAIArchitect`](file:///_source/CritterAIArchitect) |
-| **Auto Drop Bottlers** | Tự động thả chai chất lỏng/chất khí ra đất. Hỗ trợ sao chép cài đặt, PLib Options và Tiếng Việt chuẩn. | [`_source/glampi_source/AutoDropBottlers`](file:///_source/glampi_source/AutoDropBottlers) |
-| **Move This Here** | Điểm gom đồ và vận chuyển vật phẩm tạm thời. Bản dịch Tiếng Việt chuẩn hóa văn phong game ONI. | [`_source/doctorfeelgood_source/source/MoveThisHere`](file:///_source/doctorfeelgood_source/source/MoveThisHere) |
-| **FastTrack** | Bản mod tối ưu hóa hệ thống sâu rộng nhất của Peter Han, được cài đặt cục bộ sạch sẽ. | [`_source/peterhan_source/FastTrack`](file:///_source/peterhan_source/FastTrack) |
-| **Auto Liquid Bottler** | Máy đóng chai chất lỏng tự động. Cấu hình build deploy sạch sẽ, tối ưu hóa dung lượng. | [`_source/hilliurn_source/Auto Liquid Bottler`](file:///_source/hilliurn_source/Auto%20Liquid%20Bottler) |
-| **Customizable Speed** | Tùy chỉnh tốc độ chạy game linh hoạt. Cấu hình build deploy sạch sẽ, tối ưu hóa dung lượng. | [`_source/customizable_speed_source`](file:///_source/customizable_speed_source) |
+### 1. Cấu hình Đường dẫn Game cục bộ
+1. Truy cập vào thư mục mã nguồn của tác giả bạn muốn build (ví dụ: `_source/peterhan_source/` hoặc `_source/sgt_imalas_source/`).
+2. Sao chép tệp cấu hình mẫu `Directory.Build.props.default` và đặt tên là **`Directory.Build.props.user`**.
+3. Mở `Directory.Build.props.user` và cập nhật chính xác đường dẫn đến thư mục cài đặt game của bạn:
+   ```xml
+   <Project>
+     <PropertyGroup>
+       <GameFolder>C:\Program Files (x86)\Steam\steamapps\common\OxygenNotIncluded\OxygenNotIncluded_Data\Managed</GameFolder>
+       <ModFolder>[Đường_dẫn_thư_mục_mod_local_của_bạn]</ModFolder>
+     </PropertyGroup>
+   </Project>
+   ```
+   *(Lưu ý: Tệp `.user` này đã được cấu hình trong `.gitignore`, đảm bảo không bao giờ bị commit lên Git làm lộ thông tin cá nhân hoặc đường dẫn tuyệt đối của bạn)*.
 
-### 2. Các Mod Duy trì & Fork (Maintain & Forked Mods)
-*(Xem cấu trúc mã nguồn chung của các tác giả lớn trong thư mục tương ứng)*
-*   **Hệ sinh thái Peter Han**: Hơn 35+ mod tối ưu QoL nằm tại [`_source/peterhan_source/`](file:///_source/peterhan_source/).
-*   **Hệ sinh thái Sgt_Imalas**: Các mod giao diện lớn (BlueprintsV2, SetStartDupes, v.v.) nằm tại [`_source/sgt_imalas_source/`](file:///_source/sgt_imalas_source/).
-*   **Hệ sinh thái Cairath**: Các mod tiện ích nằm tại [`_source/cairath_source/src/`](file:///_source/cairath_source/src/).
-*   **Hệ sinh thái Sanchozz**: Các mod cơ chế sinh vật & trồng trọt nằm tại [`_source/sanchozz_source/src/`](file:///_source/sanchozz_source/src/).
-
----
-
-## ⚙️ Hướng dẫn Thiết lập Môi trường Phát triển (Developer Setup)
-
-Để biên dịch thành công mã nguồn trên máy tính của bạn mà không bị lỗi thiếu DLL tham chiếu của game:
-
-1.  Truy cập vào thư mục mã nguồn của tác giả bạn muốn build (ví dụ: `_source/peterhan_source/` hoặc `_source/sgt_imalas_source/`).
-2.  Sao chép tệp cấu hình mẫu `Directory.Build.props.default` (hoặc tạo mới) và đặt tên là **`Directory.Build.props.user`**.
-3.  Mở `Directory.Build.props.user` và cập nhật chính xác đường dẫn đến thư mục cài đặt game của bạn:
-    ```xml
-    <Project>
-      <PropertyGroup>
-        <GameFolder>C:\Program Files (x86)\Steam\steamapps\common\OxygenNotIncluded\OxygenNotIncluded_Data\Managed</GameFolder>
-        <ModFolder>[Đường_dẫn_thư_mục_mod_local_của_bạn]</ModFolder>
-      </PropertyGroup>
-    </Project>
-    ```
-    *(Tệp tin `.user` này đã được `.gitignore` bảo vệ, đảm bảo không bao giờ bị commit lên Git làm lộ thông tin cá nhân của bạn)*.
-
----
-
-## 🛠️ Hướng dẫn Biên dịch & Đóng gói (How to Build & Restore)
-
-*   **Khôi phục Dependencies (NuGet Restore)**:
+### 2. Biên dịch & Đóng gói bằng CLI
+* **Khôi phục Dependencies (NuGet Restore)**:
+  ```powershell
+  dotnet restore "_source/sgt_imalas_source/SgtImalasOniMods.sln"
+  ```
+* **Biên dịch & Tự động Deploy**:
+  * **Cấu hình Debug** (Tự động biên dịch và copy thẳng vào thư mục mod hoạt động của game để test):
     ```powershell
-    dotnet restore "_source/sgt_imalas_source/SgtImalasOniMods.sln"
+    dotnet build "_source/glampi_source/AutoDropBottlers/AutoDropBottlers.csproj" -c Debug
     ```
-*   **Biên dịch & Deploy tự động**:
-    *   **Cấu hình Debug** (Tự động copy bản build vào thư mục mod local chạy cục bộ của game để test):
-        ```powershell
-        dotnet build "_source/glampi_source/AutoDropBottlers/AutoDropBottlers.csproj" -c Debug
-        ```
-    *   **Cấu hình Release** (Đóng gói sạch sẽ tối ưu, loại bỏ 100% DLL thừa của game gốc):
-        ```powershell
-        dotnet build "_source/glampi_source/AutoDropBottlers/AutoDropBottlers.csproj" -c Release
-        ```
+  * **Cấu hình Release** (Biên dịch tối ưu hóa hiệu năng, loại bỏ 100% DLL game thừa thãi để đóng gói sạch sẽ):
+    ```powershell
+    dotnet build "_source/glampi_source/AutoDropBottlers/AutoDropBottlers.csproj" -c Release
+    ```
 
 ---
 
-## 🧹 Cẩm nang Tối ưu hóa Monorepo (Clean & Build Best Practices)
+## 📜 Credits & Bản quyền (Credits & Attribution)
 
-*   **Dọn dẹp rác build**: Chạy lệnh xóa các thư mục `bin` và `obj` tạm thời để giải phóng dung lượng đĩa (~266 MB dữ liệu rác).
-*   **Không commit `.git` con**: Tuyệt đối không để sót thư mục `.git` ẩn trong `_source/` khi clone để tránh lỗi embedded repository.
-*   **Quy chuẩn PostBuild sạch**: Tất cả các tệp `.csproj` nhỏ lẻ đều đã được tương đối hóa đường dẫn PostBuild qua biến `$(ProjectDir)` giúp bảo mật tuyệt đối 100% thông tin cá nhân của bạn và hoạt động tương thích ngay lập tức trên mọi máy tính khác khi clone về.
+Dự án monorepo này hoạt động dựa trên việc kế thừa và duy trì di sản tuyệt vời từ các modder tài năng nhất trong cộng đồng Oxygen Not Included. Tôi xin gửi lời cảm ơn sâu sắc nhất và ghi nhận toàn bộ credit tới các tác giả gốc:
+
+| Tác giả gốc | Kho mã nguồn gốc (Original GitHub) | Kênh Steam Workshop | Giấy phép (Original License) |
+| :--- | :--- | :--- | :--- |
+| **Peter Han** | [peterhaneve/ONIMods](https://github.com/peterhaneve/ONIMods) | [Workshop](https://steamcommunity.com/profiles/76561198025154321/myworkshopfiles/?appid=457140) | MIT / CC BY-NC-SA 4.0 |
+| **Sgt_Imalas** | [Sgt-Imalas/Sgt_Imalas-Oni-Mods](https://github.com/Sgt-Imalas/Sgt_Imalas-Oni-Mods) | [Workshop](https://steamcommunity.com/id/Sgt_Imalas/myworkshopfiles/) | MIT |
+| **Sanchozz** | [SanchozzDeponianin/ONIMods](https://github.com/SanchozzDeponianin/ONIMods) | [Workshop](https://steamcommunity.com/profiles/76561198341359629/myworkshopfiles/?appid=457140) | MIT |
+| **Cairath** | [Cairath/ONI-Mods](https://github.com/Cairath/ONI-Mods) | [Workshop](https://steamcommunity.com/profiles/76561198076768290/myworkshopfiles/?appid=457140) | N/A |
+| **Aze** | [AzeTheGreat/ONI-Mods](https://github.com/AzeTheGreat/ONI-Mods) | [Workshop](https://steamcommunity.com/profiles/76561198044590606/myworkshopfiles/?appid=457140) | MIT |
+| **aki-art** | [aki-art/ONI-Mods](https://github.com/aki-art/ONI-Mods) | [Workshop](https://steamcommunity.com/id/oniki/myworkshopfiles/?appid=457140) | N/A |
+| **Pholith** | [Pholith/ONI-Mods](https://github.com/Pholith/ONI-Mods) | [Workshop](https://steamcommunity.com/profiles/76561198263471888/myworkshopfiles/?appid=457140) | N/A |
+| **DoctorFeelGoodMD** | — | — | MIT |
+| **Glampi** | — | — | N/A |
+| **beatlepie** | — | — | N/A |
 
 ---
 
-## 🎮 Hướng dẫn Cài đặt dành cho Người chơi
+## ⚠️ Tuyên bố Miễn trừ Trách nhiệm (Disclaimer)
 
-1. Tải bộ mod về và giải nén.
-2. Mở game Oxygen Not Included, truy cập vào menu **Mods**.
-3. Nhấp chọn nút **"Show Local Mods Folder"** (Hiển thị thư mục mod cục bộ). Game sẽ tự động mở thư mục mod chính xác nhất trên hệ điều hành của bạn.
-4. Copy toàn bộ các thư mục mod đã giải nén thả vào đó.
-5. Kích hoạt mod trong game và khởi động lại game.
+- **Mục đích**: Repository này là bộ sưu tập cá nhân, phi thương mại, được phát triển và fork với mục đích duy nhất là sửa lỗi tương thích (compatibility patch) cho game phiên bản mới và tối ưu hóa trải nghiệm người dùng Việt Nam.
+- **Bản quyền**: Mọi quyền sở hữu trí tuệ của các mã nguồn nguyên bản hoàn toàn thuộc về các tác giả gốc được liệt kê trong phần Credits. Mã nguồn tự phát triển mới của tôi được phân phối theo giấy phép MIT.
