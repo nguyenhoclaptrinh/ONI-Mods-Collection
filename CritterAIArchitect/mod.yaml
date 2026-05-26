@@ -1,0 +1,3 @@
+title: Critter AI Architect
+description: Optimizes game performance by applying deep AI LOD and Time-Slicing schedulers to all creatures, reducing unnecessary pathfinding and AI calculations.
+staticID: CritterAIArchitect
