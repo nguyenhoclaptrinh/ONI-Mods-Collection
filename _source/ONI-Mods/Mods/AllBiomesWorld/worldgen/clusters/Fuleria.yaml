@@ -1,0 +1,15 @@
+name: STRINGS.CLUSTER_NAMES.DEFAULT.NAME
+description: STRINGS.CLUSTER_NAMES.DEFAULT.DESCRIPTION
+coordinatePrefix: FUL-PHO
+forbiddenDlcIds: [EXPANSION1_ID]
+clusterCategory: Special
+
+difficulty: 2
+menuOrder: 1
+
+startWorldIndex: 0
+worldPlacements:
+- world: worlds/Fuleria
+  allowedRings:
+    min: 0
+    max: 0

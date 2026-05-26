@@ -1,0 +1,221 @@
+﻿using Klei.AI;
+using Pholib;
+using System.Collections.Generic;
+using UnityEngine;
+using static TUNING.CREATURES;
+
+namespace ILoveSlicksters
+{
+    [EntityConfigOrder(2)]
+    public class AquaOilfloaterConfig : IEntityConfig, IHasDlcRestrictions
+    {
+        public string[] GetDlcIds()
+        {
+            return DlcManager.AVAILABLE_ALL_VERSIONS;
+        }
+
+        public string[] GetRequiredDlcIds()
+        {
+            return new string[0];
+        }
+        public string[] GetAnyRequiredDlcIds()
+        {
+            return null;
+        }
+
+        public string[] GetForbiddenDlcIds()
+        {
+            return new string[0];
+        }
+        public GameObject CreatePrefab()
+        {
+            GameObject gameObject = CreateOilfloater(ID, PHO_STRINGS.VARIANT_AQUA.NAME, PHO_STRINGS.VARIANT_AQUA.DESC, base_kanim_id, false);
+
+            EntityTemplates.ExtendEntityToFertileCreature(
+                gameObject, this as IHasDlcRestrictions,
+                EGG_ID,
+                PHO_STRINGS.VARIANT_AQUA.EGG_NAME,
+                PHO_STRINGS.VARIANT_AQUA.DESC,
+                egg_kanim_id,
+                OilFloaterTuning.EGG_MASS,
+                ID + "Baby",
+                50f, 20 - 5,
+                EGG_CHANCES_AQUA,
+                EGG_SORT_ORDER, true, true);
+
+            return gameObject;
+        }
+
+
+        public static GameObject CreateOilfloater(string id, string name, string desc, string anim_file, bool is_baby)
+        {
+            GameObject prefab = AquaticOilFloater(id, name, desc, anim_file, BASE_TRAIT_ID, (-20f).CelciusToKelvin(), 50f.CelciusToKelvin(), is_baby, variantSprite);
+            //prefab.RemoveDef<SubmergedMonitor.Def>();
+            //prefab.AddOrGetDef<CreatureFallMonitor.Def>().canSwim = false;
+
+            EntityTemplates.ExtendEntityToWildCreature(prefab, OilFloaterTuning.PEN_SIZE_PER_CREATURE);
+            Trait trait = Db.Get().CreateTrait(BASE_TRAIT_ID, name, name, null, false, null, true, true);
+            trait.Add(new AttributeModifier(Db.Get().Amounts.Calories.maxAttribute.Id, OilFloaterTuning.STANDARD_STOMACH_SIZE, name, false, false, true));
+            trait.Add(new AttributeModifier(Db.Get().Amounts.Calories.deltaAttribute.Id, -OilFloaterTuning.STANDARD_CALORIES_PER_CYCLE / 400f, name, false, false, true));
+            trait.Add(new AttributeModifier(Db.Get().Amounts.HitPoints.maxAttribute.Id, HITPOINTS.TIER1, name, false, false, true));
+            trait.Add(new AttributeModifier(Db.Get().Amounts.Age.maxAttribute.Id, LIFESPAN.TIER2, name, false, false, true));
+            List<Diet.Info> diet_infos = DietInfo(GameTags.AnyWater, CALORIES_PER_KG_OF_ORE, CONVERSION_EFFICIENCY.GOOD_1, null, 0f);
+            return OilFloaters.SetupDiet(prefab, diet_infos, CALORIES_PER_KG_OF_ORE, MIN_POOP_SIZE_IN_KG, 15f * ILoveSlicksters.Settings.ConsumptionMultiplier);
+
+        }
+        public static List<Diet.Info> DietInfo(Tag poopTag, float caloriesPerKg, float producedConversionRate, string diseaseId, float diseasePerKgProduced)
+        {
+            return new List<Diet.Info>
+            {
+                new Diet.Info(new HashSet<Tag>(new Tag[]
+                {
+                    SimHashes.Water.CreateTag()
+                }), SimHashes.Methane.CreateTag(), caloriesPerKg * 20, CONVERSION_EFFICIENCY.BAD_1, diseaseId, diseasePerKgProduced, false, Diet.Info.FoodType.EatSolid, false),
+                new Diet.Info(new HashSet<Tag>(new Tag[]
+                {
+                    SimHashes.DirtyWater.CreateTag()
+                }), SimHashes.SlimeMold.CreateTag(), caloriesPerKg, producedConversionRate, diseaseId, diseasePerKgProduced, false, Diet.Info.FoodType.EatSolid, false),
+                new Diet.Info(new HashSet<Tag>(new Tag[]
+                {
+                    Antigel.SimHash.CreateTag()
+                }), SimHashes.Wolframite.CreateTag(), caloriesPerKg, producedConversionRate, diseaseId, diseasePerKgProduced, false, Diet.Info.FoodType.EatSolid, false),
+                new Diet.Info(new HashSet<Tag>(new Tag[]
+                {
+                    SimHashes.SaltWater.CreateTag(), SimHashes.Brine.CreateTag()
+                }), SimHashes.SedimentaryRock.CreateTag(), caloriesPerKg / 2, producedConversionRate, diseaseId, diseasePerKgProduced, false, Diet.Info.FoodType.EatSolid, false),
+
+            };
+        }
+
+        /// <summary>
+        /// Replace <see cref="BaseOilFloaterConfig.BaseOilFloater(string, string, string, string, string, float, float, bool, string)"/> for Aqua slicksters
+        /// </summary>
+        public static GameObject AquaticOilFloater(string id, string name, string desc, string anim_file, string traitId, float warnLowTemp, float warnHighTemp, bool is_baby, string symbolOverridePrefix = null)
+        {
+            float mass = 50f;
+            EffectorValues tier = TUNING.DECOR.BONUS.TIER1;
+            GameObject gameObject = EntityTemplates.CreatePlacedEntity(id, name, desc, mass, Assets.GetAnim(anim_file), "swim_idle_loop", Grid.SceneLayer.Creatures, 1, 1, tier, default(EffectorValues), SimHashes.Creature, null, (warnLowTemp + warnHighTemp) / 2f);
+            gameObject.GetComponent<KPrefabID>().AddTag(GameTags.Creatures.Swimmer);
+            gameObject.GetComponent<KPrefabID>().AddTag(GameTags.SwimmingCreature);
+
+            EntityTemplates.ExtendEntityToBasicCreature(gameObject, FactionManager.FactionID.Pest, traitId, "SwimmerNavGrid", NavType.Swim, 32, 3f, TUNING.FOOD.FOOD_TYPES.FISH_MEAT.Id, 3, false, false, warnLowTemp, warnHighTemp, warnLowTemp - 20f, warnHighTemp + 20f);
+            if (!string.IsNullOrEmpty(symbolOverridePrefix))
+            {
+                gameObject.AddOrGet<SymbolOverrideController>().ApplySymbolOverridesByAffix(Assets.GetAnim(anim_file), symbolOverridePrefix, null, 0);
+            }
+            gameObject.AddOrGet<ElementVulnerable>();
+            gameObject.AddOrGet<LoopingSounds>();
+            gameObject.AddOrGetDef<ThreatMonitor.Def>();
+            gameObject.AddOrGet<GasDrowningMonitor>();
+
+
+            gameObject.AddOrGetDef<CreatureAquaticGroomingMonitor.Def>();
+            gameObject.AddOrGet<LightVulnerable>();
+
+            gameObject.AddOrGetDef<CreatureFallMonitor.Def>().canSwim = true;
+            gameObject.AddOrGetDef<CreatureFallMonitor.Def>().checkHead = false;
+
+            gameObject.AddWeapon(1f, 1f, AttackProperties.DamageType.Standard, AttackProperties.TargetType.Single, 1, 0f);
+            EntityTemplates.CreateAndRegisterBaggedCreature(gameObject, false, true, false);
+            string inhaleSound = "OilFloater_intake_air";
+            if (is_baby)
+            {
+                inhaleSound = "OilFloaterBaby_intake_air";
+            }
+
+            IdleStates.Def idleState = new IdleStates.Def();
+            idleState.customIdleAnim = new IdleStates.Def.IdleAnimCallback(AquaOilfloaterConfig.CustomIdleAnim);
+
+            ChoreTable.Builder chore_table = new ChoreTable.Builder().Add(new DeathStates.Def()).Add(new AnimInterruptStates.Def())
+                .Add(new GrowUpStates.Def(), is_baby).Add(new TrappedStates.Def()).Add(new IncubatingStates.Def(), is_baby)
+                .Add(new BaggedStates.Def()).Add(new FallStates.Def()).Add(new StunnedStates.Def())
+                /*.Add(new DrowningStates.Def())*/.Add(new DebugGoToStates.Def()).PushInterruptGroup()//.Add(new GasDrowningStates.Def())
+                .Add(new CreatureSleepStates.Def()).Add(new FixedCaptureStates.Def())
+                .Add(new RanchedStates.Def(), !is_baby).Add(new LayEggStates.Def(), !is_baby).Add(new InhaleStates.Def
+                {
+                    inhaleSound = inhaleSound
+                }).Add(new SameSpotPoopStates.Def()).Add(new MoveToLureStates.Def()).Add(new CritterCondoStates.Def()).Add(new CallAdultStates.Def(), is_baby).PopInterruptGroup()
+                .Add(idleState);
+
+            CritterCondoInteractMontior.Def def2 = gameObject.AddOrGetDef<CritterCondoInteractMontior.Def>();
+            def2.condoPrefabTag = "UnderwaterCritterCondo";
+            def2.requireCavity = false;
+
+            LureableMonitor.Def def5 = gameObject.AddOrGetDef<LureableMonitor.Def>();
+            def5.lures = new Tag[]
+            {
+                GameTags.Creatures.FishTrapLure,
+                GameTags.Creatures.FlyersLure
+            };
+
+            OccupyArea component2 = gameObject.GetComponent<OccupyArea>();
+
+            EntityTemplates.AddCreatureBrain(gameObject, chore_table, GameTags.Creatures.Species.OilFloaterSpecies, symbolOverridePrefix);
+            //string sound = "OilFloater_move_LP";
+            //if (is_baby)
+            //{
+            //    sound = "OilFloaterBaby_move_LP";
+            //}
+            //gameObject.AddOrGet<OilFloaterMovementSound>().sound = sound;
+            return gameObject;
+        }
+        private static HashedString CustomIdleAnim(IdleStates.Instance smi, ref HashedString pre_anim)
+        {
+            pre_anim = "hover_swim";
+            return "swim_idle_loop";
+        }
+
+
+        public void OnPrefabInit(GameObject inst)
+        {
+        }
+
+        public void OnSpawn(GameObject inst)
+        {
+
+        }
+
+        public static List<FertilityMonitor.BreedingChance> EGG_CHANCES_AQUA = new List<FertilityMonitor.BreedingChance>
+        {
+            new FertilityMonitor.BreedingChance
+            {
+                egg = EGG_ID.ToTag(),
+                weight = 0.66f
+            },
+            new FertilityMonitor.BreedingChance
+            {
+                egg = EthanolOilfloaterConfig.EGG_ID.ToTag(),
+                weight = 0.1f
+            },
+            new FertilityMonitor.BreedingChance
+            {
+                egg = OwO_OilfloaterConfig.EGG_ID.ToTag(),
+                weight = 0.2f
+            },
+            new FertilityMonitor.BreedingChance
+            {
+                egg = LeafyOilfloaterConfig.EGG_ID.ToTag(),
+                weight = 0.02f
+            },
+        };
+        public const string base_kanim_id = "aqua_oilfloater_kanim";
+        public const string egg_kanim_id = "egg_aqua_oilfloater_kanim";
+        public const string variantSprite = null;
+
+
+        public const string ID = "AquaOilfloater";
+
+        public const string BASE_TRAIT_ID = "AquaOilfloaterBaseTrait";
+
+        public const string EGG_ID = "AquaOilfloaterEgg";
+
+        private static float KG_ORE_EATEN_PER_CYCLE = PHO_TUNING.OILFLOATER.KG_ORE_EATEN_PER_CYCLE.MEGA * ILoveSlicksters.Settings.ConsumptionMultiplier;
+
+        private static float CALORIES_PER_KG_OF_ORE = PHO_TUNING.OILFLOATER.STANDARD_CALORIES_PER_CYCLE / KG_ORE_EATEN_PER_CYCLE;
+
+        private static float MIN_POOP_SIZE_IN_KG = 0.5f;
+
+        public static int EGG_SORT_ORDER = OilFloaterConfig.EGG_SORT_ORDER + 2;
+
+    }
+}

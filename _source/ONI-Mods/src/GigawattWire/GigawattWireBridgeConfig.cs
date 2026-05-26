@@ -1,0 +1,61 @@
+﻿using Pholib;
+using UnityEngine;
+using static GigaWattWire.WirePatchs;
+
+namespace GigaWattWire
+{
+    public class GigawattWireBridgeConfig : WireBridgeHighWattageConfig
+    {
+        public new const string ID = "GigawattWireBridge";
+
+        protected override string GetID() => ID;
+
+        public override BuildingDef CreateBuildingDef()
+        {
+            BuildingDef buildingDef = base.CreateBuildingDef();
+
+            Logs.Log("ICIII");
+            Logs.Log(buildingDef.IsTilePiece);
+            Logs.Log(buildingDef.TileLayer);
+
+
+            buildingDef.AnimFiles = new KAnimFile[1] { Assets.GetAnim("gigawatt_wire_bridge_kanim") };
+
+            Logs.Log(buildingDef.IsTilePiece);
+            Logs.Log(buildingDef.TileLayer);
+
+            buildingDef.Mass = WirePatchs.GIGAWATT_WIRE_MASS_KG;
+            buildingDef.MaterialCategory = WirePatchs.GIGAWATT_WIRE_MATERIALS;
+            buildingDef.Overheatable = true;
+            buildingDef.OverheatTemperature = 3.15f;
+
+            // Insulated option
+            if (GameOnLoadPatch.Settings.MakeWireBridgeInsulated) buildingDef.ThermalConductivity = 0.01f;
+
+            return buildingDef;
+        }
+        public override void ConfigureBuildingTemplate(GameObject go, Tag prefab_tag)
+        {
+            base.ConfigureBuildingTemplate(go, prefab_tag);
+
+            if (GameOnLoadPatch.Settings.MakeWireBridgeInsulated) go.AddOrGet<Insulator>();
+        }
+
+        protected override WireUtilityNetworkLink AddNetworkLink(GameObject go)
+        {
+            WireUtilityNetworkLink wireUtilityNetworkLink = base.AddNetworkLink(go);
+
+            wireUtilityNetworkLink.maxWattageRating = WirePatchs.WattageRating.Max1GW.ToWireWattageRating();
+            return wireUtilityNetworkLink;
+        }
+
+        public override void DoPostConfigureUnderConstruction(GameObject go)
+        {
+            base.DoPostConfigureUnderConstruction(go);
+
+            Constructable component = go.GetComponent<Constructable>();
+            component.requiredSkillPerk = Db.Get().SkillPerks.CanPowerTinker.Id;
+        }
+    }
+
+}
