@@ -15,6 +15,7 @@ namespace PriorityZero
     public static class PriorityZeroState
     {
         private static readonly Dictionary<PriorityScreen, PriorityButton> ZeroButtons = new Dictionary<PriorityScreen, PriorityButton>();
+        private static bool loggedPriorityReadFailure;
 
         public static bool IsPriorityZero(PrioritySetting priority)
         {
@@ -28,8 +29,21 @@ namespace PriorityZero
                 return false;
             }
 
-            return IsPriorityZero(chore.masterPriority) ||
-                   (chore.prioritizable != null && IsPriorityZero(chore.prioritizable.GetMasterPriority()));
+            try
+            {
+                return IsPriorityZero(chore.masterPriority) ||
+                       (chore.prioritizable != null && IsPriorityZero(chore.prioritizable.GetMasterPriority()));
+            }
+            catch (System.Exception e)
+            {
+                if (!loggedPriorityReadFailure)
+                {
+                    loggedPriorityReadFailure = true;
+                    Debug.LogWarning("Priority Zero: Failed to read chore priority, allowing chore to continue. " + e);
+                }
+
+                return false;
+            }
         }
 
         public static bool HasZeroButton(PriorityScreen screen)
@@ -80,6 +94,7 @@ namespace PriorityZero
     [HarmonyPatch(typeof(StandardChoreBase), nameof(StandardChoreBase.IsValid))]
     public static class StandardChoreBase_IsValid_Patch
     {
+        [HarmonyPriority(Priority.Last)]
         public static bool Prefix(Chore __instance, ref bool __result)
         {
             if (PriorityZeroState.HasZeroPriority(__instance))
@@ -89,6 +104,20 @@ namespace PriorityZero
             }
 
             return true;
+        }
+    }
+
+    [HarmonyPatch(typeof(ChoreConsumer), nameof(ChoreConsumer.FindNextChore))]
+    public static class ChoreConsumer_FindNextChore_Patch
+    {
+        [HarmonyPriority(Priority.Last)]
+        public static void Postfix(ref bool __result, ref Chore.Precondition.Context out_context)
+        {
+            if (__result && PriorityZeroState.HasZeroPriority(out_context.chore))
+            {
+                __result = false;
+                out_context = new Chore.Precondition.Context();
+            }
         }
     }
 
