@@ -77,8 +77,8 @@ namespace PriorityZero
         }
     }
 
-    [HarmonyPatch(typeof(Chore), nameof(Chore.IsValid))]
-    public static class Chore_IsValid_Patch
+    [HarmonyPatch(typeof(StandardChoreBase), nameof(StandardChoreBase.IsValid))]
+    public static class StandardChoreBase_IsValid_Patch
     {
         public static bool Prefix(Chore __instance, ref bool __result)
         {
