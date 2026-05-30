@@ -56,6 +56,8 @@ namespace AutoDropBottlers
     [SerializationConfig(KSerialization.MemberSerialization.OptIn)]
     public class AutoDropControl : KMonoBehaviour, ICheckboxControl
     {
+        private const float DropDelaySeconds = 0.5f;
+
         [Serialize]
         public bool autoDropEnabled = false; // Trạng thái bật/tắt tự động thả chai
 
@@ -89,6 +91,7 @@ namespace AutoDropBottlers
         }
 
         private Bottler bottler;
+        private bool dropQueued;
 
         public bool GetCheckboxValue()
         {
@@ -100,8 +103,8 @@ namespace AutoDropBottlers
             autoDropEnabled = value;
             if (value)
             {
-                // Nếu bật, kiểm tra ngay xem trong máy có chai nước không để thả luôn
-                TriggerDrop();
+                // Nếu bật, kiểm tra trễ để không đụng vào proxy bottle trong lúc Bottler vừa kết thúc việc.
+                QueueDrop();
             }
         }
 
@@ -142,14 +145,43 @@ namespace AutoDropBottlers
         // Tách biệt logic thả toàn bộ chai trong kho chứa ra đất
         public void TriggerDrop()
         {
-            if (!autoDropEnabled || bottler == null || bottler.storage == null || bottler.storage.IsEmpty())
+            if (!CanDrop())
                 return;
 
-            // Đảm bảo không có Duplicant nào đang trực tiếp đứng vận hành máy bơm để tránh làm ngắt quãng công việc
-            if (bottler.worker == null)
-            {
-                bottler.storage.DropAll(false, false, default, true);
-            }
+            bottler.storage.DropAll(false, false, default, true);
+        }
+
+        public void QueueDrop()
+        {
+            if (dropQueued || !autoDropEnabled || bottler == null || bottler.storage == null || bottler.storage.IsEmpty())
+                return;
+
+            dropQueued = true;
+            GameScheduler.Instance.Schedule("AutoDropBottlers.DropWhenIdle", DropDelaySeconds, obj => {
+                dropQueued = false;
+
+                if (!autoDropEnabled || bottler == null || bottler.storage == null || bottler.storage.IsEmpty())
+                    return;
+
+                // Bottler creates a temporary proxy bottle while a Duplicant works. Dropping storage
+                // before vanilla cleanup finishes leaves that proxy in a broken state.
+                if (bottler.worker != null)
+                {
+                    QueueDrop();
+                    return;
+                }
+
+                TriggerDrop();
+            });
+        }
+
+        private bool CanDrop()
+        {
+            return autoDropEnabled &&
+                bottler != null &&
+                bottler.storage != null &&
+                !bottler.storage.IsEmpty() &&
+                bottler.worker == null;
         }
 
         private void OnStorageChange(object data)
@@ -159,13 +191,7 @@ namespace AutoDropBottlers
             // Nếu kho chứa đầy, trì hoãn 1 frame để đảm bảo đồng bộ sự kiện của game và thả chai
             if (bottler.storage.IsFull())
             {
-                GameScheduler.Instance.Schedule("AutoDropOnStorageFull", 0f, (obj) => {
-                    // Kiểm tra an toàn trước khi thực hiện để tránh NullReferenceException nếu công trình bị phá hủy
-                    if (this != null && bottler != null && bottler.storage != null && bottler.storage.IsFull())
-                    {
-                        TriggerDrop();
-                    }
-                });
+                QueueDrop();
             }
         }
     }
@@ -194,13 +220,7 @@ namespace AutoDropBottlers
                 var control = __instance.GetComponent<AutoDropControl>();
                 if (control != null && control.autoDropEnabled)
                 {
-                    // Trì hoãn 1 frame để Duplicant hoàn toàn giải phóng khỏi trạng thái làm việc (workable state) trước khi drop
-                    GameScheduler.Instance.Schedule("AutoDropOnStopWork", 0f, (obj) => {
-                        if (control != null)
-                        {
-                            control.TriggerDrop();
-                        }
-                    });
+                    control.QueueDrop();
                 }
             }
         }

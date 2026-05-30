@@ -1,0 +1,3 @@
+staticID: Aze.PriorityZero
+description: "Allows players to set tasks and buildings to priority 0, which effectively disables them so duplicants and auto-sweepers will ignore them."
+title: "Priority Zero"
