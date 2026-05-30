@@ -15,7 +15,11 @@ namespace PriorityZero
     public static class PriorityZeroState
     {
         private static readonly Dictionary<PriorityScreen, PriorityButton> ZeroButtons = new Dictionary<PriorityScreen, PriorityButton>();
+        private static readonly Dictionary<Prioritizable, UnityEngine.TextMesh> ZeroPriorityMarkers = new Dictionary<Prioritizable, UnityEngine.TextMesh>();
+        private static readonly HashSet<Prioritizable> VisibleZeroPriorityMarkers = new HashSet<Prioritizable>();
+        private static readonly List<Prioritizable> MarkersToRemove = new List<Prioritizable>();
         private static bool loggedPriorityReadFailure;
+        private static UnityEngine.Texture2D zeroCursorTexture;
 
         public static bool IsPriorityZero(PrioritySetting priority)
         {
@@ -46,9 +50,110 @@ namespace PriorityZero
             }
         }
 
+        public static bool HasZeroPriority(Prioritizable prioritizable)
+        {
+            if (prioritizable == null)
+            {
+                return false;
+            }
+
+            try
+            {
+                return IsPriorityZero(prioritizable.GetMasterPriority());
+            }
+            catch (System.Exception e)
+            {
+                if (!loggedPriorityReadFailure)
+                {
+                    loggedPriorityReadFailure = true;
+                    Debug.LogWarning("Priority Zero: Failed to read prioritizable priority, allowing render to continue. " + e);
+                }
+
+                return false;
+            }
+        }
+
         public static bool HasZeroButton(PriorityScreen screen)
         {
             return TryGetZeroButton(screen, out _);
+        }
+
+        public static UnityEngine.Texture2D GetZeroCursorTexture(UnityEngine.Texture2D referenceTexture)
+        {
+            int width = referenceTexture != null ? referenceTexture.width : 64;
+            int height = referenceTexture != null ? referenceTexture.height : 64;
+
+            if (zeroCursorTexture == null || zeroCursorTexture.width != width || zeroCursorTexture.height != height)
+            {
+                zeroCursorTexture = CreateZeroTexture(width, height);
+            }
+
+            return zeroCursorTexture;
+        }
+
+        public static void HideZeroPriorityMarkers()
+        {
+            foreach (UnityEngine.TextMesh marker in ZeroPriorityMarkers.Values)
+            {
+                if (marker != null)
+                {
+                    marker.gameObject.SetActive(false);
+                }
+            }
+        }
+
+        public static void RenderZeroPriorityMarkers(IList<Prioritizable> prioritizables)
+        {
+            VisibleZeroPriorityMarkers.Clear();
+
+            if (prioritizables != null)
+            {
+                for (int i = 0; i < prioritizables.Count; i++)
+                {
+                    Prioritizable prioritizable = prioritizables[i];
+                    if (HasZeroPriority(prioritizable))
+                    {
+                        UnityEngine.TextMesh marker = GetOrCreateZeroPriorityMarker(prioritizable);
+                        UpdateZeroPriorityMarker(marker, prioritizable);
+                        marker.gameObject.SetActive(true);
+                        VisibleZeroPriorityMarkers.Add(prioritizable);
+                    }
+                }
+            }
+
+            MarkersToRemove.Clear();
+            foreach (KeyValuePair<Prioritizable, UnityEngine.TextMesh> entry in ZeroPriorityMarkers)
+            {
+                if (entry.Key == null || !VisibleZeroPriorityMarkers.Contains(entry.Key))
+                {
+                    if (entry.Value != null)
+                    {
+                        UnityEngine.Object.Destroy(entry.Value.gameObject);
+                    }
+
+                    MarkersToRemove.Add(entry.Key);
+                }
+            }
+
+            for (int i = 0; i < MarkersToRemove.Count; i++)
+            {
+                ZeroPriorityMarkers.Remove(MarkersToRemove[i]);
+            }
+        }
+
+        public static void DestroyZeroPriorityMarkers()
+        {
+            foreach (UnityEngine.TextMesh marker in ZeroPriorityMarkers.Values)
+            {
+                if (marker != null)
+                {
+                    UnityEngine.Object.Destroy(marker.gameObject);
+                }
+            }
+
+            ZeroPriorityMarkers.Clear();
+            VisibleZeroPriorityMarkers.Clear();
+            MarkersToRemove.Clear();
         }
 
         public static void RegisterZeroButton(PriorityScreen screen, PriorityButton button)
@@ -88,6 +193,97 @@ namespace PriorityZero
             }
 
             button.toggle.isOn = isSelected;
+        }
+
+        private static UnityEngine.Texture2D CreateZeroTexture(int width, int height)
+        {
+            UnityEngine.Texture2D texture = new UnityEngine.Texture2D(width, height, UnityEngine.TextureFormat.RGBA32, false);
+            UnityEngine.Color transparent = new UnityEngine.Color(0f, 0f, 0f, 0f);
+            UnityEngine.Color outline = new UnityEngine.Color(0f, 0f, 0f, 1f);
+            UnityEngine.Color fill = new UnityEngine.Color(1f, 1f, 1f, 1f);
+            float centerX = (width - 1) * 0.5f;
+            float centerY = (height - 1) * 0.5f;
+            float radiusX = width * 0.28f;
+            float radiusY = height * 0.36f;
+
+            for (int y = 0; y < height; y++)
+            {
+                for (int x = 0; x < width; x++)
+                {
+                    float dx = (x - centerX) / radiusX;
+                    float dy = (y - centerY) / radiusY;
+                    float distance = dx * dx + dy * dy;
+                    UnityEngine.Color color = transparent;
+
+                    if (distance >= 0.58f && distance <= 1.18f)
+                    {
+                        color = outline;
+                    }
+
+                    if (distance >= 0.72f && distance <= 0.98f)
+                    {
+                        color = fill;
+                    }
+
+                    texture.SetPixel(x, y, color);
+                }
+            }
+
+            texture.wrapMode = UnityEngine.TextureWrapMode.Clamp;
+            texture.filterMode = UnityEngine.FilterMode.Bilinear;
+            texture.Apply(false, true);
+            return texture;
+        }
+
+        private static UnityEngine.TextMesh GetOrCreateZeroPriorityMarker(Prioritizable prioritizable)
+        {
+            if (!ZeroPriorityMarkers.TryGetValue(prioritizable, out UnityEngine.TextMesh marker) || marker == null)
+            {
+                UnityEngine.GameObject gameObject = new UnityEngine.GameObject("priority_zero_marker");
+                if (Game.Instance != null)
+                {
+                    gameObject.transform.SetParent(Game.Instance.transform, false);
+                }
+
+                gameObject.layer = UnityEngine.LayerMask.NameToLayer("UI");
+                marker = gameObject.AddComponent<UnityEngine.TextMesh>();
+                marker.text = "0";
+                marker.anchor = UnityEngine.TextAnchor.MiddleCenter;
+                marker.alignment = UnityEngine.TextAlignment.Center;
+                marker.fontSize = 64;
+                marker.color = UnityEngine.Color.white;
+
+                UnityEngine.MeshRenderer renderer = marker.GetComponent<UnityEngine.MeshRenderer>();
+                if (renderer != null)
+                {
+                    renderer.sortingOrder = 100;
+                }
+
+                ZeroPriorityMarkers[prioritizable] = marker;
+            }
+
+            return marker;
+        }
+
+        private static void UpdateZeroPriorityMarker(UnityEngine.TextMesh marker, Prioritizable prioritizable)
+        {
+            UnityEngine.Vector3 position;
+            KAnimControllerBase kAnimController = prioritizable.GetComponent<KAnimControllerBase>();
+            if (kAnimController != null)
+            {
+                position = kAnimController.GetWorldPivot();
+            }
+            else
+            {
+                position = prioritizable.transform.position;
+            }
+
+            position.x += prioritizable.iconOffset.x;
+            position.y += prioritizable.iconOffset.y;
+            position.z = -6f;
+
+            marker.characterSize = 0.12f * prioritizable.iconScale;
+            marker.transform.SetPositionAndRotation(position, UnityEngine.Quaternion.identity);
         }
     }
 
@@ -138,11 +334,37 @@ namespace PriorityZero
                 UnityEngine.MeshRenderer renderer = __instance.visualizer.GetComponentInChildren<UnityEngine.MeshRenderer>();
                 if (renderer != null)
                 {
-                    renderer.material.mainTexture = cursors[0];
+                    renderer.material.mainTexture = PriorityZeroState.GetZeroCursorTexture(cursors[0]);
                 }
             }
 
             return false;
+        }
+    }
+
+    [HarmonyPatch(typeof(PrioritizableRenderer), nameof(PrioritizableRenderer.RenderEveryTick))]
+    public static class PrioritizableRenderer_RenderEveryTick_ZeroMarkersPatch
+    {
+        public static void Postfix(List<Prioritizable> ___prioritizables)
+        {
+            if (GameScreenManager.Instance == null ||
+                SimDebugView.Instance == null ||
+                SimDebugView.Instance.GetMode() != OverlayModes.Priorities.ID)
+            {
+                PriorityZeroState.HideZeroPriorityMarkers();
+                return;
+            }
+
+            PriorityZeroState.RenderZeroPriorityMarkers(___prioritizables);
+        }
+    }
+
+    [HarmonyPatch(typeof(PrioritizableRenderer), nameof(PrioritizableRenderer.Cleanup))]
+    public static class PrioritizableRenderer_Cleanup_ZeroMarkersPatch
+    {
+        public static void Prefix()
+        {
+            PriorityZeroState.DestroyZeroPriorityMarkers();
         }
     }
 
