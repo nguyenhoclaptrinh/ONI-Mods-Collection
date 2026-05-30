@@ -1,0 +1,463 @@
+=== BAO CAO PHAN TICH CAC CHUOI CHUA DICH ===
+Tong so chuoi Bionic chua dich: 372
+Tong so chuoi Frosty chua dich: 41
+Tong so chuoi khac chua dich: 3265
+
+--- PHAN 1: CHUOI BIONIC CHUA DICH (SAMPLE FIRST 50) ---
+#1
+msgctxt: STRINGS.BLUEPRINTS.OUTFIT_ATMOSUIT_BIONIC.NAME
+msgid  : 'Bionic Atmo Outfit'
+comment: STRINGS.BLUEPRINTS.OUTFIT_ATMOSUIT_BIONIC.NAME
+----------------------------------------
+#2
+msgctxt: STRINGS.BLUEPRINTS.OUTFIT_BIOCIRCUIT.NAME
+msgid  : 'Bionic Jammies Outfit'
+comment: STRINGS.BLUEPRINTS.OUTFIT_BIOCIRCUIT.NAME
+----------------------------------------
+#3
+msgctxt: STRINGS.BLUEPRINTS.PERMIT_ATMO_BELT_CIRCUIT.DESC
+msgid  : 'The belt itself is not bionic, but the Duplicant wearing it probably is.'
+comment: STRINGS.BLUEPRINTS.PERMIT_ATMO_BELT_CIRCUIT.DESC
+----------------------------------------
+#4
+msgctxt: STRINGS.BLUEPRINTS.PERMIT_ATMO_BELT_CIRCUIT.NAME
+msgid  : 'Bionic Atmo Belt'
+comment: STRINGS.BLUEPRINTS.PERMIT_ATMO_BELT_CIRCUIT.NAME
+----------------------------------------
+#5
+msgctxt: STRINGS.BLUEPRINTS.PERMIT_ATMO_GLOVES_BIOCIRCUIT.NAME
+msgid  : 'Bionic Atmo Gloves'
+comment: STRINGS.BLUEPRINTS.PERMIT_ATMO_GLOVES_BIOCIRCUIT.NAME
+----------------------------------------
+#6
+msgctxt: STRINGS.BLUEPRINTS.PERMIT_ATMO_HELMET_BIOCIRCUIT.NAME
+msgid  : 'Bionic Atmo Helmet'
+comment: STRINGS.BLUEPRINTS.PERMIT_ATMO_HELMET_BIOCIRCUIT.NAME
+----------------------------------------
+#7
+msgctxt: STRINGS.BLUEPRINTS.PERMIT_ATMO_SHOES_BIOCIRCUIT.NAME
+msgid  : 'Bionic Atmo Boots'
+comment: STRINGS.BLUEPRINTS.PERMIT_ATMO_SHOES_BIOCIRCUIT.NAME
+----------------------------------------
+#8
+msgctxt: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_BASE_A_BIONIC.DESC
+msgid  : "It's a bit greasy."
+comment: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_BASE_A_BIONIC.DESC
+----------------------------------------
+#9
+msgctxt: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_BASE_A_BIONIC.NAME
+msgid  : 'Balmy Bionic Base'
+comment: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_BASE_A_BIONIC.NAME
+----------------------------------------
+#10
+msgctxt: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_BASE_B_BIONIC.DESC
+msgid  : "Some Duplicants climb things just because they're there."
+comment: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_BASE_B_BIONIC.DESC
+----------------------------------------
+#11
+msgctxt: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_BASE_B_BIONIC.NAME
+msgid  : 'Mount Microchip'
+comment: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_BASE_B_BIONIC.NAME
+----------------------------------------
+#12
+msgctxt: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_BASE_C_BIONIC.DESC
+msgid  : 'The winner takes it all.'
+comment: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_BASE_C_BIONIC.DESC
+----------------------------------------
+#13
+msgctxt: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_BASE_C_BIONIC.NAME
+msgid  : 'Gimme a Boost Base'
+comment: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_BASE_C_BIONIC.NAME
+----------------------------------------
+#14
+msgctxt: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_MID_A_BIONIC.DESC
+msgid  : 'Featuring the fluttery palms of a delighted Bionic Duplicant.'
+comment: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_MID_A_BIONIC.DESC
+----------------------------------------
+#15
+msgctxt: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_MID_A_BIONIC.NAME
+msgid  : 'Tickled Trunk'
+comment: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_MID_A_BIONIC.NAME
+----------------------------------------
+#16
+msgctxt: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_MID_B_BIONIC.DESC
+msgid  : 'Charging ahead with portable power.'
+comment: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_MID_B_BIONIC.DESC
+----------------------------------------
+#17
+msgctxt: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_MID_B_BIONIC.NAME
+msgid  : 'Power Forward'
+comment: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_MID_B_BIONIC.NAME
+----------------------------------------
+#18
+msgctxt: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_MID_C_BIONIC.DESC
+msgid  : 'In this universe, ya get what ya take.'
+comment: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_MID_C_BIONIC.DESC
+----------------------------------------
+#19
+msgctxt: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_MID_C_BIONIC.NAME
+msgid  : 'Hogger Trunk'
+comment: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_MID_C_BIONIC.NAME
+----------------------------------------
+#20
+msgctxt: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_UPPER_A_BIONIC.DESC
+msgid  : 'Each individual ringlet is heavy enough to crush a Duplicant.'
+comment: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_UPPER_A_BIONIC.DESC
+----------------------------------------
+#21
+msgctxt: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_UPPER_A_BIONIC.NAME
+msgid  : 'Steela Noggin'
+comment: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_UPPER_A_BIONIC.NAME
+----------------------------------------
+#22
+msgctxt: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_UPPER_B_BIONIC.DESC
+msgid  : "It's a special Ed-ition topper."
+comment: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_UPPER_B_BIONIC.DESC
+----------------------------------------
+#23
+msgctxt: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_UPPER_B_BIONIC.NAME
+msgid  : 'Edwiredo Noggin'
+comment: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_UPPER_B_BIONIC.NAME
+----------------------------------------
+#24
+msgctxt: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_UPPER_C_BIONIC.DESC
+msgid  : 'The smug mug of a winner.'
+comment: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_UPPER_C_BIONIC.DESC
+----------------------------------------
+#25
+msgctxt: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_UPPER_C_BIONIC.NAME
+msgid  : 'Ulti Noggin'
+comment: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_UPPER_C_BIONIC.NAME
+----------------------------------------
+#26
+msgctxt: STRINGS.BLUEPRINTS.PERMIT_PJ_BIOCIRCUIT_WILDBERRY.NAME
+msgid  : 'Bionic Jammies'
+comment: STRINGS.BLUEPRINTS.PERMIT_PJ_BIOCIRCUIT_WILDBERRY.NAME
+----------------------------------------
+#27
+msgctxt: STRINGS.BLUEPRINTS.PERMIT_STANDARD_BIONIC_BOTTOM.DESC
+msgid  : "If someone can tell the difference between these and actual black pants, they're standing too close."
+comment: STRINGS.BLUEPRINTS.PERMIT_STANDARD_BIONIC_BOTTOM.DESC
+----------------------------------------
+#28
+msgctxt: STRINGS.BLUEPRINTS.PERMIT_STANDARD_BIONIC_BOTTOM.NAME
+msgid  : 'Almost-Black Pants'
+comment: STRINGS.BLUEPRINTS.PERMIT_STANDARD_BIONIC_BOTTOM.NAME
+----------------------------------------
+#29
+msgctxt: STRINGS.BLUEPRINTS.PERMIT_STANDARD_BIONIC_GLOVES.DESC
+msgid  : 'Standard uniform gloves for Bionic Duplicants. They do not grant the wearer any special abilities.'
+comment: STRINGS.BLUEPRINTS.PERMIT_STANDARD_BIONIC_GLOVES.DESC
+----------------------------------------
+#30
+msgctxt: STRINGS.BLUEPRINTS.PERMIT_STANDARD_BIONIC_GLOVES.NAME
+msgid  : 'Bionic Gloves'
+comment: STRINGS.BLUEPRINTS.PERMIT_STANDARD_BIONIC_GLOVES.NAME
+----------------------------------------
+#31
+msgctxt: STRINGS.BLUEPRINTS.PERMIT_STANDARD_BIONIC_OUTFIT.DESC
+msgid  : 'The uniform issued to all Bionic Duplicants on their first day in the colony.'
+comment: STRINGS.BLUEPRINTS.PERMIT_STANDARD_BIONIC_OUTFIT.DESC
+----------------------------------------
+#32
+msgctxt: STRINGS.BLUEPRINTS.PERMIT_STANDARD_BIONIC_OUTFIT.NAME
+msgid  : 'Standard Bionic Uniform'
+comment: STRINGS.BLUEPRINTS.PERMIT_STANDARD_BIONIC_OUTFIT.NAME
+----------------------------------------
+#33
+msgctxt: STRINGS.BLUEPRINTS.PERMIT_STANDARD_BIONIC_SHOES.DESC
+msgid  : 'Standard uniform shoes for Bionic Duplicants.'
+comment: STRINGS.BLUEPRINTS.PERMIT_STANDARD_BIONIC_SHOES.DESC
+----------------------------------------
+#34
+msgctxt: STRINGS.BLUEPRINTS.PERMIT_STANDARD_BIONIC_SHOES.NAME
+msgid  : 'Bionic Shoes'
+comment: STRINGS.BLUEPRINTS.PERMIT_STANDARD_BIONIC_SHOES.NAME
+----------------------------------------
+#35
+msgctxt: STRINGS.BLUEPRINTS.PERMIT_STANDARD_BIONIC_TOP.DESC
+msgid  : 'A standard-issue uniform shirt for non-standard Duplicants.'
+comment: STRINGS.BLUEPRINTS.PERMIT_STANDARD_BIONIC_TOP.DESC
+----------------------------------------
+#36
+msgctxt: STRINGS.BLUEPRINTS.PERMIT_STANDARD_BIONIC_TOP.NAME
+msgid  : 'Bionic Uniform Shirt'
+comment: STRINGS.BLUEPRINTS.PERMIT_STANDARD_BIONIC_TOP.NAME
+----------------------------------------
+#37
+msgctxt: STRINGS.BUILDINGS.PREFABS.ADVANCEDCRAFTINGTABLE.COLONY_HAS_BOOSTER_ASSIGNED_COUNT
+msgid  : 'My colony has {0} Bionic Duplicant(s) with this booster assigned'
+comment: STRINGS.BUILDINGS.PREFABS.ADVANCEDCRAFTINGTABLE.COLONY_HAS_BOOSTER_ASSIGNED_COUNT
+----------------------------------------
+#38
+msgctxt: STRINGS.BUILDINGS.PREFABS.ADVANCEDCRAFTINGTABLE.COLONY_HAS_BOOSTER_ASSIGNED_NONE
+msgid  : 'My colony has no Bionic Duplicants with this booster assigned'
+comment: STRINGS.BUILDINGS.PREFABS.ADVANCEDCRAFTINGTABLE.COLONY_HAS_BOOSTER_ASSIGNED_NONE
+----------------------------------------
+#39
+msgctxt: STRINGS.BUILDINGS.PREFABS.ADVANCEDCRAFTINGTABLE.EFFECT
+msgid  : 'Produces advanced electronics and bionic <link="BIONICUPGRADE">Boosters</link>.\n\nDuplicants will not fabricate items unless recipes are queued.'
+comment: STRINGS.BUILDINGS.PREFABS.ADVANCEDCRAFTINGTABLE.EFFECT
+----------------------------------------
+#40
+msgctxt: STRINGS.BUILDINGS.PREFABS.ELECTROBANKCHARGER.DESC
+msgid  : 'Bionic Duplicants rely on a steady supply of power to function.'
+comment: STRINGS.BUILDINGS.PREFABS.ELECTROBANKCHARGER.DESC
+----------------------------------------
+#41
+msgctxt: STRINGS.BUILDINGS.PREFABS.GUNKEMPTIER.DESC
+msgid  : 'Bionic Duplicants are much more relaxed after a visit to the gunk extractor.'
+comment: STRINGS.BUILDINGS.PREFABS.GUNKEMPTIER.DESC
+----------------------------------------
+#42
+msgctxt: STRINGS.BUILDINGS.PREFABS.GUNKEMPTIER.EFFECT
+msgid  : 'Cleanses stale <link="LIQUIDGUNK">Gunk</link> build-up from Duplicants\' bionic parts.'
+comment: STRINGS.BUILDINGS.PREFABS.GUNKEMPTIER.EFFECT
+----------------------------------------
+#43
+msgctxt: STRINGS.BUILDINGS.PREFABS.OILCHANGER.EFFECT
+msgid  : 'Uses <link="LUBRICATINGOIL">Gear Oil</link> to keep Duplicants\' bionic parts running smoothly.'
+comment: STRINGS.BUILDINGS.PREFABS.OILCHANGER.EFFECT
+----------------------------------------
+#44
+msgctxt: STRINGS.CODEX.BIONIC.HEADER_1
+msgid  : 'Basic Needs'
+comment: STRINGS.CODEX.BIONIC.HEADER_1
+----------------------------------------
+#45
+msgctxt: STRINGS.CODEX.BIONIC.HEADER_2
+msgid  : 'Worker Optimization'
+comment: STRINGS.CODEX.BIONIC.HEADER_2
+----------------------------------------
+#46
+msgctxt: STRINGS.CODEX.BIONIC.PARAGRAPH_1
+msgid  : '<link="POWER">Power</link>: Bionic Duplicants run on portable <link="ELECTROBANK">Power Banks</link> that they automatically replace during scheduled Downtime. If power banks are depleted, the Bionic Duplicant will become Powerless and may perish if they deplete their <link="OXYGEN">Oxygen</link> tanks before being rebooted.\n\n<link="GUNKEMPTIER">Gunk Extractors</link>: Bionic systems must dispose of built-up <link="LIQUIDGUNK">Gunk</link> every {time}, or risk making a mess. If there are no purpose-built extractors available, Bionic Duplicants will clog a nearby <link="REQUIREMENTCLASSTOILETTYPE">Toilet</link>.\n\n<link="BUILDCATEGORYOXYGEN">Oxygen</link>: Bionic Duplicants ventilate their mechanisms using internal <link="OXYGEN">Oxygen</link> tanks. These must be refilled every {number} to prevent suffocation. They do not produce <link="CARBONDIOXIDE">Carbon Dioxide</link>.\n\n<link="LUBRICATINGOIL">Gear Oil</link>: Maintaining efficient operation of bionic systems requires visits to the <link="OILCHANGER">Lubrication Station</link> or use of <link="LUBRICATIONSTICK">Gear Balm</link>. If neither are available, workers slow down to avoid grinding gears.\n\n'
+comment: STRINGS.CODEX.BIONIC.PARAGRAPH_1
+----------------------------------------
+#47
+msgctxt: STRINGS.CODEX.BIONIC.PARAGRAPH_2
+msgid  : '<link="BOOSTER">Boosters</link>: Bionic Duplicants gain specialized building usage and increase attributes by installing boosters. These can be added or removed at any time to customize a Bionic Duplicant\'s career path or mitigate the consequences of bionic bugs.\n\n<link="ROLES">Skills</link>: Performing colony duties helps Bionic Duplicants earn skill points that can be exchanged for skills that may increase attributes and expand their capacity to install <link="BOOSTER">Boosters</link> and <link="ELECTROBANK">Power Banks</link>.\n\n<link="MORALE">Morale</link>: Morale in excess of a Duplicant\'s expectations will trigger Overjoyed responses that positively affect a variety of colony functions. <link="REQUIREMENTCLASSRECBUILDING">Recreational</link> building usage, <link="REQUIREMENTCLASSDECORATION">attractive buildings </link> that increase <link="DECOR">Decor</link>, and improved <link="FOOD">Foods</link> contribute to higher morale.\n\n<link="STRESS">Stress</link>: When Stress levels reach 100%, Bionic Duplicants will exhibit negative Stress responses that can disrupt work and damage buildings.\n\n<link="TECH">Research</link>: Using <link="REQUIREMENTCLASSSCIENCEBUILDING">science buildings</link> unlocks advanced technologies that increase work efficiency and improve the colony\'s standard of living.\n\n<i>More information about sustaining Bionic Duplicants\' well-being is covered in <link="MISCELLANEOUSTIPS">Tips</link> and <link="LESSONS">Tutorials</link>.</i>\n\n'
+comment: STRINGS.CODEX.BIONIC.PARAGRAPH_2
+----------------------------------------
+#48
+msgctxt: STRINGS.CODEX.BIONIC.SUBTITLE
+msgid  : 'Specialized Colony Worker'
+comment: STRINGS.CODEX.BIONIC.SUBTITLE
+----------------------------------------
+#49
+msgctxt: STRINGS.CODEX.BIONIC.TITLE
+msgid  : 'Bionic Duplicant'
+comment: STRINGS.CODEX.BIONIC.TITLE
+----------------------------------------
+#50
+msgctxt: STRINGS.CODEX.BIONICBOOSTER.BODY.CONTAINER1
+msgid  : "Boosters are programming modules designed to improve and expand Bionic Duplicants' abilities.\n\nBoosters consume a significant amount of processing power during access and implementation. Bionic Duplicants can expand their capacity for booster installation by accumulating skill points.\n\nBoosters can be combined to grant a broader range of skills, as well as to counteract bionic bugs that may exist in their original programming."
+comment: STRINGS.CODEX.BIONICBOOSTER.BODY.CONTAINER1
+----------------------------------------
+
+--- PHAN 2: CHUOI FROSTY CHUA DICH (SAMPLE FIRST 50) ---
+#1
+msgctxt: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_BASE_A_FROSTY.DESC
+msgid  : 'The plume curls upward to enable cleaners to sweep the floor around it.'
+comment: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_BASE_A_FROSTY.DESC
+----------------------------------------
+#2
+msgctxt: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_BASE_A_FROSTY.NAME
+msgid  : 'Squash Stand'
+comment: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_BASE_A_FROSTY.NAME
+----------------------------------------
+#3
+msgctxt: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_BASE_B_FROSTY.DESC
+msgid  : "It's radiant, though it emits no actual light."
+comment: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_BASE_B_FROSTY.DESC
+----------------------------------------
+#4
+msgctxt: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_BASE_B_FROSTY.NAME
+msgid  : 'Lumen Landing'
+comment: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_BASE_B_FROSTY.NAME
+----------------------------------------
+#5
+msgctxt: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_BASE_C_FROSTY.DESC
+msgid  : 'Looks and smells just like Bammoth "business."'
+comment: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_BASE_C_FROSTY.DESC
+----------------------------------------
+#6
+msgctxt: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_BASE_C_FROSTY.NAME
+msgid  : 'Patty Pose'
+comment: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_BASE_C_FROSTY.NAME
+----------------------------------------
+#7
+msgctxt: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_MID_A_FROSTY.DESC
+msgid  : 'Carved sherberries are just about as palatable as real ones.'
+comment: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_MID_A_FROSTY.DESC
+----------------------------------------
+#8
+msgctxt: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_MID_A_FROSTY.NAME
+msgid  : 'Berry Bounty Trunk'
+comment: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_MID_A_FROSTY.NAME
+----------------------------------------
+#9
+msgctxt: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_MID_B_FROSTY.DESC
+msgid  : 'Never, <i>ever</i> run while holding spigot seals.'
+comment: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_MID_B_FROSTY.DESC
+----------------------------------------
+#10
+msgctxt: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_MID_B_FROSTY.NAME
+msgid  : 'Seal Snuggles'
+comment: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_MID_B_FROSTY.NAME
+----------------------------------------
+#11
+msgctxt: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_MID_C_FROSTY.DESC
+msgid  : "It's trying to get away from something."
+comment: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_MID_C_FROSTY.DESC
+----------------------------------------
+#12
+msgctxt: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_MID_C_FROSTY.NAME
+msgid  : 'Recoiling'
+comment: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_MID_C_FROSTY.NAME
+----------------------------------------
+#13
+msgctxt: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_UPPER_A_FROSTY.DESC
+msgid  : 'A cooler-than-cool topper.'
+comment: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_UPPER_A_FROSTY.DESC
+----------------------------------------
+#14
+msgctxt: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_UPPER_A_FROSTY.NAME
+msgid  : 'Freyja Noggin'
+comment: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_UPPER_A_FROSTY.NAME
+----------------------------------------
+#15
+msgctxt: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_UPPER_B_FROSTY.DESC
+msgid  : 'Everyone loves Pei Day!'
+comment: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_UPPER_B_FROSTY.DESC
+----------------------------------------
+#16
+msgctxt: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_UPPER_B_FROSTY.NAME
+msgid  : 'Pei Noggin'
+comment: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_UPPER_B_FROSTY.NAME
+----------------------------------------
+#17
+msgctxt: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_UPPER_C_FROSTY.DESC
+msgid  : 'A giant Resting Ewwww Face topper.'
+comment: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_UPPER_C_FROSTY.DESC
+----------------------------------------
+#18
+msgctxt: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_UPPER_C_FROSTY.NAME
+msgid  : 'Liam Noggin'
+comment: STRINGS.BLUEPRINTS.PERMIT_MONUMENT_UPPER_C_FROSTY.NAME
+----------------------------------------
+#19
+msgctxt: STRINGS.BLUEPRINTS.PERMIT_PORTA_POD_Y_ICE.NAME
+msgid  : '<link="EXOBASEHEADQUARTERS">Frosty Mini-Pod</link>'
+comment: STRINGS.BLUEPRINTS.PERMIT_PORTA_POD_Y_ICE.NAME
+----------------------------------------
+#20
+msgctxt: STRINGS.CODEX.DEERSPECIES.SPECIES_SUBTITLE
+msgid  : 'Critter Species'
+comment: STRINGS.CODEX.DEERSPECIES.SPECIES_SUBTITLE
+----------------------------------------
+#21
+msgctxt: STRINGS.CODEX.DEERSPECIES.SPECIES_TITLE
+msgid  : 'Floxes'
+comment: STRINGS.CODEX.DEERSPECIES.SPECIES_TITLE
+----------------------------------------
+#22
+msgctxt: STRINGS.CODEX.DEERSPECIES.SUBTITLE
+msgid  : 'Domesticable Critter'
+comment: STRINGS.CODEX.DEERSPECIES.SUBTITLE
+----------------------------------------
+#23
+msgctxt: STRINGS.CODEX.DEERSPECIES.TITLE
+msgid  : 'Flox'
+comment: STRINGS.CODEX.DEERSPECIES.TITLE
+----------------------------------------
+#24
+msgctxt: STRINGS.CODEX.INVESTIGATIONS.DLC2_GEOTHERMALTESTING.SUBTITLE
+msgid  : 'ENCRYPTION LEVEL: THREE'
+comment: STRINGS.CODEX.INVESTIGATIONS.DLC2_GEOTHERMALTESTING.SUBTITLE
+----------------------------------------
+#25
+msgctxt: STRINGS.CODEX.STORY_TRAITS.CRITTER_MANIPULATOR.SPECIES_ENTRIES.DEER
+msgid  : 'This critter seemed amused by the scanning process. Review data for more information.'
+comment: STRINGS.CODEX.STORY_TRAITS.CRITTER_MANIPULATOR.SPECIES_ENTRIES.DEER
+----------------------------------------
+#26
+msgctxt: STRINGS.CODEX.STORY_TRAITS.CRITTER_MANIPULATOR.SPECIES_ENTRIES_EXPANDED.DEER
+msgid  : "This critter's perpetual grin grew as it observed each step of the process extremely closely.\n\nBehavioral analysis indicates a tendency toward mischief. Close supervision - and minimal access to advanced machinery - is recommended."
+comment: STRINGS.CODEX.STORY_TRAITS.CRITTER_MANIPULATOR.SPECIES_ENTRIES_EXPANDED.DEER
+----------------------------------------
+#27
+msgctxt: STRINGS.COLONY_ACHIEVEMENTS.ACTIVATEGEOTHERMALPLANT.DESCRIPTION
+msgid  : ''
+comment: STRINGS.COLONY_ACHIEVEMENTS.ACTIVATEGEOTHERMALPLANT.DESCRIPTION
+----------------------------------------
+#28
+msgctxt: STRINGS.COLONY_ACHIEVEMENTS.ACTIVATEGEOTHERMALPLANT.SIDESCREENS.BRING_ONLINE_DESC
+msgid  : ''
+comment: STRINGS.COLONY_ACHIEVEMENTS.ACTIVATEGEOTHERMALPLANT.SIDESCREENS.BRING_ONLINE_DESC
+----------------------------------------
+#29
+msgctxt: STRINGS.CREATURES.FAMILY.WOODDEER
+msgid  : '<link="DEERSPECIES">Flox</link>'
+comment: STRINGS.CREATURES.FAMILY.WOODDEER
+----------------------------------------
+#30
+msgctxt: STRINGS.CREATURES.FAMILY_PLURAL.DEERSPECIES
+msgid  : '<link="DEERSPECIES">Floxes</link>'
+comment: STRINGS.CREATURES.FAMILY_PLURAL.DEERSPECIES
+----------------------------------------
+#31
+msgctxt: STRINGS.CREATURES.MODIFIERS.DEERWELLFED.NAME
+msgid  : 'Just Ate'
+comment: STRINGS.CREATURES.MODIFIERS.DEERWELLFED.NAME
+----------------------------------------
+#32
+msgctxt: STRINGS.CREATURES.MODIFIERS.DEERWELLFED.TOOLTIP
+msgid  : "This critter's recent meal is boosting their antler growth"
+comment: STRINGS.CREATURES.MODIFIERS.DEERWELLFED.TOOLTIP
+----------------------------------------
+#33
+msgctxt: STRINGS.CREATURES.SPECIES.GLASSDEER.BABY.DESC
+msgid  : 'A little yipping Shatter Flox Fawn.\n\nIn time it will mature into a fully grown <link="GLASSDEER">Shatter Flox</link>.'
+comment: STRINGS.CREATURES.SPECIES.GLASSDEER.BABY.DESC
+----------------------------------------
+#34
+msgctxt: STRINGS.CREATURES.SPECIES.GLASSDEER.BABY.NAME
+msgid  : '<link="GLASSDEER">Shatter Flox Fawn</link>'
+comment: STRINGS.CREATURES.SPECIES.GLASSDEER.BABY.NAME
+----------------------------------------
+#35
+msgctxt: STRINGS.CREATURES.SPECIES.GLASSDEER.DESC
+msgid  : 'Shatter Floxes are nonhostile critters that can subsist on <link="PRICKLEFLOWER">Bristle Blossom</link> and <link="HARDSKINBERRYPLANT">Pikeapple Bush</link>.\n\nTheir shearable <link="GLASS">Glass</link> antlers grow only when they are fed <link="KATAIRITE">Abyssalite</link>.'
+comment: STRINGS.CREATURES.SPECIES.GLASSDEER.DESC
+----------------------------------------
+#36
+msgctxt: STRINGS.CREATURES.SPECIES.GLASSDEER.EGG_NAME
+msgid  : '<link="GLASSDEER">Shatter Flox Egg</link>'
+comment: STRINGS.CREATURES.SPECIES.GLASSDEER.EGG_NAME
+----------------------------------------
+#37
+msgctxt: STRINGS.CREATURES.SPECIES.GLASSDEER.NAME
+msgid  : '<link="GLASSDEER">Shatter Flox</link>'
+comment: STRINGS.CREATURES.SPECIES.GLASSDEER.NAME
+----------------------------------------
+#38
+msgctxt: STRINGS.CREATURES.SPECIES.WOODDEER.NAME
+msgid  : '<link="WOODDEER">Flox</link>'
+comment: STRINGS.CREATURES.SPECIES.WOODDEER.NAME
+----------------------------------------
+#39
+msgctxt: STRINGS.UI.DLC2.NAME
+msgid  : 'The Frosty Planet Pack'
+comment: STRINGS.UI.DLC2.NAME
+----------------------------------------
+#40
+msgctxt: STRINGS.UI.DLC2.NAME_ITAL
+msgid  : '<i>The Frosty Planet Pack</i>'
+comment: STRINGS.UI.DLC2.NAME_ITAL
+----------------------------------------
+#41
+msgctxt: STRINGS.WORLDS.MINISHATTEREDSTART.DESCRIPTION
+msgid  : "A battered chunk of a smaller frosty starting world with sub-zero temperatures throughout.\n\n<smallcaps>Surviving Ceres Mantle's frigid landscape is no easy task, but natural fuel sources provide a valuable payoff.</smallcaps>"
+comment: STRINGS.WORLDS.MINISHATTEREDSTART.DESCRIPTION
+----------------------------------------
