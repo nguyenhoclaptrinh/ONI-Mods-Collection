@@ -121,6 +121,31 @@ namespace PriorityZero
         }
     }
 
+    [HarmonyPatch(typeof(PrioritizeTool), nameof(PrioritizeTool.Update))]
+    public static class PrioritizeTool_Update_Patch
+    {
+        public static bool Prefix(PrioritizeTool __instance)
+        {
+            PriorityScreen priorityScreen = ToolMenu.Instance != null ? ToolMenu.Instance.PriorityScreen : null;
+            if (priorityScreen == null || !PriorityZeroState.IsPriorityZero(priorityScreen.GetLastSelectedPriority()))
+            {
+                return true;
+            }
+
+            UnityEngine.Texture2D[] cursors = __instance.cursors;
+            if (cursors != null && cursors.Length > 0 && __instance.visualizer != null)
+            {
+                UnityEngine.MeshRenderer renderer = __instance.visualizer.GetComponentInChildren<UnityEngine.MeshRenderer>();
+                if (renderer != null)
+                {
+                    renderer.material.mainTexture = cursors[0];
+                }
+            }
+
+            return false;
+        }
+    }
+
     [HarmonyPatch(typeof(PriorityScreen), "InstantiateButtons")]
     public static class PriorityScreen_InstantiateButtons_Patch
     {
