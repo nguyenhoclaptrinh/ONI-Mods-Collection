@@ -1,0 +1,96 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: MoveThisHere\n"
+"POT-Creation-Date: 2026-05-26 10:58+0700\n"
+"PO-Revision-Date: 2026-05-26 10:58+0700\n"
+"Last-Translator: Antigravity AI\n"
+"Language-Team: Vietnamese\n"
+"Language: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgctxt "MoveThisHere.STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.AUTO_BOTTLE_OFF"
+msgid "Disable Auto-Bottle"
+msgstr "Tắt nhận đồ đóng chai"
+
+msgctxt ""
+"MoveThisHere.STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.AUTO_BOTTLE_OFF_TOOLTIP"
+msgid ""
+"If disabled, Duplicants will no longer deliver bottled liquids/gases to this"
+" hauling point."
+msgstr "Nếu tắt, Duplicant sẽ không mang chất lỏng hoặc chất khí đóng chai tới điểm vận chuyển này nữa."
+
+msgctxt "MoveThisHere.STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.AUTO_BOTTLE_ON"
+msgid "Enable Auto-Bottle"
+msgstr "Bật nhận đồ đóng chai"
+
+msgctxt ""
+"MoveThisHere.STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.AUTO_BOTTLE_ON_TOOLTIP"
+msgid ""
+"If enabled, Duplicants will deliver bottled liquids/gases to this hauling "
+"point."
+msgstr "Nếu bật, Duplicant sẽ mang chất lỏng hoặc chất khí đóng chai tới điểm vận chuyển này."
+
+msgctxt "MoveThisHere.STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.AUTO_DROP_OFF"
+msgid "Disable Auto-Drop"
+msgstr "Tắt tự động gom đồ"
+
+msgctxt ""
+"MoveThisHere.STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.AUTO_DROP_OFF_TOOLTIP"
+msgid "Cancel automatic emptying when full"
+msgstr "Hủy tự động thả vật phẩm ra đất khi điểm vận chuyển đầy"
+
+msgctxt "MoveThisHere.STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.AUTO_DROP_ON"
+msgid "Enable Auto-Drop"
+msgstr "Bật tự động gom đồ"
+
+msgctxt ""
+"MoveThisHere.STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.AUTO_DROP_ON_TOOLTIP"
+msgid ""
+"If enabled, automatically remove hauling point and drop items when storage "
+"is full"
+msgstr "Nếu bật, tự động xóa điểm vận chuyển này và thả toàn bộ vật phẩm ra đất khi kho chứa đầy"
+
+msgctxt "MoveThisHere.STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.AUTO_SPILL_OFF"
+msgid "Disable Auto-Spill"
+msgstr "Tắt tự động xả"
+
+msgctxt ""
+"MoveThisHere.STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.AUTO_SPILL_OFF_TOOLTIP"
+msgid "Drop bottles of liquids and gasses rather than spilling into the world"
+msgstr "Giữ nguyên chất lỏng và chất khí dưới dạng chai/canister thay vì xả trực tiếp ra môi trường"
+
+msgctxt "MoveThisHere.STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.AUTO_SPILL_ON"
+msgid "Enable Auto-Spill"
+msgstr "Bật tự động xả"
+
+msgctxt ""
+"MoveThisHere.STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.AUTO_SPILL_ON_TOOLTIP"
+msgid ""
+"If enabled, automatically spill liquids and gasses instead of dropping "
+"bottles when hauling point is removed"
+msgstr "Nếu bật, tự động xả trực tiếp chất lỏng và chất khí ra môi trường thay vì giữ dưới dạng chai khi xóa điểm vận chuyển này"
+
+msgctxt "MoveThisHere.STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.REMOVE"
+msgid "Remove"
+msgstr "Xóa bỏ"
+
+msgctxt "MoveThisHere.STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.REMOVE_TOOLTIP"
+msgid "Remove this hauling point and drop all items here"
+msgstr "Xóa bỏ điểm vận chuyển này và thả toàn bộ vật phẩm trong kho chứa ra đất"
+
+msgctxt "MoveThisHere.STRINGS.BUILDINGS.PREFABS.HAULINGPOINT.DESC"
+msgid ""
+"Relocate selected items here, then deconstruct to drop them on the ground."
+msgstr "Vận chuyển các vật phẩm được chọn tới điểm này, sau đó tháo dỡ để thả chúng trực tiếp xuống đất."
+
+msgctxt "MoveThisHere.STRINGS.BUILDINGS.PREFABS.HAULINGPOINT.EFFECT"
+msgid "A temporary designation to bring items to a specific place."
+msgstr "Một điểm đánh dấu tạm thời giúp gom các vật phẩm chỉ định đến vị trí này."
+
+msgctxt "MoveThisHere.STRINGS.BUILDINGS.PREFABS.HAULINGPOINT.NAME"
+msgid "<link=\"HAULINGPOINT\">Hauling Point</link>"
+msgstr "<link=\"HAULINGPOINT\">Điểm vận chuyển</link>"

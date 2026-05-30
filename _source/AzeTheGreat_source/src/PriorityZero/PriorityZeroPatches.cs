@@ -328,23 +328,31 @@ namespace PriorityZero
     {
         public static bool Prefix(PrioritizeTool __instance)
         {
-            PriorityScreen priorityScreen = ToolMenu.Instance != null ? ToolMenu.Instance.PriorityScreen : null;
-            if (priorityScreen == null || !PriorityZeroState.IsPriorityZero(priorityScreen.GetLastSelectedPriority()))
+            try
             {
+                PriorityScreen priorityScreen = ToolMenu.Instance != null ? ToolMenu.Instance.PriorityScreen : null;
+                if (priorityScreen == null || !PriorityZeroState.IsPriorityZero(priorityScreen.GetLastSelectedPriority()))
+                {
+                    return true;
+                }
+
+                UnityEngine.Texture2D[] cursors = __instance.cursors;
+                if (cursors != null && cursors.Length > 0 && __instance.visualizer != null)
+                {
+                    UnityEngine.MeshRenderer renderer = __instance.visualizer.GetComponentInChildren<UnityEngine.MeshRenderer>();
+                    if (renderer != null)
+                    {
+                        renderer.material.mainTexture = PriorityZeroState.GetZeroCursorTexture(cursors[0]);
+                    }
+                }
+
+                return false;
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogWarning("[PriorityZero] Lỗi Prefix Update Tool: " + e.Message);
                 return true;
             }
-
-            UnityEngine.Texture2D[] cursors = __instance.cursors;
-            if (cursors != null && cursors.Length > 0 && __instance.visualizer != null)
-            {
-                UnityEngine.MeshRenderer renderer = __instance.visualizer.GetComponentInChildren<UnityEngine.MeshRenderer>();
-                if (renderer != null)
-                {
-                    renderer.material.mainTexture = PriorityZeroState.GetZeroCursorTexture(cursors[0]);
-                }
-            }
-
-            return false;
         }
     }
 
@@ -353,15 +361,28 @@ namespace PriorityZero
     {
         public static void Postfix(List<Prioritizable> ___prioritizables)
         {
-            if (GameScreenManager.Instance == null ||
-                SimDebugView.Instance == null ||
-                SimDebugView.Instance.GetMode() != OverlayModes.Priorities.ID)
+            try
             {
-                PriorityZeroState.HideZeroPriorityMarkers();
-                return;
-            }
+                if (GameScreenManager.Instance == null ||
+                    SimDebugView.Instance == null ||
+                    SimDebugView.Instance.GetMode() != OverlayModes.Priorities.ID)
+                {
+                    PriorityZeroState.HideZeroPriorityMarkers();
+                    return;
+                }
 
-            PriorityZeroState.RenderZeroPriorityMarkers(___prioritizables);
+                PriorityZeroState.RenderZeroPriorityMarkers(___prioritizables);
+            }
+            catch (System.Exception e)
+            {
+                // Chỉ log cảnh báo, ẩn marker rác và cho phép game tiếp tục
+                Debug.LogWarning("[PriorityZero] Lỗi vẽ nhãn ưu tiên số 0: " + e.Message);
+                try
+                {
+                    PriorityZeroState.HideZeroPriorityMarkers();
+                }
+                catch {}
+            }
         }
     }
 
@@ -379,34 +400,41 @@ namespace PriorityZero
     {
         public static void Postfix(PriorityScreen __instance)
         {
-            if (__instance.buttons_basic == null || __instance.buttons_basic.Count == 0) return;
-
-            if (PriorityZeroState.HasZeroButton(__instance)) return;
-
-            PriorityButton btn1 = __instance.buttons_basic[0];
-            if (btn1 == null) return;
-
-            PriorityButton btn0 = UnityEngine.Object.Instantiate(btn1, btn1.transform.parent);
-            btn0.name = "button_prio_0";
-            btn0.priority = new PrioritySetting(PriorityScreen.PriorityClass.basic, 0);
-            btn0.onClick = priority =>
+            try
             {
-                __instance.SetScreenPriority(priority, false);
-                __instance.OnClick(priority);
-            };
+                if (__instance.buttons_basic == null || __instance.buttons_basic.Count == 0) return;
 
-            if (btn0.text != null)
-            {
-                btn0.text.text = "0";
+                if (PriorityZeroState.HasZeroButton(__instance)) return;
+
+                PriorityButton btn1 = __instance.buttons_basic[0];
+                if (btn1 == null) return;
+
+                PriorityButton btn0 = UnityEngine.Object.Instantiate(btn1, btn1.transform.parent);
+                btn0.name = "button_prio_0";
+                btn0.priority = new PrioritySetting(PriorityScreen.PriorityClass.basic, 0);
+                btn0.onClick = priority =>
+                {
+                    __instance.SetScreenPriority(priority, false);
+                    __instance.OnClick(priority);
+                };
+
+                if (btn0.text != null)
+                {
+                    btn0.text.text = "0";
+                }
+
+                if (btn0.tooltip != null)
+                {
+                    btn0.tooltip.SetSimpleTooltip("Vô hiệu hóa công việc (Priority 0) - Duplicants và Auto-Sweepers sẽ bỏ qua");
+                }
+
+                btn0.transform.SetAsFirstSibling();
+                PriorityZeroState.RegisterZeroButton(__instance, btn0);
             }
-
-            if (btn0.tooltip != null)
+            catch (System.Exception e)
             {
-                btn0.tooltip.SetSimpleTooltip("Vô hiệu hóa công việc (Priority 0) - Duplicants và Auto-Sweepers sẽ bỏ qua");
+                Debug.LogWarning("[PriorityZero] Không thể tạo nút bấm Priority 0 trên UI: " + e.Message);
             }
-
-            btn0.transform.SetAsFirstSibling();
-            PriorityZeroState.RegisterZeroButton(__instance, btn0);
         }
     }
 

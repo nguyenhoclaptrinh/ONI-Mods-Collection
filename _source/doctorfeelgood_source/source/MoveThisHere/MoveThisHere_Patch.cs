@@ -58,9 +58,16 @@ namespace MoveThisHere
         {
             public static void Postfix(BuildingDef def, ref ProductInfoScreen __instance)
             {
-                if (def.name == "HaulingPoint")
+                try
                 {
-                    __instance.materialSelectionPanel.gameObject.SetActive(false); //remove material selector since no materials
+                    if (def != null && def.name == "HaulingPoint" && __instance != null && __instance.materialSelectionPanel != null)
+                    {
+                        __instance.materialSelectionPanel.gameObject.SetActive(false); //remove material selector since no materials
+                    }
+                }
+                catch (System.Exception e)
+                {
+                    Debug.LogWarning("[MoveThisHere] Lỗi Postfix SetMaterials: " + e.Message);
                 }
             }
         }
@@ -71,12 +78,23 @@ namespace MoveThisHere
         {
             public static string Postfix(string __result, Recipe ___currentRecipe)
             {
-                if (___currentRecipe.Ingredients[0].amount == 1f)
+                try
                 {
-                    if (BuildTool.Instance.GetComponent<BuildToolHoverTextCard>().currentDef.name == "HaulingPoint")
+                    if (___currentRecipe != null && ___currentRecipe.Ingredients != null && ___currentRecipe.Ingredients.Count > 0 && ___currentRecipe.Ingredients[0].amount == 1f)
                     {
-                        __result = "No resources required";
+                        if (BuildTool.Instance != null)
+                        {
+                            var hoverCard = BuildTool.Instance.GetComponent<BuildToolHoverTextCard>();
+                            if (hoverCard != null && hoverCard.currentDef != null && hoverCard.currentDef.name == "HaulingPoint")
+                            {
+                                __result = "No resources required";
+                            }
+                        }
                     }
+                }
+                catch (System.Exception e)
+                {
+                    Debug.LogWarning("[MoveThisHere] Lỗi Postfix ResourceRemainingDisplayScreen: " + e.Message);
                 }
                 return __result;
             }
@@ -88,15 +106,26 @@ namespace MoveThisHere
         {
             public static bool Prefix(Vector3 pos, Orientation orientation, IList<Tag> selected_elements, int layer, BuildingDef __instance, ref GameObject __result)
             {
-                if (__instance.PrefabID != HaulingPointConfig.Id)
+                try
                 {
-                    return true;
-                }
-                else
-                {
+                    if (__instance == null || __instance.PrefabID != HaulingPointConfig.Id)
+                    {
+                        return true;
+                    }
+
+                    if (selected_elements == null || selected_elements.Count == 0)
+                    {
+                        return true; // Fallback an toàn
+                    }
+
                     selected_elements[0] = TagManager.Create("Vacuum");
-					__result = __instance.Build(Grid.PosToCell(pos), orientation, null, selected_elements, 293.15f, playsound: false, GameClock.Instance.GetTime());
-					return false;
+                    __result = __instance.Build(Grid.PosToCell(pos), orientation, null, selected_elements, 293.15f, playsound: false, GameClock.Instance.GetTime());
+                    return false;
+                }
+                catch (System.Exception e)
+                {
+                    Debug.LogWarning("[MoveThisHere] Lỗi Prefix Instantiate: " + e.Message);
+                    return true; // Phục hồi bằng cách chạy game gốc
                 }
             }
         }

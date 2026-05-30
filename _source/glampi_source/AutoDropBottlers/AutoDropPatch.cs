@@ -132,47 +132,81 @@ namespace AutoDropBottlers
         // Thực hiện sao chép cài đặt khi người chơi nhấn nút "Copy Settings"
         private void OnCopySettings(object data)
         {
-            if (data != null && data is GameObject go)
+            try
             {
-                var sourceControl = go.GetComponent<AutoDropControl>();
-                if (sourceControl != null)
+                if (data != null && data is GameObject go)
                 {
-                    SetCheckboxValue(sourceControl.autoDropEnabled);
+                    var sourceControl = go.GetComponent<AutoDropControl>();
+                    if (sourceControl != null)
+                    {
+                        SetCheckboxValue(sourceControl.autoDropEnabled);
+                    }
                 }
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogWarning("[AutoDropBottlers] Lỗi OnCopySettings: " + e.Message);
             }
         }
 
         // Tách biệt logic thả toàn bộ chai trong kho chứa ra đất
         public void TriggerDrop()
         {
-            if (!CanDrop())
-                return;
+            try
+            {
+                if (!CanDrop())
+                    return;
 
-            bottler.storage.DropAll(false, false, default, true);
+                if (bottler != null && bottler.storage != null)
+                {
+                    bottler.storage.DropAll(false, false, default, true);
+                }
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogWarning("[AutoDropBottlers] Lỗi TriggerDrop: " + e.Message);
+            }
         }
 
         public void QueueDrop()
         {
-            if (dropQueued || !autoDropEnabled || bottler == null || bottler.storage == null || bottler.storage.IsEmpty())
-                return;
-
-            dropQueued = true;
-            GameScheduler.Instance.Schedule("AutoDropBottlers.DropWhenIdle", DropDelaySeconds, obj => {
-                dropQueued = false;
-
-                if (!autoDropEnabled || bottler == null || bottler.storage == null || bottler.storage.IsEmpty())
+            try
+            {
+                if (dropQueued || !autoDropEnabled || bottler == null || bottler.storage == null || bottler.storage.IsEmpty())
                     return;
 
-                // Bottler creates a temporary proxy bottle while a Duplicant works. Dropping storage
-                // before vanilla cleanup finishes leaves that proxy in a broken state.
-                if (bottler.worker != null)
-                {
-                    QueueDrop();
+                if (GameScheduler.Instance == null)
                     return;
-                }
 
-                TriggerDrop();
-            });
+                dropQueued = true;
+                GameScheduler.Instance.Schedule("AutoDropBottlers.DropWhenIdle", DropDelaySeconds, obj => {
+                    try
+                    {
+                        dropQueued = false;
+
+                        if (!autoDropEnabled || bottler == null || bottler.storage == null || bottler.storage.IsEmpty())
+                            return;
+
+                        // Bottler creates a temporary proxy bottle while a Duplicant works. Dropping storage
+                        // before vanilla cleanup finishes leaves that proxy in a broken state.
+                        if (bottler.worker != null)
+                        {
+                            QueueDrop();
+                            return;
+                        }
+
+                        TriggerDrop();
+                    }
+                    catch (System.Exception ex)
+                    {
+                        Debug.LogWarning("[AutoDropBottlers] Lỗi trong Scheduled Drop task: " + ex.Message);
+                    }
+                });
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogWarning("[AutoDropBottlers] Lỗi QueueDrop: " + e.Message);
+            }
         }
 
         private bool CanDrop()
@@ -186,12 +220,19 @@ namespace AutoDropBottlers
 
         private void OnStorageChange(object data)
         {
-            if (!autoDropEnabled || bottler == null || bottler.storage == null) return;
-
-            // Nếu kho chứa đầy, trì hoãn 1 frame để đảm bảo đồng bộ sự kiện của game và thả chai
-            if (bottler.storage.IsFull())
+            try
             {
-                QueueDrop();
+                if (!autoDropEnabled || bottler == null || bottler.storage == null) return;
+
+                // Nếu kho chứa đầy, trì hoãn 1 frame để đảm bảo đồng bộ sự kiện của game và thả chai
+                if (bottler.storage.IsFull())
+                {
+                    QueueDrop();
+                }
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogWarning("[AutoDropBottlers] Lỗi OnStorageChange: " + e.Message);
             }
         }
     }

@@ -43,31 +43,52 @@ namespace AutoDesalinator
 
         private void OnStorageChange(object data)
         {
-            if (autoDropEnabled) CheckAndDrop();
+            try
+            {
+                if (autoDropEnabled) CheckAndDrop();
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogWarning("[AutoDesalinator] Lỗi xử lý OnStorageChange: " + e.Message);
+            }
         }
 
         private void CheckAndDrop()
         {
-            // Duyệt qua tất cả các storage của Desalinator
-            foreach (Storage storage in GetComponents<Storage>())
+            try
             {
-                if (storage == null || storage.items == null) continue;
-                for (int i = storage.items.Count - 1; i >= 0; i--)
+                // Duyệt qua tất cả các storage của Desalinator
+                foreach (Storage storage in GetComponents<Storage>())
                 {
-                    GameObject item = storage.items[i];
-                    if (item == null) continue;
-
-                    PrimaryElement pe = item.GetComponent<PrimaryElement>();
-                    // Hạ ngưỡng xuống 500kg để an toàn tuyệt đối, tránh việc máy dừng hoạt động 
-                    // trước khi đạt tới 900kg nếu Klei có thay đổi capacity.
-                    if (pe != null && pe.Element.IsSolid)
+                    if (storage == null || storage.items == null) continue;
+                    for (int i = storage.items.Count - 1; i >= 0; i--)
                     {
-                        if (pe.Mass >= 500f)
+                        GameObject item = storage.items[i];
+                        if (item == null) continue;
+
+                        try
                         {
-                            storage.Drop(item, true);
+                            PrimaryElement pe = item.GetComponent<PrimaryElement>();
+                            // Hạ ngưỡng xuống 500kg để an toàn tuyệt đối, tránh việc máy dừng hoạt động 
+                            // trước khi đạt tới 900kg nếu Klei có thay đổi capacity.
+                            if (pe != null && pe.Element != null && pe.Element.IsSolid)
+                            {
+                                if (pe.Mass >= 500f)
+                                {
+                                    storage.Drop(item, true);
+                                }
+                            }
+                        }
+                        catch (System.Exception ex)
+                        {
+                            Debug.LogWarning("[AutoDesalinator] Lỗi khi kiểm tra/thả item trong storage: " + ex.Message);
                         }
                     }
                 }
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogWarning("[AutoDesalinator] Lỗi xử lý CheckAndDrop: " + e.Message);
             }
         }
     }

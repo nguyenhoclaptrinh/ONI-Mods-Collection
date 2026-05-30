@@ -1,4 +1,4 @@
-﻿using AzeLib.Extensions;
+using AzeLib.Extensions;
 using HarmonyLib;
 using System.Collections.Generic;
 using System.Reflection;
@@ -13,24 +13,39 @@ namespace SuppressNotifications
         // Transpiler to replace default ShouldShowIcon with a custom version
         static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            MethodInfo targetMethodIcon = AccessTools.Method(typeof(StatusItem), nameof(StatusItem.ShouldShowIcon));
-
-            foreach (CodeInstruction i in instructions)
+            try
             {
-                if (i.Is(OpCodes.Callvirt, targetMethodIcon))
+                MethodInfo targetMethodIcon = AccessTools.Method(typeof(StatusItem), nameof(StatusItem.ShouldShowIcon));
+                if (targetMethodIcon == null)
                 {
-                    // Load gameObject onto stack
-                    yield return new CodeInstruction(OpCodes.Ldarg_0);
-                    yield return new CodeInstruction(OpCodes.Call,
-                        AccessTools.Method(typeof(StatusItemGroup), "get_gameObject"));
-
-                    // Call custom ShouldShowIcon
-                    yield return new CodeInstruction(OpCodes.Call,
-                        AccessTools.Method(typeof(Patch_StatusItemGroup_AddStatusItem), nameof(Patch_StatusItemGroup_AddStatusItem.ShouldShowIconSub)));
-                    continue;
+                    Debug.LogWarning("[SuppressNotifications] Lỗi Transpiler: Không tìm thấy phương thức ShouldShowIcon gốc, bỏ qua patch.");
+                    return instructions;
                 }
 
-                yield return i;
+                List<CodeInstruction> list = new List<CodeInstruction>();
+                foreach (CodeInstruction i in instructions)
+                {
+                    if (i.Is(OpCodes.Callvirt, targetMethodIcon))
+                    {
+                        // Load gameObject onto stack
+                        list.Add(new CodeInstruction(OpCodes.Ldarg_0));
+                        list.Add(new CodeInstruction(OpCodes.Call,
+                            AccessTools.Method(typeof(StatusItemGroup), "get_gameObject")));
+
+                        // Call custom ShouldShowIcon
+                        list.Add(new CodeInstruction(OpCodes.Call,
+                            AccessTools.Method(typeof(Patch_StatusItemGroup_AddStatusItem), nameof(Patch_StatusItemGroup_AddStatusItem.ShouldShowIconSub))));
+                        continue;
+                    }
+
+                    list.Add(i);
+                }
+                return list;
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogWarning("[SuppressNotifications] Lỗi nghiêm trọng trong Transpiler StatusItemGroup.AddStatusItem, fallback an toàn: " + e.Message);
+                return instructions;
             }
         }
 

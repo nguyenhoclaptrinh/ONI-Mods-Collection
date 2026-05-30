@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -16,17 +16,33 @@ namespace SuppressNotifications
 
         private void OnRefreshUserMenu()
         {
-            if (AreSuppressable())
-                AddButton(MYSTRINGS.SUPPRESSBUTTON.NAME, OnSuppressClick, GetSuppressableString);
-            else if (AreSuppressed())
-                AddButton(MYSTRINGS.CLEARBUTTON.NAME, OnClearClick, GetSuppressedString);
+            try
+            {
+                if (Game.Instance == null || Game.Instance.userMenu == null) return;
+
+                if (AreSuppressable())
+                    AddButton(MYSTRINGS.SUPPRESSBUTTON.NAME, OnSuppressClick, GetSuppressableString);
+                else if (AreSuppressed())
+                    AddButton(MYSTRINGS.CLEARBUTTON.NAME, OnClearClick, GetSuppressedString);
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogWarning("[SuppressNotifications] Lỗi OnRefreshUserMenu: " + e.Message);
+            }
 
             void AddButton(string text, System.Action onClick, Func<string> getTooltip)
             {
-                // For vanilla and SO, must explicitly set the right action since this enum is different.
-                Enum.TryParse(nameof(Action.NumActions), out Action action);
+                try
+                {
+                    // For vanilla and SO, must explicitly set the right action since this enum is different.
+                    Enum.TryParse(nameof(Action.NumActions), out Action action);
 
-                Game.Instance.userMenu.AddButton(gameObject, new KIconButtonMenu.ButtonInfo("action_building_disabled", text, onClick, action, tooltipText: getTooltip()));
+                    Game.Instance.userMenu.AddButton(gameObject, new KIconButtonMenu.ButtonInfo("action_building_disabled", text, onClick, action, tooltipText: getTooltip()));
+                }
+                catch (System.Exception e)
+                {
+                    Debug.LogWarning("[SuppressNotifications] Lỗi AddButton: " + e.Message);
+                }
             }
         }
 
@@ -37,14 +53,28 @@ namespace SuppressNotifications
 
         internal virtual void OnSuppressClick()
         {
-            notificationsSuppressedComp.SuppressNotifications();
-            statusItemsSuppressedComp.SuppressStatusItems();
+            try
+            {
+                notificationsSuppressedComp.SuppressNotifications();
+                statusItemsSuppressedComp.SuppressStatusItems();
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogWarning("[SuppressNotifications] Lỗi OnSuppressClick: " + e.Message);
+            }
         }
 
         internal virtual void OnClearClick()
         {
-            notificationsSuppressedComp.UnsupressNotifications();
-            statusItemsSuppressedComp.UnsuppressStatusItems();
+            try
+            {
+                notificationsSuppressedComp.UnsupressNotifications();
+                statusItemsSuppressedComp.UnsuppressStatusItems();
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogWarning("[SuppressNotifications] Lỗi OnClearClick: " + e.Message);
+            }
         }
 
         internal virtual string GetSuppressableString()

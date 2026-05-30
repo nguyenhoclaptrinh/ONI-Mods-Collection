@@ -167,23 +167,29 @@ namespace MoveThisHere
 
         private void OnCopySettings(object data)
         {
-            GameObject gameObject = (GameObject)data;
-            if (!(gameObject == null))
+            try
             {
-                HaulingPoint component = gameObject.GetComponent<HaulingPoint>();
-                if (!(component == null))
+                GameObject gameObject = (GameObject)data;
+                if (!(gameObject == null))
                 {
-                    //this is copying settings TO the local variables from clipboard component
-                    userMaxCapacity = component.userMaxCapacity;
-                    storage.capacityKg = userMaxCapacity;
-                    willSelfDestruct = component.willSelfDestruct;
-                    willSpill = component.willSpill;
-                    allowManualPumpingStationFetching = component.allowManualPumpingStationFetching;
-                    forbidden_tags = (allowManualPumpingStationFetching ? new Tag[0] : new Tag[1] { GameTags.LiquidSource });
-                    filteredStorage.SetForbiddenTags(forbidden_tags);
-                    filteredStorage.FilterChanged();
-
+                    HaulingPoint component = gameObject.GetComponent<HaulingPoint>();
+                    if (!(component == null))
+                    {
+                        //this is copying settings TO the local variables from clipboard component
+                        userMaxCapacity = component.userMaxCapacity;
+                        storage.capacityKg = userMaxCapacity;
+                        willSelfDestruct = component.willSelfDestruct;
+                        willSpill = component.willSpill;
+                        allowManualPumpingStationFetching = component.allowManualPumpingStationFetching;
+                        forbidden_tags = (allowManualPumpingStationFetching ? new Tag[0] : new Tag[1] { GameTags.LiquidSource });
+                        filteredStorage.SetForbiddenTags(forbidden_tags);
+                        filteredStorage.FilterChanged();
+                    }
                 }
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogWarning("[MoveThisHere] Lỗi OnCopySettings HaulingPoint: " + e.Message);
             }
 		}
 		public static JObject Blueprints_GetData(GameObject source)
@@ -202,50 +208,63 @@ namespace MoveThisHere
 		}
 		public static void Blueprints_SetData(GameObject target, JObject data)
 		{
-			if (target.TryGetComponent<HaulingPoint>(out var targetHaulingPoint))
-			{
-				var token_userMaxCapacity = data.GetValue("userMaxCapacity");
-				var token_allowManualPumpingStationFetching = data.GetValue("allowManualPumpingStationFetching");
-				var token_willSelfDestruct = data.GetValue("willSelfDestruct");
-				var token_willSpill = data.GetValue("willSpill");
-				if (token_userMaxCapacity == null || token_willSelfDestruct == null || token_willSpill == null || token_allowManualPumpingStationFetching == null)
-					return;
-                float userMaxCapacity = token_userMaxCapacity.Value<float>();
-                bool willSelfDestruct = token_willSelfDestruct.Value<bool>();;
-                bool willSpill = token_willSpill.Value<bool>();
-                bool allowManualPumpingStationFetching = token_allowManualPumpingStationFetching.Value<bool>();
-				
-                targetHaulingPoint.userMaxCapacity = userMaxCapacity;
-				targetHaulingPoint.storage.capacityKg = userMaxCapacity;
-				targetHaulingPoint.willSelfDestruct = willSelfDestruct;
-				targetHaulingPoint.willSpill = willSpill;
-				targetHaulingPoint.allowManualPumpingStationFetching = allowManualPumpingStationFetching;
-                Tag[] forbidden_tags = (allowManualPumpingStationFetching ? new Tag[0] : new Tag[1] { GameTags.LiquidSource });   
-				targetHaulingPoint.forbidden_tags = forbidden_tags;
-				targetHaulingPoint.filteredStorage.SetForbiddenTags(forbidden_tags);
-				targetHaulingPoint.filteredStorage.FilterChanged();
-			}
+            try
+            {
+                if (target.TryGetComponent<HaulingPoint>(out var targetHaulingPoint))
+                {
+                    var token_userMaxCapacity = data.GetValue("userMaxCapacity");
+                    var token_allowManualPumpingStationFetching = data.GetValue("allowManualPumpingStationFetching");
+                    var token_willSelfDestruct = data.GetValue("willSelfDestruct");
+                    var token_willSpill = data.GetValue("willSpill");
+                    if (token_userMaxCapacity == null || token_willSelfDestruct == null || token_willSpill == null || token_allowManualPumpingStationFetching == null)
+                        return;
+                    float userMaxCapacity = token_userMaxCapacity.Value<float>();
+                    bool willSelfDestruct = token_willSelfDestruct.Value<bool>();;
+                    bool willSpill = token_willSpill.Value<bool>();
+                    bool allowManualPumpingStationFetching = token_allowManualPumpingStationFetching.Value<bool>();
+                    
+                    targetHaulingPoint.userMaxCapacity = userMaxCapacity;
+                    targetHaulingPoint.storage.capacityKg = userMaxCapacity;
+                    targetHaulingPoint.willSelfDestruct = willSelfDestruct;
+                    targetHaulingPoint.willSpill = willSpill;
+                    targetHaulingPoint.allowManualPumpingStationFetching = allowManualPumpingStationFetching;
+                    Tag[] forbidden_tags = (allowManualPumpingStationFetching ? new Tag[0] : new Tag[1] { GameTags.LiquidSource });   
+                    targetHaulingPoint.forbidden_tags = forbidden_tags;
+                    targetHaulingPoint.filteredStorage.SetForbiddenTags(forbidden_tags);
+                    targetHaulingPoint.filteredStorage.FilterChanged();
+                }
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogWarning("[MoveThisHere] Lỗi Blueprints_SetData: " + e.Message);
+            }
 		}
 
 		private void OnRefreshUserMenu(object data)
         {
-            //KIconButtonMenu.ButtonInfo button2 = (allowManualPumpingStationFetching ?
-            //    new KIconButtonMenu.ButtonInfo("action_bottler_delivery", UI.USERMENUACTIONS.MANUAL_PUMP_DELIVERY.DENIED.NAME, OnChangeAllowManualPumpingStationFetching, Action.NumActions, null, null, null, UI.USERMENUACTIONS.MANUAL_PUMP_DELIVERY.DENIED.TOOLTIP) :
-            //    new KIconButtonMenu.ButtonInfo("action_bottler_delivery", UI.USERMENUACTIONS.MANUAL_PUMP_DELIVERY.ALLOWED.NAME, OnChangeAllowManualPumpingStationFetching, Action.NumActions, null, null, null, UI.USERMENUACTIONS.MANUAL_PUMP_DELIVERY.ALLOWED.TOOLTIP));
-            KIconButtonMenu.ButtonInfo autoBottleButton = (allowManualPumpingStationFetching ?
-                new KIconButtonMenu.ButtonInfo("action_bottler_delivery", STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.AUTO_BOTTLE_OFF, OnChangeAllowManualPumpingStationFetching, Action.NumActions, null, null, null, STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.AUTO_BOTTLE_OFF_TOOLTIP) :
-                new KIconButtonMenu.ButtonInfo("action_bottler_delivery", STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.AUTO_BOTTLE_ON, OnChangeAllowManualPumpingStationFetching, Action.NumActions, null, null, null, STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.AUTO_BOTTLE_ON_TOOLTIP));
-            Game.Instance.userMenu.AddButton(base.gameObject, autoBottleButton, 0.4f);
+            try
+            {
+                if (Game.Instance == null || Game.Instance.userMenu == null) return;
 
-            KIconButtonMenu.ButtonInfo autoDropButton = (willSelfDestruct ?
-                new KIconButtonMenu.ButtonInfo("action_empty_contents", STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.AUTO_DROP_OFF, ToggleWillSelfDestruct, Action.NumActions, null, null, null, STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.AUTO_DROP_OFF_TOOLTIP) :
-                new KIconButtonMenu.ButtonInfo("action_empty_contents", STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.AUTO_DROP_ON, ToggleWillSelfDestruct, Action.NumActions, null, null, null, STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.AUTO_DROP_ON_TOOLTIP));
-            Game.Instance.userMenu.AddButton(base.gameObject, autoDropButton);
+                KIconButtonMenu.ButtonInfo autoBottleButton = (allowManualPumpingStationFetching ?
+                    new KIconButtonMenu.ButtonInfo("action_bottler_delivery", STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.AUTO_BOTTLE_OFF, OnChangeAllowManualPumpingStationFetching, Action.NumActions, null, null, null, STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.AUTO_BOTTLE_OFF_TOOLTIP) :
+                    new KIconButtonMenu.ButtonInfo("action_bottler_delivery", STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.AUTO_BOTTLE_ON, OnChangeAllowManualPumpingStationFetching, Action.NumActions, null, null, null, STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.AUTO_BOTTLE_ON_TOOLTIP));
+                Game.Instance.userMenu.AddButton(base.gameObject, autoBottleButton, 0.4f);
 
-            KIconButtonMenu.ButtonInfo autoSpillButton = (willSpill ?
-                new KIconButtonMenu.ButtonInfo("action_bottler_delivery", STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.AUTO_SPILL_OFF, OnChangeWillSpill, Action.NumActions, null, null, null, STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.AUTO_SPILL_OFF_TOOLTIP) :
-                new KIconButtonMenu.ButtonInfo("action_bottler_delivery", STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.AUTO_SPILL_ON, OnChangeWillSpill, Action.NumActions, null, null, null, STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.AUTO_SPILL_ON_TOOLTIP));
-            Game.Instance.userMenu.AddButton(base.gameObject, autoSpillButton);
+                KIconButtonMenu.ButtonInfo autoDropButton = (willSelfDestruct ?
+                    new KIconButtonMenu.ButtonInfo("action_empty_contents", STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.AUTO_DROP_OFF, ToggleWillSelfDestruct, Action.NumActions, null, null, null, STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.AUTO_DROP_OFF_TOOLTIP) :
+                    new KIconButtonMenu.ButtonInfo("action_empty_contents", STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.AUTO_DROP_ON, ToggleWillSelfDestruct, Action.NumActions, null, null, null, STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.AUTO_DROP_ON_TOOLTIP));
+                Game.Instance.userMenu.AddButton(base.gameObject, autoDropButton);
+
+                KIconButtonMenu.ButtonInfo autoSpillButton = (willSpill ?
+                    new KIconButtonMenu.ButtonInfo("action_bottler_delivery", STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.AUTO_SPILL_OFF, OnChangeWillSpill, Action.NumActions, null, null, null, STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.AUTO_SPILL_OFF_TOOLTIP) :
+                    new KIconButtonMenu.ButtonInfo("action_bottler_delivery", STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.AUTO_SPILL_ON, OnChangeWillSpill, Action.NumActions, null, null, null, STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.AUTO_SPILL_ON_TOOLTIP));
+                Game.Instance.userMenu.AddButton(base.gameObject, autoSpillButton);
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogWarning("[MoveThisHere] Lỗi OnRefreshUserMenu HaulingPoint: " + e.Message);
+            }
         }
 
         public void Sim1000ms(float dt)
