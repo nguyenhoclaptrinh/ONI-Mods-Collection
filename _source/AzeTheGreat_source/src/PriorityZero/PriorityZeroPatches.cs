@@ -15,7 +15,7 @@ namespace PriorityZero
     public static class PriorityZeroState
     {
         private static readonly Dictionary<PriorityScreen, PriorityButton> ZeroButtons = new Dictionary<PriorityScreen, PriorityButton>();
-        private static readonly Dictionary<Prioritizable, UnityEngine.TextMesh> ZeroPriorityMarkers = new Dictionary<Prioritizable, UnityEngine.TextMesh>();
+        private static readonly Dictionary<Prioritizable, TMPro.TextMeshPro> ZeroPriorityMarkers = new Dictionary<Prioritizable, TMPro.TextMeshPro>();
         private static readonly HashSet<Prioritizable> VisibleZeroPriorityMarkers = new HashSet<Prioritizable>();
         private static readonly List<Prioritizable> MarkersToRemove = new List<Prioritizable>();
         private static bool loggedPriorityReadFailure;
@@ -93,7 +93,7 @@ namespace PriorityZero
 
         public static void HideZeroPriorityMarkers()
         {
-            foreach (UnityEngine.TextMesh marker in ZeroPriorityMarkers.Values)
+            foreach (TMPro.TextMeshPro marker in ZeroPriorityMarkers.Values)
             {
                 if (marker != null)
                 {
@@ -113,7 +113,7 @@ namespace PriorityZero
                     Prioritizable prioritizable = prioritizables[i];
                     if (HasZeroPriority(prioritizable))
                     {
-                        UnityEngine.TextMesh marker = GetOrCreateZeroPriorityMarker(prioritizable);
+                        TMPro.TextMeshPro marker = GetOrCreateZeroPriorityMarker(prioritizable);
                         UpdateZeroPriorityMarker(marker, prioritizable);
                         marker.gameObject.SetActive(true);
                         VisibleZeroPriorityMarkers.Add(prioritizable);
@@ -122,7 +122,7 @@ namespace PriorityZero
             }
 
             MarkersToRemove.Clear();
-            foreach (KeyValuePair<Prioritizable, UnityEngine.TextMesh> entry in ZeroPriorityMarkers)
+            foreach (KeyValuePair<Prioritizable, TMPro.TextMeshPro> entry in ZeroPriorityMarkers)
             {
                 if (entry.Key == null || !VisibleZeroPriorityMarkers.Contains(entry.Key))
                 {
@@ -143,7 +143,7 @@ namespace PriorityZero
 
         public static void DestroyZeroPriorityMarkers()
         {
-            foreach (UnityEngine.TextMesh marker in ZeroPriorityMarkers.Values)
+            foreach (TMPro.TextMeshPro marker in ZeroPriorityMarkers.Values)
             {
                 if (marker != null)
                 {
@@ -203,8 +203,9 @@ namespace PriorityZero
             UnityEngine.Color fill = new UnityEngine.Color(1f, 1f, 1f, 1f);
             float centerX = (width - 1) * 0.5f;
             float centerY = (height - 1) * 0.5f;
-            float radiusX = width * 0.28f;
-            float radiusY = height * 0.36f;
+            // Tinh chỉnh tỷ lệ elip thon thả thanh mảnh như font gốc của game
+            float radiusX = width * 0.22f;
+            float radiusY = height * 0.38f;
 
             for (int y = 0; y < height; y++)
             {
@@ -215,12 +216,13 @@ namespace PriorityZero
                     float distance = dx * dx + dy * dy;
                     UnityEngine.Color color = transparent;
 
-                    if (distance >= 0.58f && distance <= 1.18f)
+                    // Vẽ elip nét mảnh mai tinh tế
+                    if (distance >= 0.75f && distance <= 1.25f)
                     {
                         color = outline;
                     }
 
-                    if (distance >= 0.72f && distance <= 0.98f)
+                    if (distance >= 0.88f && distance <= 1.08f)
                     {
                         color = fill;
                     }
@@ -235,9 +237,9 @@ namespace PriorityZero
             return texture;
         }
 
-        private static UnityEngine.TextMesh GetOrCreateZeroPriorityMarker(Prioritizable prioritizable)
+        private static TMPro.TextMeshPro GetOrCreateZeroPriorityMarker(Prioritizable prioritizable)
         {
-            if (!ZeroPriorityMarkers.TryGetValue(prioritizable, out UnityEngine.TextMesh marker) || marker == null)
+            if (!ZeroPriorityMarkers.TryGetValue(prioritizable, out TMPro.TextMeshPro marker) || marker == null)
             {
                 UnityEngine.GameObject gameObject = new UnityEngine.GameObject("priority_zero_marker");
                 if (Game.Instance != null)
@@ -246,12 +248,16 @@ namespace PriorityZero
                 }
 
                 gameObject.layer = UnityEngine.LayerMask.NameToLayer("UI");
-                marker = gameObject.AddComponent<UnityEngine.TextMesh>();
+                marker = gameObject.AddComponent<TMPro.TextMeshPro>();
                 marker.text = "0";
-                marker.anchor = UnityEngine.TextAnchor.MiddleCenter;
-                marker.alignment = UnityEngine.TextAlignment.Center;
-                marker.fontSize = 64;
+                marker.font = Localization.GetFont(Localization.GetDefaultFontName());
+                marker.fontSize = 4.5f; // TMP World Space Font Size
                 marker.color = UnityEngine.Color.white;
+                marker.alignment = TMPro.TextAlignmentOptions.Center;
+
+                // Cấu hình outline đen cực đẹp và sắc nét giống font game
+                marker.outlineWidth = 0.2f;
+                marker.outlineColor = new UnityEngine.Color32(0, 0, 0, 255);
 
                 UnityEngine.MeshRenderer renderer = marker.GetComponent<UnityEngine.MeshRenderer>();
                 if (renderer != null)
@@ -265,7 +271,7 @@ namespace PriorityZero
             return marker;
         }
 
-        private static void UpdateZeroPriorityMarker(UnityEngine.TextMesh marker, Prioritizable prioritizable)
+        private static void UpdateZeroPriorityMarker(TMPro.TextMeshPro marker, Prioritizable prioritizable)
         {
             UnityEngine.Vector3 position;
             KAnimControllerBase kAnimController = prioritizable.GetComponent<KAnimControllerBase>();
@@ -282,8 +288,8 @@ namespace PriorityZero
             position.y += prioritizable.iconOffset.y;
             position.z = -6f;
 
-            marker.characterSize = 0.12f * prioritizable.iconScale;
             marker.transform.SetPositionAndRotation(position, UnityEngine.Quaternion.identity);
+            marker.transform.localScale = new UnityEngine.Vector3(prioritizable.iconScale, prioritizable.iconScale, 1f);
         }
     }
 
