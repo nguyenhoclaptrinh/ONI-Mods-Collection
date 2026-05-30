@@ -12,15 +12,15 @@
 
   <ItemGroup>
     <Reference Include="0Harmony">
-      <HintPath>D:\Games\OxygenNotIncludedCrack\oxygen.not.included.v679336\Oxygen.Not.Included.v679336-P2P\OxygenNotIncluded_Data\Managed\0Harmony.dll</HintPath>
+      <HintPath>d:\Games\OxygenNotIncludedCrack\oxygen.not.included.v706793\OxygenNotIncluded_Data\Managed\0Harmony.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="Assembly-CSharp">
-      <HintPath>D:\Games\OxygenNotIncludedCrack\oxygen.not.included.v679336\Oxygen.Not.Included.v679336-P2P\OxygenNotIncluded_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <HintPath>d:\Games\OxygenNotIncludedCrack\oxygen.not.included.v706793\OxygenNotIncluded_Data\Managed\Assembly-CSharp.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="Assembly-CSharp-firstpass">
-      <HintPath>D:\Games\OxygenNotIncludedCrack\oxygen.not.included.v679336\Oxygen.Not.Included.v679336-P2P\OxygenNotIncluded_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
+      <HintPath>d:\Games\OxygenNotIncludedCrack\oxygen.not.included.v706793\OxygenNotIncluded_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="PLib">
@@ -28,15 +28,15 @@
       <Private>false</Private>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>D:\Games\OxygenNotIncludedCrack\oxygen.not.included.v679336\Oxygen.Not.Included.v679336-P2P\OxygenNotIncluded_Data\Managed\Unity.TextMeshPro.dll</HintPath>
+      <HintPath>d:\Games\OxygenNotIncludedCrack\oxygen.not.included.v706793\OxygenNotIncluded_Data\Managed\Unity.TextMeshPro.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>D:\Games\OxygenNotIncludedCrack\oxygen.not.included.v679336\Oxygen.Not.Included.v679336-P2P\OxygenNotIncluded_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>d:\Games\OxygenNotIncludedCrack\oxygen.not.included.v706793\OxygenNotIncluded_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>D:\Games\OxygenNotIncludedCrack\oxygen.not.included.v679336\Oxygen.Not.Included.v679336-P2P\OxygenNotIncluded_Data\Managed\UnityEngine.UI.dll</HintPath>
+      <HintPath>d:\Games\OxygenNotIncludedCrack\oxygen.not.included.v706793\OxygenNotIncluded_Data\Managed\UnityEngine.UI.dll</HintPath>
       <Private>false</Private>
     </Reference>
   </ItemGroup>
