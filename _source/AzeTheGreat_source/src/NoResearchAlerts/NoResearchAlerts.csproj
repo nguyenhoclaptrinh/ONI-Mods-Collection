@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyTitle>NoResearchAlerts</AssemblyTitle>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Title>No Research Alerts</Title>
+    <Description>Prevents notification icons from showing newly unlocked buildings.</Description>
+  </PropertyGroup>
+</Project>

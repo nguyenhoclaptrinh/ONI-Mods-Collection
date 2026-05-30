@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>   
+    <AssemblyTitle>InfiniteResearch</AssemblyTitle>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Title>Endless Science</Title>
+    <Description>Allows dupes to train science even after research is complete.</Description>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,61 @@
+msgid ""
+msgstr ""
+"Application: Oxygen Not Included"
+"POT Version: 2.0"
+
+msgctxt "CleanHUD.OPTIONS.ALERTVIGNETTEALPHA.NAME"
+msgid "Warning Vignette Opacity"
+msgstr ""
+
+msgctxt "CleanHUD.OPTIONS.ALERTVIGNETTEALPHA.TOOLTIP"
+msgid "Adjust the opacity of the warning vignettes (standard value = 30%) "
+msgstr ""
+
+msgctxt "CleanHUD.OPTIONS.InvalidArea.CATEGORY"
+msgid "Out-of-Bounds Warning"
+msgstr ""
+
+msgctxt "CleanHUD.OPTIONS.INVALIDAREAOPACITY.NAME"
+msgid "Warning Opacity"
+msgstr ""
+
+msgctxt "CleanHUD.OPTIONS.INVALIDAREAOPACITY.TOOLTIP"
+msgid "Sets the opacity of the warning."
+msgstr ""
+
+msgctxt "CleanHUD.OPTIONS.ISSOLIDINVALIDAREA.NAME"
+msgid "Solid Warning"
+msgstr ""
+
+msgctxt "CleanHUD.OPTIONS.ISSOLIDINVALIDAREA.TOOLTIP"
+msgid "When true, the warning will be solid, rather than striped."
+msgstr ""
+
+msgctxt "CleanHUD.OPTIONS.ISWATERMARKDISABLED.NAME"
+msgid "Disable Watermark"
+msgstr ""
+
+msgctxt "CleanHUD.OPTIONS.ISWATERMARKDISABLED.TOOLTIP"
+msgid "When true, the build watermark is removed from the screen."
+msgstr ""
+
+msgctxt "CleanHUD.OPTIONS.USESMALLBUTTONS.NAME"
+msgid "Small Buttons"
+msgstr ""
+
+msgctxt "CleanHUD.OPTIONS.USESMALLBUTTONS.TOOLTIP"
+msgid "When true, the management buttons all use the small format."
+msgstr ""
+
+msgctxt "CleanHUD.OPTIONS.Vignette.CATEGORY"
+msgid "Vignettes"
+msgstr ""
+
+msgctxt "CleanHUD.OPTIONS.VIGNETTEALPHA.NAME"
+msgid "Vignette Opacity"
+msgstr ""
+
+msgctxt "CleanHUD.OPTIONS.VIGNETTEALPHA.TOOLTIP"
+msgid "Adjust the opacity of the vignette (standard value = 47%)"
+msgstr ""
+

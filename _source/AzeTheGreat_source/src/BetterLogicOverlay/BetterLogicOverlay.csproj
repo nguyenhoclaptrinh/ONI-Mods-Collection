@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyTitle>BetterLogicOverlay</AssemblyTitle>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Title>Better Automation Overlay</Title>
+    <Description>Improves the automation overlay.</Description>
+  </PropertyGroup>
+</Project>

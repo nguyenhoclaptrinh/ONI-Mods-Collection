@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>  
+    <AssemblyTitle>DefaultSaveSettings</AssemblyTitle>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Title>Default Save Settings</Title>
+    <Description>Provides config options to change the default settings new saves start with.</Description>
+  </PropertyGroup>
+</Project>

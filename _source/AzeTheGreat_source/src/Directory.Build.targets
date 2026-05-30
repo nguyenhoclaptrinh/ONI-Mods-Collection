@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project>
+
+  <!--Ignore the contents of the Previews folder.-->
+  <ItemGroup>
+    <Compile Remove="Previews\**" />
+    <EmbeddedResource Remove="Previews\**" />
+    <None Remove="Previews\**" />
+  </ItemGroup>
+
+  <!--Publicise the game's assemblies on rebuilds.-->
+  <Target Name="Publicise" AfterTargets="Clean" Condition="'$(MSBuildProjectName)' == 'AzeLib'">
+    <Publicise
+      InputAssemblies="@(PubliciseInputAssemblies)"
+      OutputPath="../lib/"/>
+  </Target>
+
+
+  <!--Create and update the mod_info and mod file.-->
+  <Target Name="WriteModInfoFile" BeforeTargets="PreBuildEvent">
+    <WriteLinesToFile File="$(TargetDir)\mod_info.yaml" Overwrite="true" Lines=
+                      "APIVersion: 2;
+                      supportedContent: $(supportedContent);
+                      minimumSupportedBuild: $(minimumSupportedBuild);
+                      version: &quot;$(Version)&quot;" />
+
+    <PropertyGroup>
+      <ModFile>$(TargetDir)\mod.yaml</ModFile>
+      <Title Condition=" '$(Configuration)' == 'Debug' ">DEV: $(Title)</Title>
+    </PropertyGroup>
+    <WriteLinesToFile File="$(ModFile)" Overwrite="true" Lines=
+                      "staticID: Aze.$(AssemblyName);
+                      description: &quot;$(Description)&quot;;
+                      title: &quot;$(Title)&quot;" />
+  </Target>
+
+  <!--Prevent game assemblies from being copied (and thus merged).-->
+  <Target Name="ClearCopyLocalReferences" AfterTargets="ResolveAssemblyReferences">
+    <ItemGroup>
+      <ReferenceCopyLocalPaths Remove="$(GameFolder)\* " />
+    </ItemGroup>
+  </Target>
+
+  <!-- ILRepack target removed -->
+
+  <!--Clear the install folder while preserving current configs.-->
+  <Target Name="ClearInstallFolder" AfterTargets="ILRepack" Condition="'$(ShouldDistribute)' != 'false' And Exists($(InstallFolder))">
+    <ItemGroup>
+      <FilesToDelete Include="$(InstallFolder)\**\*.*" Exclude="$(InstallFolder)\config.json"/>
+      <DirsToDelete Include="$([System.IO.Directory]::GetDirectories('$(InstallFolder)', '*', System.IO.SearchOption.AllDirectories))" />
+    </ItemGroup>
+    <Delete Files="@(FilesToDelete)" />
+    <RemoveDir Directories="@(DirsToDelete)" />
+  </Target>
+  
+  <!--Copy the mod to the install folder.-->
+  <Target Name="CopyArtifactsToInstallFolder" AfterTargets="ClearInstallFolder" Condition=" '$(ShouldDistribute)' != 'false' ">
+    <ItemGroup>
+      <AnimFiles Include="$(ProjectDir)\anim\**\*.*" />
+      <WorldGenFiles Include="$(ProjectDir)\worldgen\**\*.*" />
+      <YamlFiles Include="$(ProjectDir)\*.yaml" />
+      <SpriteFiles Include="$(ProjectDir)\*.dds" />
+      <TranslateFiles Include="$(TranslationsFolder)\$(MSBuildProjectName)\*.po" />
+      <InfoFiles Include="$(TargetDir)\*.yaml" />
+    </ItemGroup>
+    <Copy SourceFiles="@(AnimFiles)" DestinationFiles="@(AnimFiles->'$(InstallFolder)\anim\%(RecursiveDir)%(Filename)%(Extension)')" />
+    <Copy SourceFiles="@(WorldGenFiles)" DestinationFiles="@(WorldGenFiles->'$(InstallFolder)\worldgen\%(RecursiveDir)%(Filename)%(Extension)')" />
+    <Copy SourceFiles="@(YamlFiles)" DestinationFolder="$(InstallFolder)" />
+    <Copy SourceFiles="@(SpriteFiles)" DestinationFolder="$(InstallFolder)" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFiles="$(InstallFolder)\$(TargetFileName)" />
+    <Copy SourceFiles="@(InfoFiles)" DestinationFolder="$(InstallFolder)" />
+    <Copy SourceFiles="@(TranslateFiles)" DestinationFolder="$(InstallFolder)\Translations" />
+  </Target>
+
+
+
+</Project>

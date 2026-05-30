@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyTitle>NoMeteors</AssemblyTitle>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Title>No Meteors</Title>
+    <Description>Stops the game from spawning meteors.</Description>
+  </PropertyGroup>
+</Project>

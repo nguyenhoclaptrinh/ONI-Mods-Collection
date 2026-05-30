@@ -1,0 +1,146 @@
+﻿global using FUtility;
+using HarmonyLib;
+using KMod;
+using PeterHan.PLib.Core;
+using PeterHan.PLib.Options;
+using System.Collections.Generic;
+using System.Reflection;
+using Twitchery.Content;
+using Twitchery.Content.Scripts;
+using Twitchery.Patches;
+using Twitchery.Patches.ONITwitchPatches;
+
+namespace Twitchery
+{
+	public class Mod : UserMod2
+	{
+		public static Components.Cmps<Toucher> touchers = new();
+		public static Components.Cmps<GiantCrab> giantCrabs = new();
+		public static Components.Cmps<RegularPip> regularPips = new();
+		public static Components.Cmps<WereVoleContainer> wereVoles = new();
+		public static Components.Cmps<AETE_PolymorphCritter> polys = new();
+		public static Components.Cmps<MidasEntityContainer> midasContainers = new();
+		public static Components.Cmps<MidasEntityContainer> midasContainersWithDupes = new();
+		public static Components.Cmps<Pimple> pimples = new();
+		public static Components.Cmps<Moppable> moppables = new();
+		public static HashSet<MinionIdentity> doubledDupe = new();
+
+		public static bool
+			isBeachedHere,
+			isPipMorphsHere,
+			isWikiMadnessHere,
+			isTimerHere,
+			isSgtChaosHere,
+			isPacuUWUHere;
+
+		public static bool brokenPockets;
+
+		public static Config Settings { get; private set; }
+
+
+		public override void OnLoad(Harmony harmony)
+		{
+			base.OnLoad(harmony);
+			Log.PrintVersion();
+			ModAssets.LoadAll();
+
+			PUtil.InitLibrary(false);
+			new POptions().RegisterOptions(this, typeof(Config));
+			Settings = POptions.ReadSettings<Config>() ?? new Config();
+
+			var settingsUpdated = false;
+
+			if (Settings.Version <= 1)
+			{
+				Settings.MaxDupes = 40;
+
+				if (Settings.DoubleTrouble_OxygenConsumptionModifier < 0.0f || Settings.DoubleTrouble_OxygenConsumptionModifier > 1.0f)
+				{
+					Settings.DoubleTrouble_OxygenConsumptionModifier = 0.5f;
+				}
+
+				settingsUpdated = true;
+			}
+
+
+			Settings.Version = 2;
+
+			if (settingsUpdated)
+				POptions.WriteSettings(Settings);
+
+			RegisterDevTool<AETE_DevTool>("Mods/Akis Extra Twitch Events");
+		}
+
+		private static MethodInfo m_RegisterDevTool;
+
+		public static void RegisterDevTool<T>(string path) where T : DevTool, new()
+		{
+			if (m_RegisterDevTool == null)
+			{
+				m_RegisterDevTool = AccessTools.DeclaredMethod(typeof(DevToolManager), "RegisterDevTool", new[]
+				{
+					typeof(string)
+				});
+
+				if (m_RegisterDevTool == null)
+				{
+					Log.Warning("DevToolManager.RegisterDevTool couldnt be found, skipping adding dev tools.");
+					return;
+				}
+
+				if (DevToolManager.Instance == null)
+				{
+					Log.Warning("DevToolManager.Instance is null, probably trying to call this too early. (try OnAllModsLoaded)");
+					return;
+				}
+
+				m_RegisterDevTool
+					.MakeGenericMethod(typeof(T))
+					.Invoke(DevToolManager.Instance, new object[] { path });
+			}
+		}
+
+		public override void OnAllModsLoaded(Harmony harmony, IReadOnlyList<KMod.Mod> mods)
+		{
+			base.OnAllModsLoaded(harmony, mods);
+			TwitchDeckManagerPatch.TryPatch(harmony);
+
+			foreach (var mod in mods)
+			{
+				if (mod.IsEnabledForActiveDlc())
+				{
+					switch (mod.staticID)
+					{
+						case "asquared31415.TwitchIntegration":
+							brokenPockets = mod.packagedModInfo.version == "1.2.9";
+							break;
+						case "Beached":
+							isBeachedHere = true;
+							break;
+						case "GoldHatch":
+							isWikiMadnessHere = true;
+							break;
+						case "TwitchIntegrationTimer":
+							isTimerHere = true;
+							break;
+						case "Imalas_TwitchChaosEvents":
+							isSgtChaosHere = true;
+							break;
+						case "ONIPipMorphsELU":
+							isPipMorphsHere = true;
+							break;
+						case "WeebPacu":
+							isPacuUWUHere = true;
+							break;
+					}
+				}
+			}
+
+			PocketDimensionPatch.TryPatch(harmony);
+			WorldUtilPatch.TryPatch(harmony);
+			TPocketDimensions.Register();
+
+			//TEMP.Patch(harmony);
+		}
+	}
+}

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>    
+    <AssemblyTitle>NoNotificationSounds</AssemblyTitle>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Title>No Notification Sounds</Title>
+    <Description>Removes sounds from notifications for those who just hate noise.</Description>
+  </PropertyGroup>
+</Project>

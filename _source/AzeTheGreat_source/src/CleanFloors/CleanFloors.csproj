@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>  
+    <AssemblyTitle>CleanFloors</AssemblyTitle>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Title>Clean Floors</Title>
+    <Description>Removes the largest decor pieces from tiles to give a smoother look.</Description>
+  </PropertyGroup>
+</Project>

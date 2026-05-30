@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>    
+    <AssemblyTitle>DrinkTeaNotCoffee</AssemblyTitle>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Title>Drink Tea Not Coffee</Title>
+    <Description>A silly mod that changes references to espresso to tea.</Description>
+  </PropertyGroup>
+</Project>

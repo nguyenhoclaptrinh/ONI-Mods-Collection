@@ -1,0 +1,17 @@
+msgid ""
+msgstr ""
+"Application: Oxygen Not Included"
+"POT Version: 2.0"
+
+msgctxt "DrinkTeaNotCoffee.MYSTRINGS.TEA.NAME"
+msgid "Drank Tea"
+msgstr ""
+
+msgctxt "DrinkTeaNotCoffee.MYSTRINGS.TEAMACHINE.DESC"
+msgid "A cup of tea helps Duplicants relax after a long day."
+msgstr ""
+
+msgctxt "DrinkTeaNotCoffee.MYSTRINGS.TEAMACHINE.NAME"
+msgid "<link=\"ESPRESSOMACHINE\">Tea Station</link>"
+msgstr ""
+

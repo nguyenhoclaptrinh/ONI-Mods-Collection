@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyTitle>BuildMenuSearchHotkey</AssemblyTitle>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Title>Build Menu Search Quick Select Hotkeys</Title>
+    <Description>Use Enter or 1-9 to quick select while searching the build menu.</Description>
+  </PropertyGroup>
+</Project>

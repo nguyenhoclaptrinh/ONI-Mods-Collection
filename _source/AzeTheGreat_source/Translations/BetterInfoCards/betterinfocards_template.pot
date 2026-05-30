@@ -1,0 +1,89 @@
+msgid ""
+msgstr ""
+"Application: Oxygen Not Included"
+"POT Version: 2.0"
+
+msgctxt "BetterInfoCards.OPTIONS.FONTSIZECHANGE.NAME"
+msgid "Font Size"
+msgstr ""
+
+msgctxt "BetterInfoCards.OPTIONS.FONTSIZECHANGE.TOOLTIP"
+msgid "Increase/decrease font size relative to the base game."
+msgstr ""
+
+msgctxt "BetterInfoCards.OPTIONS.FORCEFIRSTSELECTIONTOHOVER.NAME"
+msgid "First Selection Hover"
+msgstr ""
+
+msgctxt "BetterInfoCards.OPTIONS.FORCEFIRSTSELECTIONTOHOVER.TOOLTIP"
+msgid "On: First selection selects the highlighted item.  (Base game)\nOff: First selection selects the first info card."
+msgstr ""
+
+msgctxt "BetterInfoCards.OPTIONS.HIDEELEMENTCATEGORIES.NAME"
+msgid "Hide Element Categories"
+msgstr ""
+
+msgctxt "BetterInfoCards.OPTIONS.HIDEELEMENTCATEGORIES.TOOLTIP"
+msgid "On: Remove element categories from info cards."
+msgstr ""
+
+msgctxt "BetterInfoCards.OPTIONS.ICONSIZECHANGE.NAME"
+msgid "Icon Size"
+msgstr ""
+
+msgctxt "BetterInfoCards.OPTIONS.ICONSIZECHANGE.TOOLTIP"
+msgid "Increase/decrease icon size relative to the base game."
+msgstr ""
+
+msgctxt "BetterInfoCards.OPTIONS.INFOCARDOPACITY.NAME"
+msgid "Info Card Opacity"
+msgstr ""
+
+msgctxt "BetterInfoCards.OPTIONS.INFOCARDOPACITY.TOOLTIP"
+msgid "Opactiy of info card backgrounds.  (Base game = 90%)"
+msgstr ""
+
+msgctxt "BetterInfoCards.OPTIONS.INFOCARDSIZE.CATEGORY"
+msgid "Info Card Size"
+msgstr ""
+
+msgctxt "BetterInfoCards.OPTIONS.LINESPACING.NAME"
+msgid "Line Spacing"
+msgstr ""
+
+msgctxt "BetterInfoCards.OPTIONS.LINESPACING.TOOLTIP"
+msgid "Padding between text lines."
+msgstr ""
+
+msgctxt "BetterInfoCards.OPTIONS.SHOULDOVERRIDE.NAME"
+msgid "Override Card Size"
+msgstr ""
+
+msgctxt "BetterInfoCards.OPTIONS.SHOULDOVERRIDE.TOOLTIP"
+msgid "On: Apply custom Info Card Size values."
+msgstr ""
+
+msgctxt "BetterInfoCards.OPTIONS.TEMPERATUREBANDWIDTH.NAME"
+msgid "Temperature Band Width"
+msgstr ""
+
+msgctxt "BetterInfoCards.OPTIONS.TEMPERATUREBANDWIDTH.TOOLTIP"
+msgid "Maximum temperature difference at which info cards will be grouped."
+msgstr ""
+
+msgctxt "BetterInfoCards.OPTIONS.USEBASESELECTION.NAME"
+msgid "Restrict Selections"
+msgstr ""
+
+msgctxt "BetterInfoCards.OPTIONS.USEBASESELECTION.TOOLTIP"
+msgid "On: Restrict selectable info cards based on context.  (Base game)\nOff: All visible info cards can be selected."
+msgstr ""
+
+msgctxt "BetterInfoCards.OPTIONS.YPADDING.NAME"
+msgid "Borders"
+msgstr ""
+
+msgctxt "BetterInfoCards.OPTIONS.YPADDING.TOOLTIP"
+msgid "Padding on the borders."
+msgstr ""
+

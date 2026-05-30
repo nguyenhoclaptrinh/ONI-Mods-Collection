@@ -1,0 +1,49 @@
+msgid ""
+msgstr ""
+"Application: Oxygen Not Included"
+"POT Version: 2.0"
+
+msgctxt "DefaultSaveSettings.OPTIONS.AUTOSAVEINTERVAL.NAME"
+msgid "Default Auto Save Interval"
+msgstr ""
+
+msgctxt "DefaultSaveSettings.OPTIONS.AUTOSAVEINTERVAL.TOOLTIP"
+msgid "Controls the default auto save interval."
+msgstr ""
+
+msgctxt "DefaultSaveSettings.OPTIONS.DISINFECTMINGERMCOUNT.NAME"
+msgid "Default Germ Count for Disinfect"
+msgstr ""
+
+msgctxt "DefaultSaveSettings.OPTIONS.DISINFECTMINGERMCOUNT.TOOLTIP"
+msgid "Controls the default minimum germ count for auto disinfection."
+msgstr ""
+
+msgctxt "DefaultSaveSettings.OPTIONS.ENABLEAUTODISINFECT.NAME"
+msgid "Enable Auto Disinfect Default"
+msgstr ""
+
+msgctxt "DefaultSaveSettings.OPTIONS.ENABLEAUTODISINFECT.TOOLTIP"
+msgid "If checked, the 'Disinfect At' option will default to true for new games."
+msgstr ""
+
+msgctxt "DefaultSaveSettings.OPTIONS.ENABLEPROXIMITY.NAME"
+msgid "Enable Proximity Default"
+msgstr ""
+
+msgctxt "DefaultSaveSettings.OPTIONS.ENABLEPROXIMITY.TOOLTIP"
+msgid "If checked, the 'Enable Proximity' option is checked by default for new games."
+msgstr ""
+
+msgctxt "DefaultSaveSettings.OPTIONS.Germs.CATEGORY"
+msgid "Disease"
+msgstr ""
+
+msgctxt "DefaultSaveSettings.OPTIONS.TIMELAPSERESOLUTION.NAME"
+msgid "Default Timelapse Resolution"
+msgstr ""
+
+msgctxt "DefaultSaveSettings.OPTIONS.TIMELAPSERESOLUTION.TOOLTIP"
+msgid "Controls the default timelapse resolution."
+msgstr ""
+

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>    
+    <AssemblyTitle>PriorityZero</AssemblyTitle>
+    <UsesAzeLib>false</UsesAzeLib>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Title>Priority Zero</Title>
+    <Description>Allows players to set tasks and buildings to priority 0, which effectively disables them so duplicants and auto-sweepers will ignore them.</Description>
+  </PropertyGroup>
+
+  <!-- Khắc phục lỗi MSBuild kế thừa: Tự động tạo thư mục và copy mod sang thư mục local mods của game -->
+  <Target Name="CopyArtifactsToInstall" AfterTargets="Build">
+    <PropertyGroup>
+      <InstallDir>$(ModFolder)\DEV_PriorityZero</InstallDir>
+    </PropertyGroup>
+    <ItemGroup>
+      <YamlFiles Include="$(TargetDir)\*.yaml" />
+    </ItemGroup>
+    <MakeDir Directories="$(InstallDir)" Condition="!Exists('$(InstallDir)')" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(InstallDir)" />
+    <Copy SourceFiles="@(YamlFiles)" DestinationFolder="$(InstallDir)" />
+  </Target>
+</Project>

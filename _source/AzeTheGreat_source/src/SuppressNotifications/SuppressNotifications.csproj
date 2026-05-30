@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>   
+    <AssemblyTitle>SuppressNotifications</AssemblyTitle>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Title>Suppress Notifications</Title>
+    <Description>Suppresses notifications and status items from individual buildings/critters/plants.</Description>
+  </PropertyGroup>
+
+  <!-- Tự động deploy sang thư mục mod local của game khi build xong -->
+  <Target Name="CopyArtifactsToInstall" AfterTargets="Build">
+    <PropertyGroup>
+      <InstallDir>$(ModFolder)\DEV_SuppressNotifications</InstallDir>
+    </PropertyGroup>
+    <ItemGroup>
+      <YamlFiles Include="$(TargetDir)\*.yaml" />
+    </ItemGroup>
+    <MakeDir Directories="$(InstallDir)" Condition="!Exists('$(InstallDir)')" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(InstallDir)" />
+    <Copy SourceFiles="@(YamlFiles)" DestinationFolder="$(InstallDir)" />
+  </Target>
+</Project>
