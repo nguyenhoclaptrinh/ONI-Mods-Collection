@@ -31,8 +31,8 @@ Player.log
 
 # Temp PowerShell scripts
 *.ps1
+!tools/*.ps1
 
 # Game DLLs in sources
 *_source/lib/
 *_source/**/lib/
-
