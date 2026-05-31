@@ -1,5 +1,6 @@
 using HarmonyLib;
 using System.Collections.Generic;
+using System.Reflection.Emit;
 
 namespace PriorityZero
 {
@@ -24,6 +25,11 @@ namespace PriorityZero
         public static bool IsPriorityZero(PrioritySetting priority)
         {
             return priority.priority_value == 0;
+        }
+
+        public static UnityEngine.Sprite GetPrioritySprite(List<UnityEngine.Sprite> sprites, int index)
+        {
+            return sprites != null && index >= 0 && index < sprites.Count ? sprites[index] : null;
         }
 
         public static bool HasZeroPriority(Chore chore)
@@ -306,6 +312,34 @@ namespace PriorityZero
             }
 
             return true;
+        }
+    }
+
+    [HarmonyPatch(typeof(MinionTodoChoreEntry), nameof(MinionTodoChoreEntry.Apply))]
+    public static class MinionTodoChoreEntry_Apply_Patch
+    {
+        public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            System.Reflection.MethodInfo getItem = AccessTools.PropertyGetter(typeof(List<UnityEngine.Sprite>), "Item");
+            System.Reflection.MethodInfo safeGetItem = AccessTools.Method(typeof(PriorityZeroState), nameof(PriorityZeroState.GetPrioritySprite));
+            bool replaced = false;
+
+            foreach (CodeInstruction instruction in instructions)
+            {
+                if (instruction.opcode == OpCodes.Callvirt && Equals(instruction.operand, getItem))
+                {
+                    instruction.opcode = OpCodes.Call;
+                    instruction.operand = safeGetItem;
+                    replaced = true;
+                }
+
+                yield return instruction;
+            }
+
+            if (!replaced)
+            {
+                Debug.LogWarning("Priority Zero: Unable to patch MinionTodoChoreEntry.Apply priority icon lookup.");
+            }
         }
     }
 

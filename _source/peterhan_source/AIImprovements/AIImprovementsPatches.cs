@@ -342,32 +342,5 @@ namespace PeterHan.AIImprovements {
 			}
 		}
 
-		/// <summary>
-		/// Applied to MinionTodoChoreEntry to prevent ArgumentOutOfRangeException on UI rendering.
-		/// </summary>
-		[HarmonyPatch(typeof(global::MinionTodoChoreEntry), "Apply")]
-		public static class MinionTodoChoreEntry_Apply_Patch {
-			/// <summary>
-			/// Applied before Apply runs. Prevents crash when index is out of range.
-			/// </summary>
-			internal static bool Prefix(Chore.Precondition.Context context) {
-				try {
-					if (context.chore != null) {
-						var preconditions = context.chore.GetPreconditions();
-						if (preconditions != null) {
-							int count = preconditions.Count;
-							if (context.failedPreconditionId < 0 || context.failedPreconditionId >= count) {
-								Debug.LogWarning("[PriorityZeroFix] MinionTodoChoreEntry.Apply: Prevented crash! Index " +
-									context.failedPreconditionId + " out of preconditions range " + count);
-								return false;
-							}
-						}
-					}
-				} catch {
-					return false;
-				}
-				return true;
-			}
-		}
 	}
 }
