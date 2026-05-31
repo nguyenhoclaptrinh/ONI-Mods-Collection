@@ -1,0 +1,20 @@
+msgid ""
+msgstr ""
+"Application: Oxygen Not Included"
+"POT Version: 2.0"
+
+#. RebuildPreserve.STRINGS.PRESERVESETTINGSSIDESCREEN.HEADER
+msgctxt "RebuildPreserve.STRINGS.PRESERVESETTINGSSIDESCREEN.HEADER"
+msgid "Automatic Rebuild Screen"
+msgstr ""
+
+#. RebuildPreserve.STRINGS.PRESERVESETTINGSSIDESCREEN.LABEL
+msgctxt "RebuildPreserve.STRINGS.PRESERVESETTINGSSIDESCREEN.LABEL"
+msgid "Rebuild when broken"
+msgstr ""
+
+#. RebuildPreserve.STRINGS.PRESERVESETTINGSSIDESCREEN.TOOLTIP
+msgctxt "RebuildPreserve.STRINGS.PRESERVESETTINGSSIDESCREEN.TOOLTIP"
+msgid "Automatically issue a full rebuild command if the building gets broken"
+msgstr ""
+

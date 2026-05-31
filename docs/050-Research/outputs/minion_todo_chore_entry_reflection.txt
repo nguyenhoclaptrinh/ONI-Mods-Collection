@@ -1,0 +1,51 @@
+================================================================================
+REFLECTION OUTPUT FOR MINIONTODOCHOREENTRY AND CHORE.PRECONDITION.CONTEXT
+================================================================================
+Date: 2026-05-31
+Target DLL: d:\Games\OxygenNotIncludedCrack\oxygen.not.included.v706793\OxygenNotIncluded_Data\Managed\Assembly-CSharp.dll
+Objective: Verify the exact signature of MinionTodoChoreEntry.Apply and structural type of Chore.Precondition.Context to patch correctly.
+
+--------------------------------------------------------------------------------
+1. TARGET TYPE: MinionTodoChoreEntry
+--------------------------------------------------------------------------------
+Found type: MinionTodoChoreEntry
+
+Method Name: Apply
+Return Type: System.Void
+Parameters:
+  - Name: context, Type: Chore+Precondition+Context, IsByRef: False
+
+--------------------------------------------------------------------------------
+2. NESTED TYPE: Chore.Precondition.Context
+--------------------------------------------------------------------------------
+Found Context Type: Chore+Precondition+Context
+IsValueType (Struct): True
+
+Fields in Context:
+  - PrioritySetting masterPriority
+  - System.Int32 personalPriority
+  - System.Int32 priority
+  - System.Int32 priorityMod
+  - System.Int32 interruptPriority
+  - System.Int32 cost
+  - System.Int32 consumerPriority
+  - Chore chore
+  - ChoreConsumerState consumerState
+  - System.Int32 failedPreconditionId
+  - System.Boolean skippedPreconditions
+  - System.Object data
+  - System.Boolean isAttemptingOverride
+  - ChoreType choreTypeForPermission
+  - System.Boolean skipMoreSatisfyingEarlyPrecondition
+
+Properties in Context:
+  (None found)
+
+--------------------------------------------------------------------------------
+3. SIGNIFICANCE & ARCHITECTURAL DECISIONS
+--------------------------------------------------------------------------------
+- Signature of Apply: 'public void Apply(Chore.Precondition.Context context)'
+  * Since context parameter is passed BY VALUE (IsByRef: False) and is a Struct (Value Type).
+  * Harmony patch MUST declare the parameter without 'ref' in Prefix unless we explicitly intend Harmony to perform reflection-managed by-ref forwarding.
+  * In ONI's Mono environment, using 'ref' parameter in Harmony Prefix for a By-Value Struct type in game's signature often fails to load or silent-skips silently without any Harmony exception being explicitly logged in Unity.
+  * To fix the ArgumentOutOfRangeException safely, the Prefix should receive 'context' by-value and directly return 'false' (bypass original execution) if failedPreconditionId is out of the bounds of choreographer preconditions. This completely avoids crash without needing to mutate the struct (which would require a ref param).
