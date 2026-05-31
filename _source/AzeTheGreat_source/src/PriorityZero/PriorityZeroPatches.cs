@@ -247,7 +247,7 @@ namespace PriorityZero
                     gameObject.transform.SetParent(Game.Instance.transform, false);
                 }
 
-                gameObject.layer = UnityEngine.LayerMask.NameToLayer("UI");
+                gameObject.layer = 0; // Layer Default giúp camera thế giới render đúng màu sắc và outline của TextMeshPro
                 marker = gameObject.AddComponent<TMPro.TextMeshPro>();
                 marker.text = "0";
                 marker.font = Localization.GetFont(Localization.GetDefaultFontName());

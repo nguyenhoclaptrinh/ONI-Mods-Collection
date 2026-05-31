@@ -42,7 +42,7 @@ namespace AutoDropBottlers
     {
         [Option("Auto Drop Enabled by Default", "If enabled, newly constructed bottlers will have 'Auto Drop' checked by default.")]
         [JsonProperty]
-        public bool AutoDropEnabledByDefault { get; set; } = false;
+        public bool AutoDropEnabledByDefault { get; set; } = true;
 
         public static AutoDropOptions Instance { get; private set; }
 
