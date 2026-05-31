@@ -12,7 +12,7 @@
   <!-- Khắc phục lỗi MSBuild kế thừa: Tự động tạo thư mục và copy mod sang thư mục local mods của game -->
   <Target Name="CopyArtifactsToInstall" AfterTargets="Build">
     <PropertyGroup>
-      <InstallDir>$(ModFolder)\DEV_PriorityZero</InstallDir>
+      <InstallDir>$(ModFolder)\PriorityZero</InstallDir>
     </PropertyGroup>
     <ItemGroup>
       <YamlFiles Include="$(TargetDir)\*.yaml" />
