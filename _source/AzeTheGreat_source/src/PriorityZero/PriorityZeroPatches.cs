@@ -16,11 +16,17 @@ namespace PriorityZero
     public static class PriorityZeroState
     {
         private static readonly Dictionary<PriorityScreen, PriorityButton> ZeroButtons = new Dictionary<PriorityScreen, PriorityButton>();
-        private static readonly Dictionary<Prioritizable, TMPro.TextMeshPro> ZeroPriorityMarkers = new Dictionary<Prioritizable, TMPro.TextMeshPro>();
-        private static readonly HashSet<Prioritizable> VisibleZeroPriorityMarkers = new HashSet<Prioritizable>();
-        private static readonly List<Prioritizable> MarkersToRemove = new List<Prioritizable>();
+        private static readonly List<Prioritizable> ZeroPriorityRenderables = new List<Prioritizable>();
+        private static readonly List<UnityEngine.Vector3> ZeroPriorityVertices = new List<UnityEngine.Vector3>();
+        private static readonly List<UnityEngine.Vector2> ZeroPriorityUvs = new List<UnityEngine.Vector2>();
+        private static readonly List<UnityEngine.Color> ZeroPriorityColors = new List<UnityEngine.Color>();
+        private static readonly List<int> ZeroPriorityTriangles = new List<int>();
         private static bool loggedPriorityReadFailure;
         private static UnityEngine.Texture2D zeroCursorTexture;
+        private static UnityEngine.Texture2D zeroOverlayTexture;
+        private static UnityEngine.GameObject zeroOverlayGameObject;
+        private static UnityEngine.Mesh zeroOverlayMesh;
+        private static UnityEngine.Material zeroOverlayMaterial;
 
         public static bool IsPriorityZero(PrioritySetting priority)
         {
@@ -97,69 +103,103 @@ namespace PriorityZero
             return zeroCursorTexture;
         }
 
-        public static void HideZeroPriorityMarkers()
+        public static void BeginZeroPriorityRender()
         {
-            foreach (TMPro.TextMeshPro marker in ZeroPriorityMarkers.Values)
+            ZeroPriorityRenderables.Clear();
+        }
+
+        public static void RoutePrioritizable(List<Prioritizable> prioritizables, Prioritizable prioritizable)
+        {
+            if (HasZeroPriority(prioritizable))
             {
-                if (marker != null)
-                {
-                    marker.gameObject.SetActive(false);
-                }
+                ZeroPriorityRenderables.Add(prioritizable);
+            }
+            else
+            {
+                prioritizables.Add(prioritizable);
             }
         }
 
-        public static void RenderZeroPriorityMarkers(IList<Prioritizable> prioritizables)
+        public static void HideZeroPriorityOverlay()
         {
-            VisibleZeroPriorityMarkers.Clear();
-
-            if (prioritizables != null)
+            if (zeroOverlayGameObject != null)
             {
-                for (int i = 0; i < prioritizables.Count; i++)
-                {
-                    Prioritizable prioritizable = prioritizables[i];
-                    if (HasZeroPriority(prioritizable))
-                    {
-                        TMPro.TextMeshPro marker = GetOrCreateZeroPriorityMarker(prioritizable);
-                        UpdateZeroPriorityMarker(marker, prioritizable);
-                        marker.gameObject.SetActive(true);
-                        VisibleZeroPriorityMarkers.Add(prioritizable);
-                    }
-                }
-            }
-
-            MarkersToRemove.Clear();
-            foreach (KeyValuePair<Prioritizable, TMPro.TextMeshPro> entry in ZeroPriorityMarkers)
-            {
-                if (entry.Key == null || !VisibleZeroPriorityMarkers.Contains(entry.Key))
-                {
-                    if (entry.Value != null)
-                    {
-                        UnityEngine.Object.Destroy(entry.Value.gameObject);
-                    }
-
-                    MarkersToRemove.Add(entry.Key);
-                }
-            }
-
-            for (int i = 0; i < MarkersToRemove.Count; i++)
-            {
-                ZeroPriorityMarkers.Remove(MarkersToRemove[i]);
+                zeroOverlayGameObject.SetActive(false);
             }
         }
 
-        public static void DestroyZeroPriorityMarkers()
+        public static void RenderZeroPriorityOverlay()
         {
-            foreach (TMPro.TextMeshPro marker in ZeroPriorityMarkers.Values)
+            if (ZeroPriorityRenderables.Count == 0)
             {
-                if (marker != null)
+                HideZeroPriorityOverlay();
+                return;
+            }
+
+            if (!EnsureZeroPriorityOverlay())
+            {
+                return;
+            }
+
+            ZeroPriorityVertices.Clear();
+            ZeroPriorityUvs.Clear();
+            ZeroPriorityColors.Clear();
+            ZeroPriorityTriangles.Clear();
+
+            for (int i = 0; i < ZeroPriorityRenderables.Count; i++)
+            {
+                Prioritizable prioritizable = ZeroPriorityRenderables[i];
+                if (prioritizable != null)
                 {
-                    UnityEngine.Object.Destroy(marker.gameObject);
+                    AddZeroPriorityQuad(prioritizable);
                 }
             }
 
-            ZeroPriorityMarkers.Clear();
-            VisibleZeroPriorityMarkers.Clear();
-            MarkersToRemove.Clear();
+            if (ZeroPriorityVertices.Count == 0)
+            {
+                HideZeroPriorityOverlay();
+                return;
+            }
+
+            zeroOverlayMesh.Clear();
+            zeroOverlayMesh.SetVertices(ZeroPriorityVertices);
+            zeroOverlayMesh.SetUVs(0, ZeroPriorityUvs);
+            zeroOverlayMesh.SetColors(ZeroPriorityColors);
+            zeroOverlayMesh.SetTriangles(ZeroPriorityTriangles, 0);
+            zeroOverlayGameObject.SetActive(true);
+        }
+
+        public static void DestroyZeroPriorityOverlay()
+        {
+            if (zeroOverlayGameObject != null)
+            {
+                UnityEngine.Object.Destroy(zeroOverlayGameObject);
+            }
+
+            if (zeroOverlayMaterial != null)
+            {
+                UnityEngine.Object.Destroy(zeroOverlayMaterial);
+            }
+
+            if (zeroOverlayMesh != null)
+            {
+                UnityEngine.Object.Destroy(zeroOverlayMesh);
+            }
+
+            if (zeroOverlayTexture != null)
+            {
+                UnityEngine.Object.Destroy(zeroOverlayTexture);
+            }
+
+            zeroOverlayGameObject = null;
+            zeroOverlayMaterial = null;
+            zeroOverlayMesh = null;
+            zeroOverlayTexture = null;
+            ZeroPriorityRenderables.Clear();
+            ZeroPriorityVertices.Clear();
+            ZeroPriorityUvs.Clear();
+            ZeroPriorityColors.Clear();
+            ZeroPriorityTriangles.Clear();
         }
 
         public static void RegisterZeroButton(PriorityScreen screen, PriorityButton button)
@@ -243,41 +283,50 @@ namespace PriorityZero
             return texture;
         }
 
-        private static TMPro.TextMeshPro GetOrCreateZeroPriorityMarker(Prioritizable prioritizable)
+        private static bool EnsureZeroPriorityOverlay()
         {
-            if (!ZeroPriorityMarkers.TryGetValue(prioritizable, out TMPro.TextMeshPro marker) || marker == null)
+            if (zeroOverlayGameObject != null && zeroOverlayMesh != null && zeroOverlayMaterial != null)
             {
-                UnityEngine.GameObject gameObject = new UnityEngine.GameObject("priority_zero_marker");
-                if (Game.Instance != null)
-                {
-                    gameObject.transform.SetParent(Game.Instance.transform, false);
-                }
-
-                gameObject.layer = 0; // Layer Default giúp camera thế giới render đúng màu sắc và outline của TextMeshPro
-                marker = gameObject.AddComponent<TMPro.TextMeshPro>();
-                marker.text = "0";
-                marker.font = Localization.GetFont(Localization.GetDefaultFontName());
-                marker.fontSize = 4.5f; // TMP World Space Font Size
-                marker.color = UnityEngine.Color.white;
-                marker.alignment = TMPro.TextAlignmentOptions.Center;
-
-                // Cấu hình outline đen cực đẹp và sắc nét giống font game
-                marker.outlineWidth = 0.2f;
-                marker.outlineColor = new UnityEngine.Color32(0, 0, 0, 255);
-
-                UnityEngine.MeshRenderer renderer = marker.GetComponent<UnityEngine.MeshRenderer>();
-                if (renderer != null)
-                {
-                    renderer.sortingOrder = 100;
-                }
-
-                ZeroPriorityMarkers[prioritizable] = marker;
+                return true;
             }
 
-            return marker;
+            UnityEngine.Shader shader = UnityEngine.Shader.Find("Klei/Prioritizable");
+            if (shader == null)
+            {
+                Debug.LogWarning("Priority Zero: Unable to find Klei/Prioritizable shader.");
+                return false;
+            }
+
+            zeroOverlayTexture = CreateZeroTexture(64, 64);
+            zeroOverlayMaterial = new UnityEngine.Material(shader);
+            zeroOverlayMaterial.name = "Priority Zero Overlay Material";
+            zeroOverlayMaterial.mainTexture = zeroOverlayTexture;
+
+            zeroOverlayMesh = new UnityEngine.Mesh();
+            zeroOverlayMesh.name = "Priority Zero Overlay Mesh";
+            zeroOverlayMesh.MarkDynamic();
+
+            zeroOverlayGameObject = new UnityEngine.GameObject("Priority Zero Overlay",
+                typeof(UnityEngine.MeshRenderer), typeof(UnityEngine.MeshFilter));
+            zeroOverlayGameObject.layer = UnityEngine.LayerMask.NameToLayer("UI");
+            if (Game.Instance != null)
+            {
+                zeroOverlayGameObject.transform.SetParent(Game.Instance.transform, false);
+            }
+
+            UnityEngine.MeshFilter filter = zeroOverlayGameObject.GetComponent<UnityEngine.MeshFilter>();
+            filter.sharedMesh = zeroOverlayMesh;
+
+            UnityEngine.MeshRenderer renderer = zeroOverlayGameObject.GetComponent<UnityEngine.MeshRenderer>();
+            renderer.sharedMaterial = zeroOverlayMaterial;
+            renderer.allowOcclusionWhenDynamic = false;
+            renderer.receiveShadows = false;
+            renderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
+            zeroOverlayGameObject.SetActive(false);
+            return true;
         }
 
-        private static void UpdateZeroPriorityMarker(TMPro.TextMeshPro marker, Prioritizable prioritizable)
+        private static void AddZeroPriorityQuad(Prioritizable prioritizable)
         {
             UnityEngine.Vector3 position;
             KAnimControllerBase kAnimController = prioritizable.GetComponent<KAnimControllerBase>();
@@ -292,10 +341,33 @@ namespace PriorityZero
 
             position.x += prioritizable.iconOffset.x;
             position.y += prioritizable.iconOffset.y;
-            position.z = -6f;
+            position.z = -5f;
 
-            marker.transform.SetPositionAndRotation(position, UnityEngine.Quaternion.identity);
-            marker.transform.localScale = new UnityEngine.Vector3(prioritizable.iconScale, prioritizable.iconScale, 1f);
+            float halfWidth = 0.2f * prioritizable.iconScale;
+            float halfHeight = 0.3f * prioritizable.iconScale;
+            int vertex = ZeroPriorityVertices.Count;
+
+            ZeroPriorityVertices.Add(new UnityEngine.Vector3(position.x - halfWidth, position.y - halfHeight, position.z));
+            ZeroPriorityVertices.Add(new UnityEngine.Vector3(position.x - halfWidth, position.y + halfHeight, position.z));
+            ZeroPriorityVertices.Add(new UnityEngine.Vector3(position.x + halfWidth, position.y + halfHeight, position.z));
+            ZeroPriorityVertices.Add(new UnityEngine.Vector3(position.x + halfWidth, position.y - halfHeight, position.z));
+
+            ZeroPriorityUvs.Add(new UnityEngine.Vector2(0f, 0f));
+            ZeroPriorityUvs.Add(new UnityEngine.Vector2(0f, 1f));
+            ZeroPriorityUvs.Add(new UnityEngine.Vector2(1f, 1f));
+            ZeroPriorityUvs.Add(new UnityEngine.Vector2(1f, 0f));
+
+            ZeroPriorityColors.Add(UnityEngine.Color.white);
+            ZeroPriorityColors.Add(UnityEngine.Color.white);
+            ZeroPriorityColors.Add(UnityEngine.Color.white);
+            ZeroPriorityColors.Add(UnityEngine.Color.white);
+
+            ZeroPriorityTriangles.Add(vertex);
+            ZeroPriorityTriangles.Add(vertex + 1);
+            ZeroPriorityTriangles.Add(vertex + 2);
+            ZeroPriorityTriangles.Add(vertex);
+            ZeroPriorityTriangles.Add(vertex + 2);
+            ZeroPriorityTriangles.Add(vertex + 3);
         }
     }
 
@@ -390,10 +462,48 @@ namespace PriorityZero
         }
     }
 
-    [HarmonyPatch(typeof(PrioritizableRenderer), nameof(PrioritizableRenderer.RenderEveryTick))]
-    public static class PrioritizableRenderer_RenderEveryTick_ZeroMarkersPatch
+    [HarmonyPatch]
+    public static class PrioritizableRenderer_RenderEveryTickVisitHelper_Patch
     {
-        public static void Postfix(List<Prioritizable> ___prioritizables)
+        public static System.Reflection.MethodBase TargetMethod()
+        {
+            return AccessTools.Method(typeof(PrioritizableRenderer), "renderEveryTickVisitHelper");
+        }
+
+        public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
+        {
+            System.Reflection.MethodInfo add = AccessTools.Method(typeof(List<Prioritizable>), nameof(List<Prioritizable>.Add));
+            System.Reflection.MethodInfo route = AccessTools.Method(typeof(PriorityZeroState), nameof(PriorityZeroState.RoutePrioritizable));
+            bool replaced = false;
+
+            foreach (CodeInstruction instruction in instructions)
+            {
+                if (instruction.opcode == OpCodes.Callvirt && Equals(instruction.operand, add))
+                {
+                    instruction.opcode = OpCodes.Call;
+                    instruction.operand = route;
+                    replaced = true;
+                }
+
+                yield return instruction;
+            }
+
+            if (!replaced)
+            {
+                Debug.LogWarning("Priority Zero: Unable to route priority overlay entries.");
+            }
+        }
+    }
+
+    [HarmonyPatch(typeof(PrioritizableRenderer), nameof(PrioritizableRenderer.RenderEveryTick))]
+    public static class PrioritizableRenderer_RenderEveryTick_ZeroOverlayPatch
+    {
+        public static void Prefix()
+        {
+            PriorityZeroState.BeginZeroPriorityRender();
+        }
+
+        public static void Postfix()
         {
             try
             {
@@ -401,19 +511,18 @@ namespace PriorityZero
                     SimDebugView.Instance == null ||
                     SimDebugView.Instance.GetMode() != OverlayModes.Priorities.ID)
                 {
-                    PriorityZeroState.HideZeroPriorityMarkers();
+                    PriorityZeroState.HideZeroPriorityOverlay();
                     return;
                 }
 
-                PriorityZeroState.RenderZeroPriorityMarkers(___prioritizables);
+                PriorityZeroState.RenderZeroPriorityOverlay();
             }
             catch (System.Exception e)
             {
-                // Chỉ log cảnh báo, ẩn marker rác và cho phép game tiếp tục
-                Debug.LogWarning("[PriorityZero] Lỗi vẽ nhãn ưu tiên số 0: " + e.Message);
+                Debug.LogWarning("[PriorityZero] Lỗi vẽ overlay ưu tiên số 0: " + e.Message);
                 try
                 {
-                    PriorityZeroState.HideZeroPriorityMarkers();
+                    PriorityZeroState.HideZeroPriorityOverlay();
                 }
                 catch {}
             }
@@ -421,11 +530,11 @@ namespace PriorityZero
     }
 
     [HarmonyPatch(typeof(PrioritizableRenderer), nameof(PrioritizableRenderer.Cleanup))]
-    public static class PrioritizableRenderer_Cleanup_ZeroMarkersPatch
+    public static class PrioritizableRenderer_Cleanup_ZeroOverlayPatch
     {
         public static void Prefix()
         {
-            PriorityZeroState.DestroyZeroPriorityMarkers();
+            PriorityZeroState.DestroyZeroPriorityOverlay();
         }
     }
 
