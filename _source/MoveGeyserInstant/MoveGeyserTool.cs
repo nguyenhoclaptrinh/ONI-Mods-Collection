@@ -18,6 +18,15 @@ namespace MoveGeyserInstant {
         private GameObject overlayObject;
         private Mesh overlayMesh;
         private Material overlayMaterial;
+        private GameObject previewInstance;
+        private UndoEntry lastUndo;
+
+        private sealed class UndoEntry {
+            public Tag PrefabTag;
+            public int SourceCell;
+            public int SourceWorldId;
+            public int[] NeutroniumCells;
+        }
 
         public override void OnPrefabInit() {
             var hover = gameObject.AddComponent<HoverTextConfiguration>();
@@ -41,6 +50,7 @@ namespace MoveGeyserInstant {
             lastCell = Grid.PosToCell(source);
             EnsureOverlay();
             UpdateOverlay(lastCell);
+            EnsurePreviewForSnapshot();
             PlayerController.Instance.ActivateTool(this);
         }
 
@@ -48,17 +58,22 @@ namespace MoveGeyserInstant {
             int cell = Grid.PosToCell(cursor_pos);
             lastCell = cell;
             UpdateOverlay(cell);
+            UpdatePreviewPosition(cell);
         }
 
         public override void OnLeftClickDown(Vector3 cursor_pos) {
             int cell = Grid.PosToCell(cursor_pos);
             if (!Grid.IsValidCell(cell))
                 cell = lastCell;
-            PlaceAt(cell);
+            // Check modifier keys: Shift = force exact, Ctrl = conservative (no stacking)
+            bool shift = UnityEngine.Input.GetKey(UnityEngine.KeyCode.LeftShift) || UnityEngine.Input.GetKey(UnityEngine.KeyCode.RightShift);
+            bool ctrl = UnityEngine.Input.GetKey(UnityEngine.KeyCode.LeftControl) || UnityEngine.Input.GetKey(UnityEngine.KeyCode.RightControl);
+            PlaceAt(cell, shift, ctrl);
         }
 
         public override void OnDeactivateTool(InterfaceTool newTool) {
             HideOverlay();
+            HidePreview();
             base.OnDeactivateTool(newTool);
             if (newTool != this)
                 snapshot = null;
@@ -70,6 +85,14 @@ namespace MoveGeyserInstant {
                 ActivateDefaultTool();
                 return;
             }
+
+            try {
+                if (UnityEngine.Input.GetKeyDown(UnityEngine.KeyCode.Z)) {
+                    UndoLastMove();
+                }
+            }
+            catch {
+            }
         }
 
         public override void OnRightClickDown(Vector3 cursor_pos, KButtonEvent e) {
@@ -79,7 +102,7 @@ namespace MoveGeyserInstant {
             }
         }
 
-        private void PlaceAt(int targetCell) {
+        private void PlaceAt(int targetCell, bool forceExact = false, bool conservative = false) {
             if (snapshot == null || !Grid.IsValidCell(targetCell))
                 return;
 
@@ -90,10 +113,18 @@ namespace MoveGeyserInstant {
                     return;
                 }
 
+                // apply modifiers
+                bool originalAllowStacking = Config.AllowStacking;
+                if (conservative)
+                    Config.AllowStacking = false;
+
                 if (!TryValidatePlacement(targetCell, out string validationError)) {
                     Debug.LogWarning("[MoveGeyserInstant] Cannot move geyser: " + validationError);
+                    Config.AllowStacking = originalAllowStacking;
                     return;
                 }
+
+                Config.AllowStacking = originalAllowStacking;
 
                 HideOverlay();
 
@@ -110,6 +141,19 @@ namespace MoveGeyserInstant {
                 moved.SetActive(true);
                 snapshot.ApplyFieldsTo(moved);
                 snapshot.TriggerCopySettings(moved);
+
+                // Record undo entry before deleting source
+                var originalNeutronium = new System.Collections.Generic.List<int>();
+                foreach (int c in snapshot.SourceFootprint) {
+                    if (Grid.IsValidCell(c) && Grid.Element[c].id == SimHashes.Unobtanium)
+                        originalNeutronium.Add(c);
+                }
+                lastUndo = new UndoEntry {
+                    PrefabTag = snapshot.PrefabTag,
+                    SourceCell = snapshot.SourceCell,
+                    SourceWorldId = snapshot.SourceWorldId,
+                    NeutroniumCells = originalNeutronium.ToArray()
+                };
 
                 int targetWorldId = GetCellWorldId(targetCell);
                 int[] newFootprint = snapshot.GetTranslatedFootprint(targetCell);
@@ -135,10 +179,72 @@ namespace MoveGeyserInstant {
 
                 PopFXManager.Instance.SpawnFX(PopFXManager.Instance.sprite_Plus, Strings.Get("STRINGS.MOVEGEYSERINSTANT.MOVE_BUTTON"), moved.transform, Vector3.zero, 1.5f, false, false);
                 snapshot = null;
+                HidePreview();
                 ActivateDefaultTool();
             }
             catch (Exception e) {
                 Debug.LogWarning("[MoveGeyserInstant] Failed to move geyser: " + e);
+            }
+        }
+
+        public void UndoLastMove() {
+            if (lastUndo == null)
+                return;
+
+            var prefab = Assets.GetPrefab(lastUndo.PrefabTag);
+            if (prefab == null) {
+                Debug.LogWarning("[MoveGeyserInstant] Cannot undo: prefab missing " + lastUndo.PrefabTag);
+                lastUndo = null;
+                return;
+            }
+
+            Vector3 pos = Grid.CellToPosCBC(lastUndo.SourceCell, Grid.SceneLayer.Building);
+            GameObject restored = Util.KInstantiate(prefab, pos, Quaternion.identity);
+            if (restored != null)
+                restored.SetActive(true);
+
+            foreach (int c in lastUndo.NeutroniumCells) {
+                if (!Grid.IsValidCell(c) || GetCellWorldId(c) != lastUndo.SourceWorldId)
+                    continue;
+                SimMessages.ReplaceElement(c, SimHashes.Unobtanium, CellEventLogger.Instance.DebugTool, NeutroniumMass, NeutroniumTemperature);
+            }
+
+            PopFXManager.Instance.SpawnFX(PopFXManager.Instance.sprite_Plus, "Undo move", restored != null ? restored.transform : null, Vector3.zero, 1.5f, false, false);
+            lastUndo = null;
+        }
+
+        private void EnsurePreviewForSnapshot() {
+            if (snapshot == null)
+                return;
+            if (previewInstance != null)
+                return;
+
+            var prefab = Assets.GetPrefab(snapshot.PrefabTag);
+            if (prefab == null)
+                return;
+
+            // Instantiate disabled to avoid any initialization races
+            previewInstance = Util.KInstantiate(prefab, Vector3.zero, Quaternion.identity);
+            if (previewInstance != null) {
+                previewInstance.SetActive(false);
+                if (Game.Instance != null)
+                    previewInstance.transform.SetParent(Game.Instance.transform, false);
+            }
+        }
+
+        private void UpdatePreviewPosition(int cell) {
+            if (previewInstance == null || !Grid.IsValidCell(cell))
+                return;
+            Vector3 p = Grid.CellToPosCBC(cell, Grid.SceneLayer.Move);
+            previewInstance.transform.position = p;
+            if (!previewInstance.activeSelf)
+                previewInstance.SetActive(true);
+        }
+
+        private void HidePreview() {
+            if (previewInstance != null) {
+                UnityEngine.Object.Destroy(previewInstance);
+                previewInstance = null;
             }
         }
 
