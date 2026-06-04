@@ -36,3 +36,7 @@ Player.log
 # Game DLLs in sources
 *_source/lib/
 *_source/**/lib/
+
+# Local developer profile
+docs/local-developer-env.md
+
