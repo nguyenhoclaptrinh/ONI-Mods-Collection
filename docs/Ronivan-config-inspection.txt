@@ -1,0 +1,222 @@
+TYPE High_Pressure_Applications.BuildingConfigs.HighPressureGasConduitBridgeConfig
+  BASE IBuildingConfig
+  FIELD public System.String ID
+  FIELD private ConduitType CONDUIT_TYPE
+  METHOD System.Void High_Pressure_Applications.BuildingConfigs.HighPressureGasConduitBridgeConfig::ConfigureBuildingTemplate(UnityEngine.GameObject,Tag)
+  METHOD System.Void High_Pressure_Applications.BuildingConfigs.HighPressureGasConduitBridgeConfig::DoPostConfigureComplete(UnityEngine.GameObject)
+TYPE High_Pressure_Applications.BuildingConfigs.HighPressureLiquidConduitBridgeConfig
+  BASE IBuildingConfig
+  FIELD public System.String ID
+  FIELD private ConduitType CONDUIT_TYPE
+  METHOD System.Void High_Pressure_Applications.BuildingConfigs.HighPressureLiquidConduitBridgeConfig::ConfigureBuildingTemplate(UnityEngine.GameObject,Tag)
+  METHOD System.Void High_Pressure_Applications.BuildingConfigs.HighPressureLiquidConduitBridgeConfig::DoPostConfigureComplete(UnityEngine.GameObject)
+TYPE RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationCollection
+  BASE System.Object
+  FIELD private System.String ConfigFileLocation
+  FIELD private System.String OldConfigFileLocation
+  FIELD public System.Collections.Generic.Dictionary`2<System.String,RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry> BuildingConfigurations
+  METHOD RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationCollection RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationCollection::LoadFromFile()
+    STR Loading Building Configuration from 
+    STR 
+    STR loaded building config file with 
+    STR  entries
+TYPE RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry
+  BASE System.Object
+  FIELD public System.String BuildingID
+  FIELD public System.Boolean BuildingEnabled
+  FIELD public System.Single BuildingMassCapacity
+  FIELD public System.Single BuildingWattage
+  FIELD public System.Single BuildingTileRange
+  FIELD public System.Boolean BuildingEnabledForce
+  FIELD public System.Single BuildingMassCapacityDefault
+  FIELD public System.Single BuildingWattageDefault
+  FIELD public System.Single BuildingTileRangeDefault
+  FIELD public RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry BuildingInjection
+  FIELD public System.Boolean IsGenerator
+  FIELD public System.String RangeLabel
+  FIELD public Tuple`2<System.Int32,System.Int32> TileRangeValueRange
+  PROP System.Collections.Generic.List`1<RonivansLegacy_ChemicalProcessing.Content.ModDb.SourceModInfo> ModsFrom
+  PROP System.Boolean IsInjected
+  METHOD RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::SetDefaultWattage(System.Single)
+  METHOD RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::SetDefaultStorageCapacity(System.Single)
+  METHOD RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::SetDefaultTileRange(System.Int32,Tuple`2<System.Int32,System.Int32>)
+  METHOD System.Boolean RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::IsBuildingEnabled()
+  METHOD System.Boolean RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::IsForceEnabled()
+  METHOD System.Boolean RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::ShowBuildingEnabled(System.String&)
+  METHOD System.Void RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::SetBuildingEnabled(System.Boolean)
+  METHOD System.Boolean RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::HasConfigurables()
+TYPE RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry
+  BASE System.Object
+  FIELD private System.Boolean MoveExisting
+  FIELD private System.String _buildingID
+  FIELD private System.String _techID
+  FIELD private System.String _planScreenCategory
+  FIELD private System.String PlanScreenRelativeBuildingID
+  FIELD other RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry Source
+  FIELD private ModUtil/BuildingOrdering BuildingOrdering
+  FIELD private System.Collections.Generic.List`1<RonivansLegacy_ChemicalProcessing.Content.ModDb.SourceModInfo> modsFrom
+  FIELD public System.Collections.Generic.HashSet`1<System.String> MigrateOldIdsFrom
+  FIELD public System.Boolean CanEnableBuildingFromConfig
+  PROP System.String BuildingID
+  PROP System.String TechID
+  PROP System.String PlanScreenCategory
+  PROP System.Collections.Generic.List`1<RonivansLegacy_ChemicalProcessing.Content.ModDb.SourceModInfo> SourceMods
+  METHOD RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::ConfigEnabled(System.Boolean)
+TYPE RonivansLegacy_ChemicalProcessing.Content.ModDb.ModIntegrations.CustomizeBuildings
+  BASE System.Object
+  FIELD private System.Object ConfigInstance
+  METHOD System.Boolean RonivansLegacy_ChemicalProcessing.Content.ModDb.ModIntegrations.CustomizeBuildings::TryGetConfigValue(System.String,T&)
+    STR Mod Config State did not have a property with the name: 
+    STR Mod Config State had a property with the name: 
+    STR , but it was typeOf 
+    STR , instead of the expected 
+  METHOD System.Void RonivansLegacy_ChemicalProcessing.Content.ModDb.ModIntegrations.CustomizeBuildings::InitTypes()
+    STR CustomizeBuildings.CustomizeBuildingsState, CustomizeBuildings
+    STR CustomizeBuildings types not found.
+    STR 
+    STR StateManager
+    STR CustomizeBuildings_CustomizeBuildingsState.StateManager field not found.
+    STR Failure to get state manager from CustomizeBuildings_CustomizeBuildingsState:
+
+    STR Failure to get state manager from CustomizeBuildings_CustomizeBuildingsState
+    STR State
+    STR CustomizeBuildings_CustomizeBuildingsState.Manager.State method not found.
+    STR Failure to get Config Instance from CustomizeBuildings_CustomizeBuildingsState:
+
+    STR CustomizeBuildings integration: 
+    STR Failed
+    STR Success
+TYPE RonivansLegacy_ChemicalProcessing.Content.Scripts.BuildingConfigInterfaces.IGeneratorBuilding
+  BASE 
+TYPE RonivansLegacy_ChemicalProcessing.Content.Scripts.BuildingConfigInterfaces.IHasConfigurableRange
+  BASE 
+  ATTR System.Runtime.CompilerServices.NullableContextAttribute 2
+TYPE RonivansLegacy_ChemicalProcessing.Content.Scripts.UI.BuildingConfigUIEntryUI
+  BASE KMonoBehaviour
+  FIELD public RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry TargetOutline
+  FIELD private UnityEngine.UI.Image DisplayImage
+  FIELD private LocText Label
+  FIELD private UtilLibs.UIcmp.FToggle EnabledCheckbox
+  FIELD private UnityEngine.UI.Image CheckboxBG
+  FIELD private ToolTip ToolTip
+  FIELD private UtilLibs.UIcmp.FButton SelectButton
+  FIELD private UnityEngine.GameObject Gear
+  FIELD private System.Boolean init
+  METHOD System.Void RonivansLegacy_ChemicalProcessing.Content.Scripts.UI.BuildingConfigUIEntryUI::OnPrefabInit()
+  METHOD System.Void RonivansLegacy_ChemicalProcessing.Content.Scripts.UI.BuildingConfigUIEntryUI::InitUi()
+    STR DisplayImageContainer/DisplayImage
+    STR Label
+    STR 
+    STR Gear
+    STR Checkbox
+    STR Checkmark
+  METHOD System.Void RonivansLegacy_ChemicalProcessing.Content.Scripts.UI.BuildingConfigUIEntryUI::<InitUi>b__10_0(System.Boolean)
+TYPE RonivansLegacy_ChemicalProcessing.STRINGS/RONIVAN_AIO_MODCONFIG
+  BASE System.Object
+TYPE RonivansLegacy_ChemicalProcessing.STRINGS/RONIVAN_AIO_MODCONFIG/BIOCHEM_ANAEROBICDIGESTERBUFF
+  BASE System.Object
+  FIELD public LocString NAME
+  FIELD public LocString TOOLTIP
+TYPE RonivansLegacy_ChemicalProcessing.STRINGS/RONIVAN_AIO_MODCONFIG/BIOCHEM_OILMULTIPLIER
+  BASE System.Object
+  FIELD public LocString NAME
+  FIELD public LocString TOOLTIP
+TYPE RonivansLegacy_ChemicalProcessing.STRINGS/RONIVAN_AIO_MODCONFIG/BIOCHEM_OILPRESSREBALANCE
+  BASE System.Object
+  FIELD public LocString NAME
+  FIELD public LocString TOOLTIP
+TYPE RonivansLegacy_ChemicalProcessing.STRINGS/RONIVAN_AIO_MODCONFIG/BUILDINGEDITOR
+  BASE System.Object
+  FIELD public LocString NAME
+  FIELD public LocString NAME_ALT
+  FIELD public LocString TOOLTIP
+TYPE RonivansLegacy_ChemicalProcessing.STRINGS/RONIVAN_AIO_MODCONFIG/CHEMPROC_ARC_CAPACITOR
+  BASE System.Object
+  FIELD public LocString NAME
+  FIELD public LocString TOOLTIP
+  FIELD public LocString FORMAT
+TYPE RonivansLegacy_ChemicalProcessing.STRINGS/RONIVAN_AIO_MODCONFIG/CHEMPROC_ARCFUDGE
+  BASE System.Object
+  FIELD public LocString NAME
+  FIELD public LocString TOOLTIP
+TYPE RonivansLegacy_ChemicalProcessing.STRINGS/RONIVAN_AIO_MODCONFIG/CHEMPROC_REFINERYFUDGE
+  BASE System.Object
+  FIELD public LocString NAME
+  FIELD public LocString TOOLTIP
+TYPE RonivansLegacy_ChemicalProcessing.STRINGS/RONIVAN_AIO_MODCONFIG/CHEMPROC_REFINERYFUDGEADV
+  BASE System.Object
+  FIELD public LocString NAME
+  FIELD public LocString TOOLTIP
+TYPE RonivansLegacy_ChemicalProcessing.STRINGS/RONIVAN_AIO_MODCONFIG/CUSTOMRES_MOVETOCONDUITCATEGORY
+  BASE System.Object
+  FIELD public LocString NAME
+  FIELD public LocString TOOLTIP
+TYPE RonivansLegacy_ChemicalProcessing.STRINGS/RONIVAN_AIO_MODCONFIG/DRYWALL_HIDES_PIPES
+  BASE System.Object
+  FIELD public LocString NAME
+  FIELD public LocString TOOLTIP
+TYPE RonivansLegacy_ChemicalProcessing.STRINGS/RONIVAN_AIO_MODCONFIG/ENABLEMOD
+  BASE System.Object
+  FIELD public LocString NAME
+  FIELD public LocString TOOLTIP
+  FIELD public LocString TOOLTIP_ELEMENTS
+TYPE RonivansLegacy_ChemicalProcessing.STRINGS/RONIVAN_AIO_MODCONFIG/GEYSERS
+  BASE System.Object
+  FIELD public LocString NAME
+  FIELD public LocString TOOLTIP
+TYPE RonivansLegacy_ChemicalProcessing.STRINGS/RONIVAN_AIO_MODCONFIG/HP_GAS_CAPACITY
+  BASE System.Object
+  FIELD public LocString NAME
+  FIELD public LocString TOOLTIP
+TYPE RonivansLegacy_ChemicalProcessing.STRINGS/RONIVAN_AIO_MODCONFIG/HP_GAS_PUMPCOST
+  BASE System.Object
+  FIELD public LocString NAME
+  FIELD public LocString TOOLTIP
+TYPE RonivansLegacy_ChemicalProcessing.STRINGS/RONIVAN_AIO_MODCONFIG/HP_LIQUID_CAPACITY
+  BASE System.Object
+  FIELD public LocString NAME
+  FIELD public LocString TOOLTIP
+TYPE RonivansLegacy_ChemicalProcessing.STRINGS/RONIVAN_AIO_MODCONFIG/HP_LIQUID_PUMPCOST
+  BASE System.Object
+  FIELD public LocString NAME
+  FIELD public LocString TOOLTIP
+TYPE RonivansLegacy_ChemicalProcessing.STRINGS/RONIVAN_AIO_MODCONFIG/HP_SOLID_ARMRANGE
+  BASE System.Object
+  FIELD public LocString NAME
+  FIELD public LocString TOOLTIP
+TYPE RonivansLegacy_ChemicalProcessing.STRINGS/RONIVAN_AIO_MODCONFIG/HP_SOLID_CAPACITY
+  BASE System.Object
+  FIELD public LocString NAME
+  FIELD public LocString TOOLTIP
+TYPE RonivansLegacy_ChemicalProcessing.STRINGS/RONIVAN_AIO_MODCONFIG/HP_SOLID_ENABLE
+  BASE System.Object
+  FIELD public LocString NAME
+  FIELD public LocString TOOLTIP
+TYPE RonivansLegacy_ChemicalProcessing.STRINGS/RONIVAN_AIO_MODCONFIG/HP_SOLID_INSULATION_ENABLE
+  BASE System.Object
+  FIELD public LocString NAME
+  FIELD public LocString TOOLTIP
+TYPE RonivansLegacy_ChemicalProcessing.STRINGS/RONIVAN_AIO_MODCONFIG/HPA_TEMPIMMUNE_PUMPS
+  BASE System.Object
+  FIELD public LocString NAME
+  FIELD public LocString TOOLTIP
+TYPE RonivansLegacy_ChemicalProcessing.STRINGS/RONIVAN_AIO_MODCONFIG/LOGISTIC_RAIL_CAPACITY
+  BASE System.Object
+  FIELD public LocString NAME
+  FIELD public LocString TOOLTIP
+TYPE RonivansLegacy_ChemicalProcessing.STRINGS/RONIVAN_AIO_MODCONFIG/LOGISTIC_SWEEPER_RANGE
+  BASE System.Object
+  FIELD public LocString NAME
+  FIELD public LocString TOOLTIP
+TYPE RonivansLegacy_ChemicalProcessing.STRINGS/RONIVAN_AIO_MODCONFIG/MODELEMENTSWORLDGEN
+  BASE System.Object
+  FIELD public LocString NAME
+  FIELD public LocString TOOLTIP
+TYPE RonivansLegacy_ChemicalProcessing.STRINGS/RONIVAN_AIO_MODCONFIG/OLDREFINERIES
+  BASE System.Object
+  FIELD public LocString NAME
+  FIELD public LocString TOOLTIP
+TYPE RonivansLegacy_ChemicalProcessing.STRINGS/RONIVAN_AIO_MODCONFIG/OVERRIDE_PRIMARYELEMENT_MAXSTACK
+  BASE System.Object
+  FIELD public LocString NAME
+  FIELD public LocString TOOLTIP

@@ -1,0 +1,991 @@
+
+TYPE RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationCollection
+FIELD System.String ConfigFileLocation static=True public=False
+FIELD System.String OldConfigFileLocation static=True public=False
+FIELD System.Collections.Generic.Dictionary`2<System.String,RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry> BuildingConfigurations static=False public=True
+METHOD System.Void RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationCollection::MigrateOldFile()
+  0000: ldsfld System.String RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationCollection::OldConfigFileLocation
+  0005: call System.Boolean System.IO.File::Exists(System.String)
+  000C: ldsfld System.String RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationCollection::ConfigFileLocation
+  0011: call System.Boolean System.IO.File::Exists(System.String)
+  0018: ldsfld System.String RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationCollection::ConfigFileLocation
+  001D: call System.String System.IO.Path::GetDirectoryName(System.String)
+  0024: call System.Boolean System.IO.Directory::Exists(System.String)
+  002C: call System.IO.DirectoryInfo System.IO.Directory::CreateDirectory(System.String)
+  0032: ldsfld System.String RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationCollection::OldConfigFileLocation
+  0037: ldsfld System.String RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationCollection::ConfigFileLocation
+  003C: call System.Void System.IO.File::Move(System.String,System.String)
+METHOD RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationCollection RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationCollection::LoadFromFile()
+  0000: call System.Void RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationCollection::MigrateOldFile()
+  0005: ldsfld System.String RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationCollection::ConfigFileLocation
+  000A: newobj System.Void System.IO.FileInfo::.ctor(System.String)
+  0010: ldstr "Loading Building Configuration from "
+  0016: callvirt System.String System.IO.FileSystemInfo::get_FullName()
+  001B: call System.String System.String::Concat(System.String,System.String)
+  0020: ldstr ""
+  0025: call System.Void UtilLibs.SgtLogger::l(System.String,System.String)
+  002B: callvirt System.Boolean System.IO.FileSystemInfo::get_Exists()
+  0035: ldstr ""
+  003A: newobj System.Void Newtonsoft.Json.JsonSerializerSettings::.ctor()
+  0041: callvirt System.Void Newtonsoft.Json.JsonSerializerSettings::set_TypeNameHandling(Newtonsoft.Json.TypeNameHandling)
+  0046: call System.Boolean UtilLibs.IO_Utils::ReadFromFile<RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationCollection>(System.IO.FileInfo,T&,System.String,Newtonsoft.Json.JsonSerializerSettings)
+  004D: ldstr "loaded building config file with "
+  0053: ldfld System.Collections.Generic.Dictionary`2<System.String,RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry> RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationCollection::BuildingConfigurations
+  0058: callvirt System.Int32 System.Collections.Generic.Dictionary`2<System.String,RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry>::get_Count()
+  0060: call System.String System.Int32::ToString()
+  0065: ldstr " entries"
+  006A: call System.String System.String::Concat(System.String,System.String,System.String)
+  006F: ldstr ""
+  0074: call System.Void UtilLibs.SgtLogger::l(System.String,System.String)
+  007B: newobj System.Void RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationCollection::.ctor()
+METHOD System.Void RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationCollection::WriteToFile()
+  0001: ldsfld System.String RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationCollection::ConfigFileLocation
+  0006: newobj System.Void Newtonsoft.Json.JsonSerializerSettings::.ctor()
+  000D: callvirt System.Void Newtonsoft.Json.JsonSerializerSettings::set_TypeNameHandling(Newtonsoft.Json.TypeNameHandling)
+  0012: call System.Boolean UtilLibs.IO_Utils::WriteToFile<RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationCollection>(T,System.String,Newtonsoft.Json.JsonSerializerSettings)
+METHOD System.Void RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationCollection::.ctor()
+  0001: newobj System.Void System.Collections.Generic.Dictionary`2<System.String,RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry>::.ctor()
+  0006: stfld System.Collections.Generic.Dictionary`2<System.String,RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry> RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationCollection::BuildingConfigurations
+  000C: call System.Void System.Object::.ctor()
+METHOD System.Void RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationCollection::.cctor()
+  0000: call System.String KMod.Manager::GetDirectory()
+  0005: ldstr "config"
+  000A: ldstr "RonivansLegacy_ChemicalProcessing"
+  000F: ldstr "RonivanAIO_BuildingConfig.json"
+  0014: call System.String System.IO.Path::Combine(System.String,System.String,System.String,System.String)
+  0019: call System.String Klei.FileSystem::Normalize(System.String)
+  001E: stsfld System.String RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationCollection::ConfigFileLocation
+  0023: call System.String KMod.Manager::GetDirectory()
+  0028: ldstr "config"
+  002D: ldstr "RonivansAIO_BuildingConfig.json"
+  0032: call System.String System.IO.Path::Combine(System.String,System.String,System.String)
+  0037: call System.String Klei.FileSystem::Normalize(System.String)
+  003C: stsfld System.String RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationCollection::OldConfigFileLocation
+
+TYPE RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry
+FIELD System.String BuildingID static=False public=True
+FIELD System.Boolean BuildingEnabled static=False public=True
+FIELD System.Single BuildingMassCapacity static=False public=True
+FIELD System.Single BuildingWattage static=False public=True
+FIELD System.Single BuildingTileRange static=False public=True
+FIELD System.Boolean BuildingEnabledForce static=False public=True
+FIELD System.Single BuildingMassCapacityDefault static=False public=True
+FIELD System.Single BuildingWattageDefault static=False public=True
+FIELD System.Single BuildingTileRangeDefault static=False public=True
+FIELD RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry BuildingInjection static=False public=True
+FIELD System.Boolean IsGenerator static=False public=True
+FIELD System.String RangeLabel static=False public=True
+FIELD Tuple`2<System.Int32,System.Int32> TileRangeValueRange static=False public=True
+PROP System.Collections.Generic.List`1<RonivansLegacy_ChemicalProcessing.Content.ModDb.SourceModInfo> ModsFrom
+PROP System.Boolean IsInjected
+METHOD System.Collections.Generic.List`1<RonivansLegacy_ChemicalProcessing.Content.ModDb.SourceModInfo> RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::get_ModsFrom()
+  0001: call System.Boolean RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::get_IsInjected()
+  0008: newobj System.Void System.Collections.Generic.List`1<RonivansLegacy_ChemicalProcessing.Content.ModDb.SourceModInfo>::.ctor()
+  000F: ldfld RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::BuildingInjection
+  0014: callvirt System.Collections.Generic.List`1<RonivansLegacy_ChemicalProcessing.Content.ModDb.SourceModInfo> RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::GetModsFrom()
+METHOD System.Boolean RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::get_IsInjected()
+  0001: ldfld RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::BuildingInjection
+METHOD System.Void RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::.ctor()
+  0002: stfld System.Boolean RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::BuildingEnabled
+  000D: stfld System.Single RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::BuildingMassCapacity
+  0018: stfld System.Single RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::BuildingWattage
+  0023: stfld System.Single RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::BuildingTileRange
+  002E: stfld System.Single RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::BuildingMassCapacityDefault
+  0039: stfld System.Single RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::BuildingWattageDefault
+  0044: stfld System.Single RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::BuildingTileRangeDefault
+  004D: newobj System.Void Tuple`2<System.Int32,System.Int32>::.ctor(!0,!1)
+  0052: stfld Tuple`2<System.Int32,System.Int32> RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::TileRangeValueRange
+  0058: call System.Void System.Object::.ctor()
+METHOD System.Void RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::.ctor(System.String,System.Boolean)
+  0002: stfld System.Boolean RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::BuildingEnabled
+  000D: stfld System.Single RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::BuildingMassCapacity
+  0018: stfld System.Single RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::BuildingWattage
+  0023: stfld System.Single RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::BuildingTileRange
+  002E: stfld System.Single RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::BuildingMassCapacityDefault
+  0039: stfld System.Single RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::BuildingWattageDefault
+  0044: stfld System.Single RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::BuildingTileRangeDefault
+  004D: newobj System.Void Tuple`2<System.Int32,System.Int32>::.ctor(!0,!1)
+  0052: stfld Tuple`2<System.Int32,System.Int32> RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::TileRangeValueRange
+  0058: call System.Void System.Object::.ctor()
+  005F: stfld System.String RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::BuildingID
+  0066: stfld System.Boolean RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::BuildingEnabled
+METHOD RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::SetDefaultWattage(System.Single)
+  0002: stfld System.Single RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::BuildingWattageDefault
+METHOD RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::SetDefaultStorageCapacity(System.Single)
+  0002: stfld System.Single RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::BuildingMassCapacityDefault
+METHOD RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::SetDefaultTileRange(System.Int32,Tuple`2<System.Int32,System.Int32>)
+  0005: stfld Tuple`2<System.Int32,System.Int32> RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::TileRangeValueRange
+  000D: stfld System.Single RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::BuildingTileRangeDefault
+METHOD System.Single RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::GetWattage()
+  0001: ldfld System.Single RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::BuildingWattage
+  000E: ldfld System.Single RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::BuildingWattage
+  0015: ldfld System.Single RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::BuildingWattageDefault
+METHOD System.Single RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::GetStorageCapacity()
+  0001: ldfld System.Single RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::BuildingMassCapacity
+  000E: ldfld System.Single RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::BuildingMassCapacity
+  0015: ldfld System.Single RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::BuildingMassCapacityDefault
+METHOD System.Int32 RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::GetTileRange()
+  0001: ldfld System.Single RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::BuildingTileRange
+  000E: ldfld System.Single RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::BuildingTileRange
+  0016: ldfld System.Single RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::BuildingTileRangeDefault
+METHOD System.Boolean RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::HasWattage(System.Single&)
+  0002: call System.Single RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::GetWattage()
+  0009: ldfld System.Single RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::BuildingWattageDefault
+METHOD System.Boolean RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::HasStorageCapacity(System.Single&)
+  0002: call System.Single RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::GetStorageCapacity()
+  0009: ldfld System.Single RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::BuildingMassCapacityDefault
+METHOD System.Boolean RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::HasTileRange(System.Int32&)
+  0002: call System.Int32 RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::GetTileRange()
+  0009: ldfld System.Single RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::BuildingTileRangeDefault
+METHOD System.Boolean RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::HasTileRangeDescriptor(System.String&)
+  0002: ldfld System.String RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::RangeLabel
+  0009: ldfld System.String RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::RangeLabel
+  000E: call System.Boolean System.String::IsNullOrEmpty(System.String)
+METHOD System.Boolean RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::IsBuildingEnabled()
+  0003: call System.Boolean RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::ShowBuildingEnabled(System.String&)
+METHOD System.Boolean RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::IsForceEnabled()
+  0001: call System.Boolean RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::AnySourceModsActive()
+  000B: ldfld System.Boolean RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::BuildingEnabledForce
+METHOD System.Boolean RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::AnySourceModsActive()
+  0001: call System.Boolean RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::get_IsInjected()
+  000B: call System.Collections.Generic.List`1<RonivansLegacy_ChemicalProcessing.Content.ModDb.SourceModInfo> RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::get_ModsFrom()
+  0010: call System.Boolean RonivansLegacy_ChemicalProcessing.Config::ModBuildingEnabled(System.Collections.Generic.IEnumerable`1<RonivansLegacy_ChemicalProcessing.Content.ModDb.SourceModInfo>)
+  0018: ldfld RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::BuildingInjection
+  001D: ldfld System.Boolean RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::CanEnableBuildingFromConfig
+METHOD System.Boolean RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::ShowBuildingEnabled(System.String&)
+  0001: call System.Boolean RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::AnySourceModsActive()
+  000A: ldfld System.Boolean RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::BuildingEnabled
+  0011: ldsfld LocString RonivansLegacy_ChemicalProcessing.STRINGS/UI/BUILDINGEDITOR/BUILDINGENABLEDREASONS::IS_DISABLED
+  0018: ldsfld LocString RonivansLegacy_ChemicalProcessing.STRINGS/UI/BUILDINGEDITOR/BUILDINGENABLEDREASONS::IS_ENABLED
+  001D: call System.String LocString::op_Implicit(LocString)
+  0024: ldfld System.Boolean RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::BuildingEnabled
+  002C: ldfld System.Boolean RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::BuildingEnabledForce
+  0033: ldsfld LocString RonivansLegacy_ChemicalProcessing.STRINGS/UI/BUILDINGEDITOR/BUILDINGENABLEDREASONS::NO_MODS_ACTIVE
+  003A: ldsfld LocString RonivansLegacy_ChemicalProcessing.STRINGS/UI/BUILDINGEDITOR/BUILDINGENABLEDREASONS::IS_ENABLED_FORCE
+  003F: call System.String LocString::op_Implicit(LocString)
+  0046: ldfld System.Boolean RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::BuildingEnabledForce
+METHOD System.Void RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::SetTileRange(System.Single)
+  0002: ldfld Tuple`2<System.Int32,System.Int32> RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::TileRangeValueRange
+  0007: ldfld !0 Tuple`2<System.Int32,System.Int32>::first
+  0010: ldfld Tuple`2<System.Int32,System.Int32> RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::TileRangeValueRange
+  0015: ldfld !0 Tuple`2<System.Int32,System.Int32>::first
+  001F: ldfld Tuple`2<System.Int32,System.Int32> RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::TileRangeValueRange
+  0024: ldfld !1 Tuple`2<System.Int32,System.Int32>::second
+  002D: ldfld Tuple`2<System.Int32,System.Int32> RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::TileRangeValueRange
+  0032: ldfld !1 Tuple`2<System.Int32,System.Int32>::second
+  003C: stfld System.Single RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::BuildingTileRange
+METHOD System.Void RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::SetWattage(System.Single)
+  000A: stfld System.Single RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::BuildingWattage
+METHOD System.Void RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::SetMassCapacity(System.Single)
+  000A: stfld System.Single RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::BuildingMassCapacity
+METHOD System.Void RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::SetBuildingEnabled(System.Boolean)
+  0001: call System.Boolean RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::AnySourceModsActive()
+  000A: stfld System.Boolean RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::BuildingEnabled
+  0012: stfld System.Boolean RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::BuildingEnabledForce
+METHOD System.Void RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::SetInjection(RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry)
+  0002: stfld RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::BuildingInjection
+  0009: stfld RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::Source
+METHOD System.Void RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::ResetChanges()
+  0006: stfld System.Single RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::BuildingMassCapacity
+  0011: stfld System.Single RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::BuildingWattage
+  001C: stfld System.Single RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::BuildingTileRange
+  0023: stfld System.Boolean RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::BuildingEnabled
+METHOD System.String RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::GetDisplayName()
+  0000: ldstr "STRINGS.BUILDINGS.PREFABS."
+  0006: ldfld System.String RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::BuildingID
+  000B: callvirt System.String System.String::ToUpperInvariant()
+  0010: ldstr ".NAME"
+  0015: call System.String System.String::Concat(System.String,System.String,System.String)
+  001A: call StringEntry Strings::Get(System.String)
+  001F: call System.String StringEntry::op_Implicit(StringEntry)
+  0024: call System.String STRINGS.UI::StripLinkFormatting(System.String)
+METHOD System.String RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::GetDisplayDescription()
+  0000: ldstr "STRINGS.BUILDINGS.PREFABS."
+  0006: ldfld System.String RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::BuildingID
+  000B: callvirt System.String System.String::ToUpperInvariant()
+  0010: ldstr ".EFFECT"
+  0015: call System.String System.String::Concat(System.String,System.String,System.String)
+  001A: call StringEntry Strings::Get(System.String)
+  001F: call System.String StringEntry::op_Implicit(StringEntry)
+METHOD System.String RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::GetModOriginText()
+  0000: ldsfld LocString RonivansLegacy_ChemicalProcessing.STRINGS/UI/BUILDINGEDITOR::MOD_ORIGIN_TEXT
+  0005: callvirt System.String System.Object::ToString()
+  0013: call System.Collections.Generic.List`1<RonivansLegacy_ChemicalProcessing.Content.ModDb.SourceModInfo> RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::get_ModsFrom()
+  0019: callvirt !0 System.Collections.Generic.List`1<RonivansLegacy_ChemicalProcessing.Content.ModDb.SourceModInfo>::get_Item(System.Int32)
+  001F: ldstr "STRINGS.AIO_MODSOURCE."
+  002C: callvirt System.String System.Object::ToString()
+  0031: callvirt System.String System.String::ToUpperInvariant()
+  0036: call System.String System.String::Concat(System.String,System.String)
+  003B: call StringEntry Strings::Get(System.String)
+  0040: callvirt System.String System.Object::ToString()
+  0047: ldstr "MISSING"
+  004C: callvirt System.Boolean System.String::Contains(System.String)
+  005B: callvirt System.String System.Object::ToString()
+  0066: ldstr "
+
+"
+  006C: call System.String System.String::Concat(System.String,System.String)
+  0075: ldstr "
+- "
+  007B: call System.String System.String::Concat(System.String,System.String)
+  0087: call System.String UtilLibs.UIUtils::EmboldenText(System.String)
+  0091: call System.String System.String::Concat(System.String,System.String)
+  009D: call System.Collections.Generic.List`1<RonivansLegacy_ChemicalProcessing.Content.ModDb.SourceModInfo> RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::get_ModsFrom()
+  00A2: callvirt System.Int32 System.Collections.Generic.List`1<RonivansLegacy_ChemicalProcessing.Content.ModDb.SourceModInfo>::get_Count()
+METHOD System.Boolean RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::HasConfigurables()
+  0003: call System.Boolean RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::HasWattage(System.Single&)
+  000D: call System.Boolean RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::HasStorageCapacity(System.Single&)
+METHOD System.Void RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::SetIsGenerator(System.Boolean)
+  0002: stfld System.Boolean RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry::IsGenerator
+
+TYPE RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry
+FIELD System.Boolean MoveExisting static=False public=False
+FIELD System.String _buildingID static=False public=False
+FIELD System.String _techID static=False public=False
+FIELD System.String _planScreenCategory static=False public=False
+FIELD System.String PlanScreenRelativeBuildingID static=False public=False
+FIELD RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry Source static=False public=False
+FIELD ModUtil/BuildingOrdering BuildingOrdering static=False public=False
+FIELD System.Collections.Generic.List`1<RonivansLegacy_ChemicalProcessing.Content.ModDb.SourceModInfo> modsFrom static=False public=False
+FIELD System.Collections.Generic.HashSet`1<System.String> MigrateOldIdsFrom static=False public=True
+FIELD System.Boolean CanEnableBuildingFromConfig static=False public=True
+PROP System.String BuildingID
+PROP System.String TechID
+PROP System.String PlanScreenCategory
+PROP System.Collections.Generic.List`1<RonivansLegacy_ChemicalProcessing.Content.ModDb.SourceModInfo> SourceMods
+METHOD System.String RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::get_BuildingID()
+  0001: ldfld System.String RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::_buildingID
+METHOD System.String RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::get_TechID()
+  0001: ldfld System.String RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::_techID
+METHOD System.String RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::get_PlanScreenCategory()
+  0001: ldfld System.String RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::_planScreenCategory
+METHOD System.Collections.Generic.List`1<RonivansLegacy_ChemicalProcessing.Content.ModDb.SourceModInfo> RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::get_SourceMods()
+  0001: ldfld System.Collections.Generic.List`1<RonivansLegacy_ChemicalProcessing.Content.ModDb.SourceModInfo> RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::modsFrom
+METHOD RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::Create(System.String)
+  0000: newobj System.Void RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::.ctor()
+  0007: stfld System.String RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::_buildingID
+METHOD RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::AddToTech(System.String)
+  0002: stfld System.String RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::_techID
+METHOD RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::ForceCategory(System.Boolean)
+  0002: stfld System.Boolean RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::MoveExisting
+METHOD RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::ConfigEnabled(System.Boolean)
+  0002: stfld System.Boolean RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::CanEnableBuildingFromConfig
+METHOD RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::AddToCategory(System.String,System.String,ModUtil/BuildingOrdering)
+  0002: stfld System.String RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::_planScreenCategory
+  0009: stfld System.String RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::PlanScreenRelativeBuildingID
+  0010: stfld ModUtil/BuildingOrdering RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::BuildingOrdering
+METHOD RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::AddModFrom(RonivansLegacy_ChemicalProcessing.Content.ModDb.SourceModInfo,System.String)
+  0001: call System.Boolean System.String::IsNullOrEmpty(System.String)
+  0009: ldfld System.Collections.Generic.HashSet`1<System.String> RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::MigrateOldIdsFrom
+  000F: callvirt System.Boolean System.Collections.Generic.HashSet`1<System.String>::Add(!0)
+  0016: ldfld System.Collections.Generic.List`1<RonivansLegacy_ChemicalProcessing.Content.ModDb.SourceModInfo> RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::modsFrom
+  001C: callvirt System.Boolean System.Collections.Generic.List`1<RonivansLegacy_ChemicalProcessing.Content.ModDb.SourceModInfo>::Contains(!0)
+  0024: ldfld System.Collections.Generic.List`1<RonivansLegacy_ChemicalProcessing.Content.ModDb.SourceModInfo> RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::modsFrom
+  002A: callvirt System.Void System.Collections.Generic.List`1<RonivansLegacy_ChemicalProcessing.Content.ModDb.SourceModInfo>::Add(!0)
+METHOD RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::MigrateFrom(System.String[])
+  000B: call System.Boolean System.String::IsNullOrEmpty(System.String)
+  0013: ldfld System.Collections.Generic.HashSet`1<System.String> RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::MigrateOldIdsFrom
+  0019: callvirt System.Boolean System.Collections.Generic.HashSet`1<System.String>::Add(!0)
+METHOD RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::MigrateFrom(System.String)
+  0001: call System.Boolean System.String::IsNullOrEmpty(System.String)
+  0009: ldfld System.Collections.Generic.HashSet`1<System.String> RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::MigrateOldIdsFrom
+  000F: callvirt System.Boolean System.Collections.Generic.HashSet`1<System.String>::Add(!0)
+METHOD System.Collections.Generic.List`1<RonivansLegacy_ChemicalProcessing.Content.ModDb.SourceModInfo> RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::GetModsFrom()
+  0001: ldfld System.Collections.Generic.List`1<RonivansLegacy_ChemicalProcessing.Content.ModDb.SourceModInfo> RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::modsFrom
+METHOD System.Void RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::RegisterTech()
+  0001: ldfld System.String RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::_techID
+  0006: call System.Boolean System.String::IsNullOrEmpty(System.String)
+  000F: ldfld System.String RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::_techID
+  0015: ldfld System.String RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::_buildingID
+  001A: call System.Void UtilLibs.InjectionMethods::AddBuildingToTechnology(System.String,System.String)
+METHOD System.Void RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::RegisterPlanscreen()
+  0001: ldfld System.String RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::_planScreenCategory
+  0006: call System.Boolean System.String::IsNullOrEmpty(System.String)
+  000E: ldfld System.String RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::PlanScreenRelativeBuildingID
+  0013: call System.Boolean System.String::IsNullOrEmpty(System.String)
+  001C: ldfld System.Boolean RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::MoveExisting
+  0024: ldfld System.String RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::_planScreenCategory
+  0029: call HashedString HashedString::op_Implicit(System.String)
+  002F: ldfld System.String RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::_buildingID
+  0035: ldfld System.String RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::PlanScreenRelativeBuildingID
+  003A: ldstr "uncategorized"
+  0040: ldfld ModUtil/BuildingOrdering RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::BuildingOrdering
+  0045: call System.Void UtilLibs.InjectionMethods::MoveExistingBuildingToNewCategory(HashedString,System.String,System.String,System.String,ModUtil/BuildingOrdering)
+  004C: ldfld System.String RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::_planScreenCategory
+  0051: call HashedString HashedString::op_Implicit(System.String)
+  0057: ldfld System.String RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::_buildingID
+  005D: ldfld System.String RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::PlanScreenRelativeBuildingID
+  0062: ldstr "uncategorized"
+  0068: ldfld ModUtil/BuildingOrdering RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::BuildingOrdering
+  006D: call System.Void UtilLibs.InjectionMethods::AddBuildingToPlanScreenBehindNext(HashedString,System.String,System.String,System.String,ModUtil/BuildingOrdering)
+METHOD System.Void RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::RegisterLegacyMigrations()
+  0001: ldfld System.Collections.Generic.HashSet`1<System.String> RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::MigrateOldIdsFrom
+  0006: call System.Boolean System.Linq.Enumerable::Any<System.String>(System.Collections.Generic.IEnumerable`1<!!0>)
+  000F: ldfld System.String RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::_buildingID
+  0014: call Tag Tag::op_Implicit(System.String)
+  0019: call UnityEngine.GameObject Assets::TryGetPrefab(Tag)
+  001F: call SaveLoader SaveLoader::get_Instance()
+  0024: ldfld SaveManager SaveLoader::saveManager
+  002B: ldfld System.Collections.Generic.HashSet`1<System.String> RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::MigrateOldIdsFrom
+  0030: callvirt System.Collections.Generic.HashSet`1/Enumerator<!0> System.Collections.Generic.HashSet`1<System.String>::GetEnumerator()
+  003A: call !0 System.Collections.Generic.HashSet`1/Enumerator<System.String>::get_Current()
+  0041: ldfld System.Collections.Generic.Dictionary`2<Tag,UnityEngine.GameObject> SaveManager::prefabMap
+  0047: call Tag Tag::op_Implicit(System.String)
+  004C: callvirt System.Boolean System.Collections.Generic.Dictionary`2<Tag,UnityEngine.GameObject>::ContainsKey(!0)
+  0054: ldfld System.Collections.Generic.Dictionary`2<Tag,UnityEngine.GameObject> SaveManager::prefabMap
+  005A: call Tag Tag::op_Implicit(System.String)
+  0060: callvirt System.Void System.Collections.Generic.Dictionary`2<Tag,UnityEngine.GameObject>::Add(!0,!1)
+  006F: ldstr "Skipping migration registration of "
+  007B: ldstr " to "
+  0084: ldfld System.String RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::_buildingID
+  008C: ldstr " as it is already registered."
+  0092: call System.String System.String::Concat(System.String[])
+  0097: ldstr ""
+  009C: call System.Void UtilLibs.SgtLogger::warning(System.String,System.String)
+  00A3: call System.Boolean System.Collections.Generic.HashSet`1/Enumerator<System.String>::MoveNext()
+  00B4: callvirt System.Void System.IDisposable::Dispose()
+METHOD System.Void RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::.ctor()
+  0002: stfld ModUtil/BuildingOrdering RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::BuildingOrdering
+  0008: newobj System.Void System.Collections.Generic.List`1<RonivansLegacy_ChemicalProcessing.Content.ModDb.SourceModInfo>::.ctor()
+  000D: stfld System.Collections.Generic.List`1<RonivansLegacy_ChemicalProcessing.Content.ModDb.SourceModInfo> RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::modsFrom
+  0013: newobj System.Void System.Collections.Generic.HashSet`1<System.String>::.ctor()
+  0018: stfld System.Collections.Generic.HashSet`1<System.String> RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::MigrateOldIdsFrom
+  001F: stfld System.Boolean RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingInjectionEntry::CanEnableBuildingFromConfig
+  0025: call System.Void System.Object::.ctor()
+
+TYPE RonivansLegacy_ChemicalProcessing.ModAssets
+FIELD UtilLibs.ModHashes OnBuildingFacadeChanged static=True public=True
+FIELD UnityEngine.GameObject BuildingEditorWindowPrefab static=True public=True
+FIELD UnityEngine.GameObject MultiIngredientCodexVisualizer static=True public=True
+FIELD UnityEngine.GameObject CraftButton static=True public=True
+PROP System.Collections.Generic.List`1<Storage/StoredItemModifier> AllStorageMods
+METHOD System.Collections.Generic.List`1<Storage/StoredItemModifier> RonivansLegacy_ChemicalProcessing.ModAssets::get_AllStorageMods()
+  0000: call System.Collections.Generic.List`1<Storage/StoredItemModifier> RonivansLegacy_ChemicalProcessing.ModAssets::GetAllStorageMods()
+METHOD System.Collections.Generic.List`1<Storage/StoredItemModifier> RonivansLegacy_ChemicalProcessing.ModAssets::GetAllStorageMods()
+  0001: newobj System.Void System.Collections.Generic.List`1<Storage/StoredItemModifier>::.ctor(System.Int32)
+  0008: callvirt System.Void System.Collections.Generic.List`1<Storage/StoredItemModifier>::Add(!0)
+  000F: callvirt System.Void System.Collections.Generic.List`1<Storage/StoredItemModifier>::Add(!0)
+  0016: callvirt System.Void System.Collections.Generic.List`1<Storage/StoredItemModifier>::Add(!0)
+  001D: callvirt System.Void System.Collections.Generic.List`1<Storage/StoredItemModifier>::Add(!0)
+METHOD System.Void RonivansLegacy_ChemicalProcessing.ModAssets::AddMachineAttachmentPort(UnityEngine.GameObject)
+  0001: call !!0 EntityTemplateExtensions::AddOrGet<BuildingAttachPoint>(UnityEngine.GameObject)
+  0010: newobj System.Void CellOffset::.ctor(System.Int32,System.Int32)
+  0015: ldsfld Tag RonivansLegacy_ChemicalProcessing.ModAssets/Tags::AIO_StackableMachine
+  001B: newobj System.Void BuildingAttachPoint/HardPoint::.ctor(CellOffset,Tag,AttachableBuilding)
+  0025: stfld BuildingAttachPoint/HardPoint[] BuildingAttachPoint::points
+METHOD System.Void RonivansLegacy_ChemicalProcessing.ModAssets::LoadAssets()
+  0000: ldstr "ronivan_aio"
+  0007: call UnityEngine.AssetBundle UtilLibs.AssetUtils::LoadAssetBundle(System.String,System.String,System.Boolean)
+  000D: ldstr "Assets/UIs/BuildingEditor.prefab"
+  0012: callvirt !!0 UnityEngine.AssetBundle::LoadAsset<UnityEngine.GameObject>(System.String)
+  0017: stsfld UnityEngine.GameObject RonivansLegacy_ChemicalProcessing.ModAssets::BuildingEditorWindowPrefab
+  001D: ldstr "Assets/UIs/HoverableMultiEntry.prefab"
+  0022: callvirt !!0 UnityEngine.AssetBundle::LoadAsset<UnityEngine.GameObject>(System.String)
+  0027: stsfld UnityEngine.GameObject RonivansLegacy_ChemicalProcessing.ModAssets::MultiIngredientCodexVisualizer
+  002C: ldstr "Assets/UIs/CraftButton.prefab"
+  0031: callvirt !!0 UnityEngine.AssetBundle::LoadAsset<UnityEngine.GameObject>(System.String)
+  0036: stsfld UnityEngine.GameObject RonivansLegacy_ChemicalProcessing.ModAssets::CraftButton
+  003B: ldsfld UnityEngine.GameObject RonivansLegacy_ChemicalProcessing.ModAssets::MultiIngredientCodexVisualizer
+  0040: callvirt !!0 UnityEngine.GameObject::AddComponent<RonivansLegacy_ChemicalProcessing.Content.Scripts.UI.MultiIngredientCodexVisualizer>()
+  0046: ldsfld UnityEngine.GameObject RonivansLegacy_ChemicalProcessing.ModAssets::BuildingEditorWindowPrefab
+  004B: ldstr "BuildingEditorWindowPrefab"
+  0050: call System.Void UtilLibs.SgtLogger::Assert(System.Object,System.String)
+  0055: newobj System.Void UtilLibs.TMPConverter::.ctor()
+  005B: ldsfld UnityEngine.GameObject RonivansLegacy_ChemicalProcessing.ModAssets::BuildingEditorWindowPrefab
+  0061: callvirt System.Void UtilLibs.TMPConverter::ReplaceAllText(UnityEngine.GameObject,System.Boolean)
+  0067: ldsfld UnityEngine.GameObject RonivansLegacy_ChemicalProcessing.ModAssets::MultiIngredientCodexVisualizer
+  006D: callvirt System.Void UtilLibs.TMPConverter::ReplaceAllText(UnityEngine.GameObject,System.Boolean)
+  0072: ldsfld UnityEngine.GameObject RonivansLegacy_ChemicalProcessing.ModAssets::CraftButton
+  0078: callvirt System.Void UtilLibs.TMPConverter::ReplaceAllText(UnityEngine.GameObject,System.Boolean)
+METHOD System.Collections.Generic.List`1<Tag> RonivansLegacy_ChemicalProcessing.ModAssets::GetNonLiquifiableSolids()
+  0000: ldsfld System.Collections.Generic.List`1<Tag> TUNING.STORAGEFILTERS::NOT_EDIBLE_SOLIDS
+  0005: ldsfld System.Func`2<Tag,System.Boolean> RonivansLegacy_ChemicalProcessing.ModAssets/<>c::<>9__10_0
+  000E: ldsfld RonivansLegacy_ChemicalProcessing.ModAssets/<>c RonivansLegacy_ChemicalProcessing.ModAssets/<>c::<>9
+  0013: ldftn System.Boolean RonivansLegacy_ChemicalProcessing.ModAssets/<>c::<GetNonLiquifiableSolids>b__10_0(Tag)
+  0019: newobj System.Void System.Func`2<Tag,System.Boolean>::.ctor(System.Object,System.IntPtr)
+  001F: stsfld System.Func`2<Tag,System.Boolean> RonivansLegacy_ChemicalProcessing.ModAssets/<>c::<>9__10_0
+  0024: call System.Collections.Generic.IEnumerable`1<!!0> System.Linq.Enumerable::Where<Tag>(System.Collections.Generic.IEnumerable`1<!!0>,System.Func`2<!!0,System.Boolean>)
+  0029: call System.Collections.Generic.List`1<!!0> System.Linq.Enumerable::ToList<Tag>(System.Collections.Generic.IEnumerable`1<!!0>)
+METHOD System.Void RonivansLegacy_ChemicalProcessing.ModAssets::MakeWallHidePipesIfEnabled(BuildingDef)
+  0000: call T PeterHan.PLib.Options.SingletonOptions`1<RonivansLegacy_ChemicalProcessing.Config>::get_Instance()
+  0005: callvirt System.Boolean RonivansLegacy_ChemicalProcessing.Config::get_Drywall_Hides_Pipes()
+  000F: stfld Grid/SceneLayer BuildingDef::SceneLayer
+METHOD System.Void RonivansLegacy_ChemicalProcessing.ModAssets::HideFromCodex(UnityEngine.GameObject)
+  0001: ldsfld Tag GameTags::HideFromCodex
+  0006: call System.Void KPrefabIDExtensions::AddTag(UnityEngine.GameObject,Tag)
+  000C: ldsfld Tag GameTags::DeprecatedContent
+  0011: call System.Void KPrefabIDExtensions::AddTag(UnityEngine.GameObject,Tag)
+  0017: ldsfld Tag GameTags::HideFromSpawnTool
+  001C: call System.Void KPrefabIDExtensions::AddTag(UnityEngine.GameObject,Tag)
+METHOD System.Void RonivansLegacy_ChemicalProcessing.ModAssets::.ctor()
+  0001: call System.Void System.Object::.ctor()
+METHOD System.Void RonivansLegacy_ChemicalProcessing.ModAssets::.cctor()
+  0000: ldstr "RonivanAIO_OnBuildingFacadeChanged"
+  0005: newobj System.Void UtilLibs.ModHashes::.ctor(System.String)
+  000A: stsfld UtilLibs.ModHashes RonivansLegacy_ChemicalProcessing.ModAssets::OnBuildingFacadeChanged
+
+TYPE RonivansLegacy_ChemicalProcessing.ModAssets
+FIELD UtilLibs.ModHashes OnBuildingFacadeChanged static=True public=True
+FIELD UnityEngine.GameObject BuildingEditorWindowPrefab static=True public=True
+FIELD UnityEngine.GameObject MultiIngredientCodexVisualizer static=True public=True
+FIELD UnityEngine.GameObject CraftButton static=True public=True
+PROP System.Collections.Generic.List`1<Storage/StoredItemModifier> AllStorageMods
+METHOD System.Collections.Generic.List`1<Storage/StoredItemModifier> RonivansLegacy_ChemicalProcessing.ModAssets::get_AllStorageMods()
+  0000: call System.Collections.Generic.List`1<Storage/StoredItemModifier> RonivansLegacy_ChemicalProcessing.ModAssets::GetAllStorageMods()
+METHOD System.Collections.Generic.List`1<Storage/StoredItemModifier> RonivansLegacy_ChemicalProcessing.ModAssets::GetAllStorageMods()
+  0001: newobj System.Void System.Collections.Generic.List`1<Storage/StoredItemModifier>::.ctor(System.Int32)
+  0008: callvirt System.Void System.Collections.Generic.List`1<Storage/StoredItemModifier>::Add(!0)
+  000F: callvirt System.Void System.Collections.Generic.List`1<Storage/StoredItemModifier>::Add(!0)
+  0016: callvirt System.Void System.Collections.Generic.List`1<Storage/StoredItemModifier>::Add(!0)
+  001D: callvirt System.Void System.Collections.Generic.List`1<Storage/StoredItemModifier>::Add(!0)
+METHOD System.Void RonivansLegacy_ChemicalProcessing.ModAssets::AddMachineAttachmentPort(UnityEngine.GameObject)
+  0001: call !!0 EntityTemplateExtensions::AddOrGet<BuildingAttachPoint>(UnityEngine.GameObject)
+  0010: newobj System.Void CellOffset::.ctor(System.Int32,System.Int32)
+  0015: ldsfld Tag RonivansLegacy_ChemicalProcessing.ModAssets/Tags::AIO_StackableMachine
+  001B: newobj System.Void BuildingAttachPoint/HardPoint::.ctor(CellOffset,Tag,AttachableBuilding)
+  0025: stfld BuildingAttachPoint/HardPoint[] BuildingAttachPoint::points
+METHOD System.Void RonivansLegacy_ChemicalProcessing.ModAssets::LoadAssets()
+  0000: ldstr "ronivan_aio"
+  0007: call UnityEngine.AssetBundle UtilLibs.AssetUtils::LoadAssetBundle(System.String,System.String,System.Boolean)
+  000D: ldstr "Assets/UIs/BuildingEditor.prefab"
+  0012: callvirt !!0 UnityEngine.AssetBundle::LoadAsset<UnityEngine.GameObject>(System.String)
+  0017: stsfld UnityEngine.GameObject RonivansLegacy_ChemicalProcessing.ModAssets::BuildingEditorWindowPrefab
+  001D: ldstr "Assets/UIs/HoverableMultiEntry.prefab"
+  0022: callvirt !!0 UnityEngine.AssetBundle::LoadAsset<UnityEngine.GameObject>(System.String)
+  0027: stsfld UnityEngine.GameObject RonivansLegacy_ChemicalProcessing.ModAssets::MultiIngredientCodexVisualizer
+  002C: ldstr "Assets/UIs/CraftButton.prefab"
+  0031: callvirt !!0 UnityEngine.AssetBundle::LoadAsset<UnityEngine.GameObject>(System.String)
+  0036: stsfld UnityEngine.GameObject RonivansLegacy_ChemicalProcessing.ModAssets::CraftButton
+  003B: ldsfld UnityEngine.GameObject RonivansLegacy_ChemicalProcessing.ModAssets::MultiIngredientCodexVisualizer
+  0040: callvirt !!0 UnityEngine.GameObject::AddComponent<RonivansLegacy_ChemicalProcessing.Content.Scripts.UI.MultiIngredientCodexVisualizer>()
+  0046: ldsfld UnityEngine.GameObject RonivansLegacy_ChemicalProcessing.ModAssets::BuildingEditorWindowPrefab
+  004B: ldstr "BuildingEditorWindowPrefab"
+  0050: call System.Void UtilLibs.SgtLogger::Assert(System.Object,System.String)
+  0055: newobj System.Void UtilLibs.TMPConverter::.ctor()
+  005B: ldsfld UnityEngine.GameObject RonivansLegacy_ChemicalProcessing.ModAssets::BuildingEditorWindowPrefab
+  0061: callvirt System.Void UtilLibs.TMPConverter::ReplaceAllText(UnityEngine.GameObject,System.Boolean)
+  0067: ldsfld UnityEngine.GameObject RonivansLegacy_ChemicalProcessing.ModAssets::MultiIngredientCodexVisualizer
+  006D: callvirt System.Void UtilLibs.TMPConverter::ReplaceAllText(UnityEngine.GameObject,System.Boolean)
+  0072: ldsfld UnityEngine.GameObject RonivansLegacy_ChemicalProcessing.ModAssets::CraftButton
+  0078: callvirt System.Void UtilLibs.TMPConverter::ReplaceAllText(UnityEngine.GameObject,System.Boolean)
+METHOD System.Collections.Generic.List`1<Tag> RonivansLegacy_ChemicalProcessing.ModAssets::GetNonLiquifiableSolids()
+  0000: ldsfld System.Collections.Generic.List`1<Tag> TUNING.STORAGEFILTERS::NOT_EDIBLE_SOLIDS
+  0005: ldsfld System.Func`2<Tag,System.Boolean> RonivansLegacy_ChemicalProcessing.ModAssets/<>c::<>9__10_0
+  000E: ldsfld RonivansLegacy_ChemicalProcessing.ModAssets/<>c RonivansLegacy_ChemicalProcessing.ModAssets/<>c::<>9
+  0013: ldftn System.Boolean RonivansLegacy_ChemicalProcessing.ModAssets/<>c::<GetNonLiquifiableSolids>b__10_0(Tag)
+  0019: newobj System.Void System.Func`2<Tag,System.Boolean>::.ctor(System.Object,System.IntPtr)
+  001F: stsfld System.Func`2<Tag,System.Boolean> RonivansLegacy_ChemicalProcessing.ModAssets/<>c::<>9__10_0
+  0024: call System.Collections.Generic.IEnumerable`1<!!0> System.Linq.Enumerable::Where<Tag>(System.Collections.Generic.IEnumerable`1<!!0>,System.Func`2<!!0,System.Boolean>)
+  0029: call System.Collections.Generic.List`1<!!0> System.Linq.Enumerable::ToList<Tag>(System.Collections.Generic.IEnumerable`1<!!0>)
+METHOD System.Void RonivansLegacy_ChemicalProcessing.ModAssets::MakeWallHidePipesIfEnabled(BuildingDef)
+  0000: call T PeterHan.PLib.Options.SingletonOptions`1<RonivansLegacy_ChemicalProcessing.Config>::get_Instance()
+  0005: callvirt System.Boolean RonivansLegacy_ChemicalProcessing.Config::get_Drywall_Hides_Pipes()
+  000F: stfld Grid/SceneLayer BuildingDef::SceneLayer
+METHOD System.Void RonivansLegacy_ChemicalProcessing.ModAssets::HideFromCodex(UnityEngine.GameObject)
+  0001: ldsfld Tag GameTags::HideFromCodex
+  0006: call System.Void KPrefabIDExtensions::AddTag(UnityEngine.GameObject,Tag)
+  000C: ldsfld Tag GameTags::DeprecatedContent
+  0011: call System.Void KPrefabIDExtensions::AddTag(UnityEngine.GameObject,Tag)
+  0017: ldsfld Tag GameTags::HideFromSpawnTool
+  001C: call System.Void KPrefabIDExtensions::AddTag(UnityEngine.GameObject,Tag)
+METHOD System.Void RonivansLegacy_ChemicalProcessing.ModAssets::.ctor()
+  0001: call System.Void System.Object::.ctor()
+METHOD System.Void RonivansLegacy_ChemicalProcessing.ModAssets::.cctor()
+  0000: ldstr "RonivanAIO_OnBuildingFacadeChanged"
+  0005: newobj System.Void UtilLibs.ModHashes::.ctor(System.String)
+  000A: stsfld UtilLibs.ModHashes RonivansLegacy_ChemicalProcessing.ModAssets::OnBuildingFacadeChanged
+
+TYPE RonivansLegacy_ChemicalProcessing.Config
+FIELD System.Boolean Toxicity static=True public=True
+FIELD System.Boolean <ChemicalProcessing_IndustrialOverhaul_Enabled>k__BackingField static=False public=False
+FIELD System.Boolean <ChemicalProcessing_BioChemistry_Enabled>k__BackingField static=False public=False
+FIELD System.Boolean <MineralProcessing_Metallurgy_Enabled>k__BackingField static=False public=False
+FIELD System.Boolean <MineralProcessing_Mining_Enabled>k__BackingField static=False public=False
+FIELD System.Boolean <NuclearProcessing_Enabled>k__BackingField static=False public=False
+FIELD System.Boolean <DupesMachinery_Enabled>k__BackingField static=False public=False
+FIELD System.Boolean <DupesEngineering_Enabled>k__BackingField static=False public=False
+FIELD System.Boolean <CustomReservoirs_Enabled>k__BackingField static=False public=False
+FIELD System.Boolean <ReservoirsInConduitCategory>k__BackingField static=False public=False
+FIELD System.Boolean <DupesLogistics_Enabled>k__BackingField static=False public=False
+FIELD System.Boolean <HighPressureApplications_Enabled>k__BackingField static=False public=False
+FIELD System.Boolean <HPA_Rails_Enabled>k__BackingField static=False public=False
+FIELD System.Boolean <HPA_Rails_Insulation_Enabled>k__BackingField static=False public=False
+FIELD System.Boolean <DupesRefrigeration_Enabled>k__BackingField static=False public=False
+FIELD System.Boolean <CustomGenerators_Enabled>k__BackingField static=False public=False
+FIELD System.Boolean <ModGeysersGeneric>k__BackingField static=False public=False
+FIELD System.Boolean <WorldgenElementInjection>k__BackingField static=False public=False
+FIELD System.Single <HPA_Capacity_Gas_Multiplier>k__BackingField static=False public=False
+FIELD System.Single <HPA_Capacity_Liquid_Multiplier>k__BackingField static=False public=False
+FIELD System.Int32 <HPA_Pump_Base_Mult_Gas>k__BackingField static=False public=False
+FIELD System.Int32 <HPA_Pump_Base_Mult_Liquid>k__BackingField static=False public=False
+FIELD System.Single <Logistic_Rail_Capacity_Multiplier>k__BackingField static=False public=False
+FIELD System.Single <HPA_Capacity_Solid_Multiplier>k__BackingField static=False public=False
+FIELD System.Int32 <Biochem_AnaerobicDigesterBuff>k__BackingField static=False public=False
+FIELD System.Single <Biochem_BioOilMultiplier>k__BackingField static=False public=False
+FIELD System.Single <ChemProc_RefineryFudge>k__BackingField static=False public=False
+FIELD System.Single <ChemProc_AdvRefineryFudge>k__BackingField static=False public=False
+FIELD System.Single <ChemProc_ArcFudge>k__BackingField static=False public=False
+FIELD System.Int32 <ArcFurnace_CapacitorSizeMJ>k__BackingField static=False public=False
+FIELD System.Boolean <Drywall_Hides_Pipes>k__BackingField static=False public=False
+FIELD System.Boolean <HPA_OverheatImmunePumps>k__BackingField static=False public=False
+FIELD System.Int32 _primaryElement_MaxMassOverride static=False public=False
+PROP System.Action`1<System.Object> Button_OpenBuildingConfigEditor
+PROP System.Boolean ChemicalProcessing_IndustrialOverhaul_Enabled
+PROP System.Action`1<System.Object> Button_OpenBuildingConfigEditor_IO
+PROP System.Boolean ChemicalProcessing_BioChemistry_Enabled
+PROP System.Action`1<System.Object> Button_OpenBuildingConfigEditor_Biochem
+PROP System.Boolean MineralProcessing_Metallurgy_Enabled
+PROP System.Action`1<System.Object> Button_OpenBuildingConfigEditor_Metallurgy
+PROP System.Boolean MineralProcessing_Mining_Enabled
+PROP System.Action`1<System.Object> Button_OpenBuildingConfigEditor_Mining
+PROP System.Boolean NuclearProcessing_Enabled
+PROP System.Action`1<System.Object> Button_OpenBuildingConfigEditor_Nuclear
+PROP System.Boolean DupesMachinery_Enabled
+PROP System.Action`1<System.Object> Button_OpenBuildingConfigEditor_Machinery
+PROP System.Boolean DupesEngineering_Enabled
+PROP System.Action`1<System.Object> Button_OpenBuildingConfigEditor_Engineering
+PROP System.Boolean CustomReservoirs_Enabled
+PROP System.Boolean ReservoirsInConduitCategory
+PROP System.Action`1<System.Object> Button_OpenBuildingConfigEditor_Reservoirs
+PROP System.Boolean DupesLogistics_Enabled
+PROP System.Action`1<System.Object> Button_OpenBuildingConfigEditor_Logistics
+PROP System.Boolean HighPressureApplications_Enabled
+PROP System.Action`1<System.Object> Button_OpenBuildingConfigEditor_HPA
+PROP System.Boolean HPA_Rails_Enabled
+PROP System.Boolean HPA_Rails_Mod_Enabled
+PROP System.Boolean HPA_Rails_Insulation_Enabled
+PROP System.Boolean HPA_Rails_Insulation_Mod_Enabled
+PROP System.Boolean DupesRefrigeration_Enabled
+PROP System.Action`1<System.Object> Button_OpenBuildingConfigEditor_Refrigeration
+PROP System.Boolean CustomGenerators_Enabled
+PROP System.Action`1<System.Object> Button_OpenBuildingConfigEditor_Generators
+PROP System.Boolean ModGeysersGeneric
+PROP System.Boolean WorldgenElementInjection
+PROP System.Single HPA_Capacity_Gas_Multiplier
+PROP System.Single HPA_Capacity_Liquid_Multiplier
+PROP System.Int32 HPA_Pump_Base_Mult_Gas
+PROP System.Int32 HPA_Pump_Base_Mult_Liquid
+PROP System.Single Logistic_Rail_Capacity_Multiplier
+PROP System.Single HPA_Capacity_Solid_Multiplier
+PROP System.Int32 Biochem_AnaerobicDigesterBuff
+PROP System.Single Biochem_BioOilMultiplier
+PROP System.Single ChemProc_RefineryFudge
+PROP System.Single ChemProc_AdvRefineryFudge
+PROP System.Single ChemProc_ArcFudge
+PROP System.Int32 ArcFurnace_CapacitorSizeMJ
+PROP System.Boolean Drywall_Hides_Pipes
+PROP System.Boolean HPA_OverheatImmunePumps
+PROP System.Int32 PrimaryElement_MaxMassOverride
+METHOD System.Boolean RonivansLegacy_ChemicalProcessing.Config::SubModEnabled(RonivansLegacy_ChemicalProcessing.Content.ModDb.SourceModInfo)
+  0001: newobj System.Void <>z__ReadOnlySingleElementList`1<RonivansLegacy_ChemicalProcessing.Content.ModDb.SourceModInfo>::.ctor(T)
+  0006: call System.Boolean RonivansLegacy_ChemicalProcessing.Config::ModBuildingEnabled(System.Collections.Generic.IEnumerable`1<RonivansLegacy_ChemicalProcessing.Content.ModDb.SourceModInfo>)
+METHOD System.Boolean RonivansLegacy_ChemicalProcessing.Config::ModBuildingEnabled(System.Collections.Generic.IEnumerable`1<RonivansLegacy_ChemicalProcessing.Content.ModDb.SourceModInfo>)
+  0004: call System.Boolean System.Linq.Enumerable::Any<RonivansLegacy_ChemicalProcessing.Content.ModDb.SourceModInfo>(System.Collections.Generic.IEnumerable`1<!!0>)
+  000C: ldstr "ModBuildingEnabled called with null or empty buildingMods"
+  0011: call System.Void Debug::Assert(System.Boolean,System.Object)
+  0017: callvirt System.Collections.Generic.IEnumerator`1<!0> System.Collections.Generic.IEnumerable`1<RonivansLegacy_ChemicalProcessing.Content.ModDb.SourceModInfo>::GetEnumerator()
+  0023: callvirt !0 System.Collections.Generic.IEnumerator`1<RonivansLegacy_ChemicalProcessing.Content.ModDb.SourceModInfo>::get_Current()
+  0064: call T PeterHan.PLib.Options.SingletonOptions`1<RonivansLegacy_ChemicalProcessing.Config>::get_Instance()
+  0069: callvirt System.Boolean RonivansLegacy_ChemicalProcessing.Config::get_ChemicalProcessing_IndustrialOverhaul_Enabled()
+  007A: call T PeterHan.PLib.Options.SingletonOptions`1<RonivansLegacy_ChemicalProcessing.Config>::get_Instance()
+  007F: callvirt System.Boolean RonivansLegacy_ChemicalProcessing.Config::get_ChemicalProcessing_BioChemistry_Enabled()
+  0090: call T PeterHan.PLib.Options.SingletonOptions`1<RonivansLegacy_ChemicalProcessing.Config>::get_Instance()
+  0095: callvirt System.Boolean RonivansLegacy_ChemicalProcessing.Config::get_MineralProcessing_Metallurgy_Enabled()
+  00A6: call T PeterHan.PLib.Options.SingletonOptions`1<RonivansLegacy_ChemicalProcessing.Config>::get_Instance()
+  00AB: callvirt System.Boolean RonivansLegacy_ChemicalProcessing.Config::get_MineralProcessing_Mining_Enabled()
+  00BC: call T PeterHan.PLib.Options.SingletonOptions`1<RonivansLegacy_ChemicalProcessing.Config>::get_Instance()
+  00C1: callvirt System.Boolean RonivansLegacy_ChemicalProcessing.Config::get_NuclearProcessing_Enabled()
+  00CF: call T PeterHan.PLib.Options.SingletonOptions`1<RonivansLegacy_ChemicalProcessing.Config>::get_Instance()
+  00D4: callvirt System.Boolean RonivansLegacy_ChemicalProcessing.Config::get_DupesMachinery_Enabled()
+  00DF: call T PeterHan.PLib.Options.SingletonOptions`1<RonivansLegacy_ChemicalProcessing.Config>::get_Instance()
+  00E4: callvirt System.Boolean RonivansLegacy_ChemicalProcessing.Config::get_DupesEngineering_Enabled()
+  00EF: call T PeterHan.PLib.Options.SingletonOptions`1<RonivansLegacy_ChemicalProcessing.Config>::get_Instance()
+  00F4: callvirt System.Boolean RonivansLegacy_ChemicalProcessing.Config::get_CustomReservoirs_Enabled()
+  00FF: call T PeterHan.PLib.Options.SingletonOptions`1<RonivansLegacy_ChemicalProcessing.Config>::get_Instance()
+  0104: callvirt System.Boolean RonivansLegacy_ChemicalProcessing.Config::get_DupesLogistics_Enabled()
+  010F: call T PeterHan.PLib.Options.SingletonOptions`1<RonivansLegacy_ChemicalProcessing.Config>::get_Instance()
+  0114: callvirt System.Boolean RonivansLegacy_ChemicalProcessing.Config::get_HighPressureApplications_Enabled()
+  011F: call T PeterHan.PLib.Options.SingletonOptions`1<RonivansLegacy_ChemicalProcessing.Config>::get_Instance()
+  0124: callvirt System.Boolean RonivansLegacy_ChemicalProcessing.Config::get_DupesRefrigeration_Enabled()
+  012F: call T PeterHan.PLib.Options.SingletonOptions`1<RonivansLegacy_ChemicalProcessing.Config>::get_Instance()
+  0134: callvirt System.Boolean RonivansLegacy_ChemicalProcessing.Config::get_CustomGenerators_Enabled()
+  0140: callvirt System.Boolean System.Collections.IEnumerator::MoveNext()
+  0150: callvirt System.Void System.IDisposable::Dispose()
+METHOD System.Action`1<System.Object> RonivansLegacy_ChemicalProcessing.Config::get_Button_OpenBuildingConfigEditor()
+  0000: ldsfld System.Action`1<System.Object> RonivansLegacy_ChemicalProcessing.Config/<>c::<>9__4_0
+  0009: ldsfld RonivansLegacy_ChemicalProcessing.Config/<>c RonivansLegacy_ChemicalProcessing.Config/<>c::<>9
+  000E: ldftn System.Void RonivansLegacy_ChemicalProcessing.Config/<>c::<get_Button_OpenBuildingConfigEditor>b__4_0(System.Object)
+  0014: newobj System.Void System.Action`1<System.Object>::.ctor(System.Object,System.IntPtr)
+  001A: stsfld System.Action`1<System.Object> RonivansLegacy_ChemicalProcessing.Config/<>c::<>9__4_0
+METHOD System.Boolean RonivansLegacy_ChemicalProcessing.Config::get_ChemicalProcessing_IndustrialOverhaul_Enabled()
+  0001: ldfld System.Boolean RonivansLegacy_ChemicalProcessing.Config::<ChemicalProcessing_IndustrialOverhaul_Enabled>k__BackingField
+METHOD System.Void RonivansLegacy_ChemicalProcessing.Config::set_ChemicalProcessing_IndustrialOverhaul_Enabled(System.Boolean)
+  0002: stfld System.Boolean RonivansLegacy_ChemicalProcessing.Config::<ChemicalProcessing_IndustrialOverhaul_Enabled>k__BackingField
+METHOD System.Action`1<System.Object> RonivansLegacy_ChemicalProcessing.Config::get_Button_OpenBuildingConfigEditor_IO()
+  0000: ldsfld System.Action`1<System.Object> RonivansLegacy_ChemicalProcessing.Config/<>c::<>9__10_0
+  0009: ldsfld RonivansLegacy_ChemicalProcessing.Config/<>c RonivansLegacy_ChemicalProcessing.Config/<>c::<>9
+  000E: ldftn System.Void RonivansLegacy_ChemicalProcessing.Config/<>c::<get_Button_OpenBuildingConfigEditor_IO>b__10_0(System.Object)
+  0014: newobj System.Void System.Action`1<System.Object>::.ctor(System.Object,System.IntPtr)
+  001A: stsfld System.Action`1<System.Object> RonivansLegacy_ChemicalProcessing.Config/<>c::<>9__10_0
+METHOD System.Boolean RonivansLegacy_ChemicalProcessing.Config::get_ChemicalProcessing_BioChemistry_Enabled()
+  0001: ldfld System.Boolean RonivansLegacy_ChemicalProcessing.Config::<ChemicalProcessing_BioChemistry_Enabled>k__BackingField
+METHOD System.Void RonivansLegacy_ChemicalProcessing.Config::set_ChemicalProcessing_BioChemistry_Enabled(System.Boolean)
+  0002: stfld System.Boolean RonivansLegacy_ChemicalProcessing.Config::<ChemicalProcessing_BioChemistry_Enabled>k__BackingField
+METHOD System.Action`1<System.Object> RonivansLegacy_ChemicalProcessing.Config::get_Button_OpenBuildingConfigEditor_Biochem()
+  0000: ldsfld System.Action`1<System.Object> RonivansLegacy_ChemicalProcessing.Config/<>c::<>9__16_0
+  0009: ldsfld RonivansLegacy_ChemicalProcessing.Config/<>c RonivansLegacy_ChemicalProcessing.Config/<>c::<>9
+  000E: ldftn System.Void RonivansLegacy_ChemicalProcessing.Config/<>c::<get_Button_OpenBuildingConfigEditor_Biochem>b__16_0(System.Object)
+  0014: newobj System.Void System.Action`1<System.Object>::.ctor(System.Object,System.IntPtr)
+  001A: stsfld System.Action`1<System.Object> RonivansLegacy_ChemicalProcessing.Config/<>c::<>9__16_0
+METHOD System.Boolean RonivansLegacy_ChemicalProcessing.Config::get_MineralProcessing_Metallurgy_Enabled()
+  0001: ldfld System.Boolean RonivansLegacy_ChemicalProcessing.Config::<MineralProcessing_Metallurgy_Enabled>k__BackingField
+METHOD System.Void RonivansLegacy_ChemicalProcessing.Config::set_MineralProcessing_Metallurgy_Enabled(System.Boolean)
+  0002: stfld System.Boolean RonivansLegacy_ChemicalProcessing.Config::<MineralProcessing_Metallurgy_Enabled>k__BackingField
+METHOD System.Action`1<System.Object> RonivansLegacy_ChemicalProcessing.Config::get_Button_OpenBuildingConfigEditor_Metallurgy()
+  0000: ldsfld System.Action`1<System.Object> RonivansLegacy_ChemicalProcessing.Config/<>c::<>9__22_0
+  0009: ldsfld RonivansLegacy_ChemicalProcessing.Config/<>c RonivansLegacy_ChemicalProcessing.Config/<>c::<>9
+  000E: ldftn System.Void RonivansLegacy_ChemicalProcessing.Config/<>c::<get_Button_OpenBuildingConfigEditor_Metallurgy>b__22_0(System.Object)
+  0014: newobj System.Void System.Action`1<System.Object>::.ctor(System.Object,System.IntPtr)
+  001A: stsfld System.Action`1<System.Object> RonivansLegacy_ChemicalProcessing.Config/<>c::<>9__22_0
+METHOD System.Boolean RonivansLegacy_ChemicalProcessing.Config::get_MineralProcessing_Mining_Enabled()
+  0001: ldfld System.Boolean RonivansLegacy_ChemicalProcessing.Config::<MineralProcessing_Mining_Enabled>k__BackingField
+METHOD System.Void RonivansLegacy_ChemicalProcessing.Config::set_MineralProcessing_Mining_Enabled(System.Boolean)
+  0002: stfld System.Boolean RonivansLegacy_ChemicalProcessing.Config::<MineralProcessing_Mining_Enabled>k__BackingField
+METHOD System.Action`1<System.Object> RonivansLegacy_ChemicalProcessing.Config::get_Button_OpenBuildingConfigEditor_Mining()
+  0000: ldsfld System.Action`1<System.Object> RonivansLegacy_ChemicalProcessing.Config/<>c::<>9__28_0
+  0009: ldsfld RonivansLegacy_ChemicalProcessing.Config/<>c RonivansLegacy_ChemicalProcessing.Config/<>c::<>9
+  000E: ldftn System.Void RonivansLegacy_ChemicalProcessing.Config/<>c::<get_Button_OpenBuildingConfigEditor_Mining>b__28_0(System.Object)
+  0014: newobj System.Void System.Action`1<System.Object>::.ctor(System.Object,System.IntPtr)
+  001A: stsfld System.Action`1<System.Object> RonivansLegacy_ChemicalProcessing.Config/<>c::<>9__28_0
+METHOD System.Boolean RonivansLegacy_ChemicalProcessing.Config::get_NuclearProcessing_Enabled()
+  0001: ldfld System.Boolean RonivansLegacy_ChemicalProcessing.Config::<NuclearProcessing_Enabled>k__BackingField
+METHOD System.Void RonivansLegacy_ChemicalProcessing.Config::set_NuclearProcessing_Enabled(System.Boolean)
+  0002: stfld System.Boolean RonivansLegacy_ChemicalProcessing.Config::<NuclearProcessing_Enabled>k__BackingField
+METHOD System.Action`1<System.Object> RonivansLegacy_ChemicalProcessing.Config::get_Button_OpenBuildingConfigEditor_Nuclear()
+  0000: ldsfld System.Action`1<System.Object> RonivansLegacy_ChemicalProcessing.Config/<>c::<>9__34_0
+  0009: ldsfld RonivansLegacy_ChemicalProcessing.Config/<>c RonivansLegacy_ChemicalProcessing.Config/<>c::<>9
+  000E: ldftn System.Void RonivansLegacy_ChemicalProcessing.Config/<>c::<get_Button_OpenBuildingConfigEditor_Nuclear>b__34_0(System.Object)
+  0014: newobj System.Void System.Action`1<System.Object>::.ctor(System.Object,System.IntPtr)
+  001A: stsfld System.Action`1<System.Object> RonivansLegacy_ChemicalProcessing.Config/<>c::<>9__34_0
+METHOD System.Boolean RonivansLegacy_ChemicalProcessing.Config::get_DupesMachinery_Enabled()
+  0001: ldfld System.Boolean RonivansLegacy_ChemicalProcessing.Config::<DupesMachinery_Enabled>k__BackingField
+METHOD System.Void RonivansLegacy_ChemicalProcessing.Config::set_DupesMachinery_Enabled(System.Boolean)
+  0002: stfld System.Boolean RonivansLegacy_ChemicalProcessing.Config::<DupesMachinery_Enabled>k__BackingField
+METHOD System.Action`1<System.Object> RonivansLegacy_ChemicalProcessing.Config::get_Button_OpenBuildingConfigEditor_Machinery()
+  0000: ldsfld System.Action`1<System.Object> RonivansLegacy_ChemicalProcessing.Config/<>c::<>9__40_0
+  0009: ldsfld RonivansLegacy_ChemicalProcessing.Config/<>c RonivansLegacy_ChemicalProcessing.Config/<>c::<>9
+  000E: ldftn System.Void RonivansLegacy_ChemicalProcessing.Config/<>c::<get_Button_OpenBuildingConfigEditor_Machinery>b__40_0(System.Object)
+  0014: newobj System.Void System.Action`1<System.Object>::.ctor(System.Object,System.IntPtr)
+  001A: stsfld System.Action`1<System.Object> RonivansLegacy_ChemicalProcessing.Config/<>c::<>9__40_0
+METHOD System.Boolean RonivansLegacy_ChemicalProcessing.Config::get_DupesEngineering_Enabled()
+  0001: ldfld System.Boolean RonivansLegacy_ChemicalProcessing.Config::<DupesEngineering_Enabled>k__BackingField
+METHOD System.Void RonivansLegacy_ChemicalProcessing.Config::set_DupesEngineering_Enabled(System.Boolean)
+  0002: stfld System.Boolean RonivansLegacy_ChemicalProcessing.Config::<DupesEngineering_Enabled>k__BackingField
+METHOD System.Action`1<System.Object> RonivansLegacy_ChemicalProcessing.Config::get_Button_OpenBuildingConfigEditor_Engineering()
+  0000: ldsfld System.Action`1<System.Object> RonivansLegacy_ChemicalProcessing.Config/<>c::<>9__46_0
+  0009: ldsfld RonivansLegacy_ChemicalProcessing.Config/<>c RonivansLegacy_ChemicalProcessing.Config/<>c::<>9
+  000E: ldftn System.Void RonivansLegacy_ChemicalProcessing.Config/<>c::<get_Button_OpenBuildingConfigEditor_Engineering>b__46_0(System.Object)
+  0014: newobj System.Void System.Action`1<System.Object>::.ctor(System.Object,System.IntPtr)
+  001A: stsfld System.Action`1<System.Object> RonivansLegacy_ChemicalProcessing.Config/<>c::<>9__46_0
+METHOD System.Boolean RonivansLegacy_ChemicalProcessing.Config::get_CustomReservoirs_Enabled()
+  0001: ldfld System.Boolean RonivansLegacy_ChemicalProcessing.Config::<CustomReservoirs_Enabled>k__BackingField
+METHOD System.Void RonivansLegacy_ChemicalProcessing.Config::set_CustomReservoirs_Enabled(System.Boolean)
+  0002: stfld System.Boolean RonivansLegacy_ChemicalProcessing.Config::<CustomReservoirs_Enabled>k__BackingField
+METHOD System.Boolean RonivansLegacy_ChemicalProcessing.Config::get_ReservoirsInConduitCategory()
+  0001: ldfld System.Boolean RonivansLegacy_ChemicalProcessing.Config::<ReservoirsInConduitCategory>k__BackingField
+METHOD System.Void RonivansLegacy_ChemicalProcessing.Config::set_ReservoirsInConduitCategory(System.Boolean)
+  0002: stfld System.Boolean RonivansLegacy_ChemicalProcessing.Config::<ReservoirsInConduitCategory>k__BackingField
+METHOD System.Action`1<System.Object> RonivansLegacy_ChemicalProcessing.Config::get_Button_OpenBuildingConfigEditor_Reservoirs()
+  0000: ldsfld System.Action`1<System.Object> RonivansLegacy_ChemicalProcessing.Config/<>c::<>9__56_0
+  0009: ldsfld RonivansLegacy_ChemicalProcessing.Config/<>c RonivansLegacy_ChemicalProcessing.Config/<>c::<>9
+  000E: ldftn System.Void RonivansLegacy_ChemicalProcessing.Config/<>c::<get_Button_OpenBuildingConfigEditor_Reservoirs>b__56_0(System.Object)
+  0014: newobj System.Void System.Action`1<System.Object>::.ctor(System.Object,System.IntPtr)
+  001A: stsfld System.Action`1<System.Object> RonivansLegacy_ChemicalProcessing.Config/<>c::<>9__56_0
+METHOD System.Boolean RonivansLegacy_ChemicalProcessing.Config::get_DupesLogistics_Enabled()
+  0001: ldfld System.Boolean RonivansLegacy_ChemicalProcessing.Config::<DupesLogistics_Enabled>k__BackingField
+METHOD System.Void RonivansLegacy_ChemicalProcessing.Config::set_DupesLogistics_Enabled(System.Boolean)
+  0002: stfld System.Boolean RonivansLegacy_ChemicalProcessing.Config::<DupesLogistics_Enabled>k__BackingField
+METHOD System.Action`1<System.Object> RonivansLegacy_ChemicalProcessing.Config::get_Button_OpenBuildingConfigEditor_Logistics()
+  0000: ldsfld System.Action`1<System.Object> RonivansLegacy_ChemicalProcessing.Config/<>c::<>9__62_0
+  0009: ldsfld RonivansLegacy_ChemicalProcessing.Config/<>c RonivansLegacy_ChemicalProcessing.Config/<>c::<>9
+  000E: ldftn System.Void RonivansLegacy_ChemicalProcessing.Config/<>c::<get_Button_OpenBuildingConfigEditor_Logistics>b__62_0(System.Object)
+  0014: newobj System.Void System.Action`1<System.Object>::.ctor(System.Object,System.IntPtr)
+  001A: stsfld System.Action`1<System.Object> RonivansLegacy_ChemicalProcessing.Config/<>c::<>9__62_0
+METHOD System.Boolean RonivansLegacy_ChemicalProcessing.Config::get_HighPressureApplications_Enabled()
+  0001: ldfld System.Boolean RonivansLegacy_ChemicalProcessing.Config::<HighPressureApplications_Enabled>k__BackingField
+METHOD System.Void RonivansLegacy_ChemicalProcessing.Config::set_HighPressureApplications_Enabled(System.Boolean)
+  0002: stfld System.Boolean RonivansLegacy_ChemicalProcessing.Config::<HighPressureApplications_Enabled>k__BackingField
+METHOD System.Action`1<System.Object> RonivansLegacy_ChemicalProcessing.Config::get_Button_OpenBuildingConfigEditor_HPA()
+  0000: ldsfld System.Action`1<System.Object> RonivansLegacy_ChemicalProcessing.Config/<>c::<>9__68_0
+  0009: ldsfld RonivansLegacy_ChemicalProcessing.Config/<>c RonivansLegacy_ChemicalProcessing.Config/<>c::<>9
+  000E: ldftn System.Void RonivansLegacy_ChemicalProcessing.Config/<>c::<get_Button_OpenBuildingConfigEditor_HPA>b__68_0(System.Object)
+  0014: newobj System.Void System.Action`1<System.Object>::.ctor(System.Object,System.IntPtr)
+  001A: stsfld System.Action`1<System.Object> RonivansLegacy_ChemicalProcessing.Config/<>c::<>9__68_0
+METHOD System.Boolean RonivansLegacy_ChemicalProcessing.Config::get_HPA_Rails_Enabled()
+  0001: ldfld System.Boolean RonivansLegacy_ChemicalProcessing.Config::<HPA_Rails_Enabled>k__BackingField
+METHOD System.Void RonivansLegacy_ChemicalProcessing.Config::set_HPA_Rails_Enabled(System.Boolean)
+  0002: stfld System.Boolean RonivansLegacy_ChemicalProcessing.Config::<HPA_Rails_Enabled>k__BackingField
+METHOD System.Boolean RonivansLegacy_ChemicalProcessing.Config::get_HPA_Rails_Mod_Enabled()
+  0001: call System.Boolean RonivansLegacy_ChemicalProcessing.Config::get_HPA_Rails_Enabled()
+  0009: call System.Boolean RonivansLegacy_ChemicalProcessing.Config::get_HighPressureApplications_Enabled()
+METHOD System.Boolean RonivansLegacy_ChemicalProcessing.Config::get_HPA_Rails_Insulation_Enabled()
+  0001: ldfld System.Boolean RonivansLegacy_ChemicalProcessing.Config::<HPA_Rails_Insulation_Enabled>k__BackingField
+METHOD System.Void RonivansLegacy_ChemicalProcessing.Config::set_HPA_Rails_Insulation_Enabled(System.Boolean)
+  0002: stfld System.Boolean RonivansLegacy_ChemicalProcessing.Config::<HPA_Rails_Insulation_Enabled>k__BackingField
+METHOD System.Boolean RonivansLegacy_ChemicalProcessing.Config::get_HPA_Rails_Insulation_Mod_Enabled()
+  0001: call System.Boolean RonivansLegacy_ChemicalProcessing.Config::get_HPA_Rails_Mod_Enabled()
+  0009: call System.Boolean RonivansLegacy_ChemicalProcessing.Config::get_HPA_Rails_Insulation_Enabled()
+METHOD System.Boolean RonivansLegacy_ChemicalProcessing.Config::get_DupesRefrigeration_Enabled()
+  0001: ldfld System.Boolean RonivansLegacy_ChemicalProcessing.Config::<DupesRefrigeration_Enabled>k__BackingField
+METHOD System.Void RonivansLegacy_ChemicalProcessing.Config::set_DupesRefrigeration_Enabled(System.Boolean)
+  0002: stfld System.Boolean RonivansLegacy_ChemicalProcessing.Config::<DupesRefrigeration_Enabled>k__BackingField
+METHOD System.Action`1<System.Object> RonivansLegacy_ChemicalProcessing.Config::get_Button_OpenBuildingConfigEditor_Refrigeration()
+  0000: ldsfld System.Action`1<System.Object> RonivansLegacy_ChemicalProcessing.Config/<>c::<>9__86_0
+  0009: ldsfld RonivansLegacy_ChemicalProcessing.Config/<>c RonivansLegacy_ChemicalProcessing.Config/<>c::<>9
+  000E: ldftn System.Void RonivansLegacy_ChemicalProcessing.Config/<>c::<get_Button_OpenBuildingConfigEditor_Refrigeration>b__86_0(System.Object)
+  0014: newobj System.Void System.Action`1<System.Object>::.ctor(System.Object,System.IntPtr)
+  001A: stsfld System.Action`1<System.Object> RonivansLegacy_ChemicalProcessing.Config/<>c::<>9__86_0
+METHOD System.Boolean RonivansLegacy_ChemicalProcessing.Config::get_CustomGenerators_Enabled()
+  0001: ldfld System.Boolean RonivansLegacy_ChemicalProcessing.Config::<CustomGenerators_Enabled>k__BackingField
+METHOD System.Void RonivansLegacy_ChemicalProcessing.Config::set_CustomGenerators_Enabled(System.Boolean)
+  0002: stfld System.Boolean RonivansLegacy_ChemicalProcessing.Config::<CustomGenerators_Enabled>k__BackingField
+METHOD System.Action`1<System.Object> RonivansLegacy_ChemicalProcessing.Config::get_Button_OpenBuildingConfigEditor_Generators()
+  0000: ldsfld System.Action`1<System.Object> RonivansLegacy_ChemicalProcessing.Config/<>c::<>9__92_0
+  0009: ldsfld RonivansLegacy_ChemicalProcessing.Config/<>c RonivansLegacy_ChemicalProcessing.Config/<>c::<>9
+  000E: ldftn System.Void RonivansLegacy_ChemicalProcessing.Config/<>c::<get_Button_OpenBuildingConfigEditor_Generators>b__92_0(System.Object)
+  0014: newobj System.Void System.Action`1<System.Object>::.ctor(System.Object,System.IntPtr)
+  001A: stsfld System.Action`1<System.Object> RonivansLegacy_ChemicalProcessing.Config/<>c::<>9__92_0
+METHOD System.Boolean RonivansLegacy_ChemicalProcessing.Config::get_ModGeysersGeneric()
+  0001: ldfld System.Boolean RonivansLegacy_ChemicalProcessing.Config::<ModGeysersGeneric>k__BackingField
+METHOD System.Void RonivansLegacy_ChemicalProcessing.Config::set_ModGeysersGeneric(System.Boolean)
+  0002: stfld System.Boolean RonivansLegacy_ChemicalProcessing.Config::<ModGeysersGeneric>k__BackingField
+METHOD System.Boolean RonivansLegacy_ChemicalProcessing.Config::get_WorldgenElementInjection()
+  0001: ldfld System.Boolean RonivansLegacy_ChemicalProcessing.Config::<WorldgenElementInjection>k__BackingField
+METHOD System.Void RonivansLegacy_ChemicalProcessing.Config::set_WorldgenElementInjection(System.Boolean)
+  0002: stfld System.Boolean RonivansLegacy_ChemicalProcessing.Config::<WorldgenElementInjection>k__BackingField
+METHOD System.Single RonivansLegacy_ChemicalProcessing.Config::get_HPA_Capacity_Gas_Multiplier()
+  0001: ldfld System.Single RonivansLegacy_ChemicalProcessing.Config::<HPA_Capacity_Gas_Multiplier>k__BackingField
+METHOD System.Void RonivansLegacy_ChemicalProcessing.Config::set_HPA_Capacity_Gas_Multiplier(System.Single)
+  0002: stfld System.Single RonivansLegacy_ChemicalProcessing.Config::<HPA_Capacity_Gas_Multiplier>k__BackingField
+METHOD System.Single RonivansLegacy_ChemicalProcessing.Config::get_HPA_Capacity_Liquid_Multiplier()
+  0001: ldfld System.Single RonivansLegacy_ChemicalProcessing.Config::<HPA_Capacity_Liquid_Multiplier>k__BackingField
+METHOD System.Void RonivansLegacy_ChemicalProcessing.Config::set_HPA_Capacity_Liquid_Multiplier(System.Single)
+  0002: stfld System.Single RonivansLegacy_ChemicalProcessing.Config::<HPA_Capacity_Liquid_Multiplier>k__BackingField
+METHOD System.Int32 RonivansLegacy_ChemicalProcessing.Config::get_HPA_Pump_Base_Mult_Gas()
+  0001: ldfld System.Int32 RonivansLegacy_ChemicalProcessing.Config::<HPA_Pump_Base_Mult_Gas>k__BackingField
+METHOD System.Void RonivansLegacy_ChemicalProcessing.Config::set_HPA_Pump_Base_Mult_Gas(System.Int32)
+  0002: stfld System.Int32 RonivansLegacy_ChemicalProcessing.Config::<HPA_Pump_Base_Mult_Gas>k__BackingField
+METHOD System.Int32 RonivansLegacy_ChemicalProcessing.Config::get_HPA_Pump_Base_Mult_Liquid()
+  0001: ldfld System.Int32 RonivansLegacy_ChemicalProcessing.Config::<HPA_Pump_Base_Mult_Liquid>k__BackingField
+METHOD System.Void RonivansLegacy_ChemicalProcessing.Config::set_HPA_Pump_Base_Mult_Liquid(System.Int32)
+  0002: stfld System.Int32 RonivansLegacy_ChemicalProcessing.Config::<HPA_Pump_Base_Mult_Liquid>k__BackingField
+METHOD System.Single RonivansLegacy_ChemicalProcessing.Config::get_Logistic_Rail_Capacity_Multiplier()
+  0001: ldfld System.Single RonivansLegacy_ChemicalProcessing.Config::<Logistic_Rail_Capacity_Multiplier>k__BackingField
+METHOD System.Void RonivansLegacy_ChemicalProcessing.Config::set_Logistic_Rail_Capacity_Multiplier(System.Single)
+  0002: stfld System.Single RonivansLegacy_ChemicalProcessing.Config::<Logistic_Rail_Capacity_Multiplier>k__BackingField
+METHOD System.Single RonivansLegacy_ChemicalProcessing.Config::get_HPA_Capacity_Solid_Multiplier()
+  0001: ldfld System.Single RonivansLegacy_ChemicalProcessing.Config::<HPA_Capacity_Solid_Multiplier>k__BackingField
+METHOD System.Void RonivansLegacy_ChemicalProcessing.Config::set_HPA_Capacity_Solid_Multiplier(System.Single)
+  0002: stfld System.Single RonivansLegacy_ChemicalProcessing.Config::<HPA_Capacity_Solid_Multiplier>k__BackingField
+METHOD System.Int32 RonivansLegacy_ChemicalProcessing.Config::get_Biochem_AnaerobicDigesterBuff()
+  0001: ldfld System.Int32 RonivansLegacy_ChemicalProcessing.Config::<Biochem_AnaerobicDigesterBuff>k__BackingField
+METHOD System.Void RonivansLegacy_ChemicalProcessing.Config::set_Biochem_AnaerobicDigesterBuff(System.Int32)
+  0002: stfld System.Int32 RonivansLegacy_ChemicalProcessing.Config::<Biochem_AnaerobicDigesterBuff>k__BackingField
+METHOD System.Single RonivansLegacy_ChemicalProcessing.Config::get_Biochem_BioOilMultiplier()
+  0001: ldfld System.Single RonivansLegacy_ChemicalProcessing.Config::<Biochem_BioOilMultiplier>k__BackingField
+METHOD System.Void RonivansLegacy_ChemicalProcessing.Config::set_Biochem_BioOilMultiplier(System.Single)
+  0002: stfld System.Single RonivansLegacy_ChemicalProcessing.Config::<Biochem_BioOilMultiplier>k__BackingField
+METHOD System.Single RonivansLegacy_ChemicalProcessing.Config::get_ChemProc_RefineryFudge()
+  0001: ldfld System.Single RonivansLegacy_ChemicalProcessing.Config::<ChemProc_RefineryFudge>k__BackingField
+METHOD System.Void RonivansLegacy_ChemicalProcessing.Config::set_ChemProc_RefineryFudge(System.Single)
+  0002: stfld System.Single RonivansLegacy_ChemicalProcessing.Config::<ChemProc_RefineryFudge>k__BackingField
+METHOD System.Single RonivansLegacy_ChemicalProcessing.Config::get_ChemProc_AdvRefineryFudge()
+  0001: ldfld System.Single RonivansLegacy_ChemicalProcessing.Config::<ChemProc_AdvRefineryFudge>k__BackingField
+METHOD System.Void RonivansLegacy_ChemicalProcessing.Config::set_ChemProc_AdvRefineryFudge(System.Single)
+  0002: stfld System.Single RonivansLegacy_ChemicalProcessing.Config::<ChemProc_AdvRefineryFudge>k__BackingField
+METHOD System.Single RonivansLegacy_ChemicalProcessing.Config::get_ChemProc_ArcFudge()
+  0001: ldfld System.Single RonivansLegacy_ChemicalProcessing.Config::<ChemProc_ArcFudge>k__BackingField
+METHOD System.Void RonivansLegacy_ChemicalProcessing.Config::set_ChemProc_ArcFudge(System.Single)
+  0002: stfld System.Single RonivansLegacy_ChemicalProcessing.Config::<ChemProc_ArcFudge>k__BackingField
+METHOD System.Int32 RonivansLegacy_ChemicalProcessing.Config::get_ArcFurnace_CapacitorSizeMJ()
+  0001: ldfld System.Int32 RonivansLegacy_ChemicalProcessing.Config::<ArcFurnace_CapacitorSizeMJ>k__BackingField
+METHOD System.Void RonivansLegacy_ChemicalProcessing.Config::set_ArcFurnace_CapacitorSizeMJ(System.Int32)
+  0002: stfld System.Int32 RonivansLegacy_ChemicalProcessing.Config::<ArcFurnace_CapacitorSizeMJ>k__BackingField
+METHOD System.Boolean RonivansLegacy_ChemicalProcessing.Config::get_Drywall_Hides_Pipes()
+  0001: ldfld System.Boolean RonivansLegacy_ChemicalProcessing.Config::<Drywall_Hides_Pipes>k__BackingField
+METHOD System.Void RonivansLegacy_ChemicalProcessing.Config::set_Drywall_Hides_Pipes(System.Boolean)
+  0002: stfld System.Boolean RonivansLegacy_ChemicalProcessing.Config::<Drywall_Hides_Pipes>k__BackingField
+METHOD System.Boolean RonivansLegacy_ChemicalProcessing.Config::get_HPA_OverheatImmunePumps()
+  0001: ldfld System.Boolean RonivansLegacy_ChemicalProcessing.Config::<HPA_OverheatImmunePumps>k__BackingField
+METHOD System.Void RonivansLegacy_ChemicalProcessing.Config::set_HPA_OverheatImmunePumps(System.Boolean)
+  0002: stfld System.Boolean RonivansLegacy_ChemicalProcessing.Config::<HPA_OverheatImmunePumps>k__BackingField
+METHOD System.Int32 RonivansLegacy_ChemicalProcessing.Config::get_PrimaryElement_MaxMassOverride()
+  0001: ldfld System.Int32 RonivansLegacy_ChemicalProcessing.Config::_primaryElement_MaxMassOverride
+METHOD System.Void RonivansLegacy_ChemicalProcessing.Config::set_PrimaryElement_MaxMassOverride(System.Int32)
+  0002: stfld System.Int32 RonivansLegacy_ChemicalProcessing.Config::_primaryElement_MaxMassOverride
+  0008: call System.Void RonivansLegacy_ChemicalProcessing.Config::SetElementMaxMassIfApplicable()
+METHOD System.Void RonivansLegacy_ChemicalProcessing.Config::SetElementMaxMassIfApplicable()
+  0000: ldsfld System.Single PrimaryElement::MAX_MASS
+  0005: call System.Int32 UnityEngine.Mathf::RoundToInt(System.Single)
+  000D: call System.Int32 RonivansLegacy_ChemicalProcessing.Config::get_PrimaryElement_MaxMassOverride()
+  0014: ldstr "PrimaryElement.MAX_MASS was already higher or at the configured value: "
+  001B: call System.String System.Int32::ToString()
+  0020: ldstr "kg, ignoring the setting"
+  0025: call System.String System.String::Concat(System.String,System.String,System.String)
+  002A: ldstr ""
+  002F: call System.Void UtilLibs.SgtLogger::l(System.String,System.String)
+  0036: call System.Int32 RonivansLegacy_ChemicalProcessing.Config::get_PrimaryElement_MaxMassOverride()
+  003C: stsfld System.Single PrimaryElement::MAX_MASS
+  0041: ldstr "Increasing PrimaryElement.MAX_MASS to "
+  0047: call System.Int32 RonivansLegacy_ChemicalProcessing.Config::get_PrimaryElement_MaxMassOverride()
+  004F: call System.String System.Int32::ToString()
+  0054: call System.String System.String::Concat(System.String,System.String)
+  0059: ldstr ""
+  005E: call System.Void UtilLibs.SgtLogger::l(System.String,System.String)
+METHOD System.Void RonivansLegacy_ChemicalProcessing.Config::.ctor()
+  0002: stfld System.Boolean RonivansLegacy_ChemicalProcessing.Config::<ChemicalProcessing_IndustrialOverhaul_Enabled>k__BackingField
+  0009: stfld System.Boolean RonivansLegacy_ChemicalProcessing.Config::<ChemicalProcessing_BioChemistry_Enabled>k__BackingField
+  0010: stfld System.Boolean RonivansLegacy_ChemicalProcessing.Config::<MineralProcessing_Metallurgy_Enabled>k__BackingField
+  0017: stfld System.Boolean RonivansLegacy_ChemicalProcessing.Config::<MineralProcessing_Mining_Enabled>k__BackingField
+  001E: stfld System.Boolean RonivansLegacy_ChemicalProcessing.Config::<NuclearProcessing_Enabled>k__BackingField
+  0025: stfld System.Boolean RonivansLegacy_ChemicalProcessing.Config::<DupesMachinery_Enabled>k__BackingField
+  002C: stfld System.Boolean RonivansLegacy_ChemicalProcessing.Config::<DupesEngineering_Enabled>k__BackingField
+  0033: stfld System.Boolean RonivansLegacy_ChemicalProcessing.Config::<CustomReservoirs_Enabled>k__BackingField
+  003A: stfld System.Boolean RonivansLegacy_ChemicalProcessing.Config::<ReservoirsInConduitCategory>k__BackingField
+  0041: stfld System.Boolean RonivansLegacy_ChemicalProcessing.Config::<DupesLogistics_Enabled>k__BackingField
+  0048: stfld System.Boolean RonivansLegacy_ChemicalProcessing.Config::<HighPressureApplications_Enabled>k__BackingField
+  004F: stfld System.Boolean RonivansLegacy_ChemicalProcessing.Config::<HPA_Rails_Enabled>k__BackingField
+  0056: stfld System.Boolean RonivansLegacy_ChemicalProcessing.Config::<HPA_Rails_Insulation_Enabled>k__BackingField
+  005D: stfld System.Boolean RonivansLegacy_ChemicalProcessing.Config::<DupesRefrigeration_Enabled>k__BackingField
+  0064: stfld System.Boolean RonivansLegacy_ChemicalProcessing.Config::<CustomGenerators_Enabled>k__BackingField
+  006B: stfld System.Boolean RonivansLegacy_ChemicalProcessing.Config::<ModGeysersGeneric>k__BackingField
+  0072: stfld System.Boolean RonivansLegacy_ChemicalProcessing.Config::<WorldgenElementInjection>k__BackingField
+  007D: stfld System.Single RonivansLegacy_ChemicalProcessing.Config::<HPA_Capacity_Gas_Multiplier>k__BackingField
+  0088: stfld System.Single RonivansLegacy_ChemicalProcessing.Config::<HPA_Capacity_Liquid_Multiplier>k__BackingField
+  0093: stfld System.Int32 RonivansLegacy_ChemicalProcessing.Config::<HPA_Pump_Base_Mult_Gas>k__BackingField
+  009E: stfld System.Int32 RonivansLegacy_ChemicalProcessing.Config::<HPA_Pump_Base_Mult_Liquid>k__BackingField
+  00A9: stfld System.Single RonivansLegacy_ChemicalProcessing.Config::<Logistic_Rail_Capacity_Multiplier>k__BackingField
+  00B4: stfld System.Single RonivansLegacy_ChemicalProcessing.Config::<HPA_Capacity_Solid_Multiplier>k__BackingField
+  00BC: stfld System.Int32 RonivansLegacy_ChemicalProcessing.Config::<Biochem_AnaerobicDigesterBuff>k__BackingField
+  00C7: stfld System.Single RonivansLegacy_ChemicalProcessing.Config::<Biochem_BioOilMultiplier>k__BackingField
+  00D2: stfld System.Single RonivansLegacy_ChemicalProcessing.Config::<ChemProc_RefineryFudge>k__BackingField
+  00DD: stfld System.Single RonivansLegacy_ChemicalProcessing.Config::<ChemProc_AdvRefineryFudge>k__BackingField
+  00E8: stfld System.Single RonivansLegacy_ChemicalProcessing.Config::<ChemProc_ArcFudge>k__BackingField
+  00F3: stfld System.Int32 RonivansLegacy_ChemicalProcessing.Config::<ArcFurnace_CapacitorSizeMJ>k__BackingField
+  00FA: stfld System.Boolean RonivansLegacy_ChemicalProcessing.Config::<Drywall_Hides_Pipes>k__BackingField
+  0105: stfld System.Int32 RonivansLegacy_ChemicalProcessing.Config::_primaryElement_MaxMassOverride
+  010B: call System.Void PeterHan.PLib.Options.SingletonOptions`1<RonivansLegacy_ChemicalProcessing.Config>::.ctor()
+NOT FOUND RonivansLegacy_ChemicalProcessing.ModConfig
+NOT FOUND RonivansLegacy_ChemicalProcessing.ModOptions
+
+TYPES NAMED OPTIONS/CONFIG ROOT
+RonivansLegacy_ChemicalProcessing.Config
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.ChemicalProcessing_BioChem.Biochemistry_SynthesizerPhytoOilConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.ChemicalProcessing_IO.Chemical_SourGasSweetenerConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.CustomGenerators.CustomDieselGeneratorConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.CustomGenerators.CustomGasGeneratorConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.CustomGenerators.CustomSolarPanelConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.CustomGenerators.CustomSolidGeneratorConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.CustomGenerators.CustomSteamGeneratorConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.CustomReservoirs.MedGasReservoirConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.CustomReservoirs.MedLiquidReservoirConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.CustomReservoirs.SmallGasReservoirConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.CustomReservoirs.SmallGasReservoirDefaultConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.CustomReservoirs.SmallGasReservoirInvertedConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.CustomReservoirs.SmallGasReservoirWallConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.CustomReservoirs.SmallLiquidReservoirConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.CustomReservoirs.SmallLiquidReservoirDefaultConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.CustomReservoirs.SmallLiquidReservoirInvertedConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.CustomReservoirs.SmallLiquidReservoirWallConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.DupesEngineering.AIO_WoodenDoorConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.DupesEngineering.CementMixerConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.DupesEngineering.FacilityDoorConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.DupesEngineering.GlassDoorComplexConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.DupesEngineering.GlassDoorSimpleConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.DupesEngineering.LogicAlertLightConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.DupesEngineering.MetalLadderConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.DupesEngineering.Tiles.InsulationCompositionTileConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.DupesEngineering.Tiles.MonoElementTileBrickConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.DupesEngineering.Tiles.MonoElementTileConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.DupesEngineering.Tiles.MonoElementTileGraniteConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.DupesEngineering.Tiles.MonoElementTileIgneousRockConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.DupesEngineering.Tiles.MonoElementTileObsidianConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.DupesEngineering.Tiles.MonoElementTileSandstoneConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.DupesEngineering.Tiles.MosaicTileConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.DupesEngineering.Tiles.ReinforcedConcreteTileConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.DupesEngineering.Tiles.SpacerTileSolidConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.DupesEngineering.Tiles.SpacerTileWindowConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.DupesEngineering.Tiles.StructureTileConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.DupesEngineering.Tiles.WoodAirflowTileConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.DupesEngineering.Tiles.WoodCompositionTileConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.DupesEngineering.Tiles.WoodMeshTileConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.DupesEngineering.Walls.SpacerWallConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.DupesEngineering.Walls.SpacerWallLargeConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.DupesEngineering.Walls.SpacerWindowLargeConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.DupesEngineering.Walls.SpacerWindowSmallConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.DupesEngineering.Walls.StructureFrameLargeConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.DupesEngineering.Walls.StructureFrameSmallConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.DupesEngineering.WoodenCeilingConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.DupesEngineering.WoodenCornerArchConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.DupesLogistics.CabinetFrozenConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.DupesLogistics.CabinetNormalConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.DupesLogistics.LogisticBridgeConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.DupesLogistics.LogisticFilterConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.DupesLogistics.LogisticLoaderConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.DupesLogistics.LogisticOutBoxConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.DupesLogistics.LogisticRailConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.DupesLogistics.LogisticRailValveConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.DupesLogistics.LogisticTransferArmConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.DupesLogistics.LogisticVentConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.DupesLogistics.StoragePodConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.DupesRefrigeration.FridgeLargeConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.DupesRefrigeration.FridgePodConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.DupesRefrigeration.FridgeSmallConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.DupesRefrigeration.HightechBigFridgeConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.DupesRefrigeration.HightechSmallFridgeConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.DupesRefrigeration.SpaceBoxConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.HighPressureApplications.DecompressionGasValveConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.HighPressureApplications.DecompressionLiquidValveConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.HighPressureApplications.HighCapacityLogisticRails.HPAInBoxConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.HighPressureApplications.HighCapacityLogisticRails.HPARailBridgeConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.HighPressureApplications.HighCapacityLogisticRails.HPARailBridgeTileConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.HighPressureApplications.HighCapacityLogisticRails.HPARailConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.HighPressureApplications.HighCapacityLogisticRails.HPARailInsulatedConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.HighPressureApplications.HighCapacityLogisticRails.HPARailMergerConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.HighPressureApplications.HighCapacityLogisticRails.HPARailValveConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.HighPressureApplications.HighCapacityLogisticRails.HPATransferArmConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.HighPressureApplications.HighPressureGasConduitConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.HighPressureApplications.HighPressureLiquidConduitConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.HighPressureApplications.HPA_Gas.HPAFilterGasConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.HighPressureApplications.HPA_liquid.HPAFilterLiquidConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.HighPressureApplications.HPA_Solid.HPAFilterSolidConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.HighPressureApplications.HPAVentGasConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.HighPressureApplications.HPAVentLiquidConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.HighPressureApplications.PressureGasPumpConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.HighPressureApplications.PressureLiquidPumpConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.MineralProcessing_Metallurgy.Metallurgy_BallCrusherMillConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.NuclearProcessing.BigReactorConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.NuclearProcessing.HepCalcinatorConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.NuclearProcessing.HepCentrifugeConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.NuclearProcessing.HepProjectorConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.NuclearProcessing.LightReactorConfig
+RonivansLegacy_ChemicalProcessing.Content.Defs.Entities.Mining_DrillMk2_Consumables.SimpleDrillbits_Config
+RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationCollection
+RonivansLegacy_ChemicalProcessing.Content.ModDb.BuildingConfigurations.BuildingConfigurationEntry
+RonivansLegacy_ChemicalProcessing.Content.Scripts.BuildingConfigInterfaces.IHasConfigurableRange
+RonivansLegacy_ChemicalProcessing.Content.Scripts.Buildings.ConfigInterfaces.IHasConfigurableStorageCapacity
+RonivansLegacy_ChemicalProcessing.Content.Scripts.Buildings.ConfigInterfaces.IHasConfigurableWattage
+RonivansLegacy_ChemicalProcessing.Content.Scripts.ConfigurableSolidConduitDispenser
+RonivansLegacy_ChemicalProcessing.Content.Scripts.ConfigurableThresholdSolidConduitDispenser
+RonivansLegacy_ChemicalProcessing.Content.Scripts.UI.BuildingConfigUIEntryUI
+RonivansLegacy_ChemicalProcessing.Patches.AdvancedCraftingTableConfig_Patches
+RonivansLegacy_ChemicalProcessing.Patches.DataMinerConfig_Patches
+RonivansLegacy_ChemicalProcessing.Patches.FabricatedWoodMakerConfig_Patches
+RonivansLegacy_ChemicalProcessing.Patches.KilnConfig_Patches
+RonivansLegacy_ChemicalProcessing.Patches.MetalRefineryConfig_Patches
+RonivansLegacy_ChemicalProcessing.Patches.MethaneGeneratorConfig_Patches
+RonivansLegacy_ChemicalProcessing.Patches.OilWellCapConfig_Patches
+RonivansLegacy_ChemicalProcessing.Patches.OrbitalResearchCenterConfig_Patches
+RonivansLegacy_ChemicalProcessing.Patches.RefrigeratorConfig_Patches
+RonivansLegacy_ChemicalProcessing.Patches.RockCrusherConfig_Patches
+RonivansLegacy_ChemicalProcessing.Patches.SodaFountainConfig_Patches
