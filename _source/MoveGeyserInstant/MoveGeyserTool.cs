@@ -201,8 +201,20 @@ namespace MoveGeyserInstant {
                 return;
 
             foreach (int cell in snapshot.SourceFootprint) {
-                if (!Grid.IsValidCell(cell) || Grid.Element[cell].id != SimHashes.Unobtanium || IsUsedByAnotherGeyserFootprint(cell))
+                if (!Grid.IsValidCell(cell))
                     continue;
+
+                // Only operate on cells in the source world
+                if (GetCellWorldId(cell) != snapshot.SourceWorldId)
+                    continue;
+
+                if (Grid.Element[cell].id != SimHashes.Unobtanium || IsUsedByAnotherGeyserFootprint(cell))
+                    continue;
+
+                // Re-check immediately before replacing to reduce race window
+                if (Grid.Element[cell].id != SimHashes.Unobtanium)
+                    continue;
+
                 SimMessages.ReplaceElement(cell, SimHashes.Vacuum, CellEventLogger.Instance.DebugTool, 0f, 0f);
             }
         }
@@ -301,7 +313,11 @@ namespace MoveGeyserInstant {
                 }
             }
 
-            // Allow stacking geysers: overlapping another geyser is permitted by user request.
+            // Respect config: allow or disallow stacking
+            if (!Config.AllowStacking && OverlapsAnotherGeyser(targetFootprint, targetWorldId)) {
+                reason = "target footprint overlaps another geyser";
+                return false;
+            }
 
             return true;
         }
