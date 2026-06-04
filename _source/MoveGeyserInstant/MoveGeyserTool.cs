@@ -136,11 +136,11 @@ namespace MoveGeyserInstant {
                     return;
                 }
 
-                // Activate the instantiated prefab first so its Awake/OnSpawn runs
-                // before we copy non-reference state into it. This avoids overwriting
-                // internal component initialization (anim controllers, meters, etc.).
-                moved.SetActive(true);
+                // Copy configuration state before activating the prefab
+                // so Geyser.OnSpawn() sees the captured configurator type
+                // instead of generating/applying a fresh default first.
                 snapshot.ApplyFieldsTo(moved);
+                moved.SetActive(true);
                 snapshot.TriggerCopySettings(moved);
 
                 // Record undo entry before deleting source
