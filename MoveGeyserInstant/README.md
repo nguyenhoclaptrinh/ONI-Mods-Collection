@@ -4,7 +4,7 @@ This mod allows instant moving of geysers across asteroids.
 
 Usage:
 - Select a geyser in-game and choose "Di chuyển mạch" from the user menu.
-- Click to place. Press `Z` to undo the last move (best-effort).
+- Click to place. Press `Ctrl+Z` to undo the last move (best-effort).
 
 Config (mods/Local/MoveGeyserInstant/config.json):
 {

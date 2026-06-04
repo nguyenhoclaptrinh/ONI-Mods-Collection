@@ -87,7 +87,8 @@ namespace MoveGeyserInstant {
             }
 
             try {
-                if (UnityEngine.Input.GetKeyDown(UnityEngine.KeyCode.Z)) {
+                bool ctrlDown = UnityEngine.Input.GetKey(UnityEngine.KeyCode.LeftControl) || UnityEngine.Input.GetKey(UnityEngine.KeyCode.RightControl);
+                if (ctrlDown && UnityEngine.Input.GetKeyDown(UnityEngine.KeyCode.Z)) {
                     UndoLastMove();
                 }
             }
