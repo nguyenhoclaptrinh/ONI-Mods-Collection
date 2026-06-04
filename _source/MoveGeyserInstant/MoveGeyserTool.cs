@@ -113,6 +113,20 @@ namespace MoveGeyserInstant {
 
                 int targetWorldId = GetCellWorldId(targetCell);
                 int[] newFootprint = snapshot.GetTranslatedFootprint(targetCell);
+                // If stacking (another geyser exists at target world/cell), notify player
+                bool stacking = false;
+                foreach (var geyser in Components.Geysers.GetItems(targetWorldId)) {
+                    if (geyser == null)
+                        continue;
+                    int gcell = Grid.PosToCell(geyser);
+                    if (gcell == targetCell && geyser.gameObject != snapshot.Source) {
+                        stacking = true;
+                        break;
+                    }
+                }
+                if (stacking)
+                    PopFXManager.Instance.SpawnFX(PopFXManager.Instance.sprite_Negative, "Stacked geyser", moved.transform, Vector3.zero, 1.5f, false, false);
+
                 PlaceDestinationNeutronium(newFootprint, targetWorldId);
                 ClearOldNeutroniumIfUnused();
 
@@ -261,10 +275,7 @@ namespace MoveGeyserInstant {
                 }
             }
 
-            if (OverlapsAnotherGeyser(targetFootprint, targetWorldId)) {
-                reason = "target footprint overlaps another geyser";
-                return false;
-            }
+            // Allow stacking geysers: overlapping another geyser is permitted by user request.
 
             return true;
         }
