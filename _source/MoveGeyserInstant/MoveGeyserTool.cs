@@ -223,24 +223,42 @@ namespace MoveGeyserInstant {
             if (previewInstance != null)
                 return;
 
-            var prefab = Assets.GetPrefab(snapshot.PrefabTag);
-            if (prefab == null)
-                return;
+            // Create a clean dummy GameObject for rendering only
+            previewInstance = new GameObject("MoveGeyserInstant Preview");
+            previewInstance.SetActive(false);
+            if (Game.Instance != null)
+                previewInstance.transform.SetParent(Game.Instance.transform, false);
 
-            // Instantiate disabled to avoid any initialization races
-            previewInstance = Util.KInstantiate(prefab, Vector3.zero, Quaternion.identity);
-            if (previewInstance != null) {
-                previewInstance.SetActive(false);
-                if (Game.Instance != null)
-                    previewInstance.transform.SetParent(Game.Instance.transform, false);
+            var kbac = previewInstance.AddComponent<KBatchedAnimController>();
+            if (kbac != null && snapshot.PreviewAnimFiles != null) {
+                kbac.AnimFiles = snapshot.PreviewAnimFiles;
+                kbac.initialAnim = snapshot.GetPreviewAnim().ToString();
+                kbac.defaultAnim = "idle";
+                kbac.visibilityType = KAnimControllerBase.VisibilityType.Always;
+                previewInstance.AddComponent<KSelectable>();
             }
         }
 
         private void UpdatePreviewPosition(int cell) {
             if (previewInstance == null || !Grid.IsValidCell(cell))
                 return;
+
             Vector3 p = Grid.CellToPosCBC(cell, Grid.SceneLayer.Move);
             previewInstance.transform.position = p;
+
+            // Dynamically tint the preview based on placement validity
+            var kbac = previewInstance.GetComponent<KBatchedAnimController>();
+            if (kbac != null) {
+                bool valid = TryValidatePlacement(cell, out _);
+                // Semi-transparent White (original color faded) if valid, Semi-transparent Red if invalid
+                kbac.TintColour = valid ? new Color(1.0f, 1.0f, 1.0f, 0.45f) : new Color(1.0f, 0.1f, 0.1f, 0.45f);
+
+                // Ensure anim plays in loop
+                if (kbac.GetCurrentAnim() == null) {
+                    kbac.Play(snapshot.GetPreviewAnim(), KAnim.PlayMode.Loop);
+                }
+            }
+
             if (!previewInstance.activeSelf)
                 previewInstance.SetActive(true);
         }
