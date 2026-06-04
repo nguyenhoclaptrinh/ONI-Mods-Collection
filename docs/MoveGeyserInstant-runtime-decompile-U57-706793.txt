@@ -1,0 +1,3024 @@
+# ONI U57-706793 Runtime Decompile Focus Dump
+Captured: 2026-06-04
+Managed: D:\Games\OxygenNotIncludedCrack\oxygen.not.included.v706793\OxygenNotIncluded_Data\Managed
+Mod: D:\Documents\Klei\OxygenNotIncluded\mods\Local\MoveGeyserInstant\MoveGeyserInstant.dll
+
+## MoveGeyserInstant Direct Runtime References
+### Non-public field refs
+- none
+### Non-public method refs
+- family METHOD InterfaceTool::OnDeactivateTool(InterfaceTool)
+- family METHOD KMonoBehaviour::OnPrefabInit()
+- family METHOD KMonoBehaviour::OnSpawn()
+### Unresolved refs
+- none
+
+## TYPE Assembly-CSharp.dll PlayerController
+### Fields
+- private KInputHandler <inputHandler>k__BackingField
+- private PlayerController <Instance>k__BackingField
+- private InterfaceTool activeTool
+- private System.Boolean DebugHidingCursor
+- private Action defaultConfigKey
+- private Action dragAction
+- private UnityEngine.Vector3 dragDelta
+- private System.Boolean dragging
+- private System.Boolean draggingAllowed
+- private System.Collections.Generic.List`1<Klei.Input.InterfaceToolConfig> interfaceConfigs
+- private System.Single MIN_DRAG_DIST_SQR
+- private System.Single MIN_DRAG_TIME
+- private UnityEngine.Vector3 prevMousePos
+- private System.Boolean queueStopDrag
+- private UnityEngine.Vector3 startDragPos
+- private System.Single startDragTime
+- public InterfaceTool[] tools
+- public UnityEngine.EventSystems.VirtualInputModule vim
+- private UnityEngine.Vector3 worldDragDelta
+### Selected methods
+
+#### family System.Void PlayerController::OnPrefabInit()
+FIELDS:
+- Action PlayerController::defaultConfigKey
+- InterfaceTool[] PlayerController::tools
+- System.Collections.Generic.List`1<Klei.Input.InterfaceToolConfig> PlayerController::interfaceConfigs
+- UnityEngine.EventSystems.VirtualInputModule PlayerController::vim
+CALLS:
+- !!0 UnityEngine.GameObject::GetComponent<InterfaceTool>()
+- !!0 UnityEngine.Object::FindObjectOfType<UnityEngine.EventSystems.VirtualInputModule>(System.Boolean)
+- System.Void InterfaceTool::InitializeConfigs(Action,System.Collections.Generic.List`1<Klei.Input.InterfaceToolConfig>)
+- System.Void PlayerController::set_Instance(PlayerController)
+- System.Void UnityEngine.GameObject::SetActive(System.Boolean)
+- UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+- UnityEngine.GameObject Util::KInstantiate(UnityEngine.GameObject,UnityEngine.GameObject,System.String)
+IL:
+0000: ldarg.0 
+0001: call System.Void PlayerController::set_Instance(PlayerController)
+0006: ldarg.0 
+0007: ldfld Action PlayerController::defaultConfigKey
+000C: ldarg.0 
+000D: ldfld System.Collections.Generic.List`1<Klei.Input.InterfaceToolConfig> PlayerController::interfaceConfigs
+0012: call System.Void InterfaceTool::InitializeConfigs(Action,System.Collections.Generic.List`1<Klei.Input.InterfaceToolConfig>)
+0017: ldarg.0 
+0018: ldc.i4.1 
+0019: call !!0 UnityEngine.Object::FindObjectOfType<UnityEngine.EventSystems.VirtualInputModule>(System.Boolean)
+001E: stfld UnityEngine.EventSystems.VirtualInputModule PlayerController::vim
+0023: ldc.i4.0 
+0024: stloc.0 
+0025: br.s IL_0079
+0027: ldarg.0 
+0028: ldfld InterfaceTool[] PlayerController::tools
+002D: ldloc.0 
+002E: ldelem.ref 
+002F: callvirt UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+0034: ldarg.0 
+0035: call UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+003A: ldnull 
+003B: call UnityEngine.GameObject Util::KInstantiate(UnityEngine.GameObject,UnityEngine.GameObject,System.String)
+0040: stloc.1 
+0041: ldarg.0 
+0042: ldfld InterfaceTool[] PlayerController::tools
+0047: ldloc.0 
+0048: ldloc.1 
+0049: callvirt !!0 UnityEngine.GameObject::GetComponent<InterfaceTool>()
+004E: stelem.ref 
+004F: ldarg.0 
+0050: ldfld InterfaceTool[] PlayerController::tools
+0055: ldloc.0 
+0056: ldelem.ref 
+0057: callvirt UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+005C: ldc.i4.1 
+005D: callvirt System.Void UnityEngine.GameObject::SetActive(System.Boolean)
+0062: ldarg.0 
+0063: ldfld InterfaceTool[] PlayerController::tools
+0068: ldloc.0 
+0069: ldelem.ref 
+006A: callvirt UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+006F: ldc.i4.0 
+0070: callvirt System.Void UnityEngine.GameObject::SetActive(System.Boolean)
+0075: ldloc.0 
+0076: ldc.i4.1 
+0077: add 
+0078: stloc.0 
+0079: ldloc.0 
+007A: ldarg.0 
+007B: ldfld InterfaceTool[] PlayerController::tools
+0080: ldlen 
+0081: conv.i4 
+0082: blt.s IL_0027
+0084: ret 
+
+#### family System.Void PlayerController::OnSpawn()
+FIELDS:
+- InterfaceTool[] PlayerController::tools
+CALLS:
+- System.Void PlayerController::ActivateTool(InterfaceTool)
+IL:
+0000: ldarg.0 
+0001: ldfld InterfaceTool[] PlayerController::tools
+0006: ldlen 
+0007: brtrue.s IL_000A
+0009: ret 
+000A: ldarg.0 
+000B: ldarg.0 
+000C: ldfld InterfaceTool[] PlayerController::tools
+0011: ldc.i4.0 
+0012: ldelem.ref 
+0013: call System.Void PlayerController::ActivateTool(InterfaceTool)
+0018: ret 
+
+#### private System.Void PlayerController::Update()
+FIELDS:
+- HoverTextScreen HoverTextScreen::Instance
+- InterfaceTool PlayerController::activeTool
+- System.Boolean PlayerController::DebugHidingCursor
+- UnityEngine.Vector3 PlayerController::prevMousePos
+CALLS:
+- System.Boolean UnityEngine.Behaviour::get_enabled()
+- System.Boolean UnityEngine.Input::GetKey(UnityEngine.KeyCode)
+- System.Boolean UnityEngine.Input::GetKeyDown(UnityEngine.KeyCode)
+- System.Boolean UnityEngine.Object::op_Implicit(UnityEngine.Object)
+- System.Boolean UnityEngine.Vector3::op_Inequality(UnityEngine.Vector3,UnityEngine.Vector3)
+- System.Void InterfaceTool::OnMouseMove(UnityEngine.Vector3)
+- System.Void KScreen::Show(System.Boolean)
+- System.Void PlayerController::UpdateDrag()
+- System.Void PlayerController::UpdateHover()
+- System.Void UnityEngine.Cursor::set_visible(System.Boolean)
+- UnityEngine.Vector3 PlayerController::GetCursorPos()
+IL:
+0000: ldarg.0 
+0001: call System.Void PlayerController::UpdateDrag()
+0006: ldarg.0 
+0007: ldfld InterfaceTool PlayerController::activeTool
+000C: call System.Boolean UnityEngine.Object::op_Implicit(UnityEngine.Object)
+0011: brfalse.s IL_004E
+0013: ldarg.0 
+0014: ldfld InterfaceTool PlayerController::activeTool
+0019: callvirt System.Boolean UnityEngine.Behaviour::get_enabled()
+001E: brfalse.s IL_004E
+0020: ldarg.0 
+0021: call System.Void PlayerController::UpdateHover()
+0026: ldarg.0 
+0027: call UnityEngine.Vector3 PlayerController::GetCursorPos()
+002C: stloc.0 
+002D: ldloc.0 
+002E: ldarg.0 
+002F: ldfld UnityEngine.Vector3 PlayerController::prevMousePos
+0034: call System.Boolean UnityEngine.Vector3::op_Inequality(UnityEngine.Vector3,UnityEngine.Vector3)
+0039: brfalse.s IL_004E
+003B: ldarg.0 
+003C: ldloc.0 
+003D: stfld UnityEngine.Vector3 PlayerController::prevMousePos
+0042: ldarg.0 
+0043: ldfld InterfaceTool PlayerController::activeTool
+0048: ldloc.0 
+0049: callvirt System.Void InterfaceTool::OnMouseMove(UnityEngine.Vector3)
+004E: ldc.i4 293
+0053: call System.Boolean UnityEngine.Input::GetKeyDown(UnityEngine.KeyCode)
+0058: brfalse.s IL_00A2
+005A: ldc.i4 308
+005F: call System.Boolean UnityEngine.Input::GetKey(UnityEngine.KeyCode)
+0064: brtrue.s IL_0072
+0066: ldc.i4 307
+006B: call System.Boolean UnityEngine.Input::GetKey(UnityEngine.KeyCode)
+0070: brfalse.s IL_00A2
+0072: ldarg.0 
+0073: ldarg.0 
+0074: ldfld System.Boolean PlayerController::DebugHidingCursor
+0079: ldc.i4.0 
+007A: ceq 
+007C: stfld System.Boolean PlayerController::DebugHidingCursor
+0081: ldarg.0 
+0082: ldfld System.Boolean PlayerController::DebugHidingCursor
+0087: ldc.i4.0 
+0088: ceq 
+008A: call System.Void UnityEngine.Cursor::set_visible(System.Boolean)
+008F: ldsfld HoverTextScreen HoverTextScreen::Instance
+0094: ldarg.0 
+0095: ldfld System.Boolean PlayerController::DebugHidingCursor
+009A: ldc.i4.0 
+009B: ceq 
+009D: callvirt System.Void KScreen::Show(System.Boolean)
+00A2: ret 
+
+#### public System.Void PlayerController::ActivateTool(InterfaceTool)
+FIELDS:
+- InterfaceTool PlayerController::activeTool
+CALLS:
+- System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object)
+- System.Void InterfaceTool::ActivateTool()
+- System.Void PlayerController::DeactivateTool(InterfaceTool)
+- System.Void PlayerController::UpdateHover()
+- System.Void UnityEngine.Behaviour::set_enabled(System.Boolean)
+- System.Void UnityEngine.GameObject::SetActive(System.Boolean)
+- UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+IL:
+0000: ldarg.0 
+0001: ldfld InterfaceTool PlayerController::activeTool
+0006: ldarg.1 
+0007: call System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object)
+000C: brfalse.s IL_000F
+000E: ret 
+000F: ldarg.0 
+0010: ldarg.1 
+0011: call System.Void PlayerController::DeactivateTool(InterfaceTool)
+0016: ldarg.0 
+0017: ldarg.1 
+0018: stfld InterfaceTool PlayerController::activeTool
+001D: ldarg.0 
+001E: ldfld InterfaceTool PlayerController::activeTool
+0023: ldc.i4.1 
+0024: callvirt System.Void UnityEngine.Behaviour::set_enabled(System.Boolean)
+0029: ldarg.0 
+002A: ldfld InterfaceTool PlayerController::activeTool
+002F: callvirt UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+0034: ldc.i4.1 
+0035: callvirt System.Void UnityEngine.GameObject::SetActive(System.Boolean)
+003A: ldarg.0 
+003B: ldfld InterfaceTool PlayerController::activeTool
+0040: callvirt System.Void InterfaceTool::ActivateTool()
+0045: ldarg.0 
+0046: call System.Void PlayerController::UpdateHover()
+004B: ret 
+
+#### private System.Void PlayerController::DeactivateTool(InterfaceTool)
+FIELDS:
+- InterfaceTool PlayerController::activeTool
+CALLS:
+- System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+- System.Void InterfaceTool::DeactivateTool(InterfaceTool)
+- System.Void UnityEngine.Behaviour::set_enabled(System.Boolean)
+- System.Void UnityEngine.GameObject::SetActive(System.Boolean)
+- UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+IL:
+0000: ldarg.0 
+0001: ldfld InterfaceTool PlayerController::activeTool
+0006: ldnull 
+0007: call System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+000C: brfalse.s IL_003E
+000E: ldarg.0 
+000F: ldfld InterfaceTool PlayerController::activeTool
+0014: ldc.i4.0 
+0015: callvirt System.Void UnityEngine.Behaviour::set_enabled(System.Boolean)
+001A: ldarg.0 
+001B: ldfld InterfaceTool PlayerController::activeTool
+0020: callvirt UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+0025: ldc.i4.0 
+0026: callvirt System.Void UnityEngine.GameObject::SetActive(System.Boolean)
+002B: ldarg.0 
+002C: ldfld InterfaceTool PlayerController::activeTool
+0031: ldarg.0 
+0032: ldnull 
+0033: stfld InterfaceTool PlayerController::activeTool
+0038: ldarg.1 
+0039: callvirt System.Void InterfaceTool::DeactivateTool(InterfaceTool)
+003E: ret 
+
+#### public InterfaceTool PlayerController::get_ActiveTool()
+FIELDS:
+- InterfaceTool PlayerController::activeTool
+IL:
+0000: ldarg.0 
+0001: ldfld InterfaceTool PlayerController::activeTool
+0006: ret 
+
+#### private UnityEngine.Vector3 PlayerController::GetCursorPos()
+CALLS:
+- UnityEngine.Vector3 KInputManager::GetMousePos()
+- UnityEngine.Vector3 PlayerController::GetCursorPos(UnityEngine.Vector3)
+IL:
+0000: call UnityEngine.Vector3 KInputManager::GetMousePos()
+0005: call UnityEngine.Vector3 PlayerController::GetCursorPos(UnityEngine.Vector3)
+000A: ret 
+
+#### public UnityEngine.Vector3 PlayerController::GetCursorPos(UnityEngine.Vector3)
+FIELDS:
+- System.Int32 Game::BlockSelectionLayerMask
+- System.Single Grid::CellSizeInMeters
+- System.Single Grid::HeightInMeters
+- System.Single Grid::WidthInMeters
+- System.Single UnityEngine.Vector3::x
+- System.Single UnityEngine.Vector3::y
+- System.Single UnityEngine.Vector3::z
+CALLS:
+- System.Boolean UnityEngine.Physics::Raycast(UnityEngine.Ray,UnityEngine.RaycastHit&,System.Single,System.Int32)
+- System.Single UnityEngine.Mathf::Max(System.Single,System.Single)
+- System.Single UnityEngine.Mathf::Min(System.Single,System.Single)
+- UnityEngine.Camera UnityEngine.Camera::get_main()
+- UnityEngine.Ray UnityEngine.Camera::ScreenPointToRay(UnityEngine.Vector3)
+- UnityEngine.Transform UnityEngine.Component::get_transform()
+- UnityEngine.Vector3 TransformExtensions::GetPosition(UnityEngine.Transform)
+- UnityEngine.Vector3 UnityEngine.Camera::ScreenToWorldPoint(UnityEngine.Vector3)
+- UnityEngine.Vector3 UnityEngine.RaycastHit::get_point()
+IL:
+0000: call UnityEngine.Camera UnityEngine.Camera::get_main()
+0005: ldarg.0 
+0006: callvirt UnityEngine.Ray UnityEngine.Camera::ScreenPointToRay(UnityEngine.Vector3)
+000B: ldloca.s V_1
+000D: ldc.r4 ∞
+0012: ldsfld System.Int32 Game::BlockSelectionLayerMask
+0017: call System.Boolean UnityEngine.Physics::Raycast(UnityEngine.Ray,UnityEngine.RaycastHit&,System.Single,System.Int32)
+001C: brfalse.s IL_0028
+001E: ldloca.s V_1
+0020: call UnityEngine.Vector3 UnityEngine.RaycastHit::get_point()
+0025: stloc.0 
+0026: br.s IL_0056
+0028: ldarga.s mouse_pos
+002A: call UnityEngine.Camera UnityEngine.Camera::get_main()
+002F: callvirt UnityEngine.Transform UnityEngine.Component::get_transform()
+0034: call UnityEngine.Vector3 TransformExtensions::GetPosition(UnityEngine.Transform)
+0039: ldfld System.Single UnityEngine.Vector3::z
+003E: neg 
+003F: ldsfld System.Single Grid::CellSizeInMeters
+0044: sub 
+0045: stfld System.Single UnityEngine.Vector3::z
+004A: call UnityEngine.Camera UnityEngine.Camera::get_main()
+004F: ldarg.0 
+0050: callvirt UnityEngine.Vector3 UnityEngine.Camera::ScreenToWorldPoint(UnityEngine.Vector3)
+0055: stloc.0 
+0056: ldloc.0 
+0057: ldfld System.Single UnityEngine.Vector3::x
+005C: stloc.2 
+005D: ldloc.0 
+005E: ldfld System.Single UnityEngine.Vector3::y
+0063: stloc.3 
+0064: ldloc.2 
+0065: ldc.r4 0
+006A: call System.Single UnityEngine.Mathf::Max(System.Single,System.Single)
+006F: stloc.2 
+0070: ldloc.2 
+0071: ldsfld System.Single Grid::WidthInMeters
+0076: call System.Single UnityEngine.Mathf::Min(System.Single,System.Single)
+007B: stloc.2 
+007C: ldloc.3 
+007D: ldc.r4 0
+0082: call System.Single UnityEngine.Mathf::Max(System.Single,System.Single)
+0087: stloc.3 
+0088: ldloc.3 
+0089: ldsfld System.Single Grid::HeightInMeters
+008E: call System.Single UnityEngine.Mathf::Min(System.Single,System.Single)
+0093: stloc.3 
+0094: ldloca.s V_0
+0096: ldloc.2 
+0097: stfld System.Single UnityEngine.Vector3::x
+009C: ldloca.s V_0
+009E: ldloc.3 
+009F: stfld System.Single UnityEngine.Vector3::y
+00A4: ldloc.0 
+00A5: ret 
+
+## TYPE Assembly-CSharp.dll InterfaceTool
+### Fields
+- private System.Collections.Generic.List`1<Klei.Input.InterfaceToolConfig> activeConfigs
+- private UnityEngine.Texture2D activeCursor
+- private System.Collections.Generic.List`1<UnityEngine.EventSystems.RaycastResult> castResults
+- private System.Collections.Generic.HashSet`1<UnityEngine.Component> curIntersectionGroup
+- family UnityEngine.Texture2D cursor
+- public UnityEngine.Vector2 cursorOffset
+- public System.Single DepthBias
+- public System.Boolean hasFocus
+- private System.Int32 hitCycleCount
+- private System.Collections.Generic.List`1<KSelectable> hits
+- public KSelectable hover
+- private KSelectable hoverOverride
+- private HoverTextConfiguration hoverTextConfiguration
+- private System.Collections.Generic.Dictionary`2<Action,Klei.Input.InterfaceToolConfig> interfaceConfigMap
+- private System.Collections.Generic.List`1<InterfaceTool/Intersection> intersections
+- private System.Boolean isAppFocused
+- family System.Int32 layerMask
+- public System.Single MaxClickDistance
+- public System.Action OnDeactivate
+- public System.String placeSound
+- family System.Boolean playedSoundThisFrame
+- family System.Boolean populateHitsList
+- private System.Collections.Generic.HashSet`1<UnityEngine.Component> prevIntersectionGroup
+- family SelectMarker selectMarker
+- private HashedString toolActivatedViewMode
+- family HashedString viewMode
+- public UnityEngine.GameObject visualizer
+- public Grid/SceneLayer visualizerLayer
+### Selected methods
+
+#### family System.Void InterfaceTool::OnSpawn()
+FIELDS:
+- HoverTextConfiguration InterfaceTool::hoverTextConfiguration
+CALLS:
+- !!0 UnityEngine.Component::GetComponent<HoverTextConfiguration>()
+- System.Void KMonoBehaviour::OnSpawn()
+IL:
+0000: ldarg.0 
+0001: call System.Void KMonoBehaviour::OnSpawn()
+0006: ldarg.0 
+0007: ldarg.0 
+0008: call !!0 UnityEngine.Component::GetComponent<HoverTextConfiguration>()
+000D: stfld HoverTextConfiguration InterfaceTool::hoverTextConfiguration
+0012: ret 
+
+#### public System.Void InterfaceTool::ActivateTool()
+CALLS:
+- Game Game::get_Instance()
+- System.Void InterfaceTool::OnActivateTool()
+- System.Void InterfaceTool::OnMouseMove(UnityEngine.Vector3)
+- System.Void KMonoBehaviour::Trigger(System.Int32,System.Object)
+- UnityEngine.Vector3 KInputManager::GetMousePos()
+- UnityEngine.Vector3 PlayerController::GetCursorPos(UnityEngine.Vector3)
+IL:
+0000: ldarg.0 
+0001: callvirt System.Void InterfaceTool::OnActivateTool()
+0006: ldarg.0 
+0007: call UnityEngine.Vector3 KInputManager::GetMousePos()
+000C: call UnityEngine.Vector3 PlayerController::GetCursorPos(UnityEngine.Vector3)
+0011: callvirt System.Void InterfaceTool::OnMouseMove(UnityEngine.Vector3)
+0016: call Game Game::get_Instance()
+001B: ldc.i4 1174281782
+0020: ldarg.0 
+0021: callvirt System.Void KMonoBehaviour::Trigger(System.Int32,System.Object)
+0026: ret 
+
+#### public System.Void InterfaceTool::DeactivateTool(InterfaceTool)
+FIELDS:
+- HashedString InterfaceTool::toolActivatedViewMode
+- HashedString OverlayModes/None::ID
+- OverlayScreen OverlayScreen::Instance
+- SelectTool SelectTool::Instance
+- SimDebugView SimDebugView::Instance
+CALLS:
+- HashedString SimDebugView::GetMode()
+- System.Boolean HashedString::op_Equality(HashedString,HashedString)
+- System.Boolean HashedString::op_Inequality(HashedString,HashedString)
+- System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object)
+- System.Void InterfaceTool::OnDeactivateTool(InterfaceTool)
+- System.Void OverlayScreen::ToggleOverlay(HashedString,System.Boolean)
+IL:
+0000: ldarg.0 
+0001: ldarg.1 
+0002: callvirt System.Void InterfaceTool::OnDeactivateTool(InterfaceTool)
+0007: ldarg.1 
+0008: ldnull 
+0009: call System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object)
+000E: brtrue.s IL_001D
+0010: ldarg.1 
+0011: ldsfld SelectTool SelectTool::Instance
+0016: call System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object)
+001B: brfalse.s IL_005E
+001D: ldsfld HashedString InterfaceTool::toolActivatedViewMode
+0022: ldsfld HashedString OverlayModes/None::ID
+0027: call System.Boolean HashedString::op_Inequality(HashedString,HashedString)
+002C: brfalse.s IL_005E
+002E: ldsfld HashedString InterfaceTool::toolActivatedViewMode
+0033: ldsfld SimDebugView SimDebugView::Instance
+0038: callvirt HashedString SimDebugView::GetMode()
+003D: call System.Boolean HashedString::op_Equality(HashedString,HashedString)
+0042: brfalse.s IL_005E
+0044: ldsfld OverlayScreen OverlayScreen::Instance
+0049: ldsfld HashedString OverlayModes/None::ID
+004E: ldc.i4.1 
+004F: callvirt System.Void OverlayScreen::ToggleOverlay(HashedString,System.Boolean)
+0054: ldsfld HashedString OverlayModes/None::ID
+0059: stsfld HashedString InterfaceTool::toolActivatedViewMode
+005E: ret 
+
+#### family System.Void InterfaceTool::OnActivateTool()
+FIELDS:
+- HashedString InterfaceTool::toolActivatedViewMode
+- HashedString InterfaceTool::viewMode
+- HashedString OverlayModes/None::ID
+- OverlayScreen OverlayScreen::Instance
+- UnityEngine.Texture2D InterfaceTool::cursor
+- UnityEngine.Vector2 InterfaceTool::cursorOffset
+CALLS:
+- HashedString OverlayScreen::get_mode()
+- System.Boolean HashedString::op_Inequality(HashedString,HashedString)
+- System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+- System.Void InterfaceTool::SetCursor(UnityEngine.Texture2D,UnityEngine.Vector2,UnityEngine.CursorMode)
+- System.Void OverlayScreen::ToggleOverlay(HashedString,System.Boolean)
+IL:
+0000: ldsfld OverlayScreen OverlayScreen::Instance
+0005: ldnull 
+0006: call System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+000B: brfalse.s IL_0052
+000D: ldarg.0 
+000E: ldfld HashedString InterfaceTool::viewMode
+0013: ldsfld HashedString OverlayModes/None::ID
+0018: call System.Boolean HashedString::op_Inequality(HashedString,HashedString)
+001D: brfalse.s IL_0052
+001F: ldsfld OverlayScreen OverlayScreen::Instance
+0024: callvirt HashedString OverlayScreen::get_mode()
+0029: ldarg.0 
+002A: ldfld HashedString InterfaceTool::viewMode
+002F: call System.Boolean HashedString::op_Inequality(HashedString,HashedString)
+0034: brfalse.s IL_0052
+0036: ldsfld OverlayScreen OverlayScreen::Instance
+003B: ldarg.0 
+003C: ldfld HashedString InterfaceTool::viewMode
+0041: ldc.i4.1 
+0042: callvirt System.Void OverlayScreen::ToggleOverlay(HashedString,System.Boolean)
+0047: ldarg.0 
+0048: ldfld HashedString InterfaceTool::viewMode
+004D: stsfld HashedString InterfaceTool::toolActivatedViewMode
+0052: ldarg.0 
+0053: ldarg.0 
+0054: ldfld UnityEngine.Texture2D InterfaceTool::cursor
+0059: ldarg.0 
+005A: ldfld UnityEngine.Vector2 InterfaceTool::cursorOffset
+005F: ldc.i4.0 
+0060: call System.Void InterfaceTool::SetCursor(UnityEngine.Texture2D,UnityEngine.Vector2,UnityEngine.CursorMode)
+0065: ret 
+
+#### family System.Void InterfaceTool::OnDeactivateTool(InterfaceTool)
+IL:
+0000: ret 
+
+#### family System.Void InterfaceTool::UpdateHoverElements(System.Collections.Generic.List`1<KSelectable>)
+FIELDS:
+- HoverTextConfiguration InterfaceTool::hoverTextConfiguration
+CALLS:
+- System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+- System.Void HoverTextConfiguration::UpdateHoverElements(System.Collections.Generic.List`1<KSelectable>)
+IL:
+0000: ldarg.0 
+0001: ldfld HoverTextConfiguration InterfaceTool::hoverTextConfiguration
+0006: ldnull 
+0007: call System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+000C: brfalse.s IL_001A
+000E: ldarg.0 
+000F: ldfld HoverTextConfiguration InterfaceTool::hoverTextConfiguration
+0014: ldarg.1 
+0015: callvirt System.Void HoverTextConfiguration::UpdateHoverElements(System.Collections.Generic.List`1<KSelectable>)
+001A: ret 
+
+#### public System.Void InterfaceTool::LateUpdate()
+FIELDS:
+- InterfaceTool/<>c InterfaceTool/<>c::<>9
+- KSelectable InterfaceTool::hover
+- KSelectable InterfaceTool::hoverOverride
+- System.Boolean InterfaceTool::hasFocus
+- System.Boolean InterfaceTool::isAppFocused
+- System.Boolean InterfaceTool::playedSoundThisFrame
+- System.Boolean InterfaceTool::populateHitsList
+- System.Collections.Generic.List`1<KSelectable> InterfaceTool::hits
+- System.Func`2<KSelectable,System.Boolean> InterfaceTool/<>c::<>9__53_0
+CALLS:
+- Game Game::get_Instance()
+- System.Boolean Grid::IsValidCell(System.Int32)
+- System.Boolean InterfaceTool/<>c::<LateUpdate>b__53_0(KSelectable)
+- System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object)
+- System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+- System.Int32 Grid::PosToCell(UnityEngine.Vector3)
+- System.Void InterfaceTool::ClearHover()
+- System.Void InterfaceTool::GetSelectablesUnderCursor(System.Collections.Generic.List`1<KSelectable>)
+- System.Void InterfaceTool::UpdateHoverElements(System.Collections.Generic.List`1<KSelectable>)
+- System.Void KMonoBehaviour::Trigger(System.Int32,System.Object)
+- System.Void KSelectable::Hover(System.Boolean)
+- System.Void System.Collections.Generic.List`1<KSelectable>::Clear()
+- System.Void System.Func`2<KSelectable,System.Boolean>::.ctor(System.Object,System.IntPtr)
+- T InterfaceTool::GetObjectUnderCursor<KSelectable>(System.Boolean,System.Func`2<T,System.Boolean>,UnityEngine.Component)
+- UnityEngine.Camera UnityEngine.Camera::get_main()
+- UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+- UnityEngine.Vector3 KInputManager::GetMousePos()
+- UnityEngine.Vector3 UnityEngine.Camera::ScreenToWorldPoint(UnityEngine.Vector3)
+IL:
+0000: ldarg.0 
+0001: ldfld System.Boolean InterfaceTool::populateHitsList
+0006: brfalse IL_00F0
+000B: ldarg.0 
+000C: ldfld System.Boolean InterfaceTool::isAppFocused
+0011: brtrue.s IL_0014
+0013: ret 
+0014: call UnityEngine.Camera UnityEngine.Camera::get_main()
+0019: call UnityEngine.Vector3 KInputManager::GetMousePos()
+001E: callvirt UnityEngine.Vector3 UnityEngine.Camera::ScreenToWorldPoint(UnityEngine.Vector3)
+0023: call System.Int32 Grid::PosToCell(UnityEngine.Vector3)
+0028: call System.Boolean Grid::IsValidCell(System.Int32)
+002D: brtrue.s IL_0030
+002F: ret 
+0030: ldarg.0 
+0031: ldfld System.Collections.Generic.List`1<KSelectable> InterfaceTool::hits
+0036: callvirt System.Void System.Collections.Generic.List`1<KSelectable>::Clear()
+003B: ldarg.0 
+003C: ldarg.0 
+003D: ldfld System.Collections.Generic.List`1<KSelectable> InterfaceTool::hits
+0042: call System.Void InterfaceTool::GetSelectablesUnderCursor(System.Collections.Generic.List`1<KSelectable>)
+0047: ldarg.0 
+0048: ldc.i4.0 
+0049: ldsfld System.Func`2<KSelectable,System.Boolean> InterfaceTool/<>c::<>9__53_0
+004E: dup 
+004F: brtrue.s IL_0068
+0051: pop 
+0052: ldsfld InterfaceTool/<>c InterfaceTool/<>c::<>9
+0057: ldftn System.Boolean InterfaceTool/<>c::<LateUpdate>b__53_0(KSelectable)
+005D: newobj System.Void System.Func`2<KSelectable,System.Boolean>::.ctor(System.Object,System.IntPtr)
+0062: dup 
+0063: stsfld System.Func`2<KSelectable,System.Boolean> InterfaceTool/<>c::<>9__53_0
+0068: ldnull 
+0069: call T InterfaceTool::GetObjectUnderCursor<KSelectable>(System.Boolean,System.Func`2<T,System.Boolean>,UnityEngine.Component)
+006E: stloc.0 
+006F: ldarg.0 
+0070: ldarg.0 
+0071: ldfld System.Collections.Generic.List`1<KSelectable> InterfaceTool::hits
+0076: call System.Void InterfaceTool::UpdateHoverElements(System.Collections.Generic.List`1<KSelectable>)
+007B: ldarg.0 
+007C: ldfld System.Boolean InterfaceTool::hasFocus
+0081: brtrue.s IL_0099
+0083: ldarg.0 
+0084: ldfld KSelectable InterfaceTool::hoverOverride
+0089: ldnull 
+008A: call System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object)
+008F: brfalse.s IL_0099
+0091: ldarg.0 
+0092: call System.Void InterfaceTool::ClearHover()
+0097: br.s IL_00E8
+0099: ldloc.0 
+009A: ldarg.0 
+009B: ldfld KSelectable InterfaceTool::hover
+00A0: call System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+00A5: brfalse.s IL_00E8
+00A7: ldarg.0 
+00A8: call System.Void InterfaceTool::ClearHover()
+00AD: ldarg.0 
+00AE: ldloc.0 
+00AF: stfld KSelectable InterfaceTool::hover
+00B4: ldloc.0 
+00B5: ldnull 
+00B6: call System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+00BB: brfalse.s IL_00E8
+00BD: call Game Game::get_Instance()
+00C2: ldc.i4 2095258329
+00C7: ldloc.0 
+00C8: callvirt UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+00CD: callvirt System.Void KMonoBehaviour::Trigger(System.Int32,System.Object)
+00D2: ldloc.0 
+00D3: ldarg.0 
+00D4: ldfld System.Boolean InterfaceTool::playedSoundThisFrame
+00D9: ldc.i4.0 
+00DA: ceq 
+00DC: callvirt System.Void KSelectable::Hover(System.Boolean)
+00E1: ldarg.0 
+00E2: ldc.i4.1 
+00E3: stfld System.Boolean InterfaceTool::playedSoundThisFrame
+00E8: ldarg.0 
+00E9: ldc.i4.0 
+00EA: stfld System.Boolean InterfaceTool::playedSoundThisFrame
+00EF: ret 
+00F0: ldarg.0 
+00F1: ldnull 
+00F2: call System.Void InterfaceTool::UpdateHoverElements(System.Collections.Generic.List`1<KSelectable>)
+00F7: ret 
+
+#### public System.Boolean InterfaceTool::ShowHoverUI()
+FIELDS:
+- ClusterManager ClusterManager::Instance
+- ManagementMenu ManagementMenu::Instance
+- OverlayScreen OverlayScreen::Instance
+- System.Single Grid::HeightInMeters
+- System.Single Grid::WidthInMeters
+- System.Single UnityEngine.Vector3::x
+- System.Single UnityEngine.Vector3::y
+CALLS:
+- System.Boolean ClusterManager::IsPositionInActiveWorld(UnityEngine.Vector3)
+- System.Boolean ManagementMenu::IsFullscreenUIActive()
+- System.Boolean UnityEngine.EventSystems.EventSystem::IsPointerOverGameObject()
+- System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object)
+- System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+- UnityEngine.Camera UnityEngine.Camera::get_main()
+- UnityEngine.EventSystems.EventSystem UnityEngine.EventSystems.EventSystem::get_current()
+- UnityEngine.Vector3 KInputManager::GetMousePos()
+- UnityEngine.Vector3 UnityEngine.Camera::ScreenToWorldPoint(UnityEngine.Vector3)
+IL:
+0000: ldsfld ManagementMenu ManagementMenu::Instance
+0005: ldnull 
+0006: call System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object)
+000B: brtrue.s IL_0019
+000D: ldsfld ManagementMenu ManagementMenu::Instance
+0012: callvirt System.Boolean ManagementMenu::IsFullscreenUIActive()
+0017: brfalse.s IL_001B
+0019: ldc.i4.0 
+001A: ret 
+001B: call UnityEngine.Camera UnityEngine.Camera::get_main()
+0020: call UnityEngine.Vector3 KInputManager::GetMousePos()
+0025: callvirt UnityEngine.Vector3 UnityEngine.Camera::ScreenToWorldPoint(UnityEngine.Vector3)
+002A: stloc.0 
+002B: ldsfld OverlayScreen OverlayScreen::Instance
+0030: ldnull 
+0031: call System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object)
+0036: brtrue.s IL_0079
+0038: ldsfld ClusterManager ClusterManager::Instance
+003D: ldloc.0 
+003E: callvirt System.Boolean ClusterManager::IsPositionInActiveWorld(UnityEngine.Vector3)
+0043: brfalse.s IL_0079
+0045: ldloc.0 
+0046: ldfld System.Single UnityEngine.Vector3::x
+004B: ldc.r4 0
+0050: blt.s IL_0079
+0052: ldloc.0 
+0053: ldfld System.Single UnityEngine.Vector3::x
+0058: ldsfld System.Single Grid::WidthInMeters
+005D: bgt.s IL_0079
+005F: ldloc.0 
+0060: ldfld System.Single UnityEngine.Vector3::y
+0065: ldc.r4 0
+006A: blt.s IL_0079
+006C: ldloc.0 
+006D: ldfld System.Single UnityEngine.Vector3::y
+0072: ldsfld System.Single Grid::HeightInMeters
+0077: ble.un.s IL_007B
+0079: ldc.i4.0 
+007A: ret 
+007B: call UnityEngine.EventSystems.EventSystem UnityEngine.EventSystems.EventSystem::get_current()
+0080: stloc.1 
+0081: ldloc.1 
+0082: ldnull 
+0083: call System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+0088: brfalse.s IL_0094
+008A: ldloc.1 
+008B: callvirt System.Boolean UnityEngine.EventSystems.EventSystem::IsPointerOverGameObject()
+0090: ldc.i4.0 
+0091: ceq 
+0093: ret 
+0094: ldc.i4.0 
+0095: ret 
+
+#### public System.Void InterfaceTool::OnKeyDown(KButtonEvent)
+IL:
+0000: ret 
+
+#### public System.Void InterfaceTool::OnMouseMove(UnityEngine.Vector3)
+FIELDS:
+- Grid/SceneLayer InterfaceTool::visualizerLayer
+- System.Boolean InterfaceTool::isAppFocused
+- System.Single UnityEngine.Vector3::z
+- UnityEngine.GameObject InterfaceTool::visualizer
+CALLS:
+- System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object)
+- System.Int32 Grid::PosToCell(UnityEngine.Vector3)
+- UnityEngine.Transform UnityEngine.GameObject::get_transform()
+- UnityEngine.Vector3 Grid::CellToPosCBC(System.Int32,Grid/SceneLayer)
+- UnityEngine.Vector3 TransformExtensions::SetLocalPosition(UnityEngine.Transform,UnityEngine.Vector3)
+IL:
+0000: ldarg.0 
+0001: ldfld UnityEngine.GameObject InterfaceTool::visualizer
+0006: ldnull 
+0007: call System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object)
+000C: brtrue.s IL_0016
+000E: ldarg.0 
+000F: ldfld System.Boolean InterfaceTool::isAppFocused
+0014: brtrue.s IL_0017
+0016: ret 
+0017: ldarg.1 
+0018: call System.Int32 Grid::PosToCell(UnityEngine.Vector3)
+001D: ldarg.0 
+001E: ldfld Grid/SceneLayer InterfaceTool::visualizerLayer
+0023: call UnityEngine.Vector3 Grid::CellToPosCBC(System.Int32,Grid/SceneLayer)
+0028: starg.s cursor_pos
+002A: ldarga.s cursor_pos
+002C: ldarg.1 
+002D: ldfld System.Single UnityEngine.Vector3::z
+0032: ldc.r4 -0.15
+0037: add 
+0038: stfld System.Single UnityEngine.Vector3::z
+003D: ldarg.0 
+003E: ldfld UnityEngine.GameObject InterfaceTool::visualizer
+0043: callvirt UnityEngine.Transform UnityEngine.GameObject::get_transform()
+0048: ldarg.1 
+0049: call UnityEngine.Vector3 TransformExtensions::SetLocalPosition(UnityEngine.Transform,UnityEngine.Vector3)
+004E: pop 
+004F: ret 
+
+#### public System.Void InterfaceTool::OnLeftClickDown(UnityEngine.Vector3)
+IL:
+0000: ret 
+
+#### public System.Void InterfaceTool::OnRightClickDown(UnityEngine.Vector3,KButtonEvent)
+IL:
+0000: ret 
+
+## TYPE Assembly-CSharp.dll HoverTextScreen
+### Fields
+- public HoverTextDrawer drawer
+- public UnityEngine.Sprite[] HoverIcons
+- public HoverTextScreen Instance
+- private HoverTextSkin skin
+### Selected methods
+
+#### private System.Void HoverTextScreen::Update()
+FIELDS:
+- HoverTextDrawer HoverTextScreen::drawer
+CALLS:
+- InterfaceTool PlayerController::get_ActiveTool()
+- PlayerController PlayerController::get_Instance()
+- System.Boolean InterfaceTool::ShowHoverUI()
+- System.Void HoverTextDrawer::SetEnabled(System.Boolean)
+IL:
+0000: call PlayerController PlayerController::get_Instance()
+0005: callvirt InterfaceTool PlayerController::get_ActiveTool()
+000A: callvirt System.Boolean InterfaceTool::ShowHoverUI()
+000F: stloc.0 
+0010: ldarg.0 
+0011: ldfld HoverTextDrawer HoverTextScreen::drawer
+0016: ldloc.0 
+0017: callvirt System.Void HoverTextDrawer::SetEnabled(System.Boolean)
+001C: ret 
+
+#### public HoverTextDrawer HoverTextScreen::BeginDrawing()
+FIELDS:
+- HoverTextDrawer HoverTextScreen::drawer
+- System.Single UnityEngine.Vector2::x
+- System.Single UnityEngine.Vector2::y
+CALLS:
+- !!0 UnityEngine.Component::GetComponent<UnityEngine.Canvas>()
+- System.Boolean UnityEngine.RectTransformUtility::ScreenPointToLocalPointInRectangle(UnityEngine.RectTransform,UnityEngine.Vector2,UnityEngine.Camera,UnityEngine.Vector2&)
+- System.Void HoverTextDrawer::BeginDrawing(UnityEngine.Vector2)
+- UnityEngine.Camera UnityEngine.Canvas::get_worldCamera()
+- UnityEngine.Transform KMonoBehaviour::get_transform()
+- UnityEngine.Transform UnityEngine.Transform::get_parent()
+- UnityEngine.Vector2 UnityEngine.RectTransform::get_sizeDelta()
+- UnityEngine.Vector2 UnityEngine.Vector2::get_zero()
+- UnityEngine.Vector2 UnityEngine.Vector2::op_Implicit(UnityEngine.Vector3)
+- UnityEngine.Vector3 KInputManager::GetMousePos()
+IL:
+0000: call UnityEngine.Vector2 UnityEngine.Vector2::get_zero()
+0005: stloc.0 
+0006: call UnityEngine.Vector3 KInputManager::GetMousePos()
+000B: call UnityEngine.Vector2 UnityEngine.Vector2::op_Implicit(UnityEngine.Vector3)
+0010: stloc.1 
+0011: ldarg.0 
+0012: call UnityEngine.Transform KMonoBehaviour::get_transform()
+0017: callvirt UnityEngine.Transform UnityEngine.Transform::get_parent()
+001C: isinst UnityEngine.RectTransform
+0021: stloc.2 
+0022: ldloc.2 
+0023: ldloc.1 
+0024: ldarg.0 
+0025: call UnityEngine.Transform KMonoBehaviour::get_transform()
+002A: callvirt UnityEngine.Transform UnityEngine.Transform::get_parent()
+002F: callvirt !!0 UnityEngine.Component::GetComponent<UnityEngine.Canvas>()
+0034: callvirt UnityEngine.Camera UnityEngine.Canvas::get_worldCamera()
+0039: ldloca.s V_0
+003B: call System.Boolean UnityEngine.RectTransformUtility::ScreenPointToLocalPointInRectangle(UnityEngine.RectTransform,UnityEngine.Vector2,UnityEngine.Camera,UnityEngine.Vector2&)
+0040: pop 
+0041: ldloca.s V_0
+0043: ldflda System.Single UnityEngine.Vector2::x
+0048: dup 
+0049: ldind.r4 
+004A: ldloc.2 
+004B: callvirt UnityEngine.Vector2 UnityEngine.RectTransform::get_sizeDelta()
+0050: ldfld System.Single UnityEngine.Vector2::x
+0055: ldc.r4 2
+005A: div 
+005B: add 
+005C: stind.r4 
+005D: ldloca.s V_0
+005F: ldflda System.Single UnityEngine.Vector2::y
+0064: dup 
+0065: ldind.r4 
+0066: ldloc.2 
+0067: callvirt UnityEngine.Vector2 UnityEngine.RectTransform::get_sizeDelta()
+006C: ldfld System.Single UnityEngine.Vector2::y
+0071: ldc.r4 2
+0076: div 
+0077: sub 
+0078: stind.r4 
+0079: ldarg.0 
+007A: ldfld HoverTextDrawer HoverTextScreen::drawer
+007F: ldloc.0 
+0080: callvirt System.Void HoverTextDrawer::BeginDrawing(UnityEngine.Vector2)
+0085: ldarg.0 
+0086: ldfld HoverTextDrawer HoverTextScreen::drawer
+008B: ret 
+
+## TYPE Assembly-CSharp.dll HoverTextConfiguration
+### Fields
+- public System.String ActionName
+- public System.String ActionStringKey
+- family System.String backStr
+- public TextStyleSetting[] HoverTextStyleSettings
+- public HoverTextConfiguration/TextStylePair Styles_BodyText
+- public HoverTextConfiguration/TextStylePair Styles_Instruction
+- public HoverTextConfiguration/TextStylePair Styles_Title
+- public HoverTextConfiguration/ValuePropertyTextStyles Styles_Values
+- public HoverTextConfiguration/TextStylePair Styles_Warning
+- public System.String ToolName
+- public System.String ToolNameStringKey
+- public TextStyleSetting ToolTitleTextStyle
+### Selected methods
+
+#### public System.Void HoverTextConfiguration::UpdateHoverElements(System.Collections.Generic.List`1<KSelectable>)
+FIELDS:
+- ClusterManager ClusterManager::Instance
+- HoverTextScreen HoverTextScreen::Instance
+- System.Byte[] Grid::WorldIdx
+CALLS:
+- HoverTextDrawer HoverTextScreen::BeginDrawing()
+- System.Boolean Grid::IsValidCell(System.Int32)
+- System.Int32 ClusterManager::get_activeWorldId()
+- System.Int32 Grid::PosToCell(UnityEngine.Vector3)
+- System.Void HoverTextConfiguration::DrawInstructions(HoverTextScreen,HoverTextDrawer)
+- System.Void HoverTextConfiguration::DrawTitle(HoverTextScreen,HoverTextDrawer)
+- System.Void HoverTextDrawer::BeginShadowBar(System.Boolean)
+- System.Void HoverTextDrawer::EndDrawing()
+- System.Void HoverTextDrawer::EndShadowBar()
+- UnityEngine.Camera UnityEngine.Camera::get_main()
+- UnityEngine.Vector3 KInputManager::GetMousePos()
+- UnityEngine.Vector3 UnityEngine.Camera::ScreenToWorldPoint(UnityEngine.Vector3)
+IL:
+0000: ldsfld HoverTextScreen HoverTextScreen::Instance
+0005: stloc.0 
+0006: ldloc.0 
+0007: callvirt HoverTextDrawer HoverTextScreen::BeginDrawing()
+000C: stloc.1 
+000D: call UnityEngine.Camera UnityEngine.Camera::get_main()
+0012: call UnityEngine.Vector3 KInputManager::GetMousePos()
+0017: callvirt UnityEngine.Vector3 UnityEngine.Camera::ScreenToWorldPoint(UnityEngine.Vector3)
+001C: call System.Int32 Grid::PosToCell(UnityEngine.Vector3)
+0021: stloc.2 
+0022: ldloc.2 
+0023: call System.Boolean Grid::IsValidCell(System.Int32)
+0028: brfalse.s IL_003D
+002A: ldsfld System.Byte[] Grid::WorldIdx
+002F: ldloc.2 
+0030: ldelem.u1 
+0031: ldsfld ClusterManager ClusterManager::Instance
+0036: callvirt System.Int32 ClusterManager::get_activeWorldId()
+003B: beq.s IL_0044
+003D: ldloc.1 
+003E: callvirt System.Void HoverTextDrawer::EndDrawing()
+0043: ret 
+0044: ldloc.1 
+0045: ldc.i4.0 
+0046: callvirt System.Void HoverTextDrawer::BeginShadowBar(System.Boolean)
+004B: ldarg.0 
+004C: ldloc.0 
+004D: ldloc.1 
+004E: call System.Void HoverTextConfiguration::DrawTitle(HoverTextScreen,HoverTextDrawer)
+0053: ldarg.0 
+0054: ldsfld HoverTextScreen HoverTextScreen::Instance
+0059: ldloc.1 
+005A: call System.Void HoverTextConfiguration::DrawInstructions(HoverTextScreen,HoverTextDrawer)
+005F: ldloc.1 
+0060: callvirt System.Void HoverTextDrawer::EndShadowBar()
+0065: ldloc.1 
+0066: callvirt System.Void HoverTextDrawer::EndDrawing()
+006B: ret 
+
+#### family System.Void HoverTextConfiguration::DrawTitle(HoverTextScreen,HoverTextDrawer)
+FIELDS:
+- System.String HoverTextConfiguration::ToolName
+- TextStyleSetting HoverTextConfiguration::ToolTitleTextStyle
+CALLS:
+- System.Void HoverTextDrawer::DrawText(System.String,TextStyleSetting)
+IL:
+0000: ldarg.2 
+0001: ldarg.0 
+0002: ldfld System.String HoverTextConfiguration::ToolName
+0007: ldarg.0 
+0008: ldfld TextStyleSetting HoverTextConfiguration::ToolTitleTextStyle
+000D: callvirt System.Void HoverTextDrawer::DrawText(System.String,TextStyleSetting)
+0012: ret 
+
+#### family System.Void HoverTextConfiguration::DrawInstructions(HoverTextScreen,HoverTextDrawer)
+FIELDS:
+- HoverTextConfiguration/TextStylePair HoverTextConfiguration::Styles_Instruction
+- SteamInputInterpreter KInputManager::steamInputInterpreter
+- System.Boolean KInputManager::currentControllerIsGamepad
+- System.String HoverTextConfiguration::ActionName
+- System.String HoverTextConfiguration::backStr
+- TextStyleSetting HoverTextConfiguration/TextStylePair::Standard
+CALLS:
+- System.Void HoverTextDrawer::AddIndent(System.Int32)
+- System.Void HoverTextDrawer::DrawIcon(UnityEngine.Sprite,System.Int32)
+- System.Void HoverTextDrawer::DrawText(System.String,TextStyleSetting)
+- System.Void HoverTextDrawer::NewLine(System.Int32)
+- UnityEngine.Sprite HoverTextScreen::GetSprite(System.String)
+- UnityEngine.Sprite SteamInputInterpreter::GetActionSprite(Action,System.Boolean)
+IL:
+0000: ldarg.0 
+0001: ldflda HoverTextConfiguration/TextStylePair HoverTextConfiguration::Styles_Instruction
+0006: ldfld TextStyleSetting HoverTextConfiguration/TextStylePair::Standard
+000B: stloc.0 
+000C: ldarg.2 
+000D: ldc.i4.s 26
+000F: callvirt System.Void HoverTextDrawer::NewLine(System.Int32)
+0014: ldsfld System.Boolean KInputManager::currentControllerIsGamepad
+0019: brfalse.s IL_0031
+001B: ldarg.2 
+001C: ldsfld SteamInputInterpreter KInputManager::steamInputInterpreter
+0021: ldc.i4.3 
+0022: ldc.i4.0 
+0023: callvirt UnityEngine.Sprite SteamInputInterpreter::GetActionSprite(Action,System.Boolean)
+0028: ldc.i4.s 20
+002A: callvirt System.Void HoverTextDrawer::DrawIcon(UnityEngine.Sprite,System.Int32)
+002F: br.s IL_0044
+0031: ldarg.2 
+0032: ldarg.1 
+0033: ldstr "icon_mouse_left"
+0038: callvirt UnityEngine.Sprite HoverTextScreen::GetSprite(System.String)
+003D: ldc.i4.s 20
+003F: callvirt System.Void HoverTextDrawer::DrawIcon(UnityEngine.Sprite,System.Int32)
+0044: ldarg.2 
+0045: ldarg.0 
+0046: ldfld System.String HoverTextConfiguration::ActionName
+004B: ldloc.0 
+004C: callvirt System.Void HoverTextDrawer::DrawText(System.String,TextStyleSetting)
+0051: ldarg.2 
+0052: ldc.i4.8 
+0053: callvirt System.Void HoverTextDrawer::AddIndent(System.Int32)
+0058: ldsfld System.Boolean KInputManager::currentControllerIsGamepad
+005D: brfalse.s IL_0075
+005F: ldarg.2 
+0060: ldsfld SteamInputInterpreter KInputManager::steamInputInterpreter
+0065: ldc.i4.5 
+0066: ldc.i4.0 
+0067: callvirt UnityEngine.Sprite SteamInputInterpreter::GetActionSprite(Action,System.Boolean)
+006C: ldc.i4.s 20
+006E: callvirt System.Void HoverTextDrawer::DrawIcon(UnityEngine.Sprite,System.Int32)
+0073: br.s IL_0088
+0075: ldarg.2 
+0076: ldarg.1 
+0077: ldstr "icon_mouse_right"
+007C: callvirt UnityEngine.Sprite HoverTextScreen::GetSprite(System.String)
+0081: ldc.i4.s 20
+0083: callvirt System.Void HoverTextDrawer::DrawIcon(UnityEngine.Sprite,System.Int32)
+0088: ldarg.2 
+0089: ldarg.0 
+008A: ldfld System.String HoverTextConfiguration::backStr
+008F: ldloc.0 
+0090: callvirt System.Void HoverTextDrawer::DrawText(System.String,TextStyleSetting)
+0095: ret 
+
+## TYPE Assembly-CSharp.dll KBatchedAnimController
+### Fields
+- family System.Boolean _forceRebuild
+- private HashedString <batchGroupID>k__BackingField
+- private HashedString <batchGroupIDOverride>k__BackingField
+- public UnityEngine.Vector2 animOverrideSize
+- public System.Single animScale
+- private KAnimBatch batch
+- public System.Func`1<UnityEngine.Vector4> getPositionDataFunctionInUse
+- public System.Boolean isMovable
+- private Vector2I lastChunkXY
+- private UnityEngine.Vector3 lastPos
+- public System.UInt64 movementChangedHandlerId
+- private System.Boolean moving
+- private System.UInt64 movingStateChangedHandlerID
+- public Matrix2x3 navMatrix
+- private System.Action`3<UnityEngine.Transform,System.Boolean,System.Object> OnMovementStateChangedDispatcher
+- public KAnimConverter/PostProcessingEffects postProcessingEffectsAllowed
+- public System.Single postProcessingParameters
+- private UnityEngine.Canvas rootCanvas
+- private UnityEngine.RectTransform rt
+- private UnityEngine.UI.CanvasScaler scaler
+- public Grid/SceneLayer sceneLayer
+- private UnityEngine.Vector3 screenOffset
+- public System.Boolean setScaleFromAnim
+- private System.Boolean suspendUpdates
+- private SymbolOverrideController symbolOverrideController
+- private System.Int32 symbolOverrideControllerVersion
+- public KBatchedAnimUpdater/RegistrationState updateRegistrationState
+- private System.Boolean visibilityListenerRegistered
+### Selected methods
+
+#### public System.Void KBatchedAnimController::LoadAnims()
+FIELDS:
+- KAnimFile[] KAnimControllerBase::animFiles
+- KAnimLayering KAnimControllerBase::layering
+- System.Boolean KAnimControllerBase::usingNewSymbolOverrideSystem
+- System.Collections.Generic.Dictionary`2<HashedString,KAnimControllerBase/AnimLookupData> KAnimControllerBase::anims
+- System.Collections.Generic.Dictionary`2<HashedString,KAnimControllerBase/AnimLookupData> KAnimControllerBase::overrideAnims
+CALLS:
+- !!0 UnityEngine.Component::GetComponent<SymbolOverrideController>()
+- KAnimBatchManager KAnimBatchManager::Instance()
+- KAnimFileData KAnimFile::GetData()
+- System.Boolean KAnimBatchManager::get_isReady()
+- System.Boolean KAnimFile::get_IsBuildLoaded()
+- System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+- System.String KAnimFileData::get_name()
+- System.String System.String::Concat(System.String,System.String)
+- System.String System.String::Format(System.String,System.Object)
+- System.String UnityEngine.Object::get_name()
+- System.Void Debug::LogError(System.Object)
+- System.Void DebugUtil::Assert(System.Boolean,System.String)
+- System.Void DebugUtil::Assert(System.Boolean)
+- System.Void DebugUtil::LogErrorArgs(UnityEngine.Object,System.Object[])
+- System.Void KAnimControllerBase::AddAnims(KAnimFile)
+- System.Void KAnimLayering::HideSymbols()
+- System.Void KBatchedAnimController::set_forceRebuild(System.Boolean)
+- System.Void KBatchedAnimController::SetBatchGroup(KAnimFileData)
+- System.Void System.Collections.Generic.Dictionary`2<HashedString,KAnimControllerBase/AnimLookupData>::Clear()
+- UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+IL:
+0000: call KAnimBatchManager KAnimBatchManager::Instance()
+0005: callvirt System.Boolean KAnimBatchManager::get_isReady()
+000A: brtrue.s IL_0021
+000C: ldstr "KAnimBatchManager is not ready when loading anim:"
+0011: ldarg.0 
+0012: call System.String UnityEngine.Object::get_name()
+0017: call System.String System.String::Concat(System.String,System.String)
+001C: call System.Void Debug::LogError(System.Object)
+0021: ldarg.0 
+0022: ldfld KAnimFile[] KAnimControllerBase::animFiles
+0027: ldlen 
+0028: brtrue.s IL_0040
+002A: ldc.i4.0 
+002B: ldstr "KBatchedAnimController has no anim files:"
+0030: ldarg.0 
+0031: call System.String UnityEngine.Object::get_name()
+0036: call System.String System.String::Concat(System.String,System.String)
+003B: call System.Void DebugUtil::Assert(System.Boolean,System.String)
+0040: ldarg.0 
+0041: ldfld KAnimFile[] KAnimControllerBase::animFiles
+0046: ldc.i4.0 
+0047: ldelem.ref 
+0048: callvirt System.Boolean KAnimFile::get_IsBuildLoaded()
+004D: brtrue.s IL_007F
+004F: ldarg.0 
+0050: call UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+0055: ldc.i4.1 
+0056: newarr System.Object
+005B: dup 
+005C: ldc.i4.0 
+005D: ldstr "First anim file needs to be the build file but {0} doesn't have an associated build"
+0062: ldarg.0 
+0063: ldfld KAnimFile[] KAnimControllerBase::animFiles
+0068: ldc.i4.0 
+0069: ldelem.ref 
+006A: callvirt KAnimFileData KAnimFile::GetData()
+006F: callvirt System.String KAnimFileData::get_name()
+0074: call System.String System.String::Format(System.String,System.Object)
+0079: stelem.ref 
+007A: call System.Void DebugUtil::LogErrorArgs(UnityEngine.Object,System.Object[])
+007F: ldarg.0 
+0080: ldfld System.Collections.Generic.Dictionary`2<HashedString,KAnimControllerBase/AnimLookupData> KAnimControllerBase::overrideAnims
+0085: callvirt System.Void System.Collections.Generic.Dictionary`2<HashedString,KAnimControllerBase/AnimLookupData>::Clear()
+008A: ldarg.0 
+008B: ldfld System.Collections.Generic.Dictionary`2<HashedString,KAnimControllerBase/AnimLookupData> KAnimControllerBase::anims
+0090: callvirt System.Void System.Collections.Generic.Dictionary`2<HashedString,KAnimControllerBase/AnimLookupData>::Clear()
+0095: ldarg.0 
+0096: ldarg.0 
+0097: ldfld KAnimFile[] KAnimControllerBase::animFiles
+009C: ldc.i4.0 
+009D: ldelem.ref 
+009E: callvirt KAnimFileData KAnimFile::GetData()
+00A3: call System.Void KBatchedAnimController::SetBatchGroup(KAnimFileData)
+00A8: ldc.i4.0 
+00A9: stloc.0 
+00AA: br.s IL_00BE
+00AC: ldarg.0 
+00AD: ldarg.0 
+00AE: ldfld KAnimFile[] KAnimControllerBase::animFiles
+00B3: ldloc.0 
+00B4: ldelem.ref 
+00B5: call System.Void KAnimControllerBase::AddAnims(KAnimFile)
+00BA: ldloc.0 
+00BB: ldc.i4.1 
+00BC: add 
+00BD: stloc.0 
+00BE: ldloc.0 
+00BF: ldarg.0 
+00C0: ldfld KAnimFile[] KAnimControllerBase::animFiles
+00C5: ldlen 
+00C6: conv.i4 
+00C7: blt.s IL_00AC
+00C9: ldarg.0 
+00CA: ldc.i4.1 
+00CB: call System.Void KBatchedAnimController::set_forceRebuild(System.Boolean)
+00D0: ldarg.0 
+00D1: ldfld KAnimLayering KAnimControllerBase::layering
+00D6: brfalse.s IL_00E3
+00D8: ldarg.0 
+00D9: ldfld KAnimLayering KAnimControllerBase::layering
+00DE: callvirt System.Void KAnimLayering::HideSymbols()
+00E3: ldarg.0 
+00E4: ldfld System.Boolean KAnimControllerBase::usingNewSymbolOverrideSystem
+00E9: brfalse.s IL_00FC
+00EB: ldarg.0 
+00EC: call !!0 UnityEngine.Component::GetComponent<SymbolOverrideController>()
+00F1: ldnull 
+00F2: call System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+00F7: call System.Void DebugUtil::Assert(System.Boolean)
+00FC: ret 
+
+#### public System.Void KBatchedAnimController::SwapAnims(KAnimFile[])
+FIELDS:
+- AnimEventManager KAnimControllerBase::aem
+- HandleVector`1/Handle<System.Int32> KAnimControllerBase::eventManagerHandle
+- HashedString HashedString::Invalid
+- KAnim/Anim KAnimControllerBase::curAnim
+- System.Collections.Generic.HashSet`1<KAnimHashedString> KAnimControllerBase::hiddenSymbolsSet
+- System.String KAnim/Anim::name
+CALLS:
+- HashedString HashedString::op_Implicit(System.String)
+- HashedString KBatchedAnimController::get_batchGroupID()
+- KAnim/Anim KAnimControllerBase::GetAnim(HashedString)
+- KAnim/Build KAnimControllerBase::get_curBuild()
+- System.Boolean HandleVector`1/Handle<System.Int32>::IsValid()
+- System.Boolean HashedString::get_IsValid()
+- System.Void AnimEventManager::SwapAnim(HandleVector`1/Handle<System.Int32>,KAnim/Anim)
+- System.Void KAnimControllerBase::DeRegister()
+- System.Void KAnimControllerBase::Register()
+- System.Void KAnimControllerBase::set_AnimFiles(KAnimFile[])
+- System.Void KAnimControllerBase::UpdateHiddenSymbolSet(System.Collections.Generic.HashSet`1<KAnimHashedString>)
+- System.Void KBatchedAnimController::LoadAnims()
+- System.Void KBatchedAnimController::set_batchGroupID(HashedString)
+IL:
+0000: ldarg.0 
+0001: call HashedString KBatchedAnimController::get_batchGroupID()
+0006: stloc.0 
+0007: ldloca.s V_0
+0009: call System.Boolean HashedString::get_IsValid()
+000E: brfalse.s IL_0021
+0010: ldarg.0 
+0011: callvirt System.Void KAnimControllerBase::DeRegister()
+0016: ldarg.0 
+0017: ldsfld HashedString HashedString::Invalid
+001C: call System.Void KBatchedAnimController::set_batchGroupID(HashedString)
+0021: ldarg.0 
+0022: ldarg.1 
+0023: call System.Void KAnimControllerBase::set_AnimFiles(KAnimFile[])
+0028: ldarg.0 
+0029: call System.Void KBatchedAnimController::LoadAnims()
+002E: ldarg.0 
+002F: call KAnim/Build KAnimControllerBase::get_curBuild()
+0034: brfalse.s IL_0042
+0036: ldarg.0 
+0037: ldarg.0 
+0038: ldfld System.Collections.Generic.HashSet`1<KAnimHashedString> KAnimControllerBase::hiddenSymbolsSet
+003D: callvirt System.Void KAnimControllerBase::UpdateHiddenSymbolSet(System.Collections.Generic.HashSet`1<KAnimHashedString>)
+0042: ldarg.0 
+0043: ldfld KAnim/Anim KAnimControllerBase::curAnim
+0048: brfalse.s IL_0092
+004A: ldarg.0 
+004B: ldarg.0 
+004C: ldarg.0 
+004D: ldfld KAnim/Anim KAnimControllerBase::curAnim
+0052: ldfld System.String KAnim/Anim::name
+0057: call HashedString HashedString::op_Implicit(System.String)
+005C: call KAnim/Anim KAnimControllerBase::GetAnim(HashedString)
+0061: stfld KAnim/Anim KAnimControllerBase::curAnim
+0066: ldarg.0 
+0067: ldflda HandleVector`1/Handle<System.Int32> KAnimControllerBase::eventManagerHandle
+006C: call System.Boolean HandleVector`1/Handle<System.Int32>::IsValid()
+0071: brfalse.s IL_0092
+0073: ldarg.0 
+0074: ldfld KAnim/Anim KAnimControllerBase::curAnim
+0079: brfalse.s IL_0092
+007B: ldarg.0 
+007C: ldfld AnimEventManager KAnimControllerBase::aem
+0081: ldarg.0 
+0082: ldfld HandleVector`1/Handle<System.Int32> KAnimControllerBase::eventManagerHandle
+0087: ldarg.0 
+0088: ldfld KAnim/Anim KAnimControllerBase::curAnim
+008D: callvirt System.Void AnimEventManager::SwapAnim(HandleVector`1/Handle<System.Int32>,KAnim/Anim)
+0092: ldarg.0 
+0093: callvirt System.Void KAnimControllerBase::Register()
+0098: ret 
+
+#### public System.Void KBatchedAnimController::SetSceneLayer(Grid/SceneLayer)
+FIELDS:
+- Grid/SceneLayer KBatchedAnimController::sceneLayer
+- System.Single UnityEngine.Vector3::z
+CALLS:
+- System.Single Grid::GetLayerZ(Grid/SceneLayer)
+- System.Void KAnimControllerBase::DeRegister()
+- System.Void KAnimControllerBase::Register()
+- UnityEngine.Transform UnityEngine.Component::get_transform()
+- UnityEngine.Vector3 TransformExtensions::GetPosition(UnityEngine.Transform)
+- UnityEngine.Vector3 TransformExtensions::SetPosition(UnityEngine.Transform,UnityEngine.Vector3)
+IL:
+0000: ldarg.1 
+0001: call System.Single Grid::GetLayerZ(Grid/SceneLayer)
+0006: stloc.0 
+0007: ldarg.0 
+0008: ldarg.1 
+0009: stfld Grid/SceneLayer KBatchedAnimController::sceneLayer
+000E: ldarg.0 
+000F: call UnityEngine.Transform UnityEngine.Component::get_transform()
+0014: call UnityEngine.Vector3 TransformExtensions::GetPosition(UnityEngine.Transform)
+0019: stloc.1 
+001A: ldloca.s V_1
+001C: ldloc.0 
+001D: stfld System.Single UnityEngine.Vector3::z
+0022: ldarg.0 
+0023: call UnityEngine.Transform UnityEngine.Component::get_transform()
+0028: ldloc.1 
+0029: call UnityEngine.Vector3 TransformExtensions::SetPosition(UnityEngine.Transform,UnityEngine.Vector3)
+002E: pop 
+002F: ldarg.0 
+0030: callvirt System.Void KAnimControllerBase::DeRegister()
+0035: ldarg.0 
+0036: callvirt System.Void KAnimControllerBase::Register()
+003B: ret 
+
+#### private System.Void KBatchedAnimController::SetBatchGroup(KAnimFileData)
+FIELDS:
+- HashedString KAnim/Build::batchTag
+- HashedString KAnimBatchManager::BATCH_HUMAN
+- HashedString KAnimBatchManager::NO_BATCH
+- HashedString KAnimFileData::batchTag
+- HashedString KAnimGroupFile/Group::id
+- HashedString KAnimGroupFile/Group::swapTarget
+- KAnimBatchGroup/MaterialType KAnimControllerBase::materialType
+- KAnimBatchGroup/RendererType KAnimGroupFile/Group::renderType
+CALLS:
+- HashedString KBatchedAnimController::get_batchGroupID()
+- KAnim/Build KAnimControllerBase::get_curBuild()
+- KAnim/Build KAnimFileData::get_build()
+- KAnimBatchManager KAnimBatchManager::get_instance()
+- KAnimGroupFile/Group KAnimGroupFile::GetGroup(HashedString)
+- KBatchGroupData KAnimBatchManager::GetBatchGroupData(HashedString)
+- System.Boolean HashedString::get_IsValid()
+- System.Boolean HashedString::op_Equality(HashedString,HashedString)
+- System.Collections.Generic.List`1<KAnim/Build/SymbolFrameInstance> KBatchGroupData::get_symbolFrameInstances()
+- System.Int32 KBatchGroupData::get_maxSymbolsPerBuild()
+- System.Int32 System.Collections.Generic.List`1<KAnim/Build/SymbolFrameInstance>::get_Count()
+- System.String KAnimFileData::get_name()
+- System.String System.Object::ToString()
+- System.String System.String::Concat(System.String,System.String,System.String)
+- System.String System.String::Concat(System.String,System.String)
+- System.String UnityEngine.Object::get_name()
+- System.Void Debug::Assert(System.Boolean,System.Object)
+- System.Void Debug::LogError(System.Object)
+- System.Void DebugUtil::Assert(System.Boolean,System.String,System.String,System.String)
+- System.Void DebugUtil::Assert(System.Boolean,System.String,System.String)
+- System.Void DebugUtil::Assert(System.Boolean,System.String)
+- System.Void KAnimControllerBase::set_curBuild(KAnim/Build)
+- System.Void KAnimControllerBase::set_symbolInstanceGpuData(SymbolInstanceGpuData)
+- System.Void KAnimControllerBase::set_symbolOverrideInfoGpuData(SymbolOverrideInfoGpuData)
+- System.Void KBatchedAnimController::set_batchGroupID(HashedString)
+- System.Void SymbolInstanceGpuData::.ctor(System.Int32)
+- System.Void SymbolOverrideInfoGpuData::.ctor(System.Int32)
+IL:
+0000: ldarg.0 
+0001: call HashedString KBatchedAnimController::get_batchGroupID()
+0006: stloc.2 
+0007: ldloca.s V_2
+0009: call System.Boolean HashedString::get_IsValid()
+000E: brfalse.s IL_0027
+0010: ldarg.1 
+0011: brfalse.s IL_0027
+0013: ldarg.0 
+0014: call HashedString KBatchedAnimController::get_batchGroupID()
+0019: ldarg.1 
+001A: ldfld HashedString KAnimFileData::batchTag
+001F: call System.Boolean HashedString::op_Equality(HashedString,HashedString)
+0024: brfalse.s IL_0027
+0026: ret 
+0027: ldarg.0 
+0028: call HashedString KBatchedAnimController::get_batchGroupID()
+002D: stloc.2 
+002E: ldloca.s V_2
+0030: call System.Boolean HashedString::get_IsValid()
+0035: ldc.i4.0 
+0036: ceq 
+0038: ldstr "Should only be setting the batch group once."
+003D: call System.Void DebugUtil::Assert(System.Boolean,System.String)
+0042: ldarg.1 
+0043: brtrue.s IL_0059
+0045: ldarg.1 
+0046: ldnull 
+0047: cgt.un 
+0049: ldstr "Null anim data!! For"
+004E: ldarg.0 
+004F: call System.String UnityEngine.Object::get_name()
+0054: call System.Void DebugUtil::Assert(System.Boolean,System.String,System.String)
+0059: ldarg.0 
+005A: ldarg.1 
+005B: callvirt KAnim/Build KAnimFileData::get_build()
+0060: call System.Void KAnimControllerBase::set_curBuild(KAnim/Build)
+0065: ldarg.0 
+0066: call KAnim/Build KAnimControllerBase::get_curBuild()
+006B: brtrue.s IL_008C
+006D: ldarg.0 
+006E: call KAnim/Build KAnimControllerBase::get_curBuild()
+0073: ldnull 
+0074: cgt.un 
+0076: ldstr "Null build for anim!! "
+007B: ldarg.0 
+007C: call System.String UnityEngine.Object::get_name()
+0081: ldarg.1 
+0082: callvirt System.String KAnimFileData::get_name()
+0087: call System.Void DebugUtil::Assert(System.Boolean,System.String,System.String,System.String)
+008C: ldarg.0 
+008D: call KAnim/Build KAnimControllerBase::get_curBuild()
+0092: ldfld HashedString KAnim/Build::batchTag
+0097: call KAnimGroupFile/Group KAnimGroupFile::GetGroup(HashedString)
+009C: stloc.0 
+009D: ldarg.1 
+009E: callvirt KAnim/Build KAnimFileData::get_build()
+00A3: ldfld HashedString KAnim/Build::batchTag
+00A8: stloc.1 
+00A9: ldloc.0 
+00AA: ldfld KAnimBatchGroup/RendererType KAnimGroupFile/Group::renderType
+00AF: ldc.i4.3 
+00B0: beq.s IL_00BB
+00B2: ldloc.0 
+00B3: ldfld KAnimBatchGroup/RendererType KAnimGroupFile/Group::renderType
+00B8: ldc.i4.4 
+00B9: bne.un.s IL_00F5
+00BB: ldloc.0 
+00BC: ldflda HashedString KAnimGroupFile/Group::swapTarget
+00C1: call System.Boolean HashedString::get_IsValid()
+00C6: ldstr "Invalid swap target fro group ["
+00CB: ldloc.0 
+00CC: ldfld HashedString KAnimGroupFile/Group::id
+00D1: stloc.2 
+00D2: ldloca.s V_2
+00D4: constrained. HashedString
+00DA: callvirt System.String System.Object::ToString()
+00DF: ldstr "]"
+00E4: call System.String System.String::Concat(System.String,System.String,System.String)
+00E9: call System.Void Debug::Assert(System.Boolean,System.Object)
+00EE: ldloc.0 
+00EF: ldfld HashedString KAnimGroupFile/Group::swapTarget
+00F4: stloc.1 
+00F5: ldarg.0 
+00F6: ldloc.1 
+00F7: call System.Void KBatchedAnimController::set_batchGroupID(HashedString)
+00FC: ldarg.0 
+00FD: call KAnimBatchManager KAnimBatchManager::get_instance()
+0102: ldarg.0 
+0103: call HashedString KBatchedAnimController::get_batchGroupID()
+0108: callvirt KBatchGroupData KAnimBatchManager::GetBatchGroupData(HashedString)
+010D: callvirt System.Int32 KBatchGroupData::get_maxSymbolsPerBuild()
+0112: newobj System.Void SymbolInstanceGpuData::.ctor(System.Int32)
+0117: call System.Void KAnimControllerBase::set_symbolInstanceGpuData(SymbolInstanceGpuData)
+011C: ldarg.0 
+011D: call KAnimBatchManager KAnimBatchManager::get_instance()
+0122: ldarg.0 
+0123: call HashedString KBatchedAnimController::get_batchGroupID()
+0128: callvirt KBatchGroupData KAnimBatchManager::GetBatchGroupData(HashedString)
+012D: callvirt System.Collections.Generic.List`1<KAnim/Build/SymbolFrameInstance> KBatchGroupData::get_symbolFrameInstances()
+0132: callvirt System.Int32 System.Collections.Generic.List`1<KAnim/Build/SymbolFrameInstance>::get_Count()
+0137: newobj System.Void SymbolOverrideInfoGpuData::.ctor(System.Int32)
+013C: call System.Void KAnimControllerBase::set_symbolOverrideInfoGpuData(SymbolOverrideInfoGpuData)
+0141: ldarg.0 
+0142: call HashedString KBatchedAnimController::get_batchGroupID()
+0147: stloc.2 
+0148: ldloca.s V_2
+014A: call System.Boolean HashedString::get_IsValid()
+014F: brfalse.s IL_0163
+0151: ldarg.0 
+0152: call HashedString KBatchedAnimController::get_batchGroupID()
+0157: ldsfld HashedString KAnimBatchManager::NO_BATCH
+015C: call System.Boolean HashedString::op_Equality(HashedString,HashedString)
+0161: brfalse.s IL_0178
+0163: ldstr "Batch is not ready: "
+0168: ldarg.0 
+0169: call System.String UnityEngine.Object::get_name()
+016E: call System.String System.String::Concat(System.String,System.String)
+0173: call System.Void Debug::LogError(System.Object)
+0178: ldarg.0 
+0179: ldfld KAnimBatchGroup/MaterialType KAnimControllerBase::materialType
+017E: brtrue.s IL_0199
+0180: ldarg.0 
+0181: call HashedString KBatchedAnimController::get_batchGroupID()
+0186: ldsfld HashedString KAnimBatchManager::BATCH_HUMAN
+018B: call System.Boolean HashedString::op_Equality(HashedString,HashedString)
+0190: brfalse.s IL_0199
+0192: ldarg.0 
+0193: ldc.i4.5 
+0194: stfld KAnimBatchGroup/MaterialType KAnimControllerBase::materialType
+0199: ret 
+
+## TYPE Assembly-CSharp.dll KAnimControllerBase
+### Fields
+- family System.Boolean _enabled
+- private KAnim/Build <curBuild>k__BackingField
+- private System.Int32 <currentFrame>k__BackingField
+- private System.Single <PlaySpeedMultiplier>k__BackingField
+- private System.Int32 <previousFrame>k__BackingField
+- private SymbolInstanceGpuData <symbolInstanceGpuData>k__BackingField
+- private SymbolOverrideInfoGpuData <symbolOverrideInfoGpuData>k__BackingField
+- family AnimEventManager aem
+- family KAnimFile[] animFiles
+- public System.Single animHeight
+- family System.Collections.Generic.Queue`1<KAnimControllerBase/AnimData> animQueue
+- family System.Collections.Generic.Dictionary`2<HashedString,KAnimControllerBase/AnimLookupData> anims
+- public System.Single animWidth
+- family KBatchedAnimInstanceData batchInstanceData
+- family UnityEngine.Bounds bounds
+- family KAnim/Anim curAnim
+- family System.Int32 curAnimFrameIdx
+- public System.String defaultAnim
+- public System.Boolean destroyOnAnimComplete
+- family System.Single elapsedTime
+- family HandleVector`1/Handle<System.Int32> eventManagerHandle
+- public Grid/SceneLayer fgLayer
+- family System.Boolean flipX
+- family System.Boolean flipY
+- public System.Boolean forceUseGameTime
+- family System.Boolean hasAwakeRun
+- family System.Boolean hasEnableRun
+- family System.Collections.Generic.List`1<KAnimHashedString> hiddenSymbols
+- family System.Collections.Generic.HashSet`1<KAnimHashedString> hiddenSymbolsSet
+- public System.Boolean inactiveDisable
+- public System.String initialAnim
+- public KAnim/PlayMode initialMode
+- family System.Boolean isVisible
+- family KAnimLayering layering
+- public KAnimBatchGroup/MaterialType materialType
+- family System.Int32 maxSymbols
+- family KAnim/PlayMode mode
+- family UnityEngine.Vector3 offset
+- private KAnimControllerBase/KAnimEvent onAnimComplete
+- private KAnimControllerBase/KAnimEvent onAnimEnter
+- public System.Action`1<UnityEngine.GameObject> onDestroySelf
+- public System.Action`1<UnityEngine.Color> OnHighlightChanged
+- private System.Action`1<System.Int32> onLayerChanged
+- private System.Action`1<UnityEngine.Color32> OnOverlayColourChanged
+- public System.Action`1<UnityEngine.Color> OnTintChanged
+- public System.Action`1<UnityEngine.Bounds> OnUpdateBounds
+- family System.Collections.Generic.List`1<KAnimControllerBase/OverrideAnimFileData> overrideAnimFiles
+- family System.Collections.Generic.Dictionary`2<HashedString,KAnimControllerBase/AnimLookupData> overrideAnims
+- family UnityEngine.Vector3 pivot
+- family System.Single playSpeed
+- family System.Int32 prevAnimFrame
+- public System.Boolean randomiseLoopedOffset
+- family System.Single rotation
+- public UnityEngine.GameObject showWhenMissing
+- private HashedString snaptoPivot
+- family System.Boolean stopped
+- family KAnimSynchronizer synchronizer
+- public System.Boolean usingNewSymbolOverrideSystem
+- public KAnimControllerBase/VisibilityType visibilityType
+### Selected methods
+
+#### public System.Void KAnimControllerBase::set_AnimFiles(KAnimFile[])
+FIELDS:
+- KAnimFile[] KAnimControllerBase::animFiles
+CALLS:
+- System.Boolean KAnimFile::get_IsBuildLoaded()
+- System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+- System.Void DebugUtil::AssertArgs(System.Boolean,System.Object[])
+- UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+IL:
+0000: ldarg.1 
+0001: ldlen 
+0002: ldc.i4.0 
+0003: cgt.un 
+0005: ldc.i4.2 
+0006: newarr System.Object
+000B: dup 
+000C: ldc.i4.0 
+000D: ldstr "Controller has no anim files."
+0012: stelem.ref 
+0013: dup 
+0014: ldc.i4.1 
+0015: ldarg.0 
+0016: call UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+001B: stelem.ref 
+001C: call System.Void DebugUtil::AssertArgs(System.Boolean,System.Object[])
+0021: ldarg.1 
+0022: ldc.i4.0 
+0023: ldelem.ref 
+0024: ldnull 
+0025: call System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+002A: ldc.i4.2 
+002B: newarr System.Object
+0030: dup 
+0031: ldc.i4.0 
+0032: ldstr "First anim file needs to be non-null."
+0037: stelem.ref 
+0038: dup 
+0039: ldc.i4.1 
+003A: ldarg.0 
+003B: call UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+0040: stelem.ref 
+0041: call System.Void DebugUtil::AssertArgs(System.Boolean,System.Object[])
+0046: ldarg.1 
+0047: ldc.i4.0 
+0048: ldelem.ref 
+0049: callvirt System.Boolean KAnimFile::get_IsBuildLoaded()
+004E: ldc.i4.2 
+004F: newarr System.Object
+0054: dup 
+0055: ldc.i4.0 
+0056: ldstr "First anim file needs to be the build file."
+005B: stelem.ref 
+005C: dup 
+005D: ldc.i4.1 
+005E: ldarg.0 
+005F: call UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+0064: stelem.ref 
+0065: call System.Void DebugUtil::AssertArgs(System.Boolean,System.Object[])
+006A: ldc.i4.0 
+006B: stloc.0 
+006C: br.s IL_0097
+006E: ldarg.1 
+006F: ldloc.0 
+0070: ldelem.ref 
+0071: ldnull 
+0072: call System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+0077: ldc.i4.2 
+0078: newarr System.Object
+007D: dup 
+007E: ldc.i4.0 
+007F: ldstr "Anim file is null"
+0084: stelem.ref 
+0085: dup 
+0086: ldc.i4.1 
+0087: ldarg.0 
+0088: call UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+008D: stelem.ref 
+008E: call System.Void DebugUtil::AssertArgs(System.Boolean,System.Object[])
+0093: ldloc.0 
+0094: ldc.i4.1 
+0095: add 
+0096: stloc.0 
+0097: ldloc.0 
+0098: ldarg.1 
+0099: ldlen 
+009A: conv.i4 
+009B: blt.s IL_006E
+009D: ldarg.0 
+009E: ldarg.1 
+009F: ldlen 
+00A0: conv.i4 
+00A1: newarr KAnimFile
+00A6: stfld KAnimFile[] KAnimControllerBase::animFiles
+00AB: ldc.i4.0 
+00AC: stloc.1 
+00AD: br.s IL_00BE
+00AF: ldarg.0 
+00B0: ldfld KAnimFile[] KAnimControllerBase::animFiles
+00B5: ldloc.1 
+00B6: ldarg.1 
+00B7: ldloc.1 
+00B8: ldelem.ref 
+00B9: stelem.ref 
+00BA: ldloc.1 
+00BB: ldc.i4.1 
+00BC: add 
+00BD: stloc.1 
+00BE: ldloc.1 
+00BF: ldarg.1 
+00C0: ldlen 
+00C1: conv.i4 
+00C2: blt.s IL_00AF
+00C4: ret 
+
+#### public KAnimFile[] KAnimControllerBase::get_AnimFiles()
+FIELDS:
+- KAnimFile[] KAnimControllerBase::animFiles
+IL:
+0000: ldarg.0 
+0001: ldfld KAnimFile[] KAnimControllerBase::animFiles
+0006: ret 
+
+#### public System.Void KAnimControllerBase::Play(HashedString[],KAnim/PlayMode)
+FIELDS:
+- System.Boolean KAnimControllerBase::stopped
+CALLS:
+- System.Void Debug::Assert(System.Boolean,System.Object)
+- System.Void KAnimControllerBase::Queue(HashedString,KAnim/PlayMode,System.Single,System.Single)
+- System.Void KAnimControllerBase::Stop()
+IL:
+0000: ldarg.0 
+0001: ldfld System.Boolean KAnimControllerBase::stopped
+0006: brtrue.s IL_000E
+0008: ldarg.0 
+0009: call System.Void KAnimControllerBase::Stop()
+000E: ldc.i4.0 
+000F: stloc.0 
+0010: br.s IL_002E
+0012: ldarg.0 
+0013: ldarg.1 
+0014: ldloc.0 
+0015: ldelem.any HashedString
+001A: ldc.i4.1 
+001B: ldc.r4 1
+0020: ldc.r4 0
+0025: call System.Void KAnimControllerBase::Queue(HashedString,KAnim/PlayMode,System.Single,System.Single)
+002A: ldloc.0 
+002B: ldc.i4.1 
+002C: add 
+002D: stloc.0 
+002E: ldloc.0 
+002F: ldarg.1 
+0030: ldlen 
+0031: conv.i4 
+0032: ldc.i4.1 
+0033: sub 
+0034: blt.s IL_0012
+0036: ldarg.1 
+0037: ldlen 
+0038: ldc.i4.0 
+0039: cgt.un 
+003B: ldstr "Play was called with an empty anim array"
+0040: call System.Void Debug::Assert(System.Boolean,System.Object)
+0045: ldarg.0 
+0046: ldarg.1 
+0047: ldarg.1 
+0048: ldlen 
+0049: conv.i4 
+004A: ldc.i4.1 
+004B: sub 
+004C: ldelem.any HashedString
+0051: ldarg.2 
+0052: ldc.r4 1
+0057: ldc.r4 0
+005C: call System.Void KAnimControllerBase::Queue(HashedString,KAnim/PlayMode,System.Single,System.Single)
+0061: ret 
+
+#### public System.Void KAnimControllerBase::Play(HashedString,KAnim/PlayMode,System.Single,System.Single)
+FIELDS:
+- System.Boolean KAnimControllerBase::stopped
+CALLS:
+- System.Void KAnimControllerBase::Queue(HashedString,KAnim/PlayMode,System.Single,System.Single)
+- System.Void KAnimControllerBase::Stop()
+IL:
+0000: ldarg.0 
+0001: ldfld System.Boolean KAnimControllerBase::stopped
+0006: brtrue.s IL_000E
+0008: ldarg.0 
+0009: call System.Void KAnimControllerBase::Stop()
+000E: ldarg.0 
+000F: ldarg.1 
+0010: ldarg.2 
+0011: ldarg.3 
+0012: ldarg.s time_offset
+0014: call System.Void KAnimControllerBase::Queue(HashedString,KAnim/PlayMode,System.Single,System.Single)
+0019: ret 
+
+#### public System.Boolean KAnimControllerBase::HasAnimation(HashedString)
+FIELDS:
+- System.Collections.Generic.Dictionary`2<HashedString,KAnimControllerBase/AnimLookupData> KAnimControllerBase::anims
+- System.Collections.Generic.Dictionary`2<HashedString,KAnimControllerBase/AnimLookupData> KAnimControllerBase::overrideAnims
+CALLS:
+- System.Boolean HashedString::get_IsValid()
+- System.Boolean System.Collections.Generic.Dictionary`2<HashedString,KAnimControllerBase/AnimLookupData>::ContainsKey(!0)
+IL:
+0000: ldarga.s anim_name
+0002: call System.Boolean HashedString::get_IsValid()
+0007: stloc.0 
+0008: ldloc.0 
+0009: brfalse.s IL_002D
+000B: ldarg.0 
+000C: ldfld System.Collections.Generic.Dictionary`2<HashedString,KAnimControllerBase/AnimLookupData> KAnimControllerBase::anims
+0011: ldarg.1 
+0012: callvirt System.Boolean System.Collections.Generic.Dictionary`2<HashedString,KAnimControllerBase/AnimLookupData>::ContainsKey(!0)
+0017: dup 
+0018: brtrue.s IL_0028
+001A: ldarg.0 
+001B: ldfld System.Collections.Generic.Dictionary`2<HashedString,KAnimControllerBase/AnimLookupData> KAnimControllerBase::overrideAnims
+0020: ldarg.1 
+0021: callvirt System.Boolean System.Collections.Generic.Dictionary`2<HashedString,KAnimControllerBase/AnimLookupData>::ContainsKey(!0)
+0026: br.s IL_0029
+0028: ldc.i4.0 
+0029: stloc.1 
+002A: ldloc.1 
+002B: or 
+002C: stloc.0 
+002D: ldloc.0 
+002E: ret 
+
+#### public KAnim/Anim KAnimControllerBase::GetAnim(System.Int32)
+- no body
+
+#### public KAnim/Anim KAnimControllerBase::GetAnim(HashedString)
+FIELDS:
+- System.Collections.Generic.Dictionary`2<HashedString,KAnimControllerBase/AnimLookupData> KAnimControllerBase::anims
+- System.Collections.Generic.Dictionary`2<HashedString,KAnimControllerBase/AnimLookupData> KAnimControllerBase::overrideAnims
+- System.Int32 KAnimControllerBase/AnimLookupData::animIndex
+CALLS:
+- KAnim/Anim KAnimControllerBase::GetAnim(System.Int32)
+- System.Boolean HashedString::get_IsValid()
+- System.Boolean System.Collections.Generic.Dictionary`2<HashedString,KAnimControllerBase/AnimLookupData>::TryGetValue(!0,!1&)
+IL:
+0000: ldnull 
+0001: stloc.0 
+0002: ldarga.s anim_name
+0004: call System.Boolean HashedString::get_IsValid()
+0009: brfalse.s IL_0047
+000B: ldarg.0 
+000C: ldfld System.Collections.Generic.Dictionary`2<HashedString,KAnimControllerBase/AnimLookupData> KAnimControllerBase::anims
+0011: ldarg.1 
+0012: ldloca.s V_1
+0014: callvirt System.Boolean System.Collections.Generic.Dictionary`2<HashedString,KAnimControllerBase/AnimLookupData>::TryGetValue(!0,!1&)
+0019: brfalse.s IL_002A
+001B: ldarg.0 
+001C: ldloc.1 
+001D: ldfld System.Int32 KAnimControllerBase/AnimLookupData::animIndex
+0022: callvirt KAnim/Anim KAnimControllerBase::GetAnim(System.Int32)
+0027: stloc.0 
+0028: br.s IL_0047
+002A: ldarg.0 
+002B: ldfld System.Collections.Generic.Dictionary`2<HashedString,KAnimControllerBase/AnimLookupData> KAnimControllerBase::overrideAnims
+0030: ldarg.1 
+0031: ldloca.s V_1
+0033: callvirt System.Boolean System.Collections.Generic.Dictionary`2<HashedString,KAnimControllerBase/AnimLookupData>::TryGetValue(!0,!1&)
+0038: brfalse.s IL_0047
+003A: ldarg.0 
+003B: ldloc.1 
+003C: ldfld System.Int32 KAnimControllerBase/AnimLookupData::animIndex
+0041: callvirt KAnim/Anim KAnimControllerBase::GetAnim(System.Int32)
+0046: stloc.0 
+0047: ldloc.0 
+0048: ret 
+
+#### family System.Void KAnimControllerBase::Register()
+- no body
+
+#### family System.Void KAnimControllerBase::DeRegister()
+- no body
+
+## TYPE Assembly-CSharp-firstpass.dll Util
+### Fields
+- private System.Collections.Generic.HashSet`1<System.Char> additionalInvalidUserInputChars
+- private System.String consoleLogPath
+- private System.Collections.Generic.HashSet`1<System.Char> defaultInvalidUserInputChars
+- private System.String defaultRootFolder
+- private System.String operatingSystem
+- private KRandom random
+### Selected methods
+
+#### public UnityEngine.GameObject Util::KInstantiate(UnityEngine.GameObject,UnityEngine.Vector3)
+CALLS:
+- UnityEngine.GameObject Util::KInstantiate(UnityEngine.GameObject,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.GameObject,System.String,System.Boolean,System.Int32)
+- UnityEngine.Quaternion UnityEngine.Quaternion::get_identity()
+IL:
+0000: ldarg.0 
+0001: ldarg.1 
+0002: call UnityEngine.Quaternion UnityEngine.Quaternion::get_identity()
+0007: ldnull 
+0008: ldnull 
+0009: ldc.i4.1 
+000A: ldc.i4.0 
+000B: call UnityEngine.GameObject Util::KInstantiate(UnityEngine.GameObject,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.GameObject,System.String,System.Boolean,System.Int32)
+0010: ret 
+
+#### public T Util::KInstantiate(UnityEngine.GameObject,UnityEngine.GameObject,System.String)
+CALLS:
+- !!0 UnityEngine.GameObject::GetComponent<T>()
+- System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object)
+- UnityEngine.GameObject Util::KInstantiate(UnityEngine.GameObject,UnityEngine.GameObject,System.String)
+IL:
+0000: ldarg.0 
+0001: ldarg.1 
+0002: ldnull 
+0003: call UnityEngine.GameObject Util::KInstantiate(UnityEngine.GameObject,UnityEngine.GameObject,System.String)
+0008: stloc.0 
+0009: ldloc.0 
+000A: ldnull 
+000B: call System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object)
+0010: brtrue.s IL_0019
+0012: ldloc.0 
+0013: callvirt !!0 UnityEngine.GameObject::GetComponent<T>()
+0018: ret 
+0019: ldloca.s V_1
+001B: initobj T
+0021: ldloc.1 
+0022: ret 
+
+#### public UnityEngine.GameObject Util::KInstantiate(UnityEngine.Component,UnityEngine.GameObject,System.String)
+CALLS:
+- UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+- UnityEngine.GameObject Util::KInstantiate(UnityEngine.GameObject,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.GameObject,System.String,System.Boolean,System.Int32)
+- UnityEngine.Quaternion UnityEngine.Quaternion::get_identity()
+- UnityEngine.Vector3 UnityEngine.Vector3::get_zero()
+IL:
+0000: ldarg.0 
+0001: callvirt UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+0006: call UnityEngine.Vector3 UnityEngine.Vector3::get_zero()
+000B: call UnityEngine.Quaternion UnityEngine.Quaternion::get_identity()
+0010: ldarg.1 
+0011: ldarg.2 
+0012: ldc.i4.1 
+0013: ldc.i4.0 
+0014: call UnityEngine.GameObject Util::KInstantiate(UnityEngine.GameObject,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.GameObject,System.String,System.Boolean,System.Int32)
+0019: ret 
+
+#### public UnityEngine.GameObject Util::KInstantiate(UnityEngine.GameObject,UnityEngine.GameObject,System.String)
+CALLS:
+- UnityEngine.GameObject Util::KInstantiate(UnityEngine.GameObject,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.GameObject,System.String,System.Boolean,System.Int32)
+- UnityEngine.Quaternion UnityEngine.Quaternion::get_identity()
+- UnityEngine.Vector3 UnityEngine.Vector3::get_zero()
+IL:
+0000: ldarg.0 
+0001: call UnityEngine.Vector3 UnityEngine.Vector3::get_zero()
+0006: call UnityEngine.Quaternion UnityEngine.Quaternion::get_identity()
+000B: ldarg.1 
+000C: ldarg.2 
+000D: ldc.i4.1 
+000E: ldc.i4.0 
+000F: call UnityEngine.GameObject Util::KInstantiate(UnityEngine.GameObject,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.GameObject,System.String,System.Boolean,System.Int32)
+0014: ret 
+
+#### public UnityEngine.GameObject Util::KInstantiate(UnityEngine.GameObject,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.GameObject,System.String,System.Boolean,System.Int32)
+FIELDS:
+- System.Boolean App::IsExiting
+- System.Int32 KPrefabID::InstanceID
+CALLS:
+- !!0 UnityEngine.GameObject::GetComponent<KPrefabID>()
+- !!0 UnityEngine.GameObject::GetComponent<UnityEngine.RectTransform>()
+- !!0 UnityEngine.Object::Instantiate<UnityEngine.GameObject>(!!0,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Transform)
+- !!0 UnityEngine.Object::Instantiate<UnityEngine.GameObject>(!!0,UnityEngine.Vector3,UnityEngine.Quaternion)
+- KPrefabIDTracker KPrefabIDTracker::Get()
+- System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object)
+- System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+- System.Int32 KPrefabID::GetUniqueID()
+- System.String UnityEngine.Object::get_name()
+- System.Void DebugUtil::LogWarningArgs(System.Object[])
+- System.Void KPrefabID::CopyInitFunctions(KPrefabID)
+- System.Void KPrefabID::CopyTags(KPrefabID)
+- System.Void KPrefabID::InitializeTags(System.Boolean)
+- System.Void KPrefabID::RunInstantiateFn()
+- System.Void KPrefabIDTracker::Register(KPrefabID)
+- System.Void UnityEngine.Object::set_name(System.String)
+- System.Void UnityEngine.Transform::SetParent(UnityEngine.Transform,System.Boolean)
+- System.Void Util::SetLayerRecursively(UnityEngine.GameObject,System.Int32)
+- UnityEngine.Transform UnityEngine.GameObject::get_transform()
+IL:
+0000: ldsfld System.Boolean App::IsExiting
+0005: brfalse.s IL_0009
+0007: ldnull 
+0008: ret 
+0009: ldnull 
+000A: stloc.0 
+000B: ldarg.0 
+000C: ldnull 
+000D: call System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object)
+0012: brfalse.s IL_0027
+0014: ldc.i4.1 
+0015: newarr System.Object
+001A: dup 
+001B: ldc.i4.0 
+001C: ldstr "Missing prefab"
+0021: stelem.ref 
+0022: call System.Void DebugUtil::LogWarningArgs(System.Object[])
+0027: ldloc.0 
+0028: ldnull 
+0029: call System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object)
+002E: brfalse.s IL_008C
+0030: ldarg.0 
+0031: callvirt !!0 UnityEngine.GameObject::GetComponent<UnityEngine.RectTransform>()
+0036: ldnull 
+0037: call System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+003C: brfalse.s IL_0064
+003E: ldarg.3 
+003F: ldnull 
+0040: call System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+0045: brfalse.s IL_0064
+0047: ldarg.0 
+0048: ldarg.1 
+0049: ldarg.2 
+004A: call !!0 UnityEngine.Object::Instantiate<UnityEngine.GameObject>(!!0,UnityEngine.Vector3,UnityEngine.Quaternion)
+004F: stloc.0 
+0050: ldloc.0 
+0051: callvirt UnityEngine.Transform UnityEngine.GameObject::get_transform()
+0056: ldarg.3 
+0057: callvirt UnityEngine.Transform UnityEngine.GameObject::get_transform()
+005C: ldc.i4.1 
+005D: callvirt System.Void UnityEngine.Transform::SetParent(UnityEngine.Transform,System.Boolean)
+0062: br.s IL_0080
+0064: ldnull 
+0065: stloc.2 
+0066: ldarg.3 
+0067: ldnull 
+0068: call System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+006D: brfalse.s IL_0076
+006F: ldarg.3 
+0070: callvirt UnityEngine.Transform UnityEngine.GameObject::get_transform()
+0075: stloc.2 
+0076: ldarg.0 
+0077: ldarg.1 
+0078: ldarg.2 
+0079: ldloc.2 
+007A: call !!0 UnityEngine.Object::Instantiate<UnityEngine.GameObject>(!!0,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Transform)
+007F: stloc.0 
+0080: ldarg.s gameLayer
+0082: brfalse.s IL_008C
+0084: ldloc.0 
+0085: ldarg.s gameLayer
+0087: call System.Void Util::SetLayerRecursively(UnityEngine.GameObject,System.Int32)
+008C: ldarg.s name
+008E: brfalse.s IL_009A
+0090: ldloc.0 
+0091: ldarg.s name
+0093: callvirt System.Void UnityEngine.Object::set_name(System.String)
+0098: br.s IL_00A6
+009A: ldloc.0 
+009B: ldarg.0 
+009C: callvirt System.String UnityEngine.Object::get_name()
+00A1: callvirt System.Void UnityEngine.Object::set_name(System.String)
+00A6: ldloc.0 
+00A7: callvirt !!0 UnityEngine.GameObject::GetComponent<KPrefabID>()
+00AC: stloc.1 
+00AD: ldloc.1 
+00AE: ldnull 
+00AF: call System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+00B4: brfalse.s IL_00F2
+00B6: ldarg.s initialize_id
+00B8: brfalse.s IL_00D0
+00BA: ldloc.1 
+00BB: call System.Int32 KPrefabID::GetUniqueID()
+00C0: stfld System.Int32 KPrefabID::InstanceID
+00C5: call KPrefabIDTracker KPrefabIDTracker::Get()
+00CA: ldloc.1 
+00CB: callvirt System.Void KPrefabIDTracker::Register(KPrefabID)
+00D0: ldloc.1 
+00D1: ldc.i4.1 
+00D2: callvirt System.Void KPrefabID::InitializeTags(System.Boolean)
+00D7: ldarg.0 
+00D8: callvirt !!0 UnityEngine.GameObject::GetComponent<KPrefabID>()
+00DD: stloc.3 
+00DE: ldloc.1 
+00DF: ldloc.3 
+00E0: callvirt System.Void KPrefabID::CopyTags(KPrefabID)
+00E5: ldloc.1 
+00E6: ldloc.3 
+00E7: callvirt System.Void KPrefabID::CopyInitFunctions(KPrefabID)
+00EC: ldloc.1 
+00ED: callvirt System.Void KPrefabID::RunInstantiateFn()
+00F2: ldloc.0 
+00F3: ret 
+
+## TYPE Assembly-CSharp.dll Geyser
+### Fields
+- private System.Single <timeShift>k__BackingField
+- public GeyserConfigurator/GeyserInstanceConfiguration configuration
+- private ElementEmitter emitter
+- public Geyser/ModificationMethod IterationDurationModificationMethod
+- public Geyser/ModificationMethod IterationPercentageModificationMethod
+- public Geyser/ModificationMethod massModificationMethod
+- public Geyser/ModificationMethod maxPressureModificationMethod
+- public System.Collections.Generic.List`1<Geyser/GeyserModification> modifications
+- private Geyser/GeyserModification modifier
+- private UserNameable nameable
+- public Vector2I outputOffset
+- private System.Single POST_PCT
+- private System.Single PRE_PCT
+- private System.Single serializedTimeShift
+- private Studyable studyable
+- public Geyser/ModificationMethod temperatureModificationMethod
+- public Geyser/ModificationMethod yearDurationModificationMethod
+- public Geyser/ModificationMethod yearPercentageModificationMethod
+### Selected methods
+
+#### family System.Void Geyser::OnSpawn()
+FIELDS:
+- Components/CmpsByWorld`1<Geyser> Components::Geysers
+- GeyserConfigurator/GeyserInstanceConfiguration Geyser::configuration
+- HashedString GeyserConfigurator/GeyserInstanceConfiguration::typeId
+- HashedString HashedString::Invalid
+- System.Action`1<SimTemperatureTransfer> SimTemperatureTransfer::onSimRegistered
+- System.Boolean Workable::alwaysShowProgressBar
+- System.Single Geyser::serializedTimeShift
+- System.Single GeyserConfigurator/GeyserType::geyserTemperature
+- System.String CodexEntryRedirector::CodexID
+- System.String GeyserConfigurator/GeyserType::id
+CALLS:
+- !!0 UnityEngine.Component::GetComponent<CodexEntryRedirector>()
+- !!0 UnityEngine.Component::GetComponent<GeyserConfigurator>()
+- !!0 UnityEngine.Component::GetComponent<Studyable>()
+- !!0 UnityEngine.GameObject::GetComponent<PrimaryElement>()
+- !!0 UnityEngine.GameObject::GetComponent<SimTemperatureTransfer>()
+- GeyserConfigurator/GeyserInstanceConfiguration GeyserConfigurator::MakeConfiguration()
+- GeyserConfigurator/GeyserType GeyserConfigurator/GeyserInstanceConfiguration::get_geyserType()
+- StateMachineInstanceType StateMachineComponent`1<Geyser/StatesInstance>::get_smi()
+- System.Boolean HashedString::op_Equality(HashedString,HashedString)
+- System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+- System.Delegate System.Delegate::Combine(System.Delegate,System.Delegate)
+- System.Int32 ClusterUtil::GetMyWorldId(UnityEngine.GameObject)
+- System.Int32 KMonoBehaviourExtensions::Subscribe(UnityEngine.GameObject,System.Int32,System.Action`1<System.Object>)
+- System.Single PrimaryElement::get_Temperature()
+- System.String System.String::Concat(System.String,System.String)
+- System.String System.String::ToUpper()
+- System.Void Components/CmpsByWorld`1<Geyser>::Add(System.Int32,T)
+- System.Void Geyser::ApplyConfigurationEmissionValues(GeyserConfigurator/GeyserInstanceConfiguration)
+- System.Void Geyser::GenerateName()
+- System.Void Geyser::OnGeotunerChanged(System.Object)
+- System.Void Geyser::OnSimRegistered(SimTemperatureTransfer)
+- System.Void Geyser::RefreshStudiedMeter()
+- System.Void Geyser::set_timeShift(System.Single)
+- System.Void Geyser::UpdateModifier()
+- System.Void KMonoBehaviour::OnSpawn()
+- System.Void Prioritizable::AddRef(UnityEngine.GameObject)
+- System.Void StateMachine/Instance::StartSM()
+- System.Void System.Action`1<SimTemperatureTransfer>::.ctor(System.Object,System.IntPtr)
+- System.Void System.Action`1<System.Object>::.ctor(System.Object,System.IntPtr)
+- UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+IL:
+0000: ldarg.0 
+0001: call System.Void KMonoBehaviour::OnSpawn()
+0006: ldarg.0 
+0007: call UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+000C: call System.Void Prioritizable::AddRef(UnityEngine.GameObject)
+0011: ldarg.0 
+0012: ldfld GeyserConfigurator/GeyserInstanceConfiguration Geyser::configuration
+0017: brfalse.s IL_0030
+0019: ldarg.0 
+001A: ldfld GeyserConfigurator/GeyserInstanceConfiguration Geyser::configuration
+001F: ldfld HashedString GeyserConfigurator/GeyserInstanceConfiguration::typeId
+0024: ldsfld HashedString HashedString::Invalid
+0029: call System.Boolean HashedString::op_Equality(HashedString,HashedString)
+002E: brfalse.s IL_0043
+0030: ldarg.0 
+0031: ldarg.0 
+0032: call !!0 UnityEngine.Component::GetComponent<GeyserConfigurator>()
+0037: callvirt GeyserConfigurator/GeyserInstanceConfiguration GeyserConfigurator::MakeConfiguration()
+003C: stfld GeyserConfigurator/GeyserInstanceConfiguration Geyser::configuration
+0041: br.s IL_0099
+0043: ldarg.0 
+0044: call UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+0049: callvirt !!0 UnityEngine.GameObject::GetComponent<PrimaryElement>()
+004E: stloc.1 
+004F: ldarg.0 
+0050: ldfld GeyserConfigurator/GeyserInstanceConfiguration Geyser::configuration
+0055: callvirt GeyserConfigurator/GeyserType GeyserConfigurator/GeyserInstanceConfiguration::get_geyserType()
+005A: ldfld System.Single GeyserConfigurator/GeyserType::geyserTemperature
+005F: ldloc.1 
+0060: callvirt System.Single PrimaryElement::get_Temperature()
+0065: sub 
+0066: ldc.r4 0
+006B: beq.s IL_0099
+006D: ldarg.0 
+006E: call UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+0073: callvirt !!0 UnityEngine.GameObject::GetComponent<SimTemperatureTransfer>()
+0078: dup 
+0079: ldfld System.Action`1<SimTemperatureTransfer> SimTemperatureTransfer::onSimRegistered
+007E: ldarg.0 
+007F: ldftn System.Void Geyser::OnSimRegistered(SimTemperatureTransfer)
+0085: newobj System.Void System.Action`1<SimTemperatureTransfer>::.ctor(System.Object,System.IntPtr)
+008A: call System.Delegate System.Delegate::Combine(System.Delegate,System.Delegate)
+008F: castclass System.Action`1<SimTemperatureTransfer>
+0094: stfld System.Action`1<SimTemperatureTransfer> SimTemperatureTransfer::onSimRegistered
+0099: ldarg.0 
+009A: ldarg.0 
+009B: ldfld GeyserConfigurator/GeyserInstanceConfiguration Geyser::configuration
+00A0: call System.Void Geyser::ApplyConfigurationEmissionValues(GeyserConfigurator/GeyserInstanceConfiguration)
+00A5: ldarg.0 
+00A6: call !!0 UnityEngine.Component::GetComponent<CodexEntryRedirector>()
+00AB: ldstr "GEYSERGENERIC"
+00B0: ldarg.0 
+00B1: ldfld GeyserConfigurator/GeyserInstanceConfiguration Geyser::configuration
+00B6: callvirt GeyserConfigurator/GeyserType GeyserConfigurator/GeyserInstanceConfiguration::get_geyserType()
+00BB: ldfld System.String GeyserConfigurator/GeyserType::id
+00C0: callvirt System.String System.String::ToUpper()
+00C5: call System.String System.String::Concat(System.String,System.String)
+00CA: stfld System.String CodexEntryRedirector::CodexID
+00CF: ldarg.0 
+00D0: call System.Void Geyser::GenerateName()
+00D5: ldarg.0 
+00D6: ldarg.0 
+00D7: ldfld System.Single Geyser::serializedTimeShift
+00DC: call System.Void Geyser::set_timeShift(System.Single)
+00E1: ldarg.0 
+00E2: call StateMachineInstanceType StateMachineComponent`1<Geyser/StatesInstance>::get_smi()
+00E7: callvirt System.Void StateMachine/Instance::StartSM()
+00EC: ldarg.0 
+00ED: call !!0 UnityEngine.Component::GetComponent<Studyable>()
+00F2: stloc.0 
+00F3: ldloc.0 
+00F4: ldnull 
+00F5: call System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)
+00FA: brfalse.s IL_0103
+00FC: ldloc.0 
+00FD: ldc.i4.1 
+00FE: stfld System.Boolean Workable::alwaysShowProgressBar
+0103: ldsfld Components/CmpsByWorld`1<Geyser> Components::Geysers
+0108: ldarg.0 
+0109: call UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+010E: call System.Int32 ClusterUtil::GetMyWorldId(UnityEngine.GameObject)
+0113: ldarg.0 
+0114: callvirt System.Void Components/CmpsByWorld`1<Geyser>::Add(System.Int32,T)
+0119: ldarg.0 
+011A: call UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+011F: ldc.i4 1763323737
+0124: ldarg.0 
+0125: ldftn System.Void Geyser::OnGeotunerChanged(System.Object)
+012B: newobj System.Void System.Action`1<System.Object>::.ctor(System.Object,System.IntPtr)
+0130: call System.Int32 KMonoBehaviourExtensions::Subscribe(UnityEngine.GameObject,System.Int32,System.Action`1<System.Object>)
+0135: pop 
+0136: ldarg.0 
+0137: call System.Void Geyser::RefreshStudiedMeter()
+013C: ldarg.0 
+013D: call System.Void Geyser::UpdateModifier()
+0142: ret 
+
+#### family System.Void Geyser::OnCleanUp()
+FIELDS:
+- Components/CmpsByWorld`1<Geyser> Components::Geysers
+CALLS:
+- System.Int32 ClusterUtil::GetMyWorldId(UnityEngine.GameObject)
+- System.Void Components/CmpsByWorld`1<Geyser>::Remove(System.Int32,T)
+- System.Void Geyser::OnGeotunerChanged(System.Object)
+- System.Void KMonoBehaviourExtensions::Unsubscribe(UnityEngine.GameObject,System.Int32,System.Action`1<System.Object>)
+- System.Void StateMachineComponent`1<Geyser/StatesInstance>::OnCleanUp()
+- System.Void System.Action`1<System.Object>::.ctor(System.Object,System.IntPtr)
+- UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+IL:
+0000: ldarg.0 
+0001: call System.Void StateMachineComponent`1<Geyser/StatesInstance>::OnCleanUp()
+0006: ldarg.0 
+0007: call UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+000C: ldc.i4 1763323737
+0011: ldarg.0 
+0012: ldftn System.Void Geyser::OnGeotunerChanged(System.Object)
+0018: newobj System.Void System.Action`1<System.Object>::.ctor(System.Object,System.IntPtr)
+001D: call System.Void KMonoBehaviourExtensions::Unsubscribe(UnityEngine.GameObject,System.Int32,System.Action`1<System.Object>)
+0022: ldsfld Components/CmpsByWorld`1<Geyser> Components::Geysers
+0027: ldarg.0 
+0028: call UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+002D: call System.Int32 ClusterUtil::GetMyWorldId(UnityEngine.GameObject)
+0032: ldarg.0 
+0033: callvirt System.Void Components/CmpsByWorld`1<Geyser>::Remove(System.Int32,T)
+0038: ret 
+
+#### public System.Collections.Generic.List`1<Descriptor> Geyser::GetDescriptors(UnityEngine.GameObject)
+FIELDS:
+- Components/CmpsByWorld`1<GeoTuner/Instance> Components::GeoTuners
+- GameStateMachine`4/State<Geyser/States,Geyser/StatesInstance,Geyser,System.Object> Geyser/States::dormant
+- Geyser/GeyserModification GeoTuner/Instance::currentGeyserModification
+- Geyser/ModificationMethod Geyser::massModificationMethod
+- Geyser/ModificationMethod Geyser::temperatureModificationMethod
+- GeyserConfigurator/GeyserInstanceConfiguration Geyser::configuration
+- LocString STRINGS.UI/BUILDINGEFFECTS::GEYSER_DISEASE
+- LocString STRINGS.UI/BUILDINGEFFECTS::GEYSER_PERIOD
+- LocString STRINGS.UI/BUILDINGEFFECTS::GEYSER_PRODUCTION
+- LocString STRINGS.UI/BUILDINGEFFECTS::GEYSER_YEAR_AVR_OUTPUT
+- LocString STRINGS.UI/BUILDINGEFFECTS::GEYSER_YEAR_AVR_OUTPUT_UNSTUDIED
+- LocString STRINGS.UI/BUILDINGEFFECTS::GEYSER_YEAR_NEXT_ACTIVE
+- LocString STRINGS.UI/BUILDINGEFFECTS::GEYSER_YEAR_NEXT_DORMANT
+- LocString STRINGS.UI/BUILDINGEFFECTS::GEYSER_YEAR_PERIOD
+- LocString STRINGS.UI/BUILDINGEFFECTS::GEYSER_YEAR_UNSTUDIED
+- LocString STRINGS.UI/BUILDINGEFFECTS/TOOLTIPS::GEYSER_DISEASE
+- LocString STRINGS.UI/BUILDINGEFFECTS/TOOLTIPS::GEYSER_PERIOD
+- LocString STRINGS.UI/BUILDINGEFFECTS/TOOLTIPS::GEYSER_PRODUCTION
+- LocString STRINGS.UI/BUILDINGEFFECTS/TOOLTIPS::GEYSER_PRODUCTION_GEOTUNED
+- LocString STRINGS.UI/BUILDINGEFFECTS/TOOLTIPS::GEYSER_PRODUCTION_GEOTUNED_COUNT
+- LocString STRINGS.UI/BUILDINGEFFECTS/TOOLTIPS::GEYSER_PRODUCTION_GEOTUNED_TOTAL
+- LocString STRINGS.UI/BUILDINGEFFECTS/TOOLTIPS::GEYSER_YEAR_AVR_OUTPUT
+- LocString STRINGS.UI/BUILDINGEFFECTS/TOOLTIPS::GEYSER_YEAR_AVR_OUTPUT_BREAKDOWN_ROW
+- LocString STRINGS.UI/BUILDINGEFFECTS/TOOLTIPS::GEYSER_YEAR_AVR_OUTPUT_BREAKDOWN_TITLE
+- LocString STRINGS.UI/BUILDINGEFFECTS/TOOLTIPS::GEYSER_YEAR_AVR_OUTPUT_UNSTUDIED
+- LocString STRINGS.UI/BUILDINGEFFECTS/TOOLTIPS::GEYSER_YEAR_NEXT_ACTIVE
+- LocString STRINGS.UI/BUILDINGEFFECTS/TOOLTIPS::GEYSER_YEAR_NEXT_DORMANT
+- LocString STRINGS.UI/BUILDINGEFFECTS/TOOLTIPS::GEYSER_YEAR_PERIOD
+- LocString STRINGS.UI/BUILDINGEFFECTS/TOOLTIPS::GEYSER_YEAR_UNSTUDIED
+- LocString STRINGS.UI/UISIDESCREENS/GEOTUNERSIDESCREEN::STUDIED_TOOLTIP_GEOTUNER_MODIFIER_ROW_TITLE
+- SimHashes GeyserConfigurator/GeyserType::element
+- System.Single Geyser/GeyserModification::massPerCycleModifier
+- System.Single Geyser/GeyserModification::temperatureModifier
+- System.Single GeyserConfigurator/GeyserInstanceConfiguration::scaledRate
+- System.Single GeyserConfigurator/GeyserType::temperature
+- Tag Element::tag
+CALLS:
+- !!0 UnityEngine.Component::GetComponent<Studyable>()
+- !!0[] System.Array::Empty<System.Object>()
+- !0 System.Collections.Generic.List`1<GeoTuner/Instance>::Find(System.Predicate`1<!0>)
+- !1 System.Func`2<System.Single,System.Single>::Invoke(!0)
+- Element ElementLoader::FindElementByHash(SimHashes)
+- GeyserConfigurator/GeyserType GeyserConfigurator/GeyserInstanceConfiguration::get_geyserType()
+- SimHashes GeyserConfigurator/GeyserInstanceConfiguration::GetElement()
+- StateMachineInstanceType StateMachineComponent`1<Geyser/StatesInstance>::get_smi()
+- StateMachineType StateMachine`4/GenericInstance<Geyser/States,Geyser/StatesInstance,Geyser,System.Object>::get_sm()
+- System.Boolean Geyser::<GetDescriptors>b__60_0(GeoTuner/Instance)
+- System.Boolean Geyser::<GetDescriptors>b__60_1(GeoTuner/Instance)
+- System.Boolean StateMachine/Instance::IsInsideState(StateMachine/BaseState)
+- System.Boolean Studyable::get_Studied()
+- System.Boolean UnityEngine.Object::op_Implicit(UnityEngine.Object)
+- System.Byte GeyserConfigurator/GeyserInstanceConfiguration::GetDiseaseIdx()
+- System.Collections.Generic.List`1<T> Components/CmpsByWorld`1<GeoTuner/Instance>::GetItems(System.Int32)
+- System.Int32 ClusterUtil::GetMyWorldId(UnityEngine.GameObject)
+- System.Int32 Geyser::GetAmountOfGeotunersAffectingThisGeyser()
+- System.Int32 System.Linq.Enumerable::Count<GeoTuner/Instance>(System.Collections.Generic.IEnumerable`1<!!0>,System.Func`2<!!0,System.Boolean>)
+- System.Single Geyser::<GetDescriptors>b__60_2(System.Single)
+- System.Single Geyser::RemainingActiveTime()
+- System.Single Geyser::RemainingDormantTime()
+- System.Single GeyserConfigurator/GeyserInstanceConfiguration::GetAverageEmission()
+- System.Single GeyserConfigurator/GeyserInstanceConfiguration::GetEmitRate()
+- System.Single GeyserConfigurator/GeyserInstanceConfiguration::GetIterationLength()
+- System.Single GeyserConfigurator/GeyserInstanceConfiguration::GetOnDuration()
+- System.Single GeyserConfigurator/GeyserInstanceConfiguration::GetTemperature()
+- System.Single GeyserConfigurator/GeyserInstanceConfiguration::GetYearLength()
+- System.Single GeyserConfigurator/GeyserInstanceConfiguration::GetYearOnDuration()
+- System.String Element::get_name()
+- System.String GameTagExtensions::ProperName(Tag)
+- System.String GameUtil::AddPositiveSign(System.String,System.Boolean)
+- System.String GameUtil::GetFormattedCycles(System.Single,System.String,System.Boolean)
+- System.String GameUtil::GetFormattedDiseaseName(System.Byte,System.Boolean)
+- System.String GameUtil::GetFormattedMass(System.Single,GameUtil/TimeSlice,GameUtil/MetricMassFormat,System.Boolean,System.String)
+- System.String GameUtil::GetFormattedTemperature(System.Single,GameUtil/TimeSlice,GameUtil/TemperatureInterpretation,System.Boolean,System.Boolean)
+- System.String GameUtil::GetFormattedTime(System.Single,System.String)
+- System.String LocString::op_Implicit(LocString)
+- System.String LocString::Replace(System.String,System.String)
+- System.String System.Int32::ToString()
+- System.String System.Object::ToString()
+- System.String System.Single::ToString(System.String)
+- System.String System.String::Concat(System.String,System.String,System.String,System.String)
+- System.String System.String::Concat(System.String,System.String,System.String)
+- System.String System.String::Concat(System.String,System.String)
+- System.String System.String::Format(System.String,System.Object,System.Object,System.Object)
+- System.String System.String::Format(System.String,System.Object,System.Object)
+- System.String System.String::Format(System.String,System.Object)
+- System.String System.String::Format(System.String,System.Object[])
+- System.String System.String::Replace(System.String,System.String)
+- System.Void Descriptor::.ctor(System.String,System.String,Descriptor/DescriptorType,System.Boolean)
+- System.Void System.Collections.Generic.List`1<Descriptor>::.ctor()
+- System.Void System.Collections.Generic.List`1<Descriptor>::Add(!0)
+- System.Void System.Func`2<GeoTuner/Instance,System.Boolean>::.ctor(System.Object,System.IntPtr)
+- System.Void System.Func`2<System.Single,System.Single>::.ctor(System.Object,System.IntPtr)
+- System.Void System.Predicate`1<GeoTuner/Instance>::.ctor(System.Object,System.IntPtr)
+- Tag GameTagExtensions::CreateTag(SimHashes)
+- UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+IL:
+0000: newobj System.Void System.Collections.Generic.List`1<Descriptor>::.ctor()
+0005: stloc.0 
+0006: ldarg.0 
+0007: ldfld GeyserConfigurator/GeyserInstanceConfiguration Geyser::configuration
+000C: callvirt SimHashes GeyserConfigurator/GeyserInstanceConfiguration::GetElement()
+0011: call Element ElementLoader::FindElementByHash(SimHashes)
+0016: ldfld Tag Element::tag
+001B: call System.String GameTagExtensions::ProperName(Tag)
+0020: stloc.1 
+0021: ldsfld Components/CmpsByWorld`1<GeoTuner/Instance> Components::GeoTuners
+0026: ldarg.0 
+0027: call UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+002C: call System.Int32 ClusterUtil::GetMyWorldId(UnityEngine.GameObject)
+0031: callvirt System.Collections.Generic.List`1<T> Components/CmpsByWorld`1<GeoTuner/Instance>::GetItems(System.Int32)
+0036: dup 
+0037: ldarg.0 
+0038: ldftn System.Boolean Geyser::<GetDescriptors>b__60_0(GeoTuner/Instance)
+003E: newobj System.Void System.Predicate`1<GeoTuner/Instance>::.ctor(System.Object,System.IntPtr)
+0043: callvirt !0 System.Collections.Generic.List`1<GeoTuner/Instance>::Find(System.Predicate`1<!0>)
+0048: stloc.2 
+0049: ldarg.0 
+004A: ldftn System.Boolean Geyser::<GetDescriptors>b__60_1(GeoTuner/Instance)
+0050: newobj System.Void System.Func`2<GeoTuner/Instance,System.Boolean>::.ctor(System.Object,System.IntPtr)
+0055: call System.Int32 System.Linq.Enumerable::Count<GeoTuner/Instance>(System.Collections.Generic.IEnumerable`1<!!0>,System.Func`2<!!0,System.Boolean>)
+005A: stloc.3 
+005B: ldloc.3 
+005C: ldc.i4.0 
+005D: cgt 
+005F: stloc.s V_4
+0061: ldsfld LocString STRINGS.UI/BUILDINGEFFECTS/TOOLTIPS::GEYSER_PRODUCTION
+0066: call System.String LocString::op_Implicit(LocString)
+006B: ldarg.0 
+006C: ldfld GeyserConfigurator/GeyserInstanceConfiguration Geyser::configuration
+0071: callvirt SimHashes GeyserConfigurator/GeyserInstanceConfiguration::GetElement()
+0076: call Element ElementLoader::FindElementByHash(SimHashes)
+007B: callvirt System.String Element::get_name()
+0080: ldarg.0 
+0081: ldfld GeyserConfigurator/GeyserInstanceConfiguration Geyser::configuration
+0086: callvirt System.Single GeyserConfigurator/GeyserInstanceConfiguration::GetEmitRate()
+008B: ldc.i4.2 
+008C: ldc.i4.0 
+008D: ldc.i4.1 
+008E: ldstr "{0:0.#}"
+0093: call System.String GameUtil::GetFormattedMass(System.Single,GameUtil/TimeSlice,GameUtil/MetricMassFormat,System.Boolean,System.String)
+0098: ldarg.0 
+0099: ldfld GeyserConfigurator/GeyserInstanceConfiguration Geyser::configuration
+009E: callvirt System.Single GeyserConfigurator/GeyserInstanceConfiguration::GetTemperature()
+00A3: ldc.i4.0 
+00A4: ldc.i4.0 
+00A5: ldc.i4.1 
+00A6: ldc.i4.0 
+00A7: call System.String GameUtil::GetFormattedTemperature(System.Single,GameUtil/TimeSlice,GameUtil/TemperatureInterpretation,System.Boolean,System.Boolean)
+00AC: call System.String System.String::Format(System.String,System.Object,System.Object,System.Object)
+00B1: stloc.s V_5
+00B3: ldloc.s V_4
+00B5: brfalse IL_02E6
+00BA: ldarg.0 
+00BB: ldftn System.Single Geyser::<GetDescriptors>b__60_2(System.Single)
+00C1: newobj System.Void System.Func`2<System.Single,System.Single>::.ctor(System.Object,System.IntPtr)
+00C6: ldarg.0 
+00C7: call System.Int32 Geyser::GetAmountOfGeotunersAffectingThisGeyser()
+00CC: stloc.s V_7
+00CE: ldsfld Geyser/ModificationMethod Geyser::temperatureModificationMethod
+00D3: ldc.i4.1 
+00D4: beq.s IL_00E3
+00D6: ldloc.2 
+00D7: ldflda Geyser/GeyserModification GeoTuner/Instance::currentGeyserModification
+00DC: ldfld System.Single Geyser/GeyserModification::temperatureModifier
+00E1: br.s IL_00FF
+00E3: ldloc.2 
+00E4: ldflda Geyser/GeyserModification GeoTuner/Instance::currentGeyserModification
+00E9: ldfld System.Single Geyser/GeyserModification::temperatureModifier
+00EE: ldarg.0 
+00EF: ldfld GeyserConfigurator/GeyserInstanceConfiguration Geyser::configuration
+00F4: callvirt GeyserConfigurator/GeyserType GeyserConfigurator/GeyserInstanceConfiguration::get_geyserType()
+00F9: ldfld System.Single GeyserConfigurator/GeyserType::temperature
+00FE: mul 
+00FF: stloc.s V_8
+0101: ldsfld Geyser/ModificationMethod Geyser::massModificationMethod
+0106: ldc.i4.1 
+0107: beq.s IL_0116
+0109: ldloc.2 
+010A: ldflda Geyser/GeyserModification GeoTuner/Instance::currentGeyserModification
+010F: ldfld System.Single Geyser/GeyserModification::massPerCycleModifier
+0114: br.s IL_012D
+0116: ldloc.2 
+0117: ldflda Geyser/GeyserModification GeoTuner/Instance::currentGeyserModification
+011C: ldfld System.Single Geyser/GeyserModification::massPerCycleModifier
+0121: ldarg.0 
+0122: ldfld GeyserConfigurator/GeyserInstanceConfiguration Geyser::configuration
+0127: ldfld System.Single GeyserConfigurator/GeyserInstanceConfiguration::scaledRate
+012C: mul 
+012D: callvirt !1 System.Func`2<System.Single,System.Single>::Invoke(!0)
+0132: stloc.s V_9
+0134: ldloc.s V_7
+0136: conv.r4 
+0137: ldloc.s V_8
+0139: mul 
+013A: stloc.s V_10
+013C: ldloc.s V_7
+013E: conv.r4 
+013F: ldloc.s V_9
+0141: mul 
+0142: stloc.s V_11
+0144: ldloc.s V_10
+0146: ldc.r4 0
+014B: bgt.s IL_0154
+014D: ldstr ""
+0152: br.s IL_0159
+0154: ldstr "+"
+0159: ldloc.s V_10
+015B: ldc.i4.0 
+015C: ldc.i4.1 
+015D: ldc.i4.1 
+015E: ldc.i4.0 
+015F: call System.String GameUtil::GetFormattedTemperature(System.Single,GameUtil/TimeSlice,GameUtil/TemperatureInterpretation,System.Boolean,System.Boolean)
+0164: call System.String System.String::Concat(System.String,System.String)
+0169: stloc.s V_12
+016B: ldloc.s V_11
+016D: ldc.r4 0
+0172: bgt.s IL_017B
+0174: ldstr ""
+0179: br.s IL_0180
+017B: ldstr "+"
+0180: ldloc.s V_11
+0182: ldc.i4.2 
+0183: ldc.i4.0 
+0184: ldc.i4.1 
+0185: ldstr "{0:0.##}"
+018A: call System.String GameUtil::GetFormattedMass(System.Single,GameUtil/TimeSlice,GameUtil/MetricMassFormat,System.Boolean,System.String)
+018F: call System.String System.String::Concat(System.String,System.String)
+0194: stloc.s V_13
+0196: ldloc.s V_8
+0198: ldc.r4 0
+019D: bgt.s IL_01A6
+019F: ldstr ""
+01A4: br.s IL_01AB
+01A6: ldstr "+"
+01AB: ldloc.s V_8
+01AD: ldc.i4.0 
+01AE: ldc.i4.1 
+01AF: ldc.i4.1 
+01B0: ldc.i4.0 
+01B1: call System.String GameUtil::GetFormattedTemperature(System.Single,GameUtil/TimeSlice,GameUtil/TemperatureInterpretation,System.Boolean,System.Boolean)
+01B6: call System.String System.String::Concat(System.String,System.String)
+01BB: stloc.s V_14
+01BD: ldloc.s V_9
+01BF: ldc.r4 0
+01C4: bgt.s IL_01CD
+01C6: ldstr ""
+01CB: br.s IL_01D2
+01CD: ldstr "+"
+01D2: ldloc.s V_9
+01D4: ldc.i4.2 
+01D5: ldc.i4.0 
+01D6: ldc.i4.1 
+01D7: ldstr "{0:0.##}"
+01DC: call System.String GameUtil::GetFormattedMass(System.Single,GameUtil/TimeSlice,GameUtil/MetricMassFormat,System.Boolean,System.String)
+01E1: call System.String System.String::Concat(System.String,System.String)
+01E6: stloc.s V_15
+01E8: ldsfld LocString STRINGS.UI/BUILDINGEFFECTS/TOOLTIPS::GEYSER_PRODUCTION_GEOTUNED
+01ED: call System.String LocString::op_Implicit(LocString)
+01F2: ldarg.0 
+01F3: ldfld GeyserConfigurator/GeyserInstanceConfiguration Geyser::configuration
+01F8: callvirt SimHashes GeyserConfigurator/GeyserInstanceConfiguration::GetElement()
+01FD: call Element ElementLoader::FindElementByHash(SimHashes)
+0202: callvirt System.String Element::get_name()
+0207: ldarg.0 
+0208: ldfld GeyserConfigurator/GeyserInstanceConfiguration Geyser::configuration
+020D: callvirt System.Single GeyserConfigurator/GeyserInstanceConfiguration::GetEmitRate()
+0212: ldc.i4.2 
+0213: ldc.i4.0 
+0214: ldc.i4.1 
+0215: ldstr "{0:0.#}"
+021A: call System.String GameUtil::GetFormattedMass(System.Single,GameUtil/TimeSlice,GameUtil/MetricMassFormat,System.Boolean,System.String)
+021F: ldarg.0 
+0220: ldfld GeyserConfigurator/GeyserInstanceConfiguration Geyser::configuration
+0225: callvirt System.Single GeyserConfigurator/GeyserInstanceConfiguration::GetTemperature()
+022A: ldc.i4.0 
+022B: ldc.i4.0 
+022C: ldc.i4.1 
+022D: ldc.i4.0 
+022E: call System.String GameUtil::GetFormattedTemperature(System.Single,GameUtil/TimeSlice,GameUtil/TemperatureInterpretation,System.Boolean,System.Boolean)
+0233: call System.String System.String::Format(System.String,System.Object,System.Object,System.Object)
+0238: stloc.s V_5
+023A: ldloc.s V_5
+023C: ldstr "
+"
+0241: call System.String System.String::Concat(System.String,System.String)
+0246: stloc.s V_5
+0248: ldloc.s V_5
+024A: ldstr "
+"
+024F: ldsfld LocString STRINGS.UI/BUILDINGEFFECTS/TOOLTIPS::GEYSER_PRODUCTION_GEOTUNED_COUNT
+0254: call System.String LocString::op_Implicit(LocString)
+0259: ldloca.s V_7
+025B: call System.String System.Int32::ToString()
+0260: ldloca.s V_3
+0262: call System.String System.Int32::ToString()
+0267: call System.String System.String::Format(System.String,System.Object,System.Object)
+026C: call System.String System.String::Concat(System.String,System.String,System.String)
+0271: stloc.s V_5
+0273: ldloc.s V_5
+0275: ldstr "
+"
+027A: call System.String System.String::Concat(System.String,System.String)
+027F: stloc.s V_5
+0281: ldloc.s V_5
+0283: ldstr "
+"
+0288: ldsfld LocString STRINGS.UI/BUILDINGEFFECTS/TOOLTIPS::GEYSER_PRODUCTION_GEOTUNED_TOTAL
+028D: call System.String LocString::op_Implicit(LocString)
+0292: ldloc.s V_13
+0294: ldloc.s V_12
+0296: call System.String System.String::Format(System.String,System.Object,System.Object)
+029B: call System.String System.String::Concat(System.String,System.String,System.String)
+02A0: stloc.s V_5
+02A2: ldc.i4.0 
+02A3: stloc.s V_16
+02A5: br.s IL_02E0
+02A7: ldstr "
+    • "
+02AC: ldsfld LocString STRINGS.UI/UISIDESCREENS/GEOTUNERSIDESCREEN::STUDIED_TOOLTIP_GEOTUNER_MODIFIER_ROW_TITLE
+02B1: callvirt System.String System.Object::ToString()
+02B6: call System.String System.String::Concat(System.String,System.String)
+02BB: stloc.s V_17
+02BD: ldloc.s V_17
+02BF: ldloc.s V_15
+02C1: ldstr " "
+02C6: ldloc.s V_14
+02C8: call System.String System.String::Concat(System.String,System.String,System.String,System.String)
+02CD: stloc.s V_17
+02CF: ldloc.s V_5
+02D1: ldloc.s V_17
+02D3: call System.String System.String::Concat(System.String,System.String)
+02D8: stloc.s V_5
+02DA: ldloc.s V_16
+02DC: ldc.i4.1 
+02DD: add 
+02DE: stloc.s V_16
+02E0: ldloc.s V_16
+02E2: ldloc.s V_7
+02E4: blt.s IL_02A7
+02E6: ldloc.0 
+02E7: ldsfld LocString STRINGS.UI/BUILDINGEFFECTS::GEYSER_PRODUCTION
+02EC: call System.String LocString::op_Implicit(LocString)
+02F1: ldloc.1 
+02F2: ldarg.0 
+02F3: ldfld GeyserConfigurator/GeyserInstanceConfiguration Geyser::configuration
+02F8: callvirt System.Single GeyserConfigurator/GeyserInstanceConfiguration::GetEmitRate()
+02FD: ldc.i4.2 
+02FE: ldc.i4.0 
+02FF: ldc.i4.1 
+0300: ldstr "{0:0.#}"
+0305: call System.String GameUtil::GetFormattedMass(System.Single,GameUtil/TimeSlice,GameUtil/MetricMassFormat,System.Boolean,System.String)
+030A: ldarg.0 
+030B: ldfld GeyserConfigurator/GeyserInstanceConfiguration Geyser::configuration
+0310: callvirt System.Single GeyserConfigurator/GeyserInstanceConfiguration::GetTemperature()
+0315: ldc.i4.0 
+0316: ldc.i4.0 
+0317: ldc.i4.1 
+0318: ldc.i4.0 
+0319: call System.String GameUtil::GetFormattedTemperature(System.Single,GameUtil/TimeSlice,GameUtil/TemperatureInterpretation,System.Boolean,System.Boolean)
+031E: call System.String System.String::Format(System.String,System.Object,System.Object,System.Object)
+0323: ldloc.s V_5
+0325: ldc.i4.1 
+0326: ldc.i4.0 
+0327: newobj System.Void Descriptor::.ctor(System.String,System.String,Descriptor/DescriptorType,System.Boolean)
+032C: callvirt System.Void System.Collections.Generic.List`1<Descriptor>::Add(!0)
+0331: ldarg.0 
+0332: ldfld GeyserConfigurator/GeyserInstanceConfiguration Geyser::configuration
+0337: callvirt System.Byte GeyserConfigurator/GeyserInstanceConfiguration::GetDiseaseIdx()
+033C: ldc.i4 255
+0341: beq.s IL_0390
+0343: ldloc.0 
+0344: ldsfld LocString STRINGS.UI/BUILDINGEFFECTS::GEYSER_DISEASE
+0349: call System.String LocString::op_Implicit(LocString)
+034E: ldarg.0 
+034F: ldfld GeyserConfigurator/GeyserInstanceConfiguration Geyser::configuration
+0354: callvirt System.Byte GeyserConfigurator/GeyserInstanceConfiguration::GetDiseaseIdx()
+0359: ldc.i4.0 
+035A: call System.String GameUtil::GetFormattedDiseaseName(System.Byte,System.Boolean)
+035F: call System.String System.String::Format(System.String,System.Object)
+0364: ldsfld LocString STRINGS.UI/BUILDINGEFFECTS/TOOLTIPS::GEYSER_DISEASE
+0369: call System.String LocString::op_Implicit(LocString)
+036E: ldarg.0 
+036F: ldfld GeyserConfigurator/GeyserInstanceConfiguration Geyser::configuration
+0374: callvirt System.Byte GeyserConfigurator/GeyserInstanceConfiguration::GetDiseaseIdx()
+0379: ldc.i4.0 
+037A: call System.String GameUtil::GetFormattedDiseaseName(System.Byte,System.Boolean)
+037F: call System.String System.String::Format(System.String,System.Object)
+0384: ldc.i4.1 
+0385: ldc.i4.0 
+0386: newobj System.Void Descriptor::.ctor(System.String,System.String,Descriptor/DescriptorType,System.Boolean)
+038B: callvirt System.Void System.Collections.Generic.List`1<Descriptor>::Add(!0)
+0390: ldloc.0 
+0391: ldsfld LocString STRINGS.UI/BUILDINGEFFECTS::GEYSER_PERIOD
+0396: call System.String LocString::op_Implicit(LocString)
+039B: ldarg.0 
+039C: ldfld GeyserConfigurator/GeyserInstanceConfiguration Geyser::configuration
+03A1: callvirt System.Single GeyserConfigurator/GeyserInstanceConfiguration::GetOnDuration()
+03A6: ldstr "F0"
+03AB: call System.String GameUtil::GetFormattedTime(System.Single,System.String)
+03B0: ldarg.0 
+03B1: ldfld GeyserConfigurator/GeyserInstanceConfiguration Geyser::configuration
+03B6: callvirt System.Single GeyserConfigurator/GeyserInstanceConfiguration::GetIterationLength()
+03BB: ldstr "F0"
+03C0: call System.String GameUtil::GetFormattedTime(System.Single,System.String)
+03C5: call System.String System.String::Format(System.String,System.Object,System.Object)
+03CA: ldsfld LocString STRINGS.UI/BUILDINGEFFECTS/TOOLTIPS::GEYSER_PERIOD
+03CF: call System.String LocString::op_Implicit(LocString)
+03D4: ldarg.0 
+03D5: ldfld GeyserConfigurator/GeyserInstanceConfiguration Geyser::configuration
+03DA: callvirt System.Single GeyserConfigurator/GeyserInstanceConfiguration::GetOnDuration()
+03DF: ldstr "F0"
+03E4: call System.String GameUtil::GetFormattedTime(System.Single,System.String)
+03E9: ldarg.0 
+03EA: ldfld GeyserConfigurator/GeyserInstanceConfiguration Geyser::configuration
+03EF: callvirt System.Single GeyserConfigurator/GeyserInstanceConfiguration::GetIterationLength()
+03F4: ldstr "F0"
+03F9: call System.String GameUtil::GetFormattedTime(System.Single,System.String)
+03FE: call System.String System.String::Format(System.String,System.Object,System.Object)
+0403: ldc.i4.1 
+0404: ldc.i4.0 
+0405: newobj System.Void Descriptor::.ctor(System.String,System.String,Descriptor/DescriptorType,System.Boolean)
+040A: callvirt System.Void System.Collections.Generic.List`1<Descriptor>::Add(!0)
+040F: ldarg.0 
+0410: call !!0 UnityEngine.Component::GetComponent<Studyable>()
+0415: stloc.s V_6
+0417: ldloc.s V_6
+0419: call System.Boolean UnityEngine.Object::op_Implicit(UnityEngine.Object)
+041E: brfalse.s IL_0498
+0420: ldloc.s V_6
+0422: callvirt System.Boolean Studyable::get_Studied()
+0427: brtrue.s IL_0498
+0429: ldloc.0 
+042A: ldsfld LocString STRINGS.UI/BUILDINGEFFECTS::GEYSER_YEAR_UNSTUDIED
+042F: call System.String LocString::op_Implicit(LocString)
+0434: call !!0[] System.Array::Empty<System.Object>()
+0439: call System.String System.String::Format(System.String,System.Object[])
+043E: ldsfld LocString STRINGS.UI/BUILDINGEFFECTS/TOOLTIPS::GEYSER_YEAR_UNSTUDIED
+0443: call System.String LocString::op_Implicit(LocString)
+0448: call !!0[] System.Array::Empty<System.Object>()
+044D: call System.String System.String::Format(System.String,System.Object[])
+0452: ldc.i4.1 
+0453: ldc.i4.0 
+0454: newobj System.Void Descriptor::.ctor(System.String,System.String,Descriptor/DescriptorType,System.Boolean)
+0459: callvirt System.Void System.Collections.Generic.List`1<Descriptor>::Add(!0)
+045E: ldloc.0 
+045F: ldsfld LocString STRINGS.UI/BUILDINGEFFECTS::GEYSER_YEAR_AVR_OUTPUT_UNSTUDIED
+0464: call System.String LocString::op_Implicit(LocString)
+0469: call !!0[] System.Array::Empty<System.Object>()
+046E: call System.String System.String::Format(System.String,System.Object[])
+0473: ldsfld LocString STRINGS.UI/BUILDINGEFFECTS/TOOLTIPS::GEYSER_YEAR_AVR_OUTPUT_UNSTUDIED
+0478: call System.String LocString::op_Implicit(LocString)
+047D: call !!0[] System.Array::Empty<System.Object>()
+0482: call System.String System.String::Format(System.String,System.Object[])
+0487: ldc.i4.1 
+0488: ldc.i4.0 
+0489: newobj System.Void Descriptor::.ctor(System.String,System.String,Descriptor/DescriptorType,System.Boolean)
+048E: callvirt System.Void System.Collections.Generic.List`1<Descriptor>::Add(!0)
+0493: br IL_0750
+0498: ldloc.0 
+0499: ldsfld LocString STRINGS.UI/BUILDINGEFFECTS::GEYSER_YEAR_PERIOD
+049E: call System.String LocString::op_Implicit(LocString)
+04A3: ldarg.0 
+04A4: ldfld GeyserConfigurator/GeyserInstanceConfiguration Geyser::configuration
+04A9: callvirt System.Single GeyserConfigurator/GeyserInstanceConfiguration::GetYearOnDuration()
+04AE: ldstr "F1"
+04B3: ldc.i4.0 
+04B4: call System.String GameUtil::GetFormattedCycles(System.Single,System.String,System.Boolean)
+04B9: ldarg.0 
+04BA: ldfld GeyserConfigurator/GeyserInstanceConfiguration Geyser::configuration
+04BF: callvirt System.Single GeyserConfigurator/GeyserInstanceConfiguration::GetYearLength()
+04C4: ldstr "F1"
+04C9: ldc.i4.0 
+04CA: call System.String GameUtil::GetFormattedCycles(System.Single,System.String,System.Boolean)
+04CF: call System.String System.String::Format(System.String,System.Object,System.Object)
+04D4: ldsfld LocString STRINGS.UI/BUILDINGEFFECTS/TOOLTIPS::GEYSER_YEAR_PERIOD
+04D9: call System.String LocString::op_Implicit(LocString)
+04DE: ldarg.0 
+04DF: ldfld GeyserConfigurator/GeyserInstanceConfiguration Geyser::configuration
+04E4: callvirt System.Single GeyserConfigurator/GeyserInstanceConfiguration::GetYearOnDuration()
+04E9: ldstr "F1"
+04EE: ldc.i4.0 
+04EF: call System.String GameUtil::GetFormattedCycles(System.Single,System.String,System.Boolean)
+04F4: ldarg.0 
+04F5: ldfld GeyserConfigurator/GeyserInstanceConfiguration Geyser::configuration
+04FA: callvirt System.Single GeyserConfigurator/GeyserInstanceConfiguration::GetYearLength()
+04FF: ldstr "F1"
+0504: ldc.i4.0 
+0505: call System.String GameUtil::GetFormattedCycles(System.Single,System.String,System.Boolean)
+050A: call System.String System.String::Format(System.String,System.Object,System.Object)
+050F: ldc.i4.1 
+0510: ldc.i4.0 
+0511: newobj System.Void Descriptor::.ctor(System.String,System.String,Descriptor/DescriptorType,System.Boolean)
+0516: callvirt System.Void System.Collections.Generic.List`1<Descriptor>::Add(!0)
+051B: ldarg.0 
+051C: call StateMachineInstanceType StateMachineComponent`1<Geyser/StatesInstance>::get_smi()
+0521: ldarg.0 
+0522: call StateMachineInstanceType StateMachineComponent`1<Geyser/StatesInstance>::get_smi()
+0527: callvirt StateMachineType StateMachine`4/GenericInstance<Geyser/States,Geyser/StatesInstance,Geyser,System.Object>::get_sm()
+052C: ldfld GameStateMachine`4/State<Geyser/States,Geyser/StatesInstance,Geyser,System.Object> Geyser/States::dormant
+0531: callvirt System.Boolean StateMachine/Instance::IsInsideState(StateMachine/BaseState)
+0536: brfalse.s IL_0587
+0538: ldloc.0 
+0539: ldsfld LocString STRINGS.UI/BUILDINGEFFECTS::GEYSER_YEAR_NEXT_ACTIVE
+053E: call System.String LocString::op_Implicit(LocString)
+0543: ldarg.0 
+0544: call System.Single Geyser::RemainingDormantTime()
+0549: ldstr "F1"
+054E: ldc.i4.0 
+054F: call System.String GameUtil::GetFormattedCycles(System.Single,System.String,System.Boolean)
+0554: call System.String System.String::Format(System.String,System.Object)
+0559: ldsfld LocString STRINGS.UI/BUILDINGEFFECTS/TOOLTIPS::GEYSER_YEAR_NEXT_ACTIVE
+055E: call System.String LocString::op_Implicit(LocString)
+0563: ldarg.0 
+0564: call System.Single Geyser::RemainingDormantTime()
+0569: ldstr "F1"
+056E: ldc.i4.0 
+056F: call System.String GameUtil::GetFormattedCycles(System.Single,System.String,System.Boolean)
+0574: call System.String System.String::Format(System.String,System.Object)
+0579: ldc.i4.1 
+057A: ldc.i4.0 
+057B: newobj System.Void Descriptor::.ctor(System.String,System.String,Descriptor/DescriptorType,System.Boolean)
+0580: callvirt System.Void System.Collections.Generic.List`1<Descriptor>::Add(!0)
+0585: br.s IL_05D4
+0587: ldloc.0 
+0588: ldsfld LocString STRINGS.UI/BUILDINGEFFECTS::GEYSER_YEAR_NEXT_DORMANT
+058D: call System.String LocString::op_Implicit(LocString)
+0592: ldarg.0 
+0593: call System.Single Geyser::RemainingActiveTime()
+0598: ldstr "F1"
+059D: ldc.i4.0 
+059E: call System.String GameUtil::GetFormattedCycles(System.Single,System.String,System.Boolean)
+05A3: call System.String System.String::Format(System.String,System.Object)
+05A8: ldsfld LocString STRINGS.UI/BUILDINGEFFECTS/TOOLTIPS::GEYSER_YEAR_NEXT_DORMANT
+05AD: call System.String LocString::op_Implicit(LocString)
+05B2: ldarg.0 
+05B3: call System.Single Geyser::RemainingActiveTime()
+05B8: ldstr "F1"
+05BD: ldc.i4.0 
+05BE: call System.String GameUtil::GetFormattedCycles(System.Single,System.String,System.Boolean)
+05C3: call System.String System.String::Format(System.String,System.Object)
+05C8: ldc.i4.1 
+05C9: ldc.i4.0 
+05CA: newobj System.Void Descriptor::.ctor(System.String,System.String,Descriptor/DescriptorType,System.Boolean)
+05CF: callvirt System.Void System.Collections.Generic.List`1<Descriptor>::Add(!0)
+05D4: ldsfld LocString STRINGS.UI/BUILDINGEFFECTS/TOOLTIPS::GEYSER_YEAR_AVR_OUTPUT
+05D9: ldstr "{average}"
+05DE: ldarg.0 
+05DF: ldfld GeyserConfigurator/GeyserInstanceConfiguration Geyser::configuration
+05E4: callvirt System.Single GeyserConfigurator/GeyserInstanceConfiguration::GetAverageEmission()
+05E9: ldc.i4.2 
+05EA: ldc.i4.0 
+05EB: ldc.i4.1 
+05EC: ldstr "{0:0.#}"
+05F1: call System.String GameUtil::GetFormattedMass(System.Single,GameUtil/TimeSlice,GameUtil/MetricMassFormat,System.Boolean,System.String)
+05F6: callvirt System.String LocString::Replace(System.String,System.String)
+05FB: ldstr "{element}"
+0600: ldarg.0 
+0601: ldfld GeyserConfigurator/GeyserInstanceConfiguration Geyser::configuration
+0606: callvirt GeyserConfigurator/GeyserType GeyserConfigurator/GeyserInstanceConfiguration::get_geyserType()
+060B: ldfld SimHashes GeyserConfigurator/GeyserType::element
+0610: call Tag GameTagExtensions::CreateTag(SimHashes)
+0615: call System.String GameTagExtensions::ProperName(Tag)
+061A: callvirt System.String System.String::Replace(System.String,System.String)
+061F: stloc.s V_18
+0621: ldloc.s V_4
+0623: brfalse IL_071A
+0628: ldloc.s V_18
+062A: ldstr "
+"
+062F: call System.String System.String::Concat(System.String,System.String)
+0634: stloc.s V_18
+0636: ldloc.s V_18
+0638: ldstr "
+"
+063D: ldsfld LocString STRINGS.UI/BUILDINGEFFECTS/TOOLTIPS::GEYSER_YEAR_AVR_OUTPUT_BREAKDOWN_TITLE
+0642: call System.String LocString::op_Implicit(LocString)
+0647: call System.String System.String::Concat(System.String,System.String,System.String)
+064C: stloc.s V_18
+064E: ldarg.0 
+064F: call System.Int32 Geyser::GetAmountOfGeotunersAffectingThisGeyser()
+0654: stloc.s V_19
+0656: ldsfld Geyser/ModificationMethod Geyser::massModificationMethod
+065B: ldc.i4.1 
+065C: beq.s IL_067D
+065E: ldloc.2 
+065F: ldflda Geyser/GeyserModification GeoTuner/Instance::currentGeyserModification
+0664: ldfld System.Single Geyser/GeyserModification::massPerCycleModifier
+0669: ldc.r4 100
+066E: mul 
+066F: ldarg.0 
+0670: ldfld GeyserConfigurator/GeyserInstanceConfiguration Geyser::configuration
+0675: ldfld System.Single GeyserConfigurator/GeyserInstanceConfiguration::scaledRate
+067A: div 
+067B: br.s IL_068E
+067D: ldloc.2 
+067E: ldflda Geyser/GeyserModification GeoTuner/Instance::currentGeyserModification
+0683: ldfld System.Single Geyser/GeyserModification::massPerCycleModifier
+0688: ldc.r4 100
+068D: mul 
+068E: stloc.s V_20
+0690: ldloc.s V_20
+0692: ldloc.s V_19
+0694: conv.r4 
+0695: mul 
+0696: stloc.s V_21
+0698: ldloc.s V_18
+069A: ldloca.s V_21
+069C: ldstr "0.0"
+06A1: call System.String System.Single::ToString(System.String)
+06A6: ldloc.s V_21
+06A8: ldc.r4 0
+06AD: cgt 
+06AF: call System.String GameUtil::AddPositiveSign(System.String,System.Boolean)
+06B4: ldstr "%"
+06B9: call System.String System.String::Concat(System.String,System.String,System.String)
+06BE: stloc.s V_18
+06C0: ldc.i4.0 
+06C1: stloc.s V_22
+06C3: br.s IL_0714
+06C5: ldstr "
+    • "
+06CA: ldsfld LocString STRINGS.UI/BUILDINGEFFECTS/TOOLTIPS::GEYSER_YEAR_AVR_OUTPUT_BREAKDOWN_ROW
+06CF: callvirt System.String System.Object::ToString()
+06D4: call System.String System.String::Concat(System.String,System.String)
+06D9: stloc.s V_23
+06DB: ldloc.s V_23
+06DD: ldloca.s V_20
+06DF: ldstr "0.0"
+06E4: call System.String System.Single::ToString(System.String)
+06E9: ldloc.s V_20
+06EB: ldc.r4 0
+06F0: cgt 
+06F2: call System.String GameUtil::AddPositiveSign(System.String,System.Boolean)
+06F7: ldstr "%"
+06FC: call System.String System.String::Concat(System.String,System.String,System.String)
+0701: stloc.s V_23
+0703: ldloc.s V_18
+0705: ldloc.s V_23
+0707: call System.String System.String::Concat(System.String,System.String)
+070C: stloc.s V_18
+070E: ldloc.s V_22
+0710: ldc.i4.1 
+0711: add 
+0712: stloc.s V_22
+0714: ldloc.s V_22
+0716: ldloc.s V_19
+0718: blt.s IL_06C5
+071A: ldloc.0 
+071B: ldsfld LocString STRINGS.UI/BUILDINGEFFECTS::GEYSER_YEAR_AVR_OUTPUT
+0720: call System.String LocString::op_Implicit(LocString)
+0725: ldarg.0 
+0726: ldfld GeyserConfigurator/GeyserInstanceConfiguration Geyser::configuration
+072B: callvirt System.Single GeyserConfigurator/GeyserInstanceConfiguration::GetAverageEmission()
+0730: ldc.i4.2 
+0731: ldc.i4.0 
+0732: ldc.i4.1 
+0733: ldstr "{0:0.#}"
+0738: call System.String GameUtil::GetFormattedMass(System.Single,GameUtil/TimeSlice,GameUtil/MetricMassFormat,System.Boolean,System.String)
+073D: call System.String System.String::Format(System.String,System.Object)
+0742: ldloc.s V_18
+0744: ldc.i4.1 
+0745: ldc.i4.0 
+0746: newobj System.Void Descriptor::.ctor(System.String,System.String,Descriptor/DescriptorType,System.Boolean)
+074B: callvirt System.Void System.Collections.Generic.List`1<Descriptor>::Add(!0)
+0750: ldloc.0 
+0751: ret 
+
+## TYPE Assembly-CSharp.dll GeyserConfigurator
+### Fields
+- private System.Collections.Generic.List`1<GeyserConfigurator/GeyserType> geyserTypes
+- public System.Single presetMax
+- public System.Single presetMin
+- public HashedString presetType
+### Selected methods
+
+#### public GeyserConfigurator/GeyserInstanceConfiguration GeyserConfigurator::MakeConfiguration()
+FIELDS:
+- HashedString GeyserConfigurator::presetType
+- System.Single GeyserConfigurator::presetMax
+- System.Single GeyserConfigurator::presetMin
+CALLS:
+- GeyserConfigurator/GeyserInstanceConfiguration GeyserConfigurator::CreateRandomInstance(HashedString,System.Single,System.Single)
+IL:
+0000: ldarg.0 
+0001: ldarg.0 
+0002: ldfld HashedString GeyserConfigurator::presetType
+0007: ldarg.0 
+0008: ldfld System.Single GeyserConfigurator::presetMin
+000D: ldarg.0 
+000E: ldfld System.Single GeyserConfigurator::presetMax
+0013: call GeyserConfigurator/GeyserInstanceConfiguration GeyserConfigurator::CreateRandomInstance(HashedString,System.Single,System.Single)
+0018: ret 
+
+## TYPE Assembly-CSharp.dll SelectTool
+### Fields
+- family System.Int32 cell_new
+- family System.Int32 defaultLayerMask
+- private KSelectable delayedNextSelection
+- private System.Boolean delayedSkipSound
+- public SelectTool Instance
+- private KSelectable previousSelection
+- public KSelectable selected
+- private System.Int32 selectedCell
+### Selected methods
+
+#### family System.Void SelectTool::OnPrefabInit()
+FIELDS:
+- SelectMarker InterfaceTool::selectMarker
+- SelectTool SelectTool::Instance
+- System.Boolean InterfaceTool::populateHitsList
+- System.Int32 InterfaceTool::layerMask
+- System.Int32 SelectTool::defaultLayerMask
+- UnityEngine.GameObject EntityPrefabs::SelectMarker
+- UnityEngine.GameObject GameScreenManager::worldSpaceCanvas
+CALLS:
+- !!0 Util::KInstantiateUI<SelectMarker>(UnityEngine.GameObject,UnityEngine.GameObject,System.Boolean)
+- EntityPrefabs EntityPrefabs::get_Instance()
+- GameScreenManager GameScreenManager::get_Instance()
+- System.Int32 UnityEngine.LayerMask::GetMask(System.String[])
+- System.Void UnityEngine.GameObject::SetActive(System.Boolean)
+- UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+IL:
+0000: ldarg.0 
+0001: ldc.i4.1 
+0002: ldc.i4.7 
+0003: newarr System.String
+0008: dup 
+0009: ldc.i4.0 
+000A: ldstr "World"
+000F: stelem.ref 
+0010: dup 
+0011: ldc.i4.1 
+0012: ldstr "Pickupable"
+0017: stelem.ref 
+0018: dup 
+0019: ldc.i4.2 
+001A: ldstr "Place"
+001F: stelem.ref 
+0020: dup 
+0021: ldc.i4.3 
+0022: ldstr "PlaceWithDepth"
+0027: stelem.ref 
+0028: dup 
+0029: ldc.i4.4 
+002A: ldstr "BlockSelection"
+002F: stelem.ref 
+0030: dup 
+0031: ldc.i4.5 
+0032: ldstr "Construction"
+0037: stelem.ref 
+0038: dup 
+0039: ldc.i4.6 
+003A: ldstr "Selection"
+003F: stelem.ref 
+0040: call System.Int32 UnityEngine.LayerMask::GetMask(System.String[])
+0045: or 
+0046: stfld System.Int32 SelectTool::defaultLayerMask
+004B: ldarg.0 
+004C: ldarg.0 
+004D: ldfld System.Int32 SelectTool::defaultLayerMask
+0052: stfld System.Int32 InterfaceTool::layerMask
+0057: ldarg.0 
+0058: call EntityPrefabs EntityPrefabs::get_Instance()
+005D: ldfld UnityEngine.GameObject EntityPrefabs::SelectMarker
+0062: call GameScreenManager GameScreenManager::get_Instance()
+0067: ldfld UnityEngine.GameObject GameScreenManager::worldSpaceCanvas
+006C: ldc.i4.0 
+006D: call !!0 Util::KInstantiateUI<SelectMarker>(UnityEngine.GameObject,UnityEngine.GameObject,System.Boolean)
+0072: stfld SelectMarker InterfaceTool::selectMarker
+0077: ldarg.0 
+0078: ldfld SelectMarker InterfaceTool::selectMarker
+007D: callvirt UnityEngine.GameObject UnityEngine.Component::get_gameObject()
+0082: ldc.i4.0 
+0083: callvirt System.Void UnityEngine.GameObject::SetActive(System.Boolean)
+0088: ldarg.0 
+0089: ldc.i4.1 
+008A: stfld System.Boolean InterfaceTool::populateHitsList
+008F: ldarg.0 
+0090: stsfld SelectTool SelectTool::Instance
+0095: ret 
+
+#### family System.Void SelectTool::OnDeactivateTool(InterfaceTool)
+CALLS:
+- System.Void InterfaceTool::ClearHover()
+- System.Void InterfaceTool::OnDeactivateTool(InterfaceTool)
+- System.Void SelectTool::Select(KSelectable,System.Boolean)
+IL:
+0000: ldarg.0 
+0001: ldarg.1 
+0002: call System.Void InterfaceTool::OnDeactivateTool(InterfaceTool)
+0007: ldarg.0 
+0008: call System.Void InterfaceTool::ClearHover()
+000D: ldarg.0 
+000E: ldnull 
+000F: ldc.i4.0 
+0010: call System.Void SelectTool::Select(KSelectable,System.Boolean)
+0015: ret 

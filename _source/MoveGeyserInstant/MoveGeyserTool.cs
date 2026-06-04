@@ -1,0 +1,483 @@
+using System;
+using System.Collections.Generic;
+using System.Reflection;
+using UnityEngine;
+
+namespace MoveGeyserInstant {
+    public sealed class MoveGeyserTool : InterfaceTool {
+        private const int FootprintWidth = 4;
+        private const int FootprintHeight = 2;
+        private const float NeutroniumMass = 1840f;
+        private const float NeutroniumTemperature = 293.15f;
+
+        public static MoveGeyserTool Instance { get; private set; }
+
+        private GeyserSnapshot snapshot;
+        private int lastCell = Grid.InvalidCell;
+        private GameObject overlayObject;
+        private Mesh overlayMesh;
+        private Material overlayMaterial;
+        private GameObject previewObject;
+        private KBatchedAnimController previewController;
+
+        public override void OnPrefabInit() {
+            var hover = gameObject.AddComponent<HoverTextConfiguration>();
+            hover.ToolName = Strings.Get("STRINGS.MOVEGEYSERINSTANT.TOOL_NAME");
+            hover.ActionName = Strings.Get("STRINGS.MOVEGEYSERINSTANT.TOOL_ACTION");
+
+            base.OnPrefabInit();
+            Instance = this;
+        }
+
+        public void BeginMove(GameObject source) {
+            if (source == null || source.GetComponent<Geyser>() == null)
+                return;
+
+            snapshot = GeyserSnapshot.Capture(source);
+            lastCell = Grid.PosToCell(source);
+            EnsureOverlay();
+            EnsurePreview();
+            UpdateOverlay(lastCell);
+            PlayerController.Instance.ActivateTool(this);
+        }
+
+        public override void OnMouseMove(Vector3 cursor_pos) {
+            int cell = Grid.PosToCell(cursor_pos);
+            lastCell = cell;
+            UpdateOverlay(cell);
+        }
+
+        public override void OnLeftClickDown(Vector3 cursor_pos) {
+            int cell = Grid.PosToCell(cursor_pos);
+            if (!Grid.IsValidCell(cell))
+                cell = lastCell;
+            PlaceAt(cell);
+        }
+
+        public override void OnDeactivateTool(InterfaceTool newTool) {
+            HideOverlay();
+            DestroyPreview();
+            base.OnDeactivateTool(newTool);
+            if (newTool != this)
+                snapshot = null;
+        }
+
+        public override void OnKeyDown(KButtonEvent e) {
+            if (e.TryConsume(global::Action.Escape)) {
+                CancelMove();
+                ActivateDefaultTool();
+                return;
+            }
+        }
+
+        public override void OnRightClickDown(Vector3 cursor_pos, KButtonEvent e) {
+            if (snapshot == null) {
+                base.OnRightClickDown(cursor_pos, e);
+                return;
+            }
+
+            CancelMove();
+            ActivateDefaultTool();
+        }
+
+        private void PlaceAt(int targetCell) {
+            if (snapshot == null || !Grid.IsValidCell(targetCell))
+                return;
+
+            try {
+                var prefab = Assets.GetPrefab(snapshot.PrefabTag);
+                if (prefab == null) {
+                    Debug.LogWarning("[MoveGeyserInstant] Cannot find geyser prefab: " + snapshot.PrefabTag);
+                    return;
+                }
+
+                HideOverlay();
+                DestroyPreview();
+
+                Vector3 position = Grid.CellToPosCBC(targetCell, Grid.SceneLayer.Building);
+                GameObject moved = Util.KInstantiate(prefab, position, Quaternion.identity);
+                if (moved == null) {
+                    Debug.LogWarning("[MoveGeyserInstant] Failed to instantiate geyser prefab.");
+                    return;
+                }
+
+                snapshot.ApplyFieldsTo(moved);
+                moved.SetActive(true);
+                snapshot.TriggerCopySettings(moved);
+
+                int[] newFootprint = snapshot.GetTranslatedFootprint(targetCell);
+                PlaceDestinationNeutronium(newFootprint);
+                ClearOldNeutroniumIfUnused();
+
+                if (snapshot.Source != null)
+                    snapshot.Source.DeleteObject();
+
+                PopFXManager.Instance.SpawnFX(PopFXManager.Instance.sprite_Plus, Strings.Get("STRINGS.MOVEGEYSERINSTANT.MOVE_BUTTON"), moved.transform, Vector3.zero, 1.5f, false, false);
+                snapshot = null;
+                ActivateDefaultTool();
+            }
+            catch (Exception e) {
+                Debug.LogWarning("[MoveGeyserInstant] Failed to move geyser: " + e);
+            }
+        }
+
+        private static void ActivateDefaultTool() {
+            var controller = PlayerController.Instance;
+            if (controller == null)
+                return;
+
+            InterfaceTool nextTool = SelectTool.Instance;
+            if (nextTool == null && controller.tools != null) {
+                for (int i = 0; i < controller.tools.Length; i++) {
+                    var tool = controller.tools[i];
+                    if (tool != null && !(tool is MoveGeyserTool)) {
+                        nextTool = tool;
+                        break;
+                    }
+                }
+            }
+
+            if (nextTool != null)
+                controller.ActivateTool(nextTool);
+        }
+
+        private void PlaceDestinationNeutronium(int[] cells) {
+            foreach (int cell in cells) {
+                if (!Grid.IsValidCell(cell) || IsCellBlockedForNeutronium(cell))
+                    continue;
+                SimMessages.ReplaceElement(cell, SimHashes.Unobtanium, CellEventLogger.Instance.DebugTool, NeutroniumMass, NeutroniumTemperature);
+            }
+        }
+
+        private void ClearOldNeutroniumIfUnused() {
+            if (snapshot == null)
+                return;
+
+            foreach (int cell in snapshot.SourceFootprint) {
+                if (!Grid.IsValidCell(cell) || Grid.Element[cell].id != SimHashes.Unobtanium || IsUsedByAnotherGeyserFootprint(cell))
+                    continue;
+                SimMessages.ReplaceElement(cell, SimHashes.Vacuum, CellEventLogger.Instance.DebugTool, 0f, 0f);
+            }
+        }
+
+        private bool IsUsedByAnotherGeyserFootprint(int neutroniumCell) {
+            foreach (var geyser in Components.Geysers.GetItems(snapshot.SourceWorldId)) {
+                if (geyser == null || geyser.gameObject == snapshot.Source)
+                    continue;
+
+                int geyserCell = Grid.PosToCell(geyser);
+                int[] footprint = snapshot.GetTranslatedFootprint(geyserCell);
+                for (int i = 0; i < footprint.Length; i++) {
+                    if (footprint[i] == neutroniumCell)
+                        return true;
+                }
+            }
+            return false;
+        }
+
+        private static bool IsCellBlockedForNeutronium(int cell) {
+            if (!Grid.IsValidCell(cell))
+                return true;
+            if (Grid.Element[cell].id == SimHashes.Unobtanium)
+                return true;
+            if (Grid.Solid[cell])
+                return true;
+            return Grid.Objects[cell, (int)ObjectLayer.Building] != null ||
+                Grid.Objects[cell, (int)ObjectLayer.FoundationTile] != null ||
+                Grid.Objects[cell, (int)ObjectLayer.Backwall] != null;
+        }
+
+        private void CancelMove() {
+            snapshot = null;
+            HideOverlay();
+            DestroyPreview();
+        }
+
+        private void EnsureOverlay() {
+            if (overlayObject != null)
+                return;
+
+            overlayMesh = new Mesh { name = "MoveGeyserInstant Overlay Mesh" };
+            overlayMesh.MarkDynamic();
+            overlayMaterial = new Material(Shader.Find("Klei/Prioritizable")) {
+                name = "MoveGeyserInstant Overlay Material",
+                color = Color.green
+            };
+            overlayObject = new GameObject("MoveGeyserInstant Overlay", typeof(MeshFilter), typeof(MeshRenderer));
+            overlayObject.layer = LayerMask.NameToLayer("UI");
+            overlayObject.GetComponent<MeshFilter>().sharedMesh = overlayMesh;
+            overlayObject.GetComponent<MeshRenderer>().sharedMaterial = overlayMaterial;
+            if (Game.Instance != null)
+                overlayObject.transform.SetParent(Game.Instance.transform, false);
+            overlayObject.SetActive(false);
+        }
+
+        private void UpdateOverlay(int cell) {
+            if (snapshot == null || !Grid.IsValidCell(cell)) {
+                HideOverlay();
+                HidePreview();
+                return;
+            }
+
+            EnsureOverlay();
+            bool valid = Grid.IsValidCell(cell);
+            Color color = valid ? new Color(0.2f, 1f, 0.25f, 0.45f) : new Color(1f, 0.1f, 0.1f, 0.45f);
+            var vertices = new List<Vector3>(16);
+            var uvs = new List<Vector2>(16);
+            var colors = new List<Color>(16);
+            var triangles = new List<int>(24);
+
+            AddCellQuad(cell, color, vertices, uvs, colors, triangles, 0f);
+            int[] footprint = snapshot.GetTranslatedFootprint(cell);
+            for (int i = 0; i < footprint.Length; i++)
+                AddCellQuad(footprint[i], new Color(0.1f, 0.45f, 1f, 0.35f), vertices, uvs, colors, triangles, -0.01f);
+
+            overlayMesh.Clear();
+            overlayMesh.SetVertices(vertices);
+            overlayMesh.SetUVs(0, uvs);
+            overlayMesh.SetColors(colors);
+            overlayMesh.SetTriangles(triangles, 0);
+            overlayObject.SetActive(true);
+            UpdatePreview(cell, valid);
+        }
+
+        private static void AddCellQuad(int cell, Color color, List<Vector3> vertices, List<Vector2> uvs, List<Color> colors, List<int> triangles, float zOffset) {
+            if (!Grid.IsValidCell(cell))
+                return;
+
+            Vector3 center = Grid.CellToPosCCC(cell, Grid.SceneLayer.Move);
+            center.z = -5f + zOffset;
+            float half = 0.5f;
+            int start = vertices.Count;
+            vertices.Add(new Vector3(center.x - half, center.y - half, center.z));
+            vertices.Add(new Vector3(center.x - half, center.y + half, center.z));
+            vertices.Add(new Vector3(center.x + half, center.y + half, center.z));
+            vertices.Add(new Vector3(center.x + half, center.y - half, center.z));
+            uvs.Add(new Vector2(0f, 0f));
+            uvs.Add(new Vector2(0f, 1f));
+            uvs.Add(new Vector2(1f, 1f));
+            uvs.Add(new Vector2(1f, 0f));
+            colors.Add(color);
+            colors.Add(color);
+            colors.Add(color);
+            colors.Add(color);
+            triangles.Add(start);
+            triangles.Add(start + 1);
+            triangles.Add(start + 2);
+            triangles.Add(start);
+            triangles.Add(start + 2);
+            triangles.Add(start + 3);
+        }
+
+        private void HideOverlay() {
+            if (overlayObject != null)
+                overlayObject.SetActive(false);
+        }
+
+        private void EnsurePreview() {
+            if (previewObject != null || snapshot == null || snapshot.PreviewAnimFiles == null || snapshot.PreviewAnimFiles.Length == 0)
+                return;
+
+            previewObject = new GameObject("MoveGeyserInstant Geyser Preview");
+            previewObject.layer = LayerMask.NameToLayer("UI");
+            if (Game.Instance != null)
+                previewObject.transform.SetParent(Game.Instance.transform, false);
+
+            previewController = previewObject.AddComponent<KBatchedAnimController>();
+            previewController.AnimFiles = snapshot.PreviewAnimFiles;
+            previewController.initialAnim = snapshot.GetPreviewAnim().ToString();
+            previewController.initialMode = KAnim.PlayMode.Loop;
+            previewController.visibilityType = KAnimControllerBase.VisibilityType.Always;
+            previewController.SetSceneLayer(Grid.SceneLayer.Building);
+            previewController.LoadAnims();
+
+            HashedString previewAnim = snapshot.GetPreviewAnim();
+            if (previewAnim.IsValid && previewController.HasAnimation(previewAnim))
+                previewController.Play(previewAnim, KAnim.PlayMode.Loop, 1f, 0f);
+            previewObject.SetActive(false);
+        }
+
+        private void UpdatePreview(int cell, bool valid) {
+            EnsurePreview();
+            if (previewObject == null || previewController == null)
+                return;
+
+            previewObject.transform.position = Grid.CellToPosCBC(cell, Grid.SceneLayer.Building);
+            previewController.TintColour = valid ? new Color(0.2f, 1f, 0.25f, 0.55f) : new Color(1f, 0.1f, 0.1f, 0.55f);
+            previewObject.SetActive(true);
+        }
+
+        private void HidePreview() {
+            if (previewObject != null)
+                previewObject.SetActive(false);
+        }
+
+        private void DestroyPreview() {
+            if (previewObject == null)
+                return;
+
+            UnityEngine.Object.Destroy(previewObject);
+            previewObject = null;
+            previewController = null;
+        }
+
+        private sealed class GeyserSnapshot {
+            public GameObject Source { get; private set; }
+            public int SourceCell { get; private set; }
+            public int SourceWorldId { get; private set; }
+            public Tag PrefabTag { get; private set; }
+            public int[] SourceFootprint { get; private set; }
+            public KAnimFile[] PreviewAnimFiles { get; private set; }
+            private HashedString previewAnim;
+            private string previewInitialAnim;
+            private string previewDefaultAnim;
+            private Dictionary<string, object> geyserFields;
+            private Dictionary<string, object> configuratorFields;
+
+            public static GeyserSnapshot Capture(GameObject source) {
+                var snapshot = new GeyserSnapshot {
+                    Source = source,
+                    SourceCell = Grid.PosToCell(source),
+                    SourceWorldId = source.GetMyWorldId(),
+                    PrefabTag = source.PrefabID()
+                };
+                snapshot.SourceFootprint = FindFootprint(snapshot.SourceCell);
+                snapshot.geyserFields = CaptureFields(source.GetComponent<Geyser>());
+                snapshot.configuratorFields = CaptureFields(source.GetComponent<GeyserConfigurator>());
+                snapshot.CapturePreviewAnimation(source);
+                return snapshot;
+            }
+
+            public int[] GetTranslatedFootprint(int targetGeyserCell) {
+                int dx = Grid.CellToXY(targetGeyserCell).x - Grid.CellToXY(SourceCell).x;
+                int dy = Grid.CellToXY(targetGeyserCell).y - Grid.CellToXY(SourceCell).y;
+                int[] result = new int[SourceFootprint.Length];
+                for (int i = 0; i < SourceFootprint.Length; i++) {
+                    var xy = Grid.CellToXY(SourceFootprint[i]);
+                    result[i] = Grid.XYToCell(xy.x + dx, xy.y + dy);
+                }
+                return result;
+            }
+
+            public void ApplyFieldsTo(GameObject target) {
+                ApplyFields(target.GetComponent<Geyser>(), geyserFields);
+                ApplyFields(target.GetComponent<GeyserConfigurator>(), configuratorFields);
+            }
+
+            public void TriggerCopySettings(GameObject target) {
+                target.Trigger((int)GameHashes.CopySettings, Source);
+            }
+
+            public HashedString GetPreviewAnim() {
+                if (previewAnim.IsValid)
+                    return previewAnim;
+                if (!string.IsNullOrEmpty(previewInitialAnim))
+                    return new HashedString(previewInitialAnim);
+                if (!string.IsNullOrEmpty(previewDefaultAnim))
+                    return new HashedString(previewDefaultAnim);
+                return new HashedString("idle");
+            }
+
+            private void CapturePreviewAnimation(GameObject source) {
+                var anim = source.GetComponent<KAnimControllerBase>();
+                if (anim == null)
+                    return;
+
+                PreviewAnimFiles = anim.AnimFiles;
+                previewAnim = anim.currentAnim;
+                previewInitialAnim = anim.initialAnim;
+                previewDefaultAnim = anim.defaultAnim;
+            }
+
+            private static int[] FindFootprint(int geyserCell) {
+                var cells = new List<int>(FootprintWidth * FootprintHeight);
+                var origin = Grid.CellToXY(geyserCell);
+                for (int y = origin.y - 2; y <= origin.y + 1; y++) {
+                    for (int x = origin.x - 3; x <= origin.x + 3; x++) {
+                        int cell = Grid.XYToCell(x, y);
+                        if (Grid.IsValidCell(cell) && Grid.Element[cell].id == SimHashes.Unobtanium)
+                            cells.Add(cell);
+                    }
+                }
+
+                if (cells.Count >= FootprintWidth * FootprintHeight)
+                    return PickBestFootprint(cells, geyserCell);
+
+                cells.Clear();
+                for (int y = -2; y < 0; y++) {
+                    for (int x = -1; x < 3; x++)
+                        cells.Add(Grid.OffsetCell(geyserCell, new CellOffset(x, y)));
+                }
+                return cells.ToArray();
+            }
+
+            private static int[] PickBestFootprint(List<int> candidates, int geyserCell) {
+                var geyserXY = Grid.CellToXY(geyserCell);
+                int bestScore = int.MaxValue;
+                int bestX = geyserXY.x - 1;
+                int bestY = geyserXY.y - 2;
+                for (int y = geyserXY.y - 3; y <= geyserXY.y; y++) {
+                    for (int x = geyserXY.x - 4; x <= geyserXY.x + 2; x++) {
+                        int count = 0;
+                        for (int fy = 0; fy < FootprintHeight; fy++) {
+                            for (int fx = 0; fx < FootprintWidth; fx++) {
+                                if (candidates.Contains(Grid.XYToCell(x + fx, y + fy)))
+                                    count++;
+                            }
+                        }
+                        if (count == FootprintWidth * FootprintHeight) {
+                            int score = Math.Abs((x + 1) - geyserXY.x) + Math.Abs((y + 2) - geyserXY.y);
+                            if (score < bestScore) {
+                                bestScore = score;
+                                bestX = x;
+                                bestY = y;
+                            }
+                        }
+                    }
+                }
+
+                var result = new List<int>(FootprintWidth * FootprintHeight);
+                for (int fy = 0; fy < FootprintHeight; fy++) {
+                    for (int fx = 0; fx < FootprintWidth; fx++)
+                        result.Add(Grid.XYToCell(bestX + fx, bestY + fy));
+                }
+                return result.ToArray();
+            }
+
+            private static Dictionary<string, object> CaptureFields(Component component) {
+                var values = new Dictionary<string, object>();
+                if (component == null)
+                    return values;
+
+                foreach (FieldInfo field in component.GetType().GetFields(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic)) {
+                    if (field.IsInitOnly || field.IsLiteral)
+                        continue;
+                    try {
+                        values[field.Name] = field.GetValue(component);
+                    }
+                    catch {
+                    }
+                }
+                return values;
+            }
+
+            private static void ApplyFields(Component component, Dictionary<string, object> values) {
+                if (component == null || values == null)
+                    return;
+
+                Type type = component.GetType();
+                foreach (var pair in values) {
+                    FieldInfo field = type.GetField(pair.Key, BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
+                    if (field == null || field.IsInitOnly || field.IsLiteral)
+                        continue;
+                    try {
+                        field.SetValue(component, pair.Value);
+                    }
+                    catch (Exception e) {
+                        Debug.LogWarning("[MoveGeyserInstant] Failed to copy field " + type.Name + "." + pair.Key + ": " + e.Message);
+                    }
+                }
+            }
+        }
+    }
+}
