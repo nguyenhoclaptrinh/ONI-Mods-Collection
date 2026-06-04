@@ -31,7 +31,7 @@ namespace MoveGeyserInstant {
             if (!System.IO.File.Exists(ConfigPath))
                 return;
             var text = System.IO.File.ReadAllText(ConfigPath);
-            var data = SimpleJson.SimpleJson.DeserializeObject<System.Collections.Generic.Dictionary<string, object>>(text);
+            var data = Newtonsoft.Json.JsonConvert.DeserializeObject<System.Collections.Generic.Dictionary<string, object>>(text);
             if (data == null)
                 return;
             if (data.TryGetValue("allowStacking", out var a))
