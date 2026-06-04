@@ -163,10 +163,36 @@ namespace MoveGeyserInstant {
         }
 
         private void PlaceDestinationNeutronium(int[] cells, int targetWorldId) {
+            var skipped = new List<int>();
             foreach (int cell in cells) {
-                if (!Grid.IsValidCell(cell) || GetCellWorldId(cell) != targetWorldId || IsCellBlockedForNeutronium(cell))
+                if (!Grid.IsValidCell(cell)) {
+                    skipped.Add(cell);
                     continue;
+                }
+                if (GetCellWorldId(cell) != targetWorldId) {
+                    skipped.Add(cell);
+                    continue;
+                }
+                if (IsCellBlockedForNeutronium(cell)) {
+                    skipped.Add(cell);
+                    continue;
+                }
+
                 SimMessages.ReplaceElement(cell, SimHashes.Unobtanium, CellEventLogger.Instance.DebugTool, NeutroniumMass, NeutroniumTemperature);
+            }
+
+            // Provide feedback for skipped cells so the player understands why some neutronium
+            // were not placed. Show a PopFX at each skipped cell and log a short message.
+            if (skipped.Count > 0) {
+                foreach (int sc in skipped) {
+                    try {
+                        Vector3 pos = Grid.CellToPosCBC(sc, Grid.SceneLayer.Move);
+                        PopFXManager.Instance.SpawnFX(PopFXManager.Instance.sprite_Negative, "Neutronium skipped", null, pos);
+                    }
+                    catch {
+                    }
+                }
+                Debug.LogFormat("[MoveGeyserInstant] Skipped placing neutronium on {0} cells.", skipped.Count);
             }
         }
 
