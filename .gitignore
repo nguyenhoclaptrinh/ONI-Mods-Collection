@@ -15,6 +15,7 @@ archived_versions/
 # Redundant or temp folders
 Local/
 scratch/
+scratch_decompile/
 scripts/
 
 # OS/IDEs
