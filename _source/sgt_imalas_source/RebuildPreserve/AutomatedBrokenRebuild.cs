@@ -1,12 +1,22 @@
-﻿using KSerialization;
+using KSerialization;
+using HarmonyLib;
+using System.Reflection;
 using UnityEngine;
 
 namespace RebuildPreserve
 {
 	internal class AutomatedBrokenRebuild : KMonoBehaviour
 	{
+		private static readonly FieldInfo AllowDeconstructionField = AccessTools.Field(typeof(Deconstructable), "allowDeconstruction");
+		private static readonly FieldInfo DestroyOnDamagedField = AccessTools.Field(typeof(BuildingHP), "destroyOnDamaged");
+		private static readonly FieldInfo ReconstructRequestedField = AccessTools.Field(typeof(Reconstructable), "reconstructRequested");
+
 		[MyCmpGet]
 		Reconstructable reconstructable;
+		[MyCmpGet]
+		BuildingComplete building;
+		[MyCmpGet]
+		Deconstructable deconstructable;
 		[MyCmpGet]
 		PrimaryElement primaryElement;
 		[MyCmpGet]
@@ -24,16 +34,36 @@ namespace RebuildPreserve
 			if (reconstructable == null)
 				return false;
 
-			if (reconstructable.building.Def.Invincible)
+			if (building == null || building.Def == null)
 				return false;
 
-			if (!reconstructable.deconstructable.allowDeconstruction)
+			if (building.Def.Invincible)
 				return false;
 
-			if (hp == null || hp.destroyOnDamaged)
+			if (deconstructable == null)
+				return false;
+
+			if (!AllowsDeconstruction(deconstructable))
+				return false;
+
+			if (hp == null || DestroysOnDamage(hp))
 				return false;
 
 			return true;
+		}
+
+		static bool AllowsDeconstruction(Deconstructable target)
+		{
+			return target != null
+				&& AllowDeconstructionField != null
+				&& (bool)AllowDeconstructionField.GetValue(target);
+		}
+
+		static bool DestroysOnDamage(BuildingHP target)
+		{
+			return target == null
+				|| DestroyOnDamagedField == null
+				|| (bool)DestroyOnDamagedField.GetValue(target);
 		}
 
 		public override void OnSpawn()
@@ -45,13 +75,11 @@ namespace RebuildPreserve
 				return;
 			}
 			if (CanRebuild())
-				Subscribe((int)GameHashes.BuildingBroken, OnBuildingBroken);
-		}
-		public override void OnPrefabInit()
-		{
-			base.OnPrefabInit();
-			if (CanRebuild())
+			{
 				Subscribe((int)GameHashes.CopySettings, OnCopySettingsDelegate);
+				Subscribe((int)GameHashes.BuildingBroken, OnBuildingBroken);
+				GameScheduler.Instance.ScheduleNextFrame("queue rebuild for already broken building", (_) => RequestRebuildIfBroken());
+			}
 		}
 		public override void OnCleanUp()
 		{
@@ -66,10 +94,22 @@ namespace RebuildPreserve
 
 		public void OnBuildingBroken(object data)
 		{
-			if (RebuildOnBreaking && reconstructable != null)
+			RequestRebuildIfBroken();
+		}
+
+		public void RequestRebuildIfBroken()
+		{
+			if (RebuildOnBreaking && CanRebuild() && hp.IsBroken && !IsReconstructRequested())
 			{
 				reconstructable.RequestReconstruct(primaryElement.Element.tag);
 			}
+		}
+
+		bool IsReconstructRequested()
+		{
+			return reconstructable != null
+				&& ReconstructRequestedField != null
+				&& (bool)ReconstructRequestedField.GetValue(reconstructable);
 		}
 
 		public void OnCopySettings(object data)

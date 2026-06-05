@@ -1,4 +1,4 @@
-﻿using HarmonyLib;
+using HarmonyLib;
 using Klei.AI;
 using System;
 using System.Collections.Generic;
@@ -16,16 +16,19 @@ namespace RebuildPreserve
         [HarmonyPatch(nameof(Reconstructable.TryCommenceReconstruct))]
         public static class Reconstructable_TryCommenceReconstruct_Patch
         {
+            private static readonly FieldInfo ReconstructRequestedField = AccessTools.Field(typeof(Reconstructable), "reconstructRequested");
 
             public static void Prefix(Reconstructable __instance)
             {
-                if (!__instance.reconstructRequested)
+                if (!IsReconstructRequested(__instance))
                     return;
 
                 var go = __instance.gameObject;
                 __instance.TryGetComponent<BuildingComplete>(out var building);
                 GameObject cachedSource = null;
 
+                if (building == null || building.Def == null)
+                    return;
 
                 foreach (var comp in go.GetComponents(typeof(KMonoBehaviour)))
                 {
@@ -63,7 +66,7 @@ namespace RebuildPreserve
                     //SgtLogger.l(message: "adding to dic ");
                     var targetPos = new Tuple<int, ObjectLayer>(building.NaturalBuildingCell(), building.Def.ObjectLayer);
 
-                    BuildSettingsPreservationData.Instance.ReplaceEntry(targetPos, cachedSource, __instance.building.Def.PrefabID);
+                    BuildSettingsPreservationData.Instance.ReplaceEntry(targetPos, cachedSource, building.Def.PrefabID);
 
                     //if (cachedSource.TryGetComponent<TreeFilterable>(out var filter))
                     //{
@@ -71,6 +74,13 @@ namespace RebuildPreserve
                     //    SgtLogger.l("getting filters, count: " + filter.GetTags().Count());
                     //}
                 }
+            }
+
+            private static bool IsReconstructRequested(Reconstructable instance)
+            {
+                return instance != null
+                    && ReconstructRequestedField != null
+                    && (bool)ReconstructRequestedField.GetValue(instance);
             }
 
             public static void CopyProperties(object source, object destination)
@@ -139,7 +149,13 @@ namespace RebuildPreserve
                     }
 
                     if (cachedData.TryGetComponent<Prioritizable>(out _) && __result.TryGetComponent<Prioritizable>(out var targetPrio))
-                        targetPrio.OnCopySettings(cachedData);
+                    {
+                        var copyPrioritySettings = Traverse.Create(targetPrio).Method("OnCopySettings", new[] { typeof(object) }, cachedData);
+                        if (copyPrioritySettings.MethodExists())
+                        {
+                            copyPrioritySettings.GetValue();
+                        }
+                    }
 
                 }
             }
@@ -151,8 +167,11 @@ namespace RebuildPreserve
         {
             public static void Prefix(Constructable __instance)
             {
-                var cell = __instance.building.NaturalBuildingCell();
-                var layer = __instance.building.Def.ObjectLayer;
+                if (!__instance.TryGetComponent<Building>(out var building) || building.Def == null)
+                    return;
+
+                var cell = building.NaturalBuildingCell();
+                var layer = building.Def.ObjectLayer;
                 BuildSettingsPreservationData.Instance.RemoveEntry(new(cell, layer));
             }
         }
@@ -185,14 +204,22 @@ namespace RebuildPreserve
         [HarmonyPatch(typeof(BuildingConfigManager), nameof(BuildingConfigManager.OnPrefabInit))]
         public class BuildingConfigManager_OnPrefabInit
         {
+            private static readonly FieldInfo BaseTemplateField = AccessTools.Field(typeof(BuildingConfigManager), "baseTemplate");
+
             public static void Postfix(BuildingConfigManager __instance)
             {
-                __instance.baseTemplate.AddComponent<AutomatedBrokenRebuild>();
+                var baseTemplate = BaseTemplateField?.GetValue(__instance) as GameObject;
+                if (baseTemplate != null)
+                {
+                    baseTemplate.AddComponent<AutomatedBrokenRebuild>();
+                }
             }
         }
 
         public static class ApplySettingsToNewBuilding
         {
+            private static readonly FieldInfo GameplayEventBuildingField = AccessTools.Field(typeof(BonusEvent.GameplayEventData), "building");
+
             [HarmonyPatch(typeof(GameplayEventManager), "OnSpawn")]
             public static class GameplayEventManager_OnSpawn
             {
@@ -216,18 +243,19 @@ namespace RebuildPreserve
                 //SgtLogger.l("onbuildingconstructed");
                 if (data is BonusEvent.GameplayEventData bonusData)
                 {
-                    if (bonusData.building == null || bonusData.building.Def == null)
+                    var building = GameplayEventBuildingField?.GetValue(bonusData) as BuildingComplete;
+                    if (building == null || building.Def == null)
                         return;
 
-                    var pos = bonusData.building.NaturalBuildingCell();
-                    var layer = bonusData.building.Def.ObjectLayer;
+                    var pos = building.NaturalBuildingCell();
+                    var layer = building.Def.ObjectLayer;
                     var targetPos = new Tuple<int, ObjectLayer>(pos, layer);
 
-                    var targetBuilding = bonusData.building.gameObject;
+                    var targetBuilding = building.gameObject;
                     if (BuildSettingsPreservationData.Instance.TryGetEntry(targetPos, out var cachedGameObject, out var previousPrefabId)
                         && targetBuilding != null
                         && cachedGameObject != null
-                        && previousPrefabId == bonusData.building.Def.PrefabID)
+                        && previousPrefabId == building.Def.PrefabID)
                     {
                         cachedGameObject.AddOrGet<KPrefabID>().PrefabTag = previousPrefabId;
 
@@ -241,8 +269,9 @@ namespace RebuildPreserve
                             }
                             if(cachedGameObject.TryGetComponent<Bottler>(out var bottler) && targetBuilding.TryGetComponent<Bottler>(out var targetBottler))
 							{
-                                SgtLogger.debuglog("bottler hack; setting capacity to " + bottler.userMaxCapacity + " for " + targetBuilding.GetProperName());
-								targetBottler.UserMaxCapacity = bottler.userMaxCapacity; //because the public property getter defaults to 0 for reasons when certain params arent set, gotta set it manually here...
+                                var maxCapacity = Traverse.Create(bottler).Field("userMaxCapacity").GetValue<float>();
+                                SgtLogger.debuglog("bottler hack; setting capacity to " + maxCapacity + " for " + targetBuilding.GetProperName());
+								Traverse.Create(targetBottler).Property("UserMaxCapacity").SetValue(maxCapacity); //because the public property getter defaults to 0 for reasons when certain params arent set, gotta set it manually here...
 							}
 
 							BuildSettingsPreservationData.Instance.RemoveEntry(targetPos);

@@ -19,12 +19,24 @@ namespace MoveGeyserInstant {
     }
 
     [HarmonyPatch]
-    public static class AddMovableGeyserPatch {
-        public static MethodBase TargetMethod() {
-            return AccessTools.Method(typeof(Geyser), "OnSpawn");
+    public static class AddMovableStructurePatch {
+        public static IEnumerable<MethodBase> TargetMethods() {
+            var types = new List<System.Type> {
+                typeof(Geyser),
+                typeof(GeneShuffler),
+                typeof(WarpPortal),
+                typeof(WarpReceiver),
+                typeof(CryoTank),
+                typeof(Telepad)
+            };
+            foreach (var type in types) {
+                var method = AccessTools.Method(type, "OnSpawn");
+                if (method != null)
+                    yield return method;
+            }
         }
 
-        public static void Postfix(Geyser __instance) {
+        public static void Postfix(KMonoBehaviour __instance) {
             if (__instance != null)
                 __instance.gameObject.AddOrGet<MovableGeyser>();
         }

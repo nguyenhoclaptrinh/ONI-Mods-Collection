@@ -1,4 +1,4 @@
-﻿using HarmonyLib;
+using HarmonyLib;
 using RonivansLegacy_ChemicalProcessing;
 using RonivansLegacy_ChemicalProcessing.Content.ModDb;
 using RonivansLegacy_ChemicalProcessing.Content.ModDb.ModIntegrations;
@@ -66,7 +66,7 @@ namespace Dupes_Industrial_Overhaul.Chemical_Processing.Buildings
 			liquidCooledRefinery.keepExcessLiquids = true;
 			go.AddOrGet<FabricatorIngredientStatusManager>();
 			go.AddOrGet<CopyBuildingSettings>();
-			go.AddOrGet<AdvRefinerySuperCoolantRequirement>();
+			// go.AddOrGet<AdvRefinerySuperCoolantRequirement>(); // Removed - class no longer exists
 
 			var workable = go.AddOrGet<CustomComplexFabricatorWorkableBase>();
 			BuildingTemplates.CreateComplexFabricatorStorage(go, liquidCooledRefinery);

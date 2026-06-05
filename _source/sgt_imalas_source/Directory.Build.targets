@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 	<!--Write mod.yaml file-->
+	<PropertyGroup>
+		<DisplayModName>$(ModName)</DisplayModName>
+		<DisplayModName Condition="'$(GameLibsFolder)' != '../Lib'">$(ModName) [DEV]</DisplayModName>
+	</PropertyGroup>
 	<Target Name="GenerateModYaml" BeforeTargets="PrepareForRun" Condition="'$(DoNotBuildAsMod)' != 'true'">
 		<ItemGroup>
-			<ModLines Include="title: '$(ModName)'"/>
+			<ModLines Include="title: '$(DisplayModName)'"/>
 			<ModLines Include="description: &quot;$([System.String]::Copy('$(ModDescription)').Replace('&quot;', '\&quot;'))&quot;"/>
 			<ModLines Include="staticID: $(AssemblyName)"/>
 			<!--<ModLines Include="steamID: $(SteamId)" Condition="'$(SteamId)' != ''"/>--> <!--Causes recoverable parse errors :/-->
@@ -59,7 +63,7 @@
 		  TargetKind="SameAsPrimaryAssembly"
 		  InputAssemblies="@(InputAssemblies)"
 		  Wildcards="true"
-		  LibraryPath="$(GameLibsFolder)"
+		  LibraryPath="$(GameLibsFolder);$(TargetDir)"
 		  OutputFile="$(TargetPath)"/>
 	</Target>
 
@@ -214,4 +218,35 @@
 		</ItemGroup>
 		<Exec Command="dotnet tool run refasmer -v -O ../Lib --all -c @(RefAsmerArguments)" />
 	</Target>
+
+	<!-- Tự động thêm tham chiếu game cho tất cả các dự án trong monorepo -->
+	<ItemGroup>
+		<!-- Tham chiếu các publicized assemblies nếu tồn tại -->
+		<Reference Include="$(MSBuildThisFileDirectory)PublicisedAssembly\Assembly-CSharp_public.dll" Condition="Exists('$(MSBuildThisFileDirectory)PublicisedAssembly\Assembly-CSharp_public.dll')">
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="$(MSBuildThisFileDirectory)PublicisedAssembly\Assembly-CSharp-firstpass_public.dll" Condition="Exists('$(MSBuildThisFileDirectory)PublicisedAssembly\Assembly-CSharp-firstpass_public.dll')">
+			<Private>false</Private>
+		</Reference>
+
+		<!-- Tham chiếu các Unity/Game assemblies khác từ GameLibsFolder -->
+		<Reference Include="$(GameLibsFolder)\0Harmony.dll" Private="false" />
+		<Reference Include="$(GameLibsFolder)\FMODUnity.dll" Private="false" />
+		<Reference Include="$(GameLibsFolder)\Newtonsoft.Json.dll" Private="false" />
+		<Reference Include="$(GameLibsFolder)\UnityEngine.dll" Private="false" />
+		<Reference Include="$(GameLibsFolder)\UnityEngine.CoreModule.dll" Private="false" />
+		<Reference Include="$(GameLibsFolder)\UnityEngine.ImageConversionModule.dll" Private="false" />
+		<Reference Include="$(GameLibsFolder)\UnityEngine.AssetBundleModule.dll" Private="false" />
+		<Reference Include="$(GameLibsFolder)\UnityEngine.PhysicsModule.dll" Private="false" />
+		<Reference Include="$(GameLibsFolder)\UnityEngine.Physics2DModule.dll" Private="false" />
+		<Reference Include="$(GameLibsFolder)\UnityEngine.ParticleSystemModule.dll" Private="false" />
+		<Reference Include="$(GameLibsFolder)\UnityEngine.InputLegacyModule.dll" Private="false" />
+		<Reference Include="$(GameLibsFolder)\Unity.TextMeshPro.dll" Private="false" />
+		<Reference Include="$(GameLibsFolder)\UnityEngine.TextRenderingModule.dll" Private="false" />
+		<Reference Include="$(GameLibsFolder)\UnityEngine.UI.dll" Private="false" />
+		<Reference Include="$(GameLibsFolder)\UnityEngine.UIModule.dll" Private="false" />
+		<Reference Include="$(GameLibsFolder)\UnityEngine.UnityWebRequestModule.dll" Private="false" />
+		<Reference Include="$(GameLibsFolder)\Ionic.Zip.dll" Private="false" />
+		<Reference Include="$(GameLibsFolder)\com.rlabrecque.steamworks.net.dll" Private="false" />
+	</ItemGroup>
 </Project>

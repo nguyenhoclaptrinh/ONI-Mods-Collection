@@ -18,6 +18,7 @@ namespace MoveGeyserInstant {
         private GameObject overlayObject;
         private Mesh overlayMesh;
         private Material overlayMaterial;
+        private GameObject previewInstance;
 
         public override void OnPrefabInit() {
             var hover = gameObject.AddComponent<HoverTextConfiguration>();
@@ -29,7 +30,7 @@ namespace MoveGeyserInstant {
         }
 
         public void BeginMove(GameObject source) {
-            if (source == null || source.GetComponent<Geyser>() == null)
+            if (source == null)
                 return;
 
             snapshot = GeyserSnapshot.Capture(source);
@@ -41,6 +42,7 @@ namespace MoveGeyserInstant {
             lastCell = Grid.PosToCell(source);
             EnsureOverlay();
             UpdateOverlay(lastCell);
+            EnsurePreviewForSnapshot();
             PlayerController.Instance.ActivateTool(this);
         }
 
@@ -48,17 +50,22 @@ namespace MoveGeyserInstant {
             int cell = Grid.PosToCell(cursor_pos);
             lastCell = cell;
             UpdateOverlay(cell);
+            UpdatePreviewPosition(cell);
         }
 
         public override void OnLeftClickDown(Vector3 cursor_pos) {
             int cell = Grid.PosToCell(cursor_pos);
             if (!Grid.IsValidCell(cell))
                 cell = lastCell;
-            PlaceAt(cell);
+            // Check modifier keys: Shift = force exact, Ctrl = conservative (no stacking)
+            bool shift = UnityEngine.Input.GetKey(UnityEngine.KeyCode.LeftShift) || UnityEngine.Input.GetKey(UnityEngine.KeyCode.RightShift);
+            bool ctrl = UnityEngine.Input.GetKey(UnityEngine.KeyCode.LeftControl) || UnityEngine.Input.GetKey(UnityEngine.KeyCode.RightControl);
+            PlaceAt(cell, shift, ctrl);
         }
 
         public override void OnDeactivateTool(InterfaceTool newTool) {
             HideOverlay();
+            HidePreview();
             base.OnDeactivateTool(newTool);
             if (newTool != this)
                 snapshot = null;
@@ -79,7 +86,7 @@ namespace MoveGeyserInstant {
             }
         }
 
-        private void PlaceAt(int targetCell) {
+        private void PlaceAt(int targetCell, bool forceExact = false, bool conservative = false) {
             if (snapshot == null || !Grid.IsValidCell(targetCell))
                 return;
 
@@ -90,41 +97,123 @@ namespace MoveGeyserInstant {
                     return;
                 }
 
+                // apply modifiers
+                bool originalAllowStacking = Config.AllowStacking;
+                if (conservative)
+                    Config.AllowStacking = false;
+
                 if (!TryValidatePlacement(targetCell, out string validationError)) {
                     Debug.LogWarning("[MoveGeyserInstant] Cannot move geyser: " + validationError);
+                    Config.AllowStacking = originalAllowStacking;
                     return;
                 }
 
+                Config.AllowStacking = originalAllowStacking;
+
                 HideOverlay();
 
+                // DELETE SOURCE FIRST so singleton buildings (Telepad etc.) unregister
+                //    their grid cells before the new instance spawns, preventing
+                //    PrimaryElement.OnSpawn NPE caused by concurrent occupancy.
+                var sourceRef = snapshot.Source;
+                if (sourceRef != null)
+                    sourceRef.DeleteObject();
+
+                // SPAWN NEW after source has been cleared
                 Vector3 position = Grid.CellToPosCBC(targetCell, Grid.SceneLayer.Building);
                 GameObject moved = Util.KInstantiate(prefab, position, Quaternion.identity);
                 if (moved == null) {
                     Debug.LogWarning("[MoveGeyserInstant] Failed to instantiate geyser prefab.");
+                    ClearAndDeactivate();
                     return;
                 }
 
-                // Activate the instantiated prefab first so its Awake/OnSpawn runs
-                // before we copy non-reference state into it. This avoids overwriting
-                // internal component initialization (anim controllers, meters, etc.).
-                moved.SetActive(true);
+                // Copy configuration state before activating the prefab
+                // so Geyser.OnSpawn() sees the captured configurator type
+                // instead of generating/applying a fresh default first.
                 snapshot.ApplyFieldsTo(moved);
+                moved.SetActive(true);
                 snapshot.TriggerCopySettings(moved);
 
                 int targetWorldId = GetCellWorldId(targetCell);
-                int[] newFootprint = snapshot.GetTranslatedFootprint(targetCell);
-                PlaceDestinationNeutronium(newFootprint, targetWorldId);
-                ClearOldNeutroniumIfUnused();
+                // If stacking (another structure exists at target cell), notify player
+                bool stacking = false;
+                foreach (var geyser in Components.Geysers.GetItems(targetWorldId)) {
+                    if (geyser == null)
+                        continue;
+                    if (Grid.PosToCell(geyser) == targetCell) {
+                        stacking = true;
+                        break;
+                    }
+                }
+                if (stacking)
+                    PopFXManager.Instance.SpawnFX(PopFXManager.Instance.sprite_Negative, "Stacked structure", moved.transform, Vector3.zero, 1.5f, false, false);
 
-                if (snapshot.Source != null)
-                    snapshot.Source.DeleteObject();
+                if (snapshot.IsGeyser) {
+                    int[] targetNeutronium = snapshot.GetTranslatedNeutroniumFootprint(targetCell);
+                    PlaceDestinationNeutronium(targetNeutronium, targetWorldId);
+                    ClearOldNeutroniumIfUnused();
+                }
 
                 PopFXManager.Instance.SpawnFX(PopFXManager.Instance.sprite_Plus, Strings.Get("STRINGS.MOVEGEYSERINSTANT.MOVE_BUTTON"), moved.transform, Vector3.zero, 1.5f, false, false);
-                snapshot = null;
-                ActivateDefaultTool();
+                ClearAndDeactivate();
             }
             catch (Exception e) {
                 Debug.LogWarning("[MoveGeyserInstant] Failed to move geyser: " + e);
+                ClearAndDeactivate();
+            }
+        }
+
+        private void EnsurePreviewForSnapshot() {
+            if (snapshot == null)
+                return;
+            if (previewInstance != null)
+                return;
+
+            // Create a clean dummy GameObject for rendering only
+            previewInstance = new GameObject("MoveGeyserInstant Preview");
+            previewInstance.SetActive(false);
+            if (Game.Instance != null)
+                previewInstance.transform.SetParent(Game.Instance.transform, false);
+
+            var kbac = previewInstance.AddComponent<KBatchedAnimController>();
+            if (kbac != null && snapshot.PreviewAnimFiles != null) {
+                kbac.AnimFiles = snapshot.PreviewAnimFiles;
+                kbac.initialAnim = snapshot.GetPreviewAnim().ToString();
+                kbac.defaultAnim = "idle";
+                kbac.visibilityType = KAnimControllerBase.VisibilityType.Always;
+                previewInstance.AddComponent<KSelectable>();
+            }
+        }
+
+        private void UpdatePreviewPosition(int cell) {
+            if (previewInstance == null || !Grid.IsValidCell(cell))
+                return;
+
+            Vector3 p = Grid.CellToPosCBC(cell, Grid.SceneLayer.Move);
+            previewInstance.transform.position = p;
+
+            // Dynamically tint the preview based on placement validity
+            var kbac = previewInstance.GetComponent<KBatchedAnimController>();
+            if (kbac != null) {
+                bool valid = TryValidatePlacement(cell, out _);
+                // Semi-transparent White (original color faded) if valid, Semi-transparent Red if invalid
+                kbac.TintColour = valid ? new Color(1.0f, 1.0f, 1.0f, 0.45f) : new Color(1.0f, 0.1f, 0.1f, 0.45f);
+
+                // Ensure anim plays in loop
+                if (kbac.GetCurrentAnim() == null) {
+                    kbac.Play(snapshot.GetPreviewAnim(), KAnim.PlayMode.Loop);
+                }
+            }
+
+            if (!previewInstance.activeSelf)
+                previewInstance.SetActive(true);
+        }
+
+        private void HidePreview() {
+            if (previewInstance != null) {
+                UnityEngine.Object.Destroy(previewInstance);
+                previewInstance = null;
             }
         }
 
@@ -149,10 +238,36 @@ namespace MoveGeyserInstant {
         }
 
         private void PlaceDestinationNeutronium(int[] cells, int targetWorldId) {
+            var skipped = new List<int>();
             foreach (int cell in cells) {
-                if (!Grid.IsValidCell(cell) || GetCellWorldId(cell) != targetWorldId || IsCellBlockedForNeutronium(cell))
+                if (!Grid.IsValidCell(cell)) {
+                    skipped.Add(cell);
                     continue;
+                }
+                if (GetCellWorldId(cell) != targetWorldId) {
+                    skipped.Add(cell);
+                    continue;
+                }
+                if (IsCellBlockedForNeutronium(cell)) {
+                    skipped.Add(cell);
+                    continue;
+                }
+
                 SimMessages.ReplaceElement(cell, SimHashes.Unobtanium, CellEventLogger.Instance.DebugTool, NeutroniumMass, NeutroniumTemperature);
+            }
+
+            // Provide feedback for skipped cells so the player understands why some neutronium
+            // were not placed. Show a PopFX at each skipped cell and log a short message.
+            if (skipped.Count > 0) {
+                foreach (int sc in skipped) {
+                    try {
+                        Vector3 pos = Grid.CellToPosCBC(sc, Grid.SceneLayer.Move);
+                        PopFXManager.Instance.SpawnFX(PopFXManager.Instance.sprite_Negative, "Neutronium skipped", null, pos);
+                    }
+                    catch {
+                    }
+                }
+                Debug.LogFormat("[MoveGeyserInstant] Skipped placing neutronium on {0} cells.", skipped.Count);
             }
         }
 
@@ -161,8 +276,20 @@ namespace MoveGeyserInstant {
                 return;
 
             foreach (int cell in snapshot.SourceFootprint) {
-                if (!Grid.IsValidCell(cell) || Grid.Element[cell].id != SimHashes.Unobtanium || IsUsedByAnotherGeyserFootprint(cell))
+                if (!Grid.IsValidCell(cell))
                     continue;
+
+                // Only operate on cells in the source world
+                if (GetCellWorldId(cell) != snapshot.SourceWorldId)
+                    continue;
+
+                if (Grid.Element[cell].id != SimHashes.Unobtanium || IsUsedByAnotherGeyserFootprint(cell))
+                    continue;
+
+                // Re-check immediately before replacing to reduce race window
+                if (Grid.Element[cell].id != SimHashes.Unobtanium)
+                    continue;
+
                 SimMessages.ReplaceElement(cell, SimHashes.Vacuum, CellEventLogger.Instance.DebugTool, 0f, 0f);
             }
         }
@@ -197,6 +324,13 @@ namespace MoveGeyserInstant {
         private void CancelMove() {
             snapshot = null;
             HideOverlay();
+        }
+
+        private void ClearAndDeactivate() {
+            snapshot = null;
+            HidePreview();
+            HideOverlay();
+            ActivateDefaultTool();
         }
 
         private void EnsureOverlay() {
@@ -242,7 +376,7 @@ namespace MoveGeyserInstant {
             }
 
             int[] targetFootprint = snapshot.GetTranslatedFootprint(targetCell);
-            if (targetFootprint == null || targetFootprint.Length != FootprintWidth * FootprintHeight) {
+            if (targetFootprint == null || targetFootprint.Length == 0) {
                 reason = "target footprint is incomplete";
                 return false;
             }
@@ -261,7 +395,8 @@ namespace MoveGeyserInstant {
                 }
             }
 
-            if (OverlapsAnotherGeyser(targetFootprint, targetWorldId)) {
+            // Respect config: allow or disallow stacking
+            if (!Config.AllowStacking && OverlapsAnotherGeyser(targetFootprint, targetWorldId)) {
                 reason = "target footprint overlaps another geyser";
                 return false;
             }
@@ -398,6 +533,8 @@ namespace MoveGeyserInstant {
             public Tag PrefabTag { get; private set; }
             public int[] SourceFootprint { get; private set; }
             public KAnimFile[] PreviewAnimFiles { get; private set; }
+            public bool IsGeyser { get; private set; }
+            public CellOffset[] OccupiedOffsets { get; private set; }
             private HashedString previewAnim;
             private string previewInitialAnim;
             private string previewDefaultAnim;
@@ -409,17 +546,43 @@ namespace MoveGeyserInstant {
                     Source = source,
                     SourceCell = Grid.PosToCell(source),
                     SourceWorldId = source.GetMyWorldId(),
-                    PrefabTag = source.PrefabID()
+                    PrefabTag = source.PrefabID(),
+                    IsGeyser = source.GetComponent<Geyser>() != null
                 };
-                snapshot.SourceFootprint = FindFootprint(snapshot.SourceCell);
 
-                snapshot.geyserFields = CaptureFields(source.GetComponent<Geyser>());
-                snapshot.configuratorFields = CaptureFields(source.GetComponent<GeyserConfigurator>());
+                var occupyArea = source.GetComponent<OccupyArea>();
+                if (occupyArea != null) {
+                    snapshot.OccupiedOffsets = occupyArea.OccupiedCellsOffsets;
+                } else {
+                    snapshot.OccupiedOffsets = new CellOffset[] { new CellOffset(0, 0) };
+                }
+
+                if (snapshot.IsGeyser) {
+                    snapshot.SourceFootprint = FindFootprint(snapshot.SourceCell);
+                    snapshot.geyserFields = CaptureFields(source.GetComponent<Geyser>());
+                    snapshot.configuratorFields = CaptureFields(source.GetComponent<GeyserConfigurator>());
+                } else {
+                    // Ensure SourceFootprint is never null for non-geyser buildings
+                    // (prevents NullReferenceException in PlaceAt's foreach loop)
+                    snapshot.SourceFootprint = Array.Empty<int>();
+                }
+
                 snapshot.CapturePreviewAnimation(source);
                 return snapshot;
             }
 
             public int[] GetTranslatedFootprint(int targetGeyserCell) {
+                if (OccupiedOffsets == null || OccupiedOffsets.Length == 0)
+                    return new int[] { targetGeyserCell };
+
+                int[] result = new int[OccupiedOffsets.Length];
+                for (int i = 0; i < OccupiedOffsets.Length; i++) {
+                    result[i] = Grid.OffsetCell(targetGeyserCell, OccupiedOffsets[i]);
+                }
+                return result;
+            }
+
+            public int[] GetTranslatedNeutroniumFootprint(int targetGeyserCell) {
                 if (SourceFootprint == null || SourceFootprint.Length == 0)
                     return Array.Empty<int>();
 
@@ -434,8 +597,10 @@ namespace MoveGeyserInstant {
             }
 
             public void ApplyFieldsTo(GameObject target) {
-                ApplyFields(target.GetComponent<Geyser>(), geyserFields);
-                ApplyFields(target.GetComponent<GeyserConfigurator>(), configuratorFields);
+                if (IsGeyser) {
+                    ApplyFields(target.GetComponent<Geyser>(), geyserFields);
+                    ApplyFields(target.GetComponent<GeyserConfigurator>(), configuratorFields);
+                }
             }
 
             public void TriggerCopySettings(GameObject target) {

@@ -13,8 +13,12 @@ namespace MoveThisHere
 #pragma warning disable IDE0044
         [MyCmpGet]
         private Storage storage;
+        [MyCmpGet]
+        private LogicPorts logicPorts;
 #pragma warning restore IDE0044
 #pragma warning restore CS0649
+
+        public static readonly HashedString PORT_ID = new HashedString("HaulingPointLogicPort");
 
         [Serialize]
         public bool allowManualPumpingStationFetching;
@@ -26,7 +30,13 @@ namespace MoveThisHere
         private bool willSelfDestruct = false;
 
         [Serialize]
+        private bool willAutoEject = false;
+
+        [Serialize]
         public bool willSpill = false;
+
+        [Serialize]
+        public bool allowItemRemoval = false;
 
         private Tag[] forbidden_tags;
 
@@ -136,6 +146,8 @@ namespace MoveThisHere
             storage.capacityKg = userMaxCapacity; //set this up since capacitykg isn't serialized, I'm sure there is an easier way but whatever
                                                   //must read serialized variables during onspawn, not initialize, I guess they are not unserialized until now.
 
+            storage.allowItemRemoval = allowItemRemoval;
+
             forbidden_tags = (allowManualPumpingStationFetching ? new Tag[0] : new Tag[2] { GameTags.LiquidSource, GameTags.GasSource });
             filteredStorage.SetForbiddenTags(forbidden_tags);
             filteredStorage.FilterChanged();
@@ -157,6 +169,23 @@ namespace MoveThisHere
         private void ToggleWillSelfDestruct()
         {
             willSelfDestruct = !willSelfDestruct;
+            if (willSelfDestruct)
+            {
+                willAutoEject = false;
+            }
+        }
+        private void ToggleWillAutoEject()
+        {
+            willAutoEject = !willAutoEject;
+            if (willAutoEject)
+            {
+                willSelfDestruct = false;
+            }
+        }
+        private void ToggleAllowItemRemoval()
+        {
+            allowItemRemoval = !allowItemRemoval;
+            storage.allowItemRemoval = allowItemRemoval;
         }
 
         protected override void OnCleanUp()
@@ -179,9 +208,12 @@ namespace MoveThisHere
                         userMaxCapacity = component.userMaxCapacity;
                         storage.capacityKg = userMaxCapacity;
                         willSelfDestruct = component.willSelfDestruct;
+                        willAutoEject = component.willAutoEject;
                         willSpill = component.willSpill;
+                        allowItemRemoval = component.allowItemRemoval;
+                        storage.allowItemRemoval = allowItemRemoval;
                         allowManualPumpingStationFetching = component.allowManualPumpingStationFetching;
-                        forbidden_tags = (allowManualPumpingStationFetching ? new Tag[0] : new Tag[1] { GameTags.LiquidSource });
+                        forbidden_tags = (allowManualPumpingStationFetching ? new Tag[0] : new Tag[2] { GameTags.LiquidSource, GameTags.GasSource });
                         filteredStorage.SetForbiddenTags(forbidden_tags);
                         filteredStorage.FilterChanged();
                     }
@@ -200,7 +232,9 @@ namespace MoveThisHere
 				{
 					{ "userMaxCapacity", behavior.userMaxCapacity},
 					{ "willSelfDestruct", behavior.willSelfDestruct},
+					{ "willAutoEject", behavior.willAutoEject},
 					{ "willSpill", behavior.willSpill},
+					{ "allowItemRemoval", behavior.allowItemRemoval},
 					{ "allowManualPumpingStationFetching", behavior.allowManualPumpingStationFetching},
 				};
 			}
@@ -215,20 +249,27 @@ namespace MoveThisHere
                     var token_userMaxCapacity = data.GetValue("userMaxCapacity");
                     var token_allowManualPumpingStationFetching = data.GetValue("allowManualPumpingStationFetching");
                     var token_willSelfDestruct = data.GetValue("willSelfDestruct");
+                    var token_willAutoEject = data.GetValue("willAutoEject");
                     var token_willSpill = data.GetValue("willSpill");
+                    var token_allowItemRemoval = data.GetValue("allowItemRemoval");
                     if (token_userMaxCapacity == null || token_willSelfDestruct == null || token_willSpill == null || token_allowManualPumpingStationFetching == null)
                         return;
                     float userMaxCapacity = token_userMaxCapacity.Value<float>();
-                    bool willSelfDestruct = token_willSelfDestruct.Value<bool>();;
+                    bool willSelfDestruct = token_willSelfDestruct.Value<bool>();
+                    bool willAutoEject = token_willAutoEject != null ? token_willAutoEject.Value<bool>() : false;
                     bool willSpill = token_willSpill.Value<bool>();
+                    bool allowItemRemoval = token_allowItemRemoval != null ? token_allowItemRemoval.Value<bool>() : false;
                     bool allowManualPumpingStationFetching = token_allowManualPumpingStationFetching.Value<bool>();
                     
                     targetHaulingPoint.userMaxCapacity = userMaxCapacity;
                     targetHaulingPoint.storage.capacityKg = userMaxCapacity;
                     targetHaulingPoint.willSelfDestruct = willSelfDestruct;
+                    targetHaulingPoint.willAutoEject = willAutoEject;
                     targetHaulingPoint.willSpill = willSpill;
+                    targetHaulingPoint.allowItemRemoval = allowItemRemoval;
+                    targetHaulingPoint.storage.allowItemRemoval = allowItemRemoval;
                     targetHaulingPoint.allowManualPumpingStationFetching = allowManualPumpingStationFetching;
-                    Tag[] forbidden_tags = (allowManualPumpingStationFetching ? new Tag[0] : new Tag[1] { GameTags.LiquidSource });   
+                    Tag[] forbidden_tags = (allowManualPumpingStationFetching ? new Tag[0] : new Tag[2] { GameTags.LiquidSource, GameTags.GasSource });   
                     targetHaulingPoint.forbidden_tags = forbidden_tags;
                     targetHaulingPoint.filteredStorage.SetForbiddenTags(forbidden_tags);
                     targetHaulingPoint.filteredStorage.FilterChanged();
@@ -256,6 +297,16 @@ namespace MoveThisHere
                     new KIconButtonMenu.ButtonInfo("action_empty_contents", STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.AUTO_DROP_ON, ToggleWillSelfDestruct, Action.NumActions, null, null, null, STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.AUTO_DROP_ON_TOOLTIP));
                 Game.Instance.userMenu.AddButton(base.gameObject, autoDropButton);
 
+                KIconButtonMenu.ButtonInfo autoEjectButton = (willAutoEject ?
+                    new KIconButtonMenu.ButtonInfo("action_empty_contents", STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.AUTO_EJECT_OFF, ToggleWillAutoEject, Action.NumActions, null, null, null, STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.AUTO_EJECT_OFF_TOOLTIP) :
+                    new KIconButtonMenu.ButtonInfo("action_empty_contents", STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.AUTO_EJECT_ON, ToggleWillAutoEject, Action.NumActions, null, null, null, STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.AUTO_EJECT_ON_TOOLTIP));
+                Game.Instance.userMenu.AddButton(base.gameObject, autoEjectButton);
+
+                KIconButtonMenu.ButtonInfo allowItemRemovalButton = (allowItemRemoval ?
+                    new KIconButtonMenu.ButtonInfo("action_open_door", STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.ALLOW_ITEM_REMOVAL_OFF, ToggleAllowItemRemoval, Action.NumActions, null, null, null, STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.ALLOW_ITEM_REMOVAL_OFF_TOOLTIP) :
+                    new KIconButtonMenu.ButtonInfo("action_open_door", STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.ALLOW_ITEM_REMOVAL_ON, ToggleAllowItemRemoval, Action.NumActions, null, null, null, STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.ALLOW_ITEM_REMOVAL_ON_TOOLTIP));
+                Game.Instance.userMenu.AddButton(base.gameObject, allowItemRemovalButton);
+
                 KIconButtonMenu.ButtonInfo autoSpillButton = (willSpill ?
                     new KIconButtonMenu.ButtonInfo("action_bottler_delivery", STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.AUTO_SPILL_OFF, OnChangeWillSpill, Action.NumActions, null, null, null, STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.AUTO_SPILL_OFF_TOOLTIP) :
                     new KIconButtonMenu.ButtonInfo("action_bottler_delivery", STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.AUTO_SPILL_ON, OnChangeWillSpill, Action.NumActions, null, null, null, STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.AUTO_SPILL_ON_TOOLTIP));
@@ -269,12 +320,22 @@ namespace MoveThisHere
 
         public void Sim1000ms(float dt)
         {
-            if (willSelfDestruct)
+            bool isFull = (AmountStored / userMaxCapacity) >= 0.99f;
+
+            if (logicPorts != null)
             {
-                if ((AmountStored / userMaxCapacity) >= .99) //give a little wiggle for sublimination, stock margin doesn't work with low mass
+                logicPorts.SendSignal(PORT_ID, isFull ? 1 : 0);
+            }
+
+            if (isFull)
+            {
+                if (willSelfDestruct)
                 {
                     GetComponentInParent<DeconstructableHaulingPoint>().OnDeconstruct();
-
+                }
+                else if (willAutoEject)
+                {
+                    storage.DropAll(willSpill, willSpill);
                 }
             }
         }

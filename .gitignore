@@ -15,7 +15,9 @@ archived_versions/
 # Redundant or temp folders
 Local/
 scratch/
+scratch_decompile/
 scripts/
+*_dev/
 
 # OS/IDEs
 .vs/
@@ -36,3 +38,7 @@ Player.log
 # Game DLLs in sources
 *_source/lib/
 *_source/**/lib/
+
+# Local developer profile
+docs/local-developer-env.md
+

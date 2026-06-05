@@ -1,4 +1,4 @@
-﻿using HarmonyLib;
+using HarmonyLib;
 using RonivansLegacy_ChemicalProcessing.Content.Defs.Entities;
 using RonivansLegacy_ChemicalProcessing.Content.Defs.Entities.CodexInfoDummies;
 using RonivansLegacy_ChemicalProcessing.Content.ModDb;
@@ -58,6 +58,8 @@ namespace RonivansLegacy_ChemicalProcessing.Patches
 					return;
 
 				var prefabId = template.PrefabID();
+				// ManualCodexConversionRegistry was removed in newer UtilLibs - codex conversion features disabled
+				/*
 				ManualCodexConversionRegistry.AddConversion(ModElements.Nitrogen_Gas.Tag, PlantNitrogenConsumer.NitrogenConsumedPerSecond, NitrogenFertilizationInfo.ID, 0, prefabId, 0, STRINGS.CREATURES.MODIFIERS.AIO_NITROGENIZED.NAME
 					, inputCustomFormating: (tag, amount, continuous) => GameUtil.GetFormattedByTag(tag, amount, GameUtil.TimeSlice.PerSecond)
 					, outputCustomFormating: (tag, amount, continuous) => string.Format(STRINGS.CREATURES.MODIFIERS.AIO_NITROGENIZED.CODEX_FORMAT, PlantNitrogenConsumer.GrowthBoost * 100.0f));
@@ -81,6 +83,7 @@ namespace RonivansLegacy_ChemicalProcessing.Patches
 				}
 				ManualCodexConversionRegistry.AddConversion(FarmStationToolsConfig.ID, 1, FertilizationInfo.ID, 0, prefabId, 0, global::STRINGS.CREATURES.STATS.FERTILIZATION.NAME
 					, outputCustomFormating: (tag, amount, continuous) => string.Format(STRINGS.CREATURES.MODIFIERS.AIO_NITROGENIZED.CODEX_FORMAT, 100)); //micronutrient fertilizer gives 100% growth boost, but the const for that sits in the minionmodifiers file, which is not loaded yet at this point
+				*/
 			}
 		}
 	}

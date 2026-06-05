@@ -1,9 +1,10 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		
 		<AllowUnsafeBlocks>True</AllowUnsafeBlocks>
 		<Configurations>Debug;Release;Release2</Configurations>
 		<DoNotBuildAsMod>true</DoNotBuildAsMod>
+		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
 		<!--<DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>-->
 	</PropertyGroup>
 	<PropertyGroup>

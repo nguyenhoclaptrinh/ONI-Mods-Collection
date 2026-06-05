@@ -1,4 +1,4 @@
-﻿using HarmonyLib;
+using HarmonyLib;
 using RonivansLegacy_ChemicalProcessing.Content.ModDb;
 using RonivansLegacy_ChemicalProcessing.Content.Scripts.UI;
 using System;
@@ -92,7 +92,7 @@ namespace RonivansLegacy_ChemicalProcessing.Patches
 					var amount = component.GetReference<LocText>("Amount");
 					amount.text = occurence.GetOccurenceCompositionName(true);
 					amount.color = Color.black;
-					amount.textWrappingMode = TextWrappingModes.NoWrap;
+					amount.enableWordWrapping = false;
 
 					component.GetReference<ToolTip>("Tooltip").toolTip = occurence.GetOccurenceCompositionDescription();
 					component.GetReference<KButton>("Button").interactable = false;
@@ -109,7 +109,7 @@ namespace RonivansLegacy_ChemicalProcessing.Patches
 					var amount = component.GetReference<LocText>("Amount");
 					amount.text = result.GetProductCompositionName(true);
 					amount.color = Color.black;
-					amount.textWrappingMode = TextWrappingModes.NoWrap;
+					amount.enableWordWrapping = false;
 
 					var containerLE = __instance.resultsContainer.GetComponent<LayoutElement>();
 					containerLE.preferredWidth = containerLE.preferredWidth + 40f;

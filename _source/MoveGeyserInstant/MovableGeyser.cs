@@ -12,15 +12,21 @@ namespace MoveGeyserInstant {
         }
 
         private void OnRefreshUserMenu() {
-            if (GetComponent<Geyser>() == null || MoveGeyserTool.Instance == null)
+            if (MoveGeyserTool.Instance == null)
                 return;
+
+            bool isGeyser = GetComponent<Geyser>() != null;
+            string buttonText = isGeyser ? Strings.Get("STRINGS.MOVEGEYSERINSTANT.MOVE_BUTTON") : "Di chuyển cấu trúc";
+            string tooltipText = isGeyser 
+                ? Strings.Get("STRINGS.MOVEGEYSERINSTANT.MOVE_TOOLTIP") 
+                : "Chọn vị trí mới cho cấu trúc này. Có thể chuyển sang hành tinh khác rồi click để đặt.";
 
             var button = new KIconButtonMenu.ButtonInfo(
                 "action_mirror",
-                Strings.Get("STRINGS.MOVEGEYSERINSTANT.MOVE_BUTTON"),
+                buttonText,
                 new System.Action(ActivateMoveTool),
                 global::Action.NumActions,
-                tooltipText: Strings.Get("STRINGS.MOVEGEYSERINSTANT.MOVE_TOOLTIP"));
+                tooltipText: tooltipText);
 
             Game.Instance.userMenu.AddButton(gameObject, button, 1f);
         }
