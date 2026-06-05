@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 	<!--Write mod.yaml file-->
+	<PropertyGroup>
+		<DisplayModName>$(ModName)</DisplayModName>
+		<DisplayModName Condition="'$(GameLibsFolder)' != '../Lib'">$(ModName) [DEV]</DisplayModName>
+	</PropertyGroup>
 	<Target Name="GenerateModYaml" BeforeTargets="PrepareForRun" Condition="'$(DoNotBuildAsMod)' != 'true'">
 		<ItemGroup>
-			<ModLines Include="title: '$(ModName)'"/>
+			<ModLines Include="title: '$(DisplayModName)'"/>
 			<ModLines Include="description: &quot;$([System.String]::Copy('$(ModDescription)').Replace('&quot;', '\&quot;'))&quot;"/>
 			<ModLines Include="staticID: $(AssemblyName)"/>
 			<!--<ModLines Include="steamID: $(SteamId)" Condition="'$(SteamId)' != ''"/>--> <!--Causes recoverable parse errors :/-->

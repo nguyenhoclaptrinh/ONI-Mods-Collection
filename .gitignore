@@ -17,6 +17,7 @@ Local/
 scratch/
 scratch_decompile/
 scripts/
+*_dev/
 
 # OS/IDEs
 .vs/
