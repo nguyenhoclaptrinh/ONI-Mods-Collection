@@ -1,5 +1,0 @@
-msgid ""
-msgstr ""
-"Application: Oxygen Not Included"
-"POT Version: 2.0"
-

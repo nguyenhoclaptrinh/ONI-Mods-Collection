@@ -18,6 +18,7 @@ scratch/
 scratch_decompile/
 scripts/
 *_dev/
+translation_template.pot
 
 # OS/IDEs
 .vs/
@@ -34,6 +35,8 @@ Player.log
 # Temp PowerShell scripts
 *.ps1
 !tools/*.ps1
+tools/.store/
+tools/ilspycmd.exe
 
 # Game DLLs in sources
 *_source/lib/
