@@ -7,18 +7,14 @@ using Newtonsoft.Json.Linq;
 
 namespace MoveThisHere
 {
-    public class HaulingPoint : KMonoBehaviour, ISim1000ms, ISingleSliderControl //, IUserControlledCapacity
+    public class HaulingPoint : KMonoBehaviour, ISim1000ms, ISingleSliderControl, IGameObjectEffectDescriptor //, IUserControlledCapacity
     {
 #pragma warning disable CS0649
 #pragma warning disable IDE0044
         [MyCmpGet]
         private Storage storage;
-        [MyCmpGet]
-        private LogicPorts logicPorts;
 #pragma warning restore IDE0044
 #pragma warning restore CS0649
-
-        public static readonly HashedString PORT_ID = new HashedString("HaulingPointLogicPort");
 
         [Serialize]
         public bool allowManualPumpingStationFetching;
@@ -188,6 +184,52 @@ namespace MoveThisHere
             storage.allowItemRemoval = allowItemRemoval;
         }
 
+        private void OnManualEject()
+        {
+            if (storage != null)
+            {
+                storage.DropAll(willSpill, willSpill);
+                if (filteredStorage != null)
+                {
+                    filteredStorage.FilterChanged();
+                }
+            }
+        }
+
+        public List<Descriptor> GetDescriptors(GameObject go)
+        {
+            List<Descriptor> list = new List<Descriptor>();
+            
+            // Auto-Eject status
+            string autoEjectText = willAutoEject ? STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.ENABLED.ToString() : STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.DISABLED.ToString();
+            Descriptor autoEjectDesc = new Descriptor(
+                string.Format("{0}: {1}", STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.STATUS_AUTO_EJECT, autoEjectText),
+                STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.AUTO_EJECT_ON_TOOLTIP,
+                Descriptor.DescriptorType.Effect
+            );
+            list.Add(autoEjectDesc);
+
+            // Auto-Deconstruct status
+            string autoDecText = willSelfDestruct ? STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.ENABLED.ToString() : STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.DISABLED.ToString();
+            Descriptor autoDecDesc = new Descriptor(
+                string.Format("{0}: {1}", STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.STATUS_AUTO_DECONSTRUCT, autoDecText),
+                STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.AUTO_DROP_ON_TOOLTIP,
+                Descriptor.DescriptorType.Effect
+            );
+            list.Add(autoDecDesc);
+
+            // Retrieval status
+            string retrievalText = allowItemRemoval ? STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.ALLOWED.ToString() : STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.DISALLOWED.ToString();
+            Descriptor retrievalDesc = new Descriptor(
+                string.Format("{0}: {1}", STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.STATUS_RETRIEVAL, retrievalText),
+                STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.ALLOW_ITEM_REMOVAL_ON_TOOLTIP,
+                Descriptor.DescriptorType.Effect
+            );
+            list.Add(retrievalDesc);
+
+            return list;
+        }
+
         protected override void OnCleanUp()
         {
             filteredStorage.CleanUp();
@@ -311,6 +353,15 @@ namespace MoveThisHere
                     new KIconButtonMenu.ButtonInfo("action_bottler_delivery", STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.AUTO_SPILL_OFF, OnChangeWillSpill, Action.NumActions, null, null, null, STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.AUTO_SPILL_OFF_TOOLTIP) :
                     new KIconButtonMenu.ButtonInfo("action_bottler_delivery", STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.AUTO_SPILL_ON, OnChangeWillSpill, Action.NumActions, null, null, null, STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.AUTO_SPILL_ON_TOOLTIP));
                 Game.Instance.userMenu.AddButton(base.gameObject, autoSpillButton);
+
+                KIconButtonMenu.ButtonInfo manualEjectButton = new KIconButtonMenu.ButtonInfo(
+                    "action_empty_contents", 
+                    STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.MANUAL_EJECT, 
+                    OnManualEject, 
+                    Action.NumActions, 
+                    null, null, null, 
+                    STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.MANUAL_EJECT_TOOLTIP);
+                Game.Instance.userMenu.AddButton(base.gameObject, manualEjectButton, 0.5f);
             }
             catch (System.Exception e)
             {
@@ -321,11 +372,6 @@ namespace MoveThisHere
         public void Sim1000ms(float dt)
         {
             bool isFull = (AmountStored / userMaxCapacity) >= 0.99f;
-
-            if (logicPorts != null)
-            {
-                logicPorts.SendSignal(PORT_ID, isFull ? 1 : 0);
-            }
 
             if (isFull)
             {

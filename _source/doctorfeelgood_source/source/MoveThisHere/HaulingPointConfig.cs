@@ -30,18 +30,6 @@ namespace MoveThisHere
             obj.Disinfectable = false;
             obj.Invincible = true; //nothing but the player can destroy the powerful haulingpoint
 
-            obj.LogicOutputPorts = new System.Collections.Generic.List<LogicPorts.Port>()
-            {
-                LogicPorts.Port.OutputPort(
-                    HaulingPoint.PORT_ID,
-                    new CellOffset(0, 0),
-                    global::STRINGS.BUILDINGS.PREFABS.STORAGELOCKERSMART.LOGIC_PORT,
-                    global::STRINGS.BUILDINGS.PREFABS.STORAGELOCKERSMART.LOGIC_PORT_ACTIVE,
-                    global::STRINGS.BUILDINGS.PREFABS.STORAGELOCKERSMART.LOGIC_PORT_INACTIVE,
-                    true
-                )
-            };
-
             return obj;
         }
 
