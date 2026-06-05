@@ -63,7 +63,7 @@ namespace ChooseNeuralVacillator
 				{
 					Text = Db.Get().traits.TryGet(trait).Name,
 					TextStyle = myStyle,
-					ToolTip = Db.Get().traits.TryGet(trait).description,
+					ToolTip = Db.Get().traits.TryGet(trait).GetTooltip(),
 					FlexSize = new Vector2(0.8f, 0.5f),
 					OnClick = delegate (GameObject button) { TraitSelected(worker, ___IsConsumed, ___geneShufflerSMI, button.name); }
 				});
