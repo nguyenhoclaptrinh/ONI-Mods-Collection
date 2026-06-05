@@ -19,14 +19,6 @@ namespace MoveGeyserInstant {
         private Mesh overlayMesh;
         private Material overlayMaterial;
         private GameObject previewInstance;
-        private UndoEntry lastUndo;
-
-        private sealed class UndoEntry {
-            public Tag PrefabTag;
-            public int SourceCell;
-            public int SourceWorldId;
-            public int[] NeutroniumCells;
-        }
 
         public override void OnPrefabInit() {
             var hover = gameObject.AddComponent<HoverTextConfiguration>();
@@ -85,15 +77,6 @@ namespace MoveGeyserInstant {
                 ActivateDefaultTool();
                 return;
             }
-
-            try {
-                bool ctrlDown = UnityEngine.Input.GetKey(UnityEngine.KeyCode.LeftControl) || UnityEngine.Input.GetKey(UnityEngine.KeyCode.RightControl);
-                if (ctrlDown && UnityEngine.Input.GetKeyDown(UnityEngine.KeyCode.Z)) {
-                    UndoLastMove();
-                }
-            }
-            catch {
-            }
         }
 
         public override void OnRightClickDown(Vector3 cursor_pos, KButtonEvent e) {
@@ -129,10 +112,19 @@ namespace MoveGeyserInstant {
 
                 HideOverlay();
 
+                // DELETE SOURCE FIRST so singleton buildings (Telepad etc.) unregister
+                //    their grid cells before the new instance spawns, preventing
+                //    PrimaryElement.OnSpawn NPE caused by concurrent occupancy.
+                var sourceRef = snapshot.Source;
+                if (sourceRef != null)
+                    sourceRef.DeleteObject();
+
+                // SPAWN NEW after source has been cleared
                 Vector3 position = Grid.CellToPosCBC(targetCell, Grid.SceneLayer.Building);
                 GameObject moved = Util.KInstantiate(prefab, position, Quaternion.identity);
                 if (moved == null) {
                     Debug.LogWarning("[MoveGeyserInstant] Failed to instantiate geyser prefab.");
+                    ClearAndDeactivate();
                     return;
                 }
 
@@ -143,28 +135,13 @@ namespace MoveGeyserInstant {
                 moved.SetActive(true);
                 snapshot.TriggerCopySettings(moved);
 
-                // Record undo entry before deleting source
-                var originalNeutronium = new System.Collections.Generic.List<int>();
-                foreach (int c in snapshot.SourceFootprint) {
-                    if (Grid.IsValidCell(c) && Grid.Element[c].id == SimHashes.Unobtanium)
-                        originalNeutronium.Add(c);
-                }
-                lastUndo = new UndoEntry {
-                    PrefabTag = snapshot.PrefabTag,
-                    SourceCell = snapshot.SourceCell,
-                    SourceWorldId = snapshot.SourceWorldId,
-                    NeutroniumCells = originalNeutronium.ToArray()
-                };
-
                 int targetWorldId = GetCellWorldId(targetCell);
-                int[] newFootprint = snapshot.GetTranslatedFootprint(targetCell);
-                // If stacking (another structure of same prefab exists at target world/cell), notify player
+                // If stacking (another structure exists at target cell), notify player
                 bool stacking = false;
                 foreach (var geyser in Components.Geysers.GetItems(targetWorldId)) {
                     if (geyser == null)
                         continue;
-                    int gcell = Grid.PosToCell(geyser);
-                    if (gcell == targetCell && geyser.gameObject != snapshot.Source) {
+                    if (Grid.PosToCell(geyser) == targetCell) {
                         stacking = true;
                         break;
                     }
@@ -178,43 +155,13 @@ namespace MoveGeyserInstant {
                     ClearOldNeutroniumIfUnused();
                 }
 
-                if (snapshot.Source != null)
-                    snapshot.Source.DeleteObject();
-
                 PopFXManager.Instance.SpawnFX(PopFXManager.Instance.sprite_Plus, Strings.Get("STRINGS.MOVEGEYSERINSTANT.MOVE_BUTTON"), moved.transform, Vector3.zero, 1.5f, false, false);
-                snapshot = null;
-                HidePreview();
-                ActivateDefaultTool();
+                ClearAndDeactivate();
             }
             catch (Exception e) {
                 Debug.LogWarning("[MoveGeyserInstant] Failed to move geyser: " + e);
+                ClearAndDeactivate();
             }
-        }
-
-        public void UndoLastMove() {
-            if (lastUndo == null)
-                return;
-
-            var prefab = Assets.GetPrefab(lastUndo.PrefabTag);
-            if (prefab == null) {
-                Debug.LogWarning("[MoveGeyserInstant] Cannot undo: prefab missing " + lastUndo.PrefabTag);
-                lastUndo = null;
-                return;
-            }
-
-            Vector3 pos = Grid.CellToPosCBC(lastUndo.SourceCell, Grid.SceneLayer.Building);
-            GameObject restored = Util.KInstantiate(prefab, pos, Quaternion.identity);
-            if (restored != null)
-                restored.SetActive(true);
-
-            foreach (int c in lastUndo.NeutroniumCells) {
-                if (!Grid.IsValidCell(c) || GetCellWorldId(c) != lastUndo.SourceWorldId)
-                    continue;
-                SimMessages.ReplaceElement(c, SimHashes.Unobtanium, CellEventLogger.Instance.DebugTool, NeutroniumMass, NeutroniumTemperature);
-            }
-
-            PopFXManager.Instance.SpawnFX(PopFXManager.Instance.sprite_Plus, "Undo move", restored != null ? restored.transform : null, Vector3.zero, 1.5f, false, false);
-            lastUndo = null;
         }
 
         private void EnsurePreviewForSnapshot() {
@@ -377,6 +324,13 @@ namespace MoveGeyserInstant {
         private void CancelMove() {
             snapshot = null;
             HideOverlay();
+        }
+
+        private void ClearAndDeactivate() {
+            snapshot = null;
+            HidePreview();
+            HideOverlay();
+            ActivateDefaultTool();
         }
 
         private void EnsureOverlay() {
@@ -607,6 +561,10 @@ namespace MoveGeyserInstant {
                     snapshot.SourceFootprint = FindFootprint(snapshot.SourceCell);
                     snapshot.geyserFields = CaptureFields(source.GetComponent<Geyser>());
                     snapshot.configuratorFields = CaptureFields(source.GetComponent<GeyserConfigurator>());
+                } else {
+                    // Ensure SourceFootprint is never null for non-geyser buildings
+                    // (prevents NullReferenceException in PlaceAt's foreach loop)
+                    snapshot.SourceFootprint = Array.Empty<int>();
                 }
 
                 snapshot.CapturePreviewAnimation(source);
