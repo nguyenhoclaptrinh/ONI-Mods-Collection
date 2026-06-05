@@ -1,4 +1,4 @@
-﻿using Dupes_Industrial_Overhaul.Chemical_Processing.Chemicals;
+using Dupes_Industrial_Overhaul.Chemical_Processing.Chemicals;
 using HarmonyLib;
 using PeterHan.PLib.Options;
 using RonivansLegacy_ChemicalProcessing.Content.Defs.Buildings.HighPressureApplications;
