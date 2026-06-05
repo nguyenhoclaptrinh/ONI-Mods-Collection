@@ -10,7 +10,7 @@ namespace RebuildPreserve
 		[HarmonyPatch(typeof(DetailsScreen), "OnPrefabInit")]
 		public static class AutomatedBrokenRebuildSideScreen_AddToDetailsScreen
 		{
-			public static void Postfix(List<DetailsScreen.SideScreenRef> ___sideScreens)
+			public static void Postfix()
 			{
 				UIUtils.AddClonedSideScreen<AutomatedBrokenRebuildSideScreen>
 				   ("AutomatedBrokenRebuildSideScreen", "Automatable Side Screen", typeof(AutomatableSideScreen));
@@ -57,8 +57,15 @@ namespace RebuildPreserve
 
 		public void OnAllowManualChanged(bool value)
 		{
+			if (targetCmp == null)
+				return;
+
 			targetCmp.RebuildOnBreaking = value;
 			allowManualToggleCheckMark.enabled = value;
+			if (value)
+			{
+				targetCmp.RequestRebuildIfBroken();
+			}
 		}
 		public override void OnSpawn()
 		{
