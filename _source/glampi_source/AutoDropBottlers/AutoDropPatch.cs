@@ -64,31 +64,9 @@ namespace AutoDropBottlers
         public string CheckboxTitleKey => "STRINGS.UI.UISIDESCREENS.AUTODROP.TITLE";
         public string CheckboxToolTipKey => "STRINGS.UI.UISIDESCREENS.AUTODROP.TOOLTIP";
 
-        // Bản địa hóa động Nhãn hiển thị của nút bấm Checkbox
-        public string CheckboxLabel {
-            get {
-                try {
-                    var locale = Localization.GetLocale();
-                    if (locale != null && locale.Code != null && (locale.Code.StartsWith("vi") || locale.Code.IndexOf("vietnamese", System.StringComparison.OrdinalIgnoreCase) >= 0)) {
-                        return "Tự động thả chai";
-                    }
-                } catch {}
-                return "Auto Drop Bottles";
-            }
-        }
-
-        // Bản địa hóa động Mô tả giải thích Checkbox
-        public string CheckboxTooltip {
-            get {
-                try {
-                    var locale = Localization.GetLocale();
-                    if (locale != null && locale.Code != null && (locale.Code.StartsWith("vi") || locale.Code.IndexOf("vietnamese", System.StringComparison.OrdinalIgnoreCase) >= 0)) {
-                        return "Nếu bật, chai nước/khí sẽ tự động rơi ra đất ngay khi bơm xong hoặc khi máy đầy.";
-                    }
-                } catch {}
-                return "If enabled, bottles will automatically drop when the bottler reaches maximum capacity or is emptied manually.";
-            }
-        }
+        // Bản địa hóa động nhãn và mô tả thông qua Strings.Get chính thức
+        public string CheckboxLabel => Strings.Get(CheckboxTitleKey);
+        public string CheckboxTooltip => Strings.Get(CheckboxToolTipKey);
 
         private Bottler bottler;
         private bool dropQueued;

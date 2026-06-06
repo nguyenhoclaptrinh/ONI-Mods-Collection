@@ -37,9 +37,8 @@ namespace MoveThisHere
         private Tag[] forbidden_tags;
 
         public float totalMaxCapacity;
-        //create new float for total max capacity and now using public capacitykg in Storage to hold user capacity which used to be the max
-        //this is a clumsy workaround to use a custom slider to hold user capacity, rather than default iusercontrolledcapacity which is null
-        //all because I can't get IUserControlledCapacity to allow decimal values, and I know you nerds are gonna wanna store 35g or something
+        // Sử dụng một slider tùy biến để lưu trữ cấu hình dung tích tối đa từ người dùng,
+        // do lớp giao diện IUserControlledCapacity mặc định của game không hỗ trợ số thập phân.
 
         public string SliderTitleKey => "Maximum Capacity";
 
@@ -75,8 +74,7 @@ namespace MoveThisHere
                 if (value > 100f)
                 {
                     value = (float)Math.Round((decimal)value);
-                    //will round off decimals above 100kg to avoid weird 5g bits when slider is moved instead of typed number
-                    //if you really want 200.15kg, use two hauling points
+                    // Làm tròn số thập phân đối với giá trị trên 100kg để tránh các sai số nhỏ khi kéo thanh slider.
                 }
                 storage.capacityKg = value;
                 userMaxCapacity = value; //set both local and Storage variable, local variable gets kept on save/load
@@ -85,7 +83,7 @@ namespace MoveThisHere
         }
         public int SliderDecimalPlaces(int index)
         {
-            return 3; //UI limitations make less than 1g a pain to implement
+            return 3; // Độ chính xác 3 chữ số thập phân (đơn vị g).
         }
 
 
@@ -137,8 +135,7 @@ namespace MoveThisHere
             {
                 userMaxCapacity = totalMaxCapacity;
             }
-            storage.capacityKg = userMaxCapacity; //set this up since capacitykg isn't serialized, I'm sure there is an easier way but whatever
-                                                  //must read serialized variables during onspawn, not initialize, I guess they are not unserialized until now.
+            storage.capacityKg = userMaxCapacity; // Đồng bộ dung lượng lưu trữ thực tế với cấu hình đã load khi Spawn.
 
             storage.allowItemRemoval = allowItemRemoval;
 
@@ -442,7 +439,7 @@ namespace MoveThisHere
                     return component.Def.PlacementOffsets;
                 }
 
-                Debug.Assert(condition: false, "There's some error with MoveThisHere mod that the developer doesn't understand", this);
+                Debug.Assert(condition: false, "[MoveThisHere] Khong tim thay Component Building tren doi tuong.", this);
                 return null;
 
             }
@@ -459,8 +456,7 @@ namespace MoveThisHere
             CellOffset[] filter = null;
             CellOffset[][] offsetTable = OffsetGroups.BuildReachabilityTable(placementOffsets, table, filter);
             SetOffsetTable(offsetTable);
-            //I really don't know what this celloffset stuff is about, too afraid to delete
-            //from original deconstructable class
+            // Ke thua cau hinh vung tiep can (reachability offset) tu class deconstructable goc.
 
 
         }
@@ -493,8 +489,7 @@ namespace MoveThisHere
                     null, null, null,
                     STRINGS.BUILDINGS.BUTTONS.HAULINGPOINT.REMOVE_TOOLTIP);
                 Game.Instance.userMenu.AddButton(base.gameObject, button, 0f);
-                //add deconstruct button
-                //I thought about using cancel tool instead, but since it is made through build menu I thought this would be more intuivitive
+                // Them nut bam thao do cong trinh vao User Menu.
             }
         }
 

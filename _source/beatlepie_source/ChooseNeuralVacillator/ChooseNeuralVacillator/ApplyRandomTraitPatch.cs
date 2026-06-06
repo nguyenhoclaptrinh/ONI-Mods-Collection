@@ -12,7 +12,7 @@ namespace ChooseNeuralVacillator
     public class ApplyRandomTraitPatch
     {
 		// The instance for [SelectWindow] so it can be destroyed later
-		private static GameObject SelectWindowInstance = new GameObject();
+		private static GameObject SelectWindowInstance = null;
 		private static TextStyleSetting myStyle = PUITuning.Fonts.UILightStyle.DeriveStyle(18);
 
         /// <summary>
@@ -24,6 +24,16 @@ namespace ChooseNeuralVacillator
         /// <returns> Will not run the original code! </returns>
         private static bool Prefix(WorkerBase worker, bool ___IsConsumed, GeneShuffler.GeneShufflerSM.Instance ___geneShufflerSMI)
         {
+            if (SelectWindowInstance != null)
+            {
+                try
+                {
+                    SelectWindowInstance.DeleteObject();
+                }
+                catch {}
+                SelectWindowInstance = null;
+            }
+
             Traits component = worker.GetComponent<Traits>();
 			List<string> list = new List<string>();
 
