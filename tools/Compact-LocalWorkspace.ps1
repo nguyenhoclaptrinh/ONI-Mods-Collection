@@ -69,7 +69,8 @@ $MaintainedSourcePaths = @(
     "_source/sgt_imalas_source/MassMoveTo",
     "_source/sgt_imalas_source/RebuildPreserve",
     "_source/sgt_imalas_source/RonivansLegacy_ChemicalProcessing",
-    "_source/sgt_imalas_source/SetStartDupes"
+    "_source/sgt_imalas_source/SetStartDupes",
+    "_source/sgt_imalas_source/UtilLibs"
 )
 
 # AutoDropBottlers references these Release outputs directly. Keep their small
