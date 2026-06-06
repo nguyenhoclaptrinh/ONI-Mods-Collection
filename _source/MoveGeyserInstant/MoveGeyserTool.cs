@@ -13,6 +13,26 @@ namespace MoveGeyserInstant {
 
         public static MoveGeyserTool Instance { get; private set; }
 
+        private static readonly MethodInfo GetWorldIdMethod;
+        private static readonly FieldInfo WorldIdxField;
+
+        static MoveGeyserTool() {
+            try {
+                Type gridType = typeof(Grid);
+                GetWorldIdMethod = gridType.GetMethod("GetWorldId", BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic)
+                    ?? gridType.GetMethod("GetWorldIdx", BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic)
+                    ?? gridType.GetMethod("get_worldIdx", BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic);
+
+                if (GetWorldIdMethod == null) {
+                    WorldIdxField = gridType.GetField("WorldIdx", BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic)
+                        ?? gridType.GetField("worldIdx", BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic);
+                }
+            }
+            catch (Exception ex) {
+                Debug.LogError("[MoveGeyserInstant] Failed to reflect Grid world ID methods: " + ex.Message);
+            }
+        }
+
         private GeyserSnapshot snapshot;
         private int lastCell = Grid.InvalidCell;
         private GameObject overlayObject;
@@ -431,21 +451,16 @@ namespace MoveGeyserInstant {
                 return -1;
 
             try {
-                Type gridType = typeof(Grid);
-
-                MethodInfo method = gridType.GetMethod("GetWorldId", BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic)
-                    ?? gridType.GetMethod("GetWorldIdx", BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic)
-                    ?? gridType.GetMethod("get_worldIdx", BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic);
-                if (method != null) {
-                    object value = method.GetParameters().Length == 1 ? method.Invoke(null, new object[] { cell }) : null;
+                if (GetWorldIdMethod != null) {
+                    object value = GetWorldIdMethod.Invoke(null, new object[] { cell });
                     if (value != null)
                         return Convert.ToInt32(value);
                 }
-
-                FieldInfo field = gridType.GetField("WorldIdx", BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic)
-                    ?? gridType.GetField("worldIdx", BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic);
-                if (field != null && field.GetValue(null) is Array worldIdx && cell >= 0 && cell < worldIdx.Length)
-                    return Convert.ToInt32(worldIdx.GetValue(cell));
+                else if (WorldIdxField != null) {
+                    if (WorldIdxField.GetValue(null) is Array worldIdx && cell >= 0 && cell < worldIdx.Length) {
+                        return Convert.ToInt32(worldIdx.GetValue(cell));
+                    }
+                }
             }
             catch {
             }

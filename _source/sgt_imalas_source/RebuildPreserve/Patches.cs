@@ -83,43 +83,51 @@ namespace RebuildPreserve
                     && (bool)ReconstructRequestedField.GetValue(instance);
             }
 
+            private static readonly Dictionary<Type, FieldInfo[]> fieldCache = new Dictionary<Type, FieldInfo[]>();
+
             public static void CopyProperties(object source, object destination)
             {
                 if (source == null || destination == null)
                     throw new Exception("Source or/and Destination Objects are null");
-                // Getting the Types of the objects
 
-                Type typeDest = destination.GetType();
-                Type typeSrc = source.GetType();
-
-                var currentParentType = typeDest.BaseType;
-
-                FieldInfo[] srcProps = typeSrc.GetFields(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.FlattenHierarchy);
-                while (currentParentType != null && currentParentType != typeof(KMonoBehaviour) && currentParentType != typeof(StateMachineComponent))
+                Type type = source.GetType();
+                if (!fieldCache.TryGetValue(type, out var fields))
                 {
-                    //SgtLogger.l(currentParentType.Name,"climbin inheritance");
-                    srcProps = srcProps.Union(currentParentType.GetFields(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.FlattenHierarchy)).ToArray();
-                    currentParentType = currentParentType.BaseType;
+                    var fieldList = new List<FieldInfo>();
+                    Type currentType = type;
+                    while (currentType != null && currentType != typeof(KMonoBehaviour) && currentType != typeof(StateMachineComponent) && currentType != typeof(MonoBehaviour))
+                    {
+                        var currentFields = currentType.GetFields(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.DeclaredOnly);
+                        foreach (var f in currentFields)
+                        {
+                            if (!fieldList.Exists(existing => existing.Name == f.Name))
+                            {
+                                fieldList.Add(f);
+                            }
+                        }
+                        currentType = currentType.BaseType;
+                    }
+                    fields = fieldList.ToArray();
+                    fieldCache[type] = fields;
                 }
 
-
-                if (srcProps == null || srcProps.Length == 0)
+                if (fields == null || fields.Length == 0)
                 {
                     SgtLogger.l("no props found: " + source.ToString());
                     return;
                 }
 
-
-                foreach (var srcProp in srcProps)
+                foreach (var field in fields)
                 {
-                    //SgtLogger.l(source.ToString() + srcProp.Name);
-                    //if (srcProp.Name.ToLowerInvariant().Contains("smi")) //crude fix for supress notifications crash
-                    //    continue;
-                    var value = Traverse.Create(source).Field(srcProp.Name).GetValue();
-                    //if(value != null)
-                    //SgtLogger.l(value.ToString(), srcProp.Name);
-
-                    Traverse.Create(destination).Field(srcProp.Name).SetValue(value);
+                    try
+                    {
+                        var value = field.GetValue(source);
+                        field.SetValue(destination, value);
+                    }
+                    catch (Exception ex)
+                    {
+                        UnityEngine.Debug.LogWarning($"[BetterRebuilding] Failed to copy field {field.Name} on {type.FullName}: {ex.Message}");
+                    }
                 }
             }
         }
