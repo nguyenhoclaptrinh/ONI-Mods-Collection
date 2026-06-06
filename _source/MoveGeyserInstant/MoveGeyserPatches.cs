@@ -27,7 +27,9 @@ namespace MoveGeyserInstant {
                 typeof(WarpPortal),
                 typeof(WarpReceiver),
                 typeof(CryoTank),
-                typeof(Telepad)
+                typeof(Telepad),
+                typeof(MegaBrainTank),
+                typeof(GravitasCreatureManipulator)
             };
             foreach (var type in types) {
                 var method = AccessTools.Method(type, "OnSpawn");

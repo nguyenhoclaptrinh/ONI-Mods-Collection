@@ -550,6 +550,11 @@ namespace MoveGeyserInstant {
             public KAnimFile[] PreviewAnimFiles { get; private set; }
             public bool IsGeyser { get; private set; }
             public CellOffset[] OccupiedOffsets { get; private set; }
+            public bool KeepAnalysis { get; private set; } = true;
+            public bool KeepEruptionState { get; private set; } = true;
+            public bool ResetVacillator { get; private set; } = false;
+            public bool IsStudied { get; private set; }
+            public bool IsGeneShufflerUsed { get; private set; }
             private HashedString previewAnim;
             private string previewInitialAnim;
             private string previewDefaultAnim;
@@ -565,6 +570,23 @@ namespace MoveGeyserInstant {
                     IsGeyser = source.GetComponent<Geyser>() != null
                 };
 
+                var movable = source.GetComponent<MovableGeyser>();
+                if (movable != null) {
+                    snapshot.KeepAnalysis = movable.keepAnalysis;
+                    snapshot.KeepEruptionState = movable.keepEruptionState;
+                    snapshot.ResetVacillator = movable.resetVacillator;
+                }
+
+                var studyable = source.GetComponent<Studyable>();
+                if (studyable != null) {
+                    snapshot.IsStudied = studyable.studied;
+                }
+
+                var shuffler = source.GetComponent<GeneShuffler>();
+                if (shuffler != null) {
+                    snapshot.IsGeneShufflerUsed = shuffler.IsConsumed;
+                }
+
                 var occupyArea = source.GetComponent<OccupyArea>();
                 if (occupyArea != null) {
                     snapshot.OccupiedOffsets = occupyArea.OccupiedCellsOffsets;
@@ -577,8 +599,6 @@ namespace MoveGeyserInstant {
                     snapshot.geyserFields = CaptureFields(source.GetComponent<Geyser>());
                     snapshot.configuratorFields = CaptureFields(source.GetComponent<GeyserConfigurator>());
                 } else {
-                    // Ensure SourceFootprint is never null for non-geyser buildings
-                    // (prevents NullReferenceException in PlaceAt's foreach loop)
                     snapshot.SourceFootprint = Array.Empty<int>();
                 }
 
@@ -615,6 +635,39 @@ namespace MoveGeyserInstant {
                 if (IsGeyser) {
                     ApplyFields(target.GetComponent<Geyser>(), geyserFields);
                     ApplyFields(target.GetComponent<GeyserConfigurator>(), configuratorFields);
+
+                    var targetStudyable = target.GetComponent<Studyable>();
+                    if (targetStudyable != null) {
+                        targetStudyable.studied = KeepAnalysis ? IsStudied : false;
+                    }
+
+                    var targetGeyser = target.GetComponent<Geyser>();
+                    if (targetGeyser != null) {
+                        if (!KeepEruptionState) {
+                            try {
+                                var type = typeof(Geyser);
+                                var fieldsToReset = new string[] { 
+                                    "nextEruptTime", "nextActiveTime", "isErupting", "timeInCurrentState", 
+                                    "keepStateElapsed", "idleDuration", "eruptDuration", "activeDuration", "inactiveDuration" 
+                                };
+                                foreach (var fieldName in fieldsToReset) {
+                                    var f = type.GetField(fieldName, BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public);
+                                    if (f != null && !f.IsInitOnly) {
+                                        if (f.FieldType == typeof(float)) f.SetValue(targetGeyser, 0f);
+                                        else if (f.FieldType == typeof(bool)) f.SetValue(targetGeyser, false);
+                                    }
+                                }
+                            }
+                            catch (Exception ex) {
+                                Debug.LogWarning("[MoveGeyserInstant] Failed to reset eruption cycle fields: " + ex.Message);
+                            }
+                        }
+                    }
+                }
+
+                var targetShuffler = target.GetComponent<GeneShuffler>();
+                if (targetShuffler != null) {
+                    targetShuffler.IsConsumed = ResetVacillator ? false : IsGeneShufflerUsed;
                 }
             }
 
