@@ -29,8 +29,8 @@
 					$(GameFolder)/Assembly-CSharp.dll;
 					$(GameFolder)/Assembly-CSharp-firstpass.dll;
                     $(GameFolder)/Unity.TextMeshPro.dll"/>
-    <Reference Include="Assembly-CSharp" HintPath="D:\Documents\Klei\OxygenNotIncluded\mods\Local\_source\sgt_imalas_source\Lib\Assembly-CSharp_public.dll"  />
-    <Reference Include="Assembly-CSharp-firstpass" HintPath="D:\Documents\Klei\OxygenNotIncluded\mods\Local\_source\sgt_imalas_source\Lib\Assembly-CSharp-firstpass_public.dll" />
+    <Reference Include="Assembly-CSharp" HintPath="D:\Documents\Klei\OxygenNotIncluded\mods\Local\_source\sgt_imalas_source\PublicisedAssembly\Assembly-CSharp_public.dll"  />
+    <Reference Include="Assembly-CSharp-firstpass" HintPath="D:\Documents\Klei\OxygenNotIncluded\mods\Local\_source\sgt_imalas_source\PublicisedAssembly\Assembly-CSharp-firstpass_public.dll" />
     <Reference Include="Unity.TextMeshPro" HintPath="$(GameFolder)\Unity.TextMeshPro.dll" />
 
     <!--Meta References-->
