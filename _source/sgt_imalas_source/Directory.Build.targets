@@ -156,7 +156,7 @@
 
 		<Message Text="Publicizing $(Inputs)" Importance="High"/>
 		<MakeDir Directories="$(SolutionDir)/PublicisedAssembly"/>
-		<Exec Command='dotnet tool run assembly-publicizer -o "$(SolutionDir)PublicisedAssembly/%(PubliciseAssembliesInputs.Filename)_public%(PubliciseAssembliesInputs.Extension)" "%(PubliciseAssembliesInputs.Identity)"' />
+		<Exec Command='dotnet tool run assembly-publicizer -o "$(SolutionDir)PublicisedAssembly/%(PubliciseAssembliesInputs.Filename)_public%(PubliciseAssembliesInputs.Extension)" "%(PubliciseAssembliesInputs.Identity)" --allow-roll-forward' />
 
 	<!--<Publicise
 			InputAssemblies="@(PubliciseAssembliesInputs)"
@@ -216,7 +216,7 @@
 		<ItemGroup>
 			<RefAsmerArguments Include="@(RefAssemblies -> '&quot;%(FullPath)&quot;', ' ')" />
 		</ItemGroup>
-		<Exec Command="dotnet tool run refasmer -v -O ../Lib --all -c @(RefAsmerArguments)" />
+		<Exec Command="dotnet tool run refasmer -v -O ../Lib --all -c @(RefAsmerArguments) --allow-roll-forward" />
 	</Target>
 
 	<!-- Tự động thêm tham chiếu game cho tất cả các dự án trong monorepo -->
