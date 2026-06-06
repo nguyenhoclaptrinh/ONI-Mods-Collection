@@ -542,6 +542,11 @@ namespace MoveGeyserInstant {
         }
 
         private sealed class GeyserSnapshot {
+            private static readonly FieldInfo StudyableStudiedField = 
+                typeof(Studyable).GetField("studied", BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
+            private static readonly FieldInfo GeneShufflerIsConsumedField = 
+                typeof(GeneShuffler).GetField("IsConsumed", BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
+
             public GameObject Source { get; private set; }
             public int SourceCell { get; private set; }
             public int SourceWorldId { get; private set; }
@@ -578,13 +583,13 @@ namespace MoveGeyserInstant {
                 }
 
                 var studyable = source.GetComponent<Studyable>();
-                if (studyable != null) {
-                    snapshot.IsStudied = studyable.studied;
+                if (studyable != null && StudyableStudiedField != null) {
+                    snapshot.IsStudied = (bool)StudyableStudiedField.GetValue(studyable);
                 }
 
                 var shuffler = source.GetComponent<GeneShuffler>();
-                if (shuffler != null) {
-                    snapshot.IsGeneShufflerUsed = shuffler.IsConsumed;
+                if (shuffler != null && GeneShufflerIsConsumedField != null) {
+                    snapshot.IsGeneShufflerUsed = (bool)GeneShufflerIsConsumedField.GetValue(shuffler);
                 }
 
                 var occupyArea = source.GetComponent<OccupyArea>();
@@ -637,8 +642,8 @@ namespace MoveGeyserInstant {
                     ApplyFields(target.GetComponent<GeyserConfigurator>(), configuratorFields);
 
                     var targetStudyable = target.GetComponent<Studyable>();
-                    if (targetStudyable != null) {
-                        targetStudyable.studied = KeepAnalysis ? IsStudied : false;
+                    if (targetStudyable != null && StudyableStudiedField != null) {
+                        StudyableStudiedField.SetValue(targetStudyable, KeepAnalysis ? IsStudied : false);
                     }
 
                     var targetGeyser = target.GetComponent<Geyser>();
@@ -666,8 +671,8 @@ namespace MoveGeyserInstant {
                 }
 
                 var targetShuffler = target.GetComponent<GeneShuffler>();
-                if (targetShuffler != null) {
-                    targetShuffler.IsConsumed = ResetVacillator ? false : IsGeneShufflerUsed;
+                if (targetShuffler != null && GeneShufflerIsConsumedField != null) {
+                    GeneShufflerIsConsumedField.SetValue(targetShuffler, ResetVacillator ? false : IsGeneShufflerUsed);
                 }
             }
 
