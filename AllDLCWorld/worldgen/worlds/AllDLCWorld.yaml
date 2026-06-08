@@ -64,13 +64,13 @@ subworldFiles:
   - name: subworlds/ocean/Ocean
     weight: 1.2
     minCount: 1
-  - name: dlc4::subworlds/wetlands/WetlandsBasic
+  - name: "dlc4::subworlds/wetlands/WetlandsBasic"
     weight: 1.0
     minCount: 1
-  - name: dlc4::subworlds/garden/GardenBasic
+  - name: "dlc4::subworlds/garden/GardenBasic"
     weight: 1.0
     minCount: 1
-  - name: dlc2::subworlds/carrotquarry/CarrotQuarryBasic
+  - name: "dlc2::subworlds/carrotquarry/CarrotQuarryBasic"
     weight: 1.0
     minCount: 1
 
@@ -81,39 +81,39 @@ subworldFiles:
   - name: subworlds/rust/Rust
     weight: 1.0
     minCount: 1
-  - name: expansion1::subworlds/swamp/Swamp
+  - name: "expansion1::subworlds/swamp/Swamp"
     weight: 1.0
     minCount: 1
-  - name: expansion1::subworlds/wasteland/WastelandBeetle
+  - name: "expansion1::subworlds/wasteland/WastelandBeetle"
     weight: 1.0
     minCount: 1
-  - name: dlc2::subworlds/sugarwoods/SugarWoodsBasic
+  - name: "dlc2::subworlds/sugarwoods/SugarWoodsBasic"
     weight: 1.0
     minCount: 1
-  - name: dlc2::subworlds/icecaves/IceCavesBasic
+  - name: "dlc2::subworlds/icecaves/IceCavesBasic"
     weight: 1.2
     minCount: 1
-  - name: dlc4::subworlds/raptor/RaptorBasic
+  - name: "dlc4::subworlds/raptor/RaptorBasic"
     weight: 1.0
     minCount: 1
 
   # --- OUTER RING (Exotic & Rare biomes) ---
-  - name: expansion1::subworlds/radioactive/Radioactive
+  - name: "expansion1::subworlds/radioactive/Radioactive"
     weight: 1.0
     minCount: 1
-  - name: expansion1::subworlds/radioactive/UraniumSprinkles
+  - name: "expansion1::subworlds/radioactive/UraniumSprinkles"
     weight: 0.8
     minCount: 1
-  - name: expansion1::subworlds/aquatic/OpenWater
+  - name: "expansion1::subworlds/aquatic/OpenWater"
     weight: 0.8
     minCount: 1
-  - name: expansion1::subworlds/moo/MooChasms
+  - name: "expansion1::subworlds/moo/MooChasms"
     weight: 0.8
     minCount: 1
-  - name: expansion1::subworlds/niobium/NiobiumPatch
+  - name: "expansion1::subworlds/niobium/NiobiumPatch"
     weight: 0.5
     minCount: 1
-  - name: expansion1::subworlds/aquatic/GraphiteCaves
+  - name: "expansion1::subworlds/aquatic/GraphiteCaves"
     weight: 0.5
     minCount: 1
   - name: subworlds/rust/RustFrozen
@@ -124,25 +124,25 @@ subworldFiles:
   - name: subworlds/oil/OilPockets
     weight: 1.5
     minCount: 2
-  - name: dlc2::subworlds/oil/OilPocketsFossil
+  - name: "dlc2::subworlds/oil/OilPocketsFossil"
     weight: 0.8
     minCount: 1
   - name: subworlds/magma/VolcanoHole
     weight: 1.5
     minCount: 2
-  - name: dlc2::subworlds/magma/LargeMagma
+  - name: "dlc2::subworlds/magma/LargeMagma"
     weight: 0.8
     minCount: 1
-  - name: expansion1::subworlds/space/SpaceWithNoBorder
+  - name: "expansion1::subworlds/space/SpaceWithNoBorder"
     weight: 2.0
     minCount: 2
-  - name: expansion1::subworlds/space/HospitableClassicSurface
+  - name: "expansion1::subworlds/space/HospitableClassicSurface"
     weight: 1.0
     minCount: 1
-  - name: dlc2::subworlds/space/SpaceWithDebris
+  - name: "dlc2::subworlds/space/SpaceWithDebris"
     weight: 0.8
     minCount: 1
-  - name: dlc4::subworlds/space/SpaceWithPrehistoricBorder
+  - name: "dlc4::subworlds/space/SpaceWithPrehistoricBorder"
     weight: 0.8
     minCount: 1
 
@@ -174,9 +174,9 @@ unknownCellsAllowedSubworlds:
       - subworlds/marsh/HotMarsh
       - subworlds/jungle/Jungle
       - subworlds/ocean/Ocean
-      - dlc4::subworlds/wetlands/WetlandsBasic
-      - dlc4::subworlds/garden/GardenBasic
-      - dlc2::subworlds/carrotquarry/CarrotQuarryBasic
+      - "dlc4::subworlds/wetlands/WetlandsBasic"
+      - "dlc4::subworlds/garden/GardenBasic"
+      - "dlc2::subworlds/carrotquarry/CarrotQuarryBasic"
 
   # Ring-2: Medium Biomes (Colder, Dry, or Swampy)
   - tagcommand: DistanceFromTag
@@ -187,11 +187,11 @@ unknownCellsAllowedSubworlds:
     subworldNames:
       - subworlds/frozen/Frozen
       - subworlds/rust/Rust
-      - expansion1::subworlds/swamp/Swamp
-      - expansion1::subworlds/wasteland/WastelandBeetle
-      - dlc2::subworlds/sugarwoods/SugarWoodsBasic
-      - dlc2::subworlds/icecaves/IceCavesBasic
-      - dlc4::subworlds/raptor/RaptorBasic
+      - "expansion1::subworlds/swamp/Swamp"
+      - "expansion1::subworlds/wasteland/WastelandBeetle"
+      - "dlc2::subworlds/sugarwoods/SugarWoodsBasic"
+      - "dlc2::subworlds/icecaves/IceCavesBasic"
+      - "dlc4::subworlds/raptor/RaptorBasic"
 
   # Ring-3: Distant & Rare Biomes
   - tagcommand: DistanceFromTag
@@ -200,12 +200,12 @@ unknownCellsAllowedSubworlds:
     maxDistance: 5
     command: Replace
     subworldNames:
-      - expansion1::subworlds/radioactive/Radioactive
-      - expansion1::subworlds/radioactive/UraniumSprinkles
-      - expansion1::subworlds/aquatic/OpenWater
-      - expansion1::subworlds/moo/MooChasms
-      - expansion1::subworlds/niobium/NiobiumPatch
-      - expansion1::subworlds/aquatic/GraphiteCaves
+      - "expansion1::subworlds/radioactive/Radioactive"
+      - "expansion1::subworlds/radioactive/UraniumSprinkles"
+      - "expansion1::subworlds/aquatic/OpenWater"
+      - "expansion1::subworlds/moo/MooChasms"
+      - "expansion1::subworlds/niobium/NiobiumPatch"
+      - "expansion1::subworlds/aquatic/GraphiteCaves"
       - subworlds/rust/RustFrozen
 
   # Depth above magma core: Oil field
@@ -216,7 +216,7 @@ unknownCellsAllowedSubworlds:
     command: Replace
     subworldNames:
       - subworlds/oil/OilPockets
-      - dlc2::subworlds/oil/OilPocketsFossil
+      - "dlc2::subworlds/oil/OilPocketsFossil"
 
   # Depth core: Magma
   - tagcommand: AtTag
@@ -224,7 +224,7 @@ unknownCellsAllowedSubworlds:
     command: Replace
     subworldNames:
       - subworlds/magma/VolcanoHole
-      - dlc2::subworlds/magma/LargeMagma
+      - "dlc2::subworlds/magma/LargeMagma"
 
   # Space Border (highest layer)
   - tagcommand: DistanceFromTag
@@ -233,8 +233,8 @@ unknownCellsAllowedSubworlds:
     maxDistance: 1
     command: Replace
     subworldNames:
-      - expansion1::subworlds/space/SpaceWithNoBorder
-      - dlc2::subworlds/space/SpaceWithDebris
+      - "expansion1::subworlds/space/SpaceWithNoBorder"
+      - "dlc2::subworlds/space/SpaceWithDebris"
 
   # Surface (just below space border)
   - tagcommand: DistanceFromTag
@@ -243,8 +243,8 @@ unknownCellsAllowedSubworlds:
     maxDistance: 2
     command: Replace
     subworldNames:
-      - expansion1::subworlds/space/HospitableClassicSurface
-      - dlc4::subworlds/space/SpaceWithPrehistoricBorder
+      - "expansion1::subworlds/space/HospitableClassicSurface"
+      - "dlc4::subworlds/space/SpaceWithPrehistoricBorder"
 
 worldTemplateRules:
   # --- MANDATORY GEOTHERMAL & PLOT GEYSERS ---
@@ -310,7 +310,7 @@ worldTemplateRules:
 
   # Gravitas Office
   - names:
-      - expansion1::poi/genericGravitas/poi_office
+      - "expansion1::poi/genericGravitas/poi_office"
     listRule: GuaranteeAll
     priority: 100
     allowedCellsFilter:
