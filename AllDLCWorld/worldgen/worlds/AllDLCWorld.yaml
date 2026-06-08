@@ -445,4 +445,4 @@ worldTemplateRules:
         tagcommand: DistanceFromTag
         tag: AtStart
         minDistance: 3
-        maxDistance: 99e: 99
+        maxDistance: 99
