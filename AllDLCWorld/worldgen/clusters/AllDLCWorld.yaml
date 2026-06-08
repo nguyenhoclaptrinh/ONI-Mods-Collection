@@ -1,0 +1,63 @@
+name: STRINGS.CLUSTER_NAMES.ALLDLCWORLD_CLUSTER.NAME
+description: STRINGS.CLUSTER_NAMES.ALLDLCWORLD_CLUSTER.DESCRIPTION
+requiredDlcIds:
+  - EXPANSION1_ID
+  - DLC2_ID
+  - DLC4_ID
+coordinatePrefix: ALLDLC-PANG
+menuOrder: 1
+clusterCategory: Special
+
+startWorldIndex: 0
+numRings: 9
+worldPlacements:
+  - world: worlds/AllDLCWorld
+    locationType: StartWorld
+    buffer: 2
+    allowedRings:
+      min: 0
+      max: 0
+
+poiPlacements:
+  - pois:
+      - TemporalTear
+    numToSpawn: 1
+    avoidClumping: false
+    allowedRings:
+      min: 7
+      max: 8
+
+  - pois:
+      - HarvestableSpacePOI_ForestyOreField
+      - HarvestableSpacePOI_OrganicMassField
+      - HarvestableSpacePOI_SandyOreField
+      - HarvestableSpacePOI_SwampyOreField
+    numToSpawn: 4
+    canSpawnDuplicates: false
+    allowedRings:
+      min: 2
+      max: 4
+
+  - pois:
+      - HarvestableSpacePOI_GildedAsteroidField
+      - HarvestableSpacePOI_GlimmeringAsteroidField
+      - HarvestableSpacePOI_OilyAsteroidField
+      - HarvestableSpacePOI_FrozenOreField
+      - HarvestableSpacePOI_RadioactiveGasCloud
+      - HarvestableSpacePOI_RadioactiveAsteroidField
+    numToSpawn: 6
+    canSpawnDuplicates: false
+    allowedRings:
+      min: 4
+      max: 6
+
+  - pois:
+      - ArtifactSpacePOI_GravitasSpaceStation1
+      - ArtifactSpacePOI_GravitasSpaceStation2
+      - ArtifactSpacePOI_GravitasSpaceStation3
+      - ArtifactSpacePOI_GravitasSpaceStation4
+    numToSpawn: 3
+    avoidClumping: true
+    allowedRings:
+      min: 3
+      max: 6
