@@ -371,10 +371,10 @@ worldTemplateRules:
         minDistance: 2
         maxDistance: 99
 
-  # Frosty Planet (DLC2) Geothermal Story Traits or Vents
+  # CO2 & Sulfur vents (DLC2 ice planet flavor - dùng base + expansion1 templates hợp lệ)
   - names:
-      - dlc2::geysers/liquid_carbon_dioxide
-      - dlc2::geysers/molten_nectar
+      - geysers/liquid_co2
+      - expansion1::geysers/liquid_sulfur
     listRule: TryOne
     times: 3
     allowDuplicates: true
