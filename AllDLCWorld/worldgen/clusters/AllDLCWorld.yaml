@@ -6,7 +6,7 @@ requiredDlcIds:
   - DLC4_ID
 coordinatePrefix: ALLDLC-PANG
 menuOrder: 1
-clusterCategory: Special
+clusterCategory: SpacedOutVanillaStyle
 
 startWorldIndex: 0
 numRings: 9
