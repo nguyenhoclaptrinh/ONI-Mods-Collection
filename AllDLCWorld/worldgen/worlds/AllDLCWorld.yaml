@@ -28,9 +28,6 @@ fixedTraits:
 seasons:
   - ClassicStyleStartMeteorShowers
 
-defaultsOverrides:
-  startingWorldElements: []
-
 subworldFiles:
   # --- START & INNER RING ---
   - name: subworlds/sandstone/SandstoneStart
