@@ -323,6 +323,22 @@ worldTemplateRules:
         tagcommand: AtTag
         tag: NoGravitasFeatures
 
+  # --- EXPERIMENT 52B (SAP TREE) ---
+  - names:
+      - "expansion1::poi/sap_tree_room"
+    listRule: GuaranteeAll
+    priority: 100
+    allowExtremeTemperatureOverlap: true
+    allowedCellsFilter:
+      - command: Replace
+        tagcommand: DistanceFromTag
+        tag: AtStart
+        minDistance: 4
+        maxDistance: 99
+      - command: ExceptWith
+        tagcommand: AtTag
+        tag: NoGravitasFeatures
+
   # --- GUARANTEED EXACTLY 1 OF EACH RARE METAL GEYSER ---
   - names: ["expansion1::geysers/molten_aluminum"]
     listRule: GuaranteeOne
