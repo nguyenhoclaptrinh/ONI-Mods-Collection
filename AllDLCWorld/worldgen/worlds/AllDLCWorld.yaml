@@ -2,6 +2,14 @@ name: STRINGS.WORLDS.ALLDLCWORLD.NAME
 description: STRINGS.WORLDS.ALLDLCWORLD.DESCRIPTION
 nameTables: [ SANDSTONE ]
 asteroidIcon: asteroid_sandstone_kanim
+worldTags:
+  - Starter
+  - Sandstone
+dlcIdFrom: EXPANSION1_ID
+requiredDlcIds:
+  - EXPANSION1_ID
+  - DLC2_ID
+  - DLC4_ID
 
 # Massive size: exactly 2x width and 2x height of standard classic starting world (256x380)
 worldsize:
@@ -33,76 +41,76 @@ subworldFiles:
   - name: subworlds/sandstone/SandstoneStart
   - name: subworlds/sandstone/SandstoneMiniAlgae
     weight: 1.0
-    minCount: 2
+    minCount: 1
   - name: subworlds/forest/ForestMiniWater
     weight: 0.8
-    minCount: 2
+    minCount: 1
   - name: subworlds/forest/ForestMiniOxy
     weight: 0.8
-    minCount: 2
+    minCount: 1
   - name: subworlds/forest/ForestMiniMetal
     weight: 0.8
-    minCount: 2
+    minCount: 1
 
   # --- MID RING 1 (Close Biomes) ---
   - name: subworlds/forest/Forest
     weight: 1.0
-    minCount: 3
+    minCount: 1
   - name: subworlds/marsh/HotMarsh
     weight: 1.0
-    minCount: 3
+    minCount: 1
   - name: subworlds/jungle/Jungle
     weight: 1.0
-    minCount: 3
+    minCount: 1
   - name: subworlds/ocean/Ocean
     weight: 1.2
-    minCount: 3
+    minCount: 1
   - name: dlc4::subworlds/wetlands/WetlandsBasic
     weight: 1.0
-    minCount: 2
+    minCount: 1
   - name: dlc4::subworlds/garden/GardenBasic
     weight: 1.0
-    minCount: 2
+    minCount: 1
   - name: dlc2::subworlds/carrotquarry/CarrotQuarryBasic
     weight: 1.0
-    minCount: 2
+    minCount: 1
 
   # --- MID RING 2 (Medium distance & colder/specialty biomes) ---
   - name: subworlds/frozen/Frozen
     weight: 1.2
-    minCount: 3
+    minCount: 1
   - name: subworlds/rust/Rust
     weight: 1.0
-    minCount: 3
+    minCount: 1
   - name: expansion1::subworlds/swamp/Swamp
     weight: 1.0
-    minCount: 3
+    minCount: 1
   - name: expansion1::subworlds/wasteland/WastelandBeetle
     weight: 1.0
-    minCount: 3
+    minCount: 1
   - name: dlc2::subworlds/sugarwoods/SugarWoodsBasic
     weight: 1.0
-    minCount: 2
+    minCount: 1
   - name: dlc2::subworlds/icecaves/IceCavesBasic
     weight: 1.2
-    minCount: 2
+    minCount: 1
   - name: dlc4::subworlds/raptor/RaptorBasic
     weight: 1.0
-    minCount: 2
+    minCount: 1
 
   # --- OUTER RING (Exotic & Rare biomes) ---
   - name: expansion1::subworlds/radioactive/Radioactive
     weight: 1.0
-    minCount: 2
+    minCount: 1
   - name: expansion1::subworlds/radioactive/UraniumSprinkles
     weight: 0.8
-    minCount: 2
+    minCount: 1
   - name: expansion1::subworlds/aquatic/OpenWater
     weight: 0.8
-    minCount: 2
+    minCount: 1
   - name: expansion1::subworlds/moo/MooChasms
     weight: 0.8
-    minCount: 2
+    minCount: 1
   - name: expansion1::subworlds/niobium/NiobiumPatch
     weight: 0.5
     minCount: 1
@@ -111,33 +119,33 @@ subworldFiles:
     minCount: 1
   - name: subworlds/rust/RustFrozen
     weight: 0.8
-    minCount: 2
+    minCount: 1
 
   # --- BOTTOM & TOP LAYERS ---
   - name: subworlds/oil/OilPockets
     weight: 1.5
-    minCount: 5
+    minCount: 2
   - name: dlc2::subworlds/oil/OilPocketsFossil
     weight: 0.8
-    minCount: 2
+    minCount: 1
   - name: subworlds/magma/VolcanoHole
     weight: 1.5
-    minCount: 4
+    minCount: 2
   - name: dlc2::subworlds/magma/LargeMagma
     weight: 0.8
-    minCount: 2
+    minCount: 1
   - name: expansion1::subworlds/space/SpaceWithNoBorder
     weight: 2.0
-    minCount: 6
+    minCount: 2
   - name: expansion1::subworlds/space/HospitableClassicSurface
     weight: 1.0
-    minCount: 3
+    minCount: 1
   - name: dlc2::subworlds/space/SpaceWithDebris
     weight: 0.8
-    minCount: 2
+    minCount: 1
   - name: dlc4::subworlds/space/SpaceWithPrehistoricBorder
     weight: 0.8
-    minCount: 2
+    minCount: 1
 
 unknownCellsAllowedSubworlds:
   - tagcommand: Default
