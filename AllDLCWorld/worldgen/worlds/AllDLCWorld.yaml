@@ -324,7 +324,7 @@ worldTemplateRules:
         tag: NoGravitasFeatures
 
   # --- GUARANTEED EXACTLY 1 OF EACH RARE METAL GEYSER ---
-  - names: [expansion1::geysers/molten_aluminum]
+  - names: ["expansion1::geysers/molten_aluminum"]
     listRule: GuaranteeOne
     priority: 80
     allowedCellsFilter:
@@ -333,7 +333,7 @@ worldTemplateRules:
         tag: AtStart
         minDistance: 3
         maxDistance: 99
-  - names: [expansion1::geysers/molten_cobalt]
+  - names: ["expansion1::geysers/molten_cobalt"]
     listRule: GuaranteeOne
     priority: 80
     allowedCellsFilter:
@@ -400,7 +400,7 @@ worldTemplateRules:
     listRule: GuaranteeOne
     priority: 80
     allowedCellsFilter: *MidStartFilter
-  - names: [expansion1::geysers/slush_salt_water]
+  - names: ["expansion1::geysers/slush_salt_water"]
     listRule: GuaranteeOne
     priority: 80
     allowedCellsFilter: *MidStartFilter
@@ -437,7 +437,7 @@ worldTemplateRules:
         tag: AtStart
         minDistance: 3
         maxDistance: 99
-  - names: [expansion1::geysers/liquid_sulfur]
+  - names: ["expansion1::geysers/liquid_sulfur"]
     listRule: GuaranteeOne
     priority: 80
     allowedCellsFilter:
