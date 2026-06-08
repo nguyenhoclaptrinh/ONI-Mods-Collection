@@ -1,0 +1,390 @@
+name: STRINGS.WORLDS.ALLDLCWORLD.NAME
+description: STRINGS.WORLDS.ALLDLCWORLD.DESCRIPTION
+nameTables: [ SANDSTONE ]
+asteroidIcon: asteroid_sandstone_kanim
+
+# Massive size: exactly 2x width and 2x height of standard classic starting world (256x380)
+worldsize:
+  X: 512
+  Y: 760
+layoutMethod: PowerTree
+
+worldTraitScale: 0.5
+
+worldTraitRules:
+  - min: 1
+    max: 3
+    forbiddenTags:
+      - Surface
+      - NonStartWorld
+
+startSubworldName: subworlds/sandstone/SandstoneStart
+startingBaseTemplate: bases/sandstoneBase
+
+fixedTraits:
+  - sunlightMed
+  - cosmicRadiationVeryLow
+
+seasons:
+  - ClassicStyleStartMeteorShowers
+
+defaultsOverrides:
+  startingWorldElements: []
+
+subworldFiles:
+  # --- START & INNER RING ---
+  - name: subworlds/sandstone/SandstoneStart
+  - name: subworlds/sandstone/SandstoneMiniAlgae
+    weight: 1.0
+    minCount: 2
+  - name: subworlds/forest/ForestMiniWater
+    weight: 0.8
+    minCount: 2
+  - name: subworlds/forest/ForestMiniOxy
+    weight: 0.8
+    minCount: 2
+  - name: subworlds/forest/ForestMiniMetal
+    weight: 0.8
+    minCount: 2
+
+  # --- MID RING 1 (Close Biomes) ---
+  - name: subworlds/forest/Forest
+    weight: 1.0
+    minCount: 3
+  - name: subworlds/marsh/HotMarsh
+    weight: 1.0
+    minCount: 3
+  - name: subworlds/jungle/Jungle
+    weight: 1.0
+    minCount: 3
+  - name: subworlds/ocean/Ocean
+    weight: 1.2
+    minCount: 3
+  - name: dlc4::subworlds/wetlands/WetlandsBasic
+    weight: 1.0
+    minCount: 2
+  - name: dlc4::subworlds/garden/GardenBasic
+    weight: 1.0
+    minCount: 2
+  - name: dlc2::subworlds/carrotquarry/CarrotQuarryBasic
+    weight: 1.0
+    minCount: 2
+
+  # --- MID RING 2 (Medium distance & colder/specialty biomes) ---
+  - name: subworlds/frozen/Frozen
+    weight: 1.2
+    minCount: 3
+  - name: subworlds/rust/Rust
+    weight: 1.0
+    minCount: 3
+  - name: expansion1::subworlds/swamp/Swamp
+    weight: 1.0
+    minCount: 3
+  - name: expansion1::subworlds/wasteland/WastelandBeetle
+    weight: 1.0
+    minCount: 3
+  - name: dlc2::subworlds/sugarwoods/SugarWoodsBasic
+    weight: 1.0
+    minCount: 2
+  - name: dlc2::subworlds/icecaves/IceCavesBasic
+    weight: 1.2
+    minCount: 2
+  - name: dlc4::subworlds/raptor/RaptorBasic
+    weight: 1.0
+    minCount: 2
+
+  # --- OUTER RING (Exotic & Rare biomes) ---
+  - name: expansion1::subworlds/radioactive/Radioactive
+    weight: 1.0
+    minCount: 2
+  - name: expansion1::subworlds/radioactive/UraniumSprinkles
+    weight: 0.8
+    minCount: 2
+  - name: expansion1::subworlds/aquatic/OpenWater
+    weight: 0.8
+    minCount: 2
+  - name: expansion1::subworlds/moo/MooChasms
+    weight: 0.8
+    minCount: 2
+  - name: expansion1::subworlds/niobium/NiobiumPatch
+    weight: 0.5
+    minCount: 1
+  - name: expansion1::subworlds/aquatic/GraphiteCaves
+    weight: 0.5
+    minCount: 1
+  - name: subworlds/rust/RustFrozen
+    weight: 0.8
+    minCount: 2
+
+  # --- BOTTOM & TOP LAYERS ---
+  - name: subworlds/oil/OilPockets
+    weight: 1.5
+    minCount: 5
+  - name: dlc2::subworlds/oil/OilPocketsFossil
+    weight: 0.8
+    minCount: 2
+  - name: subworlds/magma/VolcanoHole
+    weight: 1.5
+    minCount: 4
+  - name: dlc2::subworlds/magma/LargeMagma
+    weight: 0.8
+    minCount: 2
+  - name: expansion1::subworlds/space/SpaceWithNoBorder
+    weight: 2.0
+    minCount: 6
+  - name: expansion1::subworlds/space/HospitableClassicSurface
+    weight: 1.0
+    minCount: 3
+  - name: dlc2::subworlds/space/SpaceWithDebris
+    weight: 0.8
+    minCount: 2
+  - name: dlc4::subworlds/space/SpaceWithPrehistoricBorder
+    weight: 0.8
+    minCount: 2
+
+unknownCellsAllowedSubworlds:
+  - tagcommand: Default
+    command: Replace
+    subworldNames:
+      - subworlds/sandstone/SandstoneStart
+
+  - tagcommand: DistanceFromTag
+    tag: AtStart
+    minDistance: 1
+    maxDistance: 1
+    command: Replace
+    subworldNames:
+      - subworlds/sandstone/SandstoneMiniAlgae
+      - subworlds/forest/ForestMiniWater
+      - subworlds/forest/ForestMiniOxy
+      - subworlds/forest/ForestMiniMetal
+
+  # Ring-1: Close Biomes (Standard & DLC equivalents)
+  - tagcommand: DistanceFromTag
+    tag: AtStart
+    minDistance: 2
+    maxDistance: 2
+    command: Replace
+    subworldNames:
+      - subworlds/forest/Forest
+      - subworlds/marsh/HotMarsh
+      - subworlds/jungle/Jungle
+      - subworlds/ocean/Ocean
+      - dlc4::subworlds/wetlands/WetlandsBasic
+      - dlc4::subworlds/garden/GardenBasic
+      - dlc2::subworlds/carrotquarry/CarrotQuarryBasic
+
+  # Ring-2: Medium Biomes (Colder, Dry, or Swampy)
+  - tagcommand: DistanceFromTag
+    tag: AtStart
+    minDistance: 3
+    maxDistance: 3
+    command: Replace
+    subworldNames:
+      - subworlds/frozen/Frozen
+      - subworlds/rust/Rust
+      - expansion1::subworlds/swamp/Swamp
+      - expansion1::subworlds/wasteland/WastelandBeetle
+      - dlc2::subworlds/sugarwoods/SugarWoodsBasic
+      - dlc2::subworlds/icecaves/IceCavesBasic
+      - dlc4::subworlds/raptor/RaptorBasic
+
+  # Ring-3: Distant & Rare Biomes
+  - tagcommand: DistanceFromTag
+    tag: AtStart
+    minDistance: 4
+    maxDistance: 5
+    command: Replace
+    subworldNames:
+      - expansion1::subworlds/radioactive/Radioactive
+      - expansion1::subworlds/radioactive/UraniumSprinkles
+      - expansion1::subworlds/aquatic/OpenWater
+      - expansion1::subworlds/moo/MooChasms
+      - expansion1::subworlds/niobium/NiobiumPatch
+      - expansion1::subworlds/aquatic/GraphiteCaves
+      - subworlds/rust/RustFrozen
+
+  # Depth above magma core: Oil field
+  - tagcommand: DistanceFromTag
+    tag: AtDepths
+    minDistance: 1
+    maxDistance: 1
+    command: Replace
+    subworldNames:
+      - subworlds/oil/OilPockets
+      - dlc2::subworlds/oil/OilPocketsFossil
+
+  # Depth core: Magma
+  - tagcommand: AtTag
+    tag: AtDepths
+    command: Replace
+    subworldNames:
+      - subworlds/magma/VolcanoHole
+      - dlc2::subworlds/magma/LargeMagma
+
+  # Space Border (highest layer)
+  - tagcommand: DistanceFromTag
+    tag: AtSurface
+    minDistance: 0
+    maxDistance: 1
+    command: Replace
+    subworldNames:
+      - expansion1::subworlds/space/SpaceWithNoBorder
+      - dlc2::subworlds/space/SpaceWithDebris
+
+  # Surface (just below space border)
+  - tagcommand: DistanceFromTag
+    tag: AtSurface
+    minDistance: 2
+    maxDistance: 2
+    command: Replace
+    subworldNames:
+      - expansion1::subworlds/space/HospitableClassicSurface
+      - dlc4::subworlds/space/SpaceWithPrehistoricBorder
+
+worldTemplateRules:
+  # Jungle Geysers
+  - names:
+      - poi/jungle/geyser_methane
+      - poi/jungle/geyser_chlorine
+    listRule: GuaranteeOne
+    priority: 100
+    allowedCellsFilter:
+      - command: Replace
+        zoneTypes: [ToxicJungle]
+
+  # Marsh Geysers
+  - names:
+      - poi/hotmarsh/geyser_steam
+    listRule: GuaranteeOne
+    priority: 100
+    allowedCellsFilter:
+      - command: Replace
+        zoneTypes: [BoggyMarsh]
+
+  # Ocean Salt Water Geysers
+  - names:
+      - poi/poi_ocean_geyser_saltwater
+    listRule: GuaranteeSome
+    someCount: 1
+    times: 3
+    priority: 100 
+    allowedCellsFilter:
+      - command: Replace
+        zoneTypes: [Ocean]
+
+  # Oil Pockets Geysers
+  - names:
+      - poi/oil/small_oilpockets_geyser_a
+      - poi/oil/small_oilpockets_geyser_b
+      - poi/oil/small_oilpockets_geyser_c
+      - poi/oil/small_oilpockets_geyser_d
+    listRule: GuaranteeOne
+    times: 6
+    useRelaxedFiltering: true
+    allowDuplicates: true
+    priority: 100
+    allowedCellsFilter:
+      - command: Replace
+        zoneTypes: [OilField]
+
+  # Volcanoes in Magma
+  - names:
+      - geysers/volcanohole
+    listRule: GuaranteeOne
+    times: 4
+    allowDuplicates: true
+    allowExtremeTemperatureOverlap: true
+    priority: 200
+    allowedCellsFilter:
+      - command: Replace
+        tagcommand: DistanceFromTag
+        tag: AtDepths
+        minDistance: 1
+        maxDistance: 1
+
+  # Gravitas Office
+  - names:
+      - expansion1::poi/genericGravitas/poi_office
+    listRule: GuaranteeAll
+    priority: 100
+    allowedCellsFilter:
+      - command: Replace
+        tagcommand: DistanceFromTag
+        tag: AtStart
+        minDistance: 2
+        maxDistance: 99
+      - command: ExceptWith
+        tagcommand: AtTag
+        tag: NoGravitasFeatures
+
+  # Rare Metal Geysers (Molten Gold, Iron, Cobalt, Copper, Aluminum)
+  - names:
+      - expansion1::geysers/molten_aluminum
+      - expansion1::geysers/molten_cobalt
+      - geysers/molten_copper
+      - geysers/molten_gold
+      - geysers/molten_iron
+    listRule: TryOne
+    times: 6
+    allowDuplicates: true
+    priority: 50
+    allowedCellsFilter:
+      - command: Replace
+        tagcommand: DistanceFromTag
+        tag: AtStart
+        minDistance: 3
+        maxDistance: 99
+
+  # Water Vents / Slush Vents
+  - names:
+      - geysers/steam
+      - geysers/hot_steam
+      - geysers/hot_water
+      - geysers/filthy_water
+      - geysers/salt_water
+      - geysers/slush_water
+      - expansion1::geysers/slush_salt_water
+    listRule: TryOne
+    times: 8
+    allowDuplicates: true
+    priority: 50
+    allowedCellsFilter:
+      - command: Replace
+        tagcommand: DistanceFromTag
+        tag: AtStart
+        minDistance: 2
+        maxDistance: 99
+
+  # Gas Vents (CO2, Hydrogen, Chlorine, Natural Gas)
+  - names:
+      - geysers/slimy_po2
+      - geysers/methane
+      - geysers/chlorine_gas
+      - geysers/hot_co2
+      - geysers/hot_hydrogen
+    listRule: TryOne
+    times: 8
+    allowDuplicates: true
+    priority: 50
+    allowedCellsFilter:
+      - command: Replace
+        tagcommand: DistanceFromTag
+        tag: AtStart
+        minDistance: 2
+        maxDistance: 99
+
+  # Frosty Planet (DLC2) Geothermal Story Traits or Vents
+  - names:
+      - dlc2::geysers/liquid_carbon_dioxide
+      - dlc2::geysers/molten_nectar
+    listRule: TryOne
+    times: 3
+    allowDuplicates: true
+    priority: 50
+    allowedCellsFilter:
+      - command: Replace
+        tagcommand: DistanceFromTag
+        tag: AtStart
+        minDistance: 3
+        maxDistance: 99
