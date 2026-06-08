@@ -34,6 +34,7 @@ fixedTraits:
 
 seasons:
   - ClassicStyleStartMeteorShowers
+  - PrehistoricMeteorShowers
 
 subworldFiles:
   # --- START & INNER RING ---
@@ -338,6 +339,131 @@ worldTemplateRules:
       - command: ExceptWith
         tagcommand: AtTag
         tag: NoGravitasFeatures
+
+  # --- URANIUM GEODE (Spaced Out) ---
+  - names:
+      - "expansion1::poi/radioactive/uranium_geode1"
+    listRule: GuaranteeOne
+    useRelaxedFiltering: true
+    allowExtremeTemperatureOverlap: true
+    priority: 200
+    allowedCellsFilter:
+      - command: Replace
+        tagcommand: DistanceFromTag
+        tag: AtStart
+        minDistance: 4
+        maxDistance: 99
+
+  # --- DLC2 GEOTHERMAL CONTROLLER ---
+  - names:
+      - "dlc2::poi/geothermal/geothermal_controller"
+    listRule: GuaranteeAll
+    priority: 500
+    useRelaxedFiltering: true
+    allowExtremeTemperatureOverlap: true
+    allowedCellsFilter:
+      - command: Replace
+        tagcommand: DistanceFromTag
+        tag: AtDepths
+        minDistance: 2
+        maxDistance: 2
+      - command: ExceptWith
+        tagcommand: DistanceFromTag
+        tag: AtEdge
+        minDistance: 0
+        maxDistance: 0
+
+  # --- DLC2 GEOTHERMAL VENTS (2-3 cái) ---
+  - names:
+      - "dlc2::poi/geothermal/geothermal_vent_1"
+      - "dlc2::poi/geothermal/geothermal_vent_2"
+      - "dlc2::poi/geothermal/geothermal_vent_3"
+    listRule: GuaranteeRange
+    range:
+      X: 2
+      Y: 3
+    priority: 100
+    useRelaxedFiltering: true
+    allowExtremeTemperatureOverlap: true
+    allowDuplicates: true
+    allowedCellsFilter:
+      - command: Replace
+        tagcommand: DistanceFromTag
+        tag: AtDepths
+        minDistance: 0
+        maxDistance: 1
+      - command: ExceptWith
+        tagcommand: DistanceFromTag
+        tag: AtEdge
+        minDistance: 0
+        maxDistance: 1
+
+  # --- DLC2 JORGE CAMPSITE (Mở khóa đệ Jorge) ---
+  - names:
+      - "dlc2::poi/ceres/jorge_campsite"
+    listRule: GuaranteeAll
+    priority: 100
+    useRelaxedFiltering: true
+    allowedCellsFilter:
+      - command: Replace
+        tagcommand: DistanceFromTag
+        tag: AtStart
+        minDistance: 3
+        maxDistance: 99
+
+  # --- DLC2 CERES RESEARCH UNLOCK ---
+  - names:
+      - "dlc2::poi/icecaves/ceres_research_unlock"
+    listRule: GuaranteeAll
+    priority: 100
+    useRelaxedFiltering: true
+    allowedCellsFilter:
+      - command: Replace
+        tagcommand: DistanceFromTag
+        tag: AtStart
+        minDistance: 2
+        maxDistance: 99
+
+  # --- DLC2 CERES COZY CABIN ---
+  - names:
+      - "dlc2::poi/icecaves/ceres_cozy_cabin"
+    listRule: GuaranteeAll
+    priority: 100
+    useRelaxedFiltering: true
+    allowedCellsFilter:
+      - command: Replace
+        tagcommand: DistanceFromTag
+        tag: AtStart
+        minDistance: 2
+        maxDistance: 99
+
+  # --- DLC4 PREHISTORIC RESEARCH UNLOCK ---
+  - names:
+      - "dlc4::poi/garden/prehistoric_research_unlock"
+    listRule: GuaranteeAll
+    priority: 100
+    allowNearStart: true
+    useRelaxedFiltering: true
+    allowedCellsFilter:
+      - command: Replace
+        tagcommand: DistanceFromTag
+        tag: AtStart
+        minDistance: 1
+        maxDistance: 5
+
+  # --- DLC4 BLASTER RUINS ---
+  - names:
+      - "dlc4::poi/blaster_ruins"
+    listRule: GuaranteeOne
+    priority: 500
+    useRelaxedFiltering: true
+    allowExtremeTemperatureOverlap: true
+    allowedCellsFilter:
+      - command: Replace
+        tagcommand: DistanceFromTag
+        tag: AtStart
+        minDistance: 4
+        maxDistance: 99
 
   # --- GUARANTEED EXACTLY 1 OF EACH RARE METAL GEYSER ---
   - names: ["expansion1::geysers/molten_aluminum"]
