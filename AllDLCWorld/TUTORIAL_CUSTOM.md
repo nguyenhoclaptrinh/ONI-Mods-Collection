@@ -13,12 +13,12 @@ Tệp này quy định kích thước hành tinh, các loại biome (phân khu) 
 Quyết định chiều rộng (X) và chiều cao (Y) của hành tinh khởi đầu.
 ```yaml
 worldsize:
-  X: 512  # Chiều rộng (Số ô đất)
-  Y: 760  # Chiều cao (Số ô đất)
+  X: 384  # Chiều rộng (Số ô đất)
+  Y: 570  # Chiều cao (Số ô đất)
 ```
 * **Mẹo Custom:**
   * Bản đồ mặc định của game (Classic Start) thường là `256 x 380`.
-  * Nếu máy bạn yếu hoặc card màn hình onboard (như Intel UHD Graphics), nên giảm xuống `384 x 570` hoặc `256 x 380` để chơi mượt hơn, tránh giật lag về sau.
+  * Nếu máy bạn yếu hoặc card màn hình onboard (như Intel UHD Graphics), nên giảm xuống `256 x 380` để chơi mượt hơn, tránh giật lag về sau.
   * Nếu máy bạn cực mạnh và muốn thử thách siêu lớn, bạn có thể tăng lên nhưng tránh vượt quá `512 x 760` vì game có thể bị tràn bộ nhớ (Out of Memory) hoặc crash khi tải màn hình.
 
 ---
