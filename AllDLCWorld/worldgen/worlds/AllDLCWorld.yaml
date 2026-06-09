@@ -588,3 +588,120 @@ worldTemplateRules:
         tag: AtStart
         minDistance: 3
         maxDistance: 99
+
+  # --- GEYSERS BỔ SUNG CÒN THIẾU ---
+  - names: ["expansion1::geysers/molten_niobium"]
+    listRule: GuaranteeOne
+    priority: 80
+    allowedCellsFilter: *MidStartFilter
+  - names: ["expansion1::geysers/molten_tungsten"]
+    listRule: GuaranteeOne
+    priority: 80
+    allowedCellsFilter: *MidStartFilter
+  - names: [geysers/big_volcano]
+    listRule: GuaranteeOne
+    priority: 80
+    allowedCellsFilter: *MidStartFilter
+  - names: [geysers/small_volcano]
+    listRule: GuaranteeOne
+    priority: 80
+    allowedCellsFilter: *MidStartFilter
+  - names: [geysers/volcanohole]
+    listRule: GuaranteeOne
+    priority: 80
+    allowedCellsFilter: *MidStartFilter
+  - names: [geysers/oil_drip]
+    listRule: GuaranteeOne
+    priority: 80
+    allowedCellsFilter: *MidStartFilter
+  - names: [geysers/hot_po2]
+    listRule: GuaranteeOne
+    priority: 80
+    allowedCellsFilter: *MidStartFilter
+  - names: [geysers/chlorine_gas_cool]
+    listRule: GuaranteeOne
+    priority: 80
+    allowedCellsFilter: *MidStartFilter
+
+  # --- QUẶNG VÀ GEODE KIM LOẠI (DEMOLIOR / ORES) ---
+  - names:
+      - "expansion1::poi/aquatic/metal_boon"
+      - "expansion1::poi/aquatic/large_coal_geode"
+      - "expansion1::poi/aquatic/large_geode"
+      - "expansion1::poi/aquatic/salt_geyser_geode"
+      - "expansion1::poi/aquatic/small_oxylite_geode"
+      - "expansion1::poi/aquatic/cool_slush_geode"
+      - "expansion1::poi/aquatic/dirty_water_geode"
+      - "expansion1::poi/aquatic/hot_water_geode"
+    listRule: GuaranteeAll
+    priority: 80
+    allowedCellsFilter: *MidStartFilter
+  - names:
+      - "expansion1::poi/mini/frozen_chunk_ice"
+      - "expansion1::poi/mini/frozen_chunk_large"
+      - "expansion1::poi/mini/frozen_chunk_metal"
+      - "expansion1::poi/mini/frozen_chunk_shape"
+    listRule: GuaranteeAll
+    priority: 80
+    allowedCellsFilter: *MidStartFilter
+
+  # --- CÔNG TRÌNH VÀ TÀN TÍCH CỔ ĐẠI (POIS / GRAVITAS / CONSTRUCTION) ---
+  - names:
+      - poi_broken_farm
+      - poi_dining_room
+      - poi_dupe_sensor_puzzle
+      - poi_gravitas
+      - poi_ladder_tunnel
+      - poi_ocean_geyser_saltwater
+      - poi_oil_six_switch_door
+      - poi_oil_switchdoor
+      - poi_old_pool
+      - poi_rust_spiral
+      - poi_salt_spiral
+      - poi_salt_spiral_2
+      - poi_salt_spiral_3
+      - poi_satellite_1_a
+      - poi_satellite_1_b
+      - poi_satellite_2_a
+      - poi_satellite_2_b
+      - poi_satellite_3_a
+    listRule: GuaranteeAll
+    priority: 90
+    useRelaxedFiltering: true
+    allowedCellsFilter:
+      - command: Replace
+        tagcommand: DistanceFromTag
+        tag: AtStart
+        minDistance: 3
+        maxDistance: 99
+  - names:
+      - "expansion1::poi/genericGravitas/poi_mining_room"
+      - "expansion1::poi/genericGravitas/poi_office"
+      - "expansion1::poi/genericGravitas/poi_gift_shop"
+      - "expansion1::poi/genericGravitas/poi_display_rooms"
+      - "expansion1::poi/genericGravitas/poi_genetics_lab"
+      - "expansion1::poi/genericGravitas/poi_thermo_building"
+      - "expansion1::poi/genericGravitas/monument_room"
+      - "expansion1::poi/genericGravitas/directors_room"
+    listRule: GuaranteeAll
+    priority: 90
+    useRelaxedFiltering: true
+    allowedCellsFilter:
+      - command: Replace
+        tagcommand: DistanceFromTag
+        tag: AtStart
+        minDistance: 3
+        maxDistance: 99
+  - names:
+      - "dlc2::poi/ceres/showroom"
+      - "dlc4::poi/cozycamp"
+      - "dlc4::poi/elevator_shaft"
+    listRule: GuaranteeAll
+    priority: 90
+    useRelaxedFiltering: true
+    allowedCellsFilter:
+      - command: Replace
+        tagcommand: DistanceFromTag
+        tag: AtStart
+        minDistance: 3
+        maxDistance: 99
