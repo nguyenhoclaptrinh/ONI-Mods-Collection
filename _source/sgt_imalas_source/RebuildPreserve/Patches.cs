@@ -305,9 +305,12 @@ namespace RebuildPreserve
         [HarmonyPatch(typeof(DetailsScreenMaterialPanel), "RefreshOrderChangeMaterialButton", new Type[] { typeof(object) })]
         public static class DetailsScreenMaterialPanel_RefreshOrderChangeMaterialButton
         {
-            public static void Postfix(DetailsScreenMaterialPanel __instance)
+            public static void Postfix(DetailsScreenMaterialPanel __instance, KButton ___orderChangeMaterialButton, MaterialSelectionPanel ___materialSelectionPanel)
             {
-                __instance.orderChangeMaterialButton.isInteractable = __instance.materialSelectionPanel.CurrentSelectedElement != null;
+                if (___orderChangeMaterialButton != null && ___materialSelectionPanel != null)
+                {
+                    ___orderChangeMaterialButton.isInteractable = ___materialSelectionPanel.CurrentSelectedElement != null;
+                }
             }
         }
     }

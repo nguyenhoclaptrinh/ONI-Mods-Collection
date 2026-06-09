@@ -21,17 +21,21 @@ namespace MoveGeyserInstant {
     [HarmonyPatch]
     public static class AddMovableStructurePatch {
         public static IEnumerable<MethodBase> TargetMethods() {
-            var types = new List<System.Type> {
-                typeof(Geyser),
-                typeof(GeneShuffler),
-                typeof(WarpPortal),
-                typeof(WarpReceiver),
-                typeof(CryoTank),
-                typeof(Telepad),
-                typeof(MegaBrainTank),
-                typeof(GravitasCreatureManipulator)
+            var typeNames = new List<string> {
+                "Geyser",
+                "GeneShuffler",
+                "WarpPortal",
+                "WarpReceiver",
+                "CryoTank",
+                "Telepad",
+                "MegaBrainTank",
+                "GravitasCreatureManipulator",
+                "OilWell",
+                "OilWellCap"
             };
-            foreach (var type in types) {
+            foreach (var name in typeNames) {
+                var type = AccessTools.TypeByName(name);
+                if (type == null) continue;
                 var method = AccessTools.Method(type, "OnSpawn");
                 if (method != null)
                     yield return method;

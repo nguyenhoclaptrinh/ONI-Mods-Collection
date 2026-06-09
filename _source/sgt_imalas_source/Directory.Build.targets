@@ -3,7 +3,7 @@
 	<!--Write mod.yaml file-->
 	<PropertyGroup>
 		<DisplayModName>$(ModName)</DisplayModName>
-		<DisplayModName Condition="'$(GameLibsFolder)' != '../Lib'">$(ModName) [DEV]</DisplayModName>
+		<DisplayModName Condition="'$(GameLibsFolder)' != '../Lib' and '$(IsRelease)' != 'true'">$(ModName) [DEV]</DisplayModName>
 	</PropertyGroup>
 	<Target Name="GenerateModYaml" BeforeTargets="PrepareForRun" Condition="'$(DoNotBuildAsMod)' != 'true'">
 		<ItemGroup>
@@ -68,7 +68,8 @@
 	</Target>
 
 	<PropertyGroup>
-		<TargetFolder Condition="'$(GameLibsFolder)' != '../Lib'">$(ModFolder)\$(TargetName)_dev\</TargetFolder>
+		<TargetFolder Condition="'$(GameLibsFolder)' != '../Lib' and '$(IsRelease)' != 'true'">$(ModFolder)\$(TargetName)_dev\</TargetFolder>
+		<TargetFolder Condition="'$(GameLibsFolder)' != '../Lib' and '$(IsRelease)' == 'true'">$(ModFolder)\$(TargetName)\</TargetFolder>
 		<TargetFolder Condition="'$(GameLibsFolder)' == '../Lib'">../Builds\$(TargetName)</TargetFolder>
 	</PropertyGroup>
 
