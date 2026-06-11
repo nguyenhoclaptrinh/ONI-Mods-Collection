@@ -35,6 +35,49 @@ fixedTraits:
 seasons:
   - ClassicStyleStartMeteorShowers
   - PrehistoricMeteorShowers
+  - CeresMeteorShowers
+  - ClassicStyleWarpMeteorShowers
+  - ForestMoonletMeteorShowers
+  - GassyMooteorShowers
+  - IdealLandingSiteMeteorShowers
+  - LargeImpactor
+  - MarshyMoonletMeteorShowers
+  - MediumForestyRadioactiveVanillaWarpPlanetMeteorShowers
+  - MediumForestyWastelandMeteorShowers
+  - MediumRadioactiveVanillaWarpPlanetMeteorShowers
+  - MediumSandyRadioactiveVanillaWarpPlanetMeteorShowers
+  - MediumSandySwampMeteorShowers
+  - MediumSwampyMeteorShowers
+  - MetalHeavyLandingSiteMeteorShowers
+  - MeteorShowers
+  - MiniBadlandsMeteorShowers
+  - MiniCeresStartShowers
+  - MiniFlippedMeteorShowers
+  - MiniForestFrozenMeteorShowers
+  - MiniMetallicSwampyMeteorShowers
+  - MiniRadioactiveOceanMeteorShowers
+  - NiobiumMoonletMeteorShowers
+  - OilRichWarpTargetMeteorShowers
+  - RegolithMoonMeteorShowers
+  - SpacedOutStyleRocketMeteorShowers
+  - SpacedOutStyleStartMeteorShowers
+  - SpacedOutStyleWarpMeteorShowers
+  - SwampMoonletMeteorShowers
+  - SwampyLandingSiteMeteorShowers
+  - TerraMoonletMeteorShowers
+  - TundraMoonletMeteorShowers
+  - VanillaArboriaMeteorShowers
+  - VanillaAridioMeteorShowers
+  - VanillaBadlandsMeteorShowers
+  - VanillaForestDefaultMeteorShowers
+  - VanillaOasisMeteorShowers
+  - VanillaOceaniaMeteorShowers
+  - VanillaSandstoneDefaultMeteorShowers
+  - VanillaSandstoneFrozenMeteorShowers
+  - VanillaSwampDefaultMeteorShowers
+  - VanillaVolcanicMeteorShowers
+  - WarpOilySwampMeteorShowers
+  - WaterMoonletMeteorShowers
 
 subworldFiles:
   # --- START & INNER RING ---
@@ -120,6 +163,24 @@ subworldFiles:
   - name: subworlds/rust/RustFrozen
     weight: 0.8
     minCount: 1
+  - name: "expansion1::subworlds/metallic/RenewableMetallic"
+    weight: 0.4
+  - name: "expansion1::subworlds/metallic/SwampyRenewableMetallic"
+    weight: 0.4
+  - name: "expansion1::subworlds/moo/MooCaverns"
+    weight: 0.4
+  - name: "expansion1::subworlds/moo/MooCore"
+    weight: 0.4
+  - name: "expansion1::subworlds/regolith/BarrenDust"
+    weight: 0.4
+  - name: "expansion1::subworlds/regolith/DeadOasis"
+    weight: 0.4
+  - name: "expansion1::subworlds/aquatic/SurfaceBeach"
+    weight: 0.4
+  - name: "expansion1::subworlds/wasteland/WastelandBeetleCool"
+    weight: 0.4
+  - name: "expansion1::subworlds/wasteland/WastelandWorm"
+    weight: 0.4
 
   # --- BOTTOM & TOP LAYERS ---
   - name: subworlds/oil/OilPockets
@@ -208,6 +269,15 @@ unknownCellsAllowedSubworlds:
       - "expansion1::subworlds/niobium/NiobiumPatch"
       - "expansion1::subworlds/aquatic/GraphiteCaves"
       - subworlds/rust/RustFrozen
+      - "expansion1::subworlds/metallic/RenewableMetallic"
+      - "expansion1::subworlds/metallic/SwampyRenewableMetallic"
+      - "expansion1::subworlds/moo/MooCaverns"
+      - "expansion1::subworlds/moo/MooCore"
+      - "expansion1::subworlds/regolith/BarrenDust"
+      - "expansion1::subworlds/regolith/DeadOasis"
+      - "expansion1::subworlds/aquatic/SurfaceBeach"
+      - "expansion1::subworlds/wasteland/WastelandBeetleCool"
+      - "expansion1::subworlds/wasteland/WastelandWorm"
 
   # Depth above magma core: Oil field
   - tagcommand: DistanceFromTag
@@ -606,10 +676,6 @@ worldTemplateRules:
     listRule: GuaranteeOne
     priority: 80
     allowedCellsFilter: *MidStartFilter
-  - names: [geysers/volcanohole]
-    listRule: GuaranteeOne
-    priority: 80
-    allowedCellsFilter: *MidStartFilter
   - names: [geysers/oil_drip]
     listRule: GuaranteeOne
     priority: 80
@@ -647,24 +713,23 @@ worldTemplateRules:
 
   # --- CÔNG TRÌNH VÀ TÀN TÍCH CỔ ĐẠI (POIS / GRAVITAS / CONSTRUCTION) ---
   - names:
-      - poi_broken_farm
-      - poi_dining_room
-      - poi_dupe_sensor_puzzle
-      - poi_gravitas
-      - poi_ladder_tunnel
-      - poi_ocean_geyser_saltwater
-      - poi_oil_six_switch_door
-      - poi_oil_switchdoor
-      - poi_old_pool
-      - poi_rust_spiral
-      - poi_salt_spiral
-      - poi_salt_spiral_2
-      - poi_salt_spiral_3
-      - poi_satellite_1_a
-      - poi_satellite_1_b
-      - poi_satellite_2_a
-      - poi_satellite_2_b
-      - poi_satellite_3_a
+      - poi/poi_broken_farm
+      - poi/poi_dining_room
+      - poi/poi_dupe_sensor_puzzle
+      - poi/poi_gravitas
+      - poi/poi_ladder_tunnel
+      - poi/poi_oil_six_switch_door
+      - poi/poi_oil_switchdoor
+      - poi/poi_old_pool
+      - poi/poi_rust_spiral
+      - poi/poi_salt_spiral
+      - poi/poi_salt_spiral_2
+      - poi/poi_salt_spiral_3
+      - poi/poi_satellite_1_a
+      - poi/poi_satellite_1_b
+      - poi/poi_satellite_2_a
+      - poi/poi_satellite_2_b
+      - poi/poi_satellite_3_a
     listRule: GuaranteeAll
     priority: 90
     useRelaxedFiltering: true
@@ -676,7 +741,6 @@ worldTemplateRules:
         maxDistance: 99
   - names:
       - "expansion1::poi/genericGravitas/poi_mining_room"
-      - "expansion1::poi/genericGravitas/poi_office"
       - "expansion1::poi/genericGravitas/poi_gift_shop"
       - "expansion1::poi/genericGravitas/poi_display_rooms"
       - "expansion1::poi/genericGravitas/poi_genetics_lab"
@@ -694,8 +758,8 @@ worldTemplateRules:
         maxDistance: 99
   - names:
       - "dlc2::poi/ceres/showroom"
-      - "dlc4::poi/cozycamp"
-      - "dlc4::poi/elevator_shaft"
+      - "dlc4::poi/raptor/cozycamp"
+      - "dlc4::poi/raptor/elevator_shaft"
     listRule: GuaranteeAll
     priority: 90
     useRelaxedFiltering: true
@@ -705,3 +769,83 @@ worldTemplateRules:
         tag: AtStart
         minDistance: 3
         maxDistance: 99
+
+  # --- ALL-CONTENT OPTIONAL POIS / SPECIAL BUILDINGS / EXTRA VENTS ---
+  # TryAll keeps worldgen resilient: every listed item is attempted, but a bad seed
+  # or an oversized template cannot abort the whole world.
+  - names:
+      - "expansion1::poi/aquatic/oasis"
+      - "expansion1::poi/boon/bedroom"
+      - "expansion1::poi/boon/farm"
+      - "expansion1::poi/boon/kitchen"
+      - "expansion1::poi/boon/power"
+      - "expansion1::poi/boon/washroom"
+      - "expansion1::poi/boon/well"
+      - poi/frozen/heatsink_a
+      - poi/frozen/heatsink_b
+      - poi/frozen/heatsink_c
+      - poi/frozen/heatsink_d
+      - "expansion1::poi/jungle/geyser_hydrogen"
+      - poi/jungle/oxylite_spiral
+      - "expansion1::poi/mini/magma_passage"
+      - "expansion1::poi/poi_temporal_tear_opener_lab"
+      - "expansion1::poi/regolith/bunker_lab"
+      - "expansion1::poi/regolith/landing_pad"
+      - "expansion1::poi/warp/receiver"
+      - "expansion1::poi/warp/sender"
+      - "expansion1::poi/warp/teleporter"
+      - "dlc2::poi/geothermal/geothermal_vent_forest"
+      - "dlc2::poi/geothermal/shattered_geothermal_controller"
+      - "dlc2::poi/geothermal/shattered_geothermal_vent_1"
+      - "dlc2::poi/geothermal/shattered_geothermal_vent_2"
+      - "dlc2::poi/geothermal/shattered_geothermal_vent_3"
+      - poi/oil/small_oilpockets_geyser_e
+      - poi/oil/small_oilpockets_geyser_f
+      - poi/oil/small_oilpockets_geyser_g
+      - poi/oil/small_oilpockets_geyser_h
+      - "dlc2::poi/poi_ocean_geyser_brine"
+      - poi/oil/small_oilpockets_geyser_e_dry
+      - poi/oil/small_oilpockets_geyser_f_dry
+      - "dlc4::poi/raptor/cool_chlorine_vent"
+      - "dlc4::poi/raptor/neuralvacillator"
+      - "dlc4::poi/raptor/oldlab"
+      - "dlc4::poi/wetlands/aquarium"
+      - "dlc4::poi/wetlands/biowaste_storage"
+      - "dlc4::poi/wetlands/campsite"
+      - "dlc4::poi/wetlands/office"
+      - "dlc4::poi/wetlands/pwater_geyser"
+    listRule: TryAll
+    priority: 60
+    useRelaxedFiltering: true
+    allowExtremeTemperatureOverlap: true
+    allowedCellsFilter:
+      - command: Replace
+        tagcommand: DistanceFromTag
+        tag: AtStart
+        minDistance: 3
+        maxDistance: 99
+
+  - names:
+      - "expansion1::geysers/dirty_slush"
+      - "expansion1::geysers/molten_tungsten_compact"
+      - "expansion1::geysers/molten_tungsten_exposed_compact"
+      - "expansion1::poi/poi_frozen_iron_geyser"
+      - "expansion1::poi/poi_frozen_iron_geyser_2"
+      - "expansion1::poi/poi_frozen_iron_geyser_3"
+      - "expansion1::poi/poi_frozen_iron_geyser_4"
+      - "expansion1::poi/poi_frozen_salt_water_geyser"
+      - "expansion1::poi/poi_geyser_dirty_slush"
+      - "expansion1::poi/poi_geyser_magma"
+      - "expansion1::poi/poi_geyser_magma_2"
+      - "expansion1::poi/poi_geyser_magma_3"
+      - "expansion1::poi/poi_molten_aluminum_volcano"
+      - "expansion1::poi/poi_molten_cobalt_volcano"
+      - "expansion1::poi/poi_molten_gold_volcano"
+      - "expansion1::poi/radioactive/uranium_fields_liquid_co2_geyser"
+      - "expansion1::poi/radioactive/uranium_fields_liquid_co2_geyser_b"
+      - "expansion1::poi/radioactive/uranium_fields_liquid_co2_geyser_c"
+    listRule: TryAll
+    priority: 60
+    useRelaxedFiltering: true
+    allowExtremeTemperatureOverlap: true
+    allowedCellsFilter: *MidStartFilter

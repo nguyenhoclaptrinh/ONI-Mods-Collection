@@ -4,6 +4,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace MoveGeyserInstant {
+    internal static class MovableStructureSupport {
+        internal static void AddMovable(GameObject go) {
+            if (go != null)
+                go.AddOrGet<MovableGeyser>();
+        }
+    }
+
     [HarmonyPatch(typeof(PlayerController), nameof(PlayerController.OnPrefabInit))]
     public static class RegisterMoveGeyserToolPatch {
         public static void Postfix(PlayerController __instance) {
@@ -44,7 +51,21 @@ namespace MoveGeyserInstant {
 
         public static void Postfix(KMonoBehaviour __instance) {
             if (__instance != null)
-                __instance.gameObject.AddOrGet<MovableGeyser>();
+                MovableStructureSupport.AddMovable(__instance.gameObject);
+        }
+    }
+
+    [HarmonyPatch(typeof(OilWellConfig), nameof(OilWellConfig.CreatePrefab))]
+    public static class OilWellConfigCreatePrefabPatch {
+        public static void Postfix(GameObject __result) {
+            MovableStructureSupport.AddMovable(__result);
+        }
+    }
+
+    [HarmonyPatch(typeof(OilWellCapConfig), nameof(OilWellCapConfig.ConfigureBuildingTemplate))]
+    public static class OilWellCapConfigConfigureBuildingTemplatePatch {
+        public static void Postfix(GameObject go) {
+            MovableStructureSupport.AddMovable(go);
         }
     }
 }

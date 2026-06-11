@@ -61,3 +61,39 @@ poiPlacements:
     allowedRings:
       min: 3
       max: 6
+
+  - pois:
+      - ArtifactSpacePOI_GravitasSpaceStation5
+      - ArtifactSpacePOI_GravitasSpaceStation6
+      - ArtifactSpacePOI_GravitasSpaceStation7
+      - ArtifactSpacePOI_GravitasSpaceStation8
+      - ArtifactSpacePOI_RussellsTeapot
+    numToSpawn: 5
+    canSpawnDuplicates: false
+    avoidClumping: true
+    allowedRings:
+      min: 4
+      max: 8
+
+  - pois:
+      - HarvestableSpacePOI_CarbonAsteroidField
+      - HarvestableSpacePOI_ChlorineCloud
+      - HarvestableSpacePOI_DLC2CeresOreField
+      - HarvestableSpacePOI_DLC4PrehistoricOreField
+      - HarvestableSpacePOI_GasGiantCloud
+      - HarvestableSpacePOI_HeliumCloud
+      - HarvestableSpacePOI_IceAsteroidField
+      - HarvestableSpacePOI_InterstellarIceField
+      - HarvestableSpacePOI_InterstellarOcean
+      - HarvestableSpacePOI_MetallicAsteroidField
+      - HarvestableSpacePOI_OxidizedAsteroidField
+      - HarvestableSpacePOI_OxygenRichAsteroidField
+      - HarvestableSpacePOI_RockyAsteroidField
+      - HarvestableSpacePOI_SaltyAsteroidField
+      - HarvestableSpacePOI_SatelliteField
+    numToSpawn: 15
+    canSpawnDuplicates: false
+    avoidClumping: false
+    allowedRings:
+      min: 2
+      max: 8
