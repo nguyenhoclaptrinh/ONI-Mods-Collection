@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<!-- General Package Properties -->
+	<PropertyGroup>
+		<PackageId>GraphicsOptimizer</PackageId>
+		<Version>1.0.0</Version>
+		<Authors>nguyenhoclaptrinh</Authors>
+		<Copyright>$(RetroOniCopyright)</Copyright>
+	</PropertyGroup>
+
+	<!-- Build Properties -->
+	<PropertyGroup>
+		<Configurations>Debug;Release</Configurations>
+		<AssemblyName>GraphicsOptimizer</AssemblyName>
+		<RootNamespace>GraphicsOptimizer</RootNamespace>
+		<IsMod>true</IsMod>
+		<GenerateMetadata>true</GenerateMetadata>
+		<IsPacked>true</IsPacked>
+	</PropertyGroup>
+
+	<!-- Mod Info -->
+	<PropertyGroup>
+		<ModName>Graphics Optimizer</ModName>
+		<ModDescription>Tối ưu hóa đồ họa tổng hợp và điều chỉnh độ sáng hiển thị giúp giảm chói mắt, cải thiện FPS cực tốt. Tác giả: nguyenhoclaptrinh.</ModDescription>
+		<MinimumSupportedBuild>$(TargetGameVersion)</MinimumSupportedBuild>
+		<APIVersion>2</APIVersion>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<OutDir>bin</OutDir>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\UtilLibs\UtilLibs.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="ILRepack.Lib.MSBuild.Task" Version="2.0.34" />
+	</ItemGroup>
+</Project>
