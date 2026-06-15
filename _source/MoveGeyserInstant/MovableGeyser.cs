@@ -28,7 +28,7 @@ namespace MoveGeyserInstant {
                 : "Chọn vị trí mới cho cấu trúc này. Có thể chuyển sang hành tinh khác rồi click để đặt.";
 
             var button = new KIconButtonMenu.ButtonInfo(
-                "action_mirror",
+                "action_move_to_storage",
                 buttonText,
                 new System.Action(ActivateMoveTool),
                 global::Action.NumActions,

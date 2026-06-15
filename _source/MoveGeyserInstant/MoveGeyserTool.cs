@@ -565,6 +565,7 @@ namespace MoveGeyserInstant {
             private string previewDefaultAnim;
             private Dictionary<string, object> geyserFields;
             private Dictionary<string, object> configuratorFields;
+            private GeyserConfigurator.GeyserInstanceConfiguration geyserConfiguration;
 
             public static GeyserSnapshot Capture(GameObject source) {
                 var snapshot = new GeyserSnapshot {
@@ -603,6 +604,20 @@ namespace MoveGeyserInstant {
                     snapshot.SourceFootprint = FindFootprint(snapshot.SourceCell);
                     snapshot.geyserFields = CaptureFields(source.GetComponent<Geyser>());
                     snapshot.configuratorFields = CaptureFields(source.GetComponent<GeyserConfigurator>());
+
+                    // Capture the class configuration field to preserve eruption rate, cycle length, and dormancy rolls
+                    var sourceGeyser = source.GetComponent<Geyser>();
+                    if (sourceGeyser != null) {
+                        try {
+                            var configField = typeof(Geyser).GetField("configuration", BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public);
+                            if (configField != null) {
+                                snapshot.geyserConfiguration = configField.GetValue(sourceGeyser) as GeyserConfigurator.GeyserInstanceConfiguration;
+                            }
+                        }
+                        catch (Exception ex) {
+                            Debug.LogWarning("[MoveGeyserInstant] Failed to capture configuration field: " + ex.Message);
+                        }
+                    }
                 } else {
                     snapshot.SourceFootprint = Array.Empty<int>();
                 }
@@ -637,9 +652,27 @@ namespace MoveGeyserInstant {
             }
 
             public void ApplyFieldsTo(GameObject target) {
+                if (target.activeSelf) {
+                    Debug.LogWarning("[MoveGeyserInstant] Target object is already active before state copy! Eruption state restoration might not apply correctly to the State Machine.");
+                }
+
                 if (IsGeyser) {
                     ApplyFields(target.GetComponent<Geyser>(), geyserFields);
                     ApplyFields(target.GetComponent<GeyserConfigurator>(), configuratorFields);
+
+                    // Restore the captured configuration object to the target
+                    var targetGeyserObj = target.GetComponent<Geyser>();
+                    if (targetGeyserObj != null && geyserConfiguration != null) {
+                        try {
+                            var configField = typeof(Geyser).GetField("configuration", BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public);
+                            if (configField != null) {
+                                configField.SetValue(targetGeyserObj, geyserConfiguration);
+                            }
+                        }
+                        catch (Exception ex) {
+                            Debug.LogWarning("[MoveGeyserInstant] Failed to restore configuration field: " + ex.Message);
+                        }
+                    }
 
                     var targetStudyable = target.GetComponent<Studyable>();
                     if (targetStudyable != null && StudyableStudiedField != null) {
