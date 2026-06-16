@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright 2026 Peter Han
  * Permission is hereby granted, free of charge, to any person obtaining a copy of this software
  * and associated documentation files (the "Software"), to deal in the Software without
@@ -339,7 +339,7 @@ namespace PeterHan.FastTrack {
 		/// </summary>
 		[HarmonyPriority(Priority.Low)]
 		internal static bool Prefix(Workable __instance) {
-			if (__instance.TryGetComponent(out KSelectable selectable)) {
+			if (__instance != null && __instance.TryGetComponent(out KSelectable selectable)) {
 				var working = __instance.workingStatusItem;
 				ref var statusHandle = ref __instance.workStatusItemHandle;
 				selectable.RemoveStatusItem(statusHandle);

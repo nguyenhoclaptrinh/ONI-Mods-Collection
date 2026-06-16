@@ -76,9 +76,18 @@ namespace AutoDropBottlers
             return autoDropEnabled;
         }
 
+        private void UpdateStorageAllowItemRemoval()
+        {
+            if (bottler != null && bottler.storage != null)
+            {
+                bottler.storage.allowItemRemoval = !autoDropEnabled;
+            }
+        }
+
         public void SetCheckboxValue(bool value)
         {
             autoDropEnabled = value;
+            UpdateStorageAllowItemRemoval();
             if (value)
             {
                 // Nếu bật, kiểm tra trễ để không đụng vào proxy bottle trong lúc Bottler vừa kết thúc việc.
@@ -101,6 +110,7 @@ namespace AutoDropBottlers
         protected override void OnSpawn()
         {
             base.OnSpawn();
+            UpdateStorageAllowItemRemoval();
             // Đăng ký sự kiện thay đổi dung lượng kho chứa
             Subscribe((int)GameHashes.OnStorageChange, OnStorageChange);
             // Đăng ký sự kiện sao chép cài đặt (Copy Settings)
