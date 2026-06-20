@@ -28,7 +28,7 @@ namespace MoveGeyserInstant {
                 : "Chọn vị trí mới cho cấu trúc này. Có thể chuyển sang hành tinh khác rồi click để đặt.";
 
             var button = new KIconButtonMenu.ButtonInfo(
-                "action_move_to_storage",
+                GetMoveIconName(),
                 buttonText,
                 new System.Action(ActivateMoveTool),
                 global::Action.NumActions,
@@ -81,6 +81,13 @@ namespace MoveGeyserInstant {
 
         private void ActivateMoveTool() {
             MoveGeyserTool.Instance.BeginMove(gameObject);
+        }
+
+        private static string GetMoveIconName() {
+            if (Assets.GetSprite("MoveGeyserToolIcon") != null) {
+                return "MoveGeyserToolIcon";
+            }
+            return "action_move_to_storage";
         }
     }
 }

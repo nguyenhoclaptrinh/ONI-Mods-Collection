@@ -68,4 +68,45 @@ namespace MoveGeyserInstant {
             MovableStructureSupport.AddMovable(go);
         }
     }
+
+    [HarmonyPatch(typeof(Assets), "OnPrefabInit")]
+    public static class AssetsOnPrefabInitPatch {
+        public static void Prefix() {
+            try {
+                string dllPath = System.Reflection.Assembly.GetExecutingAssembly().Location;
+                string assetsFolder = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(dllPath), "assets");
+                string spritePath = System.IO.Path.Combine(assetsFolder, "MoveGeyserToolIcon.png");
+                if (System.IO.File.Exists(spritePath)) {
+                    byte[] data = System.IO.File.ReadAllBytes(spritePath);
+                    Texture2D texture = new Texture2D(2, 2);
+                    texture.LoadImage(data);
+                    Sprite sprite = Sprite.Create(texture, new Rect(0f, 0f, texture.width, texture.height), new Vector2(0.5f, 0.5f));
+                    sprite.name = "MoveGeyserToolIcon";
+                    Assets.Sprites.Add("MoveGeyserToolIcon", sprite);
+                }
+            }
+            catch (System.Exception ex) {
+                Debug.LogWarning("[MoveGeyserInstant] Failed to load custom sprite: " + ex.Message);
+            }
+        }
+    }
+
+    [HarmonyPatch(typeof(KPrefabID), "OnSpawn")]
+    public static class KPrefabIDOnSpawnPatch {
+        public static void Postfix(KPrefabID __instance) {
+            if (__instance != null) {
+                string tag = __instance.PrefabTag.Name;
+                if (tag.StartsWith("Prop") || 
+                    tag.Contains("Satellite") || 
+                    tag == "LonelyMinionHouse" || 
+                    tag == "TemporalTearOpener" || 
+                    tag == "MorbRoverSpawningLocker" || 
+                    tag.StartsWith("FossilDig") || 
+                    tag == "AncientMonument") 
+                {
+                    MovableStructureSupport.AddMovable(__instance.gameObject);
+                }
+            }
+        }
+    }
 }

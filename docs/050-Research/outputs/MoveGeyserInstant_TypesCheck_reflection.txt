@@ -1,0 +1,15 @@
+=== Verification of ComponentTypesToCapture ===
+[FOUND] Geyser -> Geyser
+[FOUND] GeyserConfigurator -> GeyserConfigurator
+[FOUND] GeneShuffler -> GeneShuffler
+[NOT FOUND] Rummageable
+[FOUND] LonelyMinionHouse -> LonelyMinionHouse
+[NOT FOUND] FossilDig
+[FOUND] TemporalTearOpener -> TemporalTearOpener
+[FOUND] WarpPortal -> WarpPortal
+[FOUND] WarpReceiver -> WarpReceiver
+[FOUND] CryoTank -> CryoTank
+[FOUND] MegaBrainTank -> MegaBrainTank
+[FOUND] GravitasCreatureManipulator -> GravitasCreatureManipulator
+[FOUND] OilWellCap -> OilWellCap
+[FOUND] SetLocker -> SetLocker

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
+using HarmonyLib;
 
 namespace MoveGeyserInstant {
     public sealed class MoveGeyserTool : InterfaceTool {
@@ -563,9 +564,27 @@ namespace MoveGeyserInstant {
             private HashedString previewAnim;
             private string previewInitialAnim;
             private string previewDefaultAnim;
-            private Dictionary<string, object> geyserFields;
-            private Dictionary<string, object> configuratorFields;
+            private Dictionary<string, Dictionary<string, object>> componentFields = new Dictionary<string, Dictionary<string, object>>();
             private GeyserConfigurator.GeyserInstanceConfiguration geyserConfiguration;
+
+            private static readonly string[] ComponentTypesToCapture = new string[] {
+                "Geyser",
+                "GeyserConfigurator",
+                "GeneShuffler",
+                "SetLocker",
+                "LonelyMinionHouse",
+                "FossilHuntInitializer",
+                "MajorFossilDigSite",
+                "MinorFossilDigSite",
+                "FossilMine",
+                "TemporalTearOpener",
+                "WarpPortal",
+                "WarpReceiver",
+                "CryoTank",
+                "MegaBrainTank",
+                "GravitasCreatureManipulator",
+                "OilWellCap"
+            };
 
             public static GeyserSnapshot Capture(GameObject source) {
                 var snapshot = new GeyserSnapshot {
@@ -602,10 +621,23 @@ namespace MoveGeyserInstant {
 
                 if (snapshot.IsGeyser) {
                     snapshot.SourceFootprint = FindFootprint(snapshot.SourceCell);
-                    snapshot.geyserFields = CaptureFields(source.GetComponent<Geyser>());
-                    snapshot.configuratorFields = CaptureFields(source.GetComponent<GeyserConfigurator>());
+                } else {
+                    snapshot.SourceFootprint = Array.Empty<int>();
+                }
 
-                    // Capture the class configuration field to preserve eruption rate, cycle length, and dormancy rolls
+                // Generic component fields capture
+                snapshot.componentFields = new Dictionary<string, Dictionary<string, object>>();
+                foreach (string typeName in ComponentTypesToCapture) {
+                    var type = AccessTools.TypeByName(typeName);
+                    if (type == null) continue;
+                    var comp = source.GetComponent(type);
+                    if (comp != null) {
+                        snapshot.componentFields[typeName] = CaptureFields(comp);
+                    }
+                }
+
+                // Special capture for Geyser.configuration
+                if (snapshot.IsGeyser) {
                     var sourceGeyser = source.GetComponent<Geyser>();
                     if (sourceGeyser != null) {
                         try {
@@ -618,8 +650,6 @@ namespace MoveGeyserInstant {
                             Debug.LogWarning("[MoveGeyserInstant] Failed to capture configuration field: " + ex.Message);
                         }
                     }
-                } else {
-                    snapshot.SourceFootprint = Array.Empty<int>();
                 }
 
                 snapshot.CapturePreviewAnimation(source);
@@ -656,10 +686,19 @@ namespace MoveGeyserInstant {
                     Debug.LogWarning("[MoveGeyserInstant] Target object is already active before state copy! Eruption state restoration might not apply correctly to the State Machine.");
                 }
 
-                if (IsGeyser) {
-                    ApplyFields(target.GetComponent<Geyser>(), geyserFields);
-                    ApplyFields(target.GetComponent<GeyserConfigurator>(), configuratorFields);
+                // Generic component fields restore
+                if (componentFields != null) {
+                    foreach (var pair in componentFields) {
+                        var type = AccessTools.TypeByName(pair.Key);
+                        if (type == null) continue;
+                        var comp = target.GetComponent(type);
+                        if (comp != null) {
+                            ApplyFields(comp, pair.Value);
+                        }
+                    }
+                }
 
+                if (IsGeyser) {
                     // Restore the captured configuration object to the target
                     var targetGeyserObj = target.GetComponent<Geyser>();
                     if (targetGeyserObj != null && geyserConfiguration != null) {
@@ -703,9 +742,18 @@ namespace MoveGeyserInstant {
                     }
                 }
 
+                // GeneShuffler special vacillator reset handling
                 var targetShuffler = target.GetComponent<GeneShuffler>();
-                if (targetShuffler != null && GeneShufflerIsConsumedField != null) {
-                    GeneShufflerIsConsumedField.SetValue(targetShuffler, ResetVacillator ? false : IsGeneShufflerUsed);
+                if (targetShuffler != null) {
+                    if (ResetVacillator) {
+                        try {
+                            var f = typeof(GeneShuffler).GetField("IsConsumed", BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
+                            if (f != null && !f.IsInitOnly) {
+                                f.SetValue(targetShuffler, false);
+                            }
+                        }
+                        catch {}
+                    }
                 }
             }
 

@@ -36,6 +36,10 @@
       <HintPath>$(GameFolder)\UnityEngine.CoreModule.dll</HintPath>
       <Private>false</Private>
     </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule">
+      <HintPath>$(GameFolder)\UnityEngine.ImageConversionModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
     <Reference Include="UnityEngine.InputLegacyModule">
       <HintPath>$(GameFolder)\UnityEngine.InputLegacyModule.dll</HintPath>
       <Private>false</Private>
@@ -64,5 +68,10 @@
     <MakeDir Directories="$(ModOutputDir)" />
     <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(ModOutputDir)" />
     <Copy SourceFiles="$(TargetDir)\mod.yaml;$(TargetDir)\mod_info.yaml" DestinationFolder="$(ModOutputDir)" />
+    <MakeDir Directories="$(ModOutputDir)\assets" />
+    <ItemGroup>
+      <AssetFiles Include="assets\*" />
+    </ItemGroup>
+    <Copy SourceFiles="@(AssetFiles)" DestinationFolder="$(ModOutputDir)\assets" />
   </Target>
 </Project>

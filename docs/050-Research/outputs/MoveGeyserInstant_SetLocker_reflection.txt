@@ -1,0 +1,46 @@
+=========================================
+TYPE: SetLocker
+Base Type: StateMachineComponent`1[[SetLocker+StatesInstance, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]
+=========================================
+--- Fields ---
+Prioritizable prioritizable
+System.String[][] possible_contents_ids
+System.String machineSound
+System.String overrideAnim
+Vector2I dropOffset
+System.Int32[] numDataBanks
+System.String[] contents
+System.Boolean dropOnDeconstruct
+System.Boolean skipAnim
+System.Boolean pendingRummage
+System.Boolean used
+Chore chore
+StateMachineController stateMachineController
+System.Boolean autoRegisterSimRender
+System.Boolean simRenderLoadBalance
+--- Properties ---
+System.String SidescreenButtonText
+System.String SidescreenButtonTooltip
+SetLocker+StatesInstance smi
+System.Boolean isSpawned
+UnityEngine.Transform transform
+System.Boolean isNull
+System.Threading.CancellationToken destroyCancellationToken
+System.Boolean useGUILayout
+System.Boolean enabled
+System.Boolean isActiveAndEnabled
+UnityEngine.GameObject gameObject
+System.String tag
+System.String name
+UnityEngine.HideFlags hideFlags
+
+=== SetLocker base types and inheritance ===
+  Inherits: SetLocker
+  Inherits: StateMachineComponent`1[[SetLocker+StatesInstance, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]
+  Inherits: StateMachineComponent
+  Inherits: KMonoBehaviour
+  Inherits: UnityEngine.MonoBehaviour
+  Inherits: UnityEngine.Behaviour
+  Inherits: UnityEngine.Component
+  Inherits: UnityEngine.Object
+  Inherits: System.Object
