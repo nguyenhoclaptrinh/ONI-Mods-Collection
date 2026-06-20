@@ -1,0 +1,5 @@
+=== Resolving Metadata Tokens from IsAllowedByAutomation ===
+Type token 0x0200059D -> Automatable
+Field token 0x0400B124 -> Chore+Precondition+Context.consumerState (ChoreConsumerState)
+Field token 0x04000F2B -> ChoreConsumerState.hasSolidTransferArm (System.Boolean)
+Method token 0x06002047 -> Automatable.AllowedByAutomation

@@ -32,6 +32,28 @@ namespace AutoDropBottlers
             Strings.Add("STRINGS.UI.UISIDESCREENS.AUTODROP.TITLE", title);
             Strings.Add("STRINGS.UI.UISIDESCREENS.AUTODROP.TOOLTIP", tooltip);
             
+            // Cho phép Auto-Sweeper gắp chai nước và chai khí bằng cách thêm các tag Liquid và Gas vào bộ lọc conveyable
+            try
+            {
+                var conveyableList = new System.Collections.Generic.List<Tag>(TUNING.STORAGEFILTERS.SOLID_TRANSFER_ARM_CONVEYABLE);
+                foreach (var tag in TUNING.STORAGEFILTERS.LIQUIDS)
+                {
+                    if (!conveyableList.Contains(tag))
+                        conveyableList.Add(tag);
+                }
+                foreach (var tag in TUNING.STORAGEFILTERS.GASES)
+                {
+                    if (!conveyableList.Contains(tag))
+                        conveyableList.Add(tag);
+                }
+                TUNING.STORAGEFILTERS.SOLID_TRANSFER_ARM_CONVEYABLE = conveyableList.ToArray();
+                Debug.Log("[AutoDropBottlers] Successfully appended liquid and gas tags to SOLID_TRANSFER_ARM_CONVEYABLE.");
+            }
+            catch (System.Exception ex)
+            {
+                Debug.LogWarning("[AutoDropBottlers] Failed to append liquid/gas tags: " + ex.Message);
+            }
+
             Debug.Log("[AutoDropBottlers] Loaded, PLib Options registered, and strings localized.");
         }
     }
@@ -177,7 +199,8 @@ namespace AutoDropBottlers
 
                         // Bottler creates a temporary proxy bottle while a Duplicant works. Dropping storage
                         // before vanilla cleanup finishes leaves that proxy in a broken state.
-                        if (bottler.worker != null)
+                        // Thêm kiểm tra FastTrack: Tuyệt đối không drop nếu đã có Đệ nhận lệnh lấy (Reserved)
+                        if (bottler.worker != null || IsItemReserved())
                         {
                             QueueDrop();
                             return;
@@ -206,14 +229,45 @@ namespace AutoDropBottlers
                 bottler.worker == null;
         }
 
+        private bool IsAtCapacityThreshold()
+        {
+            if (bottler == null || bottler.storage == null) return false;
+            
+            float maxCapacity = bottler.storage.capacityKg;
+            if (bottler is IUserControlledCapacity capacityControl)
+            {
+                maxCapacity = capacityControl.UserMaxCapacity;
+            }
+            
+            return bottler.storage.MassStored() >= maxCapacity;
+        }
+
+        private bool IsItemReserved()
+        {
+            if (bottler == null || bottler.storage == null) return false;
+            
+            foreach (var item in bottler.storage.items)
+            {
+                if (item != null)
+                {
+                    var pickupable = item.GetComponent<Pickupable>();
+                    if (pickupable != null && pickupable.ReservedAmount > 0)
+                    {
+                        return true; 
+                    }
+                }
+            }
+            return false;
+        }
+
         private void OnStorageChange(object data)
         {
             try
             {
                 if (!autoDropEnabled || bottler == null || bottler.storage == null) return;
 
-                // Nếu kho chứa đầy, trì hoãn 1 frame để đảm bảo đồng bộ sự kiện của game và thả chai
-                if (bottler.storage.IsFull())
+                // Nếu lượng chất lỏng/khí đạt ngưỡng Slider, trì hoãn thả chai để đảm bảo đồng bộ
+                if (IsAtCapacityThreshold())
                 {
                     QueueDrop();
                 }
@@ -251,6 +305,102 @@ namespace AutoDropBottlers
                 {
                     control.QueueDrop();
                 }
+            }
+        }
+    }
+
+    // Harmony Patch: Ngăn chặn NullReferenceException tại Workable.GetConversationTopic khi workable bị Unity destroy (fake null)
+    [HarmonyPatch(typeof(Workable), nameof(Workable.GetConversationTopic))]
+    public class Workable_GetConversationTopic_Patch
+    {
+        public static bool Prefix(Workable __instance, ref string __result)
+        {
+            try
+            {
+                if (__instance == null || __instance.gameObject == null)
+                {
+                    __result = null;
+                    return false;
+                }
+                var kPrefabID = __instance.GetComponent<KPrefabID>();
+                if (kPrefabID == null)
+                {
+                    __result = null;
+                    return false;
+                }
+                if (kPrefabID.HasTag(GameTags.NotConversationTopic))
+                {
+                    __result = null;
+                    return false;
+                }
+                __result = kPrefabID.PrefabTag.Name;
+                return false;
+            }
+            catch (System.Exception)
+            {
+                __result = null;
+                return false;
+            }
+        }
+    }
+
+    // Các Harmony Patch bổ sung component Automatable cho các công trình nhận chai để Auto-Sweeper có thể cung cấp
+    [HarmonyPatch(typeof(BottleEmptierConfig), "DoPostConfigureComplete")]
+    public static class BottleEmptierConfig_DoPostConfigureComplete_Patch
+    {
+        public static void Postfix(GameObject go)
+        {
+            if (go != null)
+            {
+                go.AddOrGet<Automatable>();
+            }
+        }
+    }
+
+    [HarmonyPatch(typeof(BottleEmptierGasConfig), "DoPostConfigureComplete")]
+    public static class BottleEmptierGasConfig_DoPostConfigureComplete_Patch
+    {
+        public static void Postfix(GameObject go)
+        {
+            if (go != null)
+            {
+                go.AddOrGet<Automatable>();
+            }
+        }
+    }
+
+    [HarmonyPatch(typeof(BottleEmptierConduitLiquidConfig), "DoPostConfigureComplete")]
+    public static class BottleEmptierConduitLiquidConfig_DoPostConfigureComplete_Patch
+    {
+        public static void Postfix(GameObject go)
+        {
+            if (go != null)
+            {
+                go.AddOrGet<Automatable>();
+            }
+        }
+    }
+
+    [HarmonyPatch(typeof(BottleEmptierConduitGasConfig), "DoPostConfigureComplete")]
+    public static class BottleEmptierConduitGasConfig_DoPostConfigureComplete_Patch
+    {
+        public static void Postfix(GameObject go)
+        {
+            if (go != null)
+            {
+                go.AddOrGet<Automatable>();
+            }
+        }
+    }
+
+    [HarmonyPatch(typeof(AdvancedResearchCenterConfig), "DoPostConfigureComplete")]
+    public static class AdvancedResearchCenterConfig_DoPostConfigureComplete_Patch
+    {
+        public static void Postfix(GameObject go)
+        {
+            if (go != null)
+            {
+                go.AddOrGet<Automatable>();
             }
         }
     }

@@ -1,0 +1,15 @@
+=== Checking Config Types in Assembly-CSharp ===
+Type: BottleEmptierConfig -> Found!
+  ID Value: BottleEmptier
+Type: BottleEmptierGasConfig -> Found!
+  ID Value: BottleEmptierGas
+Type: BottleEmptierConduitLiquidConfig -> Found!
+  ID Value: BottleEmptierConduitLiquid
+Type: BottleEmptierConduitGasConfig -> Found!
+  ID Value: BottleEmptierConduitGas
+Type: LiquidPumpingStationConfig -> Found!
+  ID Value: LiquidPumpingStation
+Type: LiquidBottlerConfig -> Found!
+  ID Value: LiquidBottler
+Type: GasBottlerConfig -> Found!
+  ID Value: GasBottler

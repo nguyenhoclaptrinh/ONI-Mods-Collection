@@ -1,0 +1,6 @@
+Method: Boolean IsPickupableRelevantToMyInterests(KPrefabID, Int32)
+IL Bytes Length: 23
+IL Bytes: 03 7B FF 01 00 0A 28 F7 2A 00 06 2C 08 02 04 28 F6 36 00 06 2A 16 2A
+Index 1: Opcode 7B -> Member token 0x0A0001FF -> KPrefabID.PrefabTag
+Index 6: Opcode 28 -> Member token 0x06002AF7 -> Assets.IsTagSolidTransferArmConveyable
+Index 15: Opcode 28 -> Member token 0x060036F6 -> SolidTransferArm.IsCellReachable

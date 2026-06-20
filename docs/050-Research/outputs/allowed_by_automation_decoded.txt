@@ -1,0 +1,4 @@
+Method: Boolean AllowedByAutomation(Boolean)
+IL Bytes Length: 12
+IL Bytes: 02 28 45 20 00 06 16 FE 01 03 60 2A
+Index 1: Opcode 28 -> Member token 0x06002045 -> Automatable.GetAutomationOnly

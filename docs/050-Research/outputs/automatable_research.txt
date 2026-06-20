@@ -1,0 +1,118 @@
+=== Automatable ===
+Field: System.Boolean automationOnly
+Field: CopyBuildingSettings copyBuildingSettings
+Field: EventSystem+IntraObjectHandler`1[[Automatable, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]] OnCopySettingsDelegate
+Field: System.Boolean autoRegisterSimRender
+Field: System.Boolean simRenderLoadBalance
+Property: System.Boolean isSpawned
+Property: UnityEngine.Transform transform
+Property: System.Boolean isNull
+Property: System.Threading.CancellationToken destroyCancellationToken
+Property: System.Boolean useGUILayout
+Property: System.Boolean enabled
+Property: System.Boolean isActiveAndEnabled
+Property: UnityEngine.GameObject gameObject
+Property: System.String tag
+Property: System.String name
+Property: UnityEngine.HideFlags hideFlags
+Method: Void OnPrefabInit()
+Method: Void OnCopySettings(Object)
+Method: Boolean GetAutomationOnly()
+Method: Void SetAutomationOnly(Boolean)
+Method: Boolean AllowedByAutomation(Boolean)
+
+=== TUNING.STORAGEFILTERS Fields ===
+Field: System.Collections.Generic.List`1[[Tag, Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]] DEHYDRATED
+  Value (Enumerable): Dehydrated
+Field: System.Collections.Generic.List`1[[Tag, Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]] FOOD
+  Value (Enumerable): Edible, CookingIngredient, Medicine
+Field: System.Collections.Generic.List`1[[Tag, Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]] BAGABLE_CREATURES
+  Value (Enumerable): BagableCreature
+Field: System.Collections.Generic.List`1[[Tag, Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]] SWIMMING_CREATURES
+  Value (Enumerable): SwimmingCreature
+Field: System.Collections.Generic.List`1[[Tag, Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]] NOT_EDIBLE_SOLIDS
+  Value (Enumerable): Alloy, RefinedMetal, Metal, BuildableRaw, BuildableProcessed, Farmable, Organics, Compostable, Seed, Agriculture, Filter, ConsumableOre, Sublimating, Liquifiable, IndustrialProduct, IndustrialIngredient, TechComponents, MedicalSupplies, Clothes, ManufacturedMaterial, Egg, RareMaterials, Other, StoryTraitResource, Dehydrated, ChargedPortableBattery, BionicUpgrade
+Field: System.Collections.Generic.List`1[[Tag, Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]] SPECIAL_STORAGE
+  Value (Enumerable): Clothes, Egg, Sublimating
+Field: System.Collections.Generic.List`1[[Tag, Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]] STORAGE_LOCKERS_STANDARD
+  Value (Enumerable): Alloy, RefinedMetal, Metal, BuildableRaw, BuildableProcessed, Farmable, Organics, Compostable, Seed, Agriculture, Filter, ConsumableOre, Sublimating, Liquifiable, IndustrialProduct, IndustrialIngredient, TechComponents, MedicalSupplies, Clothes, ManufacturedMaterial, Egg, RareMaterials, Other, StoryTraitResource, Dehydrated, ChargedPortableBattery, BionicUpgrade, Medicine
+Field: System.Collections.Generic.List`1[[Tag, Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]] STORAGE_SOLID_CARGO_BAY
+  Value (Enumerable): Alloy, RefinedMetal, Metal, BuildableRaw, BuildableProcessed, Farmable, Organics, Compostable, Seed, Agriculture, Filter, ConsumableOre, Sublimating, Liquifiable, IndustrialProduct, IndustrialIngredient, MedicalSupplies, Clothes, ManufacturedMaterial, Egg, RareMaterials, Other, StoryTraitResource, Dehydrated, ChargedPortableBattery, BionicUpgrade, Medicine
+Field: System.Collections.Generic.List`1[[Tag, Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]] POWER_BANKS
+  Value (Enumerable): ChargedPortableBattery
+Field: System.Collections.Generic.List`1[[Tag, Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]] LIQUIDS
+  Value (Enumerable): Liquid
+Field: System.Collections.Generic.List`1[[Tag, Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]] SO_DATABANKS
+  Value (Enumerable): OrbitalResearchDatabank
+Field: System.Collections.Generic.List`1[[Tag, Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]] GASES
+  Value (Enumerable): Breathable, Unbreathable
+Field: System.Collections.Generic.List`1[[Tag, Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]] PAYLOADS
+  Value (Enumerable): RailGunPayload
+Field: Tag[] SOLID_TRANSFER_ARM_CONVEYABLE
+  Value (Array): Seed, CropSeed, Alloy, RefinedMetal, Metal, BuildableRaw, BuildableProcessed, Farmable, Organics, Compostable, Seed, Agriculture, Filter, ConsumableOre, Sublimating, Liquifiable, IndustrialProduct, IndustrialIngredient, TechComponents, MedicalSupplies, Clothes, ManufacturedMaterial, Egg, RareMaterials, Other, StoryTraitResource, Dehydrated, ChargedPortableBattery, BionicUpgrade, Medicine, Edible, CookingIngredient, Medicine, RailGunPayload
+
+=== FetchChore Fields & Constructors ===
+Field: Storage <destination>k__BackingField
+Field: System.Collections.Generic.HashSet`1[[Tag, Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]] tags
+Field: Tag tagsFirst
+Field: FetchChore+MatchCriteria criteria
+Field: System.Int32 tagsHash
+Field: System.Boolean validateRequiredTagOnTagChange
+Field: Tag requiredTag
+Field: Tag[] forbiddenTags
+Field: System.Int32 forbidHash
+Field: Automatable automatable
+Field: System.Boolean allowMultifetch
+Field: HandleVector`1+Handle[[System.Int32, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]] partitionerEntry
+Field: System.Int32 onOnlyFetchMarkedItemsSettingChangedHandle
+Field: Chore+Precondition IsFetchTargetAvailable
+Field: Chore+Precondition CanFetchDroneComplete
+Field: System.Action`1[[Chore, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]] onCleanup
+Field: System.Boolean addToDailyReport
+Field: ReportManager+ReportType reportType
+Field: PrioritySetting masterPriority
+Field: System.Boolean showAvailabilityInHoverText
+Field: System.Action`1[[Chore, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]] onExit
+Field: System.Action`1[[Chore, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]] onComplete
+Property: System.Single originalAmount
+Property: System.Single amount
+Property: Pickupable fetchTarget
+Property: UnityEngine.GameObject fetcher
+Property: Storage destination
+Property: FetchChore+StatesInstance smi
+Property: UnityEngine.GameObject gameObject
+Property: UnityEngine.Transform transform
+Property: System.String name
+Property: System.Boolean isNull
+Property: System.Int32 id
+Property: System.Int32 priorityMod
+Property: ChoreType choreType
+Property: ChoreDriver driver
+Property: ChoreDriver lastDriver
+Property: IStateMachineTarget target
+Property: System.Boolean isComplete
+Property: System.Boolean IsPreemptable
+Property: ChoreConsumer overrideTarget
+Property: Prioritizable prioritizable
+Property: ChoreProvider provider
+Property: System.Boolean runUntilComplete
+Property: System.Boolean isExpanded
+Constructor: .ctor(ChoreType choreType, Storage destination, System.Single amount, System.Collections.Generic.HashSet`1[[Tag, Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]] tags, FetchChore+MatchCriteria criteria, Tag required_tag, Tag[] forbidden_tags, ChoreProvider chore_provider, System.Boolean run_until_complete, System.Action`1[[Chore, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]] on_complete, System.Action`1[[Chore, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]] on_begin, System.Action`1[[Chore, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]] on_end, Operational+State operational_requirement, System.Int32 priority_mod)
+
+=== FetchList2 Fields & Constructors ===
+Field: System.Action OnComplete
+Field: Storage <Destination>k__BackingField
+Field: System.Int32 <PriorityMod>k__BackingField
+Field: ChoreType choreType
+Field: System.Guid waitingForMaterialsHandle
+Field: System.Guid materialsUnavailableForRefillHandle
+Field: System.Guid materialsUnavailableHandle
+Field: System.Collections.Generic.Dictionary`2[[Tag, Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]] MinimumAmount
+Field: System.Collections.Generic.List`1[[FetchOrder2, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]] FetchOrders
+Field: System.Collections.Generic.Dictionary`2[[Tag, Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Single, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]] Remaining
+Field: System.Boolean bShowStatusItem
+Constructor: .ctor(Storage destination, ChoreType chore_type)
+
+=== ChorePreconditions Fields ===
+Field: ChorePreconditions _instance
+Property: ChorePreconditions instance

@@ -1,0 +1,192 @@
+=== ManualDeliveryKG Fields ===
+Operational operational
+Storage storage
+Tag requestedItemTag
+Tag[] forbiddenTags
+System.Single capacity
+System.Single refillMass
+System.Single MinimumMass
+System.Boolean RoundFetchAmountToInt
+System.Boolean FillToCapacity
+Operational+State operationalRequirement
+System.Boolean allowPause
+System.Boolean paused
+HashedString choreTypeIDHash
+System.Boolean userPaused
+System.Boolean handlePrioritizable
+System.Boolean ShowStatusItem
+System.Boolean FillToMinimumMass
+FetchList2 fetchList
+System.Int32 onStorageChangeSubscription
+EventSystem+IntraObjectHandler`1[[ManualDeliveryKG, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]] OnRefreshUserMenuDelegate
+EventSystem+IntraObjectHandler`1[[ManualDeliveryKG, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]] OnOperationalChangedDelegate
+EventSystem+IntraObjectHandler`1[[ManualDeliveryKG, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]] OnStorageChangedDelegate
+System.Boolean autoRegisterSimRender
+System.Boolean simRenderLoadBalance
+
+=== ManualDeliveryKG Properties ===
+System.Boolean IsPaused
+System.Single Capacity
+Tag RequestedItemTag
+Tag[] ForbiddenTags
+Storage DebugStorage
+FetchList2 DebugFetchList
+System.Single MassStored
+System.Boolean isSpawned
+UnityEngine.Transform transform
+System.Boolean isNull
+System.Threading.CancellationToken destroyCancellationToken
+System.Boolean useGUILayout
+System.Boolean enabled
+System.Boolean isActiveAndEnabled
+UnityEngine.GameObject gameObject
+System.String tag
+System.String name
+UnityEngine.HideFlags hideFlags
+
+=== ManualDeliveryKG Methods ===
+Method: Boolean get_IsPaused()
+Method: Single get_Capacity()
+Method: Tag get_RequestedItemTag()
+Method: Void set_RequestedItemTag(Tag)
+Method: Tag[] get_ForbiddenTags()
+Method: Void set_ForbiddenTags(Tag[])
+Method: Storage get_DebugStorage()
+Method: FetchList2 get_DebugFetchList()
+Method: Single get_MassStored()
+Method: Void OnSpawn()
+Method: Void OnCleanUp()
+Method: Void SetStorage(Storage)
+Method: Void Pause(Boolean, String)
+Method: Void Sim1000ms(Single)
+Method: Void UpdateDeliveryState()
+Method: Void RequestDelivery()
+Method: Void CreateFetchChore(Single)
+Method: Void OnFetchComplete()
+Method: Void UpdateFetchList()
+Method: Void AbortDelivery(String)
+Method: Void OnStorageChanged(Object)
+Method: Void OnPause()
+Method: Void OnResume()
+Method: Void OnRefreshUserMenu(Object)
+Method: Void OnOperationalChanged(Object)
+Method: Boolean get_isSpawned()
+Method: Transform get_transform()
+Method: Boolean get_isNull()
+Method: Void Awake()
+Method: Void InitializeComponent()
+Method: Void OnDisable()
+Method: Boolean IsInitialized()
+Method: Void OnDestroy()
+Method: Void Start()
+Method: Void Spawn()
+Method: Void OnPrefabInit()
+Method: Void OnCmpEnable()
+Method: Void OnCmpDisable()
+Method: Void OnForcedCleanUp()
+Method: Void OnLoadLevel()
+Method: T FindOrAdd()
+Method: Void FindOrAdd(T&)
+Method: T Require()
+Method: Int32 Subscribe(Int32, Action`1)
+Method: Int32 Subscribe(Int32, Action`2, Object)
+Method: Int32 Subscribe(GameObject, Int32, Action`1)
+Method: Int32 Subscribe(GameObject, Int32, Action`2, Object)
+Method: Int32 Subscribe(Int32, IntraObjectHandler`1)
+Method: Void Unsubscribe(Int32, Action`1)
+Method: Void Unsubscribe(Int32)
+Method: Void Unsubscribe(Int32&)
+Method: Void Unsubscribe(GameObject, Int32, Action`1)
+Method: Void Unsubscribe(GameObject, Int32)
+Method: Void Unsubscribe(GameObject, Int32&)
+Method: Void Unsubscribe(Int32, IntraObjectHandler`1, Boolean)
+Method: Void Trigger(Int32, Object)
+Method: Void Trigger(Int32, T)
+Method: Void BoxingTrigger(Int32, Boolean)
+Method: Void BoxingTrigger(Int32, T)
+Method: Void PlaySound3D(String)
+Method: Vector2 PosMin()
+Method: Vector2 PosMax()
+Method: ComponentType IStateMachineTarget.GetComponent()
+Method: GameObject IStateMachineTarget.get_gameObject()
+Method: String IStateMachineTarget.get_name()
+Method: CancellationToken get_destroyCancellationToken()
+Method: Boolean IsInvoking()
+Method: Void CancelInvoke()
+Method: Void Invoke(String, Single)
+Method: Void InvokeRepeating(String, Single, Single)
+Method: Void CancelInvoke(String)
+Method: Boolean IsInvoking(String)
+Method: Coroutine StartCoroutine(String)
+Method: Coroutine StartCoroutine(String, Object)
+Method: Coroutine StartCoroutine(IEnumerator)
+Method: Coroutine StartCoroutine_Auto(IEnumerator)
+Method: Void StopCoroutine(IEnumerator)
+Method: Void StopCoroutine(Coroutine)
+Method: Void StopCoroutine(String)
+Method: Void StopAllCoroutines()
+Method: Boolean get_useGUILayout()
+Method: Void set_useGUILayout(Boolean)
+Method: String GetScriptClassName()
+Method: Boolean get_enabled()
+Method: Void set_enabled(Boolean)
+Method: Boolean get_isActiveAndEnabled()
+Method: Transform get_transform()
+Method: GameObject get_gameObject()
+Method: Component GetComponent(Type)
+Method: Void GetComponentFastPath(Type, IntPtr)
+Method: T GetComponent()
+Method: Boolean TryGetComponent(Type, Component&)
+Method: Boolean TryGetComponent(T&)
+Method: Component GetComponent(String)
+Method: Component GetComponentInChildren(Type, Boolean)
+Method: Component GetComponentInChildren(Type)
+Method: T GetComponentInChildren(Boolean)
+Method: T GetComponentInChildren()
+Method: Component[] GetComponentsInChildren(Type, Boolean)
+Method: Component[] GetComponentsInChildren(Type)
+Method: T[] GetComponentsInChildren(Boolean)
+Method: Void GetComponentsInChildren(Boolean, List`1)
+Method: T[] GetComponentsInChildren()
+Method: Void GetComponentsInChildren(List`1)
+Method: Component GetComponentInParent(Type, Boolean)
+Method: Component GetComponentInParent(Type)
+Method: T GetComponentInParent(Boolean)
+Method: T GetComponentInParent()
+Method: Component[] GetComponentsInParent(Type, Boolean)
+Method: Component[] GetComponentsInParent(Type)
+Method: T[] GetComponentsInParent(Boolean)
+Method: Void GetComponentsInParent(Boolean, List`1)
+Method: T[] GetComponentsInParent()
+Method: Component[] GetComponents(Type)
+Method: Void GetComponents(Type, List`1)
+Method: Void GetComponents(List`1)
+Method: String get_tag()
+Method: Void set_tag(String)
+Method: T[] GetComponents()
+Method: Int32 GetComponentIndex()
+Method: Boolean CompareTag(String)
+Method: Void SendMessageUpwards(String, Object, SendMessageOptions)
+Method: Void SendMessageUpwards(String, Object)
+Method: Void SendMessageUpwards(String)
+Method: Void SendMessageUpwards(String, SendMessageOptions)
+Method: Void SendMessage(String, Object)
+Method: Void SendMessage(String)
+Method: Void SendMessage(String, Object, SendMessageOptions)
+Method: Void SendMessage(String, SendMessageOptions)
+Method: Void BroadcastMessage(String, Object, SendMessageOptions)
+Method: Void BroadcastMessage(String, Object)
+Method: Void BroadcastMessage(String)
+Method: Void BroadcastMessage(String, SendMessageOptions)
+Method: Int32 GetInstanceID()
+Method: Int32 GetHashCode()
+Method: Boolean Equals(Object)
+Method: String get_name()
+Method: Void set_name(String)
+Method: HideFlags get_hideFlags()
+Method: Void set_hideFlags(HideFlags)
+Method: String ToString()
+Method: Void MarkDirty()
+Method: Type GetType()
+Method: Object MemberwiseClone()
+Method: Void Finalize()

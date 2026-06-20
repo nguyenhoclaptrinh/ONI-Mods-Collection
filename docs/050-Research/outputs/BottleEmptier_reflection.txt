@@ -1,0 +1,49 @@
+=== BottleEmptierConfig Methods ===
+Method: BuildingDef CreateBuildingDef
+Method: Void ConfigureBuildingTemplate
+Method: Void DoPostConfigureComplete
+Method: Void DoPostConfigurePreview
+Method: Void DoPostConfigureUnderConstruction
+Method: Void ConfigurePost
+Method: String[] GetDlcIds
+Method: String[] GetRequiredDlcIds
+Method: String[] GetForbiddenDlcIds
+Method: Boolean ForbidFromLoading
+Method: Type GetType
+Method: Object MemberwiseClone
+Method: Void Finalize
+Method: String ToString
+Method: Boolean Equals
+Method: Int32 GetHashCode
+
+=== BottleEmptier Fields ===
+System.Single emptyRate
+System.Boolean allowManualPumpingStationFetching
+System.Boolean emit
+System.Boolean isGasEmptier
+StateMachineController stateMachineController
+System.Boolean autoRegisterSimRender
+System.Boolean simRenderLoadBalance
+
+=== ManualDeliveryKG Fields ===
+Operational operational
+Storage storage
+Tag requestedItemTag
+Tag[] forbiddenTags
+System.Single capacity
+System.Single refillMass
+System.Single MinimumMass
+System.Boolean RoundFetchAmountToInt
+System.Boolean FillToCapacity
+Operational+State operationalRequirement
+System.Boolean allowPause
+System.Boolean paused
+HashedString choreTypeIDHash
+System.Boolean userPaused
+System.Boolean handlePrioritizable
+System.Boolean ShowStatusItem
+System.Boolean FillToMinimumMass
+FetchList2 fetchList
+System.Int32 onStorageChangeSubscription
+System.Boolean autoRegisterSimRender
+System.Boolean simRenderLoadBalance
