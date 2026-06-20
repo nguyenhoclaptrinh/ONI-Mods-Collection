@@ -1,0 +1,2 @@
+title: Suit Locker Copy Settings
+description: Adds "Copy Settings" support to Suit Lockers (Atmo/Jet/Lead), letting you configure one locker and copy its suit-request state to many others at once.

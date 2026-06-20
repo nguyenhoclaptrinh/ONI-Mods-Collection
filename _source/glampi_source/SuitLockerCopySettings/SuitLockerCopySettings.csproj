@@ -1,0 +1,77 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <AssemblyName>SuitLockerCopySettings</AssemblyName>
+    <RootNamespace>SuitLockerCopySettings</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\peterhan_source\Lib\Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp-firstpass">
+      <HintPath>..\..\peterhan_source\Lib\Assembly-CSharp-firstpass.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="0Harmony">
+      <HintPath>..\..\peterhan_source\Lib\0Harmony.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\peterhan_source\Lib\UnityEngine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\..\peterhan_source\Lib\UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PLibCore">
+      <HintPath>..\..\peterhan_source\PLibCore\bin\Release\netstandard2.1\PLibCore.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ILRepack.Lib.MSBuild.Task" Version="2.0.34.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="mod.yaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="mod_info.yaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <!-- ILRepack PLibCore into final DLL -->
+  <Target Name="MergePLib" AfterTargets="Build">
+    <ItemGroup>
+      <InputAssemblies Include="$(TargetPath)" />
+      <InputAssemblies Include="$(TargetDir)PLibCore.dll" />
+    </ItemGroup>
+    <ILRepack
+        TargetPlatformVersion="v4"
+        TargetPlatformDirectory="C:\Windows\Microsoft.NET\Framework64\v4.0.30319"
+        TargetKind="SameAsPrimaryAssembly"
+        OutputFile="$(TargetPath)"
+        InputAssemblies="@(InputAssemblies)"
+        LibraryPath="$(GameLibsFolder);$(ProjectDir)..\..\peterhan_source\Lib"
+        Internalize="true"
+        Wildcards="true" />
+  </Target>
+
+  <!-- Export to Local Mod folder after build -->
+  <Target Name="PostBuild" AfterTargets="MergePLib">
+    <ItemGroup>
+      <ModFiles Include="$(TargetPath)" />
+      <ModFiles Include="$(TargetDir)SuitLockerCopySettings.pdb" Condition="Exists('$(TargetDir)SuitLockerCopySettings.pdb')" />
+      <ModFiles Include="$(TargetDir)mod.yaml" Condition="Exists('$(TargetDir)mod.yaml')" />
+      <ModFiles Include="$(TargetDir)mod_info.yaml" Condition="Exists('$(TargetDir)mod_info.yaml')" />
+    </ItemGroup>
+    <Copy SourceFiles="@(ModFiles)" DestinationFolder="$(ProjectDir)..\..\..\SuitLockerCopySettings\" SkipUnchangedFiles="true" />
+  </Target>
+
+</Project>

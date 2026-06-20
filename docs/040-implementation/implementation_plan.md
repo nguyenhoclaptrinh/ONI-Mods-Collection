@@ -1,128 +1,82 @@
-# Kế hoạch tích hợp tính năng Máy Gắp gắp chai nước/khí vào mod AutoDropBottlers
+# Sửa lỗi Suit Locker Copy Settings - Kế hoạch thực hiện
 
-Bản kế hoạch chi tiết nhằm bổ sung tính năng cho phép Máy gắp (Auto-Sweeper / SolidTransferArm) gắp các chai chất lỏng/chất khí (liquid/gas bottles) và đưa vào các công trình nhận chai như Máy xả chai (Bottle Emptier), Máy xả khí (Canister Emptier), hoặc Siêu máy tính (Super Computer).
+Khắc phục lỗi khi Đại ca cấu hình một Trạm đồ bảo hộ (Suit Locker) rồi ấn "Sao chép cách cài" (Copy Settings), các locker mục tiêu không nhận được cấu hình đúng.
 
-## User Review Required
+## Nguyên nhân lỗi & Đề xuất cải tiến
 
-> [!IMPORTANT]
-> **Giải pháp triển khai**:
-> - Không tạo công trình mới (sẽ patch trực tiếp vào game thông qua Harmony trong mod local `AutoDropBottlers`).
-> - Tương thích hoàn toàn với game mới và game đang chơi.
-> - Sau khi cài đặt, các công trình nhận chai sẽ có thêm nút Checkbox **"Cho phép nhận diện tự động" (Allow Manual Delivery)** từ thành phần `Automatable` mặc định của game. Đại ca có thể tích chọn để chỉ cho phép robot gắp hoặc cho phép cả đệ tử thủ công nạp nước.
-
-## Proposed Changes
-
-### AutoDropBottlers Mod
-
----
-
-#### [MODIFY] [AutoDropPatch.cs](file:///d:/Documents/Klei/OxygenNotIncluded/mods/Local/_source/glampi_source/AutoDropBottlers/AutoDropPatch.cs)
-- Cập nhật phương thức `OnLoad` của lớp `AutoDropBottlersMod` để bổ sung các tag lọc chất lỏng (`LIQUIDS`) và chất khí (`GASES`) vào danh sách các vật phẩm Máy gắp được phép tương tác (`TUNING.STORAGEFILTERS.SOLID_TRANSFER_ARM_CONVEYABLE`).
-- Thêm các lớp Harmony Patch để tự động gắn thêm component `Automatable` cho các công trình nhận chai khi game khởi tạo thiết lập hoàn chỉnh (`DoPostConfigureComplete`):
-  - `BottleEmptierConfig` (Máy xả chai chất lỏng)
-  - `BottleEmptierGasConfig` (Máy xả chai chất khí)
-  - `BottleEmptierConduitLiquidConfig` (Máy xả chai chất lỏng vào ống)
-  - `BottleEmptierConduitGasConfig` (Máy xả chai chất khí vào ống)
-  - `AdvancedResearchCenterConfig` (Siêu máy tính - giúp tự động hóa nạp nước nghiên cứu)
-
-Mã nguồn dự kiến bổ sung vào `AutoDropPatch.cs`:
-
+### Nguyên nhân lỗi
+Hiện tại, mod đang sử dụng Harmony để hook vào State Machine `SuitLocker.States.InitializeStates` và đăng ký EventHandler ở `root` state:
 ```csharp
-// Trong AutoDropBottlersMod.OnLoad:
-try
-{
-    var conveyableList = new System.Collections.Generic.List<Tag>(TUNING.STORAGEFILTERS.SOLID_TRANSFER_ARM_CONVEYABLE);
-    foreach (var tag in TUNING.STORAGEFILTERS.LIQUIDS)
-    {
-        if (!conveyableList.Contains(tag))
-            conveyableList.Add(tag);
-    }
-    foreach (var tag in TUNING.STORAGEFILTERS.GASES)
-    {
-        if (!conveyableList.Contains(tag))
-            conveyableList.Add(tag);
-    }
-    TUNING.STORAGEFILTERS.SOLID_TRANSFER_ARM_CONVEYABLE = conveyableList.ToArray();
-    Debug.Log("[AutoDropBottlers] Successfully appended liquid and gas tags to SOLID_TRANSFER_ARM_CONVEYABLE.");
-}
-catch (System.Exception ex)
-{
-    Debug.LogWarning("[AutoDropBottlers] Failed to append liquid/gas tags: " + ex.Message);
-}
+__instance.root.EventHandler(GameHashes.CopySettings, OnCopySettings);
+```
+Tuy nhiên, trong Oxygen Not Included, việc đăng ký sự kiện ở `root` state đôi khi không được truyền xuống đúng hoặc bị ghi đè bởi các trạng thái con cụ thể của `SuitLocker` (như `empty`, `full`, `returning`). Hơn nữa, chữ ký của hàm tĩnh `OnCopySettings` có thể không khớp chính xác với delegate mong đợi từ game.
 
-// Các Harmony Patch bổ sung ở cuối file:
-[HarmonyPatch(typeof(BottleEmptierConfig), "DoPostConfigureComplete")]
-public static class BottleEmptierConfig_DoPostConfigureComplete_Patch
-{
-    public static void Postfix(GameObject go)
-    {
-        if (go != null)
-        {
-            go.AddOrGet<Automatable>();
-        }
-    }
-}
+### Giải pháp
+Thay vì can thiệp vào State Machine phức tạp và kém ổn định, chúng ta sẽ chuyển sang một giải pháp chuẩn và an toàn hơn:
+1. **Tạo custom component**: `SuitLockerCopySettingsComponent` kế thừa từ `KMonoBehaviour`.
+2. **Lắng nghe sự kiện trực tiếp**: Trong `OnPrefabInit`, component này sẽ đăng ký lắng nghe sự kiện `GameHashes.CopySettings` bằng cơ chế `Subscribe` chuẩn của game:
+   ```csharp
+   Subscribe((int)GameHashes.CopySettings, OnCopySettings);
+   ```
+3. **Copy logic**: Khi nhận được sự kiện, đọc trạng thái của locker nguồn (`source`) từ dữ liệu sự kiện (`data` chính là `GameObject` của locker nguồn), sau đó gọi trực tiếp `ConfigRequestSuit()` hoặc `ConfigNoSuit()` trên locker hiện tại.
+4. **Gắn component**: Gắn component này vào các locker (`SuitLockerConfig`, `JetSuitLockerConfig`, `LeadSuitLockerConfig`) trong Harmony patch cấu hình.
 
-[HarmonyPatch(typeof(BottleEmptierGasConfig), "DoPostConfigureComplete")]
-public static class BottleEmptierGasConfig_DoPostConfigureComplete_Patch
-{
-    public static void Postfix(GameObject go)
-    {
-        if (go != null)
-        {
-            go.AddOrGet<Automatable>();
-        }
-    }
-}
+Giải pháp này hoàn toàn độc lập với trạng thái hiện tại của locker và luôn nhận được sự kiện sao chép cài đặt dù locker đang trống, đang đầy hay đang đợi đồ bảo hộ.
 
-[HarmonyPatch(typeof(BottleEmptierConduitLiquidConfig), "DoPostConfigureComplete")]
-public static class BottleEmptierConduitLiquidConfig_DoPostConfigureComplete_Patch
-{
-    public static void Postfix(GameObject go)
-    {
-        if (go != null)
-        {
-            go.AddOrGet<Automatable>();
-        }
-    }
-}
+## Thay đổi đề xuất
 
-[HarmonyPatch(typeof(BottleEmptierConduitGasConfig), "DoPostConfigureComplete")]
-public static class BottleEmptierConduitGasConfig_DoPostConfigureComplete_Patch
-{
-    public static void Postfix(GameObject go)
-    {
-        if (go != null)
-        {
-            go.AddOrGet<Automatable>();
-        }
-    }
-}
+### [SuitLockerCopySettings]
 
-[HarmonyPatch(typeof(AdvancedResearchCenterConfig), "DoPostConfigureComplete")]
-public static class AdvancedResearchCenterConfig_DoPostConfigureComplete_Patch
-{
-    public static void Postfix(GameObject go)
-    {
-        if (go != null)
-        {
-            go.AddOrGet<Automatable>();
-        }
-    }
-}
+#### [MODIFY] [Patches.cs](file:///d:/Documents/Klei/OxygenNotIncluded/mods/Local/_source/glampi_source/SuitLockerCopySettings/Patches.cs)
+- Xóa bỏ class patch cũ `SuitLocker_States_InitializeStates_Patch`.
+- Thêm class component mới:
+  ```csharp
+  public class SuitLockerCopySettingsComponent : KMonoBehaviour
+  {
+      protected override void OnPrefabInit()
+      {
+          base.OnPrefabInit();
+          Subscribe((int)GameHashes.CopySettings, OnCopySettings);
+      }
+
+      private void OnCopySettings(object data)
+      {
+          var srcGo = data as GameObject;
+          if (srcGo == null) return;
+
+          var srcLocker = srcGo.GetComponent<SuitLocker>();
+          var dstLocker = GetComponent<SuitLocker>();
+          if (srcLocker == null || dstLocker == null) return;
+
+          if (srcLocker.smi == null || !srcLocker.smi.sm.isConfigured.Get(srcLocker.smi)) return;
+
+          if (srcLocker.smi.sm.isWaitingForSuit.Get(srcLocker.smi) || srcLocker.GetStoredOutfit() != null)
+              dstLocker.ConfigRequestSuit();
+          else
+              dstLocker.ConfigNoSuit();
+      }
+  }
+  ```
+- Cập nhật `SuitLockerConfig_ConfigureBuildingTemplate_Patch` để gắn thêm component mới này:
+  ```csharp
+  static void Postfix(GameObject go, Tag prefab_tag)
+  {
+      go.AddOrGet<CopyBuildingSettings>().copyGroupTag = prefab_tag;
+      go.AddOrGet<SuitLockerCopySettingsComponent>();
+  }
+  ```
+
+## Kế hoạch xác minh
+
+### Biên dịch tự động
+Chạy lệnh biên dịch sau tại thư mục chứa mã nguồn:
+```powershell
+dotnet build d:\Documents\Klei\OxygenNotIncluded\mods\Local\_source\glampi_source\SuitLockerCopySettings\SuitLockerCopySettings.csproj -c Release
 ```
 
----
-
-## Verification Plan
-
-### Automated Tests
-- Thực hiện biên dịch dự án bằng lệnh `dotnet build` tại thư mục nguồn `d:\Documents\Klei\OxygenNotIncluded\mods\Local\_source\glampi_source\AutoDropBottlers` để kiểm tra lỗi cú pháp.
-- Đảm bảo DLL được copy thành công vào thư mục mod game chạy cục bộ `d:\Documents\Klei\OxygenNotIncluded\mods\Local\AutoDropBottlers`.
-
-### Manual Verification
-1. Khởi chạy game *Oxygen Not Included*.
-2. Xây dựng một Máy xả chai (Bottle Emptier) hoặc Siêu máy tính (Advanced Research Center).
-3. Đảm bảo khi bấm vào các công trình này, bảng Side Screen xuất hiện lựa chọn "Allow Manual Delivery" (Cho phép nạp thủ công / Tự động hóa).
-4. Đặt một chai nước trên sàn trong phạm vi của Máy gắp (Auto-Sweeper).
-5. Xác nhận Máy gắp tự động gắp chai nước và đưa vào công trình đích thành công.
+### Kiểm tra thủ công (Đại ca thực hiện trong game)
+1. Xây dựng 3 trạm Atmo Suit Locker.
+2. Thiết lập trạm 1: Yêu cầu treo đồ bảo hộ (Request Suit).
+3. Ấn "Sao chép cách cài" từ trạm 1 và áp dụng cho trạm 2 và trạm 3.
+4. Xác minh: Trạm 2 và trạm 3 tự động chuyển sang trạng thái "Đang chờ đồ bảo hộ".
+5. Bấm "Hủy yêu cầu" trên trạm 1, sao chép cài đặt sang trạm 2. Xác minh trạm 2 hủy yêu cầu.
