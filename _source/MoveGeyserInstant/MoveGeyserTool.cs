@@ -273,8 +273,7 @@ namespace MoveGeyserInstant {
                     skipped.Add(cell);
                     continue;
                 }
-
-                SimMessages.ReplaceElement(cell, SimHashes.Unobtanium, CellEventLogger.Instance.DebugTool, NeutroniumMass, NeutroniumTemperature);
+                SimMessages.ReplaceAndDisplaceElement(cell, SimHashes.Unobtanium, CellEventLogger.Instance.DebugTool, NeutroniumMass, NeutroniumTemperature);
             }
 
             // Provide feedback for skipped cells so the player understands why some neutronium
