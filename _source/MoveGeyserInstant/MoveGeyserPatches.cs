@@ -93,19 +93,26 @@ namespace MoveGeyserInstant {
 
     [HarmonyPatch(typeof(KPrefabID), "OnSpawn")]
     public static class KPrefabIDOnSpawnPatch {
+        private static readonly Dictionary<Tag, bool> isMovableCache = new Dictionary<Tag, bool>();
+
         public static void Postfix(KPrefabID __instance) {
-            if (__instance != null) {
-                string tag = __instance.PrefabTag.Name;
-                if (tag.StartsWith("Prop") || 
-                    tag.Contains("Satellite") || 
-                    tag == "LonelyMinionHouse" || 
-                    tag == "TemporalTearOpener" || 
-                    tag == "MorbRoverSpawningLocker" || 
-                    tag.StartsWith("FossilDig") || 
-                    tag == "AncientMonument") 
-                {
-                    MovableStructureSupport.AddMovable(__instance.gameObject);
-                }
+            if (__instance == null) return;
+
+            Tag prefabTag = __instance.PrefabTag;
+            if (!isMovableCache.TryGetValue(prefabTag, out bool isMovable)) {
+                string name = prefabTag.Name;
+                isMovable = name.StartsWith("Prop") || 
+                            name.Contains("Satellite") || 
+                            name == "LonelyMinionHouse" || 
+                            name == "TemporalTearOpener" || 
+                            name == "MorbRoverSpawningLocker" || 
+                            name.StartsWith("FossilDig") || 
+                            name == "AncientMonument";
+                isMovableCache[prefabTag] = isMovable;
+            }
+
+            if (isMovable) {
+                MovableStructureSupport.AddMovable(__instance.gameObject);
             }
         }
     }
