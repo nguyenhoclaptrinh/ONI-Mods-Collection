@@ -1,14 +1,14 @@
 ---
 id: rocket-launchpad-crash-analysis
 type: research-output
-source: Player.log, Assembly-CSharp decompile (LaunchPad, SelectModuleSideScreen)
+source: Player.log, Assembly-CSharp decompile (LaunchPad, SelectModuleSideScreen), mods.json
 status: done
 created: 2026-06-24
 ---
 
-# Phân tích nguyên nhân Crash bệ phóng Rocket (LaunchPad)
+# Phân tích nguyên nhân Crash bệ phóng Rocket (LaunchPad) - Đã Cập Nhật
 
-Tài liệu phân tích chi tiết về lỗi crash `NullReferenceException` xảy ra tại bệ phóng Rocket (`LaunchPad`) khi người chơi thực hiện xây dựng hoặc thay đổi các mô-đun Rocket.
+Tài liệu phân tích chi tiết về lỗi crash `NullReferenceException` xảy ra tại bệ phóng Rocket (`LaunchPad`) khi người chơi thực hiện xây dựng mô-đun Rocket.
 
 ---
 
@@ -63,28 +63,21 @@ public GameObject AddBaseModule(BuildingDef moduleDefID, IList<Tag> elements)
 
 ---
 
-## 3. Tại sao người chơi bấm được nút Build khi vị trí không hợp lệ?
+## 3. Xác minh dựa trên danh sách Mod kích hoạt của Đại ca
 
-Thông thường, game gốc sẽ vô hiệu hóa nút Build (`buildSelectedModuleButton.isInteractable = false`) nếu các điều kiện xây dựng không được thỏa mãn. Tuy nhiên, nút Build vẫn bấm được do:
-1. **Chế độ Sandbox / Instant Build Mode (Debug)**: Game gốc tự động bỏ qua các điều kiện kiểm tra va chạm vật lý và chiều cao khi Sandbox hoặc Debug Mode hoạt động để cho phép người chơi xây tự do. Nhưng khi gọi `Build` hoặc `TryPlace` thực tế bên trong engine Sim, lệnh vẫn bị từ chối và trả về `null`.
-2. **Xung đột từ các mod thay đổi Rocket**:
-   Đặc biệt là các mod lớn can thiệp sâu vào bệ phóng và mô-đun như:
-   - **`Rockets-TinyYetBig` (RTB)**: Mod này thay đổi chiều cao tháp, thêm các mô-đun đặc biệt và sửa đổi logic kết nối mô-đun.
-   - **`Robo Rockets`**: Thay đổi cách điều khiển và gắn kết các mô-đun tự động.
-   - **`Blueprints Expanded`**: Cho phép dán các bản vẽ rocket đè lên bệ phóng đã có mô-đun.
+Đối chiếu với danh sách các mod đang thực sự kích hoạt (`enabled: true` hoặc active cho DLC Spaced Out) của Đại ca:
+- **Không có các mod can thiệp sâu vào Rocket**: Các mod lớn về rocketry như `Rockets-TinyYetBig` hay `Robo Rockets` hiện tại đang bị tắt.
+- **Mod Blueprints Expanded không liên quan**: Thực tế mod Blueprints Expanded không thể lưu hay dán các mô-đun tên lửa (do game quản lý mô-đun theo cơ chế xếp chồng đặc biệt của `CraftModuleInterface` chứ không phải dạng Grid-based Building thông thường). Do đó, mod này không liên quan đến lỗi crash này.
 
-Khi các mod này ghi đè điều kiện kiểm tra (`TestBuildable`) để hiển thị nút Build hợp lệ, nhưng khi gọi đến hàm thực thi gốc của game thì game gốc lại trả về `null`, dẫn đến crash.
+### Kết luận nguyên nhân:
+Vì không có mod nào can thiệp vào bệ phóng hay mô-đun được kích hoạt, lỗi crash này **xảy ra trực tiếp trong logic gốc của game**.
+Lỗi xuất hiện khi người chơi cố tình hoặc vô tình kích hoạt lệnh xây dựng mô-đun ở vị trí không hợp lệ. Điều này thường xảy ra khi:
+1. **Chế độ Sandbox / Instant Build Mode (Debug)** đang bật: Game gốc tự động bỏ qua các kiểm tra cản trở vật lý và chiều cao trên giao diện (`SelectModuleSideScreen.TestBuildable` trả về `true` cho phép click nút Build). Nhưng khi thực hiện xây dựng thực tế, Sim engine vẫn từ chối và trả về `null`, dẫn đến crash.
+2. **Lỗi tính toán chiều cao tháp**: Khi tháp rocket đã chạm tới giới hạn chiều cao tối đa (hoặc đỉnh bản đồ), game đôi khi vẫn để nút Build sáng do lỗi cập nhật trạng thái, nhưng khi xây dựng thực tế thì không thể đặt được mô-đun.
 
 ---
 
-## 4. Giải pháp khắc phục đề xuất cho người chơi
+## 4. Giải pháp khắc phục đề xuất cho Đại ca
 
-1. **Kiểm tra và gỡ bỏ/cập nhật các mod liên quan đến Rocket**:
-   Ưu tiên kiểm tra các mod:
-   - **`Rockets-TinyYetBig`** (Sgt_Imalas)
-   - **`Robo Rockets`**
-   - **`Blueprints Expanded`** (nếu dán bản vẽ đè lên bệ phóng)
-2. **Kiểm tra không gian xây dựng bệ phóng**:
-   Tránh xây dựng mô-đun khi tháp rocket quá cao hoặc xung quanh bệ phóng có các công trình khác cản trở đường đi của mô-đun.
-3. **Tránh ép buộc xây dựng bằng Sandbox / Debug**:
-   Hạn chế click xây dựng mô-đun quá nhanh hoặc ép xây ở những vị trí mà game bình thường hiển thị màu đỏ (không cho phép).
+1. **Tránh xây dựng mô-đun bằng Sandbox/Debug**: Hạn chế sử dụng chế độ Instant Build (Sandbox/Debug) để đặt mô-đun rocket trực tiếp trên bệ phóng nếu vị trí đó bị cản trở hoặc tháp đã quá cao.
+2. **Kiểm tra không gian bệ phóng**: Đảm bảo xung quanh bệ phóng thông thoáng, không có các công trình hoặc gạch tự nhiên cản trở đường đi của mô-đun mới, và tháp tên lửa chưa vượt quá giới hạn chiều cao cho phép.
