@@ -249,10 +249,45 @@ namespace PeterHan.AIImprovements {
 					PUtil.LogDebug("AI Improvements: Using Navigator.Stop() [v67-]");
 				}
 			}
+
+			// Patch ChoreConsumer.FindNextChoreEvaluateEntryHelper to avoid assertion crashes
+			try {
+				var field = typeof(ChoreConsumer).GetField("FindNextChoreEvaluateEntryHelper",
+					BindingFlags.Static | BindingFlags.NonPublic);
+				if (field != null) {
+					field.SetValue(null, new System.Func<object, ChoreConsumer, Util.IterationInstruction>(SafeEvaluateEntry));
+					PUtil.LogDebug("AI Improvements: Successfully patched ChoreConsumer.FindNextChoreEvaluateEntryHelper with a safe delegate");
+				} else {
+					PUtil.LogWarning("AI Improvements: Could not find ChoreConsumer.FindNextChoreEvaluateEntryHelper field!");
+				}
+			} catch (System.Exception ex) {
+				PUtil.LogError("AI Improvements: Failed to patch FindNextChoreEvaluateEntryHelper: " + ex.Message);
+			}
+
 			Options = new AIImprovementsOptionsInstance();
 			new POptions().RegisterOptions(this, typeof(AIImprovementsOptions));
 			new PPatchManager(harmony).RegisterPatchClass(typeof(AIImprovementsPatches));
 			new PVersionCheck().Register(this, new SteamVersionChecker());
+		}
+
+		private static Util.IterationInstruction SafeEvaluateEntry(object obj, ChoreConsumer consumer) {
+			if (!(obj is FetchChore fetchChore)) {
+				return Util.IterationInstruction.Continue;
+			}
+			if (fetchChore.target == null) {
+				return Util.IterationInstruction.Continue;
+			}
+			if (fetchChore.isNull) {
+				return Util.IterationInstruction.Continue;
+			}
+			int cell = Grid.PosToCell(fetchChore.gameObject);
+			if (consumer.consumerState.solidTransferArm.IsCellReachable(cell)) {
+				var snapshot = consumer.GetLastPreconditionSnapshot();
+				fetchChore.CollectChoresFromGlobalChoreProvider(consumer.consumerState,
+					snapshot.succeededContexts,
+					snapshot.failedContexts, false);
+			}
+			return Util.IterationInstruction.Continue;
 		}
 		
 		/// <summary>
