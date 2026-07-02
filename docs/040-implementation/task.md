@@ -1,7 +1,12 @@
 - [x] Tạo file task.md và sync sang docs
-- [/] Tối ưu hóa mod Move Geyser Instant
-  - [ ] Sửa đổi file MoveGeyserPatches.cs
-  - [ ] Build lại dự án MoveGeyserInstant
-  - [ ] Triển khai file DLL mới của MoveGeyserInstant
-- [ ] Commit thay đổi theo từng phần (AI Improvements trước, sau đó Move Geyser Instant)
-- [ ] Tìm kiếm và phân tích các mod tiếp theo để tối ưu hóa
+- [x] Sửa lỗi crash của mod AI Improvements
+- [x] Tối ưu hóa mod Move Geyser Instant
+  - [x] Sửa đổi file MoveGeyserPatches.cs
+  - [x] Build lại dự án MoveGeyserInstant
+  - [x] Triển khai file DLL mới của MoveGeyserInstant
+- [x] Tối ưu hóa mod NoManualDelivery
+  - [x] Tối ưu hóa vòng lặp SolidTransferArm.Sim và GC trong Patches.cs
+  - [x] Phục hồi các file lib dùng chung bị thiếu
+  - [x] Build và triển khai DLL của NoManualDelivery
+- [x] Commit thay đổi theo từng phần (AI Improvements, Move Geyser Instant, NoManualDelivery)
+- [/] Tìm kiếm và phân tích các mod tiếp theo để tối ưu hóa
