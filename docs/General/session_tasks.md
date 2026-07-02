@@ -1,0 +1,25 @@
+# Checklist Tái Cấu trúc Thư mục Tài liệu (docs/)
+
+- [x] Tạo các thư mục đích mới
+  - [x] `docs/General`
+  - [x] `docs/General/Decompiled`
+  - [x] Thư mục tài liệu cho các mod (`NoManualDelivery`, `UnlockAllBlueprints`, v.v.)
+- [x] Di chuyển các tài liệu sang thư mục chung `docs/General/`
+  - [x] Di chuyển `player-log-analysis.md`
+  - [x] Di chuyển `task.md` ➔ `docs/General/session_tasks.md`
+  - [x] Di chuyển `walkthrough.md` ➔ `docs/General/session_walkthrough.md`
+- [x] Di chuyển các tài liệu dịch ngược sang `docs/General/Decompiled/`
+  - [x] Di chuyển `Chore-decompile.cs`
+  - [x] Di chuyển `Chore'1-decompile.cs` ➔ `Chore_1-decompile.cs`
+  - [x] Di chuyển `FetchChore-decompile.cs`
+  - [x] Di chuyển `StandardChoreBase-decompile.cs`
+  - [x] Di chuyển `LaunchPad-decompile.cs`
+  - [x] Di chuyển `SelectModuleSideScreen-decompile.cs`
+  - [x] Di chuyển `Navigator-reflection.md`
+  - [x] Di chuyển `Storage-reflection.md`
+- [x] Di chuyển các tài liệu thuộc về mod cụ thể
+  - [x] Di chuyển `SolidTransferArm-reflection.md` ➔ `docs/NoManualDelivery/`
+  - [x] Di chuyển `unlock_all_blueprints_plan.md` ➔ `docs/UnlockAllBlueprints/implementation_plan.md`
+  - [x] Di chuyển `unlock_all_blueprints_task.md` ➔ `docs/UnlockAllBlueprints/task.md`
+- [x] Dọn dẹp các thư mục cũ và kiểm tra Git status
+- [x] Cập nhật walkthrough và commit các thay đổi tài liệu

@@ -57,7 +57,17 @@
 
 ---
 
-## 2. Kết quả Biên dịch và Triển khai thực tế
+## 2. Chuẩn hóa cấu trúc thư mục Tài liệu (docs/)
+* **Ý định**: Tổ chức lại thư mục `docs/` để phân nhóm tài liệu theo từng mod đang hoạt động, đồng thời gom các tài liệu phân tích và mã nguồn dịch ngược dùng chung vào một thư mục chung `General/`.
+* **Kết quả di chuyển**:
+  - Gom toàn bộ file decompile thô của game vào `docs/General/Decompiled/` (bao gồm cả file `Chore_1-decompile.cs` được đổi tên chuẩn hóa).
+  - Di chuyển các tài liệu kế hoạch, phân tích crash log (`player-log-analysis.md`) vào `docs/General/`.
+  - Phân nhóm tài liệu của từng mod về đúng thư mục của mod đó (ví dụ: `docs/NoManualDelivery/`, `docs/UnlockAllBlueprints/`, `docs/MoveGeyserInstant/`...).
+  - Dọn dẹp sạch sẽ toàn bộ thư mục trống cũ (`040-implementation/`, `050-Research/`).
+
+---
+
+## 3. Kết quả Biên dịch và Triển khai thực tế
 
 * **Trạng thái**: Biên dịch 100% thành công trên tất cả các dự án bằng .NET SDK, không còn lỗi cú pháp hay thiếu thư viện tham chiếu.
 * **Triển khai**: Toàn bộ các file DLL phân phối đã được cập nhật trực tiếp tại thư mục game mod local:
@@ -73,8 +83,6 @@
 
 ---
 
-## 3. Trạng thái Git Repository
-* **Working tree**: Đã commit sạch sẽ tất cả các file mã nguồn, file binary, scripts phân tích, tài liệu research (`docs/`) và tools.
-* **Trạng thái**: `nothing to commit, working tree clean`
-
-Toàn bộ quá trình tối ưu hóa đã hoàn tất một cách trọn vẹn và an toàn tuyệt đối.
+## 4. Trạng thái Git Repository
+* **Cấu trúc mới**: Đã được Git MV theo dõi đổi vị trí chính xác của 48 file tài liệu.
+* **Trạng thái**: Working tree chuẩn hóa sạch sẽ.
