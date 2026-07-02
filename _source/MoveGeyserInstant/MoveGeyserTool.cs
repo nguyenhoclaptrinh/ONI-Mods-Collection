@@ -40,6 +40,11 @@ namespace MoveGeyserInstant {
         private Mesh overlayMesh;
         private Material overlayMaterial;
         private GameObject previewInstance;
+        private int activateFrame = -1;
+        private readonly List<Vector3> overlayVertices = new List<Vector3>(32);
+        private readonly List<Vector2> overlayUvs = new List<Vector2>(32);
+        private readonly List<Color> overlayColors = new List<Color>(32);
+        private readonly List<int> overlayTriangles = new List<int>(48);
 
         public override void OnPrefabInit() {
             var hover = gameObject.AddComponent<HoverTextConfiguration>();
@@ -67,14 +72,24 @@ namespace MoveGeyserInstant {
             PlayerController.Instance.ActivateTool(this);
         }
 
+        public override void OnActivateTool() {
+            base.OnActivateTool();
+            activateFrame = Time.frameCount;
+        }
+
         public override void OnMouseMove(Vector3 cursor_pos) {
             int cell = Grid.PosToCell(cursor_pos);
+            if (cell == lastCell)
+                return;
             lastCell = cell;
             UpdateOverlay(cell);
             UpdatePreviewPosition(cell);
         }
 
         public override void OnLeftClickDown(Vector3 cursor_pos) {
+            if (activateFrame != -1 && Time.frameCount - activateFrame <= 2) {
+                return;
+            }
             int cell = Grid.PosToCell(cursor_pos);
             if (!Grid.IsValidCell(cell))
                 cell = lastCell;
@@ -477,21 +492,22 @@ namespace MoveGeyserInstant {
             EnsureOverlay();
             bool valid = Grid.IsValidCell(cell);
             Color color = valid ? new Color(0.2f, 1f, 0.25f, 0.45f) : new Color(1f, 0.1f, 0.1f, 0.45f);
-            var vertices = new List<Vector3>(16);
-            var uvs = new List<Vector2>(16);
-            var colors = new List<Color>(16);
-            var triangles = new List<int>(24);
+            
+            overlayVertices.Clear();
+            overlayUvs.Clear();
+            overlayColors.Clear();
+            overlayTriangles.Clear();
 
-            AddCellQuad(cell, color, vertices, uvs, colors, triangles, 0f);
+            AddCellQuad(cell, color, overlayVertices, overlayUvs, overlayColors, overlayTriangles, 0f);
             int[] footprint = snapshot.GetTranslatedFootprint(cell);
             for (int i = 0; i < footprint.Length; i++)
-                AddCellQuad(footprint[i], new Color(0.1f, 0.45f, 1f, 0.35f), vertices, uvs, colors, triangles, -0.01f);
+                AddCellQuad(footprint[i], new Color(0.1f, 0.45f, 1f, 0.35f), overlayVertices, overlayUvs, overlayColors, overlayTriangles, -0.01f);
 
             overlayMesh.Clear();
-            overlayMesh.SetVertices(vertices);
-            overlayMesh.SetUVs(0, uvs);
-            overlayMesh.SetColors(colors);
-            overlayMesh.SetTriangles(triangles, 0);
+            overlayMesh.SetVertices(overlayVertices);
+            overlayMesh.SetUVs(0, overlayUvs);
+            overlayMesh.SetColors(overlayColors);
+            overlayMesh.SetTriangles(overlayTriangles, 0);
             overlayObject.SetActive(true);
         }
 
@@ -542,6 +558,16 @@ namespace MoveGeyserInstant {
         }
 
         private sealed class GeyserSnapshot {
+            private static readonly Dictionary<string, Type> typeCache = new Dictionary<string, Type>();
+
+            private static Type GetCachedType(string name) {
+                if (!typeCache.TryGetValue(name, out var type)) {
+                    type = AccessTools.TypeByName(name);
+                    typeCache[name] = type;
+                }
+                return type;
+            }
+
             private static readonly FieldInfo StudyableStudiedField = 
                 typeof(Studyable).GetField("studied", BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
             private static readonly FieldInfo GeneShufflerIsConsumedField = 
@@ -627,7 +653,7 @@ namespace MoveGeyserInstant {
                 // Generic component fields capture
                 snapshot.componentFields = new Dictionary<string, Dictionary<string, object>>();
                 foreach (string typeName in ComponentTypesToCapture) {
-                    var type = AccessTools.TypeByName(typeName);
+                    var type = GetCachedType(typeName);
                     if (type == null) continue;
                     var comp = source.GetComponent(type);
                     if (comp != null) {
@@ -688,7 +714,7 @@ namespace MoveGeyserInstant {
                 // Generic component fields restore
                 if (componentFields != null) {
                     foreach (var pair in componentFields) {
-                        var type = AccessTools.TypeByName(pair.Key);
+                        var type = GetCachedType(pair.Key);
                         if (type == null) continue;
                         var comp = target.GetComponent(type);
                         if (comp != null) {
