@@ -1,0 +1,60 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\sgt_imalas_source\Directory.Build.props.user" Condition="Exists('..\sgt_imalas_source\Directory.Build.props.user')" />
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <AssemblyName>UnlockAllBlueprints</AssemblyName>
+    <RootNamespace>UnlockAllBlueprints</RootNamespace>
+    <AssemblyTitle>UnlockAllBlueprints</AssemblyTitle>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+    <Deterministic>true</Deterministic>
+    <GameFolder Condition="'$(GameLibsFolder)' != ''">$(GameLibsFolder)</GameFolder>
+    <GameFolder Condition="'$(GameFolder)' == ''">d:\Games\OxygenNotIncludedCrack\oxygen.not.included.v706793\OxygenNotIncluded_Data\Managed</GameFolder>
+    <PublicisedDir>..\sgt_imalas_source\PublicisedAssembly</PublicisedDir>
+    <ModOutputDir>..\..\UnlockAllBlueprints</ModOutputDir>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>$(PublicisedDir)\$(AssemblyName)_public.dll</HintPath>
+      <HintPath Condition="Exists('$(PublicisedDir)\Assembly-CSharp_public.dll')">$(PublicisedDir)\Assembly-CSharp_public.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp-firstpass">
+      <HintPath>$(PublicisedDir)\Assembly-CSharp-firstpass_public.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="0Harmony">
+      <HintPath>$(GameFolder)\0Harmony.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>$(GameFolder)\UnityEngine.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>$(GameFolder)\UnityEngine.CoreModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <Target Name="WriteModMetadata" BeforeTargets="BeforeBuild">
+    <ItemGroup>
+      <ModYamlLines Include="title: &quot;Unlock All Blueprints&quot;" />
+      <ModYamlLines Include="description: &quot;Unlock all blueprints with non universal quality&quot;" />
+      <ModYamlLines Include="staticID: nguyenhoclaptrinh.UnlockAllBlueprints" />
+      <ModInfoLines Include="supportedContent: ALL" />
+      <ModInfoLines Include="minimumSupportedBuild: 700386" />
+      <ModInfoLines Include="version: 2.0.0" />
+      <ModInfoLines Include="APIVersion: 2" />
+    </ItemGroup>
+    <WriteLinesToFile File="$(TargetDir)\mod.yaml" Lines="@(ModYamlLines)" Overwrite="true" />
+    <WriteLinesToFile File="$(TargetDir)\mod_info.yaml" Lines="@(ModInfoLines)" Overwrite="true" />
+  </Target>
+
+  <Target Name="DeployMod" AfterTargets="Build">
+    <MakeDir Directories="$(ModOutputDir)" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(ModOutputDir)" />
+    <Copy SourceFiles="$(TargetDir)\mod.yaml;$(TargetDir)\mod_info.yaml" DestinationFolder="$(ModOutputDir)" />
+  </Target>
+</Project>
