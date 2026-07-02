@@ -91,28 +91,22 @@ namespace MoveGeyserInstant {
         }
     }
 
-    [HarmonyPatch(typeof(KPrefabID), "OnSpawn")]
-    public static class KPrefabIDOnSpawnPatch {
-        private static readonly Dictionary<Tag, bool> isMovableCache = new Dictionary<Tag, bool>();
+    [HarmonyPatch(typeof(Assets), "CreatePrefab")]
+    public static class AssetsCreatePrefabPatch {
+        public static void Postfix(KPrefabID __result) {
+            if (__result == null) return;
 
-        public static void Postfix(KPrefabID __instance) {
-            if (__instance == null) return;
-
-            Tag prefabTag = __instance.PrefabTag;
-            if (!isMovableCache.TryGetValue(prefabTag, out bool isMovable)) {
-                string name = prefabTag.Name;
-                isMovable = name.StartsWith("Prop") || 
-                            name.Contains("Satellite") || 
-                            name == "LonelyMinionHouse" || 
-                            name == "TemporalTearOpener" || 
-                            name == "MorbRoverSpawningLocker" || 
-                            name.StartsWith("FossilDig") || 
-                            name == "AncientMonument";
-                isMovableCache[prefabTag] = isMovable;
-            }
+            string name = __result.PrefabTag.Name;
+            bool isMovable = name.StartsWith("Prop") || 
+                             name.Contains("Satellite") || 
+                             name == "LonelyMinionHouse" || 
+                             name == "TemporalTearOpener" || 
+                             name == "MorbRoverSpawningLocker" || 
+                             name.StartsWith("FossilDig") || 
+                             name == "AncientMonument";
 
             if (isMovable) {
-                MovableStructureSupport.AddMovable(__instance.gameObject);
+                MovableStructureSupport.AddMovable(__result.gameObject);
             }
         }
     }
