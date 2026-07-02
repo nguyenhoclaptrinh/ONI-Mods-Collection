@@ -1,4 +1,4 @@
-﻿using PeterHan.PLib.Detours;
+using PeterHan.PLib.Detours;
 using UnityEngine;
 
 namespace MassMoveTo.Tools
@@ -48,16 +48,27 @@ namespace MassMoveTo.Tools
 		{
 			PlayerController.Instance.ActivateTool(this);
 		}
+		private int activateFrame = -1;
 		bool wasAlreadyPaused = false;
 		public override void OnActivateTool()
 		{
 			base.OnActivateTool();
+			activateFrame = Time.frameCount;
 			visualizer.gameObject.SetActive(true);
 			wasAlreadyPaused = SpeedControlScreen.Instance.IsPaused;
 
 			if (!wasAlreadyPaused)
 				SpeedControlScreen.Instance.Pause(false);
 
+		}
+
+		public override void OnLeftClickDown(Vector3 cursor_pos)
+		{
+			if (activateFrame != -1 && Time.frameCount - activateFrame <= 2)
+			{
+				return;
+			}
+			base.OnLeftClickDown(cursor_pos);
 		}
 		public override void OnDeactivateTool(InterfaceTool new_tool)
 		{

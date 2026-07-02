@@ -1,4 +1,4 @@
-﻿using MassMoveTo.Content.Scripts;
+using MassMoveTo.Content.Scripts;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -35,6 +35,11 @@ namespace MassMoveTo.Content.Defs.Entities
 
 		public void OnSpawn(GameObject go)
 		{
+		}
+
+		public string[] GetDlcIds()
+		{
+			return DlcManager.AVAILABLE_ALL_VERSIONS;
 		}
 	}
 }
