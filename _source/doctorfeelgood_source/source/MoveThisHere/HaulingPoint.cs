@@ -138,6 +138,7 @@ namespace MoveThisHere
             storage.capacityKg = userMaxCapacity; // Đồng bộ dung lượng lưu trữ thực tế với cấu hình đã load khi Spawn.
 
             storage.allowItemRemoval = allowItemRemoval;
+            UpdateStorageTags();
 
             if (allowManualPumpingStationFetching)
             {
@@ -189,10 +190,23 @@ namespace MoveThisHere
                 willSelfDestruct = false;
             }
         }
+        private void UpdateStorageTags()
+        {
+            if (storage == null || storage.items == null) return;
+            for (int i = 0; i < storage.items.Count; i++)
+            {
+                GameObject go = storage.items[i];
+                if (go != null)
+                {
+                    go.Trigger((int)GameHashes.OnStorageInteracted, storage);
+                }
+            }
+        }
         private void ToggleAllowItemRemoval()
         {
             allowItemRemoval = !allowItemRemoval;
             storage.allowItemRemoval = allowItemRemoval;
+            UpdateStorageTags();
         }
 
         private void OnManualEject()
@@ -265,6 +279,7 @@ namespace MoveThisHere
                         willSpill = component.willSpill;
                         allowItemRemoval = component.allowItemRemoval;
                         storage.allowItemRemoval = allowItemRemoval;
+                        UpdateStorageTags();
                         allowManualPumpingStationFetching = component.allowManualPumpingStationFetching;
                         if (allowManualPumpingStationFetching)
                         {
@@ -329,6 +344,7 @@ namespace MoveThisHere
                     targetHaulingPoint.willSpill = willSpill;
                     targetHaulingPoint.allowItemRemoval = allowItemRemoval;
                     targetHaulingPoint.storage.allowItemRemoval = allowItemRemoval;
+                    targetHaulingPoint.UpdateStorageTags();
                     targetHaulingPoint.allowManualPumpingStationFetching = allowManualPumpingStationFetching;
                     if (allowManualPumpingStationFetching)
                     {
