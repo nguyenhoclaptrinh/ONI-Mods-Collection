@@ -1,4 +1,4 @@
-﻿using PeterHan.PLib.UI;
+using PeterHan.PLib.UI;
 using UnityEngine;
 
 namespace Reapy
@@ -15,7 +15,7 @@ namespace Reapy
 
         public override bool IsValidForTarget(GameObject target) => target.GetComponent<ReapBotStation>() != null;
 
-        protected override void OnPrefabInit()
+        public override void OnPrefabInit()
         {
             // Values used by [Zonkeeh], they should be similar to the game values!
             Color backColour = new Color(0.998f, 0.998f, 0.998f);

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using KSerialization;
 using STRINGS;
 using UnityEngine;
@@ -15,7 +15,7 @@ namespace Reapy
             this.reapStorage = reapStorage;
         }
 
-        protected override void OnPrefabInit()
+        public override void OnPrefabInit()
         {
             Initialize(false);
             Subscribe<ReapBotStation>(-592767678, ReapBotStation.OnOperationalChangedDelegate);
@@ -27,7 +27,7 @@ namespace Reapy
             base.GetComponent<Operational>().SetFlag(dockedRobot, false);
         }
 
-        protected override void OnSpawn()
+        public override void OnSpawn()
         {
             base.Subscribe(-1697596308, new Action<object>(OnStorageChanged));
             meter = new MeterController(base.gameObject.GetComponent<KBatchedAnimController>(), "meter_target", "meter", Meter.Offset.Infront, Grid.SceneLayer.NoLayer, new string[]
@@ -57,7 +57,7 @@ namespace Reapy
             if (botMaterialStorage.FindFirstWithMass(GameTags.RefinedMetal, ReapBotConfig.mass) == null)
             {
                 FetchList2 fetchList = new FetchList2(botMaterialStorage, Db.Get().ChoreTypes.Fetch);
-                fetchList.Add(GameTags.RefinedMetal, null, null, ReapBotConfig.mass, FetchOrder2.OperationalRequirement.None);
+                fetchList.Add(GameTags.RefinedMetal, null, ReapBotConfig.mass, Operational.State.None);
                 fetchList.Submit(null, true);
                 return;
             }
@@ -150,7 +150,7 @@ namespace Reapy
             this.UpdateNameDisplay();
         }
 
-        protected override void OnCleanUp()
+        public override void OnCleanUp()
         {
             if (newReapyHandle.IsValid)
             {

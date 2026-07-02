@@ -1,4 +1,4 @@
-﻿using Klei.AI;
+using Klei.AI;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -88,7 +88,8 @@ namespace Reapy
             navigator.CurrentNavType = NavType.Floor;
             navigator.defaultSpeed = ReapyOptions.Options.speed;
             navigator.updateProber = true;
-            navigator.maxProbingRadius = ReapyOptions.Options.leashRange;
+            navigator.maxProbeRadiusX = ReapyOptions.Options.leashRange;
+            navigator.maxProbeRadiusY = ReapyOptions.Options.leashRange;
             navigator.sceneLayer = Grid.SceneLayer.Creatures;
             kprefabID.AddTag(GameTags.Creatures.Walker, false);
             // Did not finish this yet! issue

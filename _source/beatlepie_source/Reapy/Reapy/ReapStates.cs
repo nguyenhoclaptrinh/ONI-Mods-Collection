@@ -1,4 +1,4 @@
-﻿using Klei.AI;
+using Klei.AI;
 using System;
 using UnityEngine;
 
@@ -28,7 +28,8 @@ namespace Reapy
                 if (storage != null && smi.sm.headingRight.Get(smi) == smi.master.transform.position.x > storage.transform.position.x)
                 {
                     Navigator component = smi.master.gameObject.GetComponent<Navigator>();
-                    if (component.GetNavigationCost(Grid.PosToCell(storage)) >= component.maxProbingRadius - 1)
+                    int maxRadius = Math.Max(component.maxProbeRadiusX, component.maxProbeRadiusY);
+                    if (component.GetNavigationCost(Grid.PosToCell(storage)) >= maxRadius - 1)
                     {
                         smi.GoTo(smi.sm.emoteRedirected);
                     }
@@ -263,7 +264,7 @@ namespace Reapy
                 base.GetComponent<KSelectable>().SetStatusItem(Db.Get().StatusItemCategories.Main, Db.Get().RobotStatusItems.Working, base.gameObject);
             }
 
-            protected override void OnCleanUp()
+            public override void OnCleanUp()
             {
                 base.OnCleanUp();
                 base.GetComponent<KSelectable>().RemoveStatusItem(Db.Get().RobotStatusItems.Working, false);
