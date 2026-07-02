@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -482,24 +482,36 @@ namespace NoManualDelivery
             {
                 if (__state && __instance.choreDriver.HasChore())
                 {
-                    // todo: цыклы можно оптимизировать
                     var contexts = __instance.choreConsumer.GetSuceededPreconditionContexts();
-                    for (int i = 0; i < contexts.Count; i++)
+                    if (contexts == null || contexts.Count == 0) return;
+
+                    var refreshed = HashSetPool<Pickupable, Patches>.Allocate();
+                    try
                     {
-                        var chore = contexts[i].chore as FetchChore;
-                        if (chore != null && chore.destination != null)
+                        for (int i = 0; i < contexts.Count; i++)
                         {
-                            for (int j = 0; j < __instance.pickupables.Count; j++)
+                            var chore = contexts[i].chore as FetchChore;
+                            if (chore != null && chore.destination != null)
                             {
-                                var pickupable = __instance.pickupables[j];
-                                if (pickupable != null && pickupable.storage == null
-                                    && FetchManager.IsFetchablePickup(pickupable, chore, chore.destination)
-                                    && TryGetHolder(pickupable, out var holder))
+                                for (int j = 0; j < __instance.pickupables.Count; j++)
                                 {
-                                    holder.RefreshTimestamp();
+                                    var pickupable = __instance.pickupables[j];
+                                    if (pickupable != null && pickupable.storage == null && !refreshed.Contains(pickupable))
+                                    {
+                                        if (TryGetHolder(pickupable, out var holder)
+                                            && FetchManager.IsFetchablePickup(pickupable, chore, chore.destination))
+                                        {
+                                            holder.RefreshTimestamp();
+                                            refreshed.Add(pickupable);
+                                        }
+                                    }
                                 }
                             }
                         }
+                    }
+                    finally
+                    {
+                        refreshed.Recycle();
                     }
                 }
             }
